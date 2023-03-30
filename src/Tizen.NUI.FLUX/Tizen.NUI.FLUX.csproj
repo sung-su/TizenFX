@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <NoWarn>$(NoWarn);1587;CS8002;NU1603</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Open.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Interop\Interop.AifwPictureEnhancer.cs" />
+    <Compile Remove="Tizen.NUI.FLUX\Animation\FluxPhysicsAnimation.cs" />
+    <Compile Remove="Tizen.NUI.FLUX\Animation\PhysicsAnimation.cs" />
+    <Compile Remove="Tizen.NUI.FLUX\Internal\AifwPictureEnhancer.cs" />
+    <Compile Remove="Tizen.NUI.FLUX\Internal\PhysicsCore.cs" />
+    <Compile Remove="Tizen.NUI.FLUX\Internal\TVWindowControlAdaptorBehavior.cs" />
+    <Compile Remove="Tizen.NUI.FLUX\View\AIEnhancedImageView.cs" />
+    <Compile Remove="Tizen.NUI.FLUX\View\BindableProperty\AIEnhancedImageViewBindableProperty.cs" />
+  </ItemGroup>
+  <ItemGroup>
+        <ProjectReference Include="..\Tizen.NUI\Tizen.NUI.csproj" />
+        <ProjectReference Include="..\Tizen.Applications.PackageManager\Tizen.Applications.PackageManager.csproj" />
+        <ProjectReference Include="..\Tizen.System.Feedback\Tizen.System.Feedback.csproj" />
+        <ProjectReference Include="..\Tizen.Uix.Tts\Tizen.Uix.Tts.csproj" />
+        <ProjectReference Include="..\Tizen.Applications.Common\Tizen.Applications.Common.csproj" />
+        <ProjectReference Include="..\Tizen.Applications.ComponentBased\Tizen.Applications.ComponentBased.csproj" />
+        <ProjectReference Include="..\Tizen.System.Information\Tizen.System.Information.csproj" />
+        <ProjectReference Include="..\Tizen.System.SystemSettings\Tizen.System.SystemSettings.csproj" />
+        <ProjectReference Include="..\Tizen.Applications.ThemeManager\Tizen.Applications.ThemeManager.csproj" />
+        <ProjectReference Include="..\Tizen.Tracer\Tizen.Tracer.csproj" />
+        <ProjectReference Include="..\Tizen.Log\Tizen.Log.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <DefineConstants>
+      Support_FLUXCore_IsComponent;
+      Support_FLUXCore_ScaleFactorChange;
+      Support_FLUXCore_GrabTouchAfterLeave;
+      Support_FLUXCore_Separated_UIThread;
+      Support_FLUXCore_ThemeManager;
+    </DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="7.0.2" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+<!--    <PackageReference Include="Tizen.NET" Version="10.0.0.17632" /> -->
+  </ItemGroup>
+</Project>

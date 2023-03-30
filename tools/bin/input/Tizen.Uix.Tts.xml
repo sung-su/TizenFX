@@ -1,0 +1,891 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Uix.Tts</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            Partial interop class.
+            </summary>
+            <summary>
+            Partial interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.Libraries">
+            <summary>
+            Partial libraries class.
+            </summary>
+        </member>
+        <member name="T:Interop.Tts">
+            <summary>
+            Tts interop class.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.Tts.DefaultVoiceChangedEventArgs">
+            <summary>
+            This class holds information related to the DefaultVoiceChanged event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.DefaultVoiceChangedEventArgs.Previous">
+            <summary>
+            The previous SupportedVoice.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.DefaultVoiceChangedEventArgs.Current">
+            <summary>
+            The current SupportedVoice.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.EngineChangedEventArgs">
+            <summary>
+            This class holds information related to the EngineChanged event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.EngineChangedEventArgs.EngineId">
+            <summary>
+            The engine ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.EngineChangedEventArgs.NeedCredential">
+            <summary>
+            The necessity of the credential.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.EngineChangedEventArgs.VoiceType">
+            <summary>
+            The supported voice.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.ErrorOccurredEventArgs">
+            <summary>
+            This class holds information related to the TTS ErrorOccurred event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.ErrorOccurredEventArgs.UtteranceId">
+            <summary>
+            The utterance ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.ErrorOccurredEventArgs.ErrorValue">
+            <summary>
+            The error value.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.ErrorOccurredEventArgs.ErrorMessage">
+            <summary>
+            Gets the current error message.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>
+            String error message.
+            </returns>
+        </member>
+        <member name="T:Tizen.Uix.Tts.RepeatedText">
+            <summary>
+            This class holds information about repeated text.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.RepeatedText.Text">
+            <summary>
+            The last played text.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.RepeatedText.UtteranceId">
+            <summary>
+            The utterance ID.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.ScreenReaderChangedEventArgs">
+            <summary>
+            This class holds information related to the ScreenReaderChanged event.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.ScreenReaderChangedEventArgs.IsOn">
+            <summary>
+            The status of screen reader
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.ServiceStateChangedEventArgs">
+            <summary>
+            This class holds information related to the TTS ServiceStateChanged event.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.ServiceStateChangedEventArgs.Previous">
+            <summary>
+            The previous state of TTS service.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.ServiceStateChangedEventArgs.Current">
+            <summary>
+            The current state of TTS service.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.SpeedRange">
+            <summary>
+            This class holds the speed range values.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.SpeedRange.Max">
+            <summary>
+            The max speed range value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.SpeedRange.Min">
+            <summary>
+            The min speed range value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.SpeedRange.Normal">
+            <summary>
+            The normal speed range value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.StateChangedEventArgs">
+            <summary>
+            This class holds information related to the TTS StateChanged event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.StateChangedEventArgs.Previous">
+            <summary>
+            The previous state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.StateChangedEventArgs.Current">
+            <summary>
+            The current state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.SupportedVoice">
+            <summary>
+            This class holds information about the supported voices.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.SupportedVoice.Language">
+            <summary>
+            Language specified as an ISO 3166 alpha-2 two letter country-code followed by ISO 639-1 for the two-letter language code (for example, "ko_KR" for Korean, "en_US" for American English).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.SupportedVoice.VoiceType">
+            <summary>
+            A voice type (e.g. #TTS_VOICE_TYPE_MALE, #TTS_VOICE_TYPE_FEMALE).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.State">
+            <summary>
+            Enumeration for the states.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.State.Created">
+            <summary>
+             Created state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.State.Ready">
+            <summary>
+            Ready state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.State.Playing">
+            <summary>
+            Playing state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.State.Paused">
+            <summary>
+            Paused state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.State.Unavailable">
+            <summary>
+            Unavailable state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.Mode">
+            <summary>
+            Enumeration for TTS mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Mode.Default">
+            <summary>
+            Default mode for normal application.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Mode.Notification">
+            <summary>
+            Notification mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Mode.ScreenReader">
+            <summary>
+            Accessibility mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.Error">
+            <summary>
+            Enumeration for error values that can occur.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.None">
+            <summary>
+            Successful, no error.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.OutOfMemory">
+            <summary>
+            Out of memory.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.IoError">
+            <summary>
+            I/O error.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.InvalidParameter">
+            <summary>
+            Invalid parameter.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.TimedOut">
+            <summary>
+            No answer from the TTS service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.OutOfNetwork">
+            <summary>
+            Network is down.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.PermissionDenied">
+            <summary>
+            Permission denied.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.NotSupported">
+            <summary>
+            TTS not supported.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.InvalidState">
+            <summary>
+            Invalid state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.InvalidVoice">
+            <summary>
+            Invalid voice.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.EngineNotFound">
+            <summary>
+            No available engine.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.OperationFailed">
+            <summary>
+            Operation failed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.AudioPolicyBlocked">
+            <summary>
+            Audio policy blocked.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.NotSupportedFeature">
+            <summary>
+            Not supported feature of current engine.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.ServiceReset">
+            <summary>
+            Service reset.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Error.ScreenReaderOff">
+            <summary>
+            Screen reader off.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.Voice">
+            <summary>
+            Enumeration for the voice types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Voice.Auto">
+            <summary>
+            The automatic voice type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Voice.Male">
+            <summary>
+            The male voice type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Voice.Female">
+            <summary>
+            The female voice type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.Voice.Child">
+            <summary>
+            The child voice type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Tts.ServiceState">
+            <summary>
+            Enumeration for the states of TTS service.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Tts.ServiceState.Ready">
+            <summary>
+            Ready state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.Tts.ServiceState.Synthesizing">
+            <summary>
+            Synthesizing state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.Tts.ServiceState.Playing">
+            <summary>
+            Playing state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.Tts.ServiceState.Unavailable">
+            <summary>
+            Unavailable state.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.Tts.TtsClient">
+            <summary>
+            You can use Text-To-Speech (TTS) API's to read sound data transformed by the engine from input texts.
+            Applications can add input-text to queue for reading continuously and control the player that can play, pause, and stop sound data synthesized from text.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.#ctor">
+            <summary>
+            Constructor to create a TTS instance.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. Operation Failed
+            2. Engine Not Found
+            </exception>
+            <exception cref="T:System.OutOfMemoryException">This exception can be due to out Of memory.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.Finalize">
+            <summary>
+            Destructor to destroy TtsClient handle.
+            </summary>
+        </member>
+        <member name="E:Tizen.Uix.Tts.TtsClient.StateChanged">
+            <summary>
+            Event to be invoked when TTS state changes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.Tts.TtsClient.UtteranceStarted">
+            <summary>
+            Event to be invoked when the utterance starts.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.Tts.TtsClient.UtteranceCompleted">
+            <summary>
+            Event to be invoked when the utterance completes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.Tts.TtsClient.ErrorOccurred">
+            <summary>
+            Event to be invoked when an error occurs.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.Tts.TtsClient.DefaultVoiceChanged">
+            <summary>
+            Event to be invoked when an error occurs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.Tts.TtsClient.EngineChanged">
+            <summary>
+            Event to be invoked to detect engine change.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.Tts.TtsClient.ScreenReaderChanged">
+            <summary>
+            Event to be invoked to detect screen reader status change.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.Tts.TtsClient.ServiceStateChanged">
+            <summary>
+            Event to be invoked when the state of TTS service changes.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.TtsClient.DefaultVoice">
+            <summary>
+            Gets the default voice set by the user.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The default voice in TTS.
+            </value>
+            <returns>
+            The default voice SupportedVoice value.
+            </returns>
+        </member>
+        <member name="P:Tizen.Uix.Tts.TtsClient.MaxTextSize">
+            <summary>
+            Gets the maximum byte size for text.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The Maximum byte size for text.
+            </value>
+            <returns>
+            The Default Voice SupportedVoice value, 0 if unable to get the value.
+            </returns>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Ready"/> state.
+            </pre>
+        </member>
+        <member name="P:Tizen.Uix.Tts.TtsClient.CurrentState">
+            <summary>
+            Gets the current TTS state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The current state of TTS.
+            </value>
+            <returns>
+            Current TTS State value.
+            </returns>
+        </member>
+        <member name="P:Tizen.Uix.Tts.TtsClient.CurrentServiceState">
+            <summary>
+            Gets the current state of TTS service.
+            </summary>
+            <value>
+            The current state of TTS service.
+            </value>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.TtsClient.CurrentMode">
+            <summary>
+            The TTS Mode can be set using this property.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The current TTS mode (default, screen-reader, notification).
+            </value>
+            <returns>
+            The Mode value.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons while setting the value:
+            1. Operation Failed
+            2. Engine Not Found
+            </exception>
+            <exception cref="T:System.OutOfMemoryException">This exception can be due to out Of memory.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Created"/> state.
+            </pre>
+        </member>
+        <member name="P:Tizen.Uix.Tts.TtsClient.IsScreenReaderOn">
+            <summary>
+            Gets the current status of screen reader.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+            <value>
+            The current status of screen reader.
+            </value>
+            <returns>
+            Boolean value whether screen reader is on or off.
+            </returns>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.SetCredential(System.String)">
+            <summary>
+            Sets the application credential.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="credential">.
+            The credential string.
+            </param>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to improper value provided while setting the value.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Created"/> or <see cref="F:Tizen.Uix.Tts.State.Ready"/> state.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.Prepare">
+            <summary>
+            Connects to the TTS service asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons while setting the value:
+            1. Invalid state
+            2. Screen reader off
+            </exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Created"/> state.
+            </pre>
+            <post>
+            If this function is successful, the Client will be in the <see cref="F:Tizen.Uix.Tts.State.Ready"/> state.
+            If this function is unsuccessful, ErrorOccurred event will be invoked.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.Unprepare">
+            <summary>
+            Disconnects from the TTS service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Ready"/> state.
+            </pre>
+            <post>
+            If this function is successful, the Client will be in the <see cref="F:Tizen.Uix.Tts.State.Created"/> state.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.GetSupportedVoices">
+            <summary>
+            Retrieves all supported voices of the current engine.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>
+            The list of SupportedVoice.
+            </returns>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. Engine Not Found
+            2. Operation Failed
+            </exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.GetPrivateData(System.String)">
+            <summary>
+            Gets the private data from TTS engine.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">
+            The key string.
+            </param>
+            <returns>
+            The data corresponding to the provided key.
+            </returns>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. Invalid State
+            2. Engine Not found
+            3. Operation Failure
+            </exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Ready"/> state.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.SetPrivateData(System.String,System.String)">
+            <summary>
+            Sets the private data to tts engine.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">
+            The key string.
+            </param>
+            <param name="data">
+            The data string.
+            </param>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. Invalid State
+            2. Engine Not found
+            3. Operation Failure
+            </exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to improper value provided while setting the value.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Ready"/> state.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.GetSpeedRange">
+            <summary>
+            Gets the speed range.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>
+            The SpeedRange value.
+            </returns>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. Invalid State
+            2. Operation Failure
+            </exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Created"/> state.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.AddText(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Adds a text to the queue.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            Locale MUST be set for text validation check.
+            </remarks>
+            <param name="text">
+            An input text.
+            </param>
+            <param name="language">
+            The language selected from the SupportedVoice.Language Property obtained from GetSupportedVoices()(e.g. 'NULL'(Automatic),'en_US').
+            </param>
+            <param name="voiceType">
+            The voice type selected from the SupportedVoice.VoiceType Property obtained from GetSupportedVoices().
+            </param>
+            <param name="speed">
+            A speaking speed (e.g.0 for Auto or the value from SpeedRange Property).
+            </param>
+            <returns>
+            The utterance ID.
+            </returns>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. Invalid State
+            2. Operation Failure
+            3. Invalid Voice
+            4. Screen reader off
+            </exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to improper value provided while setting the value.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Ready"/>, <see cref="F:Tizen.Uix.Tts.State.Playing"/>, or <see cref="F:Tizen.Uix.Tts.State.Paused"/> state.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.Play">
+            <summary>
+            Starts synthesizing voice from the text and plays the synthesized audio data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. Invalid State
+            2. Operation Failure
+            3. Out of Network
+            4. Screen reader off
+            </exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Ready"/> or <see cref="F:Tizen.Uix.Tts.State.Paused"/> state.
+            </pre>
+            <post>
+            If this function succeeds, the Client will be in the <see cref="F:Tizen.Uix.Tts.State.Playing"/> state.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.Stop">
+            <summary>
+            Stops playing the utterance and clears the queue.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. Invalid Stat
+            2. Operation Failure
+            3. Screen reader off
+            </exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Ready"/>, <see cref="F:Tizen.Uix.Tts.State.Playing"/>, or <see cref="F:Tizen.Uix.Tts.State.Paused"/> state.
+            </pre>
+            <post>
+            If this function succeeds, the Client will be in the <see cref="F:Tizen.Uix.Tts.State.Ready"/> state.
+            This function will remove all text added via AddText() and synthesized sound data.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.Pause">
+            <summary>
+            Pauses the currently playing utterance.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. Invalid State
+            2. Operation Failure
+            3. Screen reader off
+            </exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Playing"/> state.
+            </pre>
+            <post>
+            If this function succeeds, the Client will be in the <see cref="F:Tizen.Uix.Tts.State.Paused"/> state.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.Repeat">
+            <summary>
+            Repeats the last added text.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <returns>
+            The RepeatedText instance which stores the text to repeat and its utterance ID.
+            </returns>
+            <feature>
+            http://tizen.org/feature/speech.synthesis
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. Invalid State
+            2. Operation Failure
+            3. Screen reader off
+            </exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to TTS not supported.</exception>
+            <pre>
+            The Client must be in the <see cref="F:Tizen.Uix.Tts.State.Ready"/> state.
+            </pre>
+            <post>
+            If this function succeeds, the Client will be in the <see cref="F:Tizen.Uix.Tts.State.Playing"/> state.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.Dispose">
+            <summary>
+            Method to release resources.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.Tts.TtsClient.Dispose(System.Boolean)">
+            <summary>
+            Method to release resources.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">
+            The boolean value for destoying tts handle.
+            </param>
+        </member>
+        <member name="T:Tizen.Uix.Tts.UtteranceEventArgs">
+            <summary>
+            This class holds information related to UtteranceStared and UtteranceCompleted events.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Tts.UtteranceEventArgs.UtteranceId">
+            <summary>
+            The utterance ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>
