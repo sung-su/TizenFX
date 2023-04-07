@@ -1,0 +1,11 @@
+﻿<Project Sdk="Tizen.NET.Sdk/1.1.9">
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;</TargetFrameworks>
+	<OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Tizen.NET.netcoreapp6.0" Version="9999.0.0" />
+  </ItemGroup>
+
+</Project>
