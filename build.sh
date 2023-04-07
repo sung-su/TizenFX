@@ -7,6 +7,9 @@ SLN_NAME=_Build
 SLN_FILE=$SCRIPT_DIR/$SLN_NAME.sln
 OUTDIR=$SCRIPT_DIR/Artifacts
 
+TFM2=netstandard2.0
+TFM6=net6.0
+
 PROFILES=(mobile tv wearable)
 TARGET_ASSEMBLY_DIR=/usr/share/dotnet.tizen/framework
 TARGET_PRELOAD_DIR=/usr/share/dotnet.tizen/preload
@@ -22,7 +25,15 @@ usage() {
   echo "    design             Build NUI Design module"
   echo "    xamlbuild          Build NUI XamlBuild module"
   echo "    dummy              Generate dummy assemblies of all modules"
-  echo "    pack [version]     Make a NuGet package with build artifacts"
+  echo "    cmd_dummy_build1() {
+  if [ ! -d $OUTDIR/bin/public/$TFM2/ref  ]; then
+    echo "No assemblies to read. Build TizenFX first."
+    exit 1
+  fi
+  mkdir -p $OUTDIR/bin/dummy/$TFM2
+  dotnet $SCRIPT_DIR/tools/bin/APITool.dll \
+         dummy $OUTDIR/bin/public/$TFM2/ref $OUTDIR/bin/dummy/$TFM2
+} [version]     Make a NuGet package with build artifacts"
   echo "    install [target]   Install assemblies to the target device"
   echo "    clean              Clean all artifacts"
 }
@@ -88,19 +99,42 @@ copy_artifacts() {
   done
 }
 
+copy_artifacts_with_tfm() {
+  TFM=$TFM2
+  if [ "$3" = "$TFM6" ]; then
+    TFM=$TFM6
+  fi
+
+  mkdir -p $2
+  for proj in $(ls -d1 $1/*/); do
+    if [ -d $proj/bin/$CONFIGURATION ]; then
+      cp -fr $proj/bin/$CONFIGURATION/$TFM/* $2
+    fi
+  done
+}
+
 build_artifacts() {
-  copy_artifacts $SCRIPT_DIR/src $OUTDIR/bin/public
-  copy_artifacts $SCRIPT_DIR/internals/src $OUTDIR/bin/internal
+  # copy_artifacts1 $SCRIPT_DIR/src $OUTDIR/bin/public
+  # copy_artifacts1 $SCRIPT_DIR/internals/src $OUTDIR/bin/internal
+
+  copy_artifacts_with_tfm $SCRIPT_DIR/src $OUTDIR/bin/public/$TFM2 $TFM2
+  copy_artifacts_with_tfm $SCRIPT_DIR/internals/src $OUTDIR/bin/internal/$TFM2 $TFM2
+
+  copy_artifacts_with_tfm $SCRIPT_DIR/src $OUTDIR/bin/public/$TFM6 $TFM6
+  copy_artifacts_with_tfm $SCRIPT_DIR/internals/src $OUTDIR/bin/internal/$TFM6 $TFM6
 
   # move preload
   mkdir -p $OUTDIR/preload
-  mv $OUTDIR/bin/public/*.preload $OUTDIR/preload 2>/dev/null || :
-  mv $OUTDIR/bin/internal/*.preload $OUTDIR/preload 2>/dev/null || :
+  # mv $OUTDIR/bin/public/*.preload $OUTDIR/preload 2>/dev/null || :
+  # mv $OUTDIR/bin/internal/*.preload $OUTDIR/preload 2>/dev/null || :
+
+  mv $OUTDIR/bin/public/$TFM2/*.preload $OUTDIR/preload/$TFM2/ 2>/dev/null || :
+  mv $OUTDIR/bin/internal/$TFM2/*.preload $OUTDIR/preload/$TFM2/ 2>/dev/null || :
 
   # merge filelist
   for profile in ${PROFILES[@]}; do
-    list=$(cat $OUTDIR/bin/public/*.$profile.filelist \
-               $OUTDIR/bin/internal/*.$profile.filelist \
+    list=$(cat $OUTDIR/bin/public/$TFM2/*.$profile.filelist \
+               $OUTDIR/bin/internal/$TFM2/*.$profile.filelist \
                | sort | uniq)
     rm -f $OUTDIR/$profile.filelist
     for item in $list; do
@@ -137,7 +171,8 @@ cmd_full_build() {
   build $SLN_FILE $@
   cleanup_solution
   build_artifacts
-  cmd_dummy_build
+  cmd_dummy_build_with_tfm
+  cmd_dummy_build_with_tfm net6.0
 }
 
 cmd_design_build() {
@@ -174,6 +209,25 @@ cmd_dummy_build() {
   mkdir -p $OUTDIR/bin/dummy
   dotnet $SCRIPT_DIR/tools/bin/APITool.dll \
          dummy $OUTDIR/bin/public/ref $OUTDIR/bin/dummy
+}
+
+cmd_dummy_build_with_tfm() {
+  TFM=$TFM2
+  if [ "$1" = "$TFM6" ]; then
+    TFM=$TFM6
+  fi
+  if [ "$2" = "$TFM6" ]; then
+    TFM=$TFM6
+  fi
+
+  if [ ! -d $OUTDIR/bin/public/$TFM/ref  ]; then
+    echo "No assemblies to read. Build TizenFX first."
+    exit 1
+  fi
+
+  mkdir -p $OUTDIR/bin/dummy/$TFM
+  dotnet $SCRIPT_DIR/tools/bin/APITool.dll \
+         dummy $OUTDIR/bin/public/$TFM/ref $OUTDIR/bin/dummy/$TFM
 }
 
 cmd_pack() {
@@ -237,7 +291,7 @@ case "$cmd" in
   full |--full |-f) cmd_full_build $@ ;;
   design|--design)  cmd_design_build $@ ;;
   xamlbuild|--xamlbuild)  cmd_xamlbuild_build $@ ;;
-  dummy|--dummy|-d) cmd_dummy_build $@ ;;
+  dummy|--dummy|-d) cmd_dummy_build_with_tfm $@ ;;
   pack |--pack |-p) cmd_pack $@ ;;
   install |--install |-i) cmd_install $@ ;;
   clean|--clean|-c) clean ;;
