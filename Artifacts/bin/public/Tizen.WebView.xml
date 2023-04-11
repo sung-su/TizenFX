@@ -1,0 +1,1678 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.WebView</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.WebView.BackForwardListItem">
+            <summary>
+            This class provides the properties of Back Forward list item of a specific WebView.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.BackForwardListItem.#ctor(System.IntPtr)">
+            <summary>
+            Creates a Back Forward List Item object.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.BackForwardListItem.Url">
+            <summary>
+            Url of the back forward list item.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.BackForwardListItem.Title">
+            <summary>
+            Title of the back forward list item.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.BackForwardListItem.OriginalUrl">
+            <summary>
+            Original Url of the back forward list item.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.BackForwardList">
+            <summary>
+            This class provides the properties of Back Forward list of a specific WebView.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.BackForwardList.CurrentItem">
+            <summary>
+            Current item of the back forward list.
+            </summary>
+            <remarks>
+            BackForward List can be null if there is no current item.
+            </remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.BackForwardList.PreviousItem">
+            <summary>
+            Previous item of the back forward list and null if no previous item.
+            </summary>
+            <remarks>
+            BackForward List can be null if there is no previous item.
+            </remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.BackForwardList.Count">
+            <summary>
+            Gets the back forward list count.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.BackForwardList.BackItems(System.Int32)">
+            <summary>
+            Gets the list containing the items preceding the current item
+            limited by limit.
+            </summary>
+            <param name="limit"> limit The number of items to retrieve, if limit -1 all items preceding current item are returned.</param>
+            <returns>The list of the BackForwardListItem of back items.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.BackForwardList.ForwardItems(System.Int32)">
+            <summary>
+            Gets the list containing the items following the current item
+            limited by limit.
+            </summary>
+            <param name="limit"> limit The number of items to retrieve, if limit is -1 all items following current item are returned.</param>
+            <returns>The list of the BackForwardListItem of forward items.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.Chromium">
+            <summary>
+            This class provides the methods to initialize and shutdown the Chromium-efl.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.Chromium.Initialize">
+            <summary>
+            Initializes the Chromium's instance.
+            </summary>
+            <returns>A reference count of the Chromium's instance.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.Chromium.Shutdown">
+            <summary>
+            Decreases a reference count of the WebKit's instance, possibly destroying it.
+            </summary>
+            <returns>A reference count of the Chromium's instance.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.Chromium.SetArguments(System.String[])">
+            <summary>
+            Sets argument count and argument array for Chromium.
+            </summary>
+            <param name="args">Argument array. The first value of array must be program's name.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.CacheModel">
+            <summary>
+            Enumeration for cache model options.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.WebView.CacheModel.DocumentViewer">
+            <summary>
+            Use the smallest cache capacity.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.CacheModel.DocumentBrowser">
+            <summary>
+            Use the bigger cache capacity than DocumentBrowser.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.CacheModel.PrimaryWebBrowser">
+            <summary>
+            Use the biggest cache capacity.
+            </summary>
+        </member>
+        <member name="T:Tizen.WebView.Context">
+            <summary>
+            This class encapsulates all the pages related to the specific use of the Chromium-efl.
+            </summary>
+            <remarks>
+            Applications have the option of creating a context different from the default one and using it for a group of pages.
+            All pages in the same context share the same preferences, visited link set, local storage, and so on.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.Context.DownloadRequestDelegate">
+            <summary>
+            The delegate for handling download request.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <param name="url"> url of the download request. </param>
+        </member>
+        <member name="T:Tizen.WebView.Context.InterceptRequestDelegate">
+            <summary>
+            The delegate for intercepting and handling a resource request.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+            <param name="interceptor"> The object which can handle a intercepted request. </param>
+        </member>
+        <member name="P:Tizen.WebView.Context.CacheModel">
+            <summary>
+            The cache model.
+            </summary>
+            <remarks>
+            The default cache model is DocumentViewer.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.Context.GetCookieManager">
+            <summary>
+            Gets the CookieManager object for this context.
+            </summary>
+            <returns>The CookieManager object.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.Context.ClearResourceCache">
+            <summary>
+            Clears HTTP caches in the local storage and all resources cached in memory.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.Context.NotifyLowMemory">
+            <summary>
+            Informs the WebEngine low memory to release unused memory.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.Context.SetDownloadRequestDelegate(Tizen.WebView.Context.DownloadRequestDelegate)">
+            <summary>
+            Sets the delegate function for download request.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.Context.SetInterceptRequestDelegate(Tizen.WebView.Context.InterceptRequestDelegate)">
+            <summary>
+            Sets the delegate function for intercepting a resource request.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+            <param name="interceptRequestCb"> The delegate function for intercepting a resource request. </param>
+        </member>
+        <member name="M:Tizen.WebView.Context.StartInspectorServer(System.UInt32)">
+            <summary>
+            Starts the inspector server.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+            <param name="port"> The port number. </param>
+        </member>
+        <member name="M:Tizen.WebView.Context.StopInspectorServer">
+            <summary>
+            Stops the inspector server.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.ContextMenuItemTag">
+            <summary>
+            Enumeration for Context Menu Item Tag.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.NoAction">
+            <summary>
+            No action
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.OpenInNewWindow">
+            <summary>
+            Open link in new window.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.DownloadLinkToDisk">
+            <summary>
+            Download link to disk.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.CopyLinkToClipboard">
+            <summary>
+            Copy link to clipboard.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.OpenImageInNewWindow">
+            <summary>
+            Open image in new window.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.OpenImageInCurrentWindow">
+            <summary>
+            Open image in current window.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.DownloadImageToDisk">
+            <summary>
+            Download image to disk.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.CopyImageToClipboard">
+            <summary>
+            Copy image to clipboard.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.OpenFrameInNewWindow">
+            <summary>
+            Open frame in new window.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Copy">
+            <summary>
+            Copy.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.GoBack">
+            <summary>
+            Go back.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.GoForward">
+            <summary>
+            Go forward.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Stop">
+            <summary>
+            Stop.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Share">
+            <summary>
+            Share.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Reload">
+            <summary>
+            Reload.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Cut">
+            <summary>
+            Cut.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Paste">
+            <summary>
+            Paste.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SpellingGuess">
+            <summary>
+            Spelling guess.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.NoGuessFound">
+            <summary>
+            Guess found.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.IgnoreSpelling">
+            <summary>
+            Ignore spelling.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.LearnSpelling">
+            <summary>
+            Learn spelling.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Other">
+            <summary>
+            Other.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SearchInSpotlight">
+            <summary>
+            Search in spotlight.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SearchWeb">
+            <summary>
+            Search web.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.LookUpInDictionary">
+            <summary>
+            Look up in dictionary.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.OpenWithDefaultApplication">
+            <summary>
+            Open with default application.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfActualSize">
+            <summary>
+            PDF actual size.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfZoomIn">
+            <summary>
+            PDF zoom in.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfZoomOut">
+            <summary>
+            PDF zoom out.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfAutoSize">
+            <summary>
+            PDF auto size.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfSinglePage">
+            <summary>
+            PDF single page.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfFactingPage">
+            <summary>
+            PDF facting page.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfContinuous">
+            <summary>
+            PDF continuous.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfNextPage">
+            <summary>
+            PDF next page.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfPreviousPage">
+            <summary>
+            PDF previous page.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.OpenLink">
+            <summary>
+            Open link.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.IgnoreGrammar">
+            <summary>
+            Ignore grammar.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SpellingMenu">
+            <summary>
+            Spelling menu.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.ShowSpellingPanel">
+            <summary>
+            Show spelling panel.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.CheckSpelling">
+            <summary>
+            Check spelling.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.CheckSpellingWhileTyping">
+            <summary>
+            Check spelling white typing.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.CheckGrammarWithSpelling">
+            <summary>
+            Check grammar with spelling.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.FontMenu">
+            <summary>
+            Font menu.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.ShowFonts">
+            <summary>
+            Show fonts.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Bold">
+            <summary>
+            Bold.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Italic">
+            <summary>
+            Italic.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Underline">
+            <summary>
+            Underline.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Outline">
+            <summary>
+            Outline.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Style">
+            <summary>
+            Style.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.ShowColors">
+            <summary>
+            Show colors.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SpeechMenu">
+            <summary>
+            Speech menu.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.StartSpeaking">
+            <summary>
+            Start speaking.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.StopSpeaking">
+            <summary>
+            Stop speaking.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.WritingDirectionMenu">
+            <summary>
+            Writing direction menu.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.DefaultDirection">
+            <summary>
+            Default direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.LeftToRight">
+            <summary>
+            Left to right.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.RightToLeft">
+            <summary>
+            Right to left.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfSinglePageScrolling">
+            <summary>
+            PDF single page scrolling.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.PdfFacingPageScrolling">
+            <summary>
+            PDF facing page scrolling.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.InspectElement">
+            <summary>
+            Inspect element.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.TextDirectionMenu">
+            <summary>
+            Text direction menu.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.TextDirectionDefault">
+            <summary>
+            Text direction default.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.TextDirectionLeftToRight">
+            <summary>
+            Text direction left to right.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.TextDirectionRightToLeft">
+            <summary>
+            Text direction right to left.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.CorrectSpellingAutomatically">
+            <summary>
+            Correct spelling automatically.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SubstitutionsMenu">
+            <summary>
+            Substitutions menu.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.ShowSubstitutions">
+            <summary>
+            Show substitutions.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SmartCopyPaste">
+            <summary>
+            Smart copy paste.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SmartQuotes">
+            <summary>
+            Smart quotes.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SmartDashes">
+            <summary>
+            Smart dashes.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SmartLinks">
+            <summary>
+            Smart links.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.TextReplacement">
+            <summary>
+            Text replacement.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.TransformationMenu">
+            <summary>
+            Transformation menu.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.MakeUpperCase">
+            <summary>
+            Make upper case.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.MakeLowerCase">
+            <summary>
+            Make lower case.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Capitalize">
+            <summary>
+            Capitalize.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.ChangeBack">
+            <summary>
+            Change back.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.OpenMediaInNewWindow">
+            <summary>
+            Open media in new window.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.CopyMediaLinkToClipboard">
+            <summary>
+            Copy media link to clipboard.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.ToggleMediaControls">
+            <summary>
+            Toggle media controls.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.ToggleMediaLoop">
+            <summary>
+            Toggle media loop.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.EnterVideoFullscreen">
+            <summary>
+            Enter video fullscreen.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.MediaPlayPause">
+            <summary>
+            Media play pause.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.MediaMute">
+            <summary>
+            Media mute.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.DictationAlternative">
+            <summary>
+            Dictation alternative.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SelectAll">
+            <summary>
+            Select all.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.SelectWord">
+            <summary>
+            Select word.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.TextSelectonMode">
+            <summary>
+            Text selection mode.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Clipboard">
+            <summary>
+            Clipboard.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Drag">
+            <summary>
+            Drag.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.Translate">
+            <summary>
+            Translate.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.CopyLinkData">
+            <summary>
+            Copy link data.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.ContextMenuItemTag.BaseApplicationTag">
+            <summary>
+            If app want to add customized item, use enum value after BaseApplicationTag.
+            </summary>
+        </member>
+        <member name="T:Tizen.WebView.ContextMenuItem">
+            <summary>
+            This class provides the properties of Context Menu item.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.ContextMenuItem.ItemTag">
+            <summary>
+            Gets Tag of the context menu item.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.ContextMenuItemEventArgs">
+            <summary>
+            Arguments from the ContextMenuItem event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.ContextMenuItemEventArgs.Item">
+            <summary>
+            Gets the context menu item.
+            </summary>
+            <returns>The context menu item.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.ContextMenu">
+            <summary>
+            This class provides the properties of Context Menu.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.ContextMenu.ItemCount">
+            <summary>
+            Gets the context menu items count.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.ContextMenu.GetItemAtIndex(System.Int32)">
+            <summary>
+            Gets Nth item of the context menu.
+            </summary>
+            <param name="n"> To get item at index n.</param>
+            <returns>The context menu item.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.ContextMenu.RemoveItem(Tizen.WebView.ContextMenuItem)">
+            <summary>
+            Removes item from the context menu.
+            </summary>
+            <param name="item"> The context menu item to be removed.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.ContextMenu.AppendItem(Tizen.WebView.ContextMenuItemTag,System.String,System.String,System.Boolean)">
+            <summary>
+            Appends item to the context menu.
+            </summary>
+            <param name="tag"> The tag of context menu item.</param>
+            <param name="title"> The title of context menu item.</param>
+            <param name="iconPath"> The path of icon to be set on context menu item.</param>
+            <param name="enabled"> if true the context menu item is enabled else false.</param>
+            <returns>Appended context menu item.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.CookieAcceptPolicy">
+            <summary>
+            Enumeration for the cookies accept policies.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.WebView.CookieAcceptPolicy.Always">
+            <summary>
+            Accepts every cookie sent from any page.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.CookieAcceptPolicy.Never">
+            <summary>
+            Rejects all the cookies.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.CookieAcceptPolicy.NoThirdParty">
+            <summary>
+            Accepts only cookies set by the main document that is loaded.
+            </summary>
+        </member>
+        <member name="T:Tizen.WebView.CookiePersistentStorage">
+            <summary>
+            Enumeration for creating a type name for the storage of persistent cookies.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.WebView.CookiePersistentStorage.Text">
+            <summary>
+            Cookies are stored in a text file in the Mozilla "cookies.txt" format.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.CookiePersistentStorage.SqlLite">
+            <summary>
+            Cookies are stored in a SQLite file in the current Mozilla format.
+            </summary>
+        </member>
+        <member name="T:Tizen.WebView.CookieManager">
+            <summary>
+            This class provides methods for the cookie manager.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.CookieManager.SetCookieAcceptPolicy(Tizen.WebView.CookieAcceptPolicy)">
+            <summary>
+            Sets the cookie acceptance policy.
+            </summary>
+            <remarks>
+            By default, only cookies set by the main document that is loaded, are accepted.
+            </remarks>
+            <param name="policy">The cookie acceptance policy.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.CookieManager.ClearCookies">
+            <summary>
+            Deletes all the cookies.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.CookieManager.SetPersistentStorage(System.String,Tizen.WebView.CookiePersistentStorage)">
+            <summary>
+            Sets the storage where the non-session cookies are stored persistently, to read/write the cookies.
+            </summary>
+            <privilege>http://tizen.org/privilege/mediastorage</privilege>
+            <privilege>http://tizen.org/privilege/externalstorage</privilege>
+            <param name="path">The path where to read/write cookies.</param>
+            <param name="storage">The type of storage.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.JavaScriptMessageHandler">
+            <summary>
+            The callback function that is invoked when the message is received from the script.
+            </summary>
+            <param name="message">The JavaScriptMessage returned by the script.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.JavaScriptMessage">
+            <summary>
+            A script message contains information that is sent from the JavaScript runtime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.JavaScriptMessage.Name">
+            <summary>
+            The object name in JavaScript.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.JavaScriptMessage.GetBodyAsInteger">
+            <summary>
+            Gets the value of the body as an integer type.
+            </summary>
+            <returns>The value of the body as an integer type.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.JavaScriptMessage.GetBodyAsDouble">
+            <summary>
+            Gets the value of the body as a double type.
+            </summary>
+            <returns>The value of the body as a double type.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.JavaScriptMessage.GetBodyAsBoolean">
+            <summary>
+            Gets the value of the body as a boolean type.
+            </summary>
+            <returns>The value of the body as boolean type.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.JavaScriptMessage.GetBodyAsString">
+            <summary>
+            Gets the value of the body as a string type.
+            </summary>
+            <returns>The value of the body as a string type.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.NavigationType">
+            <summary>
+            Enumeration values used to specify Policy Navigation Type.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.WebView.NavigationType.LinkClicked">
+            <summary>
+            Link Clicked.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.NavigationType.FormSubmitted">
+            <summary>
+            Form Submitted.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.NavigationType.BackForward">
+            <summary>
+            Back Forward.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.NavigationType.Reload">
+            <summary>
+            Reload.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.NavigationType.FormResubmitted">
+            <summary>
+            Form Submitted.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.NavigationType.Other">
+            <summary>
+            Other.
+            </summary>
+        </member>
+        <member name="T:Tizen.WebView.PolicyDecisionEventArgs">
+            <summary>
+            Arguments from the policy decision events.
+            This class also provides the properties for Policy Decision of WebView.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.PolicyDecisionEventArgs.Url">
+            <summary>
+            Gets the Url.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.PolicyDecisionEventArgs.Scheme">
+            <summary>
+            Gets the scheme.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.PolicyDecisionEventArgs.Ignore">
+            <summary>
+            Ignores the action which triggers this decision.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.PolicyDecisionEventArgs.Use">
+            <summary>
+            Accepts the action which triggers this decision.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.PolicyDecisionEventArgs.IsMainFrame">
+            <summary>
+            Checks if frame requested in policy decision is main frame.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.NewWindowPolicyEventArgs">
+            <summary>
+            This class is derived from PolicyDecisionEventArgs.
+            This class provides the properties for New Window Policy of WebView.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.NavigationPolicyEventArgs">
+            <summary>
+            This class is derived from PolicyDecisionEventArgs.
+            This class provides the properties for Navigation Policy of WebView.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.NavigationPolicyEventArgs.NavigationType">
+            <summary>
+            Gets the Navigation Type of policy.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.NavigationPolicyEventArgs.Cookie">
+            <summary>
+            Gets the cookie.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.ResponsePolicyEventArgs">
+            <summary>
+            This class is derived from PolicyDecisionEventArgs.
+            This class provides the properties for Response Policy of WebView.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.ResponsePolicyEventArgs.StatusCode">
+            <summary>
+            Gets http response status code.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.ResponsePolicyEventArgs.Cookie">
+            <summary>
+            Gets the cookie.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.ResponsePolicyEventArgs.IsDownload">
+            <summary>
+            Checks policy decision type is Download.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.RequestInterceptor">
+            <summary>
+            This class provides methods and properties to handle a interpected request.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.RequestInterceptor.Url">
+            <summary>
+            The URL of the request.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.RequestInterceptor.SetResponse(System.String,System.String,System.Int32,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.IO.Stream)">
+            <summary>
+            Sets headers and data for the response.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+            <param name="mimeType"> Response's mime type. </param>
+            <param name="encoding"> Response's character encoding. </param>
+            <param name="statusCode"> HTTP response status code. </param>
+            <param name="reasonPhrase"> HTTP response reason phrase. </param>
+            <param name="responseHeaders"> Headers Map from HTTP header field names to field values. </param>
+            <param name="data"> The streiam that provides the response's data. </param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="data"/> is null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the native operation failed to set response.</exception>
+        </member>
+        <member name="M:Tizen.WebView.RequestInterceptor.Ignore">
+            <summary>
+            Ignores the request, so WebView will load it.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.Settings">
+            <summary>
+            This class provides the properties for setting the preference of a specific WebView.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.Settings.JavaScriptEnabled">
+            <summary>
+            Whether the JavaScript can be executed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.Settings.LoadImageAutomatically">
+            <summary>
+            Whether the images can be loaded automatically.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.Settings.DefaultTextEncodingName">
+            <summary>
+            The default text encoding name.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.Settings.DefaultFontSize">
+            <summary>
+            The default font size of a pixel.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.Settings.ScriptsCanOpenWindows">
+            <summary>
+            Whether the scripts can open windows.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.Settings.ForceZoom">
+            <summary>
+            Enable or Disable force zoom.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.Settings.TextAutosizing">
+            <summary>
+            Enable or Disable text autosizing.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.Settings.TextZoom">
+            <summary>
+            Enable or Disable text zoom.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.Settings.UseKeypadWithoutUserAction">
+            <summary>
+            Enable or Disable the usage of keypad without user action.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.Settings.SetExtraFeature(System.String,System.Boolean)">
+            <summary>
+            Enable or Disable Extra feature such as "edge,enable", "zoom,enable", "longpress,enable"
+            "doubletap,enable" and "selection,magnifier".
+            </summary>
+            <param name="name">The name of the feature user wants to set or reset.</param>
+            <param name="enable">The boolean value to set or reset.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.Settings.GetExtraFeatureStatus(System.String)">
+            <summary>
+            Get status of Extra feature such as "edge,enable", "zoom,enable", "longpress,enable"
+            "doubletap,enable" and "selection,magnifier".
+            </summary>
+            <param name="name">The name of the feature user wants to know status.</param>
+            <returns>Status true or false is returned.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.SmartCallbackArgs">
+            <summary>
+            The argument from the SmartCallback.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.SmartCallbackArgs.GetAsInteger">
+            <summary>
+            Gets the argument as an integer type.
+            </summary>
+            <returns>Argument as an integer type.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.SmartCallbackArgs.GetAsDouble">
+            <summary>
+            Gets the argument as a double type.
+            </summary>
+            <returns>Argument as a double type.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.SmartCallbackArgs.GetAsBoolean">
+            <summary>
+            Gets the argument as a boolean type.
+            </summary>
+            <returns>Argument as a boolean type.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.SmartCallbackArgs.GetAsString">
+            <summary>
+            Gets the argument as a string type.
+            </summary>
+            <returns>Argument as a string type.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.LoadErrorCode">
+            <summary>
+            Enumeration for providing an option to the error codes.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.Unknown">
+            <summary>
+            Unknown.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.Canceled">
+            <summary>
+            User canceled.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.CantSupportMimetype">
+            <summary>
+            Can't show the page for this MIME type.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.FailedFileIo">
+            <summary>
+            File IO error.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.CantConnect">
+            <summary>
+            Cannot connect to the network.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.CantLookupHost">
+            <summary>
+            Fail to look up host from the DNS.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.FailedTlsHandshake">
+            <summary>
+            Fail to SSL/TLS handshake.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.InvalidCertificate">
+            <summary>
+            Received certificate is invalid.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.RequestTimeout">
+            <summary>
+            Connection timeout.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.TooManyRedirects">
+            <summary>
+            Too many redirects.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.TooManyRequests">
+            <summary>
+            Too many requests during this load.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.BadUrl">
+            <summary>
+            Malformed URL.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.UnsupportedScheme">
+            <summary>
+            Unsupported scheme.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.Authentication">
+            <summary>
+            User authentication failed on the server.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.LoadErrorCode.InternalServer">
+            <summary>
+            Web server has an internal server error.
+            </summary>
+        </member>
+        <member name="T:Tizen.WebView.SmartCallbackLoadErrorArgs">
+            <summary>
+            Arguments from the LoadError SmartCallback.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.SmartCallbackLoadErrorArgs.Url">
+            <summary>
+            Failing URL for the error.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.SmartCallbackLoadErrorArgs.Code">
+            <summary>
+            The error code.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.SmartCallbackLoadErrorArgs.Description">
+            <summary>
+            The description for the error.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.SmartCallbackLoadErrorArgs.Cancellation">
+            <summary>
+            Whether the error should be treated as a cancellation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.FindOption">
+            <summary>
+            Enumeration values used to specify search options.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.WebView.FindOption.None">
+            <summary>
+            No search flags, this means a case sensitive, no wrap, forward only search.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.FindOption.CaseInsensitive">
+            <summary>
+            Case insensitive search.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.FindOption.AtWordStart">
+            <summary>
+            Search text only at the beginning of the words.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.FindOption.TreatMedialCapitalAsWordStart">
+            <summary>
+            Treat capital letters in the middle of words as word start.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.FindOption.Backwards">
+            <summary>
+            Search backwards.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.FindOption.WrapAround">
+            <summary>
+            If not present the search stops at the end of the document.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.FindOption.ShowOverlay">
+            <summary>
+            Show overlay.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.FindOption.ShowIndicator">
+            <summary>
+            Show Indicator.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.FindOption.ShowHighlight">
+            <summary>
+            Show Highlight.
+            </summary>
+        </member>
+        <member name="T:Tizen.WebView.HttpMethod">
+            <summary>
+            Enumeration for Http Method.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.WebView.HttpMethod.Get">
+            <summary>
+            Get.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.HttpMethod.Head">
+            <summary>
+            Head.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.HttpMethod.Post">
+            <summary>
+            Post.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.HttpMethod.Put">
+            <summary>
+            Put.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.HttpMethod.Delete">
+            <summary>
+            Delete.
+            </summary>
+        </member>
+        <member name="T:Tizen.WebView.Orientation">
+            <summary>
+            Enumeration for Orientation of the device.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.WebView.Orientation.Natural">
+            <summary>
+            0 degrees when the device is oriented to natural position.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.Orientation.LeftAtTop">
+            <summary>
+            -90 degrees when it's left side is at the top.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.Orientation.RightAtTop">
+            <summary>
+            90 degrees when it's right side is at the top.
+            </summary>
+        </member>
+        <member name="F:Tizen.WebView.Orientation.UpsideDown">
+            <summary>
+            180 degrees when it is upside down.
+            </summary>
+        </member>
+        <member name="T:Tizen.WebView.WebView">
+            <summary>
+            A view used to render the web contents.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.WebView.WebView.LoadStarted">
+            <summary>
+            Event that occurs when the load is started.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.WebView.WebView.LoadFinished">
+            <summary>
+            Event that occurs when the load is finished.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.WebView.WebView.LoadError">
+            <summary>
+            Event that occurs when the load throws an error.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.WebView.WebView.TitleChanged">
+            <summary>
+            Event that occurs when the title of the main frame is changed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.WebView.WebView.UrlChanged">
+            <summary>
+            Event that occurs when the URL of the main frame is changed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.WebView.WebView.NavigationPolicyDecideRequested">
+            <summary>
+            Event that occurs when the policy navigation is decided.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.WebView.WebView.NewWindowPolicyDecideRequested">
+            <summary>
+            Event that occurs when the policy new window is decided.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.WebView.WebView.ResponsePolicyDecideRequested">
+            <summary>
+            Event that occurs when the policy response is decided.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.WebView.WebView.ContextMenuItemSelected">
+            <summary>
+            Event that occurs when the context menu item selected.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.WebView.WebView.ContextMenuCustomize">
+            <summary>
+            The delegate is invoked when context menu customization is needed.
+            </summary>
+            <param name="menu">The instance of ContextMenu.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.WebView.Url">
+            <summary>
+            Current URL of the main frame.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.WebView.Title">
+            <summary>
+            Current title of the main frame.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.WebView.UserAgent">
+            <summary>
+            Current user agent string of this view.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.WebView.HasFocus">
+            <summary>
+            Whether a view has the focus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.#ctor(ElmSharp.EvasObject)">
+            <summary>
+            Creates a WebView object.
+            </summary>
+            <param name="parent">Parent object of the WebView.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.GetContext">
+            <summary>
+            Gets the context object of this view.
+            </summary>
+            <returns>The context object of this view.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.GetSettings">
+            <summary>
+            Gets the settings object of this view.
+            </summary>
+            <returns>The settings object of this view.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.GetBackForwardList">
+            <summary>
+            Gets the back/forward list object of this view.
+            </summary>
+            <returns>The BackForward List object of this view.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.ClearBackForwardList">
+            <summary>
+            Clear the back/forward list object of this view.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.LoadUrl(System.String)">
+            <summary>
+            Asks the object to load the given URL.
+            </summary>
+            <remarks>
+            You can only be sure that the URL changes after UrlChanged event.
+            </remarks>
+            <param name="url">The uniform resource identifier to load.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.LoadHtml(System.String,System.String)">
+            <summary>
+            Loads the specified HTML string as the content of the view.
+            </summary>
+            <param name="html">HTML data to load.</param>
+            <param name="baseUrl">Base URL used for relative paths to external objects.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.StopLoading">
+            <summary>
+            Asks the main frame to stop loading.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.Reload">
+            <summary>
+            Asks the main frame to reload the current document.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.GoBack">
+            <summary>
+            Asks the main frame to navigate back in history.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.GoForward">
+            <summary>
+            Asks the main frame to navigate forward in history.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.CanGoBack">
+            <summary>
+            Checks whether it is possible to navigate backward one item in history.
+            </summary>
+            <returns>Whether it is possible to navigate backward one item in history.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.CanGoForward">
+            <summary>
+            Checks whether it is possible to navigate forward one item in history.
+            </summary>
+            <returns>Whether it is possible to navigate forward one item in history.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.AddJavaScriptMessageHandler(System.String,Tizen.WebView.JavaScriptMessageHandler)">
+            <summary>
+            Injects the supplied javascript message handler into the view.
+            </summary>
+            <param name="name"> The message callback.</param>
+            <param name="handler">The name used to expose the object in JavaScript.</param>
+            <returns>'true' on success, otherwise 'false'.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.EvalWithResult(System.String,System.String)">
+            <summary>
+            Requests the execution of a given name and the result to the JavaScript runtime.
+            </summary>
+            <param name="name">The name used to expose the object in JavaScript.</param>
+            <param name="result">The result to the JavaScript runtime.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.Eval(System.String)">
+            <summary>
+            Requests the execution of the given script.
+            </summary>
+            <param name="script">The JavaScript code string to execute.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.EvalAsync(System.String)">
+            <summary>
+            Requests the evaluation of the given script.
+            </summary>
+            <param name="script">The JavaScript code string to evaluate.</param>
+            <returns>A task that contains the result of the evaluation as a string.</returns>
+            <since_tizen> 8 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when a script is null or empty string.</exception>
+        </member>
+        <member name="M:Tizen.WebView.WebView.SetFocus(System.Boolean)">
+            <summary>
+            Requests to set or unset a view as the currently focused one.
+            </summary>
+            <param name="focused">'true' to set the focus on the view, 'false' to remove the focus from the view.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.WebView.ContentsSize">
+            <summary>
+            Gets size of the content.
+            </summary>
+            <returns> size of the coordinate.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.ExitFullscreen">
+            <summary>
+            Exit full screen.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.WebView.LoadProgress">
+            <summary>
+            Gets the current load progress of the page.
+            </summary>
+            <returns>'value 0.0 to 1.0' on success, otherwise '-1.0'.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.SendOrientation(Tizen.WebView.Orientation)">
+            <summary>
+            Sends the orientation of the device.
+            </summary>
+            <param name="orientation">The new orientation of the device in degree.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.Suspend">
+            <summary>
+            Suspends the operation associated with the view.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.Resume">
+            <summary>
+            Resumes the operation associated with the view.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.WebView.Scale">
+            <summary>
+            Gets the current scale factor of the page.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.SetScale(System.Double,ElmSharp.Point)">
+            <summary>
+            Sets the current scale factor of the page.
+            </summary>
+            <param name="scaleFactor">A new level to set.</param>
+            <param name="scrollTo">The class Point object with X, Y coordinates.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.SetViewVisibility(System.Boolean)">
+            <summary>
+            Sets the current page's visibility.
+            </summary>
+            <param name="enable">'true' to set on the visibility of the page, 'false' otherwise.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.WebView.WebView.ScrollPosition">
+            <summary>
+            Get and Sets the scroll position of the page.
+            </summary>
+            <returns>The class Point object with X, Y coordinates.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.ScrollBy(ElmSharp.Point)">
+            <summary>
+            Scrolls the webpage by the given amount.
+            </summary>
+            <param name="delta">The class Point object with X, Y coordinates.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.FindText(System.String,Tizen.WebView.FindOption,System.Int32)">
+            <summary>
+            Searches and highlights the given text string in the document.
+            </summary>
+            <param name="text">The text to find.</param>
+            <param name="option">The options to find.</param>
+            <param name="maxMatchCount">The maximum match count to find, unlimited if 0.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.SetUrlRequest(System.String,Tizen.WebView.HttpMethod,System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            Requests loading of the given request data.
+            </summary>
+            <param name="url">The uniform resource identifier to load.</param>
+            <param name="httpMethod">The http method.</param>
+            <param name="httpHeaders">The http headers.</param>
+            <param name="httpBody">The http body data.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.CreateHandle(ElmSharp.EvasObject)">
+            <summary>
+            Creates a widget handle.
+            </summary>
+            <param name="parent">Parent EvasObject.</param>
+            <returns>IntPtr of the widget handle.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.WebView.WebView.SetContextMenuCustomizeDelegate(Tizen.WebView.WebView.ContextMenuCustomize)">
+            <summary>
+            Sets the delegate for context menu customization.
+            </summary>
+            <param name="contextMenuCustomizeDelegate">The delegate for context menu customization.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+    </members>
+</doc>

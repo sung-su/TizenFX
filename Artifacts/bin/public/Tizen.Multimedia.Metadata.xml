@@ -1,0 +1,760 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Multimedia.Metadata</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Multimedia.MetadataEditor">
+            <summary>
+            Provides a means to edit the metadata of MP3 and MP4 files.
+            Since 6.0, WAV, FLAC, OGG files are supported as well.
+            </summary>
+            <privilege>
+            If you want to access only an internal storage,
+            you should add privilege http://tizen.org/privilege/mediastorage.<br/>
+            Or if you want to access only an external storage,
+            you should add privilege http://tizen.org/privilege/externalstorage.
+            </privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataEditor.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.MetadataEditor"/> class with the specified path.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="path">The path of the media file to edit the metadata.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is null.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="path"/> is a zero-length string, contains only white space.</exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The file is not supported.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">The file does not exist.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller does not have required privilege to access the file.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.Artist">
+            <summary>
+            Gets or sets the artist of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.Title">
+            <summary>
+            Gets or sets the title of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.Album">
+            <summary>
+            Gets or sets the album name of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.Genre">
+            <summary>
+            Gets or sets the genre of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.Author">
+            <summary>
+            Gets or sets the author of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.Copyright">
+            <summary>
+            Gets or sets the copyright of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.Date">
+            <summary>
+            Gets or sets the date of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            If the media contains the ID3 tag, this refers to the recorded date.
+            If the media is a mp4 format, this refers to the year, and the value to set will be converted into integer.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.Description">
+            <summary>
+            Gets or sets the description of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.Comment">
+            <summary>
+            Gets or sets the comment of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.TrackNumber">
+            <summary>
+            Gets or sets the track number of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.PictureCount">
+            <summary>
+            Gets the count of album arts of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.Conductor">
+            <summary>
+            Gets or sets the conductor of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MetadataEditor.UnsyncLyrics">
+            <summary>
+            Gets or sets the unsynchronized lyrics of media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataEditor.Commit">
+            <summary>
+            Writes the modified metadata to the media file.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            Internal error.<br/>
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataEditor.GetPicture(System.Int32)">
+            <summary>
+            Gets the artwork image in the media file.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="index">The index of the picture to import.</param>
+            <returns>The artwork included in the media file.</returns>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="index"/> is less than zero.<br/>
+                -or-<br/>
+                <paramref name="index"/> is greater than or equal to <see cref="P:Tizen.Multimedia.MetadataEditor.PictureCount"/>.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataEditor.AddPicture(System.String)">
+            <summary>
+            Appends the picture to the media file.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="path">The path of the picture for adding to the metadata.</param>
+            <exception cref="T:System.InvalidOperationException">
+            The file is read-only.<br/>
+            -or-<br/>
+            The malformed file which cannot be updatable.<br/>
+            -or-<br/>
+            Internal error.
+            </exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">The file does not exist.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller does not have required privilege to access the file.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The specified file is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataEditor.RemovePicture(System.Int32)">
+            <summary>
+            Removes the picture from the media file.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="index">The index of the picture to remove.</param>
+            <exception cref="T:System.InvalidOperationException">
+                An internal error occurs.<br/>
+                -or-<br/>
+                The media file is read-only.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="index"/> is less than zero.<br/>
+                -or-<br/>
+                <paramref name="index"/> is greater than or equal to <see cref="P:Tizen.Multimedia.MetadataEditor.PictureCount"/>.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataEditor"/> has already been disposed of.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataEditor.Finalize">
+            <summary>
+            Finalizes an instance of the MetadataEditor class.
+            </summary>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataEditor.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources used by the <see cref="T:Tizen.Multimedia.MetadataEditor"/> object.
+            </summary>
+            <param name="disposing">
+            true to release both managed and unmanaged resources; false to release only unmanaged resources.
+            </param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataEditor.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Tizen.Multimedia.MetadataEditor"/> object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.MetadataEditorError">
+            <summary>
+            Enumeration for the metadata extractor's error codes.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.Artwork">
+            <summary>
+            Represents the artwork information of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Artwork.#ctor(System.Byte[],System.String)">
+            <summary>
+            Initializes a new instance of the Artwork class with the specified data and the mime type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="data">The data of the artwork to set the metadata.</param>
+            <param name="mimeType">The mime type of the data of the artwork.</param>
+        </member>
+        <member name="P:Tizen.Multimedia.Artwork.Data">
+            <summary>
+            Gets the encoded artwork image.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Artwork.MimeType">
+            <summary>
+            Gets the mime type of the artwork.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.VideoMetadata">
+            <summary>
+            Represents the video metadata information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.VideoMetadata.BitRate">
+            <summary>
+            Gets the bitrate.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The bitrate value, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.VideoMetadata.Fps">
+            <summary>
+            Gets the video fps.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The fps value, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.VideoMetadata.Width">
+            <summary>
+            Gets the width of the video.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The width value, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.VideoMetadata.Height">
+            <summary>
+            Gets the height of the video.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The height value, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.VideoMetadata.Codec">
+            <summary>
+            Gets the codec type of the video.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>A string representing the codec type, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.VideoMetadata.StreamCount">
+            <summary>
+            Gets the video stream count.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The number of video streams.</value>
+        </member>
+        <member name="M:Tizen.Multimedia.VideoMetadata.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.AudioMetadata">
+            <summary>
+            Represents the audio metadata information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioMetadata.BitRate">
+            <summary>
+            Gets the audio bitrate.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The bit rate value, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioMetadata.Channels">
+            <summary>
+            Gets the audio channels.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The number of the audio channels, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioMetadata.SampleRate">
+            <summary>
+            Gets the audio sample rate.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The sample rate, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioMetadata.BitPerSample">
+            <summary>
+            Gets the bit per sample of the audio.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The bit per sample, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioMetadata.StreamCount">
+            <summary>
+            Gets the audio stream count.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The number of audio streams.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioMetadata.Codec">
+            <summary>
+            Gets the audio codec type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioMetadata.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Metadata">
+            <summary>
+            Represents the metadata information of a media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Duration">
+            <summary>
+            Gets the duration of the media.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The duration value, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Video">
+            <summary>
+            Gets the video metadata.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The video metadata, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Audio">
+            <summary>
+            Gets the audio metadata.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The audio metadata, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Artist">
+            <summary>
+            Gets the artist of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the artist, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Title">
+            <summary>
+            Gets the title of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the title, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Album">
+            <summary>
+            Gets the album name of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the album name, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.AlbumArtist">
+            <summary>
+            Gets the album artist of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the album artist, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Genre">
+            <summary>
+            Gets the genre of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the genre, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Author">
+            <summary>
+            Gets the author of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the author, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Composer">
+            <summary>
+            Gets the composer of the media.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>A string representing the composer, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Copyright">
+            <summary>
+            Gets the copyright of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the copyright, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.DateReleased">
+            <summary>
+            Gets the release date of the media.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>A string representing the release date, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Description">
+            <summary>
+            Gets the description of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the description, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Comment">
+            <summary>
+            Gets the comment of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the comment, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.TrackNumber">
+            <summary>
+            Gets the track number of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the track number, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Classification">
+            <summary>
+            Gets the classification of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the classification, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Rating">
+            <summary>
+            Gets the rating of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the rating, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Longitude">
+            <summary>
+            Gets the longitude of the media.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The longitude value, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Latitude">
+            <summary>
+            Gets the latitude of the media.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The latitude value, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Altitude">
+            <summary>
+            Gets the altitude of the media.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The altitude value, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Conductor">
+            <summary>
+            Gets the conductor of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the conductor, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.UnsyncLyrics">
+            <summary>
+            Gets the unsynchronized lyrics of the media.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>A string representing the unsynchronized lyrics, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.SyncLyricsCount">
+            <summary>
+            Gets the number of synchronized lyrics of the media.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The number of the synchronized lyrics.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.DateRecorded">
+            <summary>
+            Gets the recording date of the media.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>A string representing the recording date, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Rotation">
+            <summary>
+            Gets the rotate(orientation) information of the media.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>A string representing the rotation information, or null if the information does not exist.</value>
+        </member>
+        <member name="P:Tizen.Multimedia.Metadata.Content360">
+            <summary>
+            Gets the information for 360 content of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>A string representing the information for 360 content, or null if the information does not exist.</value>
+        </member>
+        <member name="M:Tizen.Multimedia.Metadata.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.MetadataExtractor">
+            <summary>
+            Provides a means to get the metadata from a media file.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataExtractor.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the MetadataExtractor class with the specified path.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="path">The path for the file to extract the metadata.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exist.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataExtractor.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the MetadataExtractor class with the specified buffer.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="buffer">The buffer to extract the metadata.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">The length of <paramref name="buffer"/> is zero.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataExtractor.GetMetadata">
+            <summary>
+            Retrieves the <see cref="T:Tizen.Multimedia.Metadata"/>.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The <see cref="T:Tizen.Multimedia.Metadata"/> for the given source.</returns>
+            <exception cref="T:System.InvalidOperationException">An internal process error occurs.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataExtractor"/> has been already disposed of.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataExtractor.GetArtwork">
+            <summary>
+            Gets the artwork image in the source.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The <see cref="T:Tizen.Multimedia.Artwork"/> if it exists, otherwise null.</returns>
+            <exception cref="T:System.InvalidOperationException">An internal process error occurs.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataExtractor"/> has been already disposed of.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataExtractor.GetSyncLyrics(System.Int32)">
+            <summary>
+            Gets the sync lyrics of the source.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="index">The index of lyrics to retrieve.</param>
+            <returns>The <see cref="T:Tizen.Multimedia.SyncLyrics"/> object if <paramref name="index"/> is valid, otherwise null.</returns>
+            <exception cref="T:System.InvalidOperationException">An internal process error occurs.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataExtractor"/> has been already disposed of.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataExtractor.GetVideoThumbnail">
+            <summary>
+            Gets the frame of a video media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The raw thumbnail data in RGB888 if it exists, otherwise null.</returns>
+            <exception cref="T:System.InvalidOperationException">An internal process error occurs.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataExtractor"/> has been already disposed of.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataExtractor.GetFrameAt(System.UInt32,System.Boolean)">
+            <summary>
+            Gets the frame of a video media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="timeStamp">The timestamp in milliseconds.</param>
+            <param name="accurate">true to get an accurate frame for the given timestamp,
+                otherwise false to get the nearest i-frame of the video rapidly.</param>
+            <returns>The raw frame data in RGB888 if a frame at specified time exists, otherwise null.</returns>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.MetadataExtractor"/> has been already disposed of.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataExtractor.Finalize">
+            <summary>
+            Finalizes an instance of the MetadataExtractor class.
+            </summary>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataExtractor.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources used by the <see cref="T:Tizen.Multimedia.MetadataExtractor"/> object.
+            </summary>
+            <param name="disposing">
+            true to release both managed and unmanaged resources; false to release only unmanaged resources.
+            </param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MetadataExtractor.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Tizen.Multimedia.MetadataExtractor"/> object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.MetadataExtractorError">
+            <summary>
+            Enumeration for the metadata extractor's error codes.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.SyncLyrics">
+            <summary>
+            Represents the synchronized lyrics information of the media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.SyncLyrics.#ctor(System.String,System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.SyncLyrics"/> class with the specified lyrics and the timestamp.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="lyrics">The text of synchronized lyrics.</param>
+            <param name="timestamp">The timestamp of synchronized lyrics.</param>
+        </member>
+        <member name="P:Tizen.Multimedia.SyncLyrics.Lyrics">
+            <summary>
+            Gets the text representation of the lyrics.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.SyncLyrics.Timestamp">
+            <summary>
+            Gets the time information of the lyrics.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.ObjectDescriptionBuilder">
+            <summary>
+            Represents a point in 2D space.
+            </summary>
+        </member>
+    </members>
+</doc>

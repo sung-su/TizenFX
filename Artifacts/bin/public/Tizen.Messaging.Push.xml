@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Messaging.Push</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Messaging.Push.PushClient">
+            <summary>
+            The PushClient API provides functions to connect to push service for receiving push messages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            The PushClient API provides the way to connect with the push service.
+            It provides APIs to connect/disconnect from the push service.
+            APIs are provided so that an application can register itself
+            with the push server along with APIs to request push message.
+            </remarks>
+        </member>
+        <member name="E:Tizen.Messaging.Push.PushClient.NotificationReceived">
+            <summary>
+            Event Handler for receiving the notifications.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Messaging.Push.PushClient.StateChanged">
+            <summary>
+            Event Handler for receiving changes in States of the connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Push.PushClient.PushServiceConnect(System.String)">
+            <summary>
+            API to connect with the push service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/push</privilege>
+            <exception cref="T:System.InvalidOperationException"> In case of privilege not defined. </exception>
+            <param name="pushAppId"> The Push Application ID Registered with the server.</param>
+        </member>
+        <member name="M:Tizen.Messaging.Push.PushClient.PushServiceDisconnect">
+            <summary>
+            API to disconnect from the push service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Push.PushClient.PushServerRegister">
+            <summary>
+            API to Register the application with the push server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>
+            The method returns a task, which on completion will give a ServerResponse Object.
+            </returns>
+        </member>
+        <member name="M:Tizen.Messaging.Push.PushClient.PushServerUnregister">
+            <summary>
+            API to Deregister the application from the push server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>
+            The method returns a task, which on completion will give a ServerResponse Object.
+            </returns>
+        </member>
+        <member name="M:Tizen.Messaging.Push.PushClient.GetUnreadNotifications">
+            <summary>
+            Gets the unread notifications for the application.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Push.PushClient.GetRegistrationId">
+            <summary>
+            registration ID received from server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>
+            It is the string, which is the ID received from the server.
+            </returns>
+        </member>
+        <member name="T:Tizen.Messaging.Push.PushConnectionStateEventArgs">
+            <summary>
+            An extended EventArgs class, which contains the State Information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Push.PushConnectionStateEventArgs.PushState">
+            <summary>
+            Enumeration for the different states.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Messaging.Push.PushConnectionStateEventArgs.PushState.Registered">
+            <summary>
+            Registered with the Server.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Push.PushConnectionStateEventArgs.PushState.Unregistered">
+            <summary>
+            Unregistered.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Push.PushConnectionStateEventArgs.PushState.ProvisioningIPChanged">
+            <summary>
+            To change the provisioning server IP.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Push.PushConnectionStateEventArgs.PushState.PingChanged">
+            <summary>
+            Ping interval is changing.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Push.PushConnectionStateEventArgs.PushState.StateError">
+            <summary>
+            Error Occured in Changing State.
+            </summary>
+        </member>
+        <member name="P:Tizen.Messaging.Push.PushConnectionStateEventArgs.State">
+            <summary>
+            Gives the current state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is the current state.
+            </value>
+        </member>
+        <member name="P:Tizen.Messaging.Push.PushConnectionStateEventArgs.Error">
+            <summary>
+            Gives information about the error if set.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is the string, which contains the error string if set.
+            </value>
+        </member>
+        <member name="T:Tizen.Messaging.Push.PushMessageEventArgs">
+            <summary>
+            An extended EventArgs class, which contains the message received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Push.PushMessageEventArgs.AppData">
+            <summary>
+            Gives the Application Data recieved.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is the string, which stores the application data.
+            </value>
+        </member>
+        <member name="P:Tizen.Messaging.Push.PushMessageEventArgs.Message">
+            <summary>
+            Gives the Message Received Field.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is the string, which stores the message field.
+            </value>
+        </member>
+        <member name="P:Tizen.Messaging.Push.PushMessageEventArgs.ReceivedAt">
+            <summary>
+            Gives the time at which the Notification was received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is the DateTime field representing the time at which the Notification was received.
+            </value>
+        </member>
+        <member name="P:Tizen.Messaging.Push.PushMessageEventArgs.Sender">
+            <summary>
+            Gives the Sender of the notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is a string value representing the Sender of the Notification.
+            </value>
+        </member>
+        <member name="P:Tizen.Messaging.Push.PushMessageEventArgs.SessionInfo">
+            <summary>
+            Gives the session ID of the notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is a string value representing the session ID of the Notification.
+            </value>
+        </member>
+        <member name="P:Tizen.Messaging.Push.PushMessageEventArgs.RequestId">
+            <summary>
+            Gives the request ID of the notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is a string value representing the request ID of the Notification.
+            </value>
+        </member>
+        <member name="P:Tizen.Messaging.Push.PushMessageEventArgs.Type">
+            <summary>
+            Gives the value in the type field of the notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is an integer value representing the type field of the notification.
+            </value>
+        </member>
+        <member name="T:Tizen.Messaging.Push.ServerResponse">
+            <summary>
+            The ServerResponse structure provides the result and the server response if any.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Push.ServerResponse.Result">
+            <summary>
+            Enumeration for the Result from the server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Messaging.Push.ServerResponse.Result.Success">
+            <summary>
+            Successful.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Push.ServerResponse.Result.Timeout">
+            <summary>
+            Time Out Occured.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Push.ServerResponse.Result.ServerError">
+            <summary>
+            Server Error Occured.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Push.ServerResponse.Result.SystemError">
+            <summary>
+            System Error Occured.
+            </summary>
+        </member>
+        <member name="P:Tizen.Messaging.Push.ServerResponse.ServerResult">
+            <summary>
+            Gives the Result of the opeartion.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is the Result state of the operation performed.
+            </value>
+        </member>
+        <member name="P:Tizen.Messaging.Push.ServerResponse.ServerMessage">
+            <summary>
+            Gives the Message from the server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            It is the Message sent by the server.
+            </value>
+        </member>
+    </members>
+</doc>

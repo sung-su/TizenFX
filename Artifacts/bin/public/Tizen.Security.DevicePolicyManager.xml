@@ -1,0 +1,647 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Security.DevicePolicyManager</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Security.DevicePolicyManager.BluetoothPolicy">
+            <summary>
+            The BluetoothPolicy provides methods to manage Bluetooth policies.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <remarks>The BluetoothPolicy is created by <seealso cref="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1"/>. and the DevicePolicyManager instance must exists when using the BluetoothPolicy.</remarks>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.BluetoothPolicy.BluetoothPolicyName">
+            <summary>
+            The Bluetooth policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.BluetoothPolicy.IsBluetoothAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.BluetoothPolicy.BluetoothTetheringPolicyName">
+            <summary>
+            The Bluetooth Tethering policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.BluetoothPolicy.IsBluetoothTetheringAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.BluetoothPolicy.Finalize">
+            <summary>
+            A Destructor of BluetoothPolicy.
+            </summary>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.BluetoothPolicy.IsBluetoothAllowed">
+            <summary>
+            Gets whether the the bluetooth state change is allowed or not.
+            </summary>
+            <value>true if the change is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.BluetoothPolicy.IsBluetoothTetheringAllowed">
+            <summary>
+            Gets whether the bluetooth tethering state change is allowed or not.
+            </summary>
+            <value>true if the change is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.BluetoothPolicy.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.BluetoothPolicy.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.BluetoothPolicy.BluetoothPolicyChanged">
+            <summary>
+            The BluetoothPolicyChanged event is raised when the Bluetooth policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when BluetoothPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.BluetoothPolicy.BluetoothTetheringPolicyChanged">
+            <summary>
+            The BluetoothTetheringPolicyChanged event is raised when the Bluetooth tethering policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when BluetoothPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.BrowserPolicy">
+            <summary>
+            The BrowserPolicy provides methods to manage browser policies.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <remarks>The BrowserPolicy is created by <seealso cref="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1"/>. and the DevicePolicyManager instance must exists when using the BrowserPolicy.</remarks>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.BrowserPolicy.BrowserPolicyName">
+            <summary>
+            The Browser policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.BrowserPolicy.IsBrowserAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.BrowserPolicy.Finalize">
+            <summary>
+            A Destructor of BrowserPolicy.
+            </summary>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.BrowserPolicy.IsBrowserAllowed">
+            <summary>
+            Gets whether the use of web browser is allowed or not.
+            </summary>
+            <value>true if the use of web browser is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.BrowserPolicy.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.BrowserPolicy.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.BrowserPolicy.BrowserPolicyChanged">
+            <summary>
+            The BrowserPolicyChanged event is raised when the browser policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when BrowserPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.DevicePolicy">
+            <summary>
+            The abstract class for Policy instances.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.DevicePolicyManager">
+            <summary>
+            The DevicePolicyManager provides the methods to create handle for device policy.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.#ctor">
+            <summary>
+            A constructor of DevicePolicyManager that creates handle.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when connection refused or a memory error occurred.</exception>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1">
+            <summary>
+            Method to creates an instance of Device Policy.
+            </summary>
+            <typeparam name="T">The generic type to create.</typeparam>
+            <returns>An instance of policy.</returns>
+            <since_tizen> 6 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to create instance of the policy.</exception>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.Finalize">
+            <summary>
+            A Destructor of DevicePolicyManager.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.EmailPolicy">
+            <summary>
+            The EmailPolicy provides methods to manage email policies.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <remarks>The EmailPolicy is created by <seealso cref="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1"/>. and the DevicePolicyManager instance must exists when using the EmailPolicy.</remarks>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.EmailPolicy.PopImapEmailPolicyName">
+            <summary>
+            The PopImap email policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.EmailPolicy.IsPopImapAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.EmailPolicy.Finalize">
+            <summary>
+            A Destructor of EmailPolicy.
+            </summary>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.EmailPolicy.IsPopImapAllowed">
+            <summary>
+            Gets whether the access to POP or IMAP email is allowed or not.
+            </summary>
+            <value>true if the POP or IMAP email is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.EmailPolicy.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.EmailPolicy.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.EmailPolicy.PopImapPolicyChanged">
+            <summary>
+            The PopImapPolicyChanged event is raised when the popimap-email policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when EmailPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.LocationPolicy">
+            <summary>
+            The LocationPolicy provides methods to manage location policies.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <remarks>The LocationPolicy is created by <seealso cref="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1"/>. and the DevicePolicyManager instance must exists when using the LocationPolicy.</remarks>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.LocationPolicy.LocationPolicyName">
+            <summary>
+            The Location policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.LocationPolicy.IsLocationAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.LocationPolicy.Finalize">
+            <summary>
+            A Destructor of LocationPolicy.
+            </summary>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.LocationPolicy.IsLocationAllowed">
+            <summary>
+            Gets whether user is allowed to change location state or not.
+            </summary>
+            <value>true if the location state change is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.LocationPolicy.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.LocationPolicy.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.LocationPolicy.LocationPolicyChanged">
+            <summary>
+            The LocationPolicyChanged event is raised when the location policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when LocationPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.MediaPolicy">
+            <summary>
+            The MediaPolicy provides methods to manage media policies.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <remarks>The MediaPolicy is created by <seealso cref="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1"/>. and the DevicePolicyManager instance must exists when using the MediaPolicy.</remarks>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.MediaPolicy.CameraPolicyName">
+            <summary>
+            The Camera policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.MediaPolicy.IsCameraAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.MediaPolicy.MicrophonePolicyName">
+            <summary>
+            The Microphone policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.MediaPolicy.IsMicrophoneAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.MediaPolicy.Finalize">
+            <summary>
+            A Destructor of MediaPolicy.
+            </summary>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.MediaPolicy.IsCameraAllowed">
+            <summary>
+            Gets whether the use of camera is allowed or not.
+            </summary>
+            <value>true if the use of camera is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.MediaPolicy.IsMicrophoneAllowed">
+            <summary>
+            Gets whether the use of microphone is allowed or not.
+            </summary>
+            <value>true if the use of microphone is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.MediaPolicy.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.MediaPolicy.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.MediaPolicy.CameraPolicyChanged">
+            <summary>
+            The CameraPolicyChanged event is raised when the camera policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when MediaPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.MediaPolicy.MicrophonePolicyChanged">
+            <summary>
+            The MicrophonePolicyChanged event is raised when the microphone policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when MediaPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.PasswordPolicy">
+            <summary>
+            The PasswordPolicy provides methods to manage password policies.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <remarks>The PasswordPolicy is created by <seealso cref="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1"/>. and the DevicePolicyManager instance must exists when using the PasswordPolicy.</remarks>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.PasswordPolicy.DaysToExpiration">
+            <summary>
+            Gets the number of days password expires.
+            </summary>
+            <value>Number of days after which the password expires. The default value is maximum of int.</value>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/dpm.password</privilege>
+            <privlevel>partner</privlevel>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.PasswordPolicy.MinimumPreviousHistory">
+            <summary>
+            Gets the number of min password history to avoid previous password.
+            </summary>
+            <value>Number of previous passwords which cannot be used when settings a new password. The default value is 0.</value>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/dpm.password</privilege>
+            <privlevel>partner</privlevel>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.PasswordPolicy.MaxInactivityTimeDeviceLock">
+            <summary>
+            Gets the maximum number of seconds of inactivity time before the screen timeout occurs.
+            </summary>
+            <value>Maximum inactivity time for device lock. The default value is maximum of int.</value>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/dpm.password</privilege>
+            <privlevel>partner</privlevel>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.PasswordPolicy.MaximumFailedAttemptsForWipe">
+            <summary>
+            Gets maximum number of failed attempts before device is wiped.
+            If user fails the last attempt, device will be wiped.
+            </summary>
+            <value>Maximum count for failed passwords. The default value is maximum of int.</value>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/dpm.password</privilege>
+            <privlevel>partner</privlevel>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.PasswordPolicy.MinimumRequiredComplexChars">
+            <summary>
+            Gets minimum complex char in password.
+            Complex characters are all non-alphabetic characters; that is, numbers and symbols.
+            </summary>
+            <value>Number of minimum complex char in password. The default value is 0.</value>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/dpm.password</privilege>
+            <privlevel>partner</privlevel>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.PasswordPolicy.MinimumLength">
+            <summary>
+            Gets the minimum allowed password length.
+            </summary>
+            <value>Allowed minimum password length. The default value is 0.</value>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/dpm.password</privilege>
+            <privlevel>partner</privlevel>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.PasswordPolicy.Quality">
+            <summary>
+            Gets password quality.
+            An administrator can get the password restrictions it is imposing.
+            </summary>
+            <value>Password quality type, values of PasswordQuality. The default value is PasswordQuality UNSPECIFIED.</value>
+            <seealso cref="T:Tizen.Security.DevicePolicyManager.PasswordQuality"/>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/dpm.password</privilege>
+            <privlevel>partner</privlevel>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.PasswordQuality">
+            <summary>
+            Enumeration for dpm password quality type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.PasswordQuality.Unspecified">
+            <summary>
+            No requirements for password.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.PasswordQuality.Simple">
+            <summary>
+            EAS(Exchange ActiveSync) requirement for simple password.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.PasswordQuality.Something">
+            <summary>
+            Some kind password required, but doesn't care what it is.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.PasswordQuality.Numeric">
+            <summary>
+            Containing at least numeric character.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.PasswordQuality.Alphabetic">
+            <summary>
+            Containing at least alphabetic (or other symbol) characters.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.PasswordQuality.Alphanumeric">
+            <summary>
+            Containing at least numeric and alphabetic characters.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs">
+            <summary>
+            An extended EventArgs class contains the changed dpm policy state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName">
+            <summary>
+            Gets the name of the changed policy.
+            </summary>
+            <remarks>Each policy that can raise event has the name. The policy name value is in each policy class.</remarks>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.IsAllowed">
+            <summary>
+            Gets the current state of the policy.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.StoragePolicy">
+            <summary>
+            The StoragePolicy provides methods to manage storage policies.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <remarks>The StoragePolicy is created by <seealso cref="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1"/>. and the DevicePolicyManager instance must exists when using the StoragePolicy.</remarks>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.StoragePolicy.ExternalStoragePolicyName">
+            <summary>
+            The External storage policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.StoragePolicy.IsExternalStorageAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.StoragePolicy.Finalize">
+            <summary>
+            A Destructor of StoragePolicy.
+            </summary>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.StoragePolicy.IsExternalStorageAllowed">
+            <summary>
+            Gets whether the use of external storage is allowed or not.
+            </summary>
+            <value>true if the use of external storage is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.StoragePolicy.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.StoragePolicy.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.StoragePolicy.ExternalStoragePolicyChanged">
+            <summary>
+            The ExternalStoragePolicyChanged event is raised when the external storage policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when StoragePolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.TelephonyPolicy">
+            <summary>
+            The TelephonyPolicy provides methods to manage telephony policies.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <remarks>The TelephonyPolicy is created by <seealso cref="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1"/>. and the DevicePolicyManager instance must exists when using the TelephonyPolicy.</remarks>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.TelephonyPolicy.MessagingPolicyName">
+            <summary>
+            The Text messaging policy name. This represents <see cref="M:Tizen.Security.DevicePolicyManager.TelephonyPolicy.IsMessagingAllowed(System.String)"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.TelephonyPolicy.Finalize">
+            <summary>
+            A Destructor of TelephonyPolicy.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.TelephonyPolicy.IsMessagingAllowed(System.String)">
+            <summary>
+            Checks whether the text messaging is allowed or not.
+            </summary>
+            <param name="simId">SIM identifier</param>
+            <returns>true if the messaging is allowed, false otherwise.</returns>
+            <since_tizen> 6 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of invalid parameter.</exception>
+            <exception cref="T:System.TimeoutException">Thrown when failed because of timeout.</exception>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.TelephonyPolicy.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.TelephonyPolicy.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.TelephonyPolicy.MessagingPolicyChanged">
+            <summary>
+            The MessagingPolicyChanged event is raised when the messaging policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when TelephonyPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.UsbPolicy">
+            <summary>
+            The UsbPolicy provides methods to manage usb policies.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <remarks>The UsbPolicy is created by <seealso cref="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1"/>. and the DevicePolicyManager instance must exists when using the UsbPolicy.</remarks>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.UsbPolicy.UsbTetheringPolicyName">
+            <summary>
+            The Usb tethering policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.UsbPolicy.IsUsbTetheringAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.UsbPolicy.Finalize">
+            <summary>
+            A Destructor of UsbPolicy.
+            </summary>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.UsbPolicy.IsUsbTetheringAllowed">
+            <summary>
+            Gets whether the USB tethering state change is allowed.
+            </summary>
+            <value>true if the change is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.UsbPolicy.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.UsbPolicy.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.UsbPolicy.UsbTetheringPolicyChanged">
+            <summary>
+            The UsbTetheringPolicyChanged event is raised when the usb tethering policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when UsbPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.DevicePolicyManager.WifiPolicy">
+            <summary>
+            The WifiPolicy provides methods to manage wifi policies.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <remarks>The WifiPolicy is created by <seealso cref="M:Tizen.Security.DevicePolicyManager.DevicePolicyManager.GetPolicy``1"/>. and the DevicePolicyManager instance must exists when using the WifiPolicy.</remarks>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.WifiPolicy.WifiPolicyName">
+            <summary>
+            The Wifi policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.WifiPolicy.IsWifiAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.DevicePolicyManager.WifiPolicy.WifiHotspotPolicyName">
+            <summary>
+            The Wifi hotspot policy name. This represents <see cref="P:Tizen.Security.DevicePolicyManager.WifiPolicy.IsWifiHotspotAllowed"/>.
+            </summary>
+            <remarks>This is used in <see cref="P:Tizen.Security.DevicePolicyManager.PolicyChangedEventArgs.PolicyName"/>.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.WifiPolicy.Finalize">
+            <summary>
+            A Destructor of WifiPolicy.
+            </summary>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.WifiPolicy.IsWifiAllowed">
+            <summary>
+            Gets whether the Wi-Fi state change is allowed or not.
+            </summary>
+            <value>true if the state change is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.DevicePolicyManager.WifiPolicy.IsWifiHotspotAllowed">
+            <summary>
+            Gets whether the the Wi-Fi hotspot state change is allowed or not.
+            </summary>
+            <value>true if the state change is allowed, false otherwise. The default value is true.</value>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.WifiPolicy.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Security.DevicePolicyManager.WifiPolicy.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.WifiPolicy.WifiPolicyChanged">
+            <summary>
+            The WifiPolicyChanged event is raised when the wifi state policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when WifiPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.Security.DevicePolicyManager.WifiPolicy.WifiHotspotPolicyChanged">
+            <summary>
+            The WifiHotspotPolicyChanged event is raised when the wifi hotspot policy is changed.
+            </summary>
+            <remarks>This event will be removed automatically when WifiPolicy is destroyed.</remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+    </members>
+</doc>

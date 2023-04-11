@@ -1,0 +1,1472 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Network.Nfc</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Network.Nfc.NfcTagInformation">
+            <summary>
+            This structure contains the information of the Tag data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcTagInformation.Key">
+            <summary>
+            Key value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcTagInformation.InformationValue">
+            <summary>
+            Information value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcRegisteredAidInformation">
+            <summary>
+            This structure contains the information of the secure element AID (Application Identifier).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcRegisteredAidInformation.SeType">
+            <summary>
+            The Secure Element Type value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcRegisteredAidInformation.Aid">
+            <summary>
+            The targeted AID (Application Identifier) value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcRegisteredAidInformation.ReadOnly">
+            <summary>
+            Read-only value. If this value is false, there are restrictions to the operation on this AID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcCardEmulationAdapter">
+            <summary>
+            A class for the NFC CardEmulation mode. It allows applications to handle Card Emulation informations.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+        </member>
+        <member name="E:Tizen.Network.Nfc.NfcCardEmulationAdapter.SecureElementEvent">
+            <summary>
+            An event that is called when receiving the Secure Element (SIM/UICC(Universal Integrated Circuit Card)) event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+        </member>
+        <member name="E:Tizen.Network.Nfc.NfcCardEmulationAdapter.EseSecureElementTransactionEvent">
+            <summary>
+            An event that is called when receiving the Secure Element (SIM/UICC (Universal Integrated Circuit Card)) transaction event for the 'ESE(SmartMX)' type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+        </member>
+        <member name="E:Tizen.Network.Nfc.NfcCardEmulationAdapter.UiccSecureElementTransactionEvent">
+            <summary>
+            An event that is called when receiving the Secure Element (SIM/UICC (Universal Integrated Circuit Card)) transaction event for the 'UICC' type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+        </member>
+        <member name="E:Tizen.Network.Nfc.NfcCardEmulationAdapter.HostCardEmulationEvent">
+            <summary>
+            An event that is called when receiving the HCE (Host Card Emulation) event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.Finalize">
+            <summary>
+            NfcCardEmulationAdpater destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.EnableCardEmulation">
+            <summary>
+            Enables the card emulation mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.DisableCardEmulation">
+            <summary>
+            Disables the card emulation mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.GetCardEmulationMode">
+            <summary>
+            Gets the current card emulation mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Enumeration value for the NfcSecureElementCardEmulationMode.</returns>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.EnableTransactionForegroundDispatch">
+            <summary>
+            Gives the priority to the foreground application when dispatching the transaction event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.DisableTransactionForegroundDispatch">
+            <summary>
+            Disables the foreground dispatch for the "EVT_TRANSACTION" to the given application.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.IsActivatedHandlerForAid(Tizen.Network.Nfc.NfcSecureElementType,System.String)">
+            <summary>
+            Gets the state, whether an application to call this API is currently the activated handler for the specific AID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>'True' when application is currently the activated handler, otherwise 'False'.</returns>
+            <param name="seType">The type of the Secure Element.</param>
+            <param name="aid">The application ID specified in the ISO/IEC 7816-4.</param>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.IsActivatedHandlerForCategory(Tizen.Network.Nfc.NfcSecureElementType,Tizen.Network.Nfc.NfcCardEmulationCategoryType)">
+            <summary>
+            Gets the state, whether an application to call this API is currently the activated handler for the category.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>'True' when application is currently the activated handler, otherwise 'False'.</returns>
+            <param name="seType">The type of the secure element.</param>
+            <param name="category">Enumeration value of the category.</param>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.RegisterAid(Tizen.Network.Nfc.NfcSecureElementType,Tizen.Network.Nfc.NfcCardEmulationCategoryType,System.String)">
+            <summary>
+            Registers the AID for a specific category.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="seType">The type of the secure element.</param>
+            <param name="category">Enumeration value of the category.</param>
+            <param name="aid">The application ID specified in the ISO/IEC 7816-4.</param>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.UnregisterAid(Tizen.Network.Nfc.NfcSecureElementType,Tizen.Network.Nfc.NfcCardEmulationCategoryType,System.String)">
+            <summary>
+            Unregisters a previously registered AID for the specified category.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="seType">The type of the secure element.</param>
+            <param name="category">Enumeration value of the category.</param>
+            <param name="aid">The application ID specified in the ISO/IEC 7816-4.</param>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.SetPreferredApplication">
+            <summary>
+            Sets the application as a preferred handler.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.UnsetPreferredApplication">
+            <summary>
+            Unsets the application as a preferred handler.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcCardEmulationAdapter.GetRegisteredAidInformation(Tizen.Network.Nfc.NfcSecureElementType,Tizen.Network.Nfc.NfcCardEmulationCategoryType)">
+            <summary>
+            Retrieves all registered AIDs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The list of NfcRegisteredAidInformation objects.</returns>
+            <param name="seType">The type of the secure element.</param>
+            <param name="category">Enumeration value of the category.</param>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcRecordTypeNameFormat">
+            <summary>
+            Enumeration for the NFC record TNF (Type Name Format).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcRecordTypeNameFormat.Empty">
+            <summary>
+            Empty.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcRecordTypeNameFormat.WellKnown">
+            <summary>
+            The RTD (Record Type Definition) type format [NFC RTD].
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcRecordTypeNameFormat.MimeMedia">
+            <summary>
+            MIME media types in the RFC 2046 [RFC 2046].
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcRecordTypeNameFormat.Uri">
+            <summary>
+            The absolute URI as defined in the RFC 3986 [RFC 3986].
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcRecordTypeNameFormat.ExternalRtd">
+            <summary>
+            The NFC forum external type [NFC RTD].
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcRecordTypeNameFormat.Unknown">
+            <summary>
+            The payload type is unknown.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcRecordTypeNameFormat.UnChanged">
+            <summary>
+            The final chunk of a chunked NDEF record.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcEncodeType">
+            <summary>
+            Enumeration for the NFC encode type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcEncodeType.Utf8">
+            <summary>
+            UTF-8.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcEncodeType.Utf16">
+            <summary>
+            UTF-16.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcTagType">
+            <summary>
+            Enumeration for the NFC tag type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.UnknownTarget">
+            <summary> 
+            An unknown target.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.GenericPicc">
+            <summary>
+            The generic PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Iso14443APicc">
+            <summary>
+            The ISO14443 A PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Iso144434APicc">
+            <summary>
+            The ISO14443 4A PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Iso144433APicc">
+            <summary>
+            The ISO14443 4A PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.MifareMiniPicc">
+            <summary> 
+            The Mifare Mini PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Mifare1kPicc">
+            <summary>
+            Mifare 1k PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Mifare4kPicc">
+            <summary>
+            Mifare 4k PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.MifareUltraPicc">
+            <summary>
+            The Mifare Ultra PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.MifareDesfirePicc">
+            <summary>
+            The Mifare Desfire PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Iso14443BPicc">
+            <summary> 
+            The Iso14443 B PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Iso144434BPicc">
+            <summary>
+            Iso14443 4B PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Iso14443BPrimePicc">
+            <summary>
+            The ISO14443 B Prime PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.FelicaPicc">
+            <summary>
+            The Felica PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.JewelPicc">
+            <summary>
+            The Jewel PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Iso15693Picc">
+            <summary>.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Barcode128Picc">
+            <summary>
+            The Barcode 128 PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.Barcode256Picc">
+            <summary>
+            The Barcode 256 PICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.NfcIp1Target">
+            <summary>
+            The NFCIP1 Target.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagType.NfcIp1Initiator">
+            <summary>
+            The NFCIP1 Initiator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcTagFilterType">
+            <summary>
+            Enumeration for the NFC tag filter type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagFilterType.AllDisable">
+            <summary>
+            All disable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagFilterType.Iso14443AEnable">
+            <summary>
+            ISO14443A enable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagFilterType.Iso14443BEnable">
+            <summary>
+            ISO14443B enable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagFilterType.Iso15693Enable">
+            <summary>
+            ISO15693 enable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagFilterType.FelicaEnable">
+            <summary>
+            FELICA enable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagFilterType.JewelEnable">
+            <summary>
+            JEWEL enable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagFilterType.IpEnable">
+            <summary>
+            IP enable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcTagFilterType.AllEnable">
+            <summary>
+            All enable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcDiscoveredType">
+            <summary>
+            Enumeration for the NFC discovered type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcDiscoveredType.Attached">
+            <summary>
+            Attached, discovered, and activated event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcDiscoveredType.Detached">
+            <summary>
+            Detached, disappeared, and deactivated event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcSecureElementEvent">
+            <summary>
+            Enumeration for the NFC secure element event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementEvent.StartTransaction">
+            <summary>
+            Start transaction.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementEvent.EndTransaction">
+            <summary>
+            End transaction.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementEvent.Connectivity">
+            <summary>
+            Ready signal.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementEvent.FieldOn">
+            <summary>
+            The CLF (Contactless Front-end) detects a RF field.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementEvent.FieldOff">
+            <summary>
+            The CLF (Contactless Front-end) detects that the RF field is off.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementEvent.Transaction">
+            <summary>
+            An external reader tries to access the secure element.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementEvent.TypeChanged">
+            <summary>
+            Changing the emulated secure element type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementEvent.CardEmulationChanged">
+            <summary>
+            Changing the card emulation mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcSecureElementType">
+            <summary>
+            Enumeration for the NFC filter type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementType.Disable">
+            <summary>
+            Disable card emulation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementType.EmbeddedSE">
+            <summary>
+            The SmartMX type card emulation (Embedded Secure Element).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementType.Uicc">
+            <summary>
+            The UICC type card emulation (Universal IC Card).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementType.Sdcard">
+            <summary>
+            The SDCARD card emulation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementType.Hce">
+            <summary>
+            The Host based card emulation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcSecureElementCardEmulationMode">
+            <summary>
+            Enumeration for the NFC discovered type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementCardEmulationMode.Off">
+            <summary>
+            The card emulation mode is OFF.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSecureElementCardEmulationMode.On">
+            <summary>
+            The card emulation mode is ON.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcSnepEvent">
+            <summary>
+            Enumeration for the SNEP (Simple NDEF Exchange Protocol) event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSnepEvent.Stop">
+            <summary>
+            Server or client stopped.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSnepEvent.Start">
+            <summary>
+            Server started or client connected.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSnepEvent.Get">
+            <summary>
+            Server received get request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSnepEvent.Put">
+            <summary>
+            Server received put request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSnepEvent.Register">
+            <summary>
+            Service registered.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSnepEvent.Unregister">
+            <summary>
+            Service unregistered.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcSnepRequestType">
+            <summary>
+            Enumeration for the SNEP request type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSnepRequestType.Get">
+            <summary>
+            The get request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcSnepRequestType.Put">
+            <summary>
+            The put request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcCardEmulationCategoryType">
+            <summary>
+            Enumeration for the NFC card emulation category type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcCardEmulationCategoryType.Payment">
+            <summary>
+            NFC payment services.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcCardEmulationCategoryType.Other">
+            <summary>
+            All other card emulation services.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcHceEvent">
+            <summary>
+            Enumeration for the NFC card emulation HCE (Host Card Emulation) event type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcHceEvent.Deactivated">
+            <summary>
+            HCE deactivated.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcHceEvent.Activated">
+            <summary>
+            HCE activated.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcHceEvent.ApduReceived">
+            <summary>
+            HCE APDU (Application Protocol Data Unit) received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcError">
+            <summary>
+            Enumeration for the NFC Error.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.None">
+            <summary>
+            Successful.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.IoError">
+            <summary>
+            I/O Error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.InvalidParameterError">
+            <summary>
+            Invalid Parameter.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.OutOfMemoryError">
+            <summary>
+            Out of Memory.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.TimedOutError">
+            <summary>
+            Timed Out.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.DeviceBusyError">
+            <summary>
+            Device Busy.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.NotSupportedError">
+            <summary>
+            Not Supported.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.PermissionDeniedError">
+            <summary>
+            Permission Denied.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.OperationFailedError">
+            <summary>
+            Operation Failed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.InvalidNdefMessageError">
+            <summary>
+            Invalied Ndef Message.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.InvalidRecordTypeError">
+            <summary>
+            Invalid Record Type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.NoDeviceError">
+            <summary>
+            No Device.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.NotActivatedError">
+            <summary>
+            Not Activated.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.AlreadyActivatedError">
+            <summary>
+            Already Activated.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.AlreadyDeactivatedError">
+            <summary>
+            Already Deactivated.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.ReadOnlyNdefError">
+            <summary>
+            Read Only Ndef.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.NoSpaceOnNdefError">
+            <summary>
+            No Space On Ndef.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.NoNdefMessageError">
+            <summary>
+            No Ndef Message
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.NotNdefFormatError">
+            <summary>
+            No Ndef Format
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.SecurityRestrictedError">
+            <summary>
+            Security Restricted
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.IllegalStateError">
+            <summary>
+            Illegal State
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.NotInitializedError">
+            <summary>
+            Not Initialized
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.TagNotSupportedError">
+            <summary>
+            Tag Not Supported
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Nfc.NfcError.AidAlreadyRegisteredError">
+            <summary>
+            Aid Already Registered
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Nfc.ActivationChangedEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed NFC activation state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.ActivationChangedEventArgs.Activated">
+            <summary>
+            The NFC activation state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.TagDiscoveredEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed NFC tag discovered.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.TagDiscoveredEventArgs.Type">
+            <summary>
+            The tag type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.TagDiscoveredEventArgs.Tag">
+            <summary>
+            The tag object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.P2pTargetDiscoveredEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed NFC P2P target discovered.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.P2pTargetDiscoveredEventArgs.Type">
+            <summary>
+            The P2P target type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.P2pTargetDiscoveredEventArgs.P2pTarget">
+            <summary>
+            The P2P object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NdefMessageDiscoveredEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed NFC NDEF discovered.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NdefMessageDiscoveredEventArgs.NdefMessage">
+            <summary>
+            The NdefMessage object that is most recently received via the NFC P2P mode or the tag mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.SecureElementEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed secure element event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.SecureElementEventArgs.EventType">
+            <summary>
+            The NFC secure element event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.SecureElementTranscationEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed secure element trasaction event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.SecureElementTranscationEventArgs.SecureElementType">
+            <summary>
+            The NFC secure element type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.SecureElementTranscationEventArgs.ApplicationID">
+            <summary>
+            The NFC secure element AID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.SecureElementTranscationEventArgs.Param">
+            <summary>
+            The NFC secure element param.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.HostCardEmulationEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed HCE (Host Card Emulation) event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.HostCardEmulationEventArgs.SecureElement">
+            <summary>
+            The NFC secure element.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.HostCardEmulationEventArgs.HceEvent">
+            <summary>
+            The NFC HCE event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.HostCardEmulationEventArgs.Apdu">
+            <summary>
+            The NFC APDU (Application Protocol Data Unit).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.P2pDataReceivedEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed HCE (Host Card Emulation) event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.P2pDataReceivedEventArgs.P2pTarget">
+            <summary>
+            The NFC P2P target.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.P2pDataReceivedEventArgs.NdefMessage">
+            <summary>
+            The NFC NDEF message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcManager">
+            <summary>
+            A class for the NFC management. It allows applications to use the NFC service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcManager.IsSupported">
+            <summary>
+            Checks whether the NFC is supported.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcManager.IsActivated">
+            <summary>
+            The NFC Activation state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcManager.TagFilterType">
+            <summary>
+            The Tag Filter type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcManager.SecureElementType">
+            <summary>
+            The Secure Element type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcManager.SystemHandlerEnabled">
+            <summary>
+            Enables or disables the system handling for the tag and target discovered event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcManager.CachedNdefMessage">
+            <summary>
+            The cached NDEF message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcManager.GetTagAdapter">
+            <summary>
+            Gets the Tag adapter object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcManager.GetP2pAdapter">
+            <summary>
+            Gets the P2P adapter object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcManager.GetCardEmulationAdapter">
+            <summary>
+            Gets the Card Emulation adapter object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcManager.SetActivationAsync(System.Boolean)">
+            <summary>
+            Activates the NFC asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>A task indicates whether the Activate method is done or not.</returns>
+            <privilege>http://tizen.org/privilege/nfc.admin</privilege>
+        </member>
+        <member name="E:Tizen.Network.Nfc.NfcManager.ActivationChanged">
+            <summary>
+            The Activation changed event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.Nfc.NfcManager.NdefMessageDiscovered">
+            <summary>
+            The NDEF discovered event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcNdefMessage">
+            <summary>
+            A class for the NDEF Message information. It allows applications to use the NDEF Message information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcNdefMessage.RecordCount">
+            <summary>
+            The number of records in the NDEF message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefMessage.#ctor">
+            <summary>
+            Creates an object for the access point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefMessage.Finalize">
+            <summary>
+            NfcNdefMessage destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefMessage.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefMessage.AppendRecord(Tizen.Network.Nfc.NfcNdefRecord)">
+            <summary>
+            Appends a record into the NDEF message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Whether the record is appended successfully.</returns>
+            <param name="record">The NfcNdefRecord object that will be appended into the NDEF message.</param>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefMessage.InsertRecord(System.Int32,Tizen.Network.Nfc.NfcNdefRecord)">
+            <summary>
+            Inserts a record at the index into the NDEF message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Whether inserting the record succeeded.</returns>
+            <param name="index">The index of a record ( starts from 0 ).</param>
+            <param name="record">The NfcNdefRecord object that will be appended into the NDEF message.</param>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefMessage.RemoveRecord(System.Int32)">
+            <summary>
+            Removes a record at the index into the NDEF message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Whether removing the record succeeded.</returns>
+            <param name="index">The index of a record ( starts from 0 ).</param>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefMessage.GetRecord(System.Int32)">
+            <summary>
+            Gets a record by the index.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The NfcNdefRecord object.</returns>
+            <param name="index">The index of a record ( starts from 0 ).</param>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcNdefRecord">
+            <summary>
+            A class for the NDEF Record information. It allows applications to use the NDEF Record information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcNdefRecord.Id">
+            <summary>
+            The record ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcNdefRecord.Payload">
+            <summary>
+            The record payload.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcNdefRecord.Type">
+            <summary>
+            The record type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcNdefRecord.Tnf">
+            <summary>
+            The record TNF (Type Name Format) value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcNdefRecord.Text">
+            <summary>
+            The text of the text type NDEF record.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcNdefRecord.LanguageCode">
+            <summary>
+            The language code of the text type NDEF record.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcNdefRecord.EncodeType">
+            <summary>
+            The encoding type of the text type NDEF record.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcNdefRecord.Uri">
+            <summary>
+            The URI of the URI type NDEF record.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcNdefRecord.MimeType">
+            <summary>
+            The mime type of the mime type NDEF record.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefRecord.#ctor(Tizen.Network.Nfc.NfcRecordTypeNameFormat,System.Byte[],System.Byte[],System.Byte[],System.UInt32)">
+            <summary>
+            Creates a record with a given parameter value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="format">The type name format.</param>
+            <param name="type">The specified type name.</param>
+            <param name="id">The record ID.</param>
+            <param name="payload">The payload of this record.</param>
+            <param name="paloadLength">The byte size of the payload.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefRecord.#ctor(System.String,System.String,Tizen.Network.Nfc.NfcEncodeType)">
+            <summary>
+            Creates a record with the text type payload.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="text">The encoded text.</param>
+            <param name="languageCode">The language code string value followed by the IANA [RFC 3066] \(ex: en-US, ko-KR).</param>
+            <param name="encode">The encoding type.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefRecord.#ctor(System.String)">
+            <summary>
+            Creates a record with the URI type payload.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="uri">The URI string that will be stored in the payload.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefRecord.#ctor(System.String,System.Byte[],System.UInt32)">
+            <summary>
+            Creates a record with the mime type payload.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="mimeType">The mime type [RFC 2046] \(ex. text/plain, image/jpeg ). This value is stored in the type field.</param>
+            <param name="data">The data in the form of the bytes array.</param>
+            <param name="dataSize">The size of the data.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefRecord.Finalize">
+            <summary>
+            NfcNdefRecord destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcNdefRecord.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcP2p">
+            <summary>
+            The class for managing the P2P target information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.Nfc.NfcP2p.P2pDataReceived">
+            <summary>
+            The event for receiving data from the NFC peer-to-peer target.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcP2p.Finalize">
+            <summary>
+            NfcP2p destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcP2p.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcP2p.SendNdefMessageAsync(Tizen.Network.Nfc.NfcNdefMessage)">
+            <summary>
+            Sends data to the NFC peer-to-peer target.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="ndefMessage">The NfcNdefMessage object.</param>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcSnep">
+            <summary>
+            The class for managing the SNEP (Simple NDEF Exchange Protocol) information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcSnep.Finalize">
+            <summary>
+            NfcSnep Distructor
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcSnep.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcP2pAdapter">
+            <summary>
+            The class for the NFC P2P (Peer-to-Peer) mode. It allows applications to handle P2P informations.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+        </member>
+        <member name="E:Tizen.Network.Nfc.NfcP2pAdapter.P2pTargetDiscovered">
+            <summary>
+            The event for receiving the NFC peer-to-peer target discovered notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcP2pAdapter.Finalize">
+            <summary>
+            NfcP2pAdapter destructor
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcP2pAdapter.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcP2pAdapter.GetConnectedTarget">
+            <summary>
+            Gets the current connected P2P target.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The NfcP2p object.</returns>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcSecureElement">
+            <summary>
+            The class for managing the Secure Element information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcSecureElement.Finalize">
+            <summary>
+            NfcSecureElement destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcSecureElement.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcSecureElement.HceSendApduResponse(System.Byte[],System.UInt32)">
+            <summary>
+            Sends the APDU (Application Protocol Data Unit) response to the CLF (Contactless Front-end).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="response">The bytes array of the response data.</param>
+            <param name="responseLength">The size of the response bytes array.</param>
+            <privilege>http://tizen.org/privilege/nfc.cardemulation</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcTag">
+            <summary>
+            The class for managing the Tag information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTag.#ctor">
+            <summary>
+            Constructor of NfcTag
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcTag.Type">
+            <summary>
+            The type of the NFC tag.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcTag.IsSupportNdef">
+            <summary>
+            Whether the given NFC tag supports the NDEF messages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcTag.MaximumNdefSize">
+            <summary>
+            The maximum NDEF message size that can be stored in the NFC tag.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nfc.NfcTag.NdefSize">
+            <summary>
+            The size of the NDEF message stored in the tag.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTag.Finalize">
+            <summary>
+            NfcTag destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTag.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTag.ForeachInformation">
+            <summary>
+            Retrieves all the tag information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The list of the NfcTagInformation objects.</returns>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTag.TransceiveAsync(System.Byte[])">
+            <summary>
+            Transceives the data of the raw format card.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="buffer">The binary data for a parameter or additional commands.</param>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTag.ReadNdefMessageAsync">
+            <summary>
+            Reads the NDEF formatted data from the NFC tag.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTag.WriteNdefMessageAsync(Tizen.Network.Nfc.NfcNdefMessage)">
+            <summary>
+            Writes the NDEF formatted data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="ndefMessage">The NfcNdefMessage object.</param>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTag.FormatNdefMessageAsync(System.Byte[])">
+            <summary>
+            Formats the detected tag that can store the NDEF message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="keyValue">The key value that may need to format the tag.</param>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.Nfc.NfcTagAdapter">
+            <summary>
+            The class for the NFC tag mode. It allows applications to handle the Tag informations.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+        </member>
+        <member name="E:Tizen.Network.Nfc.NfcTagAdapter.TagDiscovered">
+            <summary>
+            The event for receiving the tag discovered notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTagAdapter.Finalize">
+            <summary>
+            NfcTagAdapter destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTagAdapter.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nfc.NfcTagAdapter.GetConnectedTag">
+            <summary>
+            Gets the current connected tag.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The NfcTag object.</returns>
+            <privilege>http://tizen.org/privilege/nfc</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the NFC is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+    </members>
+</doc>

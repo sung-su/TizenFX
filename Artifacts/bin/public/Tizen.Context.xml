@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Context</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Context.AppHistory.AppStatistics">
+            <summary>
+            The Base class for application statistics.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Context.AppHistory.AppStatisticsData">
+            <summary>
+            The Base class which contains the application statistics query result.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Context.AppHistory.AppStatisticsData.AppId">
+            <summary>
+            Gets the application ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The application ID.</value>
+        </member>
+        <member name="T:Tizen.Context.AppHistory.BatteryStatistics">
+            <summary>
+            This class provides APIs to query the battery consumption per application.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Context.AppHistory.BatteryStatistics.#ctor">
+            <summary>
+            The default constructor of BatteryStatistics class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/app_history</feature>
+            <feature>http://tizen.org/feature/battery</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an internal error.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the features are not supported.</exception>
+        </member>
+        <member name="M:Tizen.Context.AppHistory.BatteryStatistics.#ctor(Tizen.Context.AppHistory.BatteryStatistics.SortOrderType)">
+            <summary>
+            The constructor of BatteryStatistics class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="order">The criteria of the battery statistics sorted by.</param>
+            <feature>http://tizen.org/feature/app_history</feature>
+            <feature>http://tizen.org/feature/battery</feature>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an internal error.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the features are not supported.</exception>
+        </member>
+        <member name="M:Tizen.Context.AppHistory.BatteryStatistics.Query(System.DateTime,System.DateTime)">
+            <summary>
+            Retrieves a given type of battery statistics.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="startTime">The start time of the data to be aggregated.</param>
+            <param name="endTime">The end time of the data to be aggregated.</param>
+            <returns>Battery statistics data retrieved.</returns>
+            <privilege>http://tizen.org/privilege/apphistory.read</privilege>
+            <feature>http://tizen.org/feature/app_history</feature>
+            <feature>http://tizen.org/feature/battery</feature>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when invalid operation occurs.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the features are not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to retrieve the application history.</exception>
+        </member>
+        <member name="M:Tizen.Context.AppHistory.BatteryStatistics.Query(System.DateTime,System.DateTime,System.UInt32)">
+            <summary>
+            Retrieves a given type of battery statistics.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="startTime">The start time of the data to be aggregated.</param>
+            <param name="endTime">The end time of the data to be aggregated.</param>
+            <param name="resultSize">The number of data records to be retrieved.</param>
+            <returns>Battery statistics data retrieved.</returns>
+            <privilege>http://tizen.org/privilege/apphistory.read</privilege>
+            <feature>http://tizen.org/feature/app_history</feature>
+            <feature>http://tizen.org/feature/battery</feature>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when an invalid operation occurs.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the features are not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to retrieve the application history.</exception>
+        </member>
+        <member name="M:Tizen.Context.AppHistory.BatteryStatistics.GetLastFullyChargedTime">
+            <summary>
+            Gets the last time when the device was fully charged.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>The last time when the device was fully charged.</returns>
+            <feature>http://tizen.org/feature/app_history</feature>
+            <feature>http://tizen.org/feature/battery</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the statistics is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Context.AppHistory.BatteryStatistics.SortOrder">
+            <summary>
+            Gets the criteria of battery statistics sorted by.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The criteria of battery statistics sorted by.</value>
+        </member>
+        <member name="T:Tizen.Context.AppHistory.BatteryStatistics.SortOrderType">
+            <summary>
+            Sorts the order type of battery statistics.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Context.AppHistory.BatteryStatistics.SortOrderType.ConsumptionMost">
+            <summary>
+            Sorts the apps by consumption, the most battery consuming apps appear first (default).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Context.AppHistory.BatteryStatisticsData">
+            <summary>
+            This class contains the battery statistics information retrieved by BatteryStatistics.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Context.AppHistory.BatteryStatisticsData.Consumption">
+            <summary>
+            Gets how much percentage of battery capacity was used by the application.
+            </summary>
+            <value>Battery consumption used by the application.</value>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Context.AppHistory.UsageStatistics">
+            <summary>
+            This class provides APIs to query the application launch history.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Context.AppHistory.UsageStatistics.#ctor">
+            <summary>
+            The default constructor of UsageStatistics class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/app_history</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an internal error.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Context.AppHistory.UsageStatistics.#ctor(Tizen.Context.AppHistory.UsageStatistics.SortOrderType)">
+            <summary>
+            The constructor of UsageStatistics class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="order">The criteria of the usage statistics sorted by.</param>
+            <feature>http://tizen.org/feature/app_history</feature>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an internal error.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Context.AppHistory.UsageStatistics.Query(System.DateTime,System.DateTime)">
+            <summary>
+            Retrieves a given type of usage statistics.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="startTime">The start time of the data to be aggregated.</param>
+            <param name="endTime">The end time of the data to be aggregated.</param>
+            <returns>Usage statistics data retrieved.</returns>
+            <privilege>http://tizen.org/privilege/apphistory.read</privilege>
+            <feature>http://tizen.org/feature/app_history</feature>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when an invalid operation occurs.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to retrieve the application history.</exception>
+        </member>
+        <member name="M:Tizen.Context.AppHistory.UsageStatistics.Query(System.DateTime,System.DateTime,System.UInt32)">
+            <summary>
+            Retrieves a given type of usage statistics.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="startTime">The start time of the data to be aggregated.</param>
+            <param name="endTime">The end time of the data to be aggregated.</param>
+            <param name="resultSize">The number of data records to be retrieved.</param>
+            <returns>Usage statistics data retrieved.</returns>
+            <privilege>http://tizen.org/privilege/apphistory.read</privilege>
+            <feature>http://tizen.org/feature/app_history</feature>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when an invalid operation occurs.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to retrieve the application history.</exception>
+        </member>
+        <member name="P:Tizen.Context.AppHistory.UsageStatistics.SortOrder">
+            <summary>
+            Gets the criteria of usage statistics sorted by.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The criteria of usage statistics sorted by.</value>
+        </member>
+        <member name="T:Tizen.Context.AppHistory.UsageStatistics.SortOrderType">
+            <summary>
+            Sorts the order type of usage statistics.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Context.AppHistory.UsageStatistics.SortOrderType.LastLaunchTimeNewest">
+            <summary>
+            Sorts the apps by the last launch time, the most recently launched apps appear first (default).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Context.AppHistory.UsageStatistics.SortOrderType.LaunchCountMost">
+            <summary>
+            Sorts the apps by the launch count of being launched, the most frequently launched apps appear first.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Context.AppHistory.UsageStatisticsData">
+            <summary>
+            This class contains the application usage statistics information retrieved by UsageStatistics.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Context.AppHistory.UsageStatisticsData.Duration">
+            <summary>
+            Gets the time when the application is being displayed in the foreground in seconds.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>Duration when the application is used in the foreground in seconds.</value>
+        </member>
+        <member name="P:Tizen.Context.AppHistory.UsageStatisticsData.LaunchCount">
+            <summary>
+            Gets how many times the application is used in the foreground.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>How many times the application is used in the foreground.</value>
+        </member>
+        <member name="P:Tizen.Context.AppHistory.UsageStatisticsData.LastLaunchTime">
+            <summary>
+            Gets the last time when the application has been used.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The last time when the application has been used.</value>
+        </member>
+    </members>
+</doc>

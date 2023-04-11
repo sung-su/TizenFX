@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.ComponentBased.Default</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.ComponentBased.Default.EFLComponentBasedApplication">
+            <summary>
+            The basic EFL component-based application class.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Default.EFLComponentBasedApplication.#ctor(System.Collections.Generic.IDictionary{System.Type,System.String})">
+            <summary>
+            Initializes the ComponentBasedApplication class.
+            </summary>
+            <param name="typeInfo">The component type information.
+            The key should be a class type of BaseComponent subclass.
+            The value should be a component id which is declared in tizen-manifest.xml.
+            </param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Default.EFLComponentBasedApplication.OnInit(System.String[])">
+            <summary>
+            This method will be called before running main-loop
+            </summary>
+            <param name="args"></param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Default.EFLComponentBasedApplication.OnFinished">
+            <summary>
+            This method will be called after exiting main-loop
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Default.EFLComponentBasedApplication.OnRun">
+            <summary>
+            This method will be called to start main-loop
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Default.EFLComponentBasedApplication.OnExit">
+            <summary>
+            This method will be called to exit main-loop
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.ComponentBased.Default.EFLWindowInfo">
+            <summary>
+            Window information class for ComponentBasedApplication
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Default.EFLWindowInfo.#ctor(ElmSharp.Window)">
+            <summary>
+            Initializes the EFLWindow class.
+            </summary>
+            <param name="win">The window object of component.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.Default.EFLWindowInfo.ResourceId">
+            <summary>
+            Gets the resource ID of window
+            </summary>
+            <returns>The native handle of window</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Default.EFLWindowInfo.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Default.EFLWindowInfo.Dispose">
+            <summary>
+            Dispose the window resources
+            </summary>
+            <returns></returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+    </members>
+</doc>

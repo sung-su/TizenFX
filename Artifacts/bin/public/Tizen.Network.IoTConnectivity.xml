@@ -1,0 +1,3084 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Network.IoTConnectivity</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Network.IoTConnectivity.Attributes">
+            <summary>
+            This class represents current attributes of a resource.
+            It provides API to manage attributes.
+            This class is accessed by using a constructor to create a new instance of this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.#ctor">
+            <summary>
+            The Attributes constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.Finalize">
+            <summary>
+            Destructor of the Attributes class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Attributes.Count">
+            <summary>
+            Gets the number of keys.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The number of keys.</value>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+            attributes.Add("brightness", 50);
+            var count = attributes.Count;
+            Console.WriteLine("There are {0} keys in the attribute object", count);
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Attributes.IsReadOnly">
+            <summary>
+            Represents whether an attribute is readonly.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Whether an attribute is readonly.</value>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+                { "state", "ON" },
+                { "dim", 10 }
+            };
+            if (attributes.IsReadOnly)
+                Console.WriteLine("Read only attribute");
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Attributes.Keys">
+            <summary>
+            Contains all the attribute keys.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>All the attribute keys.</value>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+                { "state", "ON" },
+                { "dim", 10 }
+            };
+            var keys = attributes.Keys;
+            Console.WriteLine("Attribute contains keys {0} and {1}", keys.ElementAt(0), keys.ElementAt(1));
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Attributes.Values">
+            <summary>
+            Contains all the attribute values.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>All the attribute values.</value>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+                { "state", "ON" },
+                { "dim", 10 }
+            };
+            var values = attributes.Values;
+            Console.WriteLine("Attribute contains values {0} and {1}", values.ElementAt(0), values.ElementAt(1));
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Attributes.Item(System.String)">
+            <summary>
+            Gets or sets the attribute with the specified key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The attribute with the specified key.</value>
+            <param name="key">The key of the attribute to get or set.</param>
+            <returns>The element with the specified key.</returns>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes();
+            attributes["state"] = "ON";
+            Console.WriteLine("Attribute value for key 'state' : {0}", attributes["state"]);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Adds the attribute key and a value as a key value pair.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="item">The key value pair to add.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <example><code><![CDATA[
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes();
+            attributes.Add(new KeyValuePair<string, object> ("state", "ON"));
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.Add(System.String,System.Object)">
+            <summary>
+            Adds an attribute.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The key representing the attribute.</param>
+            <param name="value">The value representing the attribute.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes();
+            attributes.Add("brightness", 50);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.Clear">
+            <summary>
+            Clears attributes collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid</exception>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes();
+            attributes.Add("brightness", 50);
+            attributes.Clear();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Checks whether the given key value pair exists in attributes collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="item">The status key value pair.</param>
+            <returns>true if exists. Otherwise, false.</returns>
+            <example><code><![CDATA[
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+                { "state", "ON" },
+                { "dim", 10 }
+            };
+            if (attributes.Contains(new KeyValuePair<string, object> ("dim", 10))
+                Console.WriteLine("Attribute conatins pair ('dim', 10)");
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.ContainsKey(System.String)">
+            <summary>
+            Checks whether the given key exists in attributes collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The status key to look for.</param>
+            <returns>true if exists. Otherwise, false.</returns>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+                { "state", "ON" },
+                { "dim", 10 }
+            };
+            if (attributes.ContainsKey("dim"))
+                Console.WriteLine("Attribute conatins key : dim");
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)">
+            <summary>
+            Copies the elements of the attributes to an array, starting at a particular index.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="array">The destination array.</param>
+            <param name="arrayIndex">The zero-based index in an array at which copying begins.</param>
+            <example><code><![CDATA[
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+                { "state", "ON" },
+                { "dim", 10 }
+            };
+            KeyValuePair<string, object>[] dest = new KeyValuePair<string, object>[attributes.Count];
+            int index = 0;
+            attributes.CopyTo(dest, index);
+            Console.WriteLine("Dest conatins ({0}, {1})", dest[0].Key, dest[0].Value);
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns> An enumerator that can be used to iterate through the collection.</returns>
+            <example><code><![CDATA[
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+                { "state", "ON" },
+                { "dim", 10 }
+            };
+            foreach (KeyValuePair<string, object> pair in attributes)
+            {
+                Console.WriteLine("key : {0}, value : {1}", pair.Key, pair.Value);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Removes an attribute from collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="item">The attributes element to remove.</param>
+            <returns>true if operation is successful, otherwise, false.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid</exception>
+            <example><code><![CDATA[
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+                { "state", "ON" },
+                { "dim", 10 }
+            };
+            if (attributes.Remove(new KeyValuePair<string, object>("dim", 10)))
+                Console.WriteLine("Remove was successful");
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.Remove(System.String)">
+            <summary>
+            Removes an attribute from collection using a key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The attributes element to remove.</param>
+            <returns>true if operation is successful, otherwise, false.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid</exception>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+                { "state", "ON" },
+                { "dim", 10 }
+            };
+            if (attributes.Remove("state"))
+                Console.WriteLine("Remove was successful");
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The key whose value to get.</param>
+            <param name="value"> The value associated with the specified key.</param>
+            <returns> true if the attributes collection contains an element with the specified key, otherwise, false.</returns>
+            <example><code>
+            Tizen.Network.IoTConnectivity.Attributes attributes = new Tizen.Network.IoTConnectivity.Attributes() {
+                { "state", "ON" }
+            };
+            object value;
+            var isPresent = attributes.TryGetValue("state", out value);
+            if (isPresent)
+                Console.WriteLine("value : {0}", value);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Attributes.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.CacheUpdatedEventArgs">
+            <summary>
+            This class represents event arguments of the CacheUpdated event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.CacheUpdatedEventArgs.Representation">
+            <summary>
+            Indicates the updated representation of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The updated representation of the resource.</value>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.DeviceInformationFoundEventArgs">
+            <summary>
+            This class represents event arguments of the DeviceInformationFound event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.DeviceInformationFoundEventArgs.RequestId">
+            <summary>
+            The request ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The request ID.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.DeviceInformationFoundEventArgs.EventContinue">
+            <summary>
+            Indicates to continuously receive the event for finding device information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Continuously receive the event for finding device information.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.DeviceInformationFoundEventArgs.Name">
+            <summary>
+            Indicates the human friendly name for device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Human friendly name for device.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.DeviceInformationFoundEventArgs.SpecVersion">
+            <summary>
+            Indicates the spec version of the core specification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Spec version of the core specification.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.DeviceInformationFoundEventArgs.DeviceId">
+            <summary>
+            Indicates an unique identifier for the OIC device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Unique identifier for OIC device.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.DeviceInformationFoundEventArgs.DataModelVersion">
+            <summary>
+            Indicates version of the specs this device data model is implemented to.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Version of the specs this device data model is implemented to.</value>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.FindingError">
+            <summary>
+            Enumeration for resource found errors.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.Io">
+            <summary>
+            I/O error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.OutOfMemory">
+            <summary>
+            Out of memory.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.PermissionDenied">
+            <summary>
+            Permission denied.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.NotSupported">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.InvalidParameter">
+            <summary>
+            Invalid parameter.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.NoData">
+            <summary>
+            No data available.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.TimeOut">
+            <summary>
+            Time out.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.Iotivity">
+            <summary>
+            IoTivity errors.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.Representation">
+            <summary>
+            Representation errors.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.InvalidType">
+            <summary>
+            Invalid type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.Already">
+            <summary>
+            Already.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.FindingError.System">
+            <summary>
+            System errors.
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.FindingErrorOccurredEventArgs">
+            <summary>
+            This class represents event arguments of the FindingErrorOccurred event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.FindingErrorOccurredEventArgs.RequestId">
+            <summary>
+            The request ID of the operation, which caused this error.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The request ID of the operation, which caused this error.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.FindingErrorOccurredEventArgs.Error">
+            <summary>
+            Contains error details.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Error details.</value>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager">
+            <summary>
+            IoT connectivity client manager consists of client side APIs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.MulticastAddress">
+            <summary>
+            The IP Address for multicast.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PresenceReceived">
+            <summary>
+            PresenceReceived event. This event occurs when server starts sending presence of a resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.ResourceFound">
+            <summary>
+            ResourceFound event. This event occurs when a resource is found from the remote server
+            after sending request using API StartFindingResource().
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PlatformInformationFound">
+            <summary>
+            PlatformInformationFound event. This event occurs when platform information is found
+            after sending request using API StartFindingPlatformInformation().
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.DeviceInformationFound">
+            <summary>
+            DeviceInformationFound event. This event occurs when device information is found
+            after sending request using API StartFindingDeviceInformation().
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.FindingErrorOccurred">
+            <summary>
+            FindingError event. This event occurs when an error is found.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.TimeOut">
+            <summary>
+            Timeout in seconds.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            <para>Value to be set must be in range from 1 to 3600. Default timeout interval value is 30.</para>
+            <para>Sets/gets the timeout of StartFindingResource(), StartFindingDeviceInformation(), StartFindingPlatformInformation(),
+            RemoteResource.GetAsync(), RemoteResource.PutAsync(), RemoteResource.PostAsync() and RemoteResource.DeleteAsync() APIs.</para>
+            <para>Setter can throw exception.</para>
+            </value>
+            <pre>
+            Initialize() should be called to initialize.
+            </pre>
+            <example><code>
+            IoTConnectivityClientManager.Initialize();
+            IoTConnectivityClientManager.TimeOut = 120;
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PollingInterval">
+            <summary>
+            Polling interval of IoTConnectivity.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            Sets/Gets the polling inerval(milliseconds) of IoTCon. Default value is 100 milliseconds.
+            Value to be set must be in range from 1 to 999. The closer to 0, the faster it operates.
+            Setter is invoked immediately for changing the interval.
+            If you want the faster operation, we recommend you set 10 milliseconds for polling interval.
+            Setter can throw exception.
+            </value>
+            <pre>
+            Initialize() should be called to initialize.
+            </pre>
+            <example><code>
+            IoTConnectivityClientManager.Initialize();
+            IoTConnectivityClientManager.PollingInterval = 100;
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.Initialize(System.String)">
+            <summary>
+            Initializes IoTCon.
+            Call this function to start IoTCon.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <paramref name="filePath"/> points to a file for handling secure virtual resources.
+            The file that is CBOR(Concise Binary Object Representation)-format must already exist
+            in <paramref name="filePath" />. We recommend to use application-local file for <paramref name="filePath" />.
+            </remarks>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="filePath">The file path pointing to storage for handling secure virtual resources.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <post>
+            You must call Deinitialize() if IoTCon API is no longer needed.
+            </post>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.Deinitialize"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <example><code>
+            string filePath = "../../res/iotcon-test-svr-db-client.dat";
+            IoTConnectivityClientManager.Initialize(filePath);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.Deinitialize">
+            <summary>
+            Deinitializes IoTCon.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            This API must be called if IoTCon API is no longer needed.
+            </remarks>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>
+            Initialize() should be called to initialize.
+            </pre>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.Initialize(System.String)"/>
+            <example><code>
+            IoTConnectivityClientManager.Deinitialize();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.InvokePolling">
+            <summary>
+            Invokes a next message from a queue for receiving messages from others, immediately.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            This API invokes a next message from a queue for receiving messages from others, immediately.
+            After calling the API, it continues the polling with existing interval.
+            </remarks>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>
+            Initialize() should be called to initialize.
+            </pre>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <example><code>
+            IoTConnectivityClientManager.InvokePolling();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartReceivingPresence(System.String,System.String)">
+            <summary>
+            Starts receiving presence events.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <para>Sends request to receive presence to an interested server's resource with resourceType.
+            If succeeded, <see cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PresenceReceived"/> event handler will be triggered when the server sends presence.
+            A server sends presence events when adds / removes / alters a resource or start / stop presence.</para>
+            <para><paramref name="hostAddress" /> could be <see cref="F:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.MulticastAddress"/> for IPv4 multicast.
+            The length of <paramref name="resourceType" /> should be less than or equal to 61.
+            The <paramref name="resourceType" /> must start with a lowercase alphabetic character, followed by a sequence
+            of lowercase alphabetic, numeric, ".", or "-" characters, and contains no white space.</para>
+            </remarks>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="hostAddress">The address or addressable name of the server.</param>
+            <param name="resourceType">A resource type that a client is interested in.</param>
+            <returns>PresenceId - An identifier for this request.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>Initialize() should be called to initialize.</pre>
+            <post>
+            When the resource receive presence, <see cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PresenceReceived"/> event handler will be invoked.<br/>
+            You must destroy presence by calling StopReceivingPresence() if presence event is no longer needed.
+            </post>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.StartSendingPresence(System.UInt32)"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.StopSendingPresence"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StopReceivingPresence(System.Int32)"/>
+            <seealso cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PresenceReceived"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <example><code><![CDATA[
+            EventHandler<PresenceReceivedEventArgs> handler = (sender, e) => {
+                Console.Log("PresenceReceived, presence id :" + e.PresenceId);
+            }
+            EventHandler<FindingErrorOccurredEventArgs> errorHandler = (sender, e) => {
+                Console.Log("Found error :" + e.Error.Message);
+            }
+            IoTConnectivityClientManager.PresenceReceived += handler;
+            IoTConnectivityClientManager.FindingErrorOccurred += errorHandler;
+            // Do not forget to remove these event handlers when they are not required any more.
+            int id = IoTConnectivityClientManager.StartReceivingPresence(IoTConnectivityClientManager.MulticastAddress, "oic.iot.door");
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StopReceivingPresence(System.Int32)">
+            <summary>
+            Stops receiving presence events.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            Sends request to not to receive server's presence any more.
+            </remarks>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="presenceId">The start presence request identifier.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>
+            Initialize() should be called to initialize.
+            </pre>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.StartSendingPresence(System.UInt32)"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.StopSendingPresence"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartReceivingPresence(System.String,System.String)"/>
+            <seealso cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PresenceReceived"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <example><code><![CDATA[
+            EventHandler<PresenceReceivedEventArgs> handler = (sender, e) => {
+                Console.Log("PresenceReceived, presence id :" + e.PresenceId);
+            }
+            EventHandler<FindingErrorOccurredEventArgs> errorHandler = (sender, e) => {
+                Console.Log("Found error :" + e.Error.Message);
+            }
+            IoTConnectivityClientManager.PresenceReceived += handler;
+            IoTConnectivityClientManager.FindingErrorOccurred += errorHandler;
+            int id = IoTConnectivityClientManager.StartReceivingPresence(IoTConnectivityClientManager.MulticastAddress, "oic.iot.door");
+            await Task.Delay(5000); // Do other things here
+            // Call StopReceivingPresence() when receiving presence is not required any more
+            IoTConnectivityClientManager.PresenceReceived -= handler;
+            IoTConnectivityClientManager.FindingErrorOccurred -= errorHandler;
+            IoTConnectivityClientManager.StopReceivingPresence(id);
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartFindingResource(System.String,Tizen.Network.IoTConnectivity.ResourceQuery)">
+            <summary>
+            Starts finding resources.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <para>Sends request to find a resource of <paramref name="hostAddress" /> server with <paramref name="query" />.
+            If succeeded, <see cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.ResourceFound"/> event handler will be triggered with information of the resource.</para>
+            <para><paramref name="hostAddress" /> could be <see cref="F:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.MulticastAddress"/> for the IPv4 multicast.</para>
+            </remarks>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="hostAddress">The address or addressable name of the server. The address includes a protocol like coaps://.</param>
+            <param name="query">The query specified as a filter for founding resources.</param>
+            <returns>RequestId - An identifier for this request.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>Initialize() should be called to initialize.</pre>
+            <post>
+            When the resource is found, <see cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.ResourceFound"/> event handler will be invoked.
+            </post>
+            <seealso cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.ResourceFound"/>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.ResourceFoundEventArgs"/>
+            <seealso cref="P:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.TimeOut"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <example><code><![CDATA[
+            EventHandler<ResourceFoundEventArgs> handler = (sender, e) => {
+                Console.Log("Found resource at host address :" + e.Resource.HostAddress + ", uri :" + e.Resource.UriPath);
+            }
+            EventHandler<FindingErrorOccurredEventArgs> errorHandler = (sender, e) => {
+                Console.Log("Found error :" + e.Error.Message);
+            }
+            IoTConnectivityClientManager.ResourceFound += handler;
+            IoTConnectivityClientManager.FindingErrorOccurred += errorHandler;
+            ResourceQuery query = new ResourceQuery();
+            query.Type = "oic.iot.door";
+            // Do not forget to remove these event handlers when they are not required any more.
+            int id = IoTConnectivityClientManager.StartFindingResource(null, query);
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartFindingDeviceInformation(System.String,Tizen.Network.IoTConnectivity.ResourceQuery)">
+            <summary>
+            Starts finding the device information of remote server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <para>Requests server for device information.
+            If succeeded, <see cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.DeviceInformationFound"/> event handler will be triggered with information of the device.</para>
+            <para><paramref name="hostAddress" /> could be <see cref="F:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.MulticastAddress"/> for the IPv4 multicast.</para>
+            </remarks>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="hostAddress">The host address of the remote server.</param>
+            <param name="query">The query specified as a filter for founding resources.</param>
+            <returns>RequestId - An identifier for this request.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>Initialize() should be called to initialize.</pre>
+            <post>
+            <see cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.DeviceInformationFound" /> event handler will be invoked.
+            </post>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.SetDeviceName(System.String)"/>
+            <seealso cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.DeviceInformationFound"/>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.DeviceInformationFoundEventArgs"/>
+            <seealso cref="P:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.TimeOut"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <example><code><![CDATA[
+            EventHandler<DeviceInformationFoundEventArgs> handler = (sender, e) => {
+                Console.Log("Device information found, id : " + e.RequestId + ", name : " + e.Name);
+            }
+            EventHandler<FindingErrorOccurredEventArgs> errorHandler = (sender, e) => {
+                Console.Log("Found error :" + e.Error.Message);
+            }
+            IoTConnectivityClientManager.DeviceInformationFound += handler;
+            IoTConnectivityClientManager.FindingErrorOccurred += errorHandler;
+            // Do not forget to remove these event handlers when they are not required any more.
+            int id = IoTConnectivityClientManager.StartFindingDeviceInformation(IoTConnectivityClientManager.MulticastAddress);
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartFindingPlatformInformation(System.String,Tizen.Network.IoTConnectivity.ResourceQuery)">
+            <summary>
+            Starts finding the platform information of remote server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <para>Requests server for platform information.
+            If succeeded, <see cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PlatformInformationFound" /> event handler will be triggered with information of the platform.</para>
+            <para><paramref name="hostAddress" /> could be <see cref="F:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.MulticastAddress"/> for IPv4 multicast.</para>
+            </remarks>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="hostAddress">The host address of remote server.</param>
+            <param name="query">The query specified as a filter for founding resources.</param>
+            <returns>RequestId - An identifier for this request.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>Initialize() should be called to initialize.</pre>
+            <post>
+            <see cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PlatformInformationFound" /> event handler will be invoked.
+            </post>
+            <seealso cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PlatformInformationFound"/>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs"/>
+            <seealso cref="P:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.TimeOut"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <example><code><![CDATA[
+            EventHandler<PlatformInformationFoundEventArgs> handler = (sender, e) => {
+                Console.Log("PlatformInformationFound :" + e.RequestId);
+            }
+            EventHandler<FindingErrorOccurredEventArgs> errorHandler = (sender, e) => {
+                Console.Log("Found error :" + e.Error.Message);
+            }
+            IoTConnectivityClientManager.PlatformInformationFound += handler;
+            IoTConnectivityClientManager.FindingErrorOccurred += errorHandler;
+            // Do not forget to remove these event handlers when they are not required any more.
+            int id = IoTConnectivityClientManager.StartFindingPlatformInformation(IoTConnectivityClientManager.MulticastAddress);
+            ]]></code></example>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager">
+            <summary>
+            IoT connectivity server manager consists of server side APIs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.Initialize(System.String)">
+            <summary>
+            Initializes IoTCon. Calls this API to start IoTCon.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <paramref name="filePath" /> points to a file for handling secure virtual resources.
+            The file that is CBOR(Concise Binary Object Representation)-format must already exist
+            in <paramref name="filePath" />. We recommend to use application-local file for <paramref name="filePath" />.
+            </remarks>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="filePath">The file path pointing to storage for handling secure virtual resources.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <post>
+            You must call Deinitialize() if IoTCon API is no longer needed.
+            </post>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.Deinitialize"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access</exception>
+            <example><code>
+            string filePath = "../../res/iotcon-test-svr-db-server.dat";
+            IoTConnectivityServerManager.Initialize(filePath);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.Deinitialize">
+            <summary>
+            Deinitializes IoTCon.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            This API must be called if IoTCon API is no longer needed.
+            </remarks>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>
+            Initialize() should be called to initialize.
+            </pre>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.Initialize(System.String)"/>
+            <example><code>
+            IoTConnectivityServerManager.Deinitialize();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.RegisterResource(Tizen.Network.IoTConnectivity.Resource)">
+            <summary>
+            Registers a resource in IoTCon server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="resource">The resource to register.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>
+            Initialize() should be called to initialize.
+            </pre>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.Resource"/>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.LiteResource"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <example><code><![CDATA[
+            ResourceTypes types = new ResourceTypes(new List<string>(){ "org.tizen.light" });
+            Attributes attributes = new Attributes { { "state", "ON" }};
+            Resource res = new LiteResource("/room/1", types, ResourcePolicy.Discoverable, attributes);
+            try {
+                IoTConnectivityServerManager.RegisterResource(res);
+            } catch(Exception ex) {
+                Console.Log("Exception caught : " + ex.Message);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.UnregisterResource(Tizen.Network.IoTConnectivity.Resource)">
+            <summary>
+            Unregisters a resource in IoTCon server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="resource">The resource to unregister.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>
+            Initialize() should be called to initialize.
+            </pre>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.Resource"/>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.LiteResource"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <example><code><![CDATA[
+            ResourceTypes types = new ResourceTypes(new List<string>(){ "org.tizen.light" });
+            Attributes attributes = new Attributes { { "state", "ON" }};
+            Resource res = new LiteResource("/room/1", types, ResourcePolicy.Discoverable, attributes);
+            IoTConnectivityServerManager.RegisterResource(res);
+            try {
+                IoTConnectivityServerManager.UnregisterResource(res);
+            } catch(Exception ex) {
+                Console.Log("Exception caught : " + ex.Message);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.StartSendingPresence(System.UInt32)">
+            <summary>
+            Starts presence of a server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <para>Use this API to send server's announcements to clients.
+            Server can call this API when online for the first time or come back from offline to online.</para>
+            <para>If <paramref name="time" /> is 0, server will set default value as 60 seconds.</para>
+            <para>If <paramref name="time" /> is very big, server will set maximum value as (60 * 60 * 24) seconds, (24 hours).</para>
+            </remarks>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="time">The interval of announcing presence in seconds.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>
+            Initialize() should be called to initialize.
+            </pre>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartReceivingPresence(System.String,System.String)"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StopReceivingPresence(System.Int32)"/>
+            <seealso cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PresenceReceived"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.StopSendingPresence"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <example><code>
+            try {
+                IoTConnectivityServerManager.StartSendingPresence(120);
+            } catch(Exception ex) {
+                Console.Log("Exception caught : " + ex.Message);
+            }
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.StopSendingPresence">
+            <summary>
+            Stops presence of a server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            Use this API to stop sending server's announcements to clients.
+            Server can call this API when terminating, entering to offline or out of network.
+            </remarks>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>
+            Initialize() should be called to initialize.
+            </pre>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartReceivingPresence(System.String,System.String)"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StopReceivingPresence(System.Int32)"/>
+            <seealso cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.PresenceReceived"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.StartSendingPresence(System.UInt32)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <example><code>
+            IoTConnectivityServerManager.StopSendingPresence();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.SetDeviceName(System.String)">
+            <summary>
+            Sets the device name.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <para>This API sets the name of the local device (the device calling the API).</para>
+            <para>If the device name is set, clients can get the name using <see cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartFindingDeviceInformation(System.String,Tizen.Network.IoTConnectivity.ResourceQuery)"/>.</para>
+            </remarks>
+            <param name="deviceName">The device name.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.DeviceInformationFound"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartFindingDeviceInformation(System.String,Tizen.Network.IoTConnectivity.ResourceQuery)"/>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.DeviceInformationFoundEventArgs"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <example><code>
+            IoTConnectivityServerManager.SetDeviceName("my-tizen");
+            </code></example>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.LiteResource">
+            <summary>
+            This class represents a lite resource.
+            It provides APIs to encapsulate resources.
+            This class is accessed by using a constructor to create a new instance of this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.LiteResource.#ctor(System.String,Tizen.Network.IoTConnectivity.ResourceTypes,Tizen.Network.IoTConnectivity.ResourcePolicy,Tizen.Network.IoTConnectivity.Attributes)">
+            <summary>
+            The LiteResource constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <para>Creates a lite resource, which can then be registered in server using <see cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityServerManager.RegisterResource(Tizen.Network.IoTConnectivity.Resource)"/>.</para>
+            <para>When client requests some operations, it sends a response to client automatically.</para>
+            <para><paramref name="uri" /> length must be less than 128.</para>
+            </remarks>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="uri">The uri path of the lite resource.</param>
+            <param name="types">The type of the resource.</param>
+            <param name="policy">Policy of the resource.</param>
+            <param name="attribs">Optional attributes of the resource.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <pre>
+            IoTConnectivityServerManager.Initialize() should be called to initialize.
+            </pre>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.ResourceTypes"/>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.ResourcePolicy"/>
+            <seealso cref="P:Tizen.Network.IoTConnectivity.LiteResource.Attributes"/>
+            <example><code><![CDATA[
+            List<string> list = new List<string>() { "org.tizen.light" };
+            Attributes attributes = new Attributes() {
+                { "state", "ON" }
+            };
+            LiteResource res = new LiteResource("/light/1", new ResourceTypes(list), ResourcePolicy.Discoverable, attributes);
+            ]]></code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.LiteResource.Attributes">
+            <summary>
+            Gets or sets the attributes of the lite resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The attributes of the lite resource.</value>
+            <example><code><![CDATA[
+            List<string> list = new List<string>() { "org.tizen.light" };
+            LiteResource res = new LiteResource("/light/1", new ResourceTypes(list), ResourcePolicy.Discoverable);
+            Attributes attributes = new Attributes() {
+                { "state", "ON" }
+            };
+            res.Attributes = newAttributes;
+            foreach (KeyValuePair<string, object> pair in res.Attributes)
+            {
+                Console.WriteLine("key : {0}, value : {1}", pair.Key, pair.Value);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.LiteResource.OnPost(Tizen.Network.IoTConnectivity.Attributes)">
+            <summary>
+            Decides whether to accept or reject a post request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            Child classes of this class can override this method to accept or reject post request.
+            </remarks>
+            <param name="attribs">The new attributes of the lite resource.</param>
+            <returns>true to accept post request, false to reject it.</returns>
+            <example><code>
+            public class MyLightResource : LiteResource
+            {
+                protected override bool OnPost(Attributes attributes)
+                {
+                    object newAttributes;
+                    attributes.TryGetValue("LIGHT_ATTRIBUTE", out newAttributes);
+                    if((int)newAttributes == 1)
+                        return true;
+                    return false;
+                }
+            }
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.LiteResource.OnGet(Tizen.Network.IoTConnectivity.Request)">
+            <summary>
+            This is called when the client performs get operation on this resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">A request from client.</param>
+            <returns>A response having the representation and the result.</returns>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.LiteResource.OnPut(Tizen.Network.IoTConnectivity.Request)">
+            <summary>
+            This is called when the client performs put operation on this resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">A request from client.</param>
+            <returns>A response.</returns>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.LiteResource.OnPost(Tizen.Network.IoTConnectivity.Request)">
+            <summary>
+            This is called when the client performs post operation on this resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">A request from client.</param>
+            <returns>A response having the representation and the result.</returns>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.LiteResource.OnDelete(Tizen.Network.IoTConnectivity.Request)">
+            <summary>
+            This is called when the client performs delete operation on this resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">A request from client.</param>
+            <returns>A response.</returns>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.LiteResource.OnObserving(Tizen.Network.IoTConnectivity.Request,Tizen.Network.IoTConnectivity.ObserveType,System.Int32)">
+            <summary>
+            Called on the observing event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">A request from client.</param>
+            <param name="observeType">Observer type.</param>
+            <param name="observeId">Observe identifier.</param>
+            <returns>Returns true.</returns>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ObservePolicy">
+            <summary>
+            Enumeration for the policy of observation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ObservePolicy.IgnoreOutOfOrder">
+            <summary>
+            Indicates the observation request for the most up-to-date notifications only.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ObservePolicy.AcceptOutOfOrder">
+            <summary>
+            Indicates the observation request for all notifications including state notifications.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ObserverNotifiedEventArgs">
+            <summary>
+            This class represents event arguments of the ObserverNotified event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ObserverNotifiedEventArgs.Result">
+            <summary>
+            Result of the observe response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Result of the observe response.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ObserverNotifiedEventArgs.Representation">
+            <summary>
+            Representation of the resource being observed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Representation of the resource being observed.</value>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ObserveType">
+            <summary>
+            Enumeration for the type of observation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ObserveType.NoType">
+            <summary>
+            No observe action.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ObserveType.Register">
+            <summary>
+            Indicates an action of the registering observation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ObserveType.Deregister">
+            <summary>
+            Indicates an action of unregistering observation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs">
+            <summary>
+            This class represents event arguments of the PlatformInformationFound event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.RequestId">
+            <summary>
+            Indicates the request ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The request ID.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.EventContinue">
+            <summary>
+            Indicates to continuously receive the event for finding the platform information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Continuously receive the event for finding the platform information.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.PlatformId">
+            <summary>
+            Indicates the platform identifier.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The platform identifier.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.ManufacturerName">
+            <summary>
+            Indicates the name of the manufacturer.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The name of the manufacturer.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.ManufacturerURL">
+            <summary>
+            Indicates the URL of the manufacturer.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The URL of the manufacturer.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.ModelNumber">
+            <summary>
+            Indicates the model number as designated by the manufacturer.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The model number as designated by the manufacturer.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.DateOfManufacture">
+            <summary>
+            Indicates the manufacturing date of the device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The manufacturing date of the device.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.PlatformVersion">
+            <summary>
+            Indicates the version of the platfrom defined by the manufacturer.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The version of platfrom defined by manufacturer.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.OsVersion">
+            <summary>
+            Indicates the version of the platfrom resident OS.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The version of the platfrom resident OS.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.HardwareVersion">
+            <summary>
+            Indicates the version of the platform Hardware.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The version of the platform Hardware.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.FirmwareVersion">
+            <summary>
+            Indicates the version of the device firmware.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The version of the device firmware.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.SupportUrl">
+            <summary>
+            Indicates the URL that points to support information from the manufacturer.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The URL that points to support information from the manufacturer.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PlatformInformationFoundEventArgs.SystemTime">
+            <summary>
+            Indicates the reference time of the device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The reference time of the device.</value>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.PresenceEventType">
+            <summary>
+            Enumeration for operation of presence response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.PresenceEventType.ResourceCreated">
+            <summary>
+            Indicates the resource creation operation of the server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.PresenceEventType.ResourceUpdated">
+            <summary>
+            Indicates the resource updation operation of the server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.PresenceEventType.ResourceDestroyed">
+            <summary>
+            Indicates the resource destruction operation of the server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.PresenceReceivedEventArgs">
+            <summary>
+            This class represents event arguments of the PresenceReceived event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PresenceReceivedEventArgs.PresenceId">
+            <summary>
+            Indicates the request ID of the presence event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The request ID of the presence event.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PresenceReceivedEventArgs.EventType">
+            <summary>
+            Indicates the event type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The event type.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PresenceReceivedEventArgs.HostAddress">
+            <summary>
+            Indicates the host address of resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The host address of resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.PresenceReceivedEventArgs.Type">
+            <summary>
+            Indicates the type of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The type of the resource.</value>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.QualityOfService">
+            <summary>
+            Enumeration for states of remote resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.QualityOfService.Low">
+            <summary>
+            Indicates the low quality of service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.QualityOfService.High">
+            <summary>
+            Indicates the high quality of service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.RemoteResource">
+            <summary>
+            This class represents a remote resource.
+            It provides APIs to manage remote resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.#ctor(System.String,System.String,Tizen.Network.IoTConnectivity.ResourcePolicy,Tizen.Network.IoTConnectivity.ResourceTypes,Tizen.Network.IoTConnectivity.ResourceInterfaces)">
+            <summary>
+            Creates a remote resource instance.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <para>To use this API, you should provide all the details required to correctly contact and
+            observe the object.</para>
+            <para>If not, you should discover the resource object manually.</para>
+            <para>The <paramref name="policy" /> can contain multiple policies like <c>ResourcePolicy.Discoverable | ResourcePolicy.Observable</c>.</para>
+            </remarks>
+            <param name="hostAddress">The host address of the resource.</param>
+            <param name="uriPath">The URI path of the resource.</param>
+            <param name="policy">The policies of the resource.</param>
+            <param name="resourceTypes">The resource types of the resource.</param>
+            <param name="resourceInterfaces">The resource interfaces of the resource.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.Finalize">
+            <summary>
+            Destructor of the RemoteResource class.
+            </summary>
+        </member>
+        <member name="E:Tizen.Network.IoTConnectivity.RemoteResource.CacheUpdated">
+            <summary>
+            The event is invoked with cached resource attributes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.IoTConnectivity.RemoteResource.ObserverNotified">
+            <summary>
+            Observe an event on the resource sent by the server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.IoTConnectivity.RemoteResource.StateChanged">
+            <summary>
+            The event is called when remote resource's state are changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResource.HostAddress">
+            <summary>
+            The host address of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The host address of the resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResource.UriPath">
+            <summary>
+            The URI path of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The URI path of the resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResource.Types">
+            <summary>
+            The resource types of the remote resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The resource types of the remote resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResource.Interfaces">
+            <summary>
+            The interfaces of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The interfaces of the resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResource.Policy">
+            <summary>
+            The policy of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The policy of the resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResource.Options">
+            <summary>
+            The header options of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The header options of the resource.</value>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResource.CacheEnabled">
+            <summary>
+            Indicates the CacheEnabled status of the remote resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            Client can start caching only when this is set true. Set it to false to stop caching the resource attributes.
+            </value>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResource.TimeInterval">
+            <summary>
+            Time interval of monitoring and caching API.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            Default time interval is 10 seconds.
+            Seconds for time interval (must be in range from 1 to 3600).
+            </value>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResource.DeviceId">
+            <summary>
+            The device ID of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The device ID of the resource.</value>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.CachedRepresentation">
+            <summary>
+            Gets cached representation from the remote resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>cached representation from the remote resource.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.StartObserving(Tizen.Network.IoTConnectivity.ObservePolicy,Tizen.Network.IoTConnectivity.ResourceQuery)">
+            <summary>
+            Starts observing on the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            When server sends notification message, <see cref="E:Tizen.Network.IoTConnectivity.RemoteResource.ObserverNotified"/> will be called.
+            </remarks>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="policy">The type to specify how client wants to observe.</param>
+            <param name="query">The query to send to server.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.StopObserving">
+            <summary>
+            Stops observing on the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.GetAsync(Tizen.Network.IoTConnectivity.ResourceQuery)">
+            <summary>
+            Gets the attributes of a resource asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="query">The ResourceQuery to send to server.</param>
+            <returns>Remote response with result and representation.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.PutAsync(Tizen.Network.IoTConnectivity.Representation,Tizen.Network.IoTConnectivity.ResourceQuery)">
+            <summary>
+            Puts the representation of a resource asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="representation">Resource representation to put.</param>
+            <param name="query">The ResourceQuery to send to server.</param>
+            <returns>Remote response with result and representation.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.PostAsync(Tizen.Network.IoTConnectivity.Representation,Tizen.Network.IoTConnectivity.ResourceQuery)">
+            <summary>
+            Posts request on a resource asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <param name="representation">Resource representation of request.</param>
+            <param name="query">The ResourceQuery to send to server.</param>
+            <returns>Remote response with result and representation.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.DeleteAsync">
+            <summary>
+            Deletes the resource asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <returns>Remote response with result and representation.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.RemoteResource.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.RemoteResponse">
+            <summary>
+            This class represents a remote response.
+            It represents the response of all CRUD operations.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResponse.Result">
+            <summary>
+            Indicates the result of the response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The result of the response.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResponse.Representation">
+            <summary>
+            Indicates representation of the response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Representation of the response.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.RemoteResponse.Options">
+            <summary>
+            Indicates header options of the response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Header options of the response.</value>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.Representation">
+            <summary>
+            This class provides APIs to manage representation.
+            A representation is a payload of a request or a response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Representation.#ctor">
+            <summary>
+            The Representation constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <example><code>
+            Representation repr = new Representation();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Representation.Finalize">
+            <summary>
+            Destructor of the Representation class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Representation.UriPath">
+            <summary>
+            The URI path of resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The URI path of resource.
+            Setter can throw exceptions.
+            </value>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code>
+            Representation repr = new Representation();
+            repr.UriPath = "/a/light";
+            Console.WriteLine("URI is {0}", repr.UriPath);  //Getter
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Representation.Type">
+            <summary>
+            The type of resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The type of resource.</value>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.ResourceTypes"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code><![CDATA[
+            Representation repr = new Representation();
+            ResourceTypes types = new ResourceTypes (new List<string>(){ "org.tizen.light" });
+            repr.Type = types;
+            var type = repr.Type;   // Getter
+            foreach (string item in type)
+            {
+                Console.WriteLine("Type is {0}", item);
+            }
+            ]]></code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Representation.Interface">
+            <summary>
+            The interface of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The interface of the resource.</value>
+            <seealso cref="T:Tizen.Network.IoTConnectivity.ResourceInterfaces"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code><![CDATA[
+            Representation repr = new Representation();
+            ResourceInterfaces ifaces = new ResourceInterfaces (new List<string>(){ ResourceInterfaces.DefaultInterface });
+            repr.Interface = ifaces;
+            var iface = repr.Interface;   // Getter
+            foreach (string item in iface)
+            {
+                Console.WriteLine("Interface is {0}", iface);
+            }
+            ]]></code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Representation.Attributes">
+            <summary>
+            Current attributes of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Current attributes of the resource.</value>
+            <seealso cref="P:Tizen.Network.IoTConnectivity.Representation.Attributes"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code>
+            Representation repr = new Representation();
+            Attributes attributes = new Attributes() {
+                { "state", "ON" },
+                { "dim", 10 }
+            };
+            repr.Attributes = attributes;
+            var newAttributes = repr.Attributes;   // Getter
+            string strval = newAttributes["state"] as string;
+            int intval = (int)newAttributes["dim"];
+            Console.WriteLine("attributes are {0} and {1}", strval, intval);
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Representation.Children">
+            <summary>
+            List of Child resource representation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>List of Child resource representation.</value>
+            <example><code><![CDATA[
+            Representation repr = new Representation();
+            Representation child1 = new Representation();
+            ResourceTypes types1 = new ResourceTypes(new List<string>() { "org.tizen.light" });
+            child1.Type = types1;
+            ResourceInterfaces ifaces1 = new ResourceInterfaces(new List<string>() { ResourceInterfaces.DefaultInterface });
+            child1.Interface = ifaces1;
+            try
+            {
+                repr.Children.Add(child1);
+                Console.WriteLine("Number of children : {0}", repr.Children.Count);
+                Representation firstChild = repr.Children.ElementAt(0);
+            } catch(Exception ex)
+            {
+                Console.WriteLine("Exception caught : " + ex.Message);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Representation.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Representation.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.Request">
+            <summary>
+            Class respresenting request to a resource.
+            It provides APIs to manage client's request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Request.Finalize">
+            <summary>
+            Destructor of the Request class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Request.HostAddress">
+            <summary>
+            The host address of the request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The host address of the request.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Request.Representation">
+            <summary>
+            The representation of the request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The representation of the request.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Request.Query">
+            <summary>
+            The query of the request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The query of the request.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Request.Options">
+            <summary>
+            The options related to the request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The options related to the request.</value>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Request.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Request.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.Resource">
+            <summary>
+            Abstract class respresenting a resource.
+            All resources need to inherit from this class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Resource.#ctor(System.String,Tizen.Network.IoTConnectivity.ResourceTypes,Tizen.Network.IoTConnectivity.ResourceInterfaces,Tizen.Network.IoTConnectivity.ResourcePolicy)">
+             <summary>
+             The constructor.
+             </summary>
+             <since_tizen> 3 </since_tizen>
+             <remarks>
+             <paramref name="uri" /> format would be relative URI path like '/a/light'
+             and its length must be less than 128.
+             </remarks>
+             <privilege>http://tizen.org/privilege/internet</privilege>
+             <privlevel>public</privlevel>
+             <param name="uri">The URI path of the resource.</param>
+             <param name="types">Resource types.</param>
+             <param name="interfaces">Resource interfaces.</param>
+             <param name="policy">The policies of the resoruce.</param>
+             <feature>http://tizen.org/feature/iot.ocf</feature>
+             <pre>
+             IoTConnectivityServerManager.Initialize() should be called to initialize.
+             </pre>
+             <seealso cref="T:Tizen.Network.IoTConnectivity.ResourceTypes"/>
+             <seealso cref="T:Tizen.Network.IoTConnectivity.ResourceInterfaces"/>
+             <seealso cref="T:Tizen.Network.IoTConnectivity.ResourcePolicy"/>
+             <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+             <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+             <example><code><![CDATA[
+             // Create a class which inherits from Resource
+             public class DoorResource : Resource
+             {
+                 public DoorResource(string uri, ResourceTypes types, ResourceInterfaces interfaces, ResourcePolicy policy)
+                         : base(uri, types, interfaces, policy) {
+                 }
+                 protected override Response OnDelete(Request request) {
+                     // Do something
+                 }
+                 protected override Response OnGet(Request request) {
+                     // Do something
+                 }
+                 // Override other abstract methods of Resource class
+             }
+            
+             // Use it like below
+             ResourceInterfaces ifaces = new ResourceInterfaces(new List<string>(){ ResourceInterfaces.DefaultInterface });
+             ResourceTypes types = new ResourceTypes(new List<string>(){ "oic.iot.door.new" });
+             Resource resource = new DoorResource("/door/uri1", types, ifaces, ResourcePolicy.Discoverable | ResourcePolicy.Observable);
+             ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Resource.Finalize">
+            <summary>
+            Destructor of the Resource class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Resource.Types">
+            <summary>
+            Type details of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Type details of the resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Resource.Interfaces">
+            <summary>
+            Interface details of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Interface details of the resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Resource.Policy">
+            <summary>
+            The policies of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The policies of the resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Resource.UriPath">
+            <summary>
+            URI path of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>URI path of the resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Resource.Children">
+            <summary>
+            List of Child resources.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>List of Child resources.</value>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Resource.Notify(Tizen.Network.IoTConnectivity.Representation,Tizen.Network.IoTConnectivity.QualityOfService)">
+             <summary>
+             Notify the specified representation and qos.
+             </summary>
+             <since_tizen> 3 </since_tizen>
+             <privilege>http://tizen.org/privilege/internet</privilege>
+             <privlevel>public</privlevel>
+             <param name="representation">Representation.</param>
+             <param name="qos">The quality of service for message transfer.</param>
+             <feature>http://tizen.org/feature/iot.ocf</feature>
+             <pre>
+             IoTConnectivityServerManager.Initialize() should be called to initialize.
+             </pre>
+             <seealso cref="T:Tizen.Network.IoTConnectivity.Representation"/>
+             <seealso cref="T:Tizen.Network.IoTConnectivity.QualityOfService"/>
+             <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+             <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have privilege to access.</exception>
+             <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+             <example><code><![CDATA[
+             ResourceInterfaces ifaces = new ResourceInterfaces(new List<string>(){ ResourceInterfaces.DefaultInterface });
+             ResourceTypes types = new ResourceTypes(new List<string>(){ "oic.iot.door.new.notify" });
+             Resource resource = new DoorResource("/door/uri/new/notify", types, ifaces, ResourcePolicy.Discoverable | ResourcePolicy.Observable);
+             IoTConnectivityServerManager.RegisterResource(resource);
+            
+             Representation repr = new Representation();
+             repr.UriPath = "/door/uri/new/notify";
+             repr.Type = new ResourceTypes(new List<string>(){ "oic.iot.door.new.notify" });
+             repr.Attributes = new Attributes() {
+                  _attribute, 1 }
+             };
+             resource.Notify(repr, QualityOfService.High);
+             ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Resource.OnGet(Tizen.Network.IoTConnectivity.Request)">
+            <summary>
+            This is called when the client performs get operation on this resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">A request from client.</param>
+            <returns>A response having the representation and the result.</returns>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Resource.OnPut(Tizen.Network.IoTConnectivity.Request)">
+            <summary>
+            This is called when the client performs put operation on this resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">A request from client.</param>
+            <returns>A response.</returns>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Resource.OnPost(Tizen.Network.IoTConnectivity.Request)">
+            <summary>
+            This is called when the client performs post operation on this resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">A request from client.</param>
+            <returns>A response having the representation and the result.</returns>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Resource.OnDelete(Tizen.Network.IoTConnectivity.Request)">
+            <summary>
+            This is called when the client performs delete operation on this resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">A request from client.</param>
+            <returns>A response.</returns>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Resource.OnObserving(Tizen.Network.IoTConnectivity.Request,Tizen.Network.IoTConnectivity.ObserveType,System.Int32)">
+            <summary>
+            Called on the observing event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">A request from client.</param>
+            <param name="type">Observer type.</param>
+            <param name="observeId">Observe identifier.</param>
+            <returns>Returns true if it wants to be observed, else false.</returns>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Resource.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Resource.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ResourceFoundEventArgs">
+            <summary>
+            This class represents event arguments of the ResourceFound event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceFoundEventArgs.RequestId">
+            <summary>
+            Indicates the request ID.
+            This is the same request ID returned by the <see cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartFindingResource(System.String,Tizen.Network.IoTConnectivity.ResourceQuery)"/> API.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The request ID.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceFoundEventArgs.EventContinue">
+            <summary>
+            Indicates to continuously receive the event for finding resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Continuously receive the event for finding resource.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceFoundEventArgs.Resource">
+            <summary>
+            Remote resource, which is found after <see cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartFindingResource(System.String,Tizen.Network.IoTConnectivity.ResourceQuery)"/>.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Remote resource which is found after <see cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartFindingResource(System.String,Tizen.Network.IoTConnectivity.ResourceQuery)"/>.</value>
+            <seealso cref="E:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.ResourceFound"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.StartFindingResource(System.String,Tizen.Network.IoTConnectivity.ResourceQuery)"/>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ResourceInterfaces">
+            <summary>
+            This class contains resource interfaces and provides APIs to manage, add, or remove those interfaces.
+            A resource interface indicates a class or category of resources.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourceInterfaces.DefaultInterface">
+            <summary>
+            Default Interface.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourceInterfaces.LinkInterface">
+            <summary>
+            List Links Interface, which is used to list the references to other resources contained in a resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourceInterfaces.BatchInterface">
+            <summary>
+            Batch Interface, which is used to manipulate (GET, PUT, POST, DELETE) on other resource contained in a resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourceInterfaces.GroupInterface">
+            <summary>
+            Group Interface, which is used to manipulate (GET, PUT, POST) a group of remote resources.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourceInterfaces.ReadonlyInterface">
+            <summary>
+            Read-Only Interface, which is used to limit the methods that can be applied to a resource to GET only.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.#ctor">
+            <summary>
+            Constructor of ResourceInterfaces.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.Add(System.String)"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.Remove(System.String)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <example><code>
+            ResourceInterfaces resourceInterfaces = new ResourceInterfaces();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Constructor of ResourceInterfaces using list of interfaces.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="ifaces">List of resource interfaces.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <example><code><![CDATA[
+            ResourceInterfaces resourceInterfaces = new ResourceInterfaces(new List<string>()
+                { ResourceInterfaces.LinkInterface, ResourceInterfaces.ReadonlyInterface });
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.Finalize">
+            <summary>
+            Destructor of the ResourceInterfaces class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceInterfaces.Count">
+            <summary>
+            Indicates count of interfaces in the list
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Count of interfaces in the list.</value>
+            <example><code><![CDATA[
+            ResourceInterfaces resourceInterfaces = new ResourceInterfaces(new List<string>()
+                { ResourceInterfaces.LinkInterface, ResourceInterfaces.ReadonlyInterface });
+            Console.WriteLine("There are {0} interfaces", resourceInterfaces.Count);
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.Add(System.String)">
+            <summary>
+            Adds a resource interface into the list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <paramref name="item" /> could be a value, such as <see cref="F:Tizen.Network.IoTConnectivity.ResourceInterfaces.DefaultInterface"/>.
+            </remarks>
+            <param name="item">The string data to insert into the resource interfaces.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.Remove(System.String)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <example><code>
+            ResourceInterfaces resourceInterfaces = new ResourceInterfaces();
+            resourceInterfaces.Add(ResourceInterfaces.BatchInterface);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.Remove(System.String)">
+            <summary>
+            Removes a resource interface from the list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="item">The string data to delete from the resource ifaces.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.Add(System.String)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code><![CDATA[
+            ResourceInterfaces resourceInterfaces = new ResourceInterfaces(new List<string>(){ ResourceInterfaces.BatchInterface });
+            resourceInterfaces.Add(ResourceInterfaces.BatchInterface);
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.GetEnumerator">
+            <summary>
+            Returns enumerator for the list of interfaces.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The enumerator.</returns>
+            <example><code><![CDATA[
+            ResourceInterfaces resourceInterfaces = new ResourceInterfaces(new List<string>()
+                { ResourceInterfaces.LinkInterface, ResourceInterfaces.ReadonlyInterface });
+            foreach(string item in resourceInterfaces)
+            {
+                Console.WriteLine("Interface : {0}", item);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns enumerator for the list of interfaces.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The enumerator.</returns>
+            <example><code><![CDATA[
+            ResourceInterfaces resourceInterfaces = new ResourceInterfaces(new List<string>()
+                { ResourceInterfaces.LinkInterface, ResourceInterfaces.ReadonlyInterface });
+            foreach(string item in resourceInterfaces)
+            {
+                Console.WriteLine("Interface : {0}", item);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceInterfaces.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ResourceOptions">
+            <summary>
+            <para>This class represents resource options. It provides APIs to manage them.</para>
+            <para>The iotcon options API provides methods for managing vendor specific options of coap packet.</para>
+            <para>See more about coap packet in http://tools.ietf.org/html/rfc7252.</para>
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.#ctor">
+            <summary>
+            The resource options constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceOptions.Add(System.UInt16,System.String)"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceOptions.Remove(System.UInt16)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.Finalize">
+            <summary>
+            Destructor of the ResourceOptions class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceOptions.Keys">
+            <summary>
+            Contains all the Option keys.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>All the Option keys.</value>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            options.Add(2050, "sample-data");
+            options.Add(2055, "sample value");
+            var keys = options.Keys;
+            Console.WriteLine("Resource options contains keys {0} and {1}", keys.ElementAt(0), keys.ElementAt(1));
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceOptions.Values">
+            <summary>
+            Contains all the Option values.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>All the Option values.</value>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            options.Add(2050, "sample-data");
+            options.Add(2055, "sample value");
+            var values = options.Values;
+            Console.WriteLine("Resource options contains values {0} and {1}", values.ElementAt(0), values.ElementAt(1));
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceOptions.Count">
+            <summary>
+            Gets the number of options.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The number of options.</value>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            options.Add(2050, "sample-data");
+            options.Add(2055, "sample value");
+            var count = options.Count;
+            Console.WriteLine("There are {0} keys in the options object", count);
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceOptions.IsReadOnly">
+            <summary>
+            Represents whether the collection is readonly.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Whether the collection is readonly.</value>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            if (options.IsReadOnly)
+                Console.WriteLine("Read only options");
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceOptions.Item(System.UInt16)">
+            <summary>
+            Gets or sets the option data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The option data.</value>
+            <param name="key">The option ID to get or set.</param>
+            <returns>The option with the specified ID.</returns>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            options[2055] = "sample-data";
+            Console.WriteLine("Option has : {0}", options[2055]);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.ContainsKey(System.UInt16)">
+            <summary>
+            Checks whether the given key exists in Options collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The key to look for.</param>
+            <returns>true if exists. Otherwise, false.</returns>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            options.Add(2050, "sample-data");
+            if (options.ContainsKey(2050))
+                Console.WriteLine("options conatins key : 2050");
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.Add(System.UInt16,System.String)">
+            <summary>
+            Adds a new ID and a correspoding data into the options.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <para>ResourceOptions can have up to 2 options.</para>
+            <para>key is always situated between 2048 and 3000.</para>
+            <para>Length of option data is less than or equal to 15.</para>
+            </remarks>
+            <param name="key">The ID of the option to insert.</param>
+            <param name="value">The string data to insert into the options.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceOptions.Remove(System.UInt16)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            options.Add(2050, "sample-data");
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.Remove(System.UInt16)">
+            <summary>
+            Removes the ID and its associated data from the options.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The ID of the option to delete.</param>
+            <returns>True if operation is successful. Otherwise, false.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceOptions.Add(System.UInt16,System.String)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            options.Add(2050, "12345");
+            var result = options.Remove(2050);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.TryGetValue(System.UInt16,System.String@)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The option ID.</param>
+            <param name="value">Value corresponding to option ID.</param>
+            <returns>True if the key exists, false otherwise.</returns>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            options.Add(2050, "12345");
+            string value;
+            var isPresent = options.TryGetValue(2050, out value);
+            if (isPresent)
+                Console.WriteLine("value : {0}", value);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.Add(System.Collections.Generic.KeyValuePair{System.UInt16,System.String})">
+            <summary>
+             Adds options key and value as a key value pair.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="item">The key value pair.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceOptions.Remove(System.Collections.Generic.KeyValuePair{System.UInt16,System.String})"/>
+            <example><code><![CDATA[
+            ResourceOptions options = new ResourceOptions();
+            options.Add(new KeyValuePair<ushort, string>(2050, "12345"));
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.Clear">
+            <summary>
+            Clears the Options collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <example><code>
+            ResourceOptions options = new ResourceOptions();
+            options.Add(2050, "12345");
+            options.Add(2055, "sample");
+            options.Clear();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.Contains(System.Collections.Generic.KeyValuePair{System.UInt16,System.String})">
+            <summary>
+            Checks if the given option pair exists.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="item">The key value pair.</param>
+            <returns>True if exists. Otherwise, false.</returns>
+            <example><code><![CDATA[
+            ResourceOptions options = new ResourceOptions();
+            options.Add(new KeyValuePair<ushort, string>(2050, "12345"));
+            var isPresent = options.Contains(new KeyValuePair<ushort, string>(2050, "12345"));
+            if (isPresent)
+                Console.WriteLine("Key value pair is present");
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.CopyTo(System.Collections.Generic.KeyValuePair{System.UInt16,System.String}[],System.Int32)">
+            <summary>
+            Copies the elements of the options collection to an array, starting at a particular index.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="array">The destination array.</param>
+            <param name="arrayIndex">Index parameter.</param>
+            <example><code><![CDATA[
+            ResourceOptions options = new ResourceOptions();
+            options.Add(new KeyValuePair<ushort, string>(2050, "12345"));
+            KeyValuePair<ushort, string>[] dest = new KeyValuePair<ushort, string>[options.Count];
+            options.CopyTo(dest, 0);
+            Console.WriteLine("Dest conatins ({0}, {1})", dest[0].Key, dest[0].Value);
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.Remove(System.Collections.Generic.KeyValuePair{System.UInt16,System.String})">
+            <summary>
+            Removes the given key value pair from the options.
+            </summary>
+            <since_tizen>3</since_tizen>
+            <param name="item">The key value pair to remove</param>
+            <returns>True if operation is successful. Otherwise, false</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceOptions.Add(System.Collections.Generic.KeyValuePair{System.UInt16,System.String})"/>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter</exception>
+            <example><code><![CDATA[
+            ResourceOptions options = new ResourceOptions();
+            options.Add(new KeyValuePair<ushort, string>(2050, "12345"));
+            var result = options.Remove(new KeyValuePair<ushort, string>(2050, "12345"));
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.GetEnumerator">
+            <summary>
+            Get the enumerator to options collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Enumerator to option pairs.</returns>
+            <example><code><![CDATA[
+            ResourceOptions options = new ResourceOptions();
+            options.Add(new KeyValuePair<ushort, string>(2050, "sample1"));
+            options.Add(new KeyValuePair<ushort, string>(2055, "sample2"));
+            foreach (KeyValuePair<string, object> pair in options)
+            {
+                Console.WriteLine("key : {0}, value : {1}", pair.Key, pair.Value);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Gets the enumerator to options collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Enumerator to option pairs.</returns>
+            <example><code><![CDATA[
+            ResourceOptions options = new ResourceOptions();
+            options.Add(new KeyValuePair<ushort, string>(2050, "sample1"));
+            options.Add(new KeyValuePair<ushort, string>(2055, "sample2"));
+            foreach (KeyValuePair<string, object> pair in options)
+            {
+                Console.WriteLine("key : {0}, value : {1}", pair.Key, pair.Value);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceOptions.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ResourcePolicy">
+            <summary>
+            Enumeration for the policy, which can be held in a resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourcePolicy.NoProperty">
+            <summary>
+            Indicates resource uninitialized.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourcePolicy.Discoverable">
+            <summary>
+            Indicates resource that is allowed to be discovered.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourcePolicy.Observable">
+            <summary>
+            Indicates resource that is allowed to be observed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourcePolicy.Active">
+            <summary>
+            Indicates resource initialized and activated.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourcePolicy.Slow">
+            <summary>
+            Indicates resource, which takes some delay to respond.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourcePolicy.Secure">
+            <summary>
+            Indicates secure resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourcePolicy.ExplicitDiscoverable">
+            <summary>
+            When this bit is set, the resource is allowed to be discovered only if discovery request contains an explicit querystring.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ResourceQuery">
+            <summary>
+            This class provides APIs to manage the query of request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.#ctor">
+            <summary>
+            The resource query constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceQuery.Add(System.String,System.String)"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceQuery.Remove(System.String)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.Finalize">
+            <summary>
+            Destructor of the ResourceQuery class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceQuery.Type">
+            <summary>
+            Gets and sets the resource type of the query.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The resource type of the query.</value>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query.Type = "org.tizen.light";
+            Console.WriteLine("Type of query : {0}", query.Type);
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceQuery.Interface">
+            <summary>
+            Gets and sets the resource interface of the query.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The resource interface of the query.
+            Setter value could be a value, such as <see cref="F:Tizen.Network.IoTConnectivity.ResourceInterfaces.DefaultInterface"/>.
+            </value>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query.Interface = ResourceInterfaces.LinkInterface;
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceQuery.Keys">
+            <summary>
+            Contains all the query keys.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>All the query keys.</value>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query.Add("key", "value");
+            query.Add("newKey", "sample value");
+            var keys = query.Keys;
+            Console.WriteLine("Resource query contains keys {0} and {1}", keys.ElementAt(0), keys.ElementAt(1));
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceQuery.Values">
+            <summary>
+            Contains all the query values.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>All the query values.</value>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query.Add("key", "value");
+            query.Add("newKey", "sample value");
+            var values = query.Values;
+            Console.WriteLine("Resource query contains values {0} and {1}", values.ElementAt(0), values.ElementAt(1));
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceQuery.Count">
+            <summary>
+            Gets the number of query elements.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The number of query elements.</value>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query.Add("key", "value");
+            query.Add("newKey", "sample value");
+            var count = query.Count;
+            Console.WriteLine("There are {0} keys in the query object", count);
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceQuery.IsReadOnly">
+            <summary>
+            Represents whether the collection is readonly.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Whether the collection is readonly.</value>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            if (query.IsReadOnly)
+                Console.WriteLine("Read only query");
+            </code></example>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceQuery.Item(System.String)">
+            <summary>
+            Gets or sets the query data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The query data.</value>
+            <param name="key">The query key to get or set.</param>
+            <returns>The query with the specified key.</returns>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query["key1"] = "sample-data";
+            Console.WriteLine("query has : {0}", query["key1"]);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.ContainsKey(System.String)">
+            <summary>
+            Checks whether the given key exists in the query collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The key to look for.</param>
+            <returns>true if exists. Otherwise, false.</returns>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query.Add("key1", "value1");
+            if (query.ContainsKey("key1"))
+                Console.WriteLine("query conatins key : key1");
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.Add(System.String,System.String)">
+            <summary>
+            Adds a new key and correspoding value into the query.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            The full length of query should be less than or equal to 64.
+            </remarks>
+            <param name="key">The key of the query to insert.</param>
+            <param name="value">The string data to insert into the query.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceQuery.Remove(System.String)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query.Add("key1", "value1");
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.Remove(System.String)">
+            <summary>
+            Removes the key and its associated value from the query.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The ID of the query to delete.</param>
+            <returns>True if operation is successful. Otherwise, false.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceQuery.Add(System.String,System.String)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query.Add("key1", "value1");
+            var result = query.Remove("key1");
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.TryGetValue(System.String,System.String@)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The query key.</param>
+            <param name="value">Value corresponding to query key.</param>
+            <returns>True if the key exists, false otherwise.</returns>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query.Add("key1", "value1");
+            string value;
+            var isPresent = query.TryGetValue("key1", out value);
+            if (isPresent)
+                Console.WriteLine("value : {0}", value);
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.Add(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            Adds a query key and a value as a key value pair.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="item">The key value pair.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceQuery.Remove(System.Collections.Generic.KeyValuePair{System.String,System.String})"/>
+            <example><code><![CDATA[
+            ResourceQuery query = new ResourceQuery();
+            query.Add(new KeyValuePair<string, string>("key1", "value1"));
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.Clear">
+            <summary>
+            Clears the query collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code>
+            ResourceQuery query = new ResourceQuery();
+            query.Add("key1", "value1");
+            query.Add("key2", "value2");
+            query.Clear();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.Contains(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            Checks if the given query pair exists.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="item">The key value pair.</param>
+            <returns>True if exists. Otherwise, false.</returns>
+            <example><code><![CDATA[
+            ResourceQuery query = new ResourceQuery();
+            query.Add(new KeyValuePair<string, string>("key1", "value1"));
+            var isPresent = query.Contains(new KeyValuePair<string, string>("key1", "value1"));
+            if (isPresent)
+                Console.WriteLine("Key value pair is present");
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.String}[],System.Int32)">
+            <summary>
+            Copies the elements of the query collection to an array, starting at a particular index.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="array">The destination array.</param>
+            <param name="arrayIndex">Index parameter.</param>
+            <example><code><![CDATA[
+            ResourceQuery query = new ResourceQuery();
+            query.Add(new KeyValuePair<string, string>("key1", "value1"));
+            KeyValuePair<string, string>[] dest = new KeyValuePair<string, string>[query.Count];
+            query.CopyTo(dest, 0);
+            Console.WriteLine("Dest conatins ({0}, {1})", dest[0].Key, dest[0].Value);
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.Remove(System.Collections.Generic.KeyValuePair{System.String,System.String})">
+            <summary>
+            Removes the given key value pair from the query.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="item">The key value pair to remove.</param>
+            <returns>True if operation is successful. Otherwise, false.</returns>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceQuery.Add(System.Collections.Generic.KeyValuePair{System.String,System.String})"/>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <example><code><![CDATA[
+            ResourceQuery query = new ResourceQuery();
+            query.Add(new KeyValuePair<string, string>("key1", "value1"));
+            var result = query.Remove(new KeyValuePair<string, string>("key1", "value1"));
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.GetEnumerator">
+            <summary>
+            Gets the enumerator to the query collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Enumerator to query pairs.</returns>
+            <example><code><![CDATA[
+            ResourceQuery query = new ResourceQuery();
+            query.Add(new KeyValuePair<string, string>("key1", "value1"));
+            query.Add(new KeyValuePair<string, string>("key2", "value2"));
+            foreach (KeyValuePair<string, string> pair in query)
+            {
+                Console.WriteLine("key : {0}, value : {1}", pair.Key, pair.Value);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Gets the enumerator to the query collection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The enumerator to the query pairs.</returns>
+            <example><code><![CDATA[
+            ResourceQuery query = new ResourceQuery();
+            query.Add(new KeyValuePair<string, string>("key1", "value1"));
+            query.Add(new KeyValuePair<string, string>("key2", "value2"));
+            foreach (KeyValuePair<string, string> pair in query)
+            {
+                Console.WriteLine("key : {0}, value : {1}", pair.Key, pair.Value);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceQuery.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ResourceState">
+            <summary>
+            Enumeration for states of the remote resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourceState.Alive">
+            <summary>
+            Indicates remote resource is alive.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResourceState.LostSignal">
+            <summary>
+            Indicates remote resource is lost.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ResourceTypes">
+            <summary>
+            This class contains resource types and provides APIs to manage, add, or remove those types.
+            A resource type indicates a class or a category of resources.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceTypes.#ctor">
+            <summary>
+            Constructor of ResourceTypes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceTypes.Add(System.String)"/>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceTypes.Remove(System.String)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory.</exception>
+            <example><code>
+            ResourceTypes types = new ResourceTypes();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceTypes.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Constructor of ResourceTypes using list of types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="types">List of resource types.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <example><code><![CDATA[
+            ResourceTypes types = new ResourceTypes(new List<string>() { "org.tizen.light", "oic.if.room" });
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceTypes.Finalize">
+            <summary>
+            Destructor of the ResourceTypes class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.ResourceTypes.Count">
+            <summary>
+            Indicates count of types in the list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Count of types in the list.</value>
+            <example><code><![CDATA[
+            ResourceTypes types = new ResourceTypes(new List<string>() { "org.tizen.light", "oic.if.room" });
+            Console.WriteLine("There are {0} items", types.Count);
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceTypes.Add(System.String)">
+            <summary>
+            Adds a resource type into the list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            <para>The length of <paramref name="item" /> should be less than or equal to 61.</para>
+            <para>The <paramref name="item" /> must start with a lowercase alphabetic character, followed by a sequence
+            of lowercase alphabetic, numeric, ".", or "-" characters, and contains no white space.</para>
+            <para>Duplicate strings are not allowed.</para>
+            </remarks>
+            <param name="item">The string data to insert into the resource types.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceTypes.Remove(System.String)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code>
+            ResourceTypes resourceTypes = new ResourceTypes();
+            resourceTypes.Add("org.tizen.light");
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceTypes.Remove(System.String)">
+            <summary>
+            Removes a resource type from the list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="item">The string data to delete from the resource types.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+            <seealso cref="M:Tizen.Network.IoTConnectivity.ResourceTypes.Add(System.String)"/>
+            <exception cref="T:System.NotSupportedException">Thrown when the iotcon is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid.</exception>
+            <example><code><![CDATA[
+            ResourceTypes resourceTypes = new ResourceTypes(new List<string>() { "org.tizen.light", "oic.if.room" });
+            resourceTypes.Remove("oic.if.room");
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceTypes.GetEnumerator">
+            <summary>
+            Returns an enumerator for the list of types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The enumerator.</returns>
+            <example><code><![CDATA[
+            ResourceTypes resourceTypes = new ResourceTypes(new List<string>() { "org.tizen.light", "oic.if.room" });
+            foreach(string item in resourceTypes)
+            {
+                Console.WriteLine("Type : {0}", item);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceTypes.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator for the list of types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The enumerator.</returns>
+            <example><code><![CDATA[
+            ResourceTypes resourceTypes = new ResourceTypes(new List<string>() { "org.tizen.light", "oic.if.room" });
+            foreach(string item in resourceTypes)
+            {
+                Console.WriteLine("Type : {0}", item);
+            }
+            ]]></code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceTypes.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.ResourceTypes.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <feature>http://tizen.org/feature/iot.ocf</feature>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.Response">
+            <summary>
+            This class represents response from a resource.
+            It provides APIs to manage response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Response.#ctor">
+            <summary>
+            Constructor of Response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <example><code>
+            Response response = new Response();
+            </code></example>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Response.Finalize">
+            <summary>
+            Destructor of the Response class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Response.Result">
+            <summary>
+            Gets or sets the result from/into the response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The result from/into the response.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Response.Representation">
+            <summary>
+            Gets or sets the representation from/into the response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The representation from/into the response.</value>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.Response.Options">
+            <summary>
+            Gets or sets the options from/into the response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The options from/into the response.</value>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Response.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.IoTConnectivity.Response.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.ResponseCode">
+            <summary>
+            Enumeration for the result of response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResponseCode.Ok">
+            <summary>
+            Indicates the result of response for success.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResponseCode.Error">
+            <summary>
+            Indicates the result of response for some error.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResponseCode.Created">
+            <summary>
+            Indicates the result of response for created resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResponseCode.Deleted">
+            <summary>
+            Indicates the result of response for deleted resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResponseCode.Changed">
+            <summary>
+            Indicates the result of response for changed resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResponseCode.Slow">
+            <summary>
+            Indicates the result of response for slow resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.IoTConnectivity.ResponseCode.Forbidden">
+            <summary>
+            Indicates the result of response for accessing unauthorized resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.IoTConnectivity.StateChangedEventArgs">
+            <summary>
+            This class represents event arguments of the StateChanged event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.IoTConnectivity.StateChangedEventArgs.State">
+            <summary>
+            Indicates the new state of the resource.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The new state of the resource.</value>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1279 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.PackageManager</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.CertCompareResultType">
+            <summary>
+            Enumeration for the certificate compare result type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.CertCompareResultType.Match">
+            <summary>
+            Certificates are matched.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.CertCompareResultType.Mismatch">
+            <summary>
+            Certificates are not matched.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.CertCompareResultType.LhsNoCert">
+            <summary>
+            First package does not have the certificate.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.CertCompareResultType.RhsNoCert">
+            <summary>
+            Second package does not have the certificate.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.CertCompareResultType.BothNoCert">
+            <summary>
+            Certificates for both the packages do not exist.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.CertificateType">
+            <summary>
+            Enumeration for the certification types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.CertificateType.Author">
+            <summary>
+            Author certificate.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.CertificateType.Distributor">
+            <summary>
+            Distributor certificate.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.CertificateType.Distributor2">
+            <summary>
+            Distributor2 certificate.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.InstallationMode">
+            <summary>
+            Enumeration for installation mode.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.InstallationMode.Normal">
+            <summary>
+            Normal Mode.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.InstallationMode.Mount">
+            <summary>
+            Mount Mode.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Package">
+            <summary>
+            This class provides the methods and properties to get information about the packages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.Id">
+            <summary>
+            The package ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.Label">
+            <summary>
+            Label of the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.IconPath">
+            <summary>
+            Absolute path to the icon image.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.Version">
+            <summary>
+            Version of the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.PackageType">
+            <summary>
+            Type of the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.InstalledStorageType">
+            <summary>
+            Installed storage type for the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.RootPath">
+            <summary>
+            Root path for the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.TizenExpansionPackageName">
+            <summary>
+            Expansion package name for the package.
+            </summary>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.IsSystemPackage">
+            <summary>
+            Checks whether the package is a system package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.IsRemovable">
+            <summary>
+            Checks whether the package is removable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.IsPreloaded">
+            <summary>
+            Checks whether the package is preloaded.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.IsAccessible">
+            <summary>
+            Checks whether the current package is accessible.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.Certificates">
+            <summary>
+            Certificate information for the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.Privileges">
+            <summary>
+            Requested privilege for the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.InstalledTime">
+            <summary>
+            Installed time of the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.MainApplication">
+            <summary>
+            Main application info of the package.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Package.GetApplications">
+            <summary>
+            Retrieves all the application IDs of this package.
+            </summary>
+            <returns>Returns a dictionary containing all the application information for a given application type.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Package.GetApplications(Tizen.Applications.ApplicationType)">
+            <summary>
+            Retrieves all the application IDs of this package.
+            </summary>
+            <param name="type">Optional: AppType enumeration value.</param>
+            <returns>Returns a dictionary containing all the application information for a given application type.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Package.GetApplications(Tizen.Applications.ApplicationComponentType)">
+            <summary>
+            Retrieves all the application IDs of this package.
+            </summary>
+            <param name="componentType">Optional: AppType enumeration value.</param>
+            <returns>Returns a dictionary containing all the application information for a given application type.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.DependencyTo">
+            <summary>
+            Packages required by this package
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.DependencyFrom">
+            <summary>
+            Packages that require this package
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Package.GetSizeInformationAsync">
+            <summary>
+            Gets the package size information.
+            </summary>
+            <returns>Package size information.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Package.CompareCertInfo(System.String)">
+            <summary>
+            Compares the certificate information with the given package ID.
+            </summary>
+            <param name="packageId">ID of the package.</param>
+            <returns>Certificate comparison result.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when a failed input package ID is invalid.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Package.AllowedPackagesAndPrivileges">
+            <summary>
+            The allowed packages and required privileges information.
+            </summary>
+            <remarks> The dictionary contains application IDs as the keys, and a collection of privileges related to that application as the value.</remarks>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageArchive">
+            <summary>
+            This class provides the methods and properties to get information about the package archive.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageArchive.Id">
+            <summary>
+            The package ID.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageArchive.Type">
+            <summary>
+            Type of the package.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageArchive.Version">
+            <summary>
+            Version of the package.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageArchive.ApiVersion">
+            <summary>
+            Api version of the package.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageArchive.Description">
+            <summary>
+            Description of the package.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageArchive.Label">
+            <summary>
+            Label of the package.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageArchive.Author">
+            <summary>
+            Author of the package.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageArchive.Icon">
+            <summary>
+            Icon of the package.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageArchive.DependencyTo">
+            <summary>
+            Packages that this package is required.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageCertificate">
+            <summary>
+            This class provides information about the package certification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageCertificate.Root">
+            <summary>
+            Root certificate.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageCertificate.Intermediate">
+            <summary>
+            Intermediate certificate.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageCertificate.Signer">
+            <summary>
+            Signer certificate.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageDependencyInformation">
+            <summary>
+            This class has read-only properties to get the package dependency information.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageDependencyInformation.From">
+            <summary>
+            The ID of package that depends on another.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageDependencyInformation.To">
+            <summary>
+            The ID of package that is required by another.
+            </summary>
+            <since_tizen>  </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageDependencyInformation.Type">
+            <summary>
+            The Type of dependency.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageDependencyInformation.RequiredVersion">
+            <summary>
+            The required version.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageDrm">
+            <summary>
+            This class provides the methods and properties for the DRM operation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageDrm.ResponseData">
+            <summary>
+            Returns the response data.
+            </summary>
+            <returns>Returns the response data which is given when GenerateLicenseRequest has been invoked.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageDrm.RequestData">
+            <summary>
+            Returns the request data.
+            </summary>
+            <returns>Returns the request data which is generated when GenerateLicenseRequest has been invoked.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageDrm.LicenseUrl">
+            <summary>
+            Returns the license URL.
+            </summary>
+            <returns>Returns the license URL which is generated when GenerateLicenseRequest has been invoked.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageEventState">
+            <summary>
+            Enumeration for the package manager event state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.PackageEventState.Started">
+            <summary>
+            Processing started.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PackageEventState.Processing">
+            <summary>
+            Processing state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PackageEventState.Completed">
+            <summary>
+            Processing completed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PackageEventState.Failed">
+            <summary>
+            Processing failed.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.PackageEventType">
+            <summary>
+            Enumeration for the package manager event types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.PackageEventType.Install">
+            <summary>
+            Install event.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PackageEventType.Uninstall">
+            <summary>
+            Uninstall event.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PackageEventType.Update">
+            <summary>
+            Update event.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PackageEventType.Move">
+            <summary>
+            Move event.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PackageEventType.ClearData">
+            <summary>
+            ClearData event.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.PackageFilter">
+            <summary>
+            This class is a parameter of the PackageManager::GetPackages method.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageFilter.#ctor">
+            <summary>
+            The default constructor with an empty filter list. All the installed applications will satisfy this filter unless updated with more specific filters.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageFilter.#ctor(System.Collections.Generic.IDictionary{System.String,System.Boolean})">
+            <summary>
+            The constructor with specific filters. Using this will filter out the installed packages which do not meet the filter criteria.
+            </summary>
+            <param name="filter">Package filters.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageFilter.#ctor(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The constructor with specific filters. Using this will filter out the installed packages which do not meet the filter criteria.
+            </summary>
+            <remarks>The dictionary contains filter keys as the keys, and filter values as the value.</remarks>
+            <param name="stringFilter">Package filters using string values.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageFilter.#ctor(System.Collections.Generic.IDictionary{System.String,System.Boolean},System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The constructor with specific filters. Using this will filter out the installed packages which do not meet the filter criteria.
+            </summary>
+            <param name="filter">Package filters.</param>
+            <param name="stringFilter">Package filters using string values.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageFilter.Filters">
+            <summary>
+            Filters to be used in the GetPackages method.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageFilter.StringFilters">
+            <summary>
+            String filters to be used in the GetPackages method.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageFilter.Keys">
+            <summary>
+            This class contains possible keys for the filter to be used in the GetPackages method.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.PackageFilter.Keys.Removable">
+            <summary>
+            Key of the boolean property for filtering if the package is removable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.PackageFilter.Keys.ReadOnly">
+            <summary>
+            Key of the boolean property for filtering if the package is read-only.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.PackageFilter.Keys.SupportsDisable">
+            <summary>
+            Key of the boolean property for filtering if the package supports disabling.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.PackageFilter.Keys.Disable">
+            <summary>
+            Key of the boolean property for filtering if the package is disabled.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.PackageFilter.Keys.Preload">
+            <summary>
+            Key of the boolean property for filtering if the package is preloaded.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.PackageFilter.Keys.ResourceType">
+            <summary>
+            Key of the string property for filtering the resource type of the package.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageManager">
+            <summary>
+            PackageManager class. This class has the methods and events of the PackageManager.
+            </summary>
+            <remarks>
+            The package manager is one of the core modules of the Tizen application framework and responsible for getting their information.
+            You can also retrieve information related to the packages that are installed on the device.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageManager.RequestEventCallback">
+            <summary>
+            Event callback method for the request.
+            </summary>
+            <param name="type">Type of the package which was requested.</param>
+            <param name="packageId">ID of the package which was requested.</param>
+            <param name="eventType">Event type of the request.</param>
+            <param name="eventState">Current event state of the request.</param>
+            <param name="progress">Progress for the request being processed by the package manager (in percent).</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.PackageManager.InstallProgressChanged">
+            <summary>
+            InstallProgressChanged event. This event occurs when a package is getting installed and the progress of the request to the package manager is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.PackageManager.UninstallProgressChanged">
+            <summary>
+            UninstallProgressChanged event. This event occurs when a package is getting uninstalled and the progress of the request to the package manager is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.PackageManager.UpdateProgressChanged">
+            <summary>
+            UpdateProgressChanged event. This event occurs when a package is getting updated and the progress of the request to the package manager is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.PackageManager.MoveProgressChanged">
+            <summary>
+            MoveProgressChanged event. This event occurs when a package is getting moved and the progress of the request to the package manager is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.PackageManager.ClearDataProgressChanged">
+            <summary>
+            ClearDataProgressChanged event. This event occurs when data directories are cleared in the given package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.GetPackageIdByApplicationId(System.String)">
+            <summary>
+            Gets the package ID for the given application ID.
+            </summary>
+            <param name="applicationId">The ID of the application.</param>
+            <returns>Returns the ID of the package.</returns>
+            <remarks>It returns null if the input is null.</remarks>
+            <exception cref="T:System.ArgumentException">Thrown when input application ID does not exist.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.GetPackage(System.String)">
+            <summary>
+            Gets the package information for the given package.
+            </summary>
+            <param name="packageId">The ID of the package.</param>
+            <returns>Returns the package information for the given package ID.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the failed input package ID is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method fails due to an internal I/O error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.ClearCacheDirectory(System.String)">
+            <summary>
+            Clears the application's internal and external cache directories.
+            </summary>
+            <param name="packageId">ID of the package.</param>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method fails due to an internal I/O error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <exception cref="T:System.SystemException">Thrown when the method failed due to an internal system error.</exception>
+            <privilege>http://tizen.org/privilege/packagemanager.clearcache</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.ClearAllCacheDirectory">
+            <summary>
+            Clears all the application's internal and external cache directories.
+            </summary>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method fails due to an internal IO error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <exception cref="T:System.SystemException">Thrown when the method failed due to an internal system error.</exception>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.ClearDataDirectory(System.String)">
+            <summary>
+            Clears the application's internal and external data directories.
+            </summary>
+            <remarks>
+            All files under data, shared/data, and shared/trusted in the internal storage are removed.
+            And, if the external storage exists, then all files under data and shared/trusted in the external storage are removed.
+            </remarks>
+            <param name="packageId">ID of the package.</param>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal IO error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <exception cref="T:System.SystemException">Thrown when the method failed due to an internal system error.</exception>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.ClearUserData(System.String,System.String)">
+            <summary>
+            Removes a file or directory specified with <paramref name="path"/> from user data internal storage for the application.
+            </summary>
+            <param name="packageId">ID of the package.</param>
+            <param name="path">The path of the file or directory in the package user data folder.</param>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal IO error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <exception cref="T:System.SystemException">Thrown when the method failed due to an internal system error.</exception>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 11 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.GetPackages">
+            <summary>
+            Retrieves the package information of all installed packages.
+            </summary>
+            <returns>Returns the list of packages.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.GetPackages(Tizen.Applications.PackageFilter)">
+            <summary>
+            Retrieves the package information of all the installed packages satisfying the filter conditions.
+            </summary>
+            <param name="filter">Optional - package filters.</param>
+            <returns>Returns the list of packages.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.GetTotalSizeInformationAsync">
+            <summary>
+            Gets the total package size information.
+            </summary>
+            <returns>Returns the total package size information asynchronously.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Install(System.String,Tizen.Applications.InstallationMode)">
+            <summary>
+            Installs the package located at the given path.
+            </summary>
+            <param name="packagePath">Absolute path for the package to be installed.</param>
+            <param name="installMode">Optional parameter to indicate special installation mode.</param>
+            <returns>Returns true if the installation request is successful, otherwise false.</returns>
+            <remarks>
+            The 'true' means that the request for installation is successful.
+            To check the result of the installation, the caller should check the progress using the InstallProgressChanged event.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Install(System.String,Tizen.Applications.PackageManager.RequestEventCallback,Tizen.Applications.InstallationMode)">
+            <summary>
+            Installs the package located at the given path.
+            </summary>
+            <param name="packagePath">Absolute path for the package to be installed.</param>
+            <param name="eventCallback">The event callback will be invoked only for the current request.</param>
+            <param name="installMode">Optional parameter to indicate special installation mode.</param>
+            <returns>Returns true if installation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for installation is successful.
+            To check the result of installation, the caller should check the progress using the InstallProgressChanged event or eventCallback.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Install(System.String,Tizen.Applications.PackageType,Tizen.Applications.InstallationMode)">
+            <summary>
+            Installs the package located at the given path.
+            </summary>
+            <param name="packagePath">Absolute path for the package to be installed.</param>
+            <param name="type">Package type for the package to be installed.</param>
+            <param name="installMode">Optional parameter to indicate special installation mode.</param>
+            <returns>Returns true if installation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for installation is successful.
+            To check the result of installation, the caller should check the progress using the InstallProgressChanged event.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Install(System.String,System.String,Tizen.Applications.InstallationMode)">
+            <summary>
+            Installs the package located at the given path.
+            </summary>
+            <param name="packagePath">Absolute path for the package to be installed.</param>
+            <param name="expansionPackagePath">Absolute path for the expansion package to be installed.</param>
+            <param name="installMode">Optional parameter to indicate special installation mode.</param>
+            <returns>Returns true if installation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for installation is successful.
+            To check the result of installation, the caller should check the progress using the InstallProgressChanged event.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Install(System.String,Tizen.Applications.PackageType,Tizen.Applications.PackageManager.RequestEventCallback,Tizen.Applications.InstallationMode)">
+            <summary>
+            Installs the package located at the given path.
+            </summary>
+            <param name="packagePath">Absolute path for the package to be installed.</param>
+            <param name="type">Package type for the package to be installed.</param>
+            <param name="eventCallback">The event callback will be invoked only for the current request.</param>
+            <param name="installMode">Optional parameter to indicate special installation mode.</param>
+            <returns>Returns true if installation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for installation is successful.
+            To check the result of installation, the caller should check the progress using the InstallProgressChanged event or eventCallback.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Install(System.String,System.String,Tizen.Applications.PackageManager.RequestEventCallback,Tizen.Applications.InstallationMode)">
+            <summary>
+            Installs the package located at the given path.
+            </summary>
+            <param name="packagePath">Absolute path for the package to be installed.</param>
+            <param name="expansionPackagePath">Absolute path for the expansion package to be installed.</param>
+            <param name="eventCallback">The event callback will be invoked only for the current request.</param>
+            <param name="installMode">Optional parameter to indicate special installation mode.</param>
+            <returns>Returns true if installation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for installation is successful.
+            To check the result of installation, the caller should check the progress using the InstallProgressChanged event or eventCallback.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Install(System.String,System.String,Tizen.Applications.PackageType,Tizen.Applications.InstallationMode)">
+            <summary>
+            Installs the package located at the given path.
+            </summary>
+            <param name="packagePath">Absolute path for the package to be installed.</param>
+            <param name="expansionPackagePath">Absolute path for the expansion package to be installed.</param>
+            <param name="type">Package type for the package to be installed.</param>
+            <param name="installMode">Optional parameter to indicate special installation mode.</param>
+            <returns>Returns true if installation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for installation is successful.
+            To check the result of installation, the caller should check the progress using the InstallProgressChanged event.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Install(System.String,System.String,Tizen.Applications.PackageType,Tizen.Applications.PackageManager.RequestEventCallback,Tizen.Applications.InstallationMode)">
+            <summary>
+            Installs the package located at the given path.
+            </summary>
+            <param name="packagePath">Absolute path for the package to be installed.</param>
+            <param name="expansionPackagePath">Absolute path for the expansion package to be installed.</param>
+            <param name="type">Package type for the package to be installed.</param>
+            <param name="eventCallback">The event callback will be invoked only for the current request.</param>
+            <param name="installMode">Optional parameter to indicate special installation mode.</param>
+            <returns>Returns true if installation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for installation is successful.
+            To check the result of installation, the caller should check the progress using the InstallProgressChanged event or eventCallback.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Install(System.Collections.Generic.List{System.String},Tizen.Applications.InstallationMode)">
+            <summary>
+            Installs the packages located at the given path.
+            </summary>
+            <param name="packagePaths">Absolute paths for the package to be installed.</param>
+            <param name="installMode">Optional parameter to indicate special installation mode.</param>
+            <returns>Returns true if installation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for installation is successful.
+            To check the result of installation, the caller should check the progress using the InstallProgressChanged event or eventCallback.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Install(System.Collections.Generic.List{System.String},Tizen.Applications.PackageManager.RequestEventCallback,Tizen.Applications.InstallationMode)">
+            <summary>
+            Installs the packages located at the given path.
+            </summary>
+            <param name="packagePaths">Absolute paths for the package to be installed.</param>
+            <param name="eventCallback">The event callback will be invoked only for the current request.</param>
+            <param name="installMode">Optional parameter to indicate special installation mode.</param>
+            <returns>Returns true if installation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for installation is successful.
+            To check the result of installation, the caller should check the progress using the InstallProgressChanged event or eventCallback.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Uninstall(System.String)">
+            <summary>
+            Uninstalls the package with the given name.
+            </summary>
+            <param name="packageId">ID of the package to be uninstalled.</param>
+            <returns>Returns true if the uninstallation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for uninstallation is successful.
+            To check the result of uninstallation, the caller should check the progress using the UninstallProgressChanged event.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Uninstall(System.String,Tizen.Applications.PackageType)">
+            <summary>
+            Uninstalls package with the given names.
+            </summary>
+            <param name="packageId">ID of the package to be uninstalled.</param>
+            <param name="type">Optional - Package type for the package to be uninstalled.</param>
+            <returns>Returns true if the uninstallation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for uninstallation is successful.
+            To check the result of uninstallation, the caller should check the progress using the UninstallProgressChanged event.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Uninstall(System.String,Tizen.Applications.PackageManager.RequestEventCallback)">
+            <summary>
+            Uninstalls the package with the given name.
+            </summary>
+            <param name="packageId">ID of the package to be uninstalled.</param>
+            <param name="eventCallback">Optional - The event callback will be invoked only for the current request.</param>
+            <returns>Returns true if the uninstallation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for uninstallation is successful.
+            To check the result of uninstallation, the caller should check the progress using the UninstallProgressChanged event or eventCallback.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Uninstall(System.String,Tizen.Applications.PackageType,Tizen.Applications.PackageManager.RequestEventCallback)">
+            <summary>
+            Uninstalls the package with the given name.
+            </summary>
+            <param name="packageId">ID of the package to be uninstalled</param>
+            <param name="type">Optional - Package type for the package to be uninstalled.</param>
+            <param name="eventCallback">Optional - The event callback will be invoked only for the current request.</param>
+            <returns>Returns true if the uninstallation request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for uninstallation is successful.
+            To check the result of uninstallation, the caller should check the progress using the UninstallProgressChanged event or eventCallback.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Move(System.String,Tizen.Applications.StorageType)">
+            <summary>
+            Moves the package to the given storage.
+            </summary>
+            <param name="packageId">ID of the package to be moved.</param>
+            <param name="newStorage">Storage package should be moved to.</param>
+            <returns>Returns true if the move request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for move is successful.
+            To check the result of move, the caller should check the progress using the MoveProgressChanged event.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Move(System.String,Tizen.Applications.PackageType,Tizen.Applications.StorageType)">
+            <summary>
+            Moves the package to the given storage.
+            </summary>
+            <param name="packageId">ID of the package to be moved.</param>
+            <param name="type">Optional - Package type for the package to be moved.</param>
+            <param name="newStorage">Storage package should be moved to.</param>
+            <returns>Returns true if the move request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for move is successful.
+            To check the result of move, the caller should check the progress using the MoveProgressChanged event.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Move(System.String,Tizen.Applications.StorageType,Tizen.Applications.PackageManager.RequestEventCallback)">
+            <summary>
+            Moves the package to the given storage.
+            </summary>
+            <param name="packageId">ID of the package to be moved.</param>
+            <param name="newStorage">Storage package should be moved to.</param>
+            <param name="eventCallback">Optional - The event callback will be invoked only for the current request.</param>
+            <returns>Returns true if move request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for move is successful.
+            To check the result of move, the caller should check the progress using the MoveProgressChanged event.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Move(System.String,Tizen.Applications.PackageType,Tizen.Applications.StorageType,Tizen.Applications.PackageManager.RequestEventCallback)">
+            <summary>
+            Moves the package to the given storage.
+            </summary>
+            <param name="packageId">ID of the package to be moved.</param>
+            <param name="type">Optional - Package type for the package to be moved.</param>
+            <param name="newStorage">Storage, package should be moved to.</param>
+            <param name="eventCallback">Optional - The event callback will be invoked only for the current request.</param>
+            <returns>Returns true if move request is successful, false otherwise.</returns>
+            <remarks>
+            The 'true' means that the request for move is successful.
+            To check the result of move, the caller should check the progress using the MoveProgressChanged event.
+            </remarks>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.GetPermissionTypeByApplicationId(System.String)">
+            <summary>
+            Gets the permission type of the package which has a given application ID.
+            </summary>
+            <param name="applicationId">ID of the application.</param>
+            <returns>Returns the permission type.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when the failed input package ID is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.IsPreloadPackageByApplicationId(System.String)">
+            <summary>
+            Gets the package's preload attribute which contains a given application ID.
+            </summary>
+            <param name="applicationId">ID of the application.</param>
+            <returns>Returns true if the package is preloaded, otherwise false.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when the failed input package ID is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.CompareCertInfo(System.String,System.String)">
+            <summary>
+            Compares the certificate of the two packages.
+            </summary>
+            <param name="lhsPackageId">Package ID to compare.</param>
+            <param name="rhsPackageId">Package ID to be compared.</param>
+            <returns>Returns certificate comparison result.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the failed input package ID is invalid.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.CompareCertInfoByApplicationId(System.String,System.String)">
+            <summary>
+            Compares the certificate of the two packages which contain each given application ID.
+            </summary>
+            <param name="lhsApplicationId">Application ID to compare.</param>
+            <param name="rhsApplicationId">Application ID to be compared.</param>
+            <returns>Returns certificate comparison result.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the failed input package ID is invalid.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.GetPackageArchive(System.String)">
+            <summary>
+            Gets the package archive's information for the given archive path.
+            </summary>
+            <param name="archivePath">The path of the package archive.</param>
+            <remarks>
+            Regular 3rd party apps do not need to use this API
+            </remarks>
+            <returns>Returns the package archive information for the given archive path.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the failed input package ID is invalid.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method fails due to an internal I/O error.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.EnablePackage(System.String)">
+            <summary>
+            Enable the given package.
+            </summary>
+            <param name="packageId">The ID of the package.</param>
+            <remarks>
+            This API is for inhouse app only.
+            </remarks>
+            <returns>Returns true if succeeds, otherwise false.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <exception cref="T:System.ArgumentException">Thrown when failed when input package ID is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <exception cref="T:System.SystemException">Thrown when the method failed due to an internal system error.</exception>
+            <since_tizen> 11 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.DisablePackage(System.String)">
+            <summary>
+            Disable the given package.
+            </summary>
+            <param name="packageId">The ID of the package.</param>
+            <remarks>
+            This API is for inhouse app only.
+            </remarks>
+            <returns>Returns true if succeeds, otherwise false.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <exception cref="T:System.ArgumentException">Thrown when failed when input package ID is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <exception cref="T:System.SystemException">Thrown when the method failed due to an internal system error.</exception>
+            <since_tizen> 11 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageManager.Drm">
+            <summary>
+            Drm nested class. This class has the PackageManager's drm related methods.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Drm.GenerateLicenseRequest(System.String)">
+            <summary>
+            Generates a request for getting the license.
+            </summary>
+            <param name="responseData">Response data string of the purchase request.</param>
+            <returns>Returns the package DRM information of a given response data which contains the required data and license URL.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <exception cref="T:System.ArgumentException">Thrown when failed when input package ID is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <exception cref="T:System.SystemException">Thrown when the method failed due to an internal system error.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Drm.RegisterLicense(System.String)">
+            <summary>
+            Registers the encrypted license.
+            </summary>
+            <param name="responseData">The response data string of the rights request.</param>
+            <returns>Returns true if succeeds, otherwise false.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <exception cref="T:System.ArgumentException">Thrown when failed when input package ID is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <exception cref="T:System.SystemException">Thrown when the method failed due to internal system error.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.PackageManager.Drm.DecryptPackage(System.String,System.String)">
+            <summary>
+            Decrypts the contents which are encrypted.
+            </summary>
+            <param name="drmFilePath">Drm file path.</param>
+            <param name="decryptedFilePath">Decrypted file path.</param>
+            <returns>Returns true if succeeds, otherwise false.</returns>
+            <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+            <privlevel>platform</privlevel>
+            <exception cref="T:System.ArgumentException">Thrown when failed when input package ID is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <exception cref="T:System.SystemException">Thrown when the method failed due to an internal system error.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageManagerEventArgs">
+            <summary>
+            PackageManagerEventArgs class. This class is an event arguments of the InstallProgressChanged, UninstallProgressChanged, and UpdateProgressChanged events.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageManagerEventArgs.PackageType">
+            <summary>
+            Type of the package to be installed, uninstalled, or updated.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageManagerEventArgs.PackageId">
+            <summary>
+            Package ID to be installed, uninstalled, or updated.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageManagerEventArgs.State">
+            <summary>
+            Current state of the request to the package manager.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageManagerEventArgs.Progress">
+            <summary>
+            Progress for the request being processed by the package manager (in percent).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageSizeInformation">
+            <summary>
+            This class has read-only properties to get the package size information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageSizeInformation.DataSize">
+            <summary>
+            Data size for the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageSizeInformation.CacheSize">
+            <summary>
+            Cache size for the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageSizeInformation.AppSize">
+            <summary>
+            Application size for the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageSizeInformation.ExternalDataSize">
+            <summary>
+            External data size for the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageSizeInformation.ExternalCacheSize">
+            <summary>
+            External cache size for the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PackageSizeInformation.ExternalAppSize">
+            <summary>
+            External application size for the package.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PackageType">
+            <summary>
+            Enumeration for the package types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.PackageType.UNKNOWN">
+            <summary>
+            Unknown package.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PackageType.TPK">
+            <summary>
+            Tizen native application package.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PackageType.WGT">
+            <summary>
+            Tizen web/hybrid application package.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PackageType.RPM">
+            <summary>
+            A special meaning type to represent the Tizen application package which is installed using the RPM spec.
+            Only some preloaded packages can have this type.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.PermissionType">
+            <summary>
+            Enumeration for the permission types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.PermissionType.Normal">
+            <summary>
+            Permission is normal.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PermissionType.Signature">
+            <summary>
+            Permission is signature.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.PermissionType.Privilege">
+            <summary>
+            Permission is privilege.
+            </summary>
+        </member>
+        <member name="M:Tizen.Applications.SafePackageManagerHandle.#ctor">
+            <summary>
+            Initializes a new instance of the SafePackageManagerHandle class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Applications.SafePackageManagerHandle.IsInvalid">
+            <summary>
+            Gets a value that indicates whether the handle is invalid.
+            </summary>
+        </member>
+        <member name="M:Tizen.Applications.SafePackageManagerHandle.ReleaseHandle">
+            <summary>
+            Executes the code required to free the SafePackageManagerHandle.
+            </summary>
+            <returns>True if the handle is released successfully.</returns>
+        </member>
+        <member name="M:Tizen.Applications.SafePackageManagerRequestHandle.#ctor">
+            <summary>
+            Initializes a new instance of the SafePackageManagerRequestHandle class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Applications.SafePackageManagerRequestHandle.IsInvalid">
+            <summary>
+            Gets a value that indicates whether the handle is invalid.
+            </summary>
+        </member>
+        <member name="M:Tizen.Applications.SafePackageManagerRequestHandle.ReleaseHandle">
+            <summary>
+            Executes the code required to free the SafePackageManagerRequestHandle.
+            </summary>
+            <returns>True if the handle is released successfully.</returns>
+        </member>
+        <member name="T:Tizen.Applications.StorageType">
+            <summary>
+            Enumeration for the storage types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.StorageType.Internal">
+            <summary>
+            Internal storage.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.StorageType.External">
+            <summary>
+            External storage.
+            </summary>
+        </member>
+    </members>
+</doc>

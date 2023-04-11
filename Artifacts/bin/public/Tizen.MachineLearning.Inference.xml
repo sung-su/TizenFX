@@ -1,0 +1,1183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.MachineLearning.Inference</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.MachineLearning.Inference.TensorType">
+            <summary>
+            Possible data element types of Tensor in NNStreamer.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.TensorType.Int32">
+            <summary>
+            Integer 32bit
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.TensorType.UInt32">
+            <summary>
+            Unsigned integer 32bit
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.TensorType.Int16">
+            <summary>
+            Integer 16bit
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.TensorType.UInt16">
+            <summary>
+            Unsigned integer 16bit
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.TensorType.Int8">
+            <summary>
+            Integer 8bit
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.TensorType.UInt8">
+            <summary>
+            Unsigned integer 8bit
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.TensorType.Float64">
+            <summary>
+            Float 64bit
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.TensorType.Float32">
+            <summary>
+            Float 32bit
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.TensorType.Int64">
+            <summary>
+            Integer 64bit
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.TensorType.UInt64">
+            <summary>
+            Unsigned integer 64bit
+            </summary>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.PipelineState">
+            <summary>
+            States of NNStreamer pipeline.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.PipelineState.Null">
+            <summary>
+            Initial state of the pipeline.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.PipelineState.Ready">
+            <summary>
+            The pipeline is ready to go to PAUSED.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.PipelineState.Paused">
+            <summary>
+            The pipeline is stopped, ready to accept and process data.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.PipelineState.Playing">
+            <summary>
+            The pipeline is started and the data is flowing.
+            </summary>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.NNFWType">
+            <summary>
+            Types of Neural Network Framework.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.Any">
+            <summary>
+            NNHW is not specified (Try to determine the NNFW with file extension).
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.CustomFilter">
+            <summary>
+            Custom filter (Independent shared object).
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.TensorflowLite">
+            <summary>
+            Tensorflow-lite (.tflite).
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.Tensorflow">
+            <summary>
+            Tensorflow (.pb).
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.NNFW">
+            <summary>
+            Neural Network Inference framework, which is developed by SR (Samsung Research).
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.MVNC">
+            <summary>
+            Intel Movidius Neural Compute SDK (libmvnc).
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.OpenVINO">
+            <summary>
+            Intel OpenVINO.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.Vivante">
+            <summary>
+            VeriSilicon's Vivante.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.EdgeTPU">
+            <summary>
+            Google Coral Edge TPU (USB).
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.ArmNN">
+            <summary>
+            Arm Neural Network framework (support for caffe and tensorflow-lite).
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.SNPE">
+            <summary>
+            Qualcomm SNPE (Snapdgragon Neural Processing Engine (.dlc)
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.PyTorch">
+            <summary>
+            PyTorch (.pt)
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.NNTrainerInferenceFW">
+            <summary>
+            Inference supported from NNTrainer, SR On-device Training Framework
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.VDAIFW">
+            <summary>
+            Inference framework for Samsung Tizen TV
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.NNFWType.TriXEngine">
+            <summary>
+            TriXEngine accesses TRIV/TRIA NPU low-level drivers directly (.tvn). You may need to use high-level drivers wrapping this low-level driver in some devices: e.g., AIFW
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.HWType">
+            <summary>
+            Types of hardware resources to be used for NNFWs. Note that if the affinity (nnn) is not supported by the driver or hardware, it is ignored.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.Any">
+            <summary>
+            Hardware resource is not specified.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.Auto">
+            <summary>
+            Try to schedule and optimize if possible.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.CPU">
+            <summary>
+            Any CPU if possible.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.CPUSIMD">
+            <summary>
+            SIMD in CPU if possible.
+            <since_tizen> 8 </since_tizen>
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.CPUNeon">
+            <summary>
+            NEON in CPU.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.GPU">
+            <summary>
+            Any GPU if possible.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.NPU">
+            <summary>
+            Any NPU if possible.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.NPUMovidius">
+            <summary>
+            Intel Movidius Stick.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.NPUEdgeTPU">
+            <summary>
+            Google Coral Edge TPU (USB).
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.NPUVivante">
+            <summary>
+            VeriSilicon's Vivante.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.NPUSLSI">
+            <summary>
+            Samsung S.LSI NPU
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.HWType.NPUSR">
+            <summary>
+            Any SR (Samsung Research) made NPU.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.Tensor.RankLimit">
+            <summary>
+            The maximum rank that NNStreamer supports with Tizen APIs.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.Tensor.SizeLimit">
+            <summary>
+            The maximum number of other/tensor instances that other/tensors may have.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.Tensor.UnknownType">
+            <summary>
+            Unknown Type of Tensor information. It is internally used for error check.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.Tensor.InvalidCount">
+            <summary>
+            Invalid count of TensorsData. It is internally used for error check.
+            </summary>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.CustomFilter">
+            <summary>
+            The CustomFilter class provides interfaces to create a custom-filter in the pipeline.
+            </summary>
+            <remarks>
+            Because of data translation (i.e. marshaling and unmarshaling ) between Native and .Net Layer, CustomFilter class shows lower performance than native implementation.
+            </remarks>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.CustomFilter.Handle">
+            <summary>
+            Internally gets and sets the the native handle of custom filter.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.CustomFilter.Name">
+            <summary>
+            Gets or internally sets the name of the CustomFilter
+            </summary>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.CustomFilter.Create(System.String,Tizen.MachineLearning.Inference.TensorsInfo,Tizen.MachineLearning.Inference.TensorsInfo,System.Func{Tizen.MachineLearning.Inference.TensorsData,Tizen.MachineLearning.Inference.TensorsData})">
+            <summary>
+            Creates new custom-filter with input and output tensors information.
+            </summary>
+            <param name="name">The name of custom-filter</param>
+            <param name="inInfo">The input tensors information</param>
+            <param name="outInfo">The output tensors information</param>
+            <param name="filter">Delegate to be called while processing the pipeline</param>
+            <returns>CustomFiter instance</returns>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.CustomFilter.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.CustomFilter.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object including opened handle.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.DataReceivedEventArgs">
+            <summary>
+            An extended EventArgs class that contains newly received tensors data
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.DataReceivedEventArgs.Data">
+            <summary>
+            Newly received data from sink node
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.Pipeline">
+            <summary>
+            The Pipeline class provides interfaces to create and execute stream pipelines with neural networks.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.#ctor(System.String)">
+            <summary>
+            Creates a new Pipeline instance with the given pipeline description
+            </summary>
+            <remarks>http://tizen.org/privilege/mediastorage is needed if pipeline description is relevant to media storage.</remarks>
+            <remarks>http://tizen.org/privilege/externalstorage is needed if pipeline description is relevant to external storage.</remarks>
+            <remarks>http://tizen.org/privilege/camera is needed if pipeline description accesses the camera device.</remarks>
+            <remarks>http://tizen.org/privilege/recorder is needed if pipeline description accesses the recorder device.</remarks>
+            <param name="description">The pipeline description. Refer to GStreamer manual or NNStreamer documentation for examples and the grammar.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have the required privilege.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to the wrong pipeline description or internal error.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.Finalize">
+            <summary>
+            Destructor of the Pipeline instance.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.GetHandle">
+            <summary>
+            Internal method to get the native handle of pipeline.
+            </summary>
+            <returns>The native handle</returns>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.Pipeline.State">
+            <summary>
+            The state of pipeline.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to get the pipeline state.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="E:Tizen.MachineLearning.Inference.Pipeline.StateChanged">
+            <summary>
+            Event to be invoked when the pipeline state is changed.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.Start">
+            <summary>
+            Starts the pipeline, asynchronously. (The state would be changed to PipelineState.Playing)
+            </summary>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to start the pipeline.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.Stop">
+            <summary>
+            Stops the pipeline, asynchronously. (The state would be changed to PipelineState.Paused)
+            </summary>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to stop the pipeline.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object including opened handle.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.GetSink(System.String)">
+            <summary>
+            Gets the sink node instance with given node name.
+            </summary>
+            <param name="name">The name of sink node</param>
+            <returns>The sink node instance</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.GetSource(System.String)">
+            <summary>
+            Gets the source node instance with given node name.
+            </summary>
+            <param name="name">The name of source node</param>
+            <returns>The source node instance</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.GetValve(System.String)">
+            <summary>
+            Gets the valve node instance with given node name.
+            </summary>
+            <param name="name">The name of valve node</param>
+            <returns>The valve node instance</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.GetSwitch(System.String)">
+            <summary>
+            Gets the switch node instance with given node name.
+            </summary>
+            <param name="name">The name of switch node.</param>
+            <returns>The switch node instance</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.GetNormal(System.String)">
+            <summary>
+            Gets the normal node instance with given node name.
+            </summary>
+            <param name="name">The name of normal node.</param>
+            <returns>The normal node instance</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.Pipeline.SwitchNode">
+            <summary>
+            SwitchNode class to handle the switch node.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.SwitchNode.Select(System.String)">
+            <summary>
+            Selects input/output pad.
+            </summary>
+            <param name="padName">The pad name to be activated.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the node is invalid.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.Pipeline.ValveNode">
+            <summary>
+            ValveNode class to handle the valve node.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.ValveNode.Control(System.Boolean)">
+            <summary>
+            Controls the valve. Set the flag true to open (let the flow pass), false to close (stop the flow).
+            </summary>
+            <param name="open">The flag to control the flow</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the node is invalid.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.Pipeline.SourceNode">
+            <summary>
+            SourceNode class to handle the source node.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.SourceNode.Input(Tizen.MachineLearning.Inference.TensorsData)">
+            <summary>
+            Inputs tensor data to source node.
+            </summary>
+            <param name="data">The tensors data</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the node is invalid, or failed to input tensors data.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.Pipeline.SinkNode">
+            <summary>
+            SinkNode class to handle the sink node.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="E:Tizen.MachineLearning.Inference.Pipeline.SinkNode.DataReceived">
+            <summary>
+            Event to be invoked when the sink node receives new data.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the node is invalid.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.Pipeline.Node">
+            <summary>
+            Node class to handle the properties of NNStreamer pipelines.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.Pipeline.NodeType">
+            <summary>
+            Node type of NNStreamer pipeline.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.Pipeline.NodeType.Source">
+            <summary>
+            The source node.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.Pipeline.NodeType.Sink">
+            <summary>
+            The sink node.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.Pipeline.NodeType.Valve">
+            <summary>
+            The valve node.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.Pipeline.NodeType.Switch">
+            <summary>
+            The switch node.
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Inference.Pipeline.NodeType.Normal">
+            <summary>
+            The normal node of the pipeline.
+            </summary>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.Pipeline.NodeInfo">
+            <summary>
+            NodeInfo class for node information in pipeline.
+            Note that, node is depend on the pipeline. If the pipeline is closed, all the node information is invalid.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.#ctor(Tizen.MachineLearning.Inference.Pipeline.NodeType,System.String,Tizen.MachineLearning.Inference.Pipeline)">
+            <summary>
+            Creates a new NodeInfo instance with the given node information
+            </summary>
+            <param name="type">The node type.</param>
+            <param name="name">The node name.</param>
+            <param name="pipe">The Pipeline instance the node included.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.Type">
+            <summary>
+            The node type.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.Name">
+            <summary>
+            The node name.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.Valid">
+            <summary>
+            The flag to indicate valid state.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.GetValue(System.String,System.Boolean@)">
+            <summary>
+            Gets the boolean of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="retValue">On return, a boolean value.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.GetValue(System.String,System.String@)">
+            <summary>
+            Gets the string of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="retValue">On return, a string value.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.GetValue(System.String,System.Int32@)">
+            <summary>
+            Gets the integer (i.e. System.Int32) of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="retValue">On return, a integer value.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.GetValue(System.String,System.Int64@)">
+            <summary>
+            Gets the long integer (i.e. System.Int64) of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="retValue">On return, a long integer value.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.GetValue(System.String,System.UInt32@)">
+            <summary>
+            Gets the unsigned integer (i.e. System.UInt32) of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="retValue">On return, a unsigned integer value.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.GetValue(System.String,System.UInt64@)">
+            <summary>
+            Gets the unsigned long integer (i.e. System.UInt64) of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="retValue">On return, a unsigned long integer value.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.GetValue(System.String,System.Double@)">
+            <summary>
+            Gets the floating-point value of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="retValue">On return, a floating-point value.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.GetValue``1(System.String)">
+            <summary>
+            Get the value of node's property in NNStreamer pipelines.
+            </summary>
+            <typeparam name="T">The value type of given property.</typeparam>
+            <param name="propertyName">The property name.</param>
+            <returns>The value of given property.</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.SetValue(System.String,System.Boolean)">
+            <summary>
+            Sets the boolean of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="value">The boolean value of given property.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.SetValue(System.String,System.String)">
+            <summary>
+            Sets the string of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="value">The string of given property.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.SetValue(System.String,System.Int32)">
+            <summary>
+            Sets the integer (i.e. System.Int32) of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="value">The integer value of given property.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.SetValue(System.String,System.Int64)">
+            <summary>
+            Sets the long integer (i.e. System.Int64) of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="value">The long integer value of given property.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.SetValue(System.String,System.UInt32)">
+            <summary>
+            Sets the unsigned integer (i.e. System.UInt32) of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="value">The unsigned integer value of given property.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.SetValue(System.String,System.UInt64)">
+            <summary>
+            Sets the unsigned long integer (i.e. System.UInt64) of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="value">The unsigned long integer value of given property.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.Pipeline.NodeInfo.SetValue(System.String,System.Double)">
+            <summary>
+            Gets the floating-point value of node's property in NNStreamer pipelines.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="value">The floating-point value of given property.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.SingleShot">
+            <summary>
+            The SingleShot class loads a Machine Learning model and make inferences from input data.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.SingleShot.#ctor(System.String,Tizen.MachineLearning.Inference.TensorsInfo,Tizen.MachineLearning.Inference.TensorsInfo)">
+            <summary>
+            Loads the neural network model and configures runtime environment
+            </summary>
+            <param name="modelAbsPath">Absolute path to the neural network model file.</param>
+            <param name="inTensorsInfo">Input TensorsInfo object</param>
+            <param name="outTensorsInfo">Output TensorsInfo object for inference result</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.SingleShot.#ctor(System.String,Tizen.MachineLearning.Inference.TensorsInfo,Tizen.MachineLearning.Inference.TensorsInfo,Tizen.MachineLearning.Inference.NNFWType,Tizen.MachineLearning.Inference.HWType,System.Boolean)">
+            <summary>
+            Loads the neural network model and configures runtime environment with Neural Network Framework and HW information
+            </summary>
+            <param name="modelAbsPath">Absolute path to the neural network model file.</param>
+            <param name="inTensorsInfo">Input TensorsInfo object</param>
+            <param name="outTensorsInfo">Output TensorsInfo object for inference result</param>
+            <param name="fwType">Types of Neural Network Framework</param>
+            <param name="hwType">Types of hardware resources to be used for NNFWs</param>
+            <param name="isDynamicMode">Support Dynamic Mode</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.SingleShot.#ctor(System.String,Tizen.MachineLearning.Inference.NNFWType,Tizen.MachineLearning.Inference.HWType,System.Boolean)">
+            <summary>
+            Loads the neural network model and configures runtime environment without TensorsInfo
+            </summary>
+            <param name="modelAbsPath">Absolute path to the neural network model file.</param>
+            <param name="fwType">Types of Neural Network Framework (Default:NNFWType.Any)</param>
+            <param name="hwType">Types of hardware resources to be used for NNFWs (Default: HWType.Any)</param>
+            <param name="isDynamicMode">Support Dynamic Mode (Default: false)</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.SingleShot.Input">
+            <summary>
+            The information (tensor dimension, type, name and so on) of required input data for the given model.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.SingleShot.Output">
+            <summary>
+            The information (tensor dimension, type, name and so on) of output data for the given model.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.SingleShot.SetTimeout(System.Int32)">
+            <summary>
+            Sets the maximum amount of time to wait for an output, in milliseconds.
+            </summary>
+            <param name="ms">The time to wait for an output (milliseconds)</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.SingleShot.SetValue(System.String,System.String)">
+            <summary> Sets the property value for the given model.
+            <para>A model/framework may support changing the model information, such as tensor dimension and data layout, after opening the model.</para>
+            <para>If tries to change unavailable property or the model does not allow changing the information, this will raise an exception.</para>
+            <para>For the details about the properties, see 'tensor_filter' plugin definition in <a href="https://github.com/nnstreamer/nnstreamer">NNStreamer</a>.</para>
+            </summary>
+            <param name="name">The property name</param>
+            <param name="value">The property value</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported, or given property is not available.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.SingleShot.GetValue(System.String)">
+            <summary>
+            Gets the property value for the given model.
+            </summary>
+            <param name="name">The property name</param>
+            <returns>The property value</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported, or given property is not available.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.SingleShot.Finalize">
+            <summary>
+            Destructor of the Single instance.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.SingleShot.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.SingleShot.Invoke(Tizen.MachineLearning.Inference.TensorsData)">
+            <summary>
+            Invokes the model with the given input data.
+            </summary>
+            <param name="inTensorsData">The input data to be inferred.</param>
+            <returns>TensorsData instance which contains the inferred result.</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.TimeoutException">Thrown when failed to get the result from sink element.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.SingleShot.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.StateChangedEventArgs">
+            <summary>
+            An extended EventArgs class that contains the changed state of the pipeline
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.StateChangedEventArgs.State">
+            <summary>
+            The changed state of the pipeline
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.TensorsData">
+            <summary>
+            The TensorsData class sets and gets the buffer data for each Tensor.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsData.#ctor(System.IntPtr,Tizen.MachineLearning.Inference.TensorsInfo,System.Boolean,System.Boolean)">
+            <summary>
+            Creates a TensorsData instance with handle which is given by TensorsInfo.
+            </summary>
+            <param name="handle">The handle of tensors data.</param>
+            <param name="info">The handle of tensors info.</param>
+            <param name="isFetch">The boolean value for fetching the data (Default: false)</param>
+            <param name="hasOwnership">The boolean value for automatic disposal (Default: true)</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsData.Finalize">
+            <summary>
+            Destructor of the TensorsData instance
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.TensorsData.Count">
+            <summary>
+            Gets the number of Tensor in TensorsData class
+            </summary>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.TensorsData.TensorsInfo">
+            <summary>
+            Gets the tensors information.
+            </summary>
+            <returns>The TensorsInfo instance</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsData.Allocate(Tizen.MachineLearning.Inference.TensorsInfo)">
+            <summary>
+            Allocates a new TensorsData instance with the given tensors information.
+            </summary>
+            <param name="info">TensorsInfo object which has Tensor information</param>
+            <returns>The TensorsInfo instance</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsData.SetTensorData(System.Int32,System.Byte[])">
+            <summary>
+            Sets a tensor data to given index.
+            </summary>
+            <param name="index">The index of the tensor.</param>
+            <param name="buffer">Raw tensor data to be set.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the data is not valid.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsData.GetTensorData(System.Int32)">
+            <summary>
+            Gets a tensor data to given index.
+            </summary>
+            <param name="index">The index of the tensor.</param>
+            <returns>Raw tensor data</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsData.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsData.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="T:Tizen.MachineLearning.Inference.TensorsInfo">
+            <summary>
+            The TensorsInfo class manages each Tensor information such as Name, Type and Dimension.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.MachineLearning.Inference.TensorsInfo.Count">
+            <summary>
+            Get the number of Tensor information which is added.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.#ctor">
+            <summary>
+            Creates a TensorsInfo instance.
+            </summary>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.Finalize">
+            <summary>
+            Destroys the TensorsInfo resource.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.AddTensorInfo(Tizen.MachineLearning.Inference.TensorType,System.Int32[])">
+            <summary>
+            Add a Tensor information to the TensorsInfo instance. Note that we support up to 16 tensors in TensorsInfo.
+            </summary>
+            <param name="type">Data element type of Tensor.</param>
+            <param name="dimension">Dimension of Tensor. Note that we support up to 4th ranks.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.IndexOutOfRangeException">Thrown when the number of Tensor already exceeds the size limits (i.e. Tensor.SizeLimit)</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.AddTensorInfo(System.String,Tizen.MachineLearning.Inference.TensorType,System.Int32[])">
+            <summary>
+            Add a Tensor information to the TensorsInfo instance. Note that we support up to 16 tensors in TensorsInfo.
+            </summary>
+            <param name="name">Name of Tensor.</param>
+            <param name="type">Data element type of Tensor.</param>
+            <param name="dimension">Dimension of Tensor. Note that we support up to 4th ranks.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.IndexOutOfRangeException">Thrown when the number of Tensor already exceeds the size limits (i.e. Tensor.SizeLimit)</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.SetTensorName(System.Int32,System.String)">
+            <summary>
+            Sets the tensor name with given index.
+            </summary>
+            <param name="idx">The index of the tensor to be updated.</param>
+            <param name="name">The tensor name to be set.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.GetTensorName(System.Int32)">
+            <summary>
+            Gets the tensor name with given index.
+            </summary>
+            <param name="idx">The index of the tensor.</param>
+            <returns>The tensor name</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.SetTensorType(System.Int32,Tizen.MachineLearning.Inference.TensorType)">
+            <summary>
+            Sets the tensor type with given index and its type.
+            </summary>
+            <param name="idx">The index of the tensor to be updated.</param>
+            <param name="type">The tensor type to be set.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.GetTensorType(System.Int32)">
+            <summary>
+            Gets the tensor type with given index.
+            </summary>
+            <param name="idx">The index of the tensor.</param>
+            <returns>The tensor type</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.SetDimension(System.Int32,System.Int32[])">
+            <summary>
+            Sets the tensor dimension with given index and dimension.
+            </summary>
+            <param name="idx">The index of the tensor to be updated.</param>
+            <param name="dimension">The tensor dimension to be set.</param>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.GetDimension(System.Int32)">
+            <summary>
+            Gets the tensor dimension with given index.
+            </summary>
+            <param name="idx">The index of the tensor.</param>
+            <returns>The tensor dimension.</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.GetTensorsData">
+            <summary>
+            Creates a TensorsData instance based on informations of TensorsInfo
+            </summary>
+            <returns>TensorsData instance</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to TensorsInfo's information is invalid.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.GetTensorSize(System.Int32)">
+            <summary>
+            Calculates the byte size of tensor data.
+            </summary>
+            <param name="idx">The index of the tensor information in the list</param>
+            <returns>The byte size of tensor</returns>
+            <feature>http://tizen.org/feature/machine_learning.inference</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.GetHashCode">
+            <summary>
+            Gets the the hash code of this TensorsInfo object
+            </summary>
+            <returns>The hash code</returns>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.Equals(System.Object)">
+            <summary>
+            Compare TensorsInfo, which is its contents are the same or not.
+            </summary>
+            <param name="obj">Object to compare</param>
+            <returns>True if the given object is the same object or its contents are the same</returns>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.Equals(Tizen.MachineLearning.Inference.TensorsInfo)">
+            <summary>
+            Compare TensorsInfo, which is its contents are the same or not.
+            </summary>
+            <param name="other">TensorsInfo instance to compare</param>
+            <returns>True if the given object is the same object or its contents are the same</returns>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.Clone">
+            <summary>
+            Create a new TensorsInfo object cloned from the current tensors information.
+            </summary>
+            <returns>Hard-copied TensorsInfo object</returns>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.ConvertTensorsInfoFromHandle(System.IntPtr)">
+            <summary>
+            Make TensorsInfo object from Native handle
+            </summary>
+            <param name="handle">Handle of TensorsInfo object</param>
+            <returns>TensorsInfo object</returns>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.GetTensorsInfoHandle">
+            <summary>
+            Return TensorsInfo handle
+            </summary>
+            <returns>IntPtr TensorsInfo handle</returns>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Inference.TensorsInfo.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+    </members>
+</doc>

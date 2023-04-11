@@ -1,0 +1,2609 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Uix.InputMethod</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            The Partial Interop class.
+            </summary>
+            <summary>
+            The Partial Interop class.
+            </summary>
+            <summary>
+            The Partial Interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.EinaList">
+            <summary>
+            The EinaList Interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.InputMethod">
+            <summary>
+            The InputMethod Interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.Libraries">
+            <summary>
+            The Partial Libraries class.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.AccessibilityStateChangedEventArgs">
+            <summary>
+            This class contains the data related to the AccessibilityStateChanged event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.AccessibilityStateChangedEventArgs.State">
+            <summary>
+            Accessibility option state.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.CursorPositionUpdatedEventArgs">
+            <summary>
+            This class contains the data related to the CursorPositionUpdated event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.CursorPositionUpdatedEventArgs.CursorPosition">
+            <summary>
+            The cursor position.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.SetDataEventArgs">
+            <summary>
+            This class contains the data related to the DataSet event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.SetDataEventArgs.Data">
+            <summary>
+            The specific data to be set to the input panel.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.SetDataEventArgs.DataLength">
+            <summary>
+            The length of data, in bytes, to be sent to the input panel.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.DisplayLanguageChangedEventArgs">
+            <summary>
+            This class contains the data related to the DisplayLanguageChanged event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.DisplayLanguageChangedEventArgs.Language">
+            <summary>
+            The language code.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.EditorWindow">
+            <summary>
+            The editor window class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.EditorWindow.CreateHandle(ElmSharp.EvasObject)">
+            <summary>
+            This API creates a handle for the editor window.
+            </summary>
+            <param name="parent">Parent EvasObject.</param>
+            <returns>Handle IntPtr.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.EditorWindow.GetHandle">
+            <summary>
+            This API gets a handle for the editor window.
+            </summary>
+            <returns>Handle IntPtr.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.EditorWindow.SetSize(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            This API updates the input panel window's size information.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="portraitWidth">The width in the portrait mode.</param>
+            <param name="portraitHeight">The height in the portrait mode.</param>
+            <param name="landscapeWidth">The width in the landscape mode.</param>
+            <param name="landscapeHeight">The height in the landscape mode.</param>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.FocusedInEventArgs">
+            <summary>
+            This class contains the data related to the FocusedIn event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.FocusedInEventArgs.ContextId">
+            <summary>
+            The input context identification value of an associated text input UI control.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.FocusedOutEventArgs">
+            <summary>
+            This class contains the data related to the FocusedOut event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.FocusedOutEventArgs.ContextId">
+            <summary>
+            The input context identification value of an associated text input UI control.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputHintSetEventArgs">
+            <summary>
+            This class contains the data related to the InputHintSet event.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputHintSetEventArgs.InputHint">
+            <summary>
+            The input hint.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputPanelLayout">
+            <summary>
+            Enumeration for the input panel layout.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutNormal">
+            <summary>
+            Normal.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutNumber">
+            <summary>
+            Number.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutEMail">
+            <summary>
+            Email.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutURL">
+            <summary>
+            URL.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutPhoneNumber">
+            <summary>
+            Phone Number.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutIP">
+            <summary>
+            IP.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutMonth">
+            <summary>
+            Month.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutNumberOnly">
+            <summary>
+            Number Only.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutInvalid">
+            <summary>
+            Invalid.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutHEX">
+            <summary>
+            HEX.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutTerminal">
+            <summary>
+            Terminal.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutPassword">
+            <summary>
+            Password.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutDateTime">
+            <summary>
+            Date and time.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutEmoticon">
+            <summary>
+            Emoticon.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.LayoutVoice">
+            <summary>
+            Voice.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLayout.Undefined">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.LayoutVariation">
+            <summary>
+            Enumeration for the layout variation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.LayoutVariation.NormalNormal">
+            <summary>
+            The plain normal layout.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.LayoutVariation.NormalFileName">
+            <summary>
+            Filename layout; symbols such as '/', '\*', '\', '|', '&lt;', '&gt;', '?', '&quot;', and ':' should be disabled.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.LayoutVariation.NormalPersonName">
+            <summary>
+            The name of a person.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.LayoutVariation.NumberOnlyNormal">
+            <summary>
+            The plain normal number layout.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.LayoutVariation.NumberOnlySigned">
+            <summary>
+            The number layout to allow a negative sign.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.LayoutVariation.NumberOnlyDecimal">
+            <summary>
+            The number layout to allow a decimal point to provide fractional value.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.LayoutVariation.NumberOnlySignedAndDecimal">
+            <summary>
+            The number layout to allow a decimal point and negative sign.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.LayoutVariation.PasswordNormal">
+            <summary>
+            The normal password layout.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.LayoutVariation.PasswordNumberOnly">
+            <summary>
+            The password layout to allow only a number.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.LayoutVariation.Undefined">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.AutoCapitalization">
+            <summary>
+            Enumeration for the AutoCapital types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.AutoCapitalization.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.AutoCapitalization.Word">
+            <summary>
+            Word.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.AutoCapitalization.Sentence">
+            <summary>
+            Sentence.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.AutoCapitalization.AllCharacter">
+            <summary>
+            All characters.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.AutoCapitalization.Undefined">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputPanelReturnKey">
+            <summary>
+            Enumeration for the InputPanel ReturnKey types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelReturnKey.Default">
+            <summary>
+            Default.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelReturnKey.Done">
+            <summary>
+            Done.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelReturnKey.Go">
+            <summary>
+            Go.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelReturnKey.Join">
+            <summary>
+            Join.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelReturnKey.Login">
+            <summary>
+            Login.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelReturnKey.Next">
+            <summary>
+            Next.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelReturnKey.Search">
+            <summary>
+            Search.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelReturnKey.Send">
+            <summary>
+            Send.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelReturnKey.SignIn">
+            <summary>
+            SignIn.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelReturnKey.Undefined">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputHints">
+            <summary>
+            Enumeration for the InputHints.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputHints.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputHints.AutoComplete">
+            <summary>
+            AutoComplete.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputHints.SensitiveData">
+            <summary>
+            SensitiveData.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputHints.Multiline">
+            <summary>
+            Multiline.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputHints.Undefined">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.BiDirection">
+            <summary>
+            Enumeration for the BiDirection.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.BiDirection.Neutral">
+            <summary>
+            Neutral.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.BiDirection.LTR">
+            <summary>
+            LTR.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.BiDirection.RTL">
+            <summary>
+            RTL.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.BiDirection.Undefined">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputPanelLanguage">
+            <summary>
+            Enumeration for the InputPanel language.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLanguage.Automatic">
+            <summary>
+            Automatic.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLanguage.Alphabet">
+            <summary>
+            Alphabet.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputPanelLanguage.Undefined">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputMethodContext">
+            <summary>
+            This class represents the context of the InputMethodEditor.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.Layout">
+            <summary>
+            Gets the layout information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.LayoutVariation">
+            <summary>
+            Gets the layout variation information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.CursorPosition">
+            <summary>
+            Gets the cursor position information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.AutoCapitalization">
+            <summary>
+            Gets the autocapital type information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.ReturnKey">
+            <summary>
+            Gets the Return key label type information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.ReturnKeyState">
+            <summary>
+            Gets the Return key state information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.PredictionMode">
+            <summary>
+            Gets the prediction mode information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.PasswordMode">
+            <summary>
+            Gets the password mode information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.InputHint">
+            <summary>
+            Gets the input hint information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.BiDirection">
+            <summary>
+            Gets the text bidirectional information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodContext.Language">
+            <summary>
+            Gets the preferred language information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.DeviceClass">
+            <summary>
+            Enumeration for the device class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceClass.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceClass.Seat">
+            <summary>
+            Seat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceClass.Keyboard">
+            <summary>
+            Keyboard.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceClass.Mouse">
+            <summary>
+            Mouse.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceClass.Touch">
+            <summary>
+            Touch.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceClass.Pen">
+            <summary>
+            Pen.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceClass.Pointer">
+            <summary>
+            Pointer.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceClass.Gamepad">
+            <summary>
+            Gamepad.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceClass.Undefined">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.DeviceSubclass">
+            <summary>
+            Enumeration for the device subclass.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.Finger">
+            <summary>
+            Finger.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.FingerNail">
+            <summary>
+            FingerNail.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.Knuckle">
+            <summary>
+            Knuckle.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.Palm">
+            <summary>
+            Palm.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.HandSize">
+            <summary>
+            HandSize.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.HandFlat">
+            <summary>
+            HandFlat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.PenTip">
+            <summary>
+            PenTip.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.Trackpad">
+            <summary>
+            Trackpad.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.Trackpoint">
+            <summary>
+            Trackpoint.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.Trackball">
+            <summary>
+            Trackball.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.DeviceSubclass.Undefined">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputMethodDeviceInformation">
+            <summary>
+            This class gives the device information, like the name, class, and subclass.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodDeviceInformation.Name">
+            <summary>
+            Gets the device name of the key event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodDeviceInformation.DeviceClass">
+            <summary>
+            Gets the device class of the key event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.InputMethodDeviceInformation.DeviceSubclass">
+            <summary>
+            Gets the device subclass of the key event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.KeyCode">
+            <summary>
+            Enumeration for the key codes.
+            If keycode &amp; 0xff000000 == 0x01000000 then this key code is directly encoded to 24-bit UCS character. The UCS value is keycode &amp; 0x00ffffff.
+            Defines the list of keys supported by the system. Note that certain keys may not be available on all the devices.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.BackSpace">
+            <summary>
+            The Backspace key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Tab">
+            <summary>
+            The Tab key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Linefeed">
+            <summary>
+            The Linefeed key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Clear">
+            <summary>
+            The Clear key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Return">
+            <summary>
+            The Return key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Pause">
+            <summary>
+            The Pause key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.ScrollLock">
+            <summary>
+            The Scroll lock key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.SysReq">
+            <summary>
+            The System Request key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Escape">
+            <summary>
+            The Escape key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Delete">
+            <summary>
+            The Delete key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Home">
+            <summary>
+            The Home key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Left">
+            <summary>
+            The Left directional key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Up">
+            <summary>
+            The Up directional key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Right">
+            <summary>
+            The Right directional key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Down">
+            <summary>
+            The Down directional key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Prior">
+            <summary>
+            The Prior, Previous key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Page_Up">
+            <summary>
+            The Page Up key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Next">
+            <summary>
+            The Next key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Page_Down">
+            <summary>
+            The Page Down key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.End">
+            <summary>
+            The End key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Begin">
+            <summary>
+            The Begin key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Select">
+            <summary>
+            The Select key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Print">
+            <summary>
+            The Print key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Execute">
+            <summary>
+            The Execute, Run, Do key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Insert">
+            <summary>
+            The Insert key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Undo">
+            <summary>
+            The Undo key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Redo">
+            <summary>
+            The Redo key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Menu">
+            <summary>
+            The Menu key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Find">
+            <summary>
+            The Find key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Cancel">
+            <summary>
+            The Cancel, Stop, Abort, Exit key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Help">
+            <summary>
+            The Help key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Break">
+            <summary>
+            The Break key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Mode_switch">
+            <summary>
+            The character set switch key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Num_Lock">
+            <summary>
+            The Number Lock key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPSpace">
+            <summary>
+            The Numpad Space key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPTab">
+            <summary>
+            The Numpad Tab key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPEnter">
+            <summary>
+            The Numpad Enter key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPF1">
+            <summary>
+            The Numpad Function 1 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPF2">
+            <summary>
+            The Numpad Function 2 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPF3">
+            <summary>
+            The Numpad Function 3 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPF4">
+            <summary>
+            The Numpad Function 4 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPHome">
+            <summary>
+            The Numpad Home key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPLeft">
+            <summary>
+            The Numpad Left key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPUp">
+            <summary>
+            The Numpad Up key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPRight">
+            <summary>
+            The Numpad Right key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPDown">
+            <summary>
+            The Numpad Down key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPPrior">
+            <summary>
+            The Numpad Prior, Previous key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPPage_Up">
+            <summary>
+            The Numpad Page Up key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPNext">
+            <summary>
+            The Numpad Next key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPPage_Down">
+            <summary>
+            The Numpad Page Down key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPEnd">
+            <summary>
+            The Numpad End key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPBegin">
+            <summary>
+            The Numpad Begin key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPInsert">
+            <summary>
+            The Numpad Insert key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPDelete">
+            <summary>
+            The Numpad Delete key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPEqual">
+            <summary>
+            The Numpad Equal key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPMultiply">
+            <summary>
+            The Numpad Multiply key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPAdd">
+            <summary>
+            The Numpad Add key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPSeparator">
+            <summary>
+            The Numpad Separator key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPSubtract">
+            <summary>
+            The Numpad Subtract key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPDecimal">
+            <summary>
+            The Numpad Decimal key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KPDivide">
+            <summary>
+            The Numpad Divide key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KP0">
+            <summary>
+            The Numpad 0 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KP1">
+            <summary>
+            The Numpad 1 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KP2">
+            <summary>
+            The Numpad 2 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KP3">
+            <summary>
+            The Numpad 3 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KP4">
+            <summary>
+            The Numpad 4 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KP5">
+            <summary>
+            The Numpad 5 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KP6">
+            <summary>
+            The Numpad 6 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KP7">
+            <summary>
+            The Numpad 7 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KP8">
+            <summary>
+            The Numpad 8 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KP9">
+            <summary>
+            The Numpad 9 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F1">
+            <summary>
+            The Function 1 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F2">
+            <summary>
+            The Function 2 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F3">
+            <summary>
+            The Function 3 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F4">
+            <summary>
+            The Function 4 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F5">
+            <summary>
+            The Function 5 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F6">
+            <summary>
+            The Function 6 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F7">
+            <summary>
+            The Function 7 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F8">
+            <summary>
+            The Function 8 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F9">
+            <summary>
+            The Function 9 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F10">
+            <summary>
+            The Function 10 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F11">
+            <summary>
+            The Function 11 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F12">
+            <summary>
+            The Function 12 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F13">
+            <summary>
+            The Function 13 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F14">
+            <summary>
+            The Function 14 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F15">
+            <summary>
+            The Function 15 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F16">
+            <summary>
+            The Function 16 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F17">
+            <summary>
+            The Function 17 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F18">
+            <summary>
+            The Function 18 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F19">
+            <summary>
+            The Function 19 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F20">
+            <summary>
+            The Function 20 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F21">
+            <summary>
+            The Function 21 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F22">
+            <summary>
+            The Function 22 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F23">
+            <summary>
+            The Function 23 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F24">
+            <summary>
+            The Function 24 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F25">
+            <summary>
+            The Function 25 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F26">
+            <summary>
+            The Function 26 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F27">
+            <summary>
+            The Function 27 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F28">
+            <summary>
+            The Function 28 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F29">
+            <summary>
+            The Function 29 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F30">
+            <summary>
+            The Function 30 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F31">
+            <summary>
+            The Function 31 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F32">
+            <summary>
+            The Function 32 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F33">
+            <summary>
+            The Function 33 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F34">
+            <summary>
+            The Function 34 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.F35">
+            <summary>
+            The Function 35 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.ShiftL">
+            <summary>
+            The Left Shift key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.ShiftR">
+            <summary>
+            The Right Shift key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.ControlL">
+            <summary>
+            The Left Control key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.ControlR">
+            <summary>
+            The Right Control key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.CapsLock">
+            <summary>
+            The Caps Lock key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.ShiftLock">
+            <summary>
+            The Shift Lock key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.MetaL">
+            <summary>
+            The Left Meta key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.MetaR">
+            <summary>
+            The Right Meta key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.AltL">
+            <summary>
+            The Left Alt key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.AltR">
+            <summary>
+            The Right Alt key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.SuperL">
+            <summary>
+            The Left Super key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.SuperR">
+            <summary>
+            The Right Super key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.HyperL">
+            <summary>
+            The Left Hyper key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.HyperR">
+            <summary>
+            The Right Hyper key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Space">
+            <summary>
+            The Space key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Exclam">
+            <summary>
+            The Exclamation key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Quotedbl">
+            <summary>
+            The Quotedbl key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.NumberSign">
+            <summary>
+            The Number Sign key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Dollar">
+            <summary>
+            The Dollar key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Percent">
+            <summary>
+            The Percent key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Ampersand">
+            <summary>
+            The Ampersand key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Apostrophe">
+            <summary>
+            The Apostrophe key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Parenleft">
+            <summary>
+            The Parenleft key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Parenright">
+            <summary>
+            The Parenright key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Asterisk">
+            <summary>
+            The Asterisk key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Plus">
+            <summary>
+            The Plus key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Comma">
+            <summary>
+            The Comma key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Minus">
+            <summary>
+            The Minus key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Period">
+            <summary>
+            The Period key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Slash">
+            <summary>
+            The Slash key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypad0">
+            <summary>
+            The 0 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypad1">
+            <summary>
+            The 1 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypad2">
+            <summary>
+            The 2 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypad3">
+            <summary>
+            The 3 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypad4">
+            <summary>
+            The 4 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypad5">
+            <summary>
+            The 5 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypad6">
+            <summary>
+            The 6 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypad7">
+            <summary>
+            The 7 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypad8">
+            <summary>
+            The 8 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypad9">
+            <summary>
+            The 9 key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Colon">
+            <summary>
+            The Colon key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Semicolon">
+            <summary>
+            The Semicolon key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Less">
+            <summary>
+            The Less key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Equal">
+            <summary>
+            The Equal key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Greater">
+            <summary>
+            The Greater key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Question">
+            <summary>
+            The Question key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.At">
+            <summary>
+            The At key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadA">
+            <summary>
+            The A key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadB">
+            <summary>
+            The B key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadC">
+            <summary>
+            The C key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadD">
+            <summary>
+            The D key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadE">
+            <summary>
+            The E key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadF">
+            <summary>
+            The F key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadG">
+            <summary>
+            The G key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadH">
+            <summary>
+            The H key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadI">
+            <summary>
+            The I key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadJ">
+            <summary>
+            The J key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadK">
+            <summary>
+            The K key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadL">
+            <summary>
+            The L key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadM">
+            <summary>
+            The M key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadN">
+            <summary>
+            The N key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadO">
+            <summary>
+            The O key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadP">
+            <summary>
+            The P key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadQ">
+            <summary>
+            The Q key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadR">
+            <summary>
+            The R key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadS">
+            <summary>
+            The S key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadT">
+            <summary>
+            The T key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadU">
+            <summary>
+            The U key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadV">
+            <summary>
+            The V key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadW">
+            <summary>
+            The W key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadX">
+            <summary>
+            The X key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadY">
+            <summary>
+            The Y key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.KeypadZ">
+            <summary>
+            The Z key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.BracketLeft">
+            <summary>
+            The Left Bracket key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Backslash">
+            <summary>
+            The Backslash key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.BracketRight">
+            <summary>
+            The Right Bracket key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.AsciiCircum">
+            <summary>
+            The Circumflex key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Underscore">
+            <summary>
+            The Underscore key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Grave">
+            <summary>
+            The Grave key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypada">
+            <summary>
+            The a key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadb">
+            <summary>
+            The b key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadc">
+            <summary>
+            The c key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadd">
+            <summary>
+            The d key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypade">
+            <summary>
+            The e key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadf">
+            <summary>
+            The f key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadg">
+            <summary>
+            The g key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadh">
+            <summary>
+            The h key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadi">
+            <summary>
+            The i key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadj">
+            <summary>
+            The j key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadk">
+            <summary>
+            The k key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadl">
+            <summary>
+            The l key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadm">
+            <summary>
+            The m key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadn">
+            <summary>
+            The n key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypado">
+            <summary>
+            The o key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadp">
+            <summary>
+            The p key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadq">
+            <summary>
+            The q key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadr">
+            <summary>
+            The r key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypads">
+            <summary>
+            The s key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadt">
+            <summary>
+            The t key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadu">
+            <summary>
+            The u key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadv">
+            <summary>
+            The v key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadw">
+            <summary>
+            The w key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadx">
+            <summary>
+            The x key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypady">
+            <summary>
+            The y key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Keypadz">
+            <summary>
+            The z key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.BraceLeft">
+            <summary>
+            The Left Brace key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.Bar">
+            <summary>
+            The Bar key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.BraceRight">
+            <summary>
+            The Right Brace key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyCode.AsciiTilde">
+            <summary>
+            The Tilde key.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.KeyMask">
+            <summary>
+            Enumeration for the key masks.
+            The key masks indicate which modifier keys are pressed down during the keyboard hit. The special MASK_RELEASED indicates the key release event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyMask.Pressed">
+            <summary>
+            Key press event without the modifier key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyMask.Shift">
+            <summary>
+            The Shift key is pressed down.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyMask.CapsLock">
+            <summary>
+            The CapsLock key is pressed down.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyMask.Control">
+            <summary>
+            The Control key is pressed down.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyMask.Alt">
+            <summary>
+            The Alt key is pressed down.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyMask.Meta">
+            <summary>
+            The Meta key is pressed down.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyMask.Win">
+            <summary>
+            The Win key (between Control and Alt) is pressed down.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyMask.Hyper">
+            <summary>
+            The Hyper key is pressed down.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyMask.NumLock">
+            <summary>
+            The NumLock key is pressed down.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.KeyMask.Released">
+            <summary>
+            Key release event.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputMethodEditor">
+            <summary>
+            This class contains the API's related to the IME (Input method editor).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputMethodEditor.ContextId">
+            <summary>
+            Structure representing the ContextId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.ContextId.Equals(Tizen.Uix.InputMethod.InputMethodEditor.ContextId)">
+            <summary>
+            Compares whether the ContextIds are equal.
+            </summary>
+            <param name="other">The ContextId to compare with this instance.</param>
+            <returns>true if the ContextIds is the same; otherwise, false.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputMethodEditor.Rect">
+            <summary>
+            Rectangle representing the position and size of the UI control.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputMethodEditor.Rect.x">
+            <summary>
+            The X position in the screen.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputMethodEditor.Rect.y">
+            <summary>
+            The Y position in the screen.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputMethodEditor.Rect.w">
+            <summary>
+            The window width.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.InputMethodEditor.Rect.h">
+            <summary>
+            The window height.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputMethodEditor.OutAction`1">
+            <summary>
+            An action with 1 out parameter.
+            </summary>
+            <typeparam name="T">Generic Type.</typeparam>
+            <param name="a">The out parameter.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputMethodEditor.OutArrayAction`1">
+            <summary>
+            An action with an array out parameter.
+            </summary>
+            <typeparam name="T">Generic Type.</typeparam>
+            <param name="a">The out parameter 1.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputMethodEditor.BoolAction`3">
+            <summary>
+            An action with 3 input parameters returning a bool.
+            </summary>
+            <typeparam name="T">Generic type for parameter 1.</typeparam>
+            <typeparam name="T1">Generic type for parameter 2.</typeparam>
+            <typeparam name="T2">Generic type for parameter 3.</typeparam>
+            <param name="a">The input parameter 1.</param>
+            <param name="b">The input parameter 2.</param>
+            <param name="c">The input parameter 3.</param>
+            <returns></returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.InputMethodEditor.BoolAction`4">
+            <summary>
+            An action with 4 input parameters returning a bool.
+            </summary>
+            <typeparam name="T">Generic type for parameter 1.</typeparam>
+            <typeparam name="T1">Generic type for parameter 2.</typeparam>
+            <typeparam name="T2">Generic type for parameter 3.</typeparam>
+            <typeparam name="T3">Generic type for parameter 4.</typeparam>
+            <param name="a">The input parameter 1.</param>
+            <param name="b">The input parameter 2.</param>
+            <param name="c">The input parameter 3.</param>
+            <param name="d">The input parameter 4.</param>
+            <returns></returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.FocusedIn">
+            <summary>
+            Called when an associated text input UI control has focus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.FocusedOut">
+            <summary>
+            Called when an associated text input UI control loses focus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.SurroundingTextUpdated">
+            <summary>
+            Called when an associated text input UI control responds to a request with the surrounding text.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.InputContextReset">
+            <summary>
+            Called to reset the input context of an associated text input UI control.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.CursorPositionUpdated">
+            <summary>
+            Called when the position of the cursor in an associated text input UI control changes.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.LanguageSet">
+            <summary>
+            Called to set the preferred language to the input panel.
+            It will only be called when the client application changes the edit field's language attribute after the input panel is shown.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.DataSet">
+            <summary>
+            Called to set the application specific data to deliver to the input panel.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.LayoutSet">
+            <summary>
+            Called when an associated text input UI control requests the input panel to set its layout.
+            It will only be called when the client application changes the edit field's layout attribute after the input panel is shown.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.ReturnKeySet">
+            <summary>
+            Called when an associated text input UI control requests the input panel to set the Return key label.
+            The input panel can show the text or an image on the Return button, according to the Return key action.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.ReturnKeyStateSet">
+            <summary>
+            Called when an associated text input UI control requests the input panel to enable or disable the Return key state.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.DisplayLanguageChanged">
+            <summary>
+            Called when the system display language is changed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.RotationChanged">
+            <summary>
+            Called when the device is rotated.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.AccessibilityStateChanged">
+            <summary>
+            Called when Accessibility in settings application is on or off.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetLanguageRequestedCallback(Tizen.Uix.InputMethod.InputMethodEditor.OutAction{System.String})">
+            <summary>
+            Sets the languageRequested action.
+            </summary>
+            <param name="languageRequested">
+            Called when an associated text input UI control requests the language from the input panel, requesting for language code.
+            </param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetProcessKeyCallback(Tizen.Uix.InputMethod.InputMethodEditor.BoolAction{Tizen.Uix.InputMethod.KeyCode,Tizen.Uix.InputMethod.KeyMask,Tizen.Uix.InputMethod.InputMethodDeviceInformation})">
+            <summary>
+            Sets the processKey action.
+            If the key event is from the external device, DeviceInfo will have its name, class, and subclass information.
+            </summary>
+            <param name="processKey">
+            The action is called when the key event is received from the external devices or the SendKey function.
+            This Event processes the key event before an associated text input UI control does.
+            </param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetDataRequestedCallback(Tizen.Uix.InputMethod.InputMethodEditor.OutArrayAction{System.Byte})">
+            <summary>
+            Sets the imDataRequested action.
+            </summary>
+            <param name="imDataRequested">
+            Called when an associated text input UI control requests the application specific data from the input panel, requesting for data array and it's length.
+            </param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetGeometryRequestedCallback(Tizen.Uix.InputMethod.InputMethodEditor.OutAction{Tizen.Uix.InputMethod.InputMethodEditor.Rect})">
+            <summary>
+            Sets the GeometryRequested action.
+            </summary>
+            <param name="geometryRequested">
+            Called when an associated text input UI control requests the position and size from the input panel, requesting for x, y, w, h values.
+            </param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.Run(System.Action,System.Action,System.Action{Tizen.Uix.InputMethod.InputMethodEditor.ContextId,Tizen.Uix.InputMethod.InputMethodContext},System.Action{Tizen.Uix.InputMethod.InputMethodEditor.ContextId})">
+            <summary>
+            Runs the main loop of the IME application.
+            This function starts to run the IME application's main loop.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <remarks>
+            This API is a blocking call, as it starts the main loop of the application.
+            </remarks>
+            <param name="create">This is called to initialize the IME application before the main loop starts up.</param>
+            <param name="terminate">This is called when the IME application is terminated.</param>
+            <param name="show">
+            This is called when the IME application is shown.
+            It provides the context information and the context ID.
+            </param>
+            <param name="hide">
+            This is called when the IME application is hidden.
+            It provides the context ID.
+            </param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SendKeyEvent(Tizen.Uix.InputMethod.KeyCode,Tizen.Uix.InputMethod.KeyMask,System.Boolean)">
+            <summary>
+            Sends a key event to the associated text input UI control.
+            </summary>
+            <remarks>
+            This function sends a key down or up event with the key mask to the client application. If forwardKey is true, this key event goes to the edit filed directly.
+            And if forwardKey is false, the ProcessKey event receives the key event before the edit field.
+            </remarks>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="keyCode">The key code to be sent.</param>
+            <param name="keyMask">The modifier key mask.</param>
+            <param name="forwardKey">The flag to send the key event directly to the edit field.</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.CommitString(System.String)">
+            <summary>
+            Sends the text to the associated text input UI control.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="str">The string to be committed.</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.ShowPreEditString">
+            <summary>
+            Requests to show the pre-edit string.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.HidePreEditString">
+            <summary>
+            Requests to hide the pre-edit string.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.UpdatePreEditString(System.String,System.Collections.Generic.IEnumerable{Tizen.Uix.InputMethod.PreEditAttribute})">
+            <summary>
+            Updates a new pre-edit string.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="str">The string to be updated in pre-edit.</param>
+            <param name="attrs">
+            The list which has ime_preedit_attribute lists, strings can be composed of multiple string attributes: underline, highlight color, and reversal color.
+            The attrs list can be empty if no attributes to set.
+            </param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.RequestSurroundingText(System.Int32,System.Int32)">
+            <summary>
+            Requests the surrounding text from the position of the cursor, asynchronously.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="maxLenBefore">The maximum length of the string to be retrieved before the cursor, -1 means unlimited.</param>
+            <param name="maxLenAfter">The maximum length of the string to be retrieved after the cursor, -1 means unlimited.</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) The IME main loop has not started yet.
+            2) The necessary event is not set.
+            </exception>
+            <postcondition>
+            The requested surrounding text can be received using the SurroundingTextUpdated event, only if it is set.
+            </postcondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.DeleteSurroundingText(System.Int32,System.Int32)">
+            <summary>
+            Requests to delete the surrounding text.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="offset">The offset value from the cursor position.</param>
+            <param name="len">The length of the text to delete.</param>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.GetSurroundingText(System.Int32,System.Int32,System.String@,System.Int32@)">
+            <summary>
+            Gets the surrounding text from the position of the cursor, synchronously.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="maxLenBefore">The maximum length of the string to be retrieved before the cursor, -1 means unlimited.</param>
+            <param name="maxLenAfter">The maximum length of the string to be retrieved after the cursor, -1 means unlimited.</param>
+            <param name="text">The surrounding text.</param>
+            <param name="cursorPosition">The cursor position.</param>
+            <exception cref="T:System.OutOfMemoryException">This exception can be due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetSelection(System.Int32,System.Int32)">
+            <summary>
+            Requests to set the selection.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="start">The start cursor position in text (in characters not bytes).</param>
+            <param name="end">The end cursor position in text (in characters not bytes).</param>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.GetMainWindow">
+            <summary>
+            This API returns the input panel main window.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <returns>The input panel main window object on success, otherwise null.</returns>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) The IME main loop has not started yet.
+            2) Operation failed.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.RequestHide">
+            <summary>
+            Sends the request to hide the IME.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.Create">
+            <summary>
+            This API requests the InputMethodEditor to initialize.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.Destroy">
+            <summary>
+            This API requests the InputMethodEditor to finalize.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetFloatingMode(System.Boolean)">
+            <summary>
+            Sets the floating mode to on or off.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="floatingMode"><c>true</c> to set the floating mode to on and <c>false</c> to set it to off.</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetFloatingDragStart">
+            <summary>
+            Allows the floating input panel window to move along with the mouse pointer when the mouse is pressed.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <remarks>
+            This function can be used in floating mode. If the floating mode is deactivated, calling this function has no effect.
+            </remarks>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetFloatingDragEnd">
+            <summary>
+            Does not allow the movement of the floating input panel window with the mouse pointer when the mouse is pressed.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <remarks>
+            This function can be used in floating mode. If the floating mode is deactivated, calling this function has no effect.
+            </remarks>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SendLanguageUpdated">
+            <summary>
+            Notifies the changed language of the input panel to the the associated text input UI control.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <remarks>
+            LanguageRequestedCallback is raised after this API is called when the App requests changed language information.
+            </remarks>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SendShiftModeUpdated(System.Boolean)">
+            <summary>
+            Sends the changed shift mode of the input panel to the the associated text input UI control.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="enable"><c>true</c> if shift button is clicked, otherwise <c>false</c>.</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SendCustomGeometryUpdated">
+            <summary>
+            Notifies the changed geometry of input panel window to the associated text input UI control.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.GetSelectedText">
+            <summary>
+            Gets the selected text synchronously.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <returns>The selected text.</returns>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.PredictionHintUpdated">
+            <summary>
+            Called to set the prediction hint string to deliver to the input panel.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.PredictionHintDataUpdated">
+            <summary>
+            Called to set the prediction hint key and value to deliver to the input panel.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.MimeTypeUpdateRequested">
+            <summary>
+            Called when an associated text input UI control requests the text entry to set the MIME type.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SendPrivateCommand(System.String)">
+            <summary>
+            Sends a private command to the associated text input UI control.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="command">The UTF-8 string to be sent.</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.CommitContent(System.String,System.String,System.String)">
+            <summary>
+            Commits contents such as image to the associated text input UI control.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="content">The content URI to be sent.</param>
+            <param name="description">The content description.</param>
+            <param name="mimeType">The MIME type received from the MimeTypeSetRequest</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetSize(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            This API updates the given native input panel window's size information.
+            The native window handle of NUI Window can be got by below code.
+            var handle = new Window.SafeNativeWindowHandle();
+            IntPtr nativeHandle = handle.DangerousGetHandle();
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="window">The native window handle.</param>
+            <param name="portraitWidth">The width in the portrait mode.</param>
+            <param name="portraitHeight">The height in the portrait mode.</param>
+            <param name="landscapeWidth">The width in the landscape mode.</param>
+            <param name="landscapeHeight">The height in the landscape mode.</param>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetProcessKeyCallback(Tizen.Uix.InputMethod.InputMethodEditor.BoolAction{System.UInt32,Tizen.Uix.InputMethod.KeyCode,Tizen.Uix.InputMethod.KeyMask,Tizen.Uix.InputMethod.InputMethodDeviceInformation})">
+            <summary>
+            Sets the processKey action.
+            If the key event is from the external device, DeviceInfo will have its name, class, and subclass information.
+            </summary>
+            <param name="processKey">
+            <c>true</c> if the event was processed, otherwise the event was not processed and was forwarded to the client application.
+            The first parameter is X11 key code and the second parameter is key symbol.
+            The action is called when the key event is received from the external devices or the SendKey function.
+            This Event processes the key event before an associated text input UI control does.
+            </param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.UpdatePreeditCursor(System.UInt32)">
+            <summary>
+            Updates the cursor position in the preedit string.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="position">The cursor position in the preedit string.</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.InputMethod.InputMethodEditor.SetCandidateVisibilityState(System.Boolean)">
+            <summary>
+            Sets whether candidate strings will be shown or not.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/ime
+            </privilege>
+            <param name="visible"><c>true</c> to show candidate strings, <c>false</c> otherwise.</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">The IME main loop has not started yet.</exception>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.InputMethod.InputMethodEditor.InputHintSet">
+            <summary>
+            Called when an associated text input UI control requests the input panel to set its input hint.
+            It will only be called when the client application changes the edit field's input hint attribute after the input panel is shown.
+            </summary>
+            <seealso cref="T:Tizen.Uix.InputMethod.InputHints"/>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.LanguageSetEventArgs">
+            <summary>
+            This class contains the data related to the LanguageSet event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.LanguageSetEventArgs.Language">
+            <summary>
+            The preferred language that the client application wants.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.LayoutSetEventArgs">
+            <summary>
+            This class contains the data related to the LayoutSet event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.LayoutSetEventArgs.Layout">
+            <summary>
+            The input panel layout.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.MimeTypeUpdateRequestedEventArgs">
+            <summary>
+            This class contains the data related to the MimeTypeUpdateRequested event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.MimeTypeUpdateRequestedEventArgs.MimeType">
+            <summary>
+            The MIME type of entry.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.PredictionHintDataUpdatedEventArgs">
+            <summary>
+            This class contains the data related to the PredictionHintDataUpdated event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.PredictionHintDataUpdatedEventArgs.Key">
+            <summary>
+            The prediction hint key.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.PredictionHintDataUpdatedEventArgs.Value">
+            <summary>
+            The prediction hint value.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.PredictionHintUpdatedEventArgs">
+            <summary>
+            This class contains the data related to the PredictionHintUpdated event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.PredictionHintUpdatedEventArgs.PredictionHint">
+            <summary>
+            The prediction hint to be set to the input panel
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.AttributeType">
+            <summary>
+            Enumeration for the attribute types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.AttributeType.None">
+            <summary>
+            No attribute.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.InputMethod.AttributeType.FontStyle">
+            <summary>
+            A font style attribute, for example, underline, etc.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.PreEditAttribute">
+            <summary>
+            This class represents the attributes for the pre-edit string.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.PreEditAttribute.Start">
+            <summary>
+            The start position in the string of this attribute.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.PreEditAttribute.Length">
+            <summary>
+            The character length of this attribute, the range is [Start, Start+Length].
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.PreEditAttribute.Type">
+            <summary>
+            The type of this attribute.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.PreEditAttribute.Value">
+            <summary>
+            The value of this attribute.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.ReturnKeyStateSetEventArgs">
+            <summary>
+            This class contains the data related to the ReturnKeyStateSet event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.ReturnKeyStateSetEventArgs.State">
+            <summary>
+            The bool state to disable the Return key. The Return key is enabled by default.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.ReturnKeySetEventArgs">
+            <summary>
+            This class contains the data related to the ReturnKeySet event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.ReturnKeySetEventArgs.Type">
+            <summary>
+            The type of the Return key on the input panel.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.RotationChangedEventArgs">
+            <summary>
+            This class contains the data related to the RotationChanged event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.RotationChangedEventArgs.Degree">
+            <summary>
+            The rotation degree.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.InputMethod.SurroundingTextUpdatedEventArgs">
+            <summary>
+            This class contains the data related to the SurroundingTextUpdated event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.SurroundingTextUpdatedEventArgs.ContextId">
+            <summary>
+            The input context identification value of an associated text input UI control.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.SurroundingTextUpdatedEventArgs.CursorPosition">
+            <summary>
+            The cursor position.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.InputMethod.SurroundingTextUpdatedEventArgs.Text">
+            <summary>
+            The string requested.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

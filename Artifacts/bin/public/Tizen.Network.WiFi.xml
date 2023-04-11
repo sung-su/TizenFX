@@ -1,0 +1,1355 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Network.WiFi</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Network.WiFi.ConnectionStateChangedEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed connection state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.ConnectionStateChangedEventArgs.State">
+            <summary>
+            The Wi-Fi connection state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.ConnectionStateChangedEventArgs.AP">
+            <summary>
+            The access point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.DeviceStateChangedEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed device state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.DeviceStateChangedEventArgs.State">
+            <summary>
+            The Wi-Fi device state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.InvalidKeyException">
+            <summary>
+            The exception that is thrown when a key is invalid.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.WiFi.InvalidKeyException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">The localized error message string</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.IWiFiEap">
+            <summary>
+            An abstract class for the Wi-Fi EAP information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.IWiFiEap.CaCertificationFile">
+            <summary>
+            The file path of CA Certificate of EAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.IWiFiEap.EapType">
+            <summary>
+            The EAP type of the Wi-Fi.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.IWiFiEap.AuthenticationType">
+            <summary>
+            The type of EAP phase2 authentication of the Wi-Fi.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.NowInProgressException">
+            <summary>
+            The exception that is thrown when the same operation is in progress.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.WiFi.NowInProgressException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="message">The localized error message string</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.RssiLevelChangedEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed RSSI level.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.RssiLevelChangedEventArgs.Level">
+            <summary>
+            The Wi-Fi RSSI level.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.ScanStateChangedEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed scan state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.ScanStateChangedEventArgs.State">
+            <summary>
+            The Wi-Fi scan state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiAddressInformation.DhcpServerAddress">
+            <summary>
+            DHCP server address. It is only supported for IPv4 address family.
+            </summary>
+            <value>Represents DHCP server address.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiAddressInformation.DhcpLeaseDuration">
+            <summary>
+            DHCP lease duration. It is only supported for IPv4 address family.
+            </summary>
+            <value>Represents DHCP lease duration.</value>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiAP">
+            <summary>
+            A class for managing the network information of the access point (AP).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiAP.NetworkInformation">
+            <summary>
+            The network information of the access point (AP).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The WiFiNetwork instance containing the network information of the AP.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiAP.SecurityInformation">
+            <summary>
+            The security information of the access point (AP).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The WiFiSecurity instance containing security information of the AP.</value>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.#ctor(System.String)">
+            <summary>
+            Creates an object for the access point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="essid">The Extended Service Set Identifier of the access point.</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the ESSID is passed as null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.#ctor(System.String,System.Boolean)">
+            <summary>
+            Creates an object for the hidden access point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="essid">The Extended Service Set Identifier of the access point.</param>
+            <param name="hidden">The value to set a hidden AP.</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the ESSID is passed as null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.Finalize">
+            <summary>
+            Destroy the WiFiAP object
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.Dispose">
+            <summary>
+            A method to destroy the managed WiFiAP objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.Refresh">
+            <summary>
+            Refreshes the access point information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when the object instance is disposed or released.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.ConnectAsync">
+            <summary>
+            Connects the access point asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns> A task indicating whether the connect method is done or not.</returns>
+            <remarks>
+            This method must be called from MainThread.
+            </remarks>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:Tizen.Network.WiFi.NowInProgressException">Thrown when the Wi-Fi connection is now in progress.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when the object instance is disposed or released.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:Tizen.Network.WiFi.InvalidKeyException">Thrown when the key is wrong.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.ConnectWpsAsync(Tizen.Network.WiFi.WpsInfo)">
+            <summary>
+            Connects the access point with the WPS asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="info">A WpsInfo instance which is type of WpsPbcInfo or WpsPinInfo.</param>
+            <returns>A task indicating whether the ConnectWps method is done or not.</returns>
+            <remarks>
+            This method must be called from MainThread.
+            </remarks>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when the object instance is disposed or released.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the WpsPinInfo object is constructed with a null pin.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the WpsPinInfo object is constructed with a pin which is an empty string or more than 7 characters.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:Tizen.Network.WiFi.NowInProgressException">Thrown when the Wi-Fi connection is now in progress.</exception>
+            <exception cref="T:System.TimeoutException">Thrown when the timeout of WPS connection is expired.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.ConnectWpsWithoutSsidAsync(Tizen.Network.WiFi.WpsInfo)">
+            <summary>
+            Connects the access point with WPS without SSID asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="info">A WpsInfo instance which is of type WpsPbcInfo or WpsPinInfo.</param>
+            <returns>A task which contains Connected access point information.</returns>
+            <remarks>
+            If WpsPinInfo is used, its object has to be constructed with a pin which must be 4 or 8 characters long. \n
+            This method must be called from MainThread.
+            </remarks>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the WpsPinInfo object is constructed with a null pin.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the WpsPinInfo object is constructed with a pin which is not of 4 or 8 characters long.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:Tizen.Network.WiFi.NowInProgressException">Thrown when the Wi-Fi connection is now in progress.</exception>
+            <exception cref="T:System.TimeoutException">Thrown when the timeout of WPS connection is expired.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.CancelWps">
+            <summary>
+            Stops ongoing WPS provisioning
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.DisconnectAsync">
+            <summary>
+            Disconnects the access point asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns> A task indicating whether the disconnect method is done or not.</returns>
+            <remarks>
+            This method must be called from MainThread.
+            </remarks>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when the object instance is disposed or released.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.ForgetAP">
+            <summary>
+            Deletes the information of a stored access point and disconnects it when the AP is connected.
+            If an AP is connected, then the connection information will be stored. This information is used when a connection to that AP is established automatically.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when the object instance is disposed or released.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.ForgetAPAsync">
+            <summary>
+            Deletes the information of a stored access point and disconnects it when the AP is connected asyncronously.
+            If an AP is connected, then the connection information will be stored. This information is used when a connection to that AP is established automatically.
+            </summary>
+            <returns> A task indicating whether the disconnect method is done or not.</returns>
+            <remarks>
+            This method must be called from MainThread.
+            </remarks>
+            <since_tizen> 5 </since_tizen>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when the object instance is disposed or released.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiAP.Update">
+            <summary>
+            Update the information of a stored access point.
+            When a AP information is changed, the change will not be applied until this method is called.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when the object instance is disposed or released.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WpsInfo">
+            <summary>
+            An abstract class which is used to represent the WPS information of the access point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WpsPbcInfo">
+            <summary>
+            A class which is used to represent WPS PBC information of the access point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WpsPinInfo">
+            <summary>
+            A class which is used to represent WPS PIN information of the access point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WpsPinInfo.#ctor(System.String)">
+            <summary>
+            A public constructor which instantiates WpsPinInfo class with the given pin.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="pin">WPS Pin of the access point.</param>
+            <remarks>
+            Pin should not be null or empty. It should be of less than 8 characters.
+            </remarks>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiConfiguration">
+            <summary>
+            A class for managing the configuration of Wi-Fi.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiConfiguration.Name">
+            <summary>
+            The name of the access point (AP).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Name assigned to AP in the Wi-Fi configuration.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiConfiguration.SecurityType">
+            <summary>
+            The security type of the access point (AP).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Security type of AP in the Wi-Fi configuration.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiConfiguration.ProxyAddress">
+            <summary>
+            The proxy address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Proxy address of the access point.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiConfiguration.IsHidden">
+            <summary>
+            A property check whether the access point (AP) is hidden.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Boolean value indicating whether the AP is hidden.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiConfiguration.EapConfiguration">
+            <summary>
+            EAP configuration.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>EAP configuration assigned to the Wi-Fi.</value>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiConfiguration.#ctor(System.String,System.String,Tizen.Network.Connection.WiFiSecurityType)">
+            <summary>
+            Creates a WiFiConfiguration object with the given name, passphrase, and securetype.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="name">Name of the Wi-Fi.</param>
+            <param name="passPhrase">Password to access the Wi-Fi.</param>
+            <param name="type">Security type of the Wi-Fi.</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the object is constructed with name as null.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiConfiguration.Finalize">
+            <summary>
+            Destroy of the WiFiConfiguration object
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiConfiguration.Dispose">
+            <summary>
+            A method to destroy the managed objects in the WiFiConfiguration.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiEap">
+            <summary>
+            A class for managing the EAP information of the access point (AP).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiEap.CaCertificationFile">
+            <summary>
+            The file path of CA Certificate of EAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>CA certification file of EAP.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this value when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown while setting this value when the file value is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiEap.EapType">
+            <summary>
+            The EAP type of Wi-Fi.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Type of EAP.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this value when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiEap.AuthenticationType">
+            <summary>
+            The type of EAP phase 2 authentication of the Wi-Fi.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Authentication type of the Wi-Fi.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this value when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiEap.GetPrivateKeyFile">
+            <summary>
+            Gets the private key file of EAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The file path of private key.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method fails due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiEap.SetPrivateKeyFile(System.String,System.String)">
+            <summary>
+            Sets the private key information of EAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="privateKeyFile">The file path of private key.</param>
+            <param name="password">The password.</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the file path of private key is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due an to invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiEap.GetClientCertFile">
+            <summary>
+            Gets the client certificate of EAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The file path of client certificate.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due an to invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiEap.SetClientCertFile(System.String)">
+            <summary>
+            Sets the CA certificate of EAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="clientCertFile">The file path of client certificate.</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the file path of client certificate is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiEap.GetUserName">
+            <summary>
+            Gets the username of EAP passphrase.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The user name</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiEap.IsPasswordSet">
+            <summary>
+            Returns whether the password is set or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>True if password is set, false if password is not set.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiEap.SetUserName(System.String)">
+            <summary>
+            Sets the user name of EAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="userName">The user name</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the user name is passed as null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiEap.SetPassword(System.String)">
+            <summary>
+            Sets the password of EAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="password">The password</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the password is passed as null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiEapConfiguration">
+            <summary>
+            A class for managing the EAP configuration.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiEapConfiguration.CaCertificationFile">
+            <summary>
+            The file path of CA certificate of EAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>CA certification file of EAP.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this value when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiEapConfiguration.EapType">
+            <summary>
+            The EAP type of the Wi-Fi.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Type of EAP.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this value when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiEapConfiguration.AuthenticationType">
+            <summary>
+            The type of EAP phase2 authentication of the Wi-Fi.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Authentication type of the Wi-Fi.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this value when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiEapConfiguration.AnonymousIdentify">
+            <summary>
+            The anonymous identity of the access point (AP).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the anonymous identity of the access point.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this value when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiEapConfiguration.Identity">
+            <summary>
+            The identity of the access point (AP).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the identity of the access point.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this value when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiEapConfiguration.SubjectMatch">
+            <summary>
+            The subject match of the access point (AP).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the subject match of the AP.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this value when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiEapConfiguration.GetClientCertFile">
+            <summary>
+            Gets the access point client certificate file from the configuration.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The certification authority (CA) certificates file of the access point.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiEapConfiguration.SetClientCertFile(System.String,System.String)">
+            <summary>
+            Sets the access point client certificate file to configuration.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="privateKey">The private key file.</param>
+            <param name="clientCert">The certification authority(CA) certifies the files of access points.</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiEapType">
+            <summary>
+            Enumeration for the Wi-Fi EAP types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiEapType.Peap">
+            <summary>
+            EAP PEAP type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiEapType.Tls">
+            <summary>
+            EAP TLS type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiEapType.Ttls">
+            <summary>
+            The EAP TTLS type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiEapType.Sim">
+            <summary>
+            EAP SIM type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiEapType.Aka">
+            <summary>
+            EAP AKA type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiRssiLevel">
+            <summary>
+            Enumeration for the Wi-Fi RSSI levels.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiRssiLevel.Level0">
+            <summary>
+            Level 0.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiRssiLevel.Level1">
+            <summary>
+            Level 1.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiRssiLevel.Level2">
+            <summary>
+            Level 2.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiRssiLevel.Level3">
+            <summary>
+            Level 3.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiRssiLevel.Level4">
+            <summary>
+            Level 4.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiConnectionState">
+            <summary>
+            Enumeration for the Wi-Fi connection states.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiConnectionState.Failure">
+            <summary>
+            Connection failed state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiConnectionState.Disconnected">
+            <summary>
+            Disconnected state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiConnectionState.Association">
+            <summary>
+            Association state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiConnectionState.Congfiguration">
+            <summary>
+            Configuration state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiConnectionState.Connected">
+            <summary>
+            Connected state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiDeviceState">
+            <summary>
+            Enumeration for the Wi-Fi device states.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiDeviceState.Deactivated">
+            <summary>
+            Wi-Fi is deactivated.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiDeviceState.Activated">
+            <summary>
+            Wi-Fi is activated.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiProxyType">
+            <summary>
+            Enumeration for the Wi-Fi proxy types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiProxyType.Direct">
+            <summary>
+            Direct connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiProxyType.Auto">
+            <summary>
+            Auto configuration(Use PAC file). If the URL property is not set, DHCP/WPAD auto-discover will be tried.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiProxyType.Manual">
+            <summary>
+            Manual configuration.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiAuthenticationType">
+            <summary>
+            Enumeration for the Wi-Fi authentication types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiAuthenticationType.None">
+            <summary>
+            EAP phase 2 authentication none.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiAuthenticationType.Pap">
+            <summary>
+            EAP phase 2 authentication PAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiAuthenticationType.Mschap">
+            <summary>
+            EAP phase 2 authentication MSCHAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiAuthenticationType.Mschapv2">
+            <summary>
+            EAP phase 2 authentication MSCHAPv2.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiAuthenticationType.Gtc">
+            <summary>
+            EAP phase 2 authentication GTC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiAuthenticationType.Md5">
+            <summary>
+            EAP phase 2 authentication MD5.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiScanState">
+            <summary>
+            Enumeration for the Wi-Fi scanning state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiScanState.NotScanning">
+            <summary>
+            Scan is not running.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.WiFi.WiFiScanState.Scanning">
+            <summary>
+            Scan is running.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.WiFi.SafeWiFiManagerHandle">
+            <summary>
+            A class for managing the WiFiManager handle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.SafeWiFiManagerHandle.IsInvalid">
+            <summary>
+            Checks the validity of the handle.
+            </summary>
+            <value>Represents the validity of the handle.</value>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.WiFi.SafeWiFiManagerHandle.ReleaseHandle">
+            <summary>
+            Release the handle
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiManager">
+            <summary>
+            A manager class which allows applications to connect to a Wireless Local Area Network (WLAN) and transfer data over the network.
+            The Wi-Fi Manager enables your application to activate and deactivate a local Wi-Fi device, and to connect to a WLAN network in the infrastructure mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiManager.MacAddress">
+            <summary>
+            The local MAC address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the MAC address of the Wi-Fi.</value>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiManager.InterfaceName">
+            <summary>
+            The name of the network interface.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Interface name of the Wi-Fi.</value>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiManager.ConnectionState">
+            <summary>
+            The network connection state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the connection state of the Wi-Fi.</value>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiManager.IsActive">
+            <summary>
+            A property to check whether Wi-Fi is activated.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Boolean value to check whether Wi-Fi is activated or not.</value>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiManager.ScanState">
+            <summary>
+            The Wi-Fi scan state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>Represents the scan state of the Wi-Fi.</value>
+        </member>
+        <member name="E:Tizen.Network.WiFi.WiFiManager.DeviceStateChanged">
+            <summary>
+            DeviceStateChanged is raised when the device state is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+        </member>
+        <member name="E:Tizen.Network.WiFi.WiFiManager.ConnectionStateChanged">
+            <summary>
+            ConnectionStateChanged is raised when the connection state is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+        </member>
+        <member name="E:Tizen.Network.WiFi.WiFiManager.RssiLevelChanged">
+            <summary>
+            RssiLevelChanged is raised when the RSSI of the connected Wi-Fi is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+        </member>
+        <member name="E:Tizen.Network.WiFi.WiFiManager.BackgroundScanFinished">
+            <summary>
+            BackgroundScanFinished is raised when the background scan is finished.
+            The background scan starts automatically when Wi-Fi is activated. The callback will be invoked periodically.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+        </member>
+        <member name="E:Tizen.Network.WiFi.WiFiManager.ScanStateChanged">
+            <summary>
+            ScanStateChanged is raised when the scan state is changed.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.GetWiFiHandle">
+            <summary>
+            Gets the Wi-Fi safe handle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The instance of the SafeWiFiManagerHandle.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.GetFoundAPs">
+            <summary>
+            Gets the result of the scan.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>A list of the WiFiAP objects.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.GetFoundSpecificAPs">
+            <summary>
+            Gets the result of ScanSpecificAPAsync(string essid) API.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>A list containing the WiFiAP objects.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.GetFoundBssids">
+            <summary>
+            Gets the result of the BssidScanAsync() API.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <returns>A list of the WiFiAP objects.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.GetWiFiConfigurations">
+            <summary>
+            Gets the list of Wi-Fi configurations.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>A list containing the WiFiConfiguration objects.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.SaveWiFiConfiguration(Tizen.Network.WiFi.WiFiConfiguration)">
+            <summary>
+            Saves the Wi-Fi configuration of the access point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="configuration">The configuration to be stored.</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when WiFiConfiguration is passed as null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.GetConnectedAP">
+            <summary>
+            Gets the object of the connected WiFiAP.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The connected Wi-Fi access point (AP) information.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when system is out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.ActivateAsync">
+            <summary>
+            Activates the Wi-Fi asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns> A task indicating whether the activate method is done or not.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:Tizen.Network.WiFi.NowInProgressException">Thrown when the Wi-Fi activation is now in progress.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.ActivateWithPickerAsync">
+            <summary>
+            Activates the Wi-Fi asynchronously and displays the Wi-Fi picker (popup) when the Wi-Fi is not automatically connected.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>A task indicating whether the ActivateWithPicker method is done or not.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:Tizen.Network.WiFi.NowInProgressException">Thrown when the Wi-Fi activation is now in progress.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.DeactivateAsync">
+            <summary>
+            Deactivates the Wi-Fi asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>A task indicating whether the deactivate method is done or not.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:Tizen.Network.WiFi.NowInProgressException">Thrown when the Wi-Fi deactivation is now in progress.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.ScanAsync">
+            <summary>
+            Starts the scan asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>A task indicating whether the scan method is done or not.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.ScanSpecificAPAsync(System.String)">
+            <summary>
+            Starts a specific access point scan asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>A task indicating whether the ScanSpecificAP method is done or not.</returns>
+            <param name="essid">The ESSID of the hidden AP.</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiManager.BssidScanAsync">
+            <summary>
+            Starts BSSID scan asynchronously.
+            </summary>
+            <remarks>
+            This method must be called from MainThread.
+            </remarks>
+            <since_tizen> 5 </since_tizen>
+            <returns>A task indicating whether the BssidScanAsync method is done or not.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiNetwork">
+            <summary>
+            A class for managing the Wi-Fi network information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.Essid">
+            <summary>
+            The Extended Service Set Identifier (ESSID).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>ESSID of the Wi-Fi.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.RawSsid">
+            <summary>
+            The raw Service Set Identifier (SSID).
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <value>Represents the raw SSID of the Wi-Fi.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.Bssid">
+            <summary>
+            The Basic Service Set Identifier (BSSID).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>BSSID of the Wi-Fi.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.IPv4Setting">
+            <summary>
+            The address information for IPv4.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>IP address information for IPv4 type.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.IPv6Setting">
+            <summary>
+            The address information for IPv6.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>IP address information for IPv6 type.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.ProxyAddress">
+            <summary>
+            The proxy address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the proxy address of the Wi-Fi.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.ProxyType">
+            <summary>
+            The proxy type (IPv6).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the proxy type of the Wi-Fi.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.Frequency">
+            <summary>
+            The frequency band (MHz).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the frequency band value.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.Rssi">
+            <summary>
+            The received signal strength indicator (RSSI).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents RSSI of Wi-Fi (dbm).</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.RssiLevel">
+            <summary>
+            The Received signal strength indication(RSSI).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>Represents Rssi level of WiFi.</value>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when WiFi is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.MaxSpeed">
+            <summary>
+            The max speed (Mbps).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the max speed value.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.IsFavorite">
+            <summary>
+            A property to check whether the access point is a favorite or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Boolean value to check if the access point is a favorite or not.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.IsPasspoint">
+            <summary>
+            A property to check whether the access point is a passpoint or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Boolean value to check if the access point is a passpoint or not.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.ConnectionState">
+            <summary>
+            The connection state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the connection state of the Wi-Fi.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiNetwork.CountryCode">
+            <summary>
+            The raw country code.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <value>Represents the raw country code of the Wi-Fi.</value>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiNetwork.GetAllIPv6Addresses">
+            <summary>
+            Gets all IPv6 addresses of the access point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>A list of IPv6 addresses of the access point.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiNetwork.GetBssids">
+            <summary>
+            Gets the Bssid list.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <returns>A list of BSSIDs of access points with the same SSID as that of this access point.</returns>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the Wi-Fi is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.WiFi.WiFiSecurity">
+            <summary>
+            A class for managing the Wi-Fi security information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiSecurity.SecurityType">
+            <summary>
+            The type of Wi-Fi security.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the security type of the Wi-Fi.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiSecurity.EncryptionType">
+            <summary>
+            The type of Wi-Fi encryption.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Represents the encryption type of the Wi-Fi.</value>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown while setting this property due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this value due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiSecurity.EapInformation">
+            <summary>
+            The EAP information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>EAP information of the Wi-Fi.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiSecurity.IsPassphraseRequired">
+            <summary>
+            A property to check whether the passphrase is required or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Boolean value to check if the passphrase is required or not.</value>
+        </member>
+        <member name="P:Tizen.Network.WiFi.WiFiSecurity.IsWpsSupported">
+            <summary>
+            A property to check whether Wi-Fi Protected Setup (WPS) is supported.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Boolean value to check if WPS is supported.</value>
+        </member>
+        <member name="M:Tizen.Network.WiFi.WiFiSecurity.SetPassphrase(System.String)">
+            <summary>
+            Sets the passphrase.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="passphrase">The passphrase of the access point.</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when Wi-Fi is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the passphrase is passed as null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+    </members>
+</doc>

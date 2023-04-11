@@ -1,0 +1,675 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.System.Usb</name>
+    </assembly>
+    <members>
+        <member name="M:ErrorCodeExtensions.WarnIfFailed(Interop.ErrorCode,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            The Utility method to check for an error, returns false if failed and prints warning messages.
+            </summary>
+            <returns>true in case of no error, false otherwise.</returns>
+        </member>
+        <member name="M:ErrorCodeExtensions.ThrowIfFailed(Interop.ErrorCode,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            The Utility method checks for an error, returns false if failed and throws an exception.
+            </summary>
+            <returns>true in case of no error.</returns>
+        </member>
+        <member name="T:Tizen.System.Usb.EndpointDirection">
+            <summary>
+            Enumeration for the transfer directions for endpoints.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.Usb.EndpointDirection.In">
+            <summary>
+            In direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.Usb.EndpointDirection.Out">
+            <summary>
+            Out direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.Usb.EndpointDirection.InOut">
+            <summary>
+            Bidirectional.
+            </summary>
+        </member>
+        <member name="T:Tizen.System.Usb.HotplugEventType">
+            <summary>
+            Enumeration for the Hot Plugged event type for USB devices.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.Usb.HotplugEventType.Attach">
+            <summary>
+            USB device is attached.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.Usb.HotplugEventType.Detach">
+            <summary>
+            USB device is detached.
+            </summary>
+        </member>
+        <member name="T:Tizen.System.Usb.HotPluggedEventArgs">
+            <summary>
+            Event arguments for the Hot Plugged event for USB devices.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.HotPluggedEventArgs.Device">
+            <summary>
+            USB Device
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.HotPluggedEventArgs.EventType">
+            <summary>
+            Event type.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.SynchronizationType">
+            <summary>
+            Enumeration for the isochronous endpoints synchronization types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.Usb.SynchronizationType.Asynchronous">
+            <summary>
+            Asynchronous.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.Usb.SynchronizationType.Adaptive">
+            <summary>
+            Adaptive.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.Usb.SynchronizationType.Synchronous">
+            <summary>
+            Synchronous.
+            </summary>
+        </member>
+        <member name="T:Tizen.System.Usb.UsageType">
+            <summary>
+            Enumeration for an endpoint's usage types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.Usb.UsageType.Data">
+            <summary>
+            Data endpoint.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.Usb.UsageType.Feedback">
+            <summary>
+            Feedback endpoint.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.Usb.UsageType.Implicit">
+            <summary>
+            Implicit feedback data endpoint.
+            </summary>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbBulkEndpoint">
+            <summary>
+            The USB Bulk Endpoint class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbBulkEndpoint.Transfer(System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+            Performs a USB transfer on a given endpoint. The direction of transfer is determined by the endpoint.
+            </summary>
+            <param name="buffer">Suitably-sized data buffer for either an input or output (depending on the endpoint).</param>
+            <param name="length">
+            For writes, the number of bytes from the data to be sent. For reads, the maximum number of bytes to receive
+            into the data buffer.
+            </param>
+            <param name="timeout">
+            The time (in milliseconds) that this function should wait for, before giving up due to no response being
+            received (for an unlimited timeout, 0 value should be used).
+            </param>
+            <returns>The number of bytes actually transferred.</returns>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Throws an exception if the device is disconnected or not opened for an operation.</exception>
+            <exception cref="T:System.TimeoutException">Throws an exception if the transfer is timed out.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbConfiguration">
+            <summary>
+            A class to manage the USB configuration.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbConfiguration.IsSelfPowered">
+            <summary>
+            Checks if the device is self-powered in a given configuration.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbConfiguration.SupportRemoteWakeup">
+            <summary>
+            Checks if the device in a given configuration supports remote wakeup.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbConfiguration.MaximumPowerRequired">
+            <summary>
+            Gets the maximum power required in a given configuration, in mA.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbConfiguration.Interfaces">
+            <summary>
+            A dictionary for mapping the interface IDs to interface instances for a given configuration.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbConfiguration.ConfigurationString">
+            <summary>
+            The configuration string.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            Throws exception if device is disconnected or not opened for operation or busy as its interfaces are currently claimed.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbConfiguration.SetAsActive">
+            <summary>
+            Sets this configuration as an active configuration for the device.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            Throws an exception if the device is disconnected, or not opened for an operation, or busy as its interfaces are currently claimed.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbConfiguration.Dispose(System.Boolean)">
+            <summary>
+            Releases all the resources used by the ConnectionProfile.
+            It should be called after it has finished using the object.</summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbConfiguration.Finalize">
+            <summary>
+            Finalizes an instance of the UsbConfiguration class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbConfiguration.Dispose">
+            <summary>
+            Releases all the resources used by the ConnectionProfile.
+            It should be called after it has finished using the object.</summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbControlEndpoint">
+            <summary>
+            The USB Control Endpoint class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbControlEndpoint.Id">
+            <summary>
+            Gets the number of this endpoint.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbControlEndpoint.Direction">
+            <summary>
+            Gets the direction of this endpoint.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbControlEndpoint.MaxPacketSize">
+            <summary>
+            Gets the maximum packet size of a given endpoint.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbControlEndpoint.Transfer(System.Byte,System.Byte,System.UInt16,System.UInt16,System.Byte[],System.UInt16,System.UInt32)">
+            <summary>
+            Performs a control transaction on the endpoint, zero for this device.
+            </summary>
+            <param name="requestType">bmRequestType type field for the setup packet.</param>
+            <param name="request">bRequest field for the setup packet.</param>
+            <param name="value">wValue field for the setup packet.</param>
+            <param name="index">wIndex field for the setup packet.</param>
+            <param name="data">Suitably-sized data buffer for either an input or output (depending on the direction bits within a bmRequestType).</param>
+            <param name="length">wLength field for the setup packet. The data buffer should be at least this size.</param>
+            <param name="timeout">
+            The time (in milliseconds) that this function should wait for, before giving up due to no response being received
+            (for an unlimited timeout, 0 value should be used).
+            </param>
+            <returns>Transferred number of the transferred bytes.</returns>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Throws an exception if the device is disconnected or not opened for an operation.</exception>
+            <exception cref="T:System.TimeoutException">Throws an exception if the transfer is timed out.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbDevice">
+            <summary>
+            A class to manage the USB host devices. This class contains the operations for enumerating, opening, and closing devices.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDevice.BusId">
+            <summary>
+            Number of the bus, this device is connected to.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Throws exception if user has insufficient permission on device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDevice.Address">
+            <summary>
+            Address of the device on the bus.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDevice.Ports">
+            <summary>
+            List of the available port numbers from the device.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDevice.IsOpened">
+            <summary>
+            Checks if the device is opened.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDevice.ControlEndpoint">
+            <summary>
+            Controls an endpoint (endpoint 0).
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDevice.ActiveConfiguration">
+            <summary>
+            Active configuration for the device.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Throws exception if device is disconnected or not opened for operation. </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDevice.Configurations">
+            <summary>
+            A dictionary for mapping the configuration IDs to configuration instances for this device.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDevice.DeviceInformation">
+            <summary>
+            Device information such as version, class, subclass, etc.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDevice.Strings">
+            <summary>
+            String associated with the device.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException"> Throws exception if device is disconnected or not opened for operation. </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbDevice.Open">
+            <summary>
+            Opens the device, which allows performing operations on it.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Throws an exception in case of insufficient memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Throws an exception if the device is disconnected.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Throws an exception if the user has insufficient permission on the device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbDevice.Close">
+            <summary>
+            Closes the device for operations.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbDevice.Dispose(System.Boolean)">
+            <summary>
+            Releases all the resources used by the ConnectionProfile.
+            It should be called after it has finished using the object.</summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbDevice.Finalize">
+            <summary>
+            Finalizes an instance of the UsbDevice class.
+            </summary>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbDevice.Dispose">
+            <summary>
+            Releases all the resources used by the ConnectionProfile.
+            It should be called after it has finished using the object.</summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbDeviceInformation">
+            <summary>
+            Device information for the USB device.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDeviceInformation.UsbVersion">
+            <summary>
+            USB specification release number as binary-coded decimal.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Throws exception if user has insufficient permission on device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDeviceInformation.Class">
+            <summary>
+            Gets the device class.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDeviceInformation.Subclass">
+            <summary>
+            Gets the device subclass.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDeviceInformation.Protocol">
+            <summary>
+            Gets the device protocol.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDeviceInformation.VendorId">
+            <summary>
+            Gets the vendor ID.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDeviceInformation.ProductId">
+            <summary>
+            Gets the product ID.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDeviceInformation.DeviceVersion">
+            <summary>
+            Gets the device release number in binary-coded decimal.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbDeviceStrings">
+            <summary>
+            String information for the USB device.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDeviceStrings.Manufacturer">
+            <summary>
+            Gets the string describing the device manufacturer.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDeviceStrings.Product">
+            <summary>
+            Gets the product string of a device.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbDeviceStrings.Serial">
+            <summary>
+            Gets the serial number of a device.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbEndpoint">
+            <summary>
+            The USB Endpoint class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbEndpoint.Id">
+            <summary>
+            Gets the number of this endpoint.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbEndpoint.Direction">
+            <summary>
+            Gets the direction of this endpoint.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbEndpoint.MaxPacketSize">
+            <summary>
+            Gets the maximum packet size of a given endpoint.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbInterface">
+            <summary>
+            A class to manage the USB interfaces.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbInterface.Id">
+            <summary>
+            Gets the number of a given interface.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbInterface.AlternateSetting">
+            <summary>
+            Sets an alternative setting. Use the index of a new alternative setting for a given interface.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbInterface.Endpoints">
+            <summary>
+            A dictionary for mapping the endpoint IDs to endpoint instances for a given interface.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbInterface.InterfaceString">
+            <summary>
+            Gets the string describing an interface.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            Throws exception if the device is disconnected or not opened for operation.
+            </exception>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbInterface.Claim(System.Boolean)">
+            <summary>
+            Claims the interface on a device. The interface must be claimed first to perform I/O operations.
+            </summary>
+            <param name="force">Set to <c> true </c> to auto detach the kernel driver, otherwise <c> false </c>.</param>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            Throws an exception if device is disconnected or not opened for operation or another program or driver has claimed the interface.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbInterface.Release">
+            <summary>
+            Releases the previously claimed interface.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Throws exception if the device is disconnected or not opened for operation.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Throws exception if user has insufficient permission on the device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbInterruptEndpoint">
+            <summary>
+            The USB Interrupt Endpoint class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbInterruptEndpoint.PollingInterval">
+            <summary>
+            Gets an interval for polling the endpoint for data transfers, in frame counts (refer to the USB protocol specification).
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbInterruptEndpoint.Transfer(System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+            Performs a USB transfer on a given endpoint. The direction of transfer is determined by the endpoint.
+            </summary>
+            <param name="buffer">Suitably-sized data buffer for either an input or output (depending on the endpoint).</param>
+            <param name="length">
+            For writes, the number of bytes from the data to be sent. For reads, the maximum number of bytes to receive
+            into the data buffer.
+            </param>
+            <param name="timeout">
+            The time (in milliseconds) that this function should wait for, before giving up due to no response being
+            received (for an unlimited timeout, 0 value should be used).
+            </param>
+            <returns>Number of bytes actually transferred.</returns>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Throws exception if device is disconnected or not opened for operation.</exception>
+            <exception cref="T:System.TimeoutException">Throws exception if transfer timed-out.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbIsochronousEndpoint">
+            <summary>
+            The USB Isochronous Endpoint class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbIsochronousEndpoint.SynchronizationType">
+            <summary>
+            Gets the synchronization type of this endpoint.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbIsochronousEndpoint.UsageType">
+            <summary>
+            Gets the usage type of this endpoint.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Usb.UsbManager">
+            <summary>
+            The USB Manager class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbManager.#ctor">
+            <summary>
+            The USB Manager constructor.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Usb.UsbManager.AvailableDevices">
+            <summary>
+            This function returns a list of USB devices attached to the system.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Throws exception in case of insufficient memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Throws exception if user has insufficient permission on device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.System.Usb.UsbManager.DeviceHotPlugged">
+            <summary>
+            An event handler for events when the USB device is attached or detached.
+            </summary>
+            <feature>http://tizen.org/feature/usb.host</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbManager.Finalize">
+            <summary>
+            Finalizes an instance of the USB Manager Class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Usb.UsbManager.Dispose">
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

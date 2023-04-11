@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Network.Stc</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            The Interop class for Stc.
+            </summary>
+        </member>
+        <member name="T:Interop.Stc">
+            <summary>
+            The Stc native APIs.
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Stc.NativeTimePeriodType">
+            <summary>
+            Internal Enumeration for Stc time period.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NativeTimePeriodType.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NativeTimePeriodType.Hour">
+            <summary>
+            Hour
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NativeTimePeriodType.Day">
+            <summary>
+            Day
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NativeTimePeriodType.Week">
+            <summary>
+            Week
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NativeTimePeriodType.Month">
+            <summary>
+            Month
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Stc.TimePeriodType">
+            <summary>
+            Enumeration for Stc time period.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.TimePeriodType.Hour">
+            <summary>
+            Hour
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.TimePeriodType.Day">
+            <summary>
+            Day
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.TimePeriodType.Week">
+            <summary>
+            Week
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.TimePeriodType.Month">
+            <summary>
+            Month
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Stc.NetworkInterface">
+            <summary>
+            Enumeration for network interface type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkInterface.Others">
+            <summary>
+            Network interface type is uncategorized.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkInterface.Datacall">
+            <summary>
+            Network interface type is datacall. 
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkInterface.Wifi">
+            <summary>
+            Network interface type is  wifi.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkInterface.Wired">
+            <summary>
+            Network interface type is  wired.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkInterface.Bluetooth">
+            <summary>
+            Network interface type is bluetooth.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkInterface.All">
+            <summary>
+            Type for any network interface.
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Stc.RoamingType">
+            <summary>
+            Internal Enumeration for network roaming type
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.RoamingType.Disabled">
+            <summary>
+            Not in roaming.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.RoamingType.Enabled">
+            <summary>
+            In roaming.
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Stc.NetworkProtocol">
+            <summary>
+            Enumeration for hardware network protocol type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkProtocol.Others">
+            <summary>
+            Network protocol uncategorized.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkProtocol.NoService">
+            <summary>
+            Network no service.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkProtocol.Emergency">
+            <summary>
+            Network emergency.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkProtocol.Search">
+            <summary>
+            Network search 1900.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkProtocol.Datacall_2G">
+            <summary>
+            Network 2G.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkProtocol.Datacall_2_5G">
+            <summary>
+            Network 2.5G.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkProtocol.Datacall_2_5G_Edge">
+            <summary>
+            Network EDGE.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkProtocol.Datacall_3G">
+            <summary>
+            Network UMTS.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkProtocol.Hsdpa">
+            <summary>
+            Network HSDPA.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.NetworkProtocol.Lte">
+            <summary>
+            Network LTE.
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Stc.ApplicationStateType">
+            <summary>
+            Enumeration for monitored application state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.ApplicationStateType.Others">
+            <summary>
+            Uncategorized state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.ApplicationStateType.Foreground">
+            <summary>
+            Foreground state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.ApplicationStateType.Background">
+            <summary>
+            Background state.
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Stc.CallbackRet">
+            <summary>
+            Enumeration for return type of the callback.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.CallbackRet.Cancel">
+            <summary>
+            Cancel
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.CallbackRet.Continue">
+            <summary>
+            Continue
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Stc.StcError">
+            <summary>
+            Internal Enumeration for the Stc error code.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.None">
+            <summary>
+            Successful.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.NotPermitted">
+            <summary>
+            Operation not permitted.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.OutOfMemory">
+            <summary>
+            Out of memory.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.PermissionDenied">
+            <summary>
+            Permission denied.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.ResourceBusy">
+            <summary>
+            Device or the resource is busy.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.InvalidOperation">
+            <summary>
+            Invalid operation.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.InvalidParameter">
+            <summary>
+            Invalid function parameter.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.NotSupported">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.OperationFailed">
+            <summary>
+            Operation failed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.NotInitialized">
+            <summary>
+            Not initialized.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.AlreadyInitialized">
+            <summary>
+            Already initialized the client.
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Stc.StcError.InProgress">
+            <summary>
+            In progress.
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Stc.SafeStcHandle">
+            <summary>
+            A class for managing the Stc handle.
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.Stc.SafeStcHandle.IsInvalid">
+            <summary>
+            Checks the validity of the handle.
+            </summary>
+            <value>Represents the validity of the handle.</value>
+        </member>
+        <member name="M:Tizen.Network.Stc.SafeStcHandle.ReleaseHandle">
+            <summary>
+            Release the Stc handle
+            </summary>
+            <returns>True if the handle is released successfully, otherwise false.</returns>
+        </member>
+        <member name="T:Tizen.Network.Stc.StcManager">
+            <summary>
+            A class which is used to manage Smart Traffic control (Stc).<br/>
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Stc.StcManager.GetStcHandle">
+            <summary>
+            Gets the Stc safe handle.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <returns>The instance of the SafeStcHandle.</returns>
+            <feature>http://tizen.org/feature/network.traffic_control</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the Stc is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+        </member>
+        <member name="M:Tizen.Network.Stc.StcManager.GetStatisticsAsync(Tizen.Network.Stc.StatisticsFilter)">
+            <summary>
+            Gets statistics information of applications that used network in between specified timestamps and matches the given StatisticsFilter, asynchronously.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <param name="filter"> The StatisticsFilter object.</param>
+            <returns>A list of the NetworkStatistics objects.</returns>
+            <feature>http://tizen.org/feature/network.traffic_control</feature>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method is provided with invalid argument.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the Stc is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+        </member>
+        <member name="T:Tizen.Network.Stc.StcManagerImpl">
+            <summary>
+            The implementation of Stc APIs.
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Stc.NetworkStatistics">
+            <summary>
+            A class for managing the Stc statistics information.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Stc.NetworkStatistics.Finalize">
+            <summary>
+            Destroy the NetworkStatistics object
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Stc.NetworkStatistics.Dispose">
+            <summary>
+            A method to destroy the managed NetworkStatistics objects.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Stc.NetworkStatistics.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources used by the NetworkStatistics.
+            </summary>
+            <param name="disposing">True to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="P:Tizen.Network.Stc.NetworkStatistics.AppId">
+            <summary>
+            A property to get the application ID from NetworkStatistics.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>Application ID.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.NetworkStatistics.InterfaceName">
+            <summary>
+            A property to get interface name from NetworkStatistics.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>Interface name.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.NetworkStatistics.From">
+            <summary>
+            A property to get "from" value(start) of time interval from NetworkStatistics.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>from(start) of time interval.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.NetworkStatistics.To">
+            <summary>
+            A property to get "to" value(end) of time interval from NetworkStatistics.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>to(end) of time interval.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.NetworkStatistics.InterfaceType">
+            <summary>
+            A property to get the interface type from NetworkStatistics.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>Interface type.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.NetworkStatistics.IncomingCounter">
+            <summary>
+            A property to get incoming counter from NetworkStatistics.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>incoming counter.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.NetworkStatistics.OutgoingCounter">
+            <summary>
+            A property to get outgoing counter from NetworkStatistics.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>outgoing counter.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.NetworkStatistics.IsRoaming">
+            <summary>
+            A property to get the roaming type from NetworkStatistics.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>IsRoaming.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.NetworkStatistics.Protocol">
+            <summary>
+            A property to get the network protocol type from NetworkStatistics.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>Network Protocol type.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.NetworkStatistics.ApplicationState">
+            <summary>
+            A property to get the application state from NetworkStatistics.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>Monitored application state.</value>
+        </member>
+        <member name="T:Tizen.Network.Stc.StatisticsFilter">
+            <summary>
+            A class for managing the Statistics Filters to match applications.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Stc.StatisticsFilter.AppId">
+            <summary>
+            A property for App Id for statistics filter. AppId can be provided to get statistics for a specific application.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>Application id.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.StatisticsFilter.From">
+            <summary>
+            A property for "from" value of time interval for statistics filter.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>from(start) of time interval.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.StatisticsFilter.To">
+            <summary>
+            A property for "to" value of time interval for statistics filter.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>to(end) of time interval.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.StatisticsFilter.InterfaceType">
+            <summary>
+            A property for Interface type for statistics filter.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>Interface type.</value>
+        </member>
+        <member name="P:Tizen.Network.Stc.StatisticsFilter.TimePeriod">
+            <summary>
+            A property for Time period for statistics filter. This is used to granulate the statistics data.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value>Time period.</value>
+        </member>
+    </members>
+</doc>

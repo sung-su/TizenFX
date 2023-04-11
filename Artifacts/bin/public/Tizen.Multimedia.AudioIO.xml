@@ -1,0 +1,1310 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Multimedia.AudioIO</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Multimedia.AudioCaptureBase">
+            <summary>
+            Provides the ability to directly manage the system audio input devices.
+            </summary>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioCaptureBase.MinSampleRate">
+            <summary>
+            Specifies the minimum value allowed for the audio capture, in Hertz (Hz).
+            </summary>
+            <seealso cref="P:Tizen.Multimedia.AudioCaptureBase.SampleRate"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioCaptureBase.MaxSampleRate">
+            <summary>
+            Specifies the maximum value allowed for the audio capture, in Hertz (Hz).
+            </summary>
+            <seealso cref="P:Tizen.Multimedia.AudioCaptureBase.SampleRate"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCaptureBase.Finalize">
+            <summary>
+            Finalizes an instance of the AudioCaptureBase class.
+            </summary>
+        </member>
+        <member name="E:Tizen.Multimedia.AudioCaptureBase.StateChanged">
+            <summary>
+            Occurs when the state of the AudioCapture is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCaptureBase.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Tizen.Multimedia.AudioCaptureBase"/> object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCaptureBase.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources used by the <see cref="T:Tizen.Multimedia.AudioCaptureBase"/> object.
+            </summary>
+            <param name="disposing">
+            true to release both managed and unmanaged resources; false to release only unmanaged resources.
+            </param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioCaptureBase.SampleRate">
+            <summary>
+            Gets the sample rate of the audio input data stream, in Hertz (Hz).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioCaptureBase.Channel">
+            <summary>
+            Gets the channel type of the audio input data stream.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioCaptureBase.SampleType">
+            <summary>
+            Gets the sample type of the audio input data stream.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioCaptureBase.Volume">
+            <summary>
+            Gets or sets the volume of the audio input data stream.
+            </summary>
+            <value>
+            The default value is 1.0.<br/>
+            The valid range is greater than or equal to 0.0 and less than or equal to 2.0.<br/>
+            Note that if the value is less than 0.0, it will be set 0.0 and if the value is greater than 2.0, it will be set 2.0.
+            </value>
+            <remarks>
+            If the value is less than 1.0, the loudness of recorded data will be decreased.<br/>
+            If the value is greater than 1.0, the loudness of recorded data will be increased.<br/>
+            Note that the volume can be clipped if the value is greater than 1.0 and the loudness of original recorded data is high enough.
+            </remarks>
+            <exception cref="T:System.ObjectDisposedException">The AudioCapture has already been disposed.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCaptureBase.GetBufferSize">
+            <summary>
+            Gets the size allocated for the audio input buffer.
+            </summary>
+            <returns>The buffer size of audio data captured.</returns>
+            <exception cref="T:System.ObjectDisposedException">The AudioCaptureBase has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCaptureBase.Prepare">
+            <summary>
+            Prepares the AudioCapture for reading audio data by starting buffering of audio data from the device.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+                Operation failed due to an internal error.<br/>
+                -or-<br/>
+                The current state is not <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioCaptureBase has already been disposed of.</exception>
+            <seealso cref="M:Tizen.Multimedia.AudioCaptureBase.Unprepare"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCaptureBase.Unprepare">
+            <summary>
+            Unprepares the AudioCapture.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+                Operation failed due to an internal error.<br/>
+                -or-<br/>
+                The current state is <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioCaptureBase has already been disposed of.</exception>
+            <seealso cref="M:Tizen.Multimedia.AudioCaptureBase.Prepare"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCaptureBase.Pause">
+            <summary>
+            Pauses buffering of audio data from the device.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+                The current state is <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.<br/>
+                -or-<br/>
+                The method is called in the <see cref="E:Tizen.Multimedia.AsyncAudioCapture.DataAvailable"/> event handler.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioCaptureBase has already been disposed of.</exception>
+            <seealso cref="M:Tizen.Multimedia.AudioCaptureBase.Resume"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCaptureBase.Resume">
+            <summary>
+            Resumes buffering audio data from the device.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+                The current state is <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.<br/>
+                -or-<br/>
+                The method is called in the <see cref="E:Tizen.Multimedia.AsyncAudioCapture.DataAvailable"/> event handler.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioCaptureBase has already been disposed of.</exception>
+            <seealso cref="M:Tizen.Multimedia.AudioCaptureBase.Pause"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCaptureBase.Flush">
+            <summary>
+            Flushes and discards buffered audio data from the input stream.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">The current state is <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.</exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioCaptureBase has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCaptureBase.ApplyStreamPolicy(Tizen.Multimedia.AudioStreamPolicy)">
+            <summary>
+            Sets the sound stream information to the audio input.
+            </summary>
+            <param name="streamPolicy">The <see cref="T:Tizen.Multimedia.AudioStreamPolicy"/> to apply for the AudioCapture.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="streamPolicy"/> is null.</exception>
+            <exception cref="T:System.ObjectDisposedException">
+                <paramref name="streamPolicy"/> has already been disposed of.<br/>
+                -or-<br/>
+                The AudioCaptureBase has already been disposed of.
+            </exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="streamPolicy"/> is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Not able to retrieve information from <paramref name="streamPolicy"/>.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.AudioCapture">
+            <summary>
+            Provides the ability to record audio from system audio input devices in a synchronous way.
+            </summary>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCapture.#ctor(System.Int32,Tizen.Multimedia.AudioChannel,Tizen.Multimedia.AudioSampleType)">
+            <summary>
+            Initializes a new instance of the AudioCapture class with the specified sample rate, channel, and sampleType.
+            </summary>
+            <param name="sampleRate">The audio sample rate (8000 ~ 192000Hz).</param>
+            <param name="channel">The audio channel type.</param>
+            <param name="sampleType">The audio sample type.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="sampleRate"/> is less than <see cref="F:Tizen.Multimedia.AudioCaptureBase.MinSampleRate"/>.<br/>
+                -or-<br/>
+                <paramref name="sampleRate"/> is greater than <see cref="F:Tizen.Multimedia.AudioCaptureBase.MaxSampleRate"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="channel"/> is invalid.<br/>
+                -or-<br/>
+                <paramref name="sampleType"/> is invalid.
+            </exception>
+            <exception cref="T:System.UnauthorizedAccessException">The required privilege is not specified.</exception>
+            <exception cref="T:System.NotSupportedException">The system does not support microphone.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioCapture.Read(System.Int32)">
+            <summary>
+            Reads audio data from the audio input buffer.
+            </summary>
+            <param name="count">The number of bytes to be read.</param>
+            <returns>The buffer of audio data captured.</returns>
+            <exception cref="T:System.InvalidOperationException">The current state is not <see cref="F:Tizen.Multimedia.AudioIOState.Running"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="count"/> is equal to or less than zero.</exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioCapture has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.AsyncAudioCapture">
+            <summary>
+            Provides the ability to record audio from system audio input devices in an asynchronous way.
+            </summary>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.AsyncAudioCapture.DataAvailable">
+            <summary>
+            Occurs when audio data is available.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AsyncAudioCapture.#ctor(System.Int32,Tizen.Multimedia.AudioChannel,Tizen.Multimedia.AudioSampleType)">
+            <summary>
+            Initializes a new instance of the AsyncAudioCapture class with the specified sample rate, channel and sampleType.
+            </summary>
+            <param name="sampleRate">The audio sample rate (8000 ~ 192000Hz).</param>
+            <param name="channel">The audio channel type.</param>
+            <param name="sampleType">The audio sample type.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="sampleRate"/> is less than <see cref="F:Tizen.Multimedia.AudioCaptureBase.MinSampleRate"/>.<br/>
+                -or-<br/>
+                <paramref name="sampleRate"/> is greater than <see cref="F:Tizen.Multimedia.AudioCaptureBase.MaxSampleRate"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="channel"/> is invalid.<br/>
+                -or-<br/>
+                <paramref name="sampleType"/> is invalid.
+            </exception>
+            <exception cref="T:System.UnauthorizedAccessException">The required privilege is not specified.</exception>
+            <exception cref="T:System.NotSupportedException">The system does not support microphone.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.AudioChannel">
+            <summary>
+            Specifies the audio channels.
+            </summary>
+            <seealso cref="T:Tizen.Multimedia.AudioCapture"/>
+            <seealso cref="T:Tizen.Multimedia.AsyncAudioCapture"/>
+            <seealso cref="T:Tizen.Multimedia.AudioPlayback"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.Mono">
+            <summary>
+            Mono.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.Stereo">
+            <summary>
+            Stereo.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel3">
+            <summary>
+            3 audio channels
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel4">
+            <summary>
+            4 audio channels
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel5">
+            <summary>
+            5 audio channels
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel6">
+            <summary>
+            6 audio channels
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel7">
+            <summary>
+            7 audio channels
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel8">
+            <summary>
+            8 audio channels
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel9">
+            <summary>
+            9 audio channels
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel10">
+            <summary>
+            10 audio channels
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel11">
+            <summary>
+            11 audio channels
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel12">
+            <summary>
+            12 audio channels
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel13">
+            <summary>
+            13 audio channels
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel14">
+            <summary>
+            14 audio channels
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel15">
+            <summary>
+            15 audio channels
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioChannel.MultiChannel16">
+            <summary>
+            16 audio channels
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.AudioDataAvailableEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.AsyncAudioCapture.DataAvailable"/> event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioDataAvailableEventArgs.Data">
+            <summary>
+            Gets the audio data captured.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.AudioIOState">
+            <summary>
+            Specifies the states for the <see cref="T:Tizen.Multimedia.AudioPlayback"/>, <see cref="T:Tizen.Multimedia.AudioCapture"/>, and <see cref="T:Tizen.Multimedia.AsyncAudioCapture"/>.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioIOState.Idle">
+            <summary>
+            Not prepared.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioIOState.Running">
+            <summary>
+            The stream is running.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioIOState.Paused">
+            <summary>
+            The stream is paused.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.AudioIOStateChangedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.AudioCaptureBase.StateChanged"/> event and the <see cref="E:Tizen.Multimedia.AudioPlayback.StateChanged"/> event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioIOStateChangedEventArgs.Previous">
+            <summary>
+            Gets the previous state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioIOStateChangedEventArgs.Current">
+            <summary>
+            Gets the current state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioIOStateChangedEventArgs.ByPolicy">
+            <summary>
+            Gets the value indicating whether the state is changed by a policy or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.AudioPlayback">
+            <summary>
+            Provides the ability to directly manage the system audio output devices and play the PCM (pulse-code modulation) data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioPlayback.MinSampleRate">
+            <summary>
+            Specifies the minimum value allowed for the audio capture, in Hertz (Hz).
+            </summary>
+            <seealso cref="P:Tizen.Multimedia.AudioPlayback.SampleRate"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioPlayback.MaxSampleRate">
+            <summary>
+            Specifies the maximum value allowed for the audio capture, in Hertz (Hz).
+            </summary>
+            <seealso cref="P:Tizen.Multimedia.AudioPlayback.SampleRate"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.AudioPlayback.BufferAvailable">
+            <summary>
+            Occurs when the audio playback data can be written.
+            </summary>
+            <seealso cref="M:Tizen.Multimedia.AudioPlayback.Write(System.Byte[])"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.AudioPlayback.StateChanged">
+            <summary>
+            Occurs when the state of the AudioPlayback is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.#ctor(System.Int32,Tizen.Multimedia.AudioChannel,Tizen.Multimedia.AudioSampleType)">
+            <summary>
+            Initializes a new instance of the AudioPlayback class with the specified sample rate, channel, and sample type.
+            </summary>
+            <param name="sampleRate">The audio sample rate (8000 ~ 192000Hz).</param>
+            <param name="channel">The audio channel type.</param>
+            <param name="sampleType">The audio sample type.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="sampleRate"/> is less than <see cref="F:Tizen.Multimedia.AudioPlayback.MinSampleRate"/>.<br/>
+                -or-<br/>
+                <paramref name="sampleRate"/> is greater than <see cref="F:Tizen.Multimedia.AudioPlayback.MaxSampleRate"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="channel"/> is invalid.<br/>
+                -or-<br/>
+                <paramref name="sampleType"/> is invalid.
+            </exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.Finalize">
+            <summary>
+            Finalizes an instance of the AudioPlayback class.
+            </summary>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Tizen.Multimedia.AudioPlayback"/> object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources used by the <see cref="T:Tizen.Multimedia.AudioPlayback"/> object.
+            </summary>
+            <param name="disposing">
+            true to release both managed and unmanaged resources; false to release only unmanaged resources.
+            </param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioPlayback.SampleRate">
+            <summary>
+            Gets the sample rate of the audio output data stream, in Hertz (Hz).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioPlayback.Channel">
+            <summary>
+            Gets the channel type of the audio output data stream.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioPlayback.SampleType">
+            <summary>
+            Gets the sample type of the audio output data stream.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioPlayback.StreamType">
+            <summary>
+            Gets the sound type supported by the audio output device.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The AudioPlayback has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.GetBufferSize">
+            <summary>
+            Gets the size allocated for the audio output buffer.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The AudioPlayback has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.Drain">
+            <summary>
+            Drains the buffered audio data from the output stream.
+            It blocks the calling thread until the drain of the stream buffer is complete, for example, at the end of playback.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The AudioPlayback has already been disposed of.</exception>
+            <exception cref="T:System.InvalidOperationException">The current state is <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.Write(System.Byte[])">
+            <summary>
+            Starts writing the audio data to the device.
+            </summary>
+            <param name="buffer">The buffer to write.</param>
+            <returns>The written size.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">The length of <paramref name="buffer"/> is zero.</exception>
+            <exception cref="T:System.InvalidOperationException">The current state is not <see cref="F:Tizen.Multimedia.AudioIOState.Running"/>.</exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioPlayback has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.Prepare">
+            <summary>
+            Prepares the AudioPlayback.
+            </summary>
+            <remarks>
+            This must be called before <see cref="M:Tizen.Multimedia.AudioPlayback.Write(System.Byte[])"/>.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">
+                Operation failed due to an internal error.<br/>
+                -or-<br/>
+                The current state is not <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioPlayback has already been disposed of.</exception>
+            <seealso cref="M:Tizen.Multimedia.AudioPlayback.Unprepare"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.Unprepare">
+            <summary>
+            Unprepares the AudioPlayback.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+                Operation failed due to an internal error.<br/>
+                -or-<br/>
+                The current state is <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioPlayback has already been disposed of.</exception>
+            <seealso cref="M:Tizen.Multimedia.AudioPlayback.Prepare"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.Pause">
+            <summary>
+            Pauses feeding of the audio data to the device.
+            </summary>
+            <remarks>It has no effect if the current state is <see cref="F:Tizen.Multimedia.AudioIOState.Paused"/>.</remarks>
+            <exception cref="T:System.InvalidOperationException">
+                The current state is <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.<br/>
+                -or-<br/>
+                The method is called in the <see cref="E:Tizen.Multimedia.AudioPlayback.BufferAvailable"/> event handler.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioPlayback has already been disposed of.</exception>
+            <seealso cref="M:Tizen.Multimedia.AudioPlayback.Resume"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.Resume">
+            <summary>
+            Resumes feeding of the audio data to the device.
+            </summary>
+            <remarks>It has no effect if the current state is <see cref="F:Tizen.Multimedia.AudioIOState.Running"/>.</remarks>
+            <exception cref="T:System.InvalidOperationException">
+                The current state is <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.<br/>
+                -or-<br/>
+                The method is called in an event handler.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioPlayback has already been disposed of.</exception>
+            <seealso cref="M:Tizen.Multimedia.AudioPlayback.Pause"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.Flush">
+            <summary>
+            Flushes and discards the buffered audio data from the output stream.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">The current state is <see cref="F:Tizen.Multimedia.AudioIOState.Idle"/>.</exception>
+            <exception cref="T:System.ObjectDisposedException">The AudioPlayback has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.AudioPlayback.ApplyStreamPolicy(Tizen.Multimedia.AudioStreamPolicy)">
+            <summary>
+            Applies the sound stream information to the AudioPlayback.
+            </summary>
+            <param name="streamPolicy">The <see cref="T:Tizen.Multimedia.AudioStreamPolicy"/> to apply for the AudioPlayback.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="streamPolicy"/> is null.</exception>
+            <exception cref="T:System.ObjectDisposedException">
+                <paramref name="streamPolicy"/> has already been disposed of.<br/>
+                -or-<br/>
+                The AudioPlayback has already been disposed of.
+            </exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="streamPolicy"/> is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Not able to retrieve information from <paramref name="streamPolicy"/>.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.AudioPlaybackBufferAvailableEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.AudioPlayback.BufferAvailable"/> event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.AudioPlaybackBufferAvailableEventArgs.Length">
+            <summary>
+            Gets the length of the buffer that can be written.
+            </summary>
+            <value>The length of the buffer that can be written.</value>
+            <seealso cref="M:Tizen.Multimedia.AudioPlayback.Write(System.Byte[])"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.AudioSampleType">
+            <summary>
+            Specifies the audio sample types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioSampleType.U8">
+            <summary>
+            Unsigned 8-bit audio samples.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioSampleType.S16Le">
+            <summary>
+            Signed 16-bit audio samples.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioSampleType.S24Le">
+            <summary>
+            Signed 24-bit audio samples.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioSampleType.S24LePacked">
+            <summary>
+            Signed 24-bit (packed in 32-bit) audio samples.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.AudioSampleType.S32Le">
+            <summary>
+            Signed 32-bit audio samples.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.TonePlayer">
+            <summary>
+            Provides the ability to play a tone.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.TonePlayer.StartAsync(Tizen.Multimedia.ToneType,Tizen.Multimedia.AudioStreamPolicy,System.Int32)">
+            <summary>
+            Plays a tone, asynchronously.
+            </summary>
+            <param name="tone">A <see cref="T:Tizen.Multimedia.ToneType"/> to play.</param>
+            <param name="streamPolicy">A <see cref="T:Tizen.Multimedia.AudioStreamPolicy"/>.</param>
+            <param name="durationMilliseconds">The tone duration in milliseconds. -1 indicates an infinite duration.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="tone"/> is invalid.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="streamPolicy"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="durationMilliseconds"/> is less than -1.</exception>
+            <exception cref="T:System.InvalidOperationException">Any invalid operations occurred.</exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="tone"/> is not a supported type.</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="streamPolicy"/> has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.TonePlayer.StartAsync(Tizen.Multimedia.ToneType,Tizen.Multimedia.AudioStreamPolicy,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Plays a tone, asynchronously.
+            </summary>
+            <param name="tone">A <see cref="T:Tizen.Multimedia.ToneType"/> to play.</param>
+            <param name="streamPolicy">A <see cref="T:Tizen.Multimedia.AudioStreamPolicy"/>.</param>
+            <param name="durationMilliseconds">The tone duration in milliseconds. -1 indicates an infinite duration.</param>
+            <param name="cancellationToken">The cancellation token which can be used to stop playing the tone.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="tone"/> is invalid.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="streamPolicy"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="durationMilliseconds"/> is less than -1.</exception>
+            <exception cref="T:System.InvalidOperationException">Any invalid operations occurred.</exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="tone"/> is not a supported type.</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="streamPolicy"/> has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.ToneType">
+            <summary>
+            Specifies the audio codec.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Default">
+            <summary>
+            The default tone.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Dtmf0">
+            <summary>
+            Predefined DTMF 0.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Dtmf1">
+            <summary>
+            Predefined DTMF 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Dtmf2">
+            <summary>
+            Predefined DTMF 2.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Dtmf3">
+            <summary>
+            Predefined DTMF 3.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Dtmf4">
+            <summary>
+            Predefined DTMF 4.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Dtmf5">
+            <summary>
+            Predefined DTMF 5.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Dtmf6">
+            <summary>
+            Predefined DTMF 6.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Dtmf7">
+            <summary>
+            Predefined DTMF 7.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Dtmf8">
+            <summary>
+            Predefined DTMF 8.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.Dtmf9">
+            <summary>
+            Predefined DTMF 9.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.DtmfS">
+            <summary>
+            Predefined DTMF Star - Asterisk.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.DtmfP">
+            <summary>
+            Predefined DTMF sharp (#).
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.DtmfA">
+            <summary>
+            Predefined DTMF A (A).
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.DtmfB">
+            <summary>
+            Predefined DTMF B (B).
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.DtmfC">
+            <summary>
+            Predefined DTMF C (C).
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.DtmfD">
+            <summary>
+            Predefined DTMF D (D).
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupDial">
+            <summary>
+            Call supervisory tone, Dial tone: CEPT: 425Hz, continuous.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.AnsiDial">
+            <summary>
+            Call supervisory tone, Dial tone: ANSI (IS-95): 350Hz+440Hz, continuous.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.JapanDial">
+            <summary>
+            Call supervisory tone, Dial tone: JAPAN: 400Hz, continuous.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupBusy">
+            <summary>
+            Call supervisory tone, Busy: CEPT: 425Hz, 500ms ON, 500ms OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.AnsiBusy">
+            <summary>
+            Call supervisory tone, Busy: ANSI (IS-95): 480Hz+620Hz, 500ms ON, 500ms OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.JapanBusy">
+            <summary>
+            Call supervisory tone, Busy: JAPAN: 400Hz, 500ms ON, 500ms OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupCongestion">
+            <summary>
+            Call supervisory tone, Congestion: CEPT, JAPAN: 425Hz, 200ms ON, 200ms OFF.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.AnsiCongestion">
+            <summary>
+            Call supervisory tone, Congestion: ANSI (IS-95): 480Hz+620Hz, 250ms ON, 250ms OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupRadioAck">
+            <summary>
+            Call supervisory tone, Radio path acknowledgment : CEPT, ANSI: 425Hz, 200ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.JapanRadioAck">
+            <summary>
+            Call supervisory tone, Radio path acknowledgment : JAPAN: 400Hz, 1s ON, 2s OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupRadioNotAvailable">
+            <summary>
+            Call supervisory tone, Radio path not available: 425Hz, 200ms ON, 200 OFF 3 bursts.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupError">
+            <summary>
+            Call supervisory tone, Error/Special info: 950Hz+1400Hz+1800Hz, 330ms ON, 1s OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupCallWaiting">
+            <summary>
+            Call supervisory tone, Call Waiting: CEPT, JAPAN: 425Hz, 200ms ON, 600ms OFF, 200ms ON, 3s OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.AnsiCallWaiting">
+            <summary>
+            Call supervisory tone, Call Waiting: ANSI (IS-95): 440 Hz, 300 ms ON, 9.7 s OFF, (100 ms ON, 100 ms OFF, 100 ms ON, 9.7s OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupRingtone">
+            <summary>
+            Call supervisory tone, Ring Tone: CEPT, JAPAN: 425Hz, 1s ON, 4s OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.AnsiRingtone">
+            <summary>
+            Call supervisory tone, Ring Tone: ANSI (IS-95): 440Hz + 480Hz, 2s ON, 4s OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.PropBeep">
+            <summary>
+            General beep: 400Hz+1200Hz, 35ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.PropAck">
+            <summary>
+            Proprietary tone, positive acknowledgment: 1200Hz, 100ms ON, 100ms OFF 2 bursts.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.PropNack">
+            <summary>
+            Proprietary tone, negative acknowledgment: 300Hz+400Hz+500Hz, 400ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.PropPrompt">
+            <summary>
+            Proprietary tone, prompt tone: 400Hz+1200Hz, 200ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.PropBeep2">
+            <summary>
+            Proprietary tone, general double beep: twice 400Hz+1200Hz, 35ms ON, 200ms OFF, 35ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupIntercept">
+            <summary>
+            Call supervisory tone (IS-95), intercept tone: alternating 440 Hz and 620 Hz tones, each on for 250 ms.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupInterceptAbbrev">
+            <summary>
+            Call supervisory tone (IS-95), abbreviated intercept: intercept tone limited to 4 seconds.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupCongestionAbbrev">
+            <summary>
+            Call supervisory tone (IS-95), abbreviated congestion: congestion tone limited to 4 seconds.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupConfirm">
+            <summary>
+            Call supervisory tone (IS-95), confirm tone: a 350 Hz tone added to a 440 Hz tone repeated 3 times in a 100 ms on, 100 ms off cycle.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.SupPip">
+            <summary>
+            Call supervisory tone (IS-95), pip tone: four bursts of 480 Hz tone (0.1 s on, 0.1 s off).
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaDialToneLite">
+            <summary>
+            425Hz continuous.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaNetworkUsaRingback">
+            <summary>
+            CDMA USA Ringback: 440Hz+480Hz 2s ON, 4000 OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaIntercept">
+            <summary>
+            CDMA Intercept tone: 440Hz 250ms ON, 620Hz 250ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaAbbrIntercept">
+            <summary>
+            CDMA Abbr Intercept tone: 440Hz 250ms ON, 620Hz 250ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaReorder">
+            <summary>
+            CDMA Reorder tone: 480Hz+620Hz 250ms ON, 250ms OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaAbbrReorder">
+            <summary>
+            CDMA Abbr Reorder tone: 480Hz+620Hz 250ms ON, 250ms OFF repeated for 8 times.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaNetworkBusy">
+            <summary>
+            CDMA Network Busy tone: 480Hz+620Hz 500ms ON, 500ms OFF continuous.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaConfirm">
+            <summary>
+            CDMA Confirm tone: 350Hz+440Hz 100ms ON, 100ms OFF repeated for 3 times.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaAnswer">
+            <summary>
+            CDMA answer tone: silent tone - definition Frequency 0, 0ms ON, 0ms OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaNetworkCallWaiting">
+            <summary>
+            CDMA Network Callwaiting tone: 440Hz 300ms ON.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaPip">
+            <summary>
+            CDMA PIP tone: 480Hz 100ms ON, 100ms OFF repeated for 4 times.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaCallSignalIsdnNormal">
+            <summary>
+            ISDN Call Signal Normal tone: {2091Hz 32ms ON, 2556 64ms ON} 20 times, 2091 32ms ON, 2556 48ms ON, 4s OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaCallSignalIsdnIntergroup">
+            <summary>
+            ISDN Call Signal Intergroup tone: {2091Hz 32ms ON, 2556 64ms ON} 8 times, 2091Hz 32ms ON, 400ms OFF, {2091Hz 32ms ON, 2556Hz 64ms ON} 8times, 2091Hz 32ms ON, 4s OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaCallSignalIsdnSpPri">
+            <summary>
+            ISDN Call Signal SP PRI tone:{2091Hz 32ms ON, 2556 64ms ON} 4 times 2091Hz 16ms ON, 200ms OFF, {2091Hz 32ms ON, 2556Hz 64ms ON} 4 times, 2091Hz 16ms ON, 200ms OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaCallSignalIsdnPat3">
+            <summary>
+            ISDN Call sign PAT3 tone: silent tone.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaCallSignalIsdnPingRing">
+            <summary>
+            ISDN Ping Ring tone: {2091Hz 32ms ON, 2556Hz 64ms ON} 5 times 2091Hz 20ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaCallSignalIsdnPat5">
+            <summary>
+            ISDN Pat5 tone: silent tone.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaCallSignalIsdnPat6">
+            <summary>
+            ISDN Pat6 tone: silent tone.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaCallSignalIsdnPat7">
+            <summary>
+            ISDN Pat7 tone: silent tone.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighL">
+            <summary>
+            TONE_CDMA_HIGH_L tone: {3700Hz 25ms, 4000Hz 25ms} 40 times 4000ms OFF, Repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedL">
+            <summary>
+            TONE_CDMA_MED_L tone: {2600Hz 25ms, 2900Hz 25ms} 40 times 4000ms OFF, Repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowL">
+            <summary>
+            TONE_CDMA_LOW_L tone: {1300Hz 25ms, 1450Hz 25ms} 40 times, 4000ms OFF, Repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighSs">
+            <summary>
+            CDMA HIGH SS tone: {3700Hz 25ms, 4000Hz 25ms} repeat 16 times, 400ms OFF, repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedSs">
+            <summary>
+            CDMA MED SS tone: {2600Hz 25ms, 2900Hz 25ms} repeat 16 times, 400ms OFF, repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowSs">
+            <summary>
+            CDMA LOW SS tone: {1300z 25ms, 1450Hz 25ms} repeat 16 times, 400ms OFF, repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighSsl">
+            <summary>
+            CDMA HIGH SSL tone: {3700Hz 25ms, 4000Hz 25ms} 8 times, 200ms OFF, {3700Hz 25ms, 4000Hz 25ms} repeat 8 times, 200ms OFF, {3700Hz 25ms, 4000Hz 25ms} repeat 16 times, 4000ms OFF, repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedSsl">
+            <summary>
+            CDMA MED SSL tone: {2600Hz 25ms, 2900Hz 25ms} 8 times, 200ms OFF, {2600Hz 25ms, 2900Hz 25ms} repeat 8 times, 200ms OFF, {2600Hz 25ms, 2900Hz 25ms} repeat 16 times, 4000ms OFF, repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowSsl">
+            <summary>
+            CDMA LOW SSL tone: {1300Hz 25ms, 1450Hz 25ms} 8 times, 200ms OFF, {1300Hz 25ms, 1450Hz 25ms} repeat 8 times, 200ms OFF, {1300Hz 25ms, 1450Hz 25ms} repeat 16 times, 4000ms OFF, repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighSs2">
+            <summary>
+            CDMA HIGH SS2 tone: {3700Hz 25ms, 4000Hz 25ms} 20 times, 1000ms OFF, {3700Hz 25ms, 4000Hz 25ms} 20 times, 3000ms OFF, repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedSs2">
+            <summary>
+            CDMA MED SS2 tone: {2600Hz 25ms, 2900Hz 25ms} 20 times, 1000ms OFF, {2600Hz 25ms, 2900Hz 25ms} 20 times, 3000ms OFF, repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowSs2">
+            <summary>
+            CDMA LOW SS2 tone: {1300Hz 25ms, 1450Hz 25ms} 20 times, 1000ms OFF, {1300Hz 25ms, 1450Hz 25ms} 20 times, 3000ms OFF, repeat.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighSls">
+            <summary>
+            CDMA HIGH SLS tone: {3700Hz 25ms, 4000Hz 25ms} 10 times, 500ms OFF, {3700Hz 25ms, 4000Hz 25ms} 20 times, 500ms OFF, {3700Hz 25ms, 4000Hz 25ms} 10 times, 3000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedSls">
+            <summary>
+            CDMA MED SLS tone: {2600Hz 25ms, 2900Hz 25ms} 10 times, 500ms OFF, {2600Hz 25ms, 2900Hz 25ms} 20 times, 500ms OFF, {2600Hz 25ms, 2900Hz 25ms} 10 times, 3000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowSls">
+            <summary>
+            CDMA LOW SLS tone: {1300Hz 25ms, 1450Hz 25ms} 10 times, 500ms OFF, {1300Hz 25ms, 1450Hz 25ms} 20 times, 500ms OFF, {1300Hz 25ms, 1450Hz 25ms} 10 times, 3000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighSx4">
+            <summary>
+            CDMA HIGH S X4 tone: {3700Hz 25ms, 4000Hz 25ms} 10 times, 500ms OFF, {3700Hz 25ms, 4000Hz 25ms} 10 times, 500ms OFF, {3700Hz 25ms, 4000Hz 25ms} 10 times, 500ms OFF, {3700Hz 25ms, 4000Hz 25ms} 10 times, 2500ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedSX4">
+            <summary>
+            CDMA MED S X4 tone: {2600Hz 25ms, 2900Hz 25ms} 10 times, 500ms OFF, {2600Hz 25ms, 2900Hz 25ms} 10 times, 500ms OFF, {2600Hz 25ms, 2900Hz 25ms} 10 times, 500ms OFF, {2600Hz 25ms, 2900Hz 25ms} 10 times, 2500ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowSX4">
+            <summary>
+            CDMA LOW S X4 tone: {2600Hz 25ms, 2900Hz 25ms} 10 times, 500ms OFF, {2600Hz 25ms, 2900Hz 25ms} 10 times, 500ms OFF, {2600Hz 25ms, 2900Hz 25ms} 10 times, 500ms OFF, {2600Hz 25ms, 2900Hz 25ms} 10 times, 2500ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighPbxL">
+            <summary>
+            CDMA HIGH PBX L: {3700Hz 25ms, 4000Hz 25ms}20 times, 2000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedPbxL">
+            <summary>
+            CDMA MED PBX L: {2600Hz 25ms, 2900Hz 25ms}20 times, 2000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowPbxL">
+            <summary>
+            CDMA LOW PBX L: {1300Hz 25ms,1450Hz 25ms}20 times, 2000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighPbxSs">
+            <summary>
+            CDMA HIGH PBX SS tone: {3700Hz 25ms, 4000Hz 25ms} 8 times 200 ms OFF, {3700Hz 25ms 4000Hz 25ms}8 times, 2000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedPbxSs">
+            <summary>
+            CDMA MED PBX SS tone: {2600Hz 25ms, 2900Hz 25ms} 8 times 200 ms OFF, {2600Hz 25ms 2900Hz 25ms}8 times, 2000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowPbxSs">
+            <summary>
+            CDMA LOW PBX SS tone: {1300Hz 25ms, 1450Hz 25ms} 8 times 200 ms OFF, {1300Hz 25ms 1450Hz 25ms}8 times, 2000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighPbxSsl">
+            <summary>
+            CDMA HIGH PBX SSL tone:{3700Hz 25ms, 4000Hz 25ms} 8 times 200ms OFF, {3700Hz 25ms, 4000Hz 25ms} 8 times, 200ms OFF, {3700Hz 25ms, 4000Hz 25ms} 16 times, 1000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedPbxSsl">
+            <summary>
+            CDMA MED PBX SSL tone:{2600Hz 25ms, 2900Hz 25ms} 8 times 200ms OFF, {2600Hz 25ms, 2900Hz 25ms} 8 times, 200ms OFF, {2600Hz 25ms, 2900Hz 25ms} 16 times, 1000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowPbxSsl">
+            <summary>
+            CDMA LOW PBX SSL tone:{1300Hz 25ms, 1450Hz 25ms} 8 times 200ms OFF, {1300Hz 25ms, 1450Hz 25ms} 8 times, 200ms OFF, {1300Hz 25ms, 1450Hz 25ms} 16 times, 1000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighPbxSls">
+            <summary>
+            CDMA HIGH PBX SLS tone:{3700Hz 25ms, 4000Hz 25ms} 8 times 200ms OFF, {3700Hz 25ms, 4000Hz 25ms} 16 times, 200ms OFF, {3700Hz 25ms, 4000Hz 25ms} 8 times, 1000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedPbxSls">
+            <summary>
+            CDMA MED PBX SLS tone:{2600Hz 25ms, 2900Hz 25ms} 8 times 200ms OFF, {2600Hz 25ms, 2900Hz 25ms} 16 times, 200ms OFF, {2600Hz 25ms, 2900Hz 25ms} 8 times, 1000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowPbxSls">
+            <summary>
+            CDMA LOW PBX SLS tone:{1300Hz 25ms, 1450Hz 25ms} 8 times 200ms OFF, {1300Hz 25ms, 1450Hz 25ms} 16 times, 200ms OFF, {1300Hz 25ms, 1450Hz 25ms} 8 times, 1000ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaHighPbxSX4">
+            <summary>
+            CDMA HIGH PBX X S4 tone: {3700Hz 25ms 4000Hz 25ms} 8 times, 200ms OFF, {3700Hz 25ms 4000Hz 25ms} 8 times, 200ms OFF, {3700Hz 25ms 4000Hz 25ms} 8 times, 200ms OFF, {3700Hz 25ms 4000Hz 25ms} 8 times, 800ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaMedPbxSX4">
+            <summary>
+            CDMA MED PBX X S4 tone: {2600Hz 25ms 2900Hz 25ms} 8 times, 200ms OFF, {2600Hz 25ms 2900Hz 25ms} 8 times, 200ms OFF, {2600Hz 25ms 2900Hz 25ms} 8 times, 200ms OFF, {2600Hz 25ms 2900Hz 25ms} 8 times, 800ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaLowPbxSX4">
+            <summary>
+            CDMA LOW PBX X S4 tone: {1300Hz 25ms 1450Hz 25ms} 8 times, 200ms OFF, {1300Hz 25ms 1450Hz 25ms} 8 times, 200ms OFF, {1300Hz 25ms 1450Hz 25ms} 8 times, 200ms OFF, {1300Hz 25ms 1450Hz 25ms} 8 times, 800ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaAlertNetworkLite">
+            <summary>
+            CDMA Alert Network Lite tone: 1109Hz 62ms ON, 784Hz 62ms ON, 740Hz 62ms ON 622Hz 62ms ON, 1109Hz 62ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaAlertAutoRedialLite">
+             <summary>
+            CDMA Alert Auto Redial tone: {1245Hz 62ms ON, 659Hz 62ms ON} 3 times, 1245 62ms ON.
+             </summary>
+             <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaOneMinBeep">
+            <summary>
+            CDMA One Min Beep tone: 1150Hz+770Hz 400ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaKeypadVolumeKeyLite">
+            <summary>
+            CDMA KEYPAD Volume key lite tone: 941Hz+1477Hz 120ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaPressHoldKeyLite">
+            <summary>
+            CDMA PRESSHOLDKEY LITE tone: 587Hz 375ms ON, 1175Hz 125ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaAlertIncallLite">
+            <summary>
+            CDMA ALERT INCALL LITE tone: 587Hz 62ms, 784 62ms, 831Hz 62ms, 784Hz 62ms, 1109 62ms, 784Hz 62ms, 831Hz 62ms, 784Hz 62ms.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaEmergencyRingback">
+            <summary>
+            CDMA EMERGENCY RINGBACK tone: {941Hz 125ms ON, 10ms OFF} 3times 4990ms OFF, REPEAT.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaAlertCallGuard">
+            <summary>
+            CDMA ALERT CALL GUARD tone: {1319Hz 125ms ON, 125ms OFF} 3 times.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaSoftErrorLite">
+            <summary>
+            CDMA SOFT ERROR LITE tone: 1047Hz 125ms ON, 370Hz 125ms.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaCallDropLite">
+            <summary>
+            CDMA CALLDROP LITE tone: 1480Hz 125ms, 1397Hz 125ms, 784Hz 125ms.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaNetworkBusyOneShot">
+            <summary>
+            CDMA_NETWORK_BUSY_ONE_SHOT tone: 425Hz 500ms ON, 500ms OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaAbbrAlert">
+            <summary>
+            CDMA_ABBR_ALERT tone: 1150Hz+770Hz 400ms ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.CdmaSignalOff">
+            <summary>
+            CDMA_SIGNAL_OFF - silent tone.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.UserDefinedLowFre">
+            <summary>
+            User Defined Tone: 100Hz continuous.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.UserDefinedMedFre">
+            <summary>
+            User Defined Tone: 200Hz continuous.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.ToneType.UserDefinedHighFre">
+            <summary>
+            User Defined Tone: 300Hz continuous.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.WavPlayer">
+            <summary>
+            Provides the ability to play a wav file.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.WavPlayer.StartAsync(System.String,Tizen.Multimedia.AudioStreamPolicy)">
+            <summary>
+            Plays a wav file based on the specified <see cref="T:Tizen.Multimedia.AudioStreamPolicy"/>.
+            </summary>
+            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="path">A file path to play.</param>
+            <param name="streamPolicy">A <see cref="T:Tizen.Multimedia.AudioStreamPolicy"/>.</param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="path"/> is null.
+                <para>-or-</para>
+                <paramref name="streamPolicy"/> is null.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exists.</exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The format of <paramref name="path"/> is not supported.</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="streamPolicy"/> has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.WavPlayer.StartAsync(System.String,Tizen.Multimedia.AudioStreamPolicy,System.Threading.CancellationToken)">
+            <summary>
+            Plays a wav file based on the specified <see cref="T:Tizen.Multimedia.AudioStreamPolicy"/>.
+            </summary>
+            <returns>A task that represents the asynchronous operation.</returns>
+            <param name="path">A file path to play.</param>
+            <param name="streamPolicy">A <see cref="T:Tizen.Multimedia.AudioStreamPolicy"/>.</param>
+            <param name="cancellationToken">A cancellation token which can be used to stop.</param>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="path"/> is null.
+                <para>-or-</para>
+                <paramref name="streamPolicy"/> is null.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exists.</exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The format of <paramref name="path"/> is not supported.</exception>
+            <exception cref="T:System.ObjectDisposedException"><paramref name="streamPolicy"/> has already been disposed of.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

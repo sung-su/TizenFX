@@ -1,0 +1,1059 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Account.AccountManager</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            Interop for Account class APIs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <summary>
+            Interop for AccountProvider class APIs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <summary>
+            Interop for Account class APIs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <summary>
+            Interop for the library reference.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Interop.Account">
+            <summary>
+            Interop for Account class APIs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Interop.AccountProvider">
+            <summary>
+            Interop for AccountProvider class APIs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Interop.AccountService">
+            <summary>
+            Interop for Account class APIs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Interop.Libraries">
+            <summary>
+            Interop for the library reference.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.Account">
+            <summary>
+            Represents the account information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.#ctor(Tizen.Account.AccountManager.SafeAccountHandle)">
+            <summary>
+            Account constructor.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="handle"> The account handle.</param>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.Finalize">
+            <summary>
+            Account destructor.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.CreateAccount">
+            <summary>
+            Creates a new account instance.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Account Instance.</returns>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.AccountId">
+            <summary>
+            Id of the Account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Account ID shall be created only when the account is added to the database.</remarks>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.UserName">
+            <summary>
+            UserName of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>User name of the account.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.DisplayName">
+            <summary>
+            Display name of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Display name of the account.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.IconPath">
+            <summary>
+            Icon path of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Icon path of the account.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.DomainName">
+            <summary>
+            Domain name of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Domain name of the account.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.EmailId">
+            <summary>
+            Email ID of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Email ID of the account.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.PackageName">
+            <summary>
+            Package name of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Package name of the account.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.AccessToken">
+            <summary>
+            Access token of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Access token of the account.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.AuthType">
+            <summary>
+            Authentication type of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Authentication type of the account.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.SecrecyState">
+            <summary>
+            Secrecy state of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Secrecy state of the account.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.SyncState">
+            <summary>
+            Sync state of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Sync state of the account.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.Source">
+            <summary>
+            Source of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Account source.</value>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.Account.SafeAccountHandle">
+            <summary>
+            Handle of the account.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>Account handle.</value>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.SetCapability(System.String,Tizen.Account.AccountManager.CapabilityState)">
+            <summary>
+            Sets the account capability.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="capabilityType"> The account capability type.</param>
+            <param name="state">The account capability state.</param>
+            <exception cref="T:System.ArgumentException">In case of an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.GetCapability(System.String)">
+            <summary>
+            Gets all the capabilities of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="capabilityType"> The capability type to get the capability value.</param>
+            <returns>The capability value (on/off) of the specified CapabilityState.</returns>
+            <exception cref="T:System.ArgumentException">In case of an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.GetAllCapabilities">
+            <summary>
+            Gets all the capabilities of the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>List of capabilities as dictionary.</returns>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.SetCustomValue(System.String,System.String)">
+            <summary>
+            Sets the custom value to the account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">Key to be added to the account.</param>
+            <param name="value">Value to be updated for respective key for the account.</param>
+            <exception cref="T:System.ArgumentException">In case of an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.GetCustomValue(System.String)">
+            <summary>
+            Gets the user specific custom text of an account key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="key">The key to retrieve custom text.</param>
+            <returns>The text of the given key.</returns>
+            <exception cref="T:System.ArgumentException">In case of an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">If there is no given capability type in the account.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.GetAllCustomValues">
+            <summary>
+            Gets all the custom values.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>List of custom key, value pairs as dictionary.</returns>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.SetUserText(System.Int32,System.String)">
+            <summary>
+            Sets the user text.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="index">The index of the user text (must be in range from 0 to 4).</param>
+            <param name="text">The text string to set as the user text.</param>
+            <exception cref="T:System.ArgumentException">In case of an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.GetUserText(System.Int32)">
+            <summary>
+            Gets the user text.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="index">The index of the user text (must be in range from 0 to 4).</param>
+            <returns>The user text of the given key.</returns>
+            <exception cref="T:System.ArgumentException">In case of an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">In case of out of memory.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.GetUserInt(System.Int32)">
+            <summary>
+            Gets the user integer value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="index">The index of the user integer (must be in range from 0 to 4).</param>
+            <returns>The user integer of the given key.</returns>
+            <exception cref="T:System.ArgumentException">In case of an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.SetUserInt(System.Int32,System.Int32)">
+            <summary>
+            Sets the user integer value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="index">The index of the user integer (must be in range from 0 to 4).</param>
+            <param name="value">The integer to set as the user integer.</param>
+            <exception cref="T:System.ArgumentException">In case of an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.Dispose">
+            <summary>
+            Overloaded Dispose API for destroying the account handle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.Account.Dispose(System.Boolean)">
+            <summary>
+            Dispose API for destroying the account handle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">The boolean value for destoying account handle.</param>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.CapabilityState">
+            <summary>
+            Enumeration for the state of capability.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.CapabilityState.InvalidState">
+            <summary>
+            Account capability is invalid.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.CapabilityState.Disabled">
+            <summary>
+            Account capability is disabled.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.CapabilityState.Enabled">
+            <summary>
+            Account capability is enabled.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.AccountSecrecyState">
+            <summary>
+            Enumeration for the state of account secrecy.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountSecrecyState.InvalidState">
+            <summary>
+            Account secrecy is invalid.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountSecrecyState.Invisible">
+            <summary>
+            Account is not visible.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountSecrecyState.Visible">
+            <summary>
+            Account is visible.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.AccountSyncState">
+            <summary>
+            Enumeration for the account sync status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountSyncState.InvalidState">
+            <summary>
+            Account sync is invalid.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountSyncState.NotSupported">
+            <summary>
+            Account sync not supported.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountSyncState.Off">
+            <summary>
+            Account sync supported, but all the synchronization functionalities are off.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountSyncState.Idle">
+            <summary>
+            Account sync supported and sync status is idle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountSyncState.Running">
+            <summary>
+            Account sync supported and sync status is running.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.AccountAuthType">
+            <summary>
+            Enumeration for the account auth type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountAuthType.Invalid">
+            <summary>
+            Auth type is invalid.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountAuthType.XAuth">
+            <summary>
+            XAuth type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountAuthType.OAuth">
+            <summary>
+            OAuth type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountAuthType.ClientLogin">
+            <summary>
+            ClientLogin type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.AccountNotificationType">
+            <summary>
+            Account information change notification types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            When the account database is changed, you can distinguish one event type from the other which are set for subscribing notification.
+            </remarks>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountNotificationType.Insert">
+            <summary>
+            The insert notification type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountNotificationType.Delete">
+            <summary>
+            The delete notification type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountNotificationType.Update">
+            <summary>
+            The update notification type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountNotificationType.syncUpdate">
+            <summary>
+            The sync update notification type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.AccountError">
+            <summary>
+            Enumeration for the types of error occurred, if any.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.None">
+            <summary>
+            Successful.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.InvalidParameter">
+            <summary>
+            Invalid parameter.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.OutOfMemory">
+            <summary>
+            Out of memory.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.Duplicated">
+            <summary>
+            Same user name exists in your application.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.NoData">
+            <summary>
+            Empty data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.RecordNotFound">
+            <summary>
+            Elated record does not exist.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.InvalidOperation">
+            <summary>
+            Invalid operation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.DBFailed">
+            <summary>
+            DB operation failed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.DBNotOpened">
+            <summary>
+             DB is not connected.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.QuerySyntaxError">
+            <summary>
+            DB query syntax error.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.IteratorEnd">
+            <summary>
+            Iterator has reached the end.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.NotificationFailed">
+            <summary>
+            Notification failed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.PermissionDenied">
+            <summary>
+            Permission denied.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.XMLParseFailed">
+            <summary>
+            XML parse failed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.XMLFileNotFound">
+            <summary>
+            XML file not found.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.EventSubscriptionFailed">
+            <summary>
+            Subscription failed
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.ProviderNotRegistered">
+            <summary>
+            Account provider is not registered.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.MultipleNotAllowed">
+            <summary>
+            Multiple accounts are not supported.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountError.DBBusy">
+            <summary>
+            SQLite busy handler expired.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.AccountProvider">
+            <summary>
+            The account ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.#ctor(System.IntPtr)">
+            <summary>
+            AccountProvider destructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="handle"> The account handle.</param>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.Finalize">
+            <summary>
+            AccountProvider deconstructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.AccountProvider.AppId">
+            <summary>
+            The account ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.AccountProvider.ServiceProviderId">
+            <summary>
+            ServiceProvider ID of the account provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.AccountProvider.IconPath">
+            <summary>
+            Icon path of the account provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.AccountProvider.SmallIconPath">
+            <summary>
+            Small icon path of the account provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.AccountProvider.MultipleAccountSupport">
+            <summary>
+            Flag for the account provider if it supports multiple accounts.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.GetAllCapabilities">
+            <summary>
+            Retrieves all the capability information of the account provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <returns>
+            The list of capability information.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.GetLabel(System.String)">
+            <summary>
+            Gets the specific label information detail of the account provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="locale">
+            The locale is specified as an ISO 3166 alpha-2 two letter country-code followed by ISO 639-1 for the two-letter language code.
+            For example, "ko_KR" or "ko-kr" for Korean, "en_US" or "en-us" for American English.
+            </param>
+            <returns>The label text given for the locale.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for given locale.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.GetLabelsByAppId(System.String)">
+            <summary>
+            Gets the specific label information detail of the account provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="appId">
+            The application ID to search.
+            </param>
+            <returns> All the labels information for the given application ID.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for given the application ID.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.GetLabels">
+            <summary>
+            Gets the label information detail of the account provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns> All the labels information for the given account provider.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.IsAppSupported(System.String)">
+            <summary>
+            Checks whether the given appId exists in the account provider DB.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="appId">The application ID to check.</param>
+            <returns>returns true If App is supported </returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for the given application ID.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.IsFeatureSupportedByApp(System.String,System.String)">
+            <summary>
+            Checks whether the given application ID supports the capability.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="appId">The application ID.</param>
+            <param name="capability">The capability information.</param>
+            <returns>
+            TRUE if the application supports the given capability,
+            otherwise FALSE if the application does not support the given capability
+            </returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.GetFeaturesByAppId(System.String)">
+            <summary>
+            Retrieves capability information with the application ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="appId">The application ID.</param>
+            <returns> Capability information list for the given appId.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for the given application ID.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.Dispose">
+            <summary>
+            Overloaded Dispose API for destroying the AccountProvider Handle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountProvider.Dispose(System.Boolean)">
+            <summary>
+            Dispose API for destroying the AccountProvider handle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">The boolean value for destoying AccountProvider handle.</param>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.AccountService">
+             <summary>
+             The AccountManager APIs are separated into two major sections:
+             1. Registering an account provider while an application is installed. This information will be used for the Add account screen.
+             2. Adding an account information when an application signs in successfully to share the account information to the Tizen system. This information will be shown in the Tizen settings account menu.
+            
+             The APIs of both of the sections consist of the following functionality:
+             <list type="bullet">
+             <item><description>Create an account or account provider.</description></item>
+             <item><description>Update an account or account provider (Only available for the creator).</description></item>
+             <item><description>Delete an account or account provider (Only available for the creator).</description></item>
+             <item><description>Read an account or account provider with some filter.</description></item>
+             </list>
+             </summary>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountService.ContactCapability">
+            <summary>
+            This is the contact capability string.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountService.CalendarCapability">
+            <summary>
+            This is the calendar capability string.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountService.EmailCapability">
+            <summary>
+            This is the email capability string.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountService.PhotoCapability">
+            <summary>
+            This is the photo capability string.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountService.VideoCapability">
+            <summary>
+            This is the video capability string.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountService.MusicCapability">
+            <summary>
+            This is the music capability string.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountService.DocumentCapability">
+            <summary>
+            This is the document capability string.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountService.MessageCapability">
+            <summary>
+            This is the message capability string.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.AccountManager.AccountService.GameCapability">
+            <summary>
+            This is the game capability string.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.GetAccountsAsync">
+            <summary>
+            Retrieves all the accounts details from the account database.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>List of accounts.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.GetAccountById(System.Int32)">
+            <summary>
+            Retrieves the account with the account ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="accountId"> The account ID to be searched.</param>
+            <returns>Account instance with reference to the given ID.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for given account ID.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.GetAccountProviders">
+            <summary>
+            Retrieves all the AccountProviders details from the account database.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>List of AccountProviders.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.GetAccountProviderByAppId(System.String)">
+            <summary>
+            Retrieves the account provider information with the application ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="appId">The application ID.</param>
+            <returns>The AccountProvider instance associated with the given application ID.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for given appId.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.GetAccountProvidersByFeature(System.String)">
+            <summary>
+            Retrieves all the account providers information with feature.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="feature">The capability value to search for account providers.</param>
+            <returns>Retrieves the AccountProviders information with the capability name.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for given feature.</exception>
+            <exception cref="T:System.ArgumentException"> In case of invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.AddAccount(Tizen.Account.AccountManager.Account)">
+            <summary>
+            Inserts into the Database with the new account Information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="account">New Account instance to be added.</param>
+            <returns>The account ID of the account instance.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <privilege>http://tizen.org/privilege/account.write </privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.OutOfMemoryException"> In case of OutOfMemory error.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.UpdateAccount(Tizen.Account.AccountManager.Account)">
+            <summary>
+            Updates the account details to the account database.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="account">Account instance to be updated.</param>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <privilege>http://tizen.org/privilege/account.write </privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.OutOfMemoryException"> In case of OutOfMemory error.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.DeleteAccount(Tizen.Account.AccountManager.Account)">
+            <summary>
+            Deletes the account information from the database.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="account">Account instance to be deleted from the database.</param>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <privilege>http://tizen.org/privilege/account.write</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.DeleteAccount(System.String,System.String)">
+            <summary>
+            Deletes the account from the account database by user name.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="userName">The user name of the account to delete.</param>
+            <param name="packageName">The package name of the account to delete.</param>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <privilege>http://tizen.org/privilege/account.write</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.DeleteAccount(System.String)">
+            <summary>
+            Deletes the account from the account database by package name.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="packageName">The package name of the account to delete.</param>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <privilege>http://tizen.org/privilege/account.write</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.GetAccountsByUserName(System.String)">
+            <summary>
+            Retrieves all the accounts with the given user name.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="userName">The user name to search.</param>
+            <returns>Accounts list matched with the user name.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for given username.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.GetAccountsByPackageName(System.String)">
+            <summary>
+            Retrieves all the accounts with the given package name.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="packageName"> The package name to search.</param>
+            <returns>Accounts list matched with the package name.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for given package name.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.GetAccountsByCapabilityType(System.String)">
+            <summary>
+            Retrieves all accounts with the given capability type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type"> Capability type.</param>
+            <returns>Accounts list matched with the capability type.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for the given capability type.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.GetCapabilitiesById(System.Int32)">
+            <summary>
+            Retrieves all the capabilities with the given account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="accountId">Account instance.</param>
+            <returns>Capabilities list as dictionary of the capability type and state.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error or record not found for given account ID.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.GetAccountsCount">
+            <summary>
+            Gets the count of accounts in the account database.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The number of accounts in the database.</returns>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.AccountService.UpdateSyncStatusById(Tizen.Account.AccountManager.Account,Tizen.Account.AccountManager.AccountSyncState)">
+            <summary>
+            Updates the sync status of the given account.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="account"> Account for which the sync status needs to be updated.</param>
+            <param name="status">Sync State</param>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <privilege>http://tizen.org/privilege/account.write</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Account.AccountManager.AccountService.AccountUpdated">
+            <summary>
+            ContentUpdated event is triggered when the media item info from DB changes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            ContentUpdate event is triggered if the MediaInformation updated/deleted or new information is inserted.
+            </remarks>
+            <privilege>http://tizen.org/privilege/account.read</privilege>
+            <feature>http://tizen.org/feature/account</feature>
+            <exception cref="T:System.InvalidOperationException">In case of any DB error.</exception>
+            <exception cref="T:System.ArgumentException"> In case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of privilege not defined.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.AccountSubscriberEventArgs">
+            <summary>
+            Event arguments passed when the event is triggered to notify that the account is updated/removed from the account database.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.AccountSubscriberEventArgs.EventType">
+            <summary>
+            The account event type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.AccountSubscriberEventArgs.AccountId">
+            <summary>
+            The account ID to update.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.AccountManager.SafeAccountHandle">
+            <summary>
+            Represents a wrapper class for a unmanaged Account handle.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.SafeAccountHandle.#ctor">
+            <summary>
+            Initializes a new instance of the SafeAppControlHandle class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.SafeAccountHandle.#ctor(System.IntPtr,System.Boolean)">
+            <summary>
+            Initializes a new instance of the SafeAccountHandle class.
+            </summary>
+            <param name="existingHandle">An IntPtr object that represents the pre-existing handle to use.</param>
+            <param name="ownsHandle">true to reliably release the handle during the finalization phase; false to prevent reliable release.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.AccountManager.SafeAccountHandle.IsInvalid">
+            <summary>
+            Gets a value that indicates whether the handle is invalid.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.AccountManager.SafeAccountHandle.ReleaseHandle">
+            <summary>
+            When overridden in a derived class, executes the code required to free the handle.
+            </summary>
+            <returns>true if the handle is released successfully</returns>
+        </member>
+    </members>
+</doc>

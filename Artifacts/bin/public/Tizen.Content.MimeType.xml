@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Content.MimeType</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Content.MimeType.MimeUtil">
+            <summary>
+            The MimeUtil API provides functions to map the MIME types to file extensions and vice versa.
+            </summary>
+            <remarks>
+            Conversions are provided from the file extensions to MIME types and from the MIME types to file extensions.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Content.MimeType.MimeUtil.GetMimeType(System.String)">
+            <summary>
+            Gets the MIME type for the given file extension.
+            The MIME type is 'application/octet-stream' if the given file extension is not associated with specific file formats.
+            </summary>
+            <param name="fileExtension"> The file extension.</param>
+            <example>
+            <code>
+                string mimeType = MimeUtil.GetMimeType("png");
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Content.MimeType.MimeUtil.GetFileExtension(System.String)">
+            <summary>
+            Gets the file extensions for the given MIME type.
+            </summary>
+            <returns>
+            If successful, returns the list of file extension strings for the given MIME type.
+            The array of file extension is without the leading dot ('.').
+            </returns>
+            <param name="mime"> The MIME type.</param>
+            <example>
+            <code>
+                var extColl = MimeUtil.GetFileExtension("video/mpeg");
+                foreach ( string obj in extColl )
+                {
+                    Console.WriteLine(obj);
+                }
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

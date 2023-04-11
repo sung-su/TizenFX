@@ -1,0 +1,1651 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Telephony</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            The Partial Interop class.
+            </summary>
+            <summary>
+            The Partial Interop class.
+            </summary>
+            <summary>
+            The Partial Interop class.
+            </summary>
+            <summary>
+            The Partial Interop class.
+            </summary>
+            <summary>
+            The Partial Interop class.
+            </summary>
+            <summary>
+            The Partial Interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.Call">
+            <summary>
+            The Call Interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.Libraries">
+            <summary>
+            The Libraries Interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.Modem">
+            <summary>
+            The Modem Interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.Network">
+            <summary>
+            The Network Interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.Sim">
+            <summary>
+            The SIM Interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.Telephony">
+            <summary>
+            The Telephony Interop class.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Call">
+            <summary>
+            The Call APIs allow you to get the voice and video call states.
+            It provides the list of CallHandle which can be used to get the information about call related actions.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Telephony.Call.#ctor(Tizen.Telephony.SlotHandle)">
+            <summary>
+            The public constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="handle">
+            SlotHandle received in the Manager.Init API.
+            </param>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException">
+            This exception occurs if the handle provided is null.
+            </exception>
+        </member>
+        <member name="P:Tizen.Telephony.Call.PreferredVoiceSubscription">
+            <summary>
+            Gets the current value for the preferred voice call subscription.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The currently set preferred voicecall subscription value.
+            </value>
+        </member>
+        <member name="M:Tizen.Telephony.Call.GetCallHandleList">
+            <summary>
+            Gets the list of the current call.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>
+            The list of the CallHandle for existing calls.
+            </returns>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">In case of an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">In case of privileges not defined.</exception>
+            <exception cref="T:System.OutOfMemoryException">In case of out of memory.</exception>
+        </member>
+        <member name="T:Tizen.Telephony.CallHandle">
+            <summary>
+            This class provides the APIs to get the information about calls.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Telephony.CallHandle.CallStatus">
+            <summary>
+            Enumeration for the call status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallStatus.Idle">
+            <summary>
+            Idle status.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallStatus.Active">
+            <summary>
+            Active status.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallStatus.Held">
+            <summary>
+            Held status.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallStatus.Dialing">
+            <summary>
+            Dialing status.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallStatus.Alerting">
+            <summary>
+            Alerting status.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallStatus.Incoming">
+            <summary>
+            Incoming status.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallStatus.Unavailable">
+            <summary>
+            Unavailable.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.CallHandle.CallType">
+            <summary>
+            Enumeration for the call type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallType.Voice">
+            <summary>
+            Voice call.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallType.Video">
+            <summary>
+            Video call.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallType.E911">
+            <summary>
+            Emergency call.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallType.Unavailable">
+            <summary>
+            Unavailable.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.CallHandle.CallDirection">
+            <summary>
+            Enumeration for the call direction.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallDirection.Mo">
+            <summary>
+            MO(Mobile Originated) call.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallDirection.Mt">
+            <summary>
+            MT(Mobile Terminated) call.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallHandle.CallDirection.Unavailable">
+            <summary>
+            Unavailable.
+            </summary>
+        </member>
+        <member name="P:Tizen.Telephony.CallHandle.HandleId">
+            <summary>
+            Gets the call handle ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The ID of the call handle.
+            0 if unable to complete the operation.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.CallHandle.Number">
+            <summary>
+            Gets the call number.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The number of the call.
+            Empty string if unable to complete the operation.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.CallHandle.Type">
+            <summary>
+            Gets the call type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The type of the call.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.CallHandle.Status">
+            <summary>
+            Gets the call status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The status of the call.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.CallHandle.Direction">
+            <summary>
+            Gets whether the call is MO(Mobile Originated) call or MT(Mobile Terminated) call.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The direction of the call.
+            </value>
+            <exception cref="T:System.InvalidOperationException">
+            This Exception can occur due to:
+            1. Operation Not Supported.
+            </exception>
+        </member>
+        <member name="P:Tizen.Telephony.CallHandle.ConferenceStatus">
+            <summary>
+            Gets whether the call is a conference call or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The value whether the call is a conference call or not (true: Conference call, false: Single call).
+            </value>
+        </member>
+        <member name="T:Tizen.Telephony.ChangeNotificationEventArgs">
+            <summary>
+            This class contains the data related to the Notification event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Telephony.ChangeNotificationEventArgs.Notification">
+            <summary>
+            Enumeration for the Telephony Notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.SimStatus">
+            <summary>
+            The notification to be invoked when the SIM card state changes.
+            SIM.State will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.SimCallForwardingIndicatorState">
+            <summary>
+            The notification to be invoked when the SIM call forwarding indicator state changes.
+            'state(bool)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkServiceState">
+            <summary>
+            The notification to be invoked when the network service state changes.
+            Network.ServiceState will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkCellid">
+            <summary>
+            The notification to be invoked when the cell ID changes.
+            'cell_id(int)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/location.coarse
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkRoamingStatus">
+            <summary>
+            The notification to be invoked when the roaming status changes.
+            'roaming_status(bool)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkSignalstrengthLevel">
+            <summary>
+            The notification to be invoked when the signal strength changes.
+            Network.Rssi will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkNetworkName">
+            <summary>
+            The notification to be invoked when the network name changes.
+            'network_name(string)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkPsType">
+            <summary>
+            The notification to be invoked when the PS type changes.
+            Network.PSType will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkDefaultDataSubscription">
+            <summary>
+            The notification to be invoked when the default data subscription changes.
+            Network.DefaultDataSubscription will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkDefaultSubscription">
+            <summary>
+            The notification to be invoked when the default subscription changes.
+            Network.DefaultSubscription will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkLac">
+            <summary>
+            The notification to be invoked when the LAC (Location Area Code) changes.
+            'lac(int)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/location.coarse
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkTac">
+            <summary>
+            The notification to be invoked when the TAC (Tracking Area Code) changes.
+            'tac(int)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/location.coarse
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkSystemId">
+            <summary>
+            The notification to be invoked when the system ID changes.
+            'sid(int)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/location.coarse
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkId">
+            <summary>
+            The notification to be invoked when the network ID changes.
+            'nid(int)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/location.coarse
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkBsId">
+            <summary>
+            The notification to be invoked when the base station ID changes.
+            'id(int)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/location.coarse
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkBsLatitude">
+            <summary>
+            The notification to be invoked when the base station latitude changes.
+            'latitude(int)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/location.coarse
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.NetworkBsLongitude">
+            <summary>
+            The notification to be invoked when the base station longitude changes.
+            'longitue(int)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/location.coarse
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VoiceCallStatusIdle">
+            <summary>
+            The notification to be invoked when a voice call is in the idle status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VoiceCallStatusActive">
+            <summary>
+            The notification to be invoked when a voice call is in the active status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VoiceCallStatusHeld">
+            <summary>
+            The notification to be invoked when a voice call is in the held status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VoiceCallStatusDialing">
+            <summary>
+            The notification to be invoked when a voice call is in the dialing status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VoiceCallStatusAlerting">
+            <summary>
+            The notification to be invoked when a voice call is in the alerting status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VoiceCallStatusIncoming">
+            <summary>
+            The notification to be invoked when a voice call is in the incoming status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VideoCallStatusIdle">
+            <summary>
+            The notification to be invoked when a video call is in the idle status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VideoCallStatusActive">
+            <summary>
+            The notification to be invoked when a video call is in the active status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VideoCallStatusDialing">
+            <summary>
+            The notification to be invoked when a video call is in the dialing status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VideoCallStatusAlerting">
+            <summary>
+            The notification to be invoked when a video call is in the alerting status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.VideoCallStatusIncoming">
+            <summary>
+            The notification to be invoked when a video call is in the incoming status.
+            'handle id(uint)' will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="F:Tizen.Telephony.ChangeNotificationEventArgs.Notification.CallPreferredVoiceSubscription">
+            <summary>
+            The notification to be invoked when the preferred voice subscription changes.
+            CallPreferredVoiceSubscription will be delivered in the notification data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/telephony
+            </privilege>
+        </member>
+        <member name="P:Tizen.Telephony.ChangeNotificationEventArgs.NotificationType">
+            <summary>
+            The Telephony Notification type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Telephony.ChangeNotificationEventArgs.NotificationData">
+            <summary>
+            The data as per the Notification type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Telephony.Modem">
+            <summary>
+            This class provides APIs to obtain information from the modem.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Telephony.Modem.#ctor(Tizen.Telephony.SlotHandle)">
+            <summary>
+            The Modem class constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="handle">
+            SlotHandle received in the Manager.Init API.
+            </param>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException">
+            This exception occurs if the handle provided is null.
+            </exception>
+        </member>
+        <member name="T:Tizen.Telephony.Modem.PowerStatus">
+            <summary>
+            Enumeration for the Modem Power Status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Modem.PowerStatus.Unknown">
+            <summary>
+            Unknown.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Modem.PowerStatus.On">
+            <summary>
+            Modem power ON.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Modem.PowerStatus.Off">
+            <summary>
+            Modem power OFF.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Modem.PowerStatus.Reset">
+            <summary>
+            Modem power RESET.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Modem.PowerStatus.Low">
+            <summary>
+            Modem power LOW.
+            </summary>
+        </member>
+        <member name="P:Tizen.Telephony.Modem.Imei">
+            <summary>
+            Gets the IMEI (International Mobile Station Equipment Identity) of a mobile phone.
+            The IMEI number is used by a GSM network to identify valid devices and therefore, can be used for stopping a stolen phone from accessing that network.
+            </summary>
+            <remarks>
+            To avoid the unexpected behavior of old version applications that have http://tizen.org/privilege/telephony privilege. There is an exceptional handling in case of permission denied.
+            For an application with API version 6 or higher, if an application doesn't have http://tizen.org/privilege/securesysteminfo privilege, it sets with empty string.
+            For an application with API version lower than 6. if an application has http://tizen.org/privilege/telephony privilege, it sets with a pseudo value.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/securesysteminfo</privilege>
+            <privlevel>partner</privlevel>
+            <value>
+            The International Mobile Station Equipment Identity.
+            Empty string if unable to complete the operation.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Modem.CurrentPowerStatus">
+            <summary>
+            Gets the power status of the modem.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The Modem power status (0=on,1=off,2=reset,3=low).
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Modem.Meid">
+            <summary>
+            Gets the MEID (Mobile Equipment Identifier) of a mobile phone (for CDMA).
+            </summary>
+            <remarks>
+            To avoid the unexpected behavior of old version applications that have http://tizen.org/privilege/telephony privilege. There is an exceptional handling in case of permission denied.
+            For an application with API version 6 or higher, if an application doesn't have http://tizen.org/privilege/securesysteminfo privilege, it sets with empty string.
+            For an application with API version lower than 6. if an application has http://tizen.org/privilege/telephony privilege, it sets with a pseudo value.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/securesysteminfo</privilege>
+            <privlevel>partner</privlevel>
+            <value>
+            The Mobile Equipment Identifier.
+            Empty string if unable to complete the operation.
+            </value>
+        </member>
+        <member name="T:Tizen.Telephony.Network">
+            <summary>
+            The Network class provides APIs to obtain information about the current telephony service network.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Telephony.Network.#ctor(Tizen.Telephony.SlotHandle)">
+            <summary>
+            The Network class constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="handle">
+            SlotHandle received in the Manager.Init API.
+            </param>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException">
+            This exception occurs if the handle provided is null.
+            </exception>
+        </member>
+        <member name="T:Tizen.Telephony.Network.Rssi">
+            <summary>
+            Enumeration for the RSSI (Receive Signal Strength Indicator).
+            Rssi6 indicates the highest strength.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Rssi.Rssi0">
+            <summary>
+            Strength 0.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Rssi.Rssi1">
+            <summary>
+            Strength 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Rssi.Rssi2">
+            <summary>
+            Strength 2.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Rssi.Rssi3">
+            <summary>
+            Strength 3.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Rssi.Rssi4">
+            <summary>
+            Strength 4.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Rssi.Rssi5">
+            <summary>
+            Strength 5.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Rssi.Rssi6">
+            <summary>
+            Strength 6.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Rssi.Unavailable">
+            <summary>
+            Unavailable.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Network.Type">
+            <summary>
+            Enumeration for the network types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Unknown">
+            <summary>
+            Unknown.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Gsm">
+            <summary>
+            2G GSM network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Gprs">
+            <summary>
+            2.5G GPRS network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Edge">
+            <summary>
+            2.5G EDGE network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Umts">
+            <summary>
+            3G UMTS network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Hsdpa">
+            <summary>
+            HSDPA network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Lte">
+            <summary>
+            LTE network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Is95a">
+            <summary>
+            IS95A network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Is95b">
+            <summary>
+            IS95B network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Cdma1X">
+            <summary>
+            CDMA 1x network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.EvdoRev0">
+            <summary>
+            EVDO revision 0 network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.EvdoRevA">
+            <summary>
+            EVDO revision A network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.EvdoRevB">
+            <summary>
+            EVDO revision B network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Evdv">
+            <summary>
+            EVDV network type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.Type.Ehrpd">
+            <summary>
+            EHRPD network type.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Network.PsType">
+            <summary>
+            Enumeration for the PS types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Network.PsType.Unknown">
+            <summary>
+            Unknown.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.PsType.Hsdpa">
+            <summary>
+            HSDPA PS type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.PsType.Hsupa">
+            <summary>
+            HSUPA PS type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.PsType.Hspa">
+            <summary>
+            HSPA PS type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.PsType.Hspap">
+            <summary>
+            HSPAP PS type.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Network.ServiceState">
+            <summary>
+            Enumeration for the network service states.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Network.ServiceState.InService">
+            <summary>
+            In service.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.ServiceState.OutOfService">
+            <summary>
+            Out of service.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.ServiceState.EmergencyOnly">
+            <summary>
+            Only emergency call is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.ServiceState.Unavailable">
+            <summary>
+            Unavailable.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Network.NameOption">
+            <summary>
+            Enumeration for the network name priority.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Network.NameOption.Unknown">
+            <summary>
+            Unknown.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.NameOption.Spn">
+            <summary>
+            The network name displayed by the SPN.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.NameOption.Network">
+            <summary>
+            The network name displayed by the Network.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.NameOption.Any">
+            <summary>
+            The network name displayed by the SPN or the Network.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Network.DefaultDataSubscription">
+            <summary>
+            Enumeration for the possible 'default' Data Subscriptions for the Packet Switched(PS).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Network.DefaultDataSubscription.Unknown">
+            <summary>
+            Unknown status.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.DefaultDataSubscription.Sim1">
+            <summary>
+            SIM 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.DefaultDataSubscription.Sim2">
+            <summary>
+            SIM 2.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Network.DefaultSubscription">
+            <summary>
+            Enumeration for defining the possible 'default' Subscriptions for the Circuit Switched(CS).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Network.DefaultSubscription.Unknown">
+            <summary>
+            Unknown status.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.DefaultSubscription.Sim1">
+            <summary>
+            SIM 1 network.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.DefaultSubscription.Sim2">
+            <summary>
+            SIM 2 network.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Network.SelectionMode">
+            <summary>
+            Enumeration for the network selection modes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Network.SelectionMode.Automatic">
+            <summary>
+            Automatic mode.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.SelectionMode.Manual">
+            <summary>
+            Manual mode.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Network.SelectionMode.Unavailable">
+            <summary>
+            Unavailable.
+            </summary>
+        </member>
+        <member name="P:Tizen.Telephony.Network.Lac">
+            <summary>
+            Gets the LAC (Location Area Code) of the current location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location.coarse</privilege>
+            <remarks>
+            This API can be used in the GSM/WCDMA network.
+            </remarks>
+            <value>
+            The Location Area Code, -1 if unknown.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.CellId">
+            <summary>
+            Gets the cell ID of the current location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location.coarse</privilege>
+            <remarks>
+            This API can be used in the GSM/WCDMA/LTE network.
+            </remarks>
+            <value>
+            The cell identification number, -1 if unknown.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.CurrentRssi">
+            <summary>
+            Gets the RSSI (Received Signal Strength Indicator).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The Received Signal Strength Indicator.
+            Higher the received number, the stronger the signal strength.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.RoamingStatus">
+            <summary>
+            Gets the roaming state of the current registered network.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            true if roaming, otherwise false if not roaming.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.Mcc">
+            <summary>
+            Gets the MCC (Mobile Country Code) of the current registered network.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <remarks>
+            This API can be used in the GSM/WCDMA/LTE network.
+            </remarks>
+            <value>
+            The Mobile Country Code (three digits). The Mobile Country Code (MCC) identifies the country where the cell is being used.
+            Empty string if unknown.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.Mnc">
+            <summary>
+            Gets the MNC (Mobile Network Code) of the current registered network.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <remarks>
+            This API can be used in the GSM/WCDMA/LTE network.
+            </remarks>
+            <value>
+            The Mobile Network Code (three digits). The Mobile Network Code (MNC) identifies the mobile phone operator and the network provider.
+            Empty string if unknown.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.NetworkName">
+            <summary>
+            Gets the name of the current registered network.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <remarks>
+            This API can be used in the GSM/WCDMA/LTE network.
+            </remarks>
+            <value>
+            The name of the current registered network.
+            Empty string if unknown.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.NetworkType">
+            <summary>
+            Gets the network service type of the current registered network.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <remarks>
+            This API can be used in case the network is in service.
+            </remarks>
+            <value>
+            The network service type.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.NetworkPsType">
+            <summary>
+            Gets the packet service type of the current registered network.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <remarks>
+            This API can be used in the HSDPA network.
+            </remarks>
+            <value>
+            The type of the packet service.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.NetworkNameOption">
+            <summary>
+            Gets the network name option of the current registered network.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The network name display option.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.NetworkServiceState">
+            <summary>
+            Gets the current network state of the telephony service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The current network state.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.NetworkDefaultDataSubscription">
+            <summary>
+            Gets the current default subscription for the data service (Packet Switched).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The current default data subscription.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.NetworkDefaultSubscription">
+            <summary>
+            Gets the current default subscription for the voice service (Circuit Switched).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The current default voice subscription.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.NetworkSelectionMode">
+            <summary>
+            Gets the network selection mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The network selection mode.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.Tac">
+            <summary>
+            Gets the TAC (Tracking Area Code) of the current location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location.coarse</privilege>
+            <remarks>
+            This API can be used in the LTE network.
+            </remarks>
+            <value>
+            The Tracking Area Code.
+            -1 if unknown.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.SystemId">
+            <summary>
+            Gets the system ID of the current location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location.coarse</privilege>
+            <remarks>
+            This API can be used in the CDMA network.
+            </remarks>
+            <value>
+            The system ID.
+            -1 if unknown.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.NetworkId">
+            <summary>
+            Gets the network ID of the current location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location.coarse</privilege>
+            <remarks>
+            This API can be used in the CDMA network.
+            </remarks>
+            <value>
+            The network ID.
+            -1 if unknown.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.BaseStationId">
+            <summary>
+            Gets the base station ID of the current location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location.coarse</privilege>>
+            <remarks>
+            This API can be used in the CDMA network.
+            </remarks>
+            <value>
+            The base station ID.
+            -1 if unknown.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.BaseStationLatitude">
+            <summary>
+            Gets the base station latitude of the current location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location.coarse</privilege>
+            <remarks>
+            This API can be used in the CDMA network.
+            </remarks>
+            <value>
+            The base station latitude.
+            0x7FFFFFFF if unknown.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Network.BaseStationLongitude">
+            <summary>
+            Gets the base station longitude of the current location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location.coarse</privilege>
+            <remarks>
+            This API can be used in the CDMA network.
+            </remarks>
+            <value>
+            The base station latitude.
+            0x7FFFFFFF if unknown.
+            </value>
+        </member>
+        <member name="T:Tizen.Telephony.Sim">
+            <summary>
+            This class provides APIs that allow you to extract the information stored on a SIM card.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Telephony.Sim.#ctor(Tizen.Telephony.SlotHandle)">
+            <summary>
+            The SIM class constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="handle">
+            SlotHandle received in the Manager.Init API.
+            </param>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException">
+            This exception occurs if the handle provided is null.
+            </exception>
+        </member>
+        <member name="T:Tizen.Telephony.Sim.State">
+            <summary>
+            Enumeration for the state of the SIM card.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.State.Unavailable">
+            <summary>
+            The SIM is not available on this device.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.State.Locked">
+            <summary>
+            The SIM is locked.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.State.Available">
+            <summary>
+            The SIM is available on this device (SIM is not locked).
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.State.Unknown">
+            <summary>
+            The SIM is in transition between states.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Sim.LockState">
+            <summary>
+            Enumeration for the lock state of the SIM card.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.LockState.Unknown">
+            <summary>
+            The SIM is not in lock.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.LockState.PinRequired">
+            <summary>
+            The SIM is PIN (Personal Identification Number) locked.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.LockState.PukRequired">
+            <summary>
+            The SIM is PUK (Personal Unblocking Code) locked.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.LockState.PermLocked">
+            <summary>
+            The SIM is permanently blocked (All the attempts for PIN/PUK failed).
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.LockState.NckRequired">
+            <summary>
+            The SIM is NCK (Network Control Key) locked.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Sim.ApplicationType">
+            <summary>
+            Enumeration for the type of the SIM card.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.ApplicationType.Sim">
+            <summary>
+            SIM (GSM) application.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.ApplicationType.Usim">
+            <summary>
+            USIM application.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.ApplicationType.Csim">
+            <summary>
+            CDMA application.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.Sim.ApplicationType.Isim">
+            <summary>
+            ISIM application.
+            </summary>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.IccId">
+            <summary>
+            Gets the Integrated Circuit Card IDentification (ICC-ID).
+            The Integrated Circuit Card Identification number internationally identifies SIM cards.
+            </summary>
+            <remarks>
+            To avoid the unexpected behavior of old version applications that have http://tizen.org/privilege/telephony privilege. There is an exceptional handling in case of permission denied.
+            For an application with API version 6 or higher, if an application doesn't have http://tizen.org/privilege/securesysteminfo privilege, it sets with empty string.
+            For an application with API version lower than 6. if an application has http://tizen.org/privilege/telephony privilege, it sets with a pseudo value.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/securesysteminfo</privilege>
+            <privlevel>partner</privlevel>
+            <value>
+            The Integrated Circuit Card Identification.
+            Empty string if unable to complete the operation.
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.Operator">
+            <summary>
+            Gets the SIM Operator (MCC [3 digits] + MNC [2~3 digits]).
+            The Operator is embedded in the SIM card.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The SIM Operator.
+            Empty string if unable to complete the operation.
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.Msin">
+            <summary>
+            Gets the Mobile Subscription Identification Number (MSIN [9~10 digits]) of the SIM provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The Mobile Subscription Identification Number.
+            Empty string if unable to complete the operation.
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.Spn">
+            <summary>
+            Gets the Service Provider Name (SPN) of the SIM card.
+            Gets Service Provider Name embedded in the SIM card. If this value is not stored in the SIM card, an empty string will be returned.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The Service Provider Name.
+            Empty string if unable to complete the operation.
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.IsChanged">
+            <summary>
+            Checks whether the current SIM card is different from the previous SIM card.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            true if the current SIM card is different from the previous SIM card, otherwise false if the SIM card is not changed.
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.CurrentState">
+            <summary>
+            Gets the state of the SIM.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The current state of the SIM.
+            </value>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.ApplicationList">
+            <summary>
+            Gets the count of an application on the UICC.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The masking value for below values are provided by the enumeration ApplicationType.
+            0 if unable to complete the operation.
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.SubscriberNumber">
+            <summary>
+            Gets the subscriber number embedded in the SIM card. This value contains the MSISDN related to the subscriber.
+            If this value is not stored in SIM card, an empty string will be returned.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The subscriber number in the SIM.
+            Empty string if unable to complete the operation.
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.SubscriberId">
+            <summary>
+            Gets the subscriber ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The subscriber ID.
+            Empty string if unable to complete the operation.
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.CurrentLockState">
+            <summary>
+            Gets the lock state of the SIM.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The current lock state of the SIM.
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.GroupId1">
+            <summary>
+            Gets the GID1 (Group Identifier Level 1).
+            Gets Group Identifier Level 1 (GID1) embedded in the SIM card. If this value is not stored in SIM card, an empty string will be returned.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The GID1 (Group Identifier Level 1).
+            Empty string if unable to complete the operation.
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="P:Tizen.Telephony.Sim.CallForwardingIndicatorState">
+            <summary>
+            Gets the call forwarding indicator state of the SIM.
+            If the state is true, the incoming call will be forwarded to the selected number. State indicates the CFU (Call Forwarding Unconditional) indicator status - Voice (3GPP TS 31.102 4.2.64 EF CFIS).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <value>
+            The value whether the incoming call will be forwarded or not (true: forwarded, false: not forwarded).
+            </value>
+            <precondition>
+            The SIM state must be Available.
+            </precondition>
+        </member>
+        <member name="T:Tizen.Telephony.SlotHandle">
+            <summary>
+            This class provides APIs that provide functionality related to the slot handle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Telephony.SlotHandle.ChangeNotification">
+            <summary>
+            The event handler for receiving the Telephony state changes.
+            This event will be triggered for the NotificationIds given in the SetNotificationId API.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Telephony.SlotHandle.SetNotificationId(System.Collections.Generic.IEnumerable{Tizen.Telephony.ChangeNotificationEventArgs.Notification})">
+            <summary>
+            The notification IDs for which the ChangeNotification event will be triggered.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="list">
+            The list of notification IDs for which the ChangeNotification event will be triggered.
+            </param>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This Exception can occur due to:
+            1. Operation not supported.
+            2. Operation failed.
+            </exception>
+        </member>
+        <member name="M:Tizen.Telephony.SlotHandle.RemoveNotificationId(System.Collections.Generic.IEnumerable{Tizen.Telephony.ChangeNotificationEventArgs.Notification})">
+            <summary>
+            The notification IDs for which the ChangeNotification event will not be triggered.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="list">
+            The list of notification IDs for which the ChangeNotification event will be not be triggered.
+            </param>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This Exception can occur due to:
+            1. Operation not supported.
+            2. Operation failed.
+            </exception>
+        </member>
+        <member name="T:Tizen.Telephony.StateEventArgs">
+            <summary>
+            This class contains the data related to the State changed event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Telephony.StateEventArgs.CurrentState">
+            <summary>
+            The Current State.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Telephony.State">
+            <summary>
+            Enumeration for the telephony states.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.State.NotReady">
+            <summary>
+            The telephony state is not ready.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.State.Ready">
+            <summary>
+            The telephony state is ready.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.State.Unavailable">
+            <summary>
+            Unavailable.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.CallPreferredVoiceSubscription">
+            <summary>
+            Enumeration for the preferred voice call subscription.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Telephony.CallPreferredVoiceSubscription.Unknown">
+            <summary>
+            Unknown status.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallPreferredVoiceSubscription.CurrentNetwork">
+            <summary>
+            Current network.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallPreferredVoiceSubscription.AskAlways">
+            <summary>
+            Ask Always.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallPreferredVoiceSubscription.Sim1">
+            <summary>
+            SIM 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Telephony.CallPreferredVoiceSubscription.Sim2">
+            <summary>
+            SIM 2.
+            </summary>
+        </member>
+        <member name="T:Tizen.Telephony.Manager">
+            <summary>
+            This class provides APIs to initialize and deinitialize the framework.
+            It also provides APIs to get the SlotHandles, which can then be used to get other Network/Sim/Call/Modem information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Telephony.Manager.StateChanged">
+            <summary>
+            The event handler to be invoked when the telephony state changes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Telephony.Manager.CurrentState">
+            <summary>
+            Acquires the telephony state value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The state value of telephony.
+            </value>
+        </member>
+        <member name="M:Tizen.Telephony.Manager.Init">
+            <summary>
+            Acquires the number of available handles to use the telephony API.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>
+            A list of telephony handles.
+            You will get 2 SlotHandles in case of the dual SIM device.
+            Where, SlotHandle at Index '0' represents the primary SIM and Index '1' represents the secondary SIM.
+            </returns>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This exception will be generated in the following cases:
+            1. The system is out of memory.
+            2. If the operation is not supported on the device.
+            3. If the operation failed.
+            </exception>
+        </member>
+        <member name="M:Tizen.Telephony.Manager.Deinit">
+            <summary>
+            Deinitializes the telephony handles.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be generated in the following cases:
+            1. If the operation is not supported on the device.
+            2. If the operation failed.
+            </exception>
+        </member>
+    </members>
+</doc>

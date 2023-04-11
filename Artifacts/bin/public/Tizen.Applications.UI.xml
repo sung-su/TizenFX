@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.UI</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.CoreUIApplication">
+            <summary>
+            Represents an application that has an UI screen. The events for resuming and pausing are provided.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.CoreUIApplication.#ctor">
+            <summary>
+            Initializes the CoreUIApplication class.
+            </summary>
+            <remarks>
+            The default backend for the UI application will be used.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.CoreUIApplication.#ctor(Tizen.Applications.CoreBackend.ICoreBackend)">
+            <summary>
+            Initializes the CoreUIApplication class.
+            </summary>
+            <remarks>
+            If you want to change the backend, use this constructor.
+            </remarks>
+            <param name="backend">The backend instance implementing the ICoreBacked interface.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.CoreUIApplication.CurrentDeviceOrientation">
+            <summary>
+            Gets the current device orientation.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.CoreUIApplication.Resumed">
+            <summary>
+            Occurs whenever the application is resumed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.CoreUIApplication.Paused">
+            <summary>
+            Occurs whenever the application is paused.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.CoreUIApplication.Run(System.String[])">
+            <summary>
+            Runs the UI application's main loop.
+            </summary>
+            <param name="args">Arguments from the commandline.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.CoreUIApplication.OnPreCreate">
+            <summary>
+            Overrides this method if you want to handle the behavior before calling OnCreate().
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.CoreUIApplication.OnResume">
+            <summary>
+            Overrides this method if you want to handle the behavior when the application is resumed.
+            If base.OnResume() is not called, the event 'Resumed' will not be emitted.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.CoreUIApplication.OnPause">
+            <summary>
+            Overrides this method if you want to handle the behavior when the application is paused.
+            If base.OnPause() is not called, the event 'Paused' will not be emitted.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

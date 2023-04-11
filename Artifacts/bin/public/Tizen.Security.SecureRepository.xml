@@ -1,0 +1,1352 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Security.SecureRepository</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Security.SecureRepository.Certificate">
+            <summary>
+            The class that represents a certificate.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Certificate.Load(System.String)">
+            <summary>
+            Loads Certificate from the given file path.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="filePath">The path of certificate file to be loaded.</param>
+            <returns>Loaded certificate class instance.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            The filePath should not be null
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Invalid certificate file format. Provided file path does not exist or
+            cannot be accessed.
+            </exception>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Certificate.#ctor(System.Byte[],Tizen.Security.SecureRepository.DataFormat)">
+            <summary>
+            A constructor of Certificate that takes the binary and its format.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="binary">The binary data of a certificate.</param>
+            <param name="format">The format of the binary data.</param>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Certificate.Binary">
+            <summary>
+            The binary value of a certificate.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Certificate.Format">
+            <summary>
+            The format of the binary value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.CertificateManager">
+            <summary>
+            This class provides the methods handling certificates.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.CertificateManager.Get(System.String,System.String)">
+            <summary>
+            Gets a certificate from the secure repository.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">The name of a certificate to be retrieved.</param>
+            <param name="password">
+            The password used in decrypting a certificate value. If password of
+            policy is provided in SaveCertificate(), the same password should be
+            provided.
+            </param>
+            <returns>A certificate specified by alias.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            The alias argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The alias argument is in an invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The certificate does not exist with the alias or certificate-protecting
+            password isn't matched.
+            </exception>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.CertificateManager.GetAliases">
+            <summary>
+            Gets all aliases of certificates, which the client can access.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>All aliases of certificates, which the client can access.</returns>
+            <exception cref="T:System.ArgumentException">No alias to get.</exception>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.CertificateManager.Save(System.String,Tizen.Security.SecureRepository.Certificate,Tizen.Security.SecureRepository.Policy)">
+            <summary>
+            Stores a certificate inside the secure repository based on the provided policy.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">The name of a certificate to be stored.</param>
+            <param name="cert">The certificate's binary value to be stored.</param>
+            <param name="policy">
+            The policy about how to store a certificate securely.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Any of argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The alias argument is in the invalid format. cert argument is in the invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The certificate with alias already exist.
+            </exception>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.CertificateManager.GetCertificateChain(Tizen.Security.SecureRepository.Certificate,System.Collections.Generic.IEnumerable{Tizen.Security.SecureRepository.Certificate})">
+            <summary>
+            Verifies a certificate chain and returns that chain.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="certificate">The certificate to be verified.</param>
+            <param name="untrustedCertificates">
+            The untrusted CA certificates to be used in verifying a certificate chain.
+            </param>
+            <returns>A newly created certificate chain.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            The certificate argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Some of the certificates in arguments are invalid.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Some of the certificates in arguments are expired or not valid yet.
+            Certificate cannot build chain.
+            The root certificate is not in the trusted system certificate store.
+            </exception>
+            <remarks>
+            The trusted root certificate of the chain should exist in the system's
+            certificate storage.
+            </remarks>
+            <remarks>
+            The trusted root certificate of the chain in the system's certificate storage
+            is added to the certificate chain.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.CertificateManager.GetCertificateChain(Tizen.Security.SecureRepository.Certificate,System.Collections.Generic.IEnumerable{Tizen.Security.SecureRepository.Certificate},System.Collections.Generic.IEnumerable{Tizen.Security.SecureRepository.Certificate},System.Boolean)">
+            <summary>
+            Verifies a certificate chain and returns that chain using user entered
+            trusted and untrusted CA certificates.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="certificate">The certificate to be verified.</param>
+            <param name="untrustedCertificates">
+            The untrusted CA certificates to be used in verifying a certificate chain.
+            </param>
+            <param name="trustedCertificates">
+            The trusted CA certificates to be used in verifying a certificate chain.
+            </param>
+            <param name="useTrustedSystemCertificates">
+            The flag indicating the use of the trusted root certificates in the
+            system's certificate storage.
+            </param>
+            <returns>A newly created certificate chain.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            The certificate argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Some of the certificates in arguments are invalid.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Some of the certificates in arguments are expired or not valid yet.
+            Certificate cannot build chain.
+            The root certificate is not in the trusted system certificate store.
+            </exception>
+            <remarks>
+            The trusted root certificate of the chain in the system's certificate storage
+            is added to the certificate chain.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.CertificateManager.CheckOcsp(System.Collections.Generic.IEnumerable{Tizen.Security.SecureRepository.Certificate})">
+            <summary>
+            Perform OCSP, which checks whether the certificate is revoked or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="certificateChain">
+            Valid certificate chain to perform the OCSP check.
+            </param>
+            <returns>A status result of the OCSP check.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            The certificateChain argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The certificateChain is not valid chain or certificate.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Some of the certificates in chain are expired or not valid yet.
+            </exception>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.AesCbcCipherParameters">
+            <summary>
+            A class for holding parameters for the AES algorithm with the CBC mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.AesCbcCipherParameters.#ctor">
+            <summary>
+            A default constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>The CipherAlgorithmType in CipherParameters is set to CipherAlgorithmType.AesCbc.</remarks>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.AesCfbCipherParameters">
+            <summary>
+            A class for holding parameters for the AES algorithm with the CFB mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.AesCfbCipherParameters.#ctor">
+            <summary>
+            A default constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>The CipherAlgorithmType in CipherParameters is set to CipherAlgorithmType.AesCfb.</remarks>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.AesCipherParameters">
+            <summary>
+            An abstract class for holding parameters for the AES algorithm.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Crypto.AesCipherParameters.IV">
+            <summary>
+            An initialization vector.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.AesCtrCipherParameters">
+            <summary>
+            A class for holding parameters for the AES algorithm with the counter mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.AesCtrCipherParameters.#ctor">
+            <summary>
+            A default constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>The CipherAlgorithmType in CipherParameters is set to CipherAlgorithmType.AesCtr.</remarks>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Crypto.AesCtrCipherParameters.CounterLength">
+            <summary>
+            Length of the counter block in bits.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Optional, only 128b is supported at the moment.</remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value should be positive.</exception>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.AesGcmCipherParameters">
+            <summary>
+            A class for holding parameters for the AES algorithm with the GCM mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.AesGcmCipherParameters.#ctor">
+            <summary>
+            A default constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>The CipherAlgorithmType in CipherParameters is set to CipherAlgorithmType.AesGcm.</remarks>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Crypto.AesGcmCipherParameters.TagLength">
+            <summary>
+            GCM tag length in bits.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>One of {32, 64, 96, 104, 112, 120, 128} (optional), if not present the length 128 is used.</remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">TagLength should be one of {32, 64, 96, 104, 112, 120, 128}.</exception>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Crypto.AesGcmCipherParameters.AAD">
+            <summary>
+            Additional authentication data (optional).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.Cipher">
+            <summary>
+            This class provides the methods for encrypting and decrypting data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.Cipher.#ctor(Tizen.Security.SecureRepository.Crypto.CipherParameters)">
+            <summary>
+            A constructor of Cipher that takes the algorithm specific parameters.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="parameters">The algorithm specific parameters.</param>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Crypto.Cipher.Parameters">
+            <summary>
+            The algorithm specific parameters.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.Cipher.Decrypt(System.String,System.String,System.Byte[])">
+            <summary>
+            Decrypts data using the selected key and the algorithm.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="keyAlias">Alias of the key to be used for decryption.</param>
+            <param name="password">
+            The password used in decrypting a key value. If password of policy is
+            provided in SaveKey(), the same password should be provided.
+            </param>
+            <param name="cipherText">
+            Data to be decrypted (some algorithms may require additional information
+            embedded in encrypted data.AES GCM is an example).
+            </param>
+            <returns>Decrypted data.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            The keyAlias or cipherText is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The mandatory algorithm parameter is missing or invalid.
+            The optional algorithm parameter is invalid.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The key-protecting password isn't matched.
+            The key does not exist with the keyAlias.
+            </exception>
+            <remarks>
+            The key type specified by keyAlias should be compatible with the algorithm
+            specified in Parameters.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.Cipher.Encrypt(System.String,System.String,System.Byte[])">
+            <summary>
+            Encrypts data using selected key and algorithm.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="keyAlias">Alias of the key to be used for encryption.</param>
+            <param name="password">
+            The password used in decrypting a key value. If password of policy is
+            provided in SaveKey(), the same password should be provided.
+            </param>
+            <param name="plainText">
+            Data to be encrypted. In case of the AES algorithm, there are no restrictions on
+            the size of data. For RSA, the size must be smaller or equal to (key_size_in
+            bytes - 42). Example: For 1024 RSA key, the maximum data size is
+            1024/8 - 42 = 86.
+            </param>
+            <returns>Encrypted data.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            The keyAlias or plainText is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The mandatory algorithm parameter is missing or invalid.
+            The optional algorithm parameter is invalid.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The key-protecting password isn't matched.
+            The key does not exist with the keyAlias.
+            </exception>
+            <remarks>
+            The key type specified by the keyAlias should be compatible with the algorithm
+            specified in Parameters.
+            </remarks>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.CipherAlgorithmType">
+            <summary>
+            Enumeration for the crypto cipher algorithm types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherAlgorithmType.AesCtr">
+            <summary>
+            The AES-CTR algorithm.
+            Supported parameters:
+            - ParameterName.AlgorithmType = AesCtr(mandatory),
+            - ParameterName.IV = 16 - byte initialization vector(mandatory)
+            - ParameterName.CounterLength = length of counter block in bits
+              (optional, only 128b is supported at the moment)
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherAlgorithmType.AesCbc">
+            <summary>
+            The AES-CBC algorithm.
+            Supported parameters:
+            - ParameterName.AlgorithmType = AesCbc(mandatory),
+            - ParameterName.IV = 16-byte initialization vector(mandatory)
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherAlgorithmType.AesGcm">
+            <summary>
+            The AES-GCM algorithm.
+            Supported parameters:
+            - ParameterName.AlgorithmType = AesGcm(mandatory),
+            - ParameterName.IV = initialization vector(mandatory)
+            - ParameterName.TagLength = GCM tag length in bits. One of
+              {32, 64, 96, 104, 112, 120, 128} (optional, if not present the length 128 is used)
+            - CKMC_PARAM_ED_AAD = additional authentication data(optional)
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherAlgorithmType.AesCfb">
+            <summary>
+            Th AES-CFB algorithm.
+            Supported parameters:
+            - ParameterName.AlgorithmType = AesCfb(mandatory),
+            - ParameterName.IV = 16-byte initialization vector(mandatory)
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherAlgorithmType.RsaOaep">
+            <summary>
+            The RSA-OAEP algorithm.
+            Supported parameters:
+            - ParameterName.AlgorithmType = RsaOaep(required),
+            - ParameterName.Label = label to be associated with the message
+              (optional, not supported at the moment)
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.CipherParameterName">
+            <summary>
+            Enumeration for the cipher algorithm parameters.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherParameterName.AlgorithmType">
+            <summary>
+            The Algorithm Type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherParameterName.IV">
+            <summary>
+            Initial Vector,  16B buffer (up to 2^64-1 bytes long in case of AES GCM).
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherParameterName.CounterLength">
+            <summary>
+            Integer - ctr length in bits.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherParameterName.AAD">
+            <summary>
+            Additional authenticated data(AAD).
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherParameterName.TagLength">
+            <summary>
+            Tag Length.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.CipherParameterName.Label">
+            <summary>
+            Label.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.CipherParameters">
+            <summary>
+            An abstract class for holding parameters for encryption and decryption.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Crypto.CipherParameters.Algorithm">
+            <summary>
+            The Cipher algorithm type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.DsaSignatureParameters">
+            <summary>
+            A class for holding parameters for the DSA signature algorithm.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.DsaSignatureParameters.#ctor">
+            <summary>
+            A default constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.EcdsaSignatureParameters">
+            <summary>
+            A class for holding parameters for the ECDSA signature algorithm.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.EcdsaSignatureParameters.#ctor">
+            <summary>
+            A default constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.HashAlgorithm">
+            <summary>
+            Enumeration for the hash algorithm.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.HashAlgorithm.None">
+            <summary>
+            The no hash algorithm.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.HashAlgorithm.Sha1">
+            <summary>
+            The hash algorithm SHA1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.HashAlgorithm.Sha256">
+            <summary>
+            The hash algorithm SHA256.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.HashAlgorithm.Sha384">
+            <summary>
+            The hash algorithm SHA384.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.HashAlgorithm.Sha512">
+            <summary>
+            The hash algorithm SHA512.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.RsaOaepCipherParameters">
+            <summary>
+            A class for holding parameters for the RSA algorithm with the OAEP mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.RsaOaepCipherParameters.#ctor">
+            <summary>
+            A default constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>The CipherAlgorithmType in CipherParameters is set to CipherAlgorithmType.RsaOaep.</remarks>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.RsaPaddingAlgorithm">
+            <summary>
+            Enumeration for the RSA padding algorithm.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.RsaPaddingAlgorithm.None">
+            <summary>
+            No padding.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.RsaPaddingAlgorithm.Pkcs1">
+            <summary>
+            PKCS#1 padding.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.RsaPaddingAlgorithm.X931">
+            <summary>
+            X9.31 padding.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.RsaSignatureParameters">
+            <summary>
+            A class for holding parameters for the RSA signature algorithm.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.RsaSignatureParameters.#ctor">
+            <summary>
+            A default constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>The RsaPadding is set to RsaPaddingAlgorithm.None.</remarks>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Crypto.RsaSignatureParameters.RsaPadding">
+            <summary>
+            The RSA padding algorithm.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.Signature">
+            <summary>
+            This class provides the methods for creating and verifying a signature.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.Signature.#ctor(Tizen.Security.SecureRepository.Crypto.SignatureParameters)">
+            <summary>
+            A constructor of Signature that takes the algorithm specific parameters.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="parameters">The algorithm specific parameters.</param>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Crypto.Signature.Parameters">
+            <summary>
+            The algorithm specific parameters.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.Signature.Sign(System.String,System.String,System.Byte[])">
+            <summary>
+            Creates a signature on a given message using a private key and returns
+            the signature.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="privateKeyAlias">The name of private key.</param>
+            <param name="password">
+            The password used in decrypting a private key value.
+            </param>
+            <param name="message">The message that is signed with a private key.</param>
+            <returns>A newly created signature.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            The privateKeyAlias or message is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The privateKeyAlias is invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The key-protecting password isn't matched.
+            The key does not exist with the privateKeyAlias.
+            </exception>
+            <remarks>
+            The key type specified by the privateKeyAlias should be compatible with the
+            algorithm specified in Parameters.
+            </remarks>
+            <remarks>
+            If the password of policy is provided during storing a key, the same password
+            should be provided.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Crypto.Signature.Verify(System.String,System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Verifies a given signature on a given message using a public key and returns
+            the signature status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="publicKeyAlias">The name of public key.</param>
+            <param name="password">
+            The password used in decrypting a public key value.
+            </param>
+            <param name="message">The input on which the signature is created.</param>
+            <param name="signature">The signature that is verified with public key.</param>
+            <returns>
+            The signature status. True is returned when the signature is valid.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The publicKeyAlias, message or signature is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The publicKeyAlias is invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The key-protecting password isn't matched.
+            The key does not exist with the publicKeyAlias.
+            </exception>
+            <remarks>
+            The key type specified by publicKeyAlias should be compatible with the
+            algorithm specified in Parameters.
+            </remarks>
+            <remarks>
+            If password of policy is provided during storing a key, the same password
+            should be provided.
+            </remarks>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.SignatureAlgorithmType">
+            <summary>
+            Enumeration for signature algorithm types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.SignatureAlgorithmType.Rsa">
+            <summary>
+            The RSA signature algorithm.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.SignatureAlgorithmType.Dsa">
+            <summary>
+            The DSA signature algorithm.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.SignatureAlgorithmType.Ecdsa">
+            <summary>
+            The ECDSA signature algorithm.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.SignatureParameterName">
+            <summary>
+            Enumeration for the signature algorithm parameters.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.SignatureParameterName.AlgorithmType">
+            <summary>
+            The signature algorithm type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.SignatureParameterName.HashAlgorithm">
+            <summary>
+            The hash algorithm type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Crypto.SignatureParameterName.RsaPaddingAlgorithm">
+            <summary>
+            The RSA padding algorithm type.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Crypto.SignatureParameters">
+            <summary>
+            An abstract class for holding parameters for signing and verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Crypto.SignatureParameters.SignatureAlgorithm">
+            <summary>
+            The signature algorithm type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Crypto.SignatureParameters.HashAlgorithm">
+            <summary>
+            The hash algorithm used in signing anve verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.DataFormat">
+            <summary>
+            Enumeration for data format.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.DataFormat.DerBase64">
+            <summary>
+            The DER format base64 encoded data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.DataFormat.Der">
+            <summary>
+            The DER encoded data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.DataFormat.Pem">
+            <summary>
+            The PEM encoded data. It consists of the DER format base64 encoded
+            with additional header and footer lines.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.DataManager">
+            <summary>
+            This class provides the methods for storing and retrieving data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.DataManager.Get(System.String,System.String)">
+            <summary>
+            Gets data from the secure repository.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">The name of a certificate to retrieve.</param>
+            <param name="password">
+            The password used in decrypting a data value.
+            If password of policy is provided in SaveData(), the same password should
+            be provided.
+            </param>
+            <returns>Data specified by alias.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            The alias argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The alias argument is in the invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Data does not exist with the alias or data-protecting password isn't matched.
+            </exception>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.DataManager.GetAliases">
+            <summary>
+            Gets all aliases of data, which the client can access.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>All aliases of data, which the client can access.</returns>
+            <exception cref="T:System.ArgumentException">No alias to get.</exception>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.DataManager.Save(System.String,System.Byte[],Tizen.Security.SecureRepository.Policy)">
+            <summary>
+            Stores data inside the secure repository based on the provided policy.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">The name of data to be stored.</param>
+            <param name="data">The binary value to be stored.</param>
+            <param name="policy">The policy about how to store data securely.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Any of argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The alias argument is in the invalid format. Data policy cannot be unextractable.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Data with alias already exist.
+            </exception>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.EllipticCurveType">
+            <summary>
+            Enumeration for the elliptic curve.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.EllipticCurveType.Prime192V1">
+            <summary>
+            The elliptic curve domain "secp192r1" listed in "SEC 2" recommended elliptic curve domain.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.EllipticCurveType.Prime256V1">
+            <summary>
+            The "SEC 2" recommended elliptic curve domain - secp256r1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.EllipticCurveType.Secp384R1">
+            <summary>
+            The NIST curve P-384(covers "secp384r1", the elliptic curve domain listed in See SEC 2.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Key">
+            <summary>
+            The class that represents a key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Key.#ctor(System.Byte[],Tizen.Security.SecureRepository.KeyType,System.String)">
+            <summary>
+            A constructor of Key that takes the binary, its type, and optional password
+            of binary.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="binary">
+            The binary value of a key. This binary may be encrypted with binaryPassword.
+            </param>
+            <param name="type">The key's type.</param>
+            <param name="binaryPassword">
+            The password used to decrypt binary when binary is encrypted.
+            </param>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Key.Binary">
+            <summary>
+            The binary value of a key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Key.Type">
+            <summary>
+            The key's type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Key.BinaryPassword">
+            <summary>
+            The password used to decrypt binary when binary is encrypted. It's optional.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.KeyManager">
+            <summary>
+            This class provides the methods for storing, retrieving, and creating keys.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.KeyManager.Get(System.String,System.String)">
+            <summary>
+            Gets a key from the secure repository.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">The name of a key to retrieve.</param>
+            <param name="password">
+            The password used in decrypting a key value.
+            If password of policy is provided in SaveKey(), the same password should
+            be provided.
+            </param>
+            <returns>A key specified by alias.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            The alias argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The alias argument is in the invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The key does not exist with the alias or the key-protecting password isn't matched.
+            </exception>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.KeyManager.GetAliases">
+            <summary>
+            Gets all aliases of keys, which the client can access.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>All aliases of keys, which the client can access.</returns>
+            <exception cref="T:System.ArgumentException">No alias to get.</exception>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.KeyManager.Save(System.String,Tizen.Security.SecureRepository.Key,Tizen.Security.SecureRepository.Policy)">
+            <summary>
+            Stores a key inside the secure repository based on the provided policy.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">The name of a key to be stored.</param>
+            <param name="key">The key's binary value to be stored.</param>
+            <param name="policy">The policy about how to store a key securely.</param>
+            <exception cref="T:System.ArgumentNullException">
+            Any of argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The alias argument is in the invalid format. key argument is in the invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The key with alias does already exist.
+            </exception>
+            <remarks>
+            The type in key may be set to KeyType.None as an input.
+            The type is determined inside the secure reposioty during storing keys.
+            </remarks>
+            <remarks>
+            If the password in policy is provided, the key is additionally encrypted with
+            the password in policy.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.KeyManager.CreateRsaKeyPair(System.Int32,System.String,System.String,Tizen.Security.SecureRepository.Policy,Tizen.Security.SecureRepository.Policy)">
+            <summary>
+            Creates the RSA private/public key pair and stores them inside the secure repository
+            based on each policy.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="size">
+            The size of key strength to be created. 1024, 2048, and 4096 are supported.
+            </param>
+            <param name="privateKeyAlias">The name of private key to be stored.</param>
+            <param name="publicKeyAlias">The name of public key to be stored.</param>
+            <param name="privateKeyPolicy">
+            The policy about how to store a private key securely.
+            </param>
+            <param name="publicKeyPolicy">
+            The policy about how to store a public key securely.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Any of argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The size is invalid. privateKeyAlias or publicKeyAlias is invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The key with privateKeyAlias or publicKeyAlias does already exist.
+            </exception>
+            <remarks>
+            If the password in policy is provided, the key is additionally encrypted with the
+            password in policy.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.KeyManager.CreateDsaKeyPair(System.Int32,System.String,System.String,Tizen.Security.SecureRepository.Policy,Tizen.Security.SecureRepository.Policy)">
+            <summary>
+            Creates the DSA private/public key pair and stores them inside the secure repository
+            based on each policy.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="size">
+            The size of key strength to be created. 1024, 2048, 3072, and 4096 are
+            supported.
+            </param>
+            <param name="privateKeyAlias">The name of private key to be stored.</param>
+            <param name="publicKeyAlias">The name of public key to be stored.</param>
+            <param name="privateKeyPolicy">
+            The policy about how to store a private key securely.
+            </param>
+            <param name="publicKeyPolicy">
+            The policy about how to store a public key securely.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Any of argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The size is invalid. privateKeyAlias or publicKeyAlias is invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The key with privateKeyAlias or publicKeyAlias does already exist.
+            </exception>
+            <remarks>
+            If the password in policy is provided, the key is additionally encrypted with
+            the password in policy.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.KeyManager.CreateEcdsaKeyPair(Tizen.Security.SecureRepository.EllipticCurveType,System.String,System.String,Tizen.Security.SecureRepository.Policy,Tizen.Security.SecureRepository.Policy)">
+            <summary>
+            Creates the ECDSA private/public key pair and stores them inside secure repository
+            based on each policy.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type">The type of elliptic curve of ECDSA.</param>
+            <param name="privateKeyAlias">The name of private key to be stored.</param>
+            <param name="publicKeyAlias">The name of public key to be stored.</param>
+            <param name="privateKeyPolicy">
+            The policy about how to store a private key securely.
+            </param>
+            <param name="publicKeyPolicy">
+            The policy about how to store a public key securely.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Any of argument is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The elliptic curve type is invalid. privateKeyAlias or publicKeyAlias is in the
+            invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The key with privateKeyAlias or publicKeyAlias does already exist.
+            </exception>
+            <remarks>
+            If the password in policy is provided, the key is additionally encrypted with
+            the password in policy.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.KeyManager.CreateAesKey(System.Int32,System.String,Tizen.Security.SecureRepository.Policy)">
+            <summary>
+            Creates the AES key and stores it inside the secure repository based on each policy.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="size">
+            The size of the key strength to be created. 128, 192 and 256 are supported.
+            </param>
+            <param name="keyAlias">The name of key to be stored.</param>
+            <param name="policy">The policy about how to store the key securely.</param>
+            <exception cref="T:System.ArgumentNullException">
+            The keyAlias or policy is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The key size is invalid. keyAlias is in the invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The key with privateKeyAlias or publicKeyAlias does already exist.
+            </exception>
+            <remarks>
+            If the password in policy is provided, the key is additionally encrypted with
+            the password in policy.
+            </remarks>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.KeyType">
+            <summary>
+            Enumeration for key types of key manager.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.KeyType.None">
+            <summary>
+            Key type not specified.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.KeyType.RsaPublic">
+            <summary>
+            The RSA public key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.KeyType.RsaPrivate">
+            <summary>
+            The RSA private key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.KeyType.EcdsaPublic">
+            <summary>
+            The ECDSA public key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.KeyType.EcdsaPrivate">
+            <summary>
+            The ECDSA private key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.KeyType.DsaPublic">
+            <summary>
+            The DSA public key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.KeyType.DsaPrivate">
+            <summary>
+            The DSA private key.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.KeyType.Aes">
+            <summary>
+            The AES key.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Manager">
+            <summary>
+            This class is a base class of the XxxManager classes. It provides the common methods
+            for all sub classes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Manager.CreateFullAlias(System.String,System.String)">
+            <summary>
+            Creates a new full alias, which is concatenation of owner ID and alias.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="ownerId">Data owner's ID. This should be package ID if data
+            owner is application. If you want to access data stored by system services,
+            use CreateFullSystemAlias() instead.</param>
+            <param name="alias">Data alias.</param>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Manager.CreateFullSystemAlias(System.String)">
+            <summary>
+            Creates a new full alias, which is concatenation of system service's
+            owner ID and alias.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">Data alias, which is owned by system service.</param>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Manager.RemoveAlias(System.String)">
+            <summary>
+            Removes an entry (no matter of type) from the key manager.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">Item alias to be removed.</param>
+            <exception cref="T:System.ArgumentNullException">The alias is null.</exception>
+            <exception cref="T:System.ArgumentException">The alias is in the invalid format.</exception>
+            <exception cref="T:System.InvalidOperationException">The alias does not exist.</exception>
+            <remarks>
+            To remove item, client must remove permission to the specified item.
+            </remarks>
+            <remarks>The item owner can remove by default.</remarks>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Manager.SetPermission(System.String,System.String,System.Int32)">
+            <summary>
+            Allows another application to access client's application data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">Item alias for which access will be granted.</param>
+            <param name="otherPackageId">
+            Package ID of the application that will gain access rights.
+            </param>
+            <param name="permissions">
+            Mask of permissions(Permission enum) granted for an application with
+            otherPackageId.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            The alias or otherPackageId is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The alias or otherPackageId is in the invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The alias does not exist.</exception>
+            <remarks>Data identified by alias should exist.</remarks>
+            <remarks>The item owner can set permissions.</remarks>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.OcspStatus">
+            <summary>
+            Enumeration for the OCSP status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.OcspStatus.Good">
+            <summary>
+            The OCSP status is good.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.OcspStatus.Revoked">
+            <summary>
+            The certificate is revoked.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.OcspStatus.Unknown">
+            <summary>
+            Unknown error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.OcspStatus.Unsupported">
+            <summary>
+            The certificate does not provide the OCSP extension.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.OcspStatus.InvalidUrl">
+            <summary>
+            The invalid URL in the certificate OCSP extension.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.OcspStatus.InvalidResponse">
+            <summary>
+            The invalid response from the OCSP server.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.OcspStatus.RemoteError">
+            <summary>
+            The OCSP remote server error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.OcspStatus.NetworkError">
+            <summary>
+            The Network connection error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.OcspStatus.InternalError">
+            <summary>
+            An Internal error.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Permission">
+            <summary>
+            Enumeration for permissions to access/modify alias.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Permission.None">
+            <summary>
+            Clear permissions.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Permission.Read">
+            <summary>
+            Read allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Security.SecureRepository.Permission.Remove">
+            <summary>
+            Remove allowed.
+            </summary>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Pkcs12">
+            <summary>
+            The class that represents a PKCS#12 contents.
+            It has a private key or its certificate or all the members of a chain of trust.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Pkcs12.Load(System.String,System.String)">
+            <summary>
+            Loads the Pkcs12 from the given PKCS#12 file path.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="filePath">The path of the PKCS12 file to be loaded.</param>
+            <param name="filePassword">The passphrase used to decrypt the PCKS12 file.
+            If the PKCS12 file is not encrypted, passphrase can be null.</param>
+            <exception cref="T:System.ArgumentNullException">The filePath is null.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            No file on filePath.
+            No permission to access file.
+            File is in the invalid PKCS12 format.
+            File cannot be extracted with provided filePassword.
+            </exception>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Pkcs12.#ctor(Tizen.Security.SecureRepository.Key)">
+            <summary>
+            A constructor of Key that takes a private key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="privateKey">A private key.</param>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Pkcs12.#ctor(Tizen.Security.SecureRepository.Key,Tizen.Security.SecureRepository.Certificate,System.Collections.Generic.IEnumerable{Tizen.Security.SecureRepository.Certificate})">
+            <summary>
+            A constructor of Key that takes a private key, its corresponding certicate,
+            and CA's certificate chain.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="privateKey">A private key.</param>
+            <param name="certificate">A certificate corresponding the private key.</param>
+            <param name="caChain">
+            A certificate chain of CA(Certificate Authority) that issued the certificate.
+            </param>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Pkcs12.PrivateKey">
+            <summary>
+            A private key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Pkcs12.Certificate">
+            <summary>
+            A certificate corresponding to the private key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Pkcs12.CaChain">
+            <summary>
+            A certificate chain of CA(Certificate Authority) that issued the certificate.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Pkcs12Manager">
+            <summary>
+            This class provides the methods for storing and retrieving the Pkcs12 contents.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Pkcs12Manager.Get(System.String,System.String,System.String)">
+            <summary>
+            Gets Pkcs12 contents from the secure repository.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">The name of data to retrieve.</param>
+            <param name="keyPassword">
+            The password used in decrypting a private key value. If password of
+            keyPolicy is provided in SavePkcs12(), the same password should be provided.
+            </param>
+            <param name="cerificatePassword">
+            The password used in decrypting a certificate value. If password of
+            certificatePolicy is provided in SavePkcs12(), the same password should be
+            provided.
+            </param>
+            <returns>A Pkcs12 data specified by alias.</returns>
+            <exception cref="T:System.ArgumentNullException">The alias argument is null.</exception>
+            <exception cref="T:System.ArgumentException">
+            The alias argument is in the invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Pkcs12 does not exist with the alias.
+            Optional password of key in Pkcs12 isn't matched.
+            Optional password of certificate in Pkcs12 isn't matched.
+            </exception>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Pkcs12Manager.Save(System.String,Tizen.Security.SecureRepository.Pkcs12,Tizen.Security.SecureRepository.Policy,Tizen.Security.SecureRepository.Policy)">
+            <summary>
+            Stores PKCS12's contents inside key manager based on the provided policies.
+            All items from the PKCS12 will use the same alias.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="alias">The name of a data to be stored.</param>
+            <param name="pkcs12">The pkcs12 data to be stored.</param>
+            <param name="keyPolicy">
+            The policy about how to store pkcs's private key.
+            </param>
+            <param name="certificatePolicy">
+            The policy about how to store pkcs's certificate.
+            </param>
+            <exception cref="T:System.ArgumentNullException">Any of argument is null.</exception>
+            <exception cref="T:System.ArgumentException">
+            The alias argument is in the invalid format. Pkcs12 argument is in the invalid format.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Pkcs12 with alias does already exist.
+            </exception>
+        </member>
+        <member name="T:Tizen.Security.SecureRepository.Policy">
+            <summary>
+            A class for a policy for storing key, certificate, and binary data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Policy.#ctor">
+            <summary>
+            A default constructor of Policy with default policy.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>The default value for Password is null and the default value for Extractabl is false.</remarks>
+        </member>
+        <member name="M:Tizen.Security.SecureRepository.Policy.#ctor(System.String,System.Boolean)">
+            <summary>
+            A constructor of Key that takes the password and the flag for extractable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="password">Used to encrypt data secure repository.</param>
+            <param name="extractable">If true, key may be extracted from the secure repository.</param>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Policy.Password">
+            <summary>
+            Used to encrypt data secure repository. If it is not null, the data
+            (or key, or certificate) is stored encrypted with this password inside secure repository.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.SecureRepository.Policy.Extractable">
+            <summary>
+            If true, key may be extracted from the secure repository.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

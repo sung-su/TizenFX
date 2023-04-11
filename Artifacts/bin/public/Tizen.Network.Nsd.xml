@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Network.Nsd</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            Interop class for NSD.
+            </summary>
+        </member>
+        <member name="T:Interop.Nsd">
+            <summary>
+            NSD native APIs.
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Nsd.DnssdBrowser">
+            <summary>
+            This class is used for managing the network service discovery using DNS-SD.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.Nsd.DnssdBrowser.ServiceFound">
+            <summary>
+            This event is raised when a DNS-SD service is found during the service discovery.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdBrowser.#ctor(System.String)">
+            <summary>
+            A public constructor for the DnssdBrowser class to create a DnssdBrowser instance for the given service type.
+            </summary>
+            <param name="serviceType">The DNS-SD service type.</param>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the serviceType is null.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdBrowser.StartDiscovery">
+            <summary>
+            Starts browsing the DNS-SD remote service.
+            </summary>
+            <remarks>
+            If there are any services available, the ServiceFound event will be invoked.
+            The application will keep browsing for the available or unavailable services until it calls StopDiscovery().
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdBrowser.StopDiscovery">
+            <summary>
+            Stops browsing the DNS-SD remote service.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Network.Nsd.DnssdService">
+            <summary>
+            This class is used for managing the local service registration and its properties using DNS-SD.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdService.#ctor(System.String)">
+            <summary>
+            The constructor to create the DnssdService instance that sets the serviceType to a given value.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="serviceType">The DNS-SD service type. It is expressed as a type followed by the protocol, separated by a dot (For example, "_ftp._tcp").
+            It must begin with an underscore followed by 1-15 characters, which may be letters, digits, or hyphens.
+            </param>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when DNS-SD is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the serviceType is set to null.</exception>
+        </member>
+        <member name="P:Tizen.Network.Nsd.DnssdService.Name">
+            <summary>
+            Name of the DNS-SD service.
+            </summary>
+            <remarks>
+            Set the name for only an unregistered service created locally.
+            It may be up to 63 bytes.
+            In case of an error, null will be returned during get and exception will be thrown during set.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when DNS-SD is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the name value is set to null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this property when any other error occurred.</exception>
+        </member>
+        <member name="P:Tizen.Network.Nsd.DnssdService.Type">
+            <summary>
+            Type of the DNS-SD local or remote service.
+            </summary>
+            <remarks>
+            It is expressed as a type followed by the protocol, separated by a dot (For example, "_ftp._tcp").
+            It must begin with an underscore followed by 1-15 characters, which may be letters, digits, or hyphens.
+            In case of an error, null will be returned.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nsd.DnssdService.Port">
+            <summary>
+            Port number of the DNS-SD local or remote service.
+            </summary>
+            <remarks>
+            Set the port for only an unregistered service created locally. The default value of the port is 0.
+            In case of an error, -1 will be returned during get and exception will be thrown during set.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when DNS-SD is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if the value of port is set to less than 0 or more than 65535.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this property when any other error occurred.</exception>
+        </member>
+        <member name="P:Tizen.Network.Nsd.DnssdService.IP">
+            <summary>
+            IP address of the DNS-SD remote service.
+            </summary>
+            <remarks>
+            If the remote service has no IPv4 Address, then IPv4Address would contain null and if it has no IPv6 Address, then IPv6Address would contain null.
+            In case of an error, null object will be returned.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdService.GetRawTXTRecords">
+            <summary>
+            Returns raw TXT records.
+            </summary>
+            <returns>Returns empty bytes array in case TXT record has not been set, else returns raw TXT record.</returns>
+            <since_tizen> 9 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdService.AddTXTRecord(System.String,System.String)">
+            <summary>
+            Adds the TXT record.
+            </summary>
+            <remarks>
+            TXT record should be added after registering the local service using RegisterService().
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <param name="key">The key of the TXT record. It must be a null-terminated string with 9 characters or fewer excluding null. It is case insensitive.</param>
+            <param name="value">The value of the TXT record. If null, then "key" will be added with no value. If non-null but the value_length is zero, then "key=" will be added with an empty value.</param>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the value of the key is null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdService.RemoveTXTRecord(System.String)">
+            <summary>
+            Removes the TXT record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="key">The key of the TXT record to be removed.</param>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the value of the key is null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdService.RegisterService">
+            <summary>
+            Registers the DNS-SD local service for publishing.
+            </summary>
+            Name of the service must be set.
+            <since_tizen> 4 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdService.DeregisterService">
+            <summary>
+            Deregisters the DNS-SD local service.
+            </summary>
+            <remarks>
+            A local service registered using RegisterService() must be passed.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdService.Finalize">
+            <summary>
+            Destroys the DnssdService object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nsd.DnssdService.Dispose">
+            <summary>
+            Disposes the memory allocated to unmanaged resources.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nsd.IPAddressInformation">
+            <summary>
+            This class manages the IP address properties of the DNS-SD service.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nsd.IPAddressInformation.IPv4Address">
+            <summary>
+            The IP version 4 address of the DNS-SD service.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nsd.IPAddressInformation.IPv6Address">
+            <summary>
+            The IP version 6 address of the DNS-SD service.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nsd.INsdBrowser">
+            <summary>
+            This interface is used for managing the network service discovery using DNS-SD/SSDP.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nsd.INsdBrowser.StartDiscovery">
+            <summary>
+            Starts browsing the DNS-SD/SSDP remote service.
+            </summary>
+            <remarks>
+            If there are any services available, the ServiceFound event will be invoked.
+            The application will keep browsing for the available or unavailable services until it calls StopDiscovery().
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occured.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD/SSDP is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.INsdBrowser.StopDiscovery">
+            <summary>
+            Stops browsing the DNS-SD/SSDP remote service.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occured.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD/SSDP is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Network.Nsd.INsdService">
+            <summary>
+            This interface is used for managing the local service registration using DNS-SD/SSDP.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nsd.INsdService.RegisterService">
+            <summary>
+            Registers the DNS-SD/SSDP local service for publishing.
+            </summary>
+            <remarks>
+            A service that is created locally must be passed.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD/SSDP is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.INsdService.DeregisterService">
+            <summary>
+            Deregisters the DNS-SD/SSDP local service.
+            </summary>
+            <remarks>
+            A local service that is registered using RegisterService() must be passed.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.dnssd</feature>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when DNS-SD/SSDP is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Network.Nsd.DnssdServiceState">
+            <summary>
+            Enumeration for the DNS-SD service states.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nsd.DnssdServiceState.Available">
+            <summary>
+            Available DNS-SD service found.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nsd.DnssdServiceState.Unavailable">
+            <summary>
+            DNS-SD service not available.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nsd.DnssdServiceState.ServiceNameLookupFailed">
+            <summary>
+            Lookup failure for the service name.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nsd.DnssdServiceState.HostNameLookupFailed">
+            <summary>
+            Lookup failure for the host name and port number.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nsd.DnssdServiceState.AddressLookupFailed">
+            <summary>
+            Lookup failure for the IP address.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nsd.SsdpServiceState">
+            <summary>
+            Enumeration for the SSDP service states.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nsd.SsdpServiceState.Available">
+            <summary>
+            Available SSDP service found.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Nsd.SsdpServiceState.Unavailable">
+            <summary>
+            SSDP service not available.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nsd.DnssdServiceFoundEventArgs">
+            <summary>
+            An extended EventArgs class, which contains the changed service state during a service discovery using DNS-SD.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nsd.DnssdServiceFoundEventArgs.State">
+            <summary>
+            The DNS-SD service state.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nsd.DnssdServiceFoundEventArgs.Service">
+            <summary>
+            The DNS-SD service instance.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nsd.SsdpServiceFoundEventArgs">
+            <summary>
+            An extended EventArgs class, which contains the changed service state during a service discovery using SSDP.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nsd.SsdpServiceFoundEventArgs.State">
+            <summary>
+            The SSDP service state.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nsd.SsdpServiceFoundEventArgs.Service">
+            <summary>
+            The SSDP service instance.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Network.Nsd.SsdpBrowser">
+            <summary>
+            This class is used for managing the network service discovery using SSDP.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.Nsd.SsdpBrowser.ServiceFound">
+            <summary>
+            This event is raised when the service has become available or unavailable during a service discovery using SSDP.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nsd.SsdpBrowser.#ctor(System.String)">
+            <summary>
+            A public constructor for the SsdpBrowser class to create a SsdpBrowser instance for the given target.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="target">The target to browse for the service.</param>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.ArgumentException">Thrown when the target is null.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when SSDP is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.SsdpBrowser.StartDiscovery">
+            <summary>
+            Starts browsing the SSDP remote service.
+            </summary>
+            <remarks>
+            If there are any services available, the ServiceFound event will be invoked.
+            The application will keep browsing for the available or unavailable services until it calls StopDiscovery().
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occured.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when SSDP is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.SsdpBrowser.StopDiscovery">
+            <summary>
+            Stops browsing the SSDP remote service.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occured.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when SSDP is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+        </member>
+        <member name="T:Tizen.Network.Nsd.SsdpService">
+            <summary>
+            This class is used for managing the local service registration and its properties using SSDP.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Nsd.SsdpService.#ctor(System.String)">
+            <summary>
+            The constructor to create the SsdpService instance that sets the target to a given value.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="target">The SSDP local service's target. It may be a device type or a service type.</param>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when SSDP is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the target is set to null.</exception>
+        </member>
+        <member name="P:Tizen.Network.Nsd.SsdpService.Usn">
+            <summary>
+            Unique Service Name of the SSDP service.
+            </summary>
+            <remarks>
+            Set the USN for only an unregistered service created locally. If the service is already registered, the USN will not be set.
+            In case of an error, null will be returned during get and exception will be thrown during set.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when SSDP is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when USN value is set to null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this property when any other error occurred.</exception>
+        </member>
+        <member name="P:Tizen.Network.Nsd.SsdpService.Target">
+            <summary>
+            Target of the SSDP service.
+            </summary>
+            <remarks>
+            It may be a device type or a service type specified in the UPnP forum (http://upnp.org).
+            In case of an error, null will be returned.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Nsd.SsdpService.Url">
+            <summary>
+            URL of the SSDP service.
+            </summary>
+            <remarks>
+            Set the URL for only an unregistered service created locally. If the service is already registered, the URL will not be set.
+            In case of an error, null will be returned during get and exception will be thrown during set.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.NotSupportedException">Thrown while setting this property when SSDP is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the URL value is set to null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown while setting this property when any other error occurred.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.SsdpService.RegisterService">
+            <summary>
+            Registers the SSDP local service for publishing.
+            </summary>
+            <remarks>
+            A service created locally must be passed.
+            URL and USN of the service must be set before the RegisterService is called.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the SSDP is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the permission is denied.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.SsdpService.DeregisterService">
+            <summary>
+            Deregisters the SSDP local service.
+            </summary>
+            <remarks>
+            A local service registered using RegisterService() must be passed.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/network.service_discovery.ssdp</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when any other error occurred.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the SSDP is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Network.Nsd.SsdpService.Finalize">
+            <summary>
+            Destroys the SsdpService object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Nsd.SsdpService.Dispose">
+            <summary>
+            Disposes the memory allocated to unmanaged resources.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

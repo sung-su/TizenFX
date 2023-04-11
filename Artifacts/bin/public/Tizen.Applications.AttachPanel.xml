@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.AttachPanel</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            The Interoperability support class for the Tizen APIs.
+            </summary>
+            <summary>
+            The Interoperability support class for the attach panel APIs.
+            </summary>
+        </member>
+        <member name="T:Interop.AttachPanel">
+            <summary>
+            The Interoperability support class for the attach panel APIs.
+            </summary>
+        </member>
+        <member name="T:Interop.Libraries">
+            <summary>
+            The Interoperability support class for the API library.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.AttachPanel.AttachPanel">
+            <summary>
+            Represents the immutable class for the attach panel.
+            </summary>
+            <summary>
+            Attach panel internal implementation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.AttachPanel.AttachPanel.#ctor(ElmSharp.EvasObject)">
+            <summary>
+            Represents the immutable class for the attach panel.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="conformant">The caller's conformant.</param>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <exception cref="T:System.ArgumentNullException">Thrown when the parameter is null</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when an attempt to allocate the memory fails.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel already exists or the <paramref name="conformant"/> is not a conformant object.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+        </member>
+        <member name="M:Tizen.Applications.AttachPanel.AttachPanel.#ctor(ElmSharp.Conformant)">
+            <summary>
+            Represents the immutable class for the attach panel.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="conformant">The caller's conformant.</param>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <exception cref="T:System.OutOfMemoryException">Thrown when an attempt to allocate the memory fails.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel already exists or the <paramref name="conformant"/> is not a conformant object.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when the parameter is null</exception>
+        </member>
+        <member name="M:Tizen.Applications.AttachPanel.AttachPanel.Finalize">
+            <summary>
+            A destructor which deallocates the attach panel resources.
+            </summary>
+        </member>
+        <member name="P:Tizen.Applications.AttachPanel.AttachPanel.State">
+            <summary>
+            Gets the state of the AttachPanel.
+            </summary>
+            <value>The AttachPanel window state.</value>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel is not created yet or is already destroyed.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the parameter is invalid</exception>
+        </member>
+        <member name="P:Tizen.Applications.AttachPanel.AttachPanel.Visible">
+            <summary>
+            Gets the value that indicates whether the AttachPanel is visible.
+            </summary>
+            <value>Visible value of the AttachPanel state.</value>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel is not created yet or is already destroyed.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+        </member>
+        <member name="M:Tizen.Applications.AttachPanel.AttachPanel.AddCategory(Tizen.Applications.AttachPanel.ContentCategory,Tizen.Applications.Bundle)">
+            <summary>
+            Adds a content category in the AttachPanel.
+            </summary>
+            <param name="category">The ContentCategory to be added in the AttachPanel.</param>
+            <param name="extraData">The AttachPanel sends some information using the Bundle.</param>
+            <privilege>http://tizen.org/privilege/mediastorage</privilege>
+            <privilege>http://tizen.org/privilege/camera</privilege>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <feature>http://tizen.org/feature/camera</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <remarks>
+            The caller application has to check the return value of this function.
+            Content categories will be shown as the sequence of using AddCategory.
+            Some contents need time to load it all.
+            So, it is needed to use this before the main-loop of the Show.
+            Privileges,
+            http://tizen.org/privilege/mediastorage, for using Image or Camera.
+            http://tizen.org/privilege/camera, for using Camera or TakePicture.
+            http://tizen.org/privilege/telephony, for using Camera, Since(5.0).
+            http://tizen.org/privilege/recorder, for using Voice.
+            http://tizen.org/privilege/appmanager.launch, for adding content categories on the More tab.
+            http://tizen.org/feature/camera, for using Camera or TakePicture.
+            http://tizen.org/feature/microphone, for using Voice.
+            http://tizen.org/feature/attach_panel, for using attach panel
+            Deliver more information to the callee with a bundle if you need.
+            http://tizen.org/appcontrol/data/total_count
+            http://tizen.org/appcontrol/data/total_size
+            </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the <paramref name="category"/> is not a valid category.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have the privilege to access this method.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the device does not support the <paramref name="category"/> feature.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel is not created yet or is already destroyed.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.AttachPanel.AttachPanel.RemoveCategory(Tizen.Applications.AttachPanel.ContentCategory)">
+            <summary>
+            Removes the ContentCategory from the AttachPanel.
+            </summary>
+            <param name="category">The ContentCategory to be added in the AttachPanel.</param>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the <paramref name="category"/> is not a valid category.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel is not created yet or is already destroyed.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.AttachPanel.AttachPanel.SetExtraData(Tizen.Applications.AttachPanel.ContentCategory,Tizen.Applications.Bundle)">
+            <summary>
+            Sets the extraData to be sent to the ContentCategory using a Bundle.
+            </summary>
+            <param name="category">The ContentCategory that some information is to be set, in the AttachPanel.</param>
+            <param name="extraData">The AttachPanel sends some information using a Bundle.</param>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the <paramref name="category"/> is not a valid category.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel is destroyed.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when an attempt to allocate the memory fails.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.AttachPanel.AttachPanel.Show">
+            <summary>
+            Shows the attach panel with the animations.
+            </summary>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel is destroyed.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.AttachPanel.AttachPanel.Show(System.Boolean)">
+            <summary>
+            Shows the attach panel and selects whether or not to animate.
+            </summary>
+            <param name="animation">A flag which turns on or turns off the animation while the attach panel is showing.</param>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel is destroyed.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.AttachPanel.AttachPanel.Hide">
+            <summary>
+            Hides the attach panel with the animations.
+            </summary>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel is destroyed.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.AttachPanel.AttachPanel.Hide(System.Boolean)">
+            <summary>
+            Hides the attach panel and selects whether or not to animate.
+            </summary>
+            <param name="animation">A flag which turns on or turns off the animation while the attach panel is hiding.</param>
+            <feature>http://tizen.org/feature/attach_panel</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the AttachPanel is destroyed.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the AttachPanel is not supported in the device.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.AttachPanel.AttachPanel.EventChanged">
+            <summary>
+            Occurs when the reserved events are published from the panel-side.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.AttachPanel.AttachPanel.ResultCallback">
+            <summary>
+            Occurs when a user selects and confirms something to attach in the AttachPanel.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.AttachPanel.ContentCategory">
+            <summary>
+            Enumeration for the attach panel content category.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.Image">
+            <summary>
+            Attaching images from the gallery.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.Camera">
+            <summary>
+            Taking pictures to attach.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.Voice">
+            <summary>
+            Taking a voice clip to attach.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.Video">
+            <summary>
+            Attaching video from the gallery.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.Audio">
+            <summary>
+            Attaching audio from my files.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.Calendar">
+            <summary>
+            Attaching calendar data from the calendar.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.Contact">
+            <summary>
+            Attaching contact data from the contacts.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.Myfiles">
+            <summary>
+            Attaching files data from my files.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.VideoRecorder">
+            <summary>
+            Taking a video clip to attach.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.Document">
+            <summary>
+            Attaching files from the document list.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.TakePicture">
+            <summary>
+            Launching apps to take pictures will be attached.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.ContentCategory.Memo">
+            <summary>
+            Attaching memo data from the memo.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.AttachPanel.EventType">
+            <summary>
+            Enumeration for the attach panel event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.EventType.ShowStart">
+            <summary>
+            Attach panel starts the effect to show.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.EventType.ShowFinish">
+            <summary>
+            Attach panel finishes the effect to show.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.EventType.HideStart">
+            <summary>
+            Attach panel starts the effect to hide the panel.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.EventType.HideFinish">
+            <summary>
+            Attach panel finishes the effect to hide the panel.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.AttachPanel.ResultEventArgs">
+            <summary>
+            A class for the event arguments of the result event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.AttachPanel.ResultEventArgs.Category">
+            <summary>
+            Results are from the content category.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.AttachPanel.ResultEventArgs.Result">
+            <summary>
+            Property for the result.
+            The caller application has to use the ExtraData property to get received data.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.AttachPanel.ResultEventArgs.ResultCode">
+            <summary>
+            Property for the result of the AppControl.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.AttachPanel.StateEventArgs">
+            <summary>
+            A class for the event arguments of the state event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.AttachPanel.StateEventArgs.EventType">
+            <summary>
+            Property for the event type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.AttachPanel.StateType">
+            <summary>
+            Enumeration for the attach panel's window state.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.StateType.Hidden">
+            <summary>
+            Attach panel is not visible.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.StateType.Partial">
+            <summary>
+            Attach panel is in the partial window mode.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AttachPanel.StateType.Full">
+            <summary>
+            Attach panel is in the full screen mode.
+            </summary>
+        </member>
+    </members>
+</doc>

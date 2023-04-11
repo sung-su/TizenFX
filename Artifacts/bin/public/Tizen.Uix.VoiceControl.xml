@@ -1,0 +1,1013 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Uix.VoiceControl</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            Partial interop class.
+            </summary>
+            <summary>
+            Partial interop class.
+            </summary>
+            <summary>
+            Partial interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.Libraries">
+            <summary>
+            Partial libraries class.
+            </summary>
+        </member>
+        <member name="T:Interop.VoiceControl">
+            <summary>
+            VoiceControl interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.VoiceControlCommand">
+            <summary>
+            VoiceControlCommand interop class.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.CurrentLanguageChangedEventArgs">
+            <summary>
+            This class holds information about the CurrentLanguageChanged event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.CurrentLanguageChangedEventArgs.PreviousLanguage">
+            <summary>
+            The previous language.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.CurrentLanguageChangedEventArgs.CurrentLanguage">
+            <summary>
+            The current language.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.ErrorOccuredEventArgs">
+            <summary>
+            This class holds information related to the VoiceControl ErrorOccured event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.ErrorOccuredEventArgs.ErrorValue">
+            <summary>
+            The error value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.RecognitionResult">
+            <summary>
+            The recognition result from the engine.
+            If the duplicated commands are recognized, the event(e.g. Result.Rejected) of a command may be rejected
+            for selecting the command as a priority. If you set similar or same commands, or the recognized results are multi-results, the CommandList has multi commands.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.RecognitionResult.Result">
+            <summary>
+            The result event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.RecognitionResult.ResultMessage">
+            <summary>
+            The spoken text.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.RecognitionResult.CommandList">
+            <summary>
+            The recognized command list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.RecognitionResultEventArgs">
+            <summary>
+            The recognition result from the engine.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.RecognitionResultEventArgs.Result">
+            <summary>
+            Gets the recognition result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.ServiceStateChangedEventArgs">
+            <summary>
+            This class holds information related to the VoiceControl service ServiceStateChanged event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.ServiceStateChangedEventArgs.Previous">
+            <summary>
+            The previous state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.ServiceStateChangedEventArgs.Current">
+            <summary>
+            The current state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.StateChangedEventArgs">
+            <summary>
+            This class holds information related to the VoiceControl client StateChanged event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.StateChangedEventArgs.Previous">
+            <summary>
+            The previous state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.StateChangedEventArgs.Current">
+            <summary>
+            The current state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.CommandFormat">
+            <summary>
+            Enumeration for the command format.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.CommandFormat.Fixed">
+            <summary>
+            The fixed command format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.CommandFormat.FixedAndVFixed">
+            <summary>
+            The fixed and variable fixed command format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.CommandFormat.VFixedAndFixed">
+            <summary>
+            The variable fixed and fixed command format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.CommandFormat.FixedAndNonFixed">
+            <summary>
+            The fixed and non-fixed command format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.CommandFormat.NonFixedAndFixed">
+            <summary>
+            The non-fixed and fixed command format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.CommandFormat.Undefined">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.VoiceCommand">
+            <summary>
+            This class represents a voice command.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceCommand.#ctor">
+            <summary>
+            The public constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.OutOfMemoryException">This exception can be due to out Of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.VoiceCommand.UnfixedCommand">
+            <summary>
+            Gets the unfixed command.
+            This property should be used for commands which have non-fixed format.
+            An empty string will be returned in case of some internal error.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.VoiceCommand.Type">
+            <summary>
+            Gets or sets the command type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>If you do not set the command type, the default value is undefined. You should set the type if the command is valid.</remarks>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.VoiceCommand.Format">
+            <summary>
+            Gets or sets the command format.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>The default format is Fixed.</remarks>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.VoiceCommand.Command">
+            <summary>
+            Gets or sets the command.
+            A get empty string will be returned in case of some internal error.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.VoiceCommandList">
+            <summary>
+            This class represents a list of the voice commands.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceCommandList.#ctor">
+            <summary>
+            The public constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.OutOfMemoryException">This exception can be due to out of memory.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.VoiceCommandList.Count">
+            <summary>
+            Gets a command count of the list.
+            -1 is returned in case of an internal failure.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            Command count of the list.
+            </value>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.VoiceCommandList.Current">
+            <summary>
+            Gets the current command from the command list by index.
+            Null will be returned in case of an empty list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            Current command from the command list.
+            </value>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceCommandList.Add(Tizen.Uix.VoiceControl.VoiceCommand)">
+            <summary>
+            Adds a command to the command list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <param name="command">The command</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.NullReferenceException">This will occur if the provided parameter is null.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceCommandList.Remove(Tizen.Uix.VoiceControl.VoiceCommand)">
+            <summary>
+            Removes a command from the command list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <param name="command">The command</param>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.NullReferenceException">This will occur if the provided parameter is null.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceCommandList.GetAllCommands">
+            <summary>
+            Retrieves all commands from the command list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceCommandList.First">
+            <summary>
+            Moves an index to the first command.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to list empty.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceCommandList.Last">
+            <summary>
+            Moves an index to the last command.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to list empty.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceCommandList.Next">
+            <summary>
+            Moves an index to the next command.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. List empty
+            2. List reached end
+            </exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceCommandList.Previous">
+            <summary>
+            Moves an index to the previous command.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.InvalidOperationException">
+            This exception can be due to the following reasons:
+            1. List empty
+            2. List reached end
+            </exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.Error">
+            <summary>
+            Enumeration for the error values that can occur.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.None">
+            <summary>
+            Successful, no error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.OutOfMemory">
+            <summary>
+            Out of memory.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.IoError">
+            <summary>
+            I/O error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.InvalidParameter">
+            <summary>
+            Invalid parameter.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.TimedOut">
+            <summary>
+            No answer from the STT service.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.RecorderBusy">
+            <summary>
+            Device or resource busy.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.PermissionDenied">
+            <summary>
+            Permission denied.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.NotSupported">
+            <summary>
+            VC NOT supported.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.InvalidState">
+            <summary>
+            Invalid state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.InvalidLanguage">
+            <summary>
+            Invalid language.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.EngineNotFound">
+            <summary>
+            No available engine.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.OperationFailed">
+            <summary>
+            Operation failed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.OperationRejected">
+            <summary>
+            Operation rejected.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.IterationEnd">
+            <summary>
+            List reached end.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.Empty">
+            <summary>
+            List empty.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.ServiceReset">
+            <summary>
+            Service reset.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.InProgressToReady">
+            <summary>
+            Progress to ready is not finished.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.InProgressToRecording">
+            <summary>
+            Progress to recording is not finished.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.Error.InProgressToProcessing">
+            <summary>
+            Progress to processing is not finished.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.State">
+            <summary>
+            Enumeration for the client state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.State.None">
+            <summary>
+            'None' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.State.Initialized">
+            <summary>
+            'Initialized' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.State.Ready">
+            <summary>
+            'Ready' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.State.Unavailable">
+            <summary>
+            The state cannot be determined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.ServiceState">
+            <summary>
+            Enumeration for the service state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.ServiceState.None">
+            <summary>
+            'None' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.ServiceState.Ready">
+            <summary>
+            'Ready' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.ServiceState.Recording">
+            <summary>
+            'Recording' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.ServiceState.Processing">
+            <summary>
+            'Processing' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.ServiceState.Unavailable">
+            <summary>
+            The state cannot be determined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.ResultEvent">
+            <summary>
+            Enumeration for the result event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.ResultEvent.Success">
+            <summary>
+            Normal result.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.ResultEvent.Rejected">
+            <summary>
+            Rejected result.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.CommandType">
+            <summary>
+            Enumeration for the command type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.CommandType.Foreground">
+            <summary>
+            Foreground command by the client.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.CommandType.Background">
+            <summary>
+            Background command by the client.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControl.CommandType.Undefined">
+            <summary>
+            The undefined command.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControl.VoiceControlClient">
+            <summary>
+            A main function of the voice control API registers the command and gets a notification for the recognition result.
+            Applications can add their own commands and provide results when their command is recognized by the user voice input.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.VoiceControlClient.CurrentLanguage">
+            <summary>
+            Gets the current language.
+            A language is specified as an ISO 3166 alpha-2 two letter country-code
+            followed by ISO 639-1 for the two-letter language code.
+            For example, "ko_KR" for Korean, "en_US" for American English.
+            An empty string is returned in case of some internal error.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The current language in voice control.
+            </value>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <pre>
+            The state must be initialized or ready.
+            </pre>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.VoiceControlClient.State">
+            <summary>
+            Gets the current state of the voice control client.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The current state of the voice control client.
+            </value>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <pre>
+            The state must be initialized or ready.
+            </pre>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControl.VoiceControlClient.ServiceState">
+            <summary>
+            Gets the current state of the voice control service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>
+            The current state of the voice control service.
+            </value>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <pre>
+            The state must be ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.SetInvocationName(System.String)">
+            <summary>
+            Sets the invocation name.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <remarks>
+            The invocation name is used to activate background commands. The invocation name can be same as the application name or any other phrase.
+            For example, an application "Tizen Sample" has a background command, "Play music", and the invocation name of the application is set to "Tizen Sample".
+            In order to activate the background command, users can say "Tizen Sample, Play music". The invocation name is dependent on the current language.
+            For example, if the current language is "en_US"(English), the invocation name is also "en_US".
+            If the current language is "ja_JP"(Japanese) and the invocation name is "en_US", the invocation name will not be recognized.
+            This function should be called before the SetCommandList().
+            </remarks>
+            <param name="name">Invocation name to be invoked by an application.</param>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <pre>
+            The state must be ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.Initialize">
+            <summary>
+            Initializes the voice control.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+            <exception cref="T:System.OutOfMemoryException">This exception can be due to out Of memory.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <post>
+            The state will be initialized.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.Deinitialize">
+            <summary>
+            Deinitializes the voice control.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.Prepare">
+            <summary>
+            Connects the voice control service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <pre>
+            The state must be initialized.
+            </pre>
+            <post>
+            The state must be ready.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.Unprepare">
+            <summary>
+            Disconnects the voice control service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <pre>
+            The state must be ready.
+            </pre>
+            <post>
+            The state must be initialized.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.GetSupportedLanguages">
+            <summary>
+            Retrieves all the supported languages.
+            A language is specified as an ISO 3166 alpha-2 two letter country-code
+            followed by ISO 639-1 for the two-letter language code.
+            For example, "ko_KR" for Korean, "en_US" for American English.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <pre>
+            The state must be ready or initialized.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.GetSystemCommandList">
+            <summary>
+            Gets the system command list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>
+            The command list, else null in case of no system commands.
+            </returns>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public.
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <remarks>
+            In the system command list, there are system commands predefined by product manufacturers.
+            Those commands have the highest priority. Therefore, the user cannot set any commands similar to system commands.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <pre>
+            The state must be ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.RequestDialog(System.String,System.String,System.Boolean)">
+            <summary>
+            Requests to start the dialogue.
+            By using this function, the developer can start requesting the dialogue to the framework.
+            When the developer requests the dialogue, two types of texts, dispText and uttText can be sent by this function. dispText is a text for displaying and uttText is that for uttering.
+            For example, if dispText is "October 10th" and uttText is "Today is October 10th.", "October 10th" will be displayed on the screen and "Today is October 10th." will be spoken.
+            Also, the developer can set whether the dialogue starts automatically or not, using autoStart.
+            If the developer sets autoStart as True, the framework will start to record the next speech and continue the dialogue.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <remarks>
+            If autoStart is True, the recognition will start again. In this case, it can be restarted up to 4 times.
+            </remarks>
+            <param name="dispText">Text to be displayed on the screen.</param>
+            <param name="uttText">Text to be spoken.</param>
+            <param name="autoStart">A variable for setting whether the dialog session will be restarted automatically or not.</param>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <pre>
+            The state must be ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.SetCommandList(Tizen.Uix.VoiceControl.VoiceCommandList,Tizen.Uix.VoiceControl.CommandType)">
+            <summary>
+            Sets the command list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <remarks>
+            The command type is valid for CommandType 'Foreground' or 'Background'.
+            The matched commands of the command list should be set and they should include type and command text at least.
+            </remarks>
+            <param name="list">Command list</param>
+            <param name="type">Command type</param>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <pre>
+            The state must be ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.UnsetCommandList(Tizen.Uix.VoiceControl.CommandType)">
+            <summary>
+            Unsets the command list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <param name="type">Command type</param>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <pre>
+            The state should be ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControl.VoiceControlClient.GetResult">
+            <summary>
+            Gets the recognition result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <privlevel>
+            public
+            </privlevel>
+            <feature>
+            http://tizen.org/feature/speech.control
+            http://tizen.org/feature/microphone
+            </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">This exception can be due to not supported.</exception>
+            <returns>The recognition result if possible, else a null object.</returns>
+            <pre>
+            The state must be ready.
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControl.VoiceControlClient.RecognitionResult">
+            <summary>
+            Event to be invoked when the recognition is done.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <pre>
+            The state must be initialized.
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControl.VoiceControlClient.ServiceStateChanged">
+            <summary>
+            Event to be invoked when the VoiceControl service state changes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <pre>
+            The state must be initialized.
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControl.VoiceControlClient.StateChanged">
+            <summary>
+            Event to be invoked when the VoiceControl client state changes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <pre>
+            The state must be initialized.
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControl.VoiceControlClient.ErrorOccured">
+            <summary>
+            Event to be invoked when an error occurs.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <pre>
+            The state must be initialized.
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControl.VoiceControlClient.CurrentLanguageChanged">
+            <summary>
+            Event to be invoked when the default language changes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <pre>
+            The state must be initialized.
+            </pre>
+        </member>
+    </members>
+</doc>

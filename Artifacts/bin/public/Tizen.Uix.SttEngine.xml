@@ -1,0 +1,680 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Uix.SttEngine</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            The Partial Interop class.
+            </summary>
+            <summary>
+            The Partial Interop class.
+            </summary>
+        </member>
+        <member name="T:Interop.Libraries">
+            <summary>
+            The Partial Libraries class.
+            </summary>
+        </member>
+        <member name="T:Interop.SttEngine">
+            <summary>
+            The SttEngine Interop class.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.AudioType">
+            <summary>
+            Enumeration for the audio types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.AudioType.PcmS16Le">
+            <summary>
+            Signed 16-bit audio type, little endian.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.AudioType.PcmU8">
+            <summary>
+            Unsigned 8-bit audio type.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.ResultEvent">
+            <summary>
+            Enumeration for the results.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.ResultEvent.FinalResult">
+            <summary>
+            Event when either the full matched or the final result is delivered.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.ResultEvent.PartialResult">
+            <summary>
+            Event when the partial matched result is delivered.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.ResultEvent.Error">
+            <summary>
+            Event when the recognition has failed.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.TimeEvent">
+            <summary>
+            Enumeration for the result time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.TimeEvent.Beginning">
+            <summary>
+            Event when the token is beginning type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.TimeEvent.Middle">
+            <summary>
+            Event when the token is middle type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.TimeEvent.End">
+            <summary>
+            Event when the token is end type.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.SpeechStatus">
+            <summary>
+            Enumeration for the speech status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.SpeechStatus.BeginningPointDetected">
+            <summary>
+            Beginning point of the speech is detected.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.SpeechStatus.EndPointDetected">
+            <summary>
+            End point of the speech is detected.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.ResultMessage">
+            <summary>
+            Enumeration for representing the result message.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.ResultMessage.None">
+            <summary>
+            No error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.ResultMessage.TooSoon">
+            <summary>
+            Recognition failed because the speech started too soon.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.ResultMessage.TooShort">
+            <summary>
+            Recognition failed because the speech is too short.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.ResultMessage.TooLong">
+            <summary>
+            Recognition failed because the speech is too long.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.ResultMessage.TooQuiet">
+            <summary>
+            Recognition failed because the speech is too quiet to listen.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.ResultMessage.TooLoud">
+            <summary>
+            Recognition failed because the speech is too loud to listen.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.ResultMessage.TooFast">
+            <summary>
+            Recognition failed because the speech is too fast to listen.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.Error">
+            <summary>
+            Enumeration for the error values that can occur.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.None">
+            <summary>
+            Successful, no error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.OutOfMemory">
+            <summary>
+            Out of memory.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.IoError">
+            <summary>
+            I/O error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.InvalidParameter">
+            <summary>
+            Invalid parameter.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.NetworkDown">
+            <summary>
+            Network down (Out of network).
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.InvalidState">
+            <summary>
+            Invalid state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.InvalidLanguage">
+            <summary>
+            Invalid language.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.OperationFailed">
+            <summary>
+            Operation failed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.NotSupportedFeature">
+            <summary>
+            Not supported feature of the current engine.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.NotSupported">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.PermissionDenied">
+            <summary>
+            Permission denied.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.SttEngine.Error.RecordingTimedOut">
+            <summary>
+            Recording timed out.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.Engine">
+            <summary>
+            This class represents the STT Engine, which has to be inherited to make the engine.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.Engine.Action`1">
+            <summary>
+            An action with 2 input parameters returning an error.
+            </summary>
+            <typeparam name="T">Generic type for parameter 1.</typeparam>
+            <param name="a">The input parameter 1.</param>
+            <param name="b">The input parameter 2.</param>
+            <returns>Error value.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.Engine.OutAction`1">
+            <summary>
+            An action with 2 out parameters returning an error.
+            </summary>
+            <typeparam name="T">Generic type for parameter 1.</typeparam>
+            <param name="a">The input parameter 1.</param>
+            <param name="b">The input parameter 2.</param>
+            <returns>Error value.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.Engine.ResultTime">
+            <summary>
+            Called when the STT engine provides the time stamp of result to the engine service user.
+            This callback function is implemented by the engine service user. Therefore, the engine developer does NOT have to implement this callback function.
+            </summary>
+            <param name="index">The result index.</param>
+            <param name="resultEvent">The token event.</param>
+            <param name="text">The result text.</param>
+            <param name="startTime">The time started speaking the result text.</param>
+            <param name="endTime">The time finished speaking the result text.</param>
+            <param name="userData">The user data.</param>
+            <returns>true to continue with the next iteration of the loop, false to break out of the loop.</returns>
+            <precondition>SendResult() should be called.</precondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.SttEngine.Engine.SupportedLanguages">
+            <summary>
+            Called when the STT engine informs the engine service user about the whole supported language list.
+            This callback function is implemented by the engine service user. Therefore, the engine developer does NOT have to implement this callback function.
+            </summary>
+            <param name="language">The language is specified as an ISO 3166 alpha-2 two letter country-code
+            followed by an ISO 639-1 for the two-letter language code.
+            For example, "ko_KR" for Korean, "en_US" for American English.</param>
+            <param name="userData">The user data.</param>
+            <returns>true to continue with the next iteration of the loop, false to break out of the loop.</returns>
+            <precondition>ForEachSupportedLanguages() should be called.</precondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.GetInformation(System.String@,System.String@,System.String@,System.Boolean@)">
+            <summary>
+            Called when the engine service user requests the basic information of the STT engine.
+            </summary>
+            <remarks>
+            In order to upload the engine at Tizen Appstore, both a service application and a UI application are necessary. Therefore, engineSetting must be transferred to the engine service user.
+            </remarks>
+            <param name="engineUuid">UUID of the engine.</param>
+            <param name="engineName">Name of the engine.</param>
+            <param name="engineSetting">The engine setting application (UI app)'s ID.</param>
+            <param name="useNetwork">A variable for checking whether the network is used or not.</param>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. OperationFailed
+            3. InvalidParameter
+            </returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.Initialize">
+            <summary>
+            Called when the engine service user initializes the STT engine.
+            This callback function is called by the engine service user to request for the STT engine to be started.
+            </summary>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidParameter
+            3. InvalidState
+            4. OperationFailed
+            </returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.Deinitialize">
+            <summary>
+            Called when the engine service user deinitializes the STT engine.
+            This callback function is called by the engine service user to request for the STT engine to be deinitialized.
+            </summary>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidState
+            </returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.ForEachSupportedLanguages(Tizen.Uix.SttEngine.Engine.SupportedLanguages,System.IntPtr)">
+            <summary>
+            Called when the engine service user gets the whole supported language list.
+            </summary>
+            <remarks>
+            In this function, the engine service user's callback function 'SupportedLanguages' is invoked repeatedly for getting all the supported languages
+            and user_data must be transferred to 'SupportedLanguages'. If 'SupportedLanguages' returns false, it should be stopped to call 'SupportedLanguages'.
+            </remarks>
+            <param name="callback">The callback function,</param>
+            <param name="userData">The user data, which must be passed to the callback delegate 'SupportedLanguages'.</param>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidState
+            3. InvalidParameter
+            </returns>
+            <postcondition>
+            This callback function invokes SupportedLanguages repeatedly for getting the supported languages.
+            </postcondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.IsValidLanguage(System.String,System.Boolean@)">
+            <summary>
+            Called when the engine service user checks whether the corresponding language is valid or not in the STT engine.
+            </summary>
+            <param name="language">The language is specified as an ISO 3166 alpha-2 two letter country-code followed by an ISO 639-1 for the two-letter language code.
+            For example, "ko_KR" for Korean, "en_US" for American English.</param>
+            <param name="isValid">A variable for checking whether the corresponding language is valid or not. true to be valid, false to be invalid.</param>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidParameter
+            </returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.SupportSilenceDetection">
+            <summary>
+            Called when the engine service user checks whether the STT engine supports silence detection.
+            </summary>
+            <returns>true to support silence detection, false not to support silence detection.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.SupportRecognitionType(System.String,System.Boolean@)">
+            <summary>
+            Called when the engine service user checks whether the STT engine supports the corresponding recognition type.
+            </summary>
+            <param name="type">The type for recognition, "stt.recognition.type.FREE", or "stt.recognition.type.FREE.PARTIAL".</param>
+            <param name="isSupported">A variable for checking whether the STT engine supports the corresponding recognition type.
+            true to support the recognition type, false not to support the recognition type.</param>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidParameter
+            </returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.GetRecordingFormat(Tizen.Uix.SttEngine.AudioType@,System.Int32@,System.Int32@)">
+            <summary>
+            Called when the engine service user gets the proper recording format of the STT engine.
+            The recording format is used for creating the recorder.
+            </summary>
+            <param name="types">The format used by the recorder.</param>
+            <param name="rate">The sample rate used by the recorder.</param>
+            <param name="channels">The number of channels used by the recorder.</param>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidState
+            </returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.SetSilenceDetection(System.Boolean)">
+            <summary>
+            Called when the engine service user sets the silence detection.
+            If the engine service user sets this option as 'TRUE', the STT engine will detect the silence (EPD) and send the callback event about it.
+            </summary>
+            <param name="isSet">A variable for setting the silence detection. true to detect the silence, false not to detect the silence.</param>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidState
+            3. NotSupportedFeature
+            </returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.CheckAppAgreed(System.String,System.Boolean@)">
+            <summary>
+            Called when the engine service user requests for the STT engine to check whether the application agreed the usage of the STT engine.
+            This callback function is called when the engine service user requests for the STT engine to check the application's agreement about using the engine.
+            According to the need, the engine developer can provide some user interfaces to check the agreement.
+            </summary>
+            <param name="appid">The Application ID</param>
+            <param name="isAgreed">A variable for checking whether the application agreed to use the STT engine or not. true to agree, false to disagree.</param>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidState
+            3. NotSupportedFeature
+            </returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.NeedAppCredential">
+            <summary>
+            Called when the engine service user checks whether STT engine needs the application's credential.
+            </summary>
+            <returns>true if the STT engine needs the application's credential, otherwise false.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.ForEachResultTime(System.IntPtr,Tizen.Uix.SttEngine.Engine.ResultTime,System.IntPtr)">
+            <summary>
+            Called when the engine service user gets the result time information(stamp).
+            </summary>
+            <remarks>
+            In this function, the engine service user's callback delegate 'ResultTime' is invoked repeatedly for sending the time information to the engine service user
+            and user_data must be transferred to 'ResultTime'. If 'ResultTime' returns false, it should be stopped to call 'ResultTime'.
+            timeInfo is transferred from SendResult. The type of timeInfo is up to the STT engine developer.
+            </remarks>
+            <param name="timeInfo">The time information.</param>
+            <param name="callback">The callback function.</param>
+            <param name="userData">The user data, which must be passed to the callback function ResultTime.</param>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidState
+            3. InvalidParameter
+            </returns>
+            <precondition>
+            SendResult will invoke this function.
+            </precondition>
+            <postcondition>
+            This function invokes the ResultTime repeatedly for getting the result time information.
+            </postcondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.Start(System.String,System.String,System.String,System.String,System.IntPtr)">
+            <summary>
+            Called when the engine service user starts to recognize the recording data.
+            In this callback function, the STT engine must transfer the recognition result and userData to the engine service user using SendResult().
+            Also, if the STT engine needs the application's credential, it sets the credential granted to the application.
+            </summary>
+            <param name="language">The language is specified as an ISO 3166 alpha-2 two letter country-code followed by an ISO 639-1 for the two-letter language code.
+            For example, "ko_KR" for Korean, "en_US" for American English.</param>
+            <param name="type">The recognition type, "stt.recognition.type.FREE", or "stt.recognition.type.FREE.PARTIAL".</param>
+            <param name="appid">The application ID.</param>
+            <param name="credential">The credential granted to the application.</param>
+            <param name="userData">The user data to be passed to the callback function.</param>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidState
+            3. InvalidParameter
+            4. InvalidLanguage
+            5. OperationFailed
+            6. NetworkDown
+            </returns>
+            <precondition>
+            The engine is not in recognition processing.
+            </precondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.SetRecordingData(System.String,System.UInt32)">
+            <summary>
+            Called when the engine service user sets and sends the recording data for speech recognition.
+            This callback function is called by the engine service user to send the recording data to the STT engine. The engine receives the recording data and uses for speech recognition. 
+            This function should be returned immediately after recording data copy.
+            </summary>
+            <param name="data">The recording data.</param>
+            <param name="length">The length of the recording data.</param>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidState
+            3. InvalidParameter
+            4. OperationFailed
+            </returns>
+            <precondition>
+            Start should succeed.</precondition>
+            <postcondition>
+            If the engine supports partial result, SendResult() should be invoked.</postcondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.Stop">
+            <summary>
+            Called when the engine service user stops to recognize the recording data.
+            This callback function is called by the engine service user to stop recording and to get the recognition result.
+            </summary>
+            <returns>The following error codes can be returned:
+            1. None
+            2. InvalidState
+            3. OperationFailed
+            4. NetworkDown
+            </returns>
+            <precondition>
+            Start should succeed.</precondition>
+            <postcondition>
+            After processing of the engine, SendResult() should be invoked.</postcondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.Cancel">
+            <summary>
+            Called when the engine service user cancels to recognize the recording data.
+            This callback function is called by the engine service user to cancel to recognize the recording data. Also, when starting the recorder is failed, this function is called.
+            </summary>
+            <returns>
+            The following error codes can be returned:
+            1. None
+            2. InvalidState
+            </returns>
+            <precondition>The STT engine is in recognition processing or recording.</precondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.#ctor">
+            <summary>
+            Public constructor.
+            </summary>
+            <feature>
+            http://tizen.org/feature/speech.recognition
+            http://tizen.org/feature/microphone
+            </feature>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.EngineMain(System.Int32,System.String[])">
+            <summary>
+            Main function for the Speech-To-Text (STT) engine.
+            This function is the main function for operating the STT engine.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <feature>
+            http://tizen.org/feature/speech.recognition
+            http://tizen.org/feature/microphone
+            </feature>
+            <remarks>
+            ServiceAppMain should be used for working the engine after this function.
+            </remarks>
+            <param name="argc">The number of arguments.</param>
+            <param name="argv">The arguments array.</param>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case of permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown in case of not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of an operation failure.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.SendResult(Tizen.Uix.SttEngine.ResultEvent,System.String,System.String[],System.Int32,Tizen.Uix.SttEngine.ResultMessage,System.IntPtr)">
+            <summary>
+            Sends the recognition result to the engine service user.
+            </summary>
+            <feature>
+            http://tizen.org/feature/speech.recognition
+            http://tizen.org/feature/microphone
+            </feature>
+            <remarks>
+            This API is used in SetRecordingData() and Stop(), when the STT engine sends the recognition result to the engine service user.
+            This function is called in the following situations: 1) After Stop() is called, 2) The end point of speech is detected from recording, or 3) Partial result is occurred.
+            The recognition result must be transferred to the engine service user through this function. Also, the timeInfo must be transferred to ForEachResultTime().
+            The type of timeInfo is up to the STT engine developer.
+            </remarks>
+            <param name="resultEvent">The result event.</param>
+            <param name="type">The recognition type, "stt.recognition.type.FREE", or "stt.recognition.type.FREE.PARTIAL".</param>
+            <param name="result">Result texts.</param>
+            <param name="resultCount">Result text count.</param>
+            <param name="msg">Engine message.</param>
+            <param name="timeInfo">The time information.</param>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case of permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown in case of not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of an operation failure.</exception>
+            <precondition>
+            The EngineMain function should be invoked before this function is called. Stop will invoke this function.
+            </precondition>
+            <postcondition>
+            This function invokes ForEachResultTime
+            </postcondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.SendError(Tizen.Uix.SttEngine.Error,System.String)">
+            <summary>
+            Sends the error to the engine service user.
+            </summary>
+            <feature>
+            http://tizen.org/feature/speech.recognition
+            http://tizen.org/feature/microphone
+            </feature>
+            <param name="error">The error reason.</param>
+            <param name="msg">The error message.</param>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case of permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown in case of not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of an operation failure.</exception>
+            <precondition>
+            The main function should be invoked before this function is called.
+            </precondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.SendSpeechStatus(Tizen.Uix.SttEngine.SpeechStatus)">
+            <summary>
+            Sends the speech status to the engine service user when the STT engine notifies the change of the speech status.
+            </summary>
+            <feature>
+            http://tizen.org/feature/speech.recognition
+            http://tizen.org/feature/microphone
+            </feature>
+            <remarks>
+            This API is invoked when the STT engine wants to notify the change of the speech status anytime. Note that this API can be invoked for recognizing the speech.
+            </remarks>
+            <param name="status">SpeechStatus</param>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case of permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown in case of not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of an operation failure.</exception>
+            <precondition>
+            The main function should be invoked before this function is called. The Start() and SetRecordingData() will invoke this function.
+            </precondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.SetPrivateDataSetDelegate(Tizen.Uix.SttEngine.Engine.Action{System.String})">
+            <summary>
+            Sets a callback function for setting the private data.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <feature>
+            http://tizen.org/feature/speech.recognition
+            http://tizen.org/feature/microphone
+            </feature>
+            <param name="callback">
+            Called when the STT engine receives the private data from the engine service user.
+            This callback function is called when the engine service user sends the private data to the STT engine.
+            In Parameters:
+            a = Key -- The key field of private data
+            b = data -- The data field of private data
+            The following error codes can be returned:
+            1. None
+            2. InvalidParameter
+            3. OperationFailed
+            </param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case of permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown in case of not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of an operation failure.</exception>
+            <precondition>
+            The main function should be invoked before this function is called.
+            </precondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.SttEngine.Engine.SetPrivateDataRequestedDelegate(Tizen.Uix.SttEngine.Engine.OutAction{System.String})">
+            <summary>
+            Sets a callback delegate for requesting the private data.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/recorder
+            </privilege>
+            <feature>
+            http://tizen.org/feature/speech.recognition
+            http://tizen.org/feature/microphone
+            </feature>
+            <param name="callback">The callback function.
+            Called when the STT engine provides the engine service user with the private data.
+            This callback function is called when the engine service user gets the private data from the STT engine.
+            Out parameters:
+            a = Key -- The key field of private data
+            b = data -- The data field of private data
+            The following error codes can be returned:
+            1. None
+            2. InvalidParameter
+            3. OperationFailed
+            </param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case of permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown in case of not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of an operation failure.</exception>
+            <precondition>
+            The main function should be invoked before this function is called.
+            </precondition>
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

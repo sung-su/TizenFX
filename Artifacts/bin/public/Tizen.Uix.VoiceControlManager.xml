@@ -1,0 +1,1695 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Uix.VoiceControlManager</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            Partial Interop Class
+            </summary>
+            <summary>
+            Partial Interop Class
+            </summary>
+        </member>
+        <member name="T:Interop.Libraries">
+            <summary>
+            Partial Libraries Class
+            </summary>
+        </member>
+        <member name="T:Interop.VoiceControlCommand">
+            <summary>
+            VoiceControlCommand Interop Class
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.AllRecognitionResultEventArgs">
+            <summary>
+            This class contains the all recognition results from vc-daemon.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.AllRecognitionResultEventArgs.Result">
+            <summary>
+            The result of recognizing a VoiceCommand.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.AllRecognitionResultEventArgs.RecognizedText">
+            <summary>
+            The recognized text.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.AllRecognitionResultEventArgs.Message">
+            <summary>
+            Engine message, it can be one of the below:
+            1. "vc.result.message.none"
+            2. "vc.result.message.asr.result.consumed"
+            3. "vc.result.message.error.too.loud"
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.ConversationRequestedEventArgs">
+            <summary>
+            This Class contains the requests conversation from vc-daemon.
+            </summary>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.ConversationRequestedEventArgs.AppId">
+            <summary>
+            The application id of VC client to request dialog
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.ConversationRequestedEventArgs.DisplayText">
+            <summary>
+            The display text requested to be displayed
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.ConversationRequestedEventArgs.UtterenceText">
+            <summary>
+            The utterence text requested to be spoken
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.ConversationRequestedEventArgs.IsContinuous">
+            <summary>
+            If true, VoiceControlManager still has a conversation to deal with. And Start() should be called again.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.CurrentLanguageChangedEventArgs">
+            <summary>
+            This class holds information about the CurrentLanguageChanged event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.CurrentLanguageChangedEventArgs.PreviousLanguage">
+            <summary>
+            The previous language.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.CurrentLanguageChangedEventArgs.CurrentLanguage">
+            <summary>
+            The current language.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.ErrorOccurredEventArgs">
+            <summary>
+            This class holds information related to the VoiceControl ErrorOccurred event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.ErrorOccurredEventArgs.Why">
+            <summary>
+            The VoiceControlManager exception.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.FeedbackAudioFormatEventArgs">
+            <summary>
+            This Class contains audio formats necessary for playing TTS feedback.
+            </summary>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.FeedbackAudioFormatEventArgs.Rate">
+            <summary>
+            Audio sampling rate
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.FeedbackAudioFormatEventArgs.Channel">
+            <summary>
+            Audio channel
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.FeedbackAudioFormatEventArgs.Audio">
+            <summary>
+            Audio type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.FeedbackStreamingEventArgs">
+            <summary>
+            This Class contains the pre recognition results(partial ASR) from vc-daemon.
+            </summary>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.FeedbackStreamingEventArgs.FeedbackType">
+            <summary>
+            TTS feedback type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.FeedbackStreamingEventArgs.Buffer">
+            <summary>
+            Audio streaming data
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.PreRecognitionResultUpdatedEventArgs">
+            <summary>
+            This Class contains the pre recognition results(partial ASR) from vc-daemon.
+            </summary>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.PreRecognitionResultUpdatedEventArgs.ResultEvent">
+            <summary>
+            The pre result event
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.PreRecognitionResultUpdatedEventArgs.Result">
+            <summary>
+            Result ASR text
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.PrivateDataUpdatedEventArgs">
+            <summary>
+            This Class contains sets private data to manager client.
+            </summary>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.PrivateDataUpdatedEventArgs.Key">
+            <summary>
+            Private key
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.PrivateDataUpdatedEventArgs.Data">
+            <summary>
+            Private data
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.RecognitionResultUpdatedEventArgs">
+            <summary>
+            The recognition result from the engine.
+            If the duplicated commands are recognized, the event(e.g. Result.Rejected) of a command may be rejected
+            for selecting the command as a priority. If you set similar or same commands, or the recognized results are multi-results, the CommandList has multi commands.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.RecognitionResultUpdatedEventArgs.Finalize">
+            <summary>
+            The destructor of the RecognitionResultEventArgs class.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.RecognitionResultUpdatedEventArgs.Result">
+            <summary>
+            The result of recognizing a VoiceCommand.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.RecognitionResultUpdatedEventArgs.RecognizedText">
+            <summary>
+            The recognized text.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.RecognitionResultUpdatedEventArgs.Commands">
+            <summary>
+            The recognized command list.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.RecognitionResultUpdatedEventArgs.Dispose">
+            <summary>
+            Release any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.RecognitionResultUpdatedEventArgs.Dispose(System.Boolean)">
+            <summary>
+            Release any unmanaged resources used by this object.
+            </summary>
+            <param name="disposing">
+            If true, disposes any disposable objects. If false, does not dispose disposable objects.
+            </param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.ServiceStateChangedEventArgs">
+            <summary>
+            This class holds information related to the VoiceControl service ServiceStateChanged event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.ServiceStateChangedEventArgs.Previous">
+            <summary>
+            The previous state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.ServiceStateChangedEventArgs.Current">
+            <summary>
+            The current state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.SpecificEngineResultEventArgs">
+            <summary>
+            This Class contains the gets specific engine's result from vc-service.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.SpecificEngineResultEventArgs.EngineAppId">
+            <summary>
+            The specific engine's app id
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.SpecificEngineResultEventArgs.EngineEventType">
+            <summary>
+            The specific engine event type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.SpecificEngineResultEventArgs.Result">
+            <summary>
+            The specific engine result
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.StateChangedEventArgs">
+            <summary>
+            This class holds information related to the VoiceControl client StateChanged event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.StateChangedEventArgs.Previous">
+            <summary>
+            The previous state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.StateChangedEventArgs.Current">
+            <summary>
+            The current state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.VcTtsStreamingEventArgs">
+            <summary>
+            This Class contains the vc client sends audio streaming for TTS feedback.
+            </summary>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VcTtsStreamingEventArgs.AppId">
+            <summary>
+            The application id of the vc client
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VcTtsStreamingEventArgs.UtteranceId">
+            <summary>
+            The utterance id
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VcTtsStreamingEventArgs.FeedbackType">
+            <summary>
+            TTS feedback event which knows current status, app should receive until finish events comes up.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VcTtsStreamingEventArgs.Buffer">
+            <summary>
+            Audio streaming data
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.CommandFormat">
+            <summary>
+            Enumeration for the command format.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandFormat.Fixed">
+            <summary>
+            The fixed command format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandFormat.FixedAndVFixed">
+            <summary>
+            The fixed and variable fixed command format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandFormat.VFixedAndFixed">
+            <summary>
+            The variable fixed and fixed command format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandFormat.FixedAndNonFixed">
+            <summary>
+            The fixed and non-fixed command format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandFormat.NonFixedAndFixed">
+            <summary>
+            The non-fixed and fixed command format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandFormat.Action">
+            <summary>
+            The action command
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandFormat.Partial">
+            <summary>
+            The partial matched command
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandFormat.Undefined">
+            <summary>
+            Undefined
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.VoiceCommand">
+            <summary>
+            This class represents a voice command.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceCommand.#ctor">
+            <summary>
+            The public constructor.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege> http://tizen.org/privilege/recorder </privilege>
+            <privlevel>public</privlevel>
+            <feature> http://tizen.org/feature/microphone </feature>
+            <feature> http://tizen.org/feature/speech.control </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceCommand.Finalize">
+            <summary>
+            The destructor of the VoiceCommand class.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceCommand.UnfixedCommand">
+            <summary>
+            Gets the unfixed command.
+            This property should be used for commands which have non-fixed format.
+            An empty string will be returned in case of some internal error.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceCommand.CommandType">
+            <summary>
+            Gets or sets the command type.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege> http://tizen.org/privilege/recorder </privilege>
+            <privlevel>public</privlevel>
+            <feature> http://tizen.org/feature/microphone </feature>
+            <feature> http://tizen.org/feature/speech.control </feature>
+            <remarks>If you do not set the command type, the default value is undefined. You should set the type if the command is valid.</remarks>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceCommand.Format">
+            <summary>
+            Gets or sets the command format.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <feature> http://tizen.org/feature/microphone </feature>
+            <feature> http://tizen.org/feature/speech.control </feature>
+            <remarks>The default format is Fixed.</remarks>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceCommand.Command">
+            <summary>
+            Gets or sets the command.
+            A get empty string will be returned in case of some internal error.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege> http://tizen.org/privilege/recorder </privilege>
+            <privlevel>public</privlevel>
+            <feature> http://tizen.org/feature/microphone </feature>
+            <feature> http://tizen.org/feature/speech.control </feature>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceCommand.Dispose">
+            <summary>
+            Release any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceCommand.Dispose(System.Boolean)">
+            <summary>
+            Release any unmanaged resources used by this object.
+            </summary>
+            <param name="disposing">
+            If true, disposes any disposable objects. If false, does not dispose disposable objects.
+            </param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.VoiceCommandsGroup">
+            <summary>
+            This class represents a list of the voice commands.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceCommandsGroup.#ctor">
+            <summary>
+            The public constructor.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege> http://tizen.org/privilege/recorder </privilege>
+            <privlevel>public</privlevel>
+            <feature> http://tizen.org/feature/microphone </feature>
+            <feature> http://tizen.org/feature/speech.control </feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceCommandsGroup.Finalize">
+            <summary>
+            The destructor of the VoiceCommandList class.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceCommandsGroup.Commands">
+            <summary>
+            Gets the command list.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceCommandsGroup.Dispose">
+            <summary>
+            Release any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceCommandsGroup.Dispose(System.Boolean)">
+            <summary>
+            Release any unmanaged resources used by this object.
+            </summary>
+            <param name="disposing">
+            If true, disposes any disposable objects. If false, does not dispose disposable objects.
+            </param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.VoiceError">
+            <summary>
+            Enumeration for the error values that can occur.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.None">
+            <summary>
+            Successful, no error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.OutOfMemory">
+            <summary>
+            Out of memory.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.IoError">
+            <summary>
+            I/O error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.InvalidParameter">
+            <summary>
+            Invalid parameter.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.TimedOut">
+            <summary>
+            No answer from the STT service.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.RecorderBusy">
+            <summary>
+            Device or resource busy.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.PermissionDenied">
+            <summary>
+            Permission denied.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.NotSupported">
+            <summary>
+            VC NOT supported.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.InvalidState">
+            <summary>
+            Invalid state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.InvalidLanguage">
+            <summary>
+            Invalid language.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.EngineNotFound">
+            <summary>
+            No available engine.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.OperationFailed">
+            <summary>
+            Operation failed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.OperationRejected">
+            <summary>
+            Operation rejected.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.IterationEnd">
+            <summary>
+            List reached end.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.Empty">
+            <summary>
+            List empty.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.ServiceReset">
+            <summary>
+            Service reset.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.InProgressToReady">
+            <summary>
+            Progress to ready is not finished.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.InProgressToRecording">
+            <summary>
+            Progress to recording is not finished.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.InProgressToProcessing">
+            <summary>
+            Progress to processing is not finished.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.VoiceError.NotSupportedFeature">
+            <summary>
+            Not supported feature of current engine.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.State">
+            <summary>
+            Enumeration for the client state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.State.None">
+            <summary>
+            'None' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.State.Initialized">
+            <summary>
+            'Initialized' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.State.Ready">
+            <summary>
+            'Ready' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.State.Unavailable">
+            <summary>
+            The state cannot be determined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.ServiceState">
+            <summary>
+            Enumeration for the service state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.ServiceState.None">
+            <summary>
+            'None' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.ServiceState.Ready">
+            <summary>
+            'Ready' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.ServiceState.Recording">
+            <summary>
+            'Recording' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.ServiceState.Processing">
+            <summary>
+            'Processing' state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.ServiceState.Unavailable">
+            <summary>
+            The state cannot be determined.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.RecognizedResult">
+            <summary>
+            Enumeration for the result of recognizing a VoiceCommand
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.RecognizedResult.Success">
+            <summary>
+            Normal result.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.RecognizedResult.Rejected">
+            <summary>
+            Rejected result.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.CommandType">
+            <summary>
+            Enumeration for the command type.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandType.Foreground">
+            <summary>
+            foreground command type
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandType.Background">
+            <summary>
+            background command type
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandType.Widget">
+            <summary>
+            widget command type
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandType.System">
+            <summary>
+            system command type
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandType.SystemBackground">
+            <summary>
+            system background command type
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandType.Exclusive">
+            <summary>
+            exclusive command type
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.CommandType.Undefined">
+            <summary>
+            Undefined command
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.RecognitionModeType">
+            <summary>
+            Enumerations of recognition mode
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.RecognitionModeType.StopBySilence">
+            <summary>
+            Default mode
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.RecognitionModeType.RestartAfterReject">
+            <summary>
+            Restart recognition after rejected result
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.RecognitionModeType.RestartContinuously">
+            <summary>
+            Continuously restart recognition - not support yet
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.RecognitionModeType.Manual">
+            <summary>
+            Start and stop manually without silence
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.RecognitionModeType.Undefined">
+            <summary>
+            Undefined
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.SendEventType">
+            <summary>
+            Enumerations of send event type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.SendEventType.Text">
+            <summary>
+            Send text event to vc engine
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.SendEventType.ListEvent">
+            <summary>
+            Send list event to vc engine
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.SendEventType.HapticEvent">
+            <summary>
+            Send haptic event to vc engine
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.AudioChanelType">
+            <summary>
+            Enumerations for audio channels
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.AudioChanelType.Mono">
+            <summary>
+            1 channel, mono
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.AudioChanelType.Stereo">
+            <summary>
+            2 channels, stereo
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.AudioType">
+            <summary>
+            Enumerations of audio types
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.AudioType.PcmS16Le">
+            <summary>
+            Signed 16bit audio type, Little endian
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.AudioType.PcmU8">
+            <summary>
+            Unsigned 8bit audio type
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.FeedbackType">
+            <summary>
+            Enumeration for TTS feedback type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.FeedbackType.Fail">
+            <summary>
+            Failed
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.FeedbackType.Start">
+            <summary>
+            Start event
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.FeedbackType.Continue">
+            <summary>
+            Continue event
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.FeedbackType.Finish">
+            <summary>
+            Finish event
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.PreResultEventType">
+            <summary>
+            Enumerations of pre result event
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.PreResultEventType.FinalResult">
+            <summary>
+            Final result
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.PreResultEventType.PartialResult">
+            <summary>
+            Partial Result
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.VoiceControlManager.PreResultEventType.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient">
+            <summary>
+            Voice Control Manager Class
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.PrivateDataProvider">
+            <summary>
+            The delegate is invoked when engine requests private data is needed.
+            </summary>
+            <param name="key">Private key</param>
+            <returns>Private data</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.SelectRecognizedCommandsDelegate">
+            <summary>
+            The delegate is invoked when the sentence match, client selects valid commands from all commands.
+            </summary>
+            <param name="commands">Command list</param>
+            <param name="recognizedText">The Recognized text</param>
+            <param name="message">Engine message</param>
+            <returns>Valid commands</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.Initialize">
+            <summary>
+            Initialize voice control manager.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to out of memory.
+            2) This exception can be due to operation failed.
+            </exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <post>
+            The State will be Initialized.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.Deinitialize">
+            <summary>
+            Deinitialize the voice control manager.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <post>
+            The State will be None.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.Prepare">
+            <summary>
+            Connects the voice control service.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The state must be initialized.
+            </pre>
+            <post>
+            The state must be ready.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.Unprepare">
+            <summary>
+            Disconnects the voice control service.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The state must be ready.
+            </pre>
+            <post>
+            The state must be initialized.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.GetSupportedLanguages">
+            <summary>
+            Retrieves all the supported languages.
+            A language is specified as an ISO 3166 alpha-2 two letter country-code
+            followed by ISO 639-1 for the two-letter language code.
+            For example, "ko_KR" for Korean, "en_US" for American English.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <returns>
+            List of strings for supported languages.
+            </returns>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The state must be ready or initialized.
+            </pre>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.CurrentLanguage">
+            <summary>
+            Gets the current language.
+            A language is specified as an ISO 3166 alpha-2 two letter country-code
+            followed by ISO 639-1 for the two-letter language code.
+            For example, "ko_KR" for Korean, "en_US" for American English.
+            An empty string is returned in case of some internal error.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <value>The current language in voice control.</value>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The state must be initialized or ready.
+            </pre>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.State">
+            <summary>
+            Gets the current state of the voice control client.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <value>The current state of the voice control client.</value>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The state must be initialized or ready.
+            </pre>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.ServiceState">
+            <summary>
+            Gets the current state of the voice control service.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <value>The current state of the voice control service.</value>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to an invalid state.
+            2) This exception can be due to operation failed.
+            </exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The state must be ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.IsSupportedCommandFormat(Tizen.Uix.VoiceControlManager.CommandFormat)">
+            <summary>
+            Checks whether the command format is supported.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="format">The command format</param>
+            <returns>The result status, true if supported</returns>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State must be Ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.SetCommands(Tizen.Uix.VoiceControlManager.VoiceCommandsGroup)">
+            <summary>
+            Sets system or exclusive commands.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="commands">Command list</param>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Ready
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.ClearCommands">
+            <summary>
+            Clears commands.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to invalid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Ready
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.SetCommandsFromFile(System.String,Tizen.Uix.VoiceControlManager.CommandType)">
+            <summary>
+            Sets commands from file.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="path">File Path</param>
+            <param name="type">Command type</param>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Ready
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.GetCurrentCommands">
+            <summary>
+            Retrieves all available commands.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>>
+            <returns>
+            The Command List else null in case of no System Commands
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to an invalid state.
+            2) This exception can be due to operation failed.
+            </exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Ready
+            </pre>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.AudioType">
+            <summary>
+            Sets or Gets the Audio In Type.
+            The Values of the strings can be "VC_AUDIO_ID_BLUETOOTH" or "VC_AUDIO_ID_MSF"
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State must be Ready.
+            </pre>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.RecognitionMode">
+            <summary>
+            Sets or Gets the recognition mode.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State must be Ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.SetPrivateData(System.String,System.String)">
+            <summary>
+            Sets private data between app and engine.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="key">Private key</param>
+            <param name="data">Private data</param>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to an invalid state.
+            2) This exception can be due to operation failed.
+            </exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException" > The required feature is not supported.</exception>
+            <pre>
+            The State must be Ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.GetPrivateData(System.String)">
+            <summary>
+            Gets private data between app and engine.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="key">Private key</param>
+            <returns>Private data</returns>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State must be Ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.DoAction(Tizen.Uix.VoiceControlManager.SendEventType,System.String)">
+            <summary>
+            Request to do action as if utterence is spoken.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="type">Event type</param>
+            <param name="sendEvent">The string for send event</param>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to an invalid state.
+            2) This exception can be due to operation failed.
+            </exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException" > The required feature is not supported.</exception>
+            <pre>
+            The State must be Ready.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.SendSpecificEngineRequest(System.String,System.String,System.String)">
+            <summary>
+            Sends the specific engine request to the vc-service.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="engineAppId">A specific engine's app id</param>
+            <param name="evt">A engine service user request event</param>
+            <param name="request">A engine service user request text</param>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to an invalid state.
+            2) This exception can be due to operation failed.
+            </exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.Start(System.Boolean)">
+            <summary>
+            Starts recognition.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="exclusiveCommandOption">Exclusive command option</param>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to an invalid state.
+            2) This exception can be due to operation failed.
+            3) This exception can be due to progress to recording is not finished.
+            </exception>
+            <exception cref="T:System.TimeoutException">This exception can be due to no answer from service.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State must be Ready.
+            </pre>
+            <post>
+            The Service State will become Recording.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.Stop">
+            <summary>
+            Stop recognition.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to an invalid state.
+            2) This exception can be due to operation failed.
+            3) This exception can be due to progress to ready is not finished.
+            4) This exception can be due to progress to recording is not finished.
+            5) This exception can be due to progress to processing is not finished.
+            </exception>
+            <exception cref="T:System.TimeoutException">This exception can be due to no answer from service.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State must be Recording.
+            </pre>
+            <post>
+            The Service State will become Processing.
+            </post>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.Cancel">
+            <summary>
+            Cancels recognition.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to an invalid state.
+            2) This exception can be due to operation failed.
+            3) This exception can be due to progress to ready is not finished.
+            4) This exception can be due to progress to recording is not finished.
+            5) This exception can be due to progress to processing is not finished.
+            </exception>
+            <exception cref="T:System.TimeoutException">This exception can be due to no answer from service.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State must be Recording or Processing.
+            </pre>
+            <post>
+            The Service State will become Ready.
+            </post>
+        </member>
+        <member name="P:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.RecordingVolume">
+            <summary>
+            Gets the microphone volume during recording.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The Service State must be Recording.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.SetRecognizedCommandsSelectionDelegate(Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.SelectRecognizedCommandsDelegate)">
+            <summary>
+            Sets the delegate for setting valid commands.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="recognizedCommandsDelegate">The delegate for setting valid commands.</param>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.AllRecognitionResultReceived">
+            <summary>
+            Called when client gets the all recognition results from vc-daemon.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Initialized
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.PreRecognitionResultUpdated">
+            <summary>
+            Called when client gets the pre recognition results(partial ASR) from vc-daemon.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Initialized
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.SpecificEngineResult">
+            <summary>
+            Called when client gets the specific engine's result from vc-service.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Initialized
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.RecognitionResultUpdated">
+            <summary>
+            Event to be invoked when the recognition is done.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Initialized
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.StateChanged">
+            <summary>
+            Event to be invoked when the VoiceControl client state changes.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The state must be initialized.
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.ServiceStateChanged">
+            <summary>
+            Event to be invoked when the VoiceControl service state changes.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The state must be initialized.
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.SpeechDetected">
+            <summary>
+            Called when user speaking is detected.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Initialized
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.CurrentLanguageChanged">
+            <summary>
+            Event to be invoked when the default language changes.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The state must be initialized.
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.ErrorOccurred">
+            <summary>
+            Event to be invoked when an error occurs.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The state must be initialized.
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.ConversationRequested">
+            <summary>
+            Event to be called when conversation requests.
+            </summary>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Initialized
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.EnableCommandType(Tizen.Uix.VoiceControlManager.CommandType)">
+            <summary>
+            Enable command type as candidate command.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="cmdType">Command Type</param>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to an invalid state.
+            2) This exception can be due to operation failed.
+            </exception>
+            <exception cref="T:System.TimeoutException">This exception can be due to no answer from service.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Ready
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.DisableCommandType(Tizen.Uix.VoiceControlManager.CommandType)">
+            <summary>
+            Disable command type as candidate command.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="cmdType">Command Type</param>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to an invalid state.
+            2) This exception can be due to operation failed.
+            </exception>
+            <exception cref="T:System.TimeoutException">This exception can be due to no answer from service.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Ready
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.PrivateDataUpdated">
+            <summary>
+            Called when engine sets private data to manager client.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Initialized
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.SetPrivateDataProviderDelegate(Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.PrivateDataProvider)">
+            <summary>
+            Sets the delegate for setting private data.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <param name="privateDataDelegate">The delegate for setting private data</param>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.FeedbackAudioFormatChanged">
+            <summary>
+            Called when engine sends audio formats necessary for playing TTS feedback.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Initialized
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.FeedbackStreaming">
+            <summary>
+            Called when engine sends audio streaming for TTS feedback.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Initialized
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.StartFeedback">
+            <summary>
+            Starts getting TTS feedback streaming data from the buffer.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Ready
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.StopFeedback">
+            <summary>
+            Stops getting and removes TTS feedback streaming data from the buffer.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <privilege>http://tizen.org/privilege/voicecontrol.manager</privilege>
+            <privilege>http://tizen.org/privilege/recorder</privilege>
+            <privlevel>platform</privlevel>
+            <feature>http://tizen.org/feature/speech.control_manager</feature>
+            <feature>http://tizen.org/feature/microphone</feature>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to an invalid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <pre>
+            The State should be Ready
+            </pre>
+        </member>
+        <member name="E:Tizen.Uix.VoiceControlManager.VoiceControlManagerClient.VcTtsStreaming">
+            <summary>
+            Called when the vc client sends audio streaming for TTS feedback.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <pre>
+            The State should be Initialized
+            </pre>
+        </member>
+    </members>
+</doc>

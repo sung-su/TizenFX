@@ -1,0 +1,542 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.Shortcut</name>
+    </assembly>
+    <members>
+        <member name="T:Interop.Shortcut.ErrorCode">
+            <summary>
+            Enumeration for the values of the shortcut response types.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.None">
+            <summary>
+            Successful.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.InvalidParameter">
+            <summary>
+            Invalid function parameter.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.OutOfMemory">
+            <summary>
+            Out of memory.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.PermissionDenied">
+            <summary>
+            Permission denied.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.IoError">
+            <summary>
+            I/O Error.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.NotSupported">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.ResourceBusy">
+            <summary>
+            Device or resource busy.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.NoSpace">
+            <summary>
+            There is no space to add a new shortcut.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.Exist">
+            <summary>
+            Shortcut is already added.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.Fault">
+            <summary>
+            Unrecoverable error.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.NotExist">
+            <summary>
+            Shortcut does not exist.
+            </summary>
+        </member>
+        <member name="F:Interop.Shortcut.ErrorCode.COMM">
+            <summary>
+            Connection not established or communication problem.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.HomeShortcutInfo">
+            <summary>
+            A class that contains the shortcut information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.HomeShortcutInfo.Uri">
+            <summary>
+            Gets or sets the specific information delivered to the viewer for creating a shortcut.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutWidgetSize">
+            <summary>
+            Enumeration for the sizes of the shortcut widget.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.WidgetDefault">
+            <summary>
+            Type mask for the normal mode widget, don't use this value for a specific size.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Widget1by1">
+            <summary>
+            1by1
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Widget2by1">
+            <summary>
+            2by1
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Widget2by2">
+            <summary>
+            2by2
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Widget4by1">
+            <summary>
+            4by1
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Widget4by2">
+            <summary>
+            4by2
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Widget4by3">
+            <summary>
+            4by3
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Widget4by4">
+            <summary>
+            4by4
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Widget4by5">
+            <summary>
+            4by5
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Widget4by6">
+            <summary>
+            4by6
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.EasyDefault">
+            <summary>
+            Type mask for the easy mode widget, don't use this value for a specific size.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Easy1by1">
+            <summary>
+            Easy mode 1by1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Easy3by1">
+            <summary>
+            Easy mode 3by2.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutWidgetSize.Easy3by3">
+            <summary>
+            Easy mode 3by3.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutType">
+            <summary>
+            Enumeration for the shortcut types.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutType.LaunchByApp">
+            <summary>
+            Launch the application itself.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutType.LaunchByUri">
+            <summary>
+            Launch the application with the given data (URI).
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutInfo">
+            <summary>
+            A class to get the information of the shortcut.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutInfo.ShortcutName">
+            <summary>
+            Gets or sets the name of the created shortcut icon.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutInfo.IconPath">
+            <summary>
+            Gets or sets the absolute path of an icon file for this shortcut.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutInfo.IsAllowDuplicate">
+            <summary>
+            Gets or sets a value indicating whether to allow or not allow duplication.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutManager">
+            <summary>
+            This class provides some functions to add or delete a shortcut.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Shortcut.ShortcutManager.Add(Tizen.Applications.Shortcut.HomeShortcutInfo)">
+            <summary>
+            Adds a shortcut on the home-screen.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="shortcut">Object that contains the shortcut information.</param>
+            <feature>http://tizen.org/feature/shortcut</feature>
+            <privilege>http://tizen.org/privilege/shortcut</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case the permission is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the shortcut is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown in case of out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+        </member>
+        <member name="M:Tizen.Applications.Shortcut.ShortcutManager.Add(Tizen.Applications.Shortcut.WidgetShortcutInfo)">
+            <summary>
+            Adds a shortcut on the home-screen.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="shortcut">Object that contains the shortcut information.</param>
+            <feature>http://tizen.org/feature/shortcut</feature>
+            <privilege>http://tizen.org/privilege/shortcut</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case the permission is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the shortcut is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown in case of out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+        </member>
+        <member name="M:Tizen.Applications.Shortcut.ShortcutManager.Delete(System.String)">
+            <summary>
+            Removes a shortcut from home by the ShortcutName.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="shortcutName">The shortcut name string.</param>
+            <feature>http://tizen.org/feature/shortcut</feature>
+            <privilege>http://tizen.org/privilege/shortcut</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case the permission is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the shortcut is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown in case of out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+        </member>
+        <member name="M:Tizen.Applications.Shortcut.ShortcutManager.Delete(Tizen.Applications.Shortcut.ShortcutInfo)">
+            <summary>
+            Removes a shortcut from home by the ShortcutInfo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="shortcut">Object that contains the shortcut information.</param>
+            <feature>http://tizen.org/feature/shortcut</feature>
+            <privilege>http://tizen.org/privilege/shortcut</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case the permission is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the shortcut is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown in case of out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.WidgetShortcutInfo">
+            <summary>
+            A class that contains the information about the widget.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.WidgetShortcutInfo.WidgetId">
+            <summary>
+            Gets or sets the widget ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.WidgetShortcutInfo.WidgetSize">
+            <summary>
+            Gets or sets the size of the widget.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.WidgetShortcutInfo.Period">
+            <summary>
+            Gets or sets the update period in seconds.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.HomeShortcutAddedInfo">
+            <summary>
+            A class that contains the shortcut information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.HomeShortcutAddedInfo.AppId">
+            <summary>
+            Gets the name of the application.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.HomeShortcutAddedInfo.Uri">
+            <summary>
+            Gets the specific information for creating a new shortcut.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutAddedInfo">
+            <summary>
+            A class for getting the information of the shortcut.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutAddedInfo.ShortcutName">
+            <summary>
+            Gets the name of the created shortcut icon.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutAddedInfo.IconPath">
+            <summary>
+            Gets the absolute path of an icon file for this shortcut.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutAddedInfo.IsAllowDuplicate">
+            <summary>
+            Gets a value indicating whether to allow or not to allow duplication.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutDeletedInfo">
+            <summary>
+            A class for getting the information of the shortcut.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutDeletedInfo.AppId">
+            <summary>
+            Gets the name of the package.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutDeletedInfo.ShortcutName">
+            <summary>
+            Gets the name of the created shortcut icon.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutError">
+            <summary>
+            Enumeration for values of the shortcut response types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutError.None">
+            <summary>
+            Successful.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutError.InvalidParameter">
+            <summary>
+            Invalid function parameter.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutError.OutOfMemory">
+            <summary>
+            Out of memory.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutError.IoError">
+            <summary>
+            I/O error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutError.NoSpace">
+            <summary>
+            There is no space to add a new shortcut.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutError.Exist">
+            <summary>
+            Shortcut is already added.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Shortcut.ShortcutError.NotExist">
+            <summary>
+            Shortcut does not exist.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutAdded">
+            <summary>
+            The callback function that is invoked when the add request occurs.
+            </summary>
+            <param name="args">Object that contains the shortcut information to add.</param>
+            <returns>The result of handling a shortcut add request.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutDeleted">
+            <summary>
+            The callback function that is invoked when the delete request occurs.
+            </summary>
+            <param name="args">Object that contains the shortcut information to delete.</param>
+            <returns>The result of handling a shortcut delete request.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutEventManager">
+            <summary>
+            This class provides a way to register the callback function for the shortcut add and delete events.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Shortcut.ShortcutEventManager.RegisterEventHandler(Tizen.Applications.Shortcut.ShortcutAdded)">
+            <summary>
+            Registers a callback function to listen requests from the applications.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="addedEvent">The callback function pointer that is invoked when Add() is requested.</param>
+            <feature>http://tizen.org/feature/shortcut</feature>
+            <privilege>http://tizen.org/privilege/shortcut</privilege>
+            <remarks>
+            Previous registered delegate function should be unregistered.
+            </remarks>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case the permission is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the shortcut is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown in case of out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+        </member>
+        <member name="M:Tizen.Applications.Shortcut.ShortcutEventManager.RegisterEventHandler(Tizen.Applications.Shortcut.ShortcutDeleted)">
+            <summary>
+            Registers a callback function to listen requests from the applications.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="deletedEvent">The callback function pointer that is invoked when Delete() is requested.</param>
+            <feature>http://tizen.org/feature/shortcut</feature>
+            <privilege>http://tizen.org/privilege/shortcut</privilege>
+            <remarks>
+            Previous registered delegate function should be unregistered.
+            </remarks>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case the permission is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the shortcut is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown in case of out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+        </member>
+        <member name="M:Tizen.Applications.Shortcut.ShortcutEventManager.UnregisterEventHandler(Tizen.Applications.Shortcut.ShortcutAdded)">
+            <summary>
+            Unregisters a callback for the shortcut request.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="addedEvent">The callback function pointer that is used for RegisterCallback.</param>
+            <feature>http://tizen.org/feature/shortcut</feature>
+            <privilege>http://tizen.org/privilege/shortcut</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case the permission is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the shortcut is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Applications.Shortcut.ShortcutEventManager.UnregisterEventHandler(Tizen.Applications.Shortcut.ShortcutDeleted)">
+            <summary>
+            Unregisters a callback for the shortcut request.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="deletedEvent">The callback function pointer that is used for RegisterCallback.</param>
+            <feature>http://tizen.org/feature/shortcut</feature>
+            <privilege>http://tizen.org/privilege/shortcut</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case the permission is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the shortcut is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Applications.Shortcut.ShortcutEventManager.GetTemplateList(System.String)">
+            <summary>
+            Gets the preset list of the shortcut template from the installed package.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="appId">The application ID.</param>
+            <returns>The List of ShortcutTemplate.</returns>
+            <feature>http://tizen.org/feature/shortcut</feature>
+            <privilege>http://tizen.org/privilege/shortcut</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case the permission is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the shortcut is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown in case of out of memory.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.ShortcutTemplate">
+            <summary>
+            A class that contains the preset list of the shortcut template from the installed package.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutTemplate.AppId">
+            <summary>
+            Gets the application ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutTemplate.ShortcutName">
+            <summary>
+            Gets the name of the created shortcut icon.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutTemplate.IconPath">
+            <summary>
+            Gets the absolute path of an icon file for this shortcut.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutTemplate.ExtraKey">
+            <summary>
+            Gets the user data. A property of the shortcut element in the manifest file.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.ShortcutTemplate.ExtraData">
+            <summary>
+            Gets the user data. A property of the shortcut element in the manifest file.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Shortcut.WidgetShortcutAddedInfo">
+            <summary>
+            A class that contains the information about the widget.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.WidgetShortcutAddedInfo.WidgetId">
+            <summary>
+            Gets the widget ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.WidgetShortcutAddedInfo.WidgetSize">
+            <summary>
+            Gets the size of the widget.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Shortcut.WidgetShortcutAddedInfo.Period">
+            <summary>
+            Gets the update period in seconds.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

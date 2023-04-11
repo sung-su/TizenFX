@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Inspections</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Inspections.DataRequestReceivedEventArgs">
+            <summary>
+            DataRequestReceivedEventArgs is an extended EventArgs class.
+            This class contains event arguments for the DataRequestReceived event from the Inspection class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Inspections.DataRequestReceivedEventArgs.Data">
+            <summary>
+            The instance of InspectionData.
+            </summary>
+        </member>
+        <member name="P:Tizen.Inspections.DataRequestReceivedEventArgs.Parameters">
+            <summary>
+            An array of data request parameters.
+            </summary>
+        </member>
+        <member name="P:Tizen.Inspections.DataRequestReceivedEventArgs.Context">
+            <summary>
+            The instance of InspectionContext.
+            </summary>
+        </member>
+        <member name="T:Tizen.Inspections.EventReceivedEventArgs">
+            <summary>
+            EventReceivedEventArgs is an extended EventArgs class.
+            This class contains event arguments for the EventReceived event from the Inspection class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Inspections.EventReceivedEventArgs.Context">
+            <summary>
+            The instance of InspectionContext.
+            </summary>
+        </member>
+        <member name="T:Tizen.Inspections.Inspector">
+            <summary>
+            The Inspector class is used for requesting client data and receiving inspection events.
+            </summary>
+        </member>
+        <member name="E:Tizen.Inspections.Inspector.EventReceived">
+            <summary>
+            Event to be invoked when new inspection context arrives.
+            </summary>
+        </member>
+        <member name="E:Tizen.Inspections.Inspector.DataRequestReceived">
+            <summary>
+            Event to be invoked when new inspection data request arrives.
+            </summary>
+        </member>
+        <member name="M:Tizen.Inspections.Inspector.SubscribeEvent(System.String,System.String)">
+            <summary>
+            Subscribes to inspection event sent by other module.
+            </summary>
+            <param name="eventName">Event name.</param>
+            <param name="moduleID">An ID of the event sender module.</param>
+            <remarks>
+            This function is permitted only to an app signed by platform level certificates.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Inspections.Inspector.SendEvent(System.String,Tizen.Applications.Bundle)">
+            <summary>
+            Sends inspection event.
+            </summary>
+            <param name="eventName">Event name.</param>
+            <param name="eventData">Event data.</param>
+            <remarks>
+            This function is permitted only to an app signed by platform level certificates.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Inspections.Inspector.RequestInspectableData(System.String,System.String[])">
+            <summary>
+            Requests other module (app or service) to provide inspection data.
+            </summary>
+            <param name="moduleID">An ID of module to request.</param>
+            <param name="parameters">Array of request parameters passed to the module.</param>
+            <returns>
+            The instance of InspectionData.
+            </returns>
+            <remarks>
+            This function is permitted only to an app signed by platform level certificates.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Inspections.Inspector.RequestBugreport(System.Int32)">
+            <summary>
+            Requests bugreport creation.
+            </summary>
+            <privilege>http://tizen.org/privilege/bugreport.admin</privilege>
+            <privlevel>platform</privlevel>
+            <param name="pid">An ID of a process that should be livedumped. When pid is 0, system-wide bugreport is created.</param>
+        </member>
+        <member name="T:Tizen.Inspections.InspectionContext">
+            <summary>
+            The InspectionContext class is used for getting data from the context.
+            </summary>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionContext.#ctor(System.IntPtr)">
+            <summary>
+            The InspectionContext class constructor.
+            </summary>
+            <param name="handle">Inspection context received in the EventReceived event.</param>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionContext.Finalize">
+            <summary>
+            Finalizes an instance of the InspectionContext class.
+            </summary>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionContext.GetInspectableData(System.String[])">
+            <summary>
+            Gets data from the context based on given parameters.
+            </summary>
+            <param name="parameters">Array of parameters.</param>
+            <returns>
+            The instance of InspectionData.
+            </returns>
+            <remarks>
+            This function is permitted only to an app signed by platform level certificates.
+            </remarks>
+        </member>
+        <member name="P:Tizen.Inspections.InspectionContext.ModuleID">
+            <summary>
+            Stores module ID.
+            </summary>
+        </member>
+        <member name="P:Tizen.Inspections.InspectionContext.EventName">
+            <summary>
+            Stores event name.
+            </summary>
+        </member>
+        <member name="P:Tizen.Inspections.InspectionContext.EventData">
+            <summary>
+            Stores event data.
+            </summary>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionContext.Dispose">
+            <summary>
+            Dispose API for closing the internal resources.
+            </summary>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionContext.Dispose(System.Boolean)">
+            <summary>
+            Dispose API for closing the internal resources.
+            </summary>
+        </member>
+        <member name="T:Tizen.Inspections.InspectionData">
+            <summary>
+            The InspectionData class is used for reading inspection data.
+            </summary>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionData.#ctor(System.IntPtr)">
+            <summary>
+            The InspectionData class constructor.
+            </summary>
+            <param name="handle">Inspection data handle.</param>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionData.Finalize">
+            <summary>
+            Finalizes an instance of the InspectionData class.
+            </summary>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionData.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads given number of bytes from inspection data.
+            </summary>
+            <param name="buffer">An array of bytes. When this method returns, the buffer contains the specified byte array with the values between offset and (offset + count - 1) replaced by the bytes read from the current source.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin storing the data read from the current stream.</param>
+            <param name="count">The maximum number of bytes to be read.</param>
+            <returns>
+            The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available, or zero (0) if the end of the stream has been reached.
+            </returns>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionData.Read(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Reads given number of bytes from inspection data.
+            </summary>
+            <param name="buffer">An array of bytes. When this method returns, the buffer contains the specified byte array with the values between offset and (offset + count - 1) replaced by the bytes read from the current source.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin storing the data read from the current stream.</param>
+            <param name="count">The maximum number of bytes to be read.</param>
+            <param name="timeout">Timeout [ms] for reading requested number of bytes.</param>
+            <returns>
+            The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available, or zero (0) if the end of the stream has been reached.
+            </returns>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionData.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes given number of bytes to inspection data.
+            </summary>
+            <param name="buffer">An array of bytes. This method copies count bytes from buffer to the current stream.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin copying bytes to the current stream.</param>
+            <param name="count">The number of bytes to be written to the current stream.</param>
+            <returns>
+            The number of bytes written to the current stream.
+            </returns>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionData.Dispose">
+            <summary>
+            Dispose API for closing the internal resources.
+            </summary>
+        </member>
+        <member name="M:Tizen.Inspections.InspectionData.Dispose(System.Boolean)">
+            <summary>
+            Dispose API for closing the internal resources.
+            </summary>
+        </member>
+    </members>
+</doc>

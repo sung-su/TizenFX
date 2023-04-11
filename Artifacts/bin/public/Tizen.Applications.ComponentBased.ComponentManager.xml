@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.ComponentBased.ComponentManager</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.ComponentBased.ComponentInfo">
+            <summary>
+            This class provides methods and properties to get information of the component.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentInfo.#ctor(System.String)">
+            <summary>
+            A constructor of ComponentInfo that takes the component ID.
+            </summary>
+            <param name="componentId">Component ID.</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of the system error.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed because of out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when failed because of permission denied.</exception>>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentInfo.Finalize">
+            <summary>
+            Destructor of the class.
+            </summary>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentInfo.ComponentId">
+            <summary>
+            Gets the component ID.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentInfo.ApplicationId">
+            <summary>
+            Gets the application ID of the component.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentInfo.ComponentType">
+            <summary>
+            Gets the type of the component.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentInfo.IsIconDisplayed">
+            <summary>
+            Checks whether the icon of the component should be displayed or not.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentInfo.IsManagedByTaskManager">
+            <summary>
+            Checks whether the component should be managed by task-manager or not.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentInfo.IconPath">
+            <summary>
+            Gets the absolute path of the icon image.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentInfo.Label">
+            <summary>
+            Gets the label of the component.
+            </summary>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentInfo.GetLocalizedLabel(System.String)">
+            <summary>
+            Gets the localized label of the component for the given locale.
+            </summary>
+            <param name="locale">Locale.</param>
+            <remarks>The format of locale is language and country code. (available value: "[2-letter lowercase language code (ISO 639-1)]-[2-letter lowercase country code (ISO 3166-alpha-2)]")</remarks>
+            <returns>The localized label.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentInfo.Dispose">
+            <summary>
+            Releases all resources used by the ComponentInfo class.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentInfo.Dispose(System.Boolean)">
+            <summary>
+            Releases all resources used by the ComponentInfo class.
+            </summary>
+            <param name="disposing">Disposing</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.ComponentBased.ComponentManager">
+            <summary>
+            This class has the methods and events of the ComponentManager.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentManager.GetInstalledComponentsAsync">
+            <summary>
+            Gets the information of the installed components asynchronously.
+            </summary>
+            <returns>The installed component info list.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of the "component not exist" error or the system error.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed because of out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when failed because of permission denied.</exception>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentManager.GetRunningComponentsAsync">
+            <summary>
+            Gets the information of the running components asynchronously.
+            </summary>
+            <returns>The component running context list.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of the "component not exist" error or the system error.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed because of out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when failed because of permission denied.</exception>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentManager.IsRunning(System.String)">
+            <summary>
+            Checks whether the component is running or not.
+            </summary>
+            <param name="componentId">Component ID.</param>
+            <returns>Returns true if the component is running, otherwise false.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of the "component not exist" error or the system error.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed because of out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when failed because of permission denied.</exception>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentManager.TerminateBackgroundComponent(Tizen.Applications.ComponentBased.ComponentRunningContext)">
+            <summary>
+            Terminates the component if it is running in the background.
+            </summary>
+            <param name="context">Component ID</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of the "component not exist" error or the system error.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed because of out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when failed because of permission denied.</exception>
+            <privilege>http://tizen.org/privilege/appmanager.kill.bgapp</privilege>
+            <remarks>
+            This function returns after it just sends a request for terminating a background component.
+            Platform will decide if the target component could be terminated or not according to the state of the target component.
+            </remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.ComponentBased.ComponentRunningContext">
+            <summary>
+            This class provides methods and properties to get information of the running component.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentRunningContext.#ctor(System.String)">
+            <summary>
+            A constructor of ComponentRunningContext that takes the component ID.
+            </summary>
+            <param name="componentId">Component ID.</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of the "component not exist" error or the system error.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed because of out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when failed because of permission denied.</exception>
+            <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentRunningContext.Finalize">
+            <summary>
+            Destructor of the class.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.ComponentBased.ComponentRunningContext.ComponentState">
+            <summary>
+            Enumeration for the component state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.ComponentBased.ComponentRunningContext.ComponentState.Initialized">
+            <summary>
+            The Initialized state. This is the state when the component is constructed but OnCreate() is not called yet.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.ComponentBased.ComponentRunningContext.ComponentState.Created">
+            <summary>
+            The created state. This state is reached after OnCreate() is called.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.ComponentBased.ComponentRunningContext.ComponentState.Started">
+            <summary>
+            The started state. This state is reached after OnStart() or OnStartCommand() is called.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.ComponentBased.ComponentRunningContext.ComponentState.Resumed">
+            <summary>
+            The resumed state. This state is reached after OnResume() is called.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.ComponentBased.ComponentRunningContext.ComponentState.Paused">
+            <summary>
+            The paused state. This state is reached after OnPause() is called.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.ComponentBased.ComponentRunningContext.ComponentState.Destroyed">
+            <summary>
+            The destroyed state. This state is reached right before OnDestroy() call.
+            </summary>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentRunningContext.ComponentId">
+            <summary>
+            Gets the ID of the component.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentRunningContext.ApplicationId">
+            <summary>
+            Gets the application ID of the component.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentRunningContext.InstanceId">
+            <summary>
+            Gets the instance ID of the component.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentRunningContext.State">
+            <summary>
+            Gets the state of the component.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentRunningContext.IsTerminated">
+            <summary>
+            Checks whether the component is terminated or not.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentRunningContext.IsSubComponent">
+            <summary>
+            Checks whether the component is running as sub component of the group.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentRunningContext.Resume">
+            <summary>
+            Resumes the running component.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of the system error.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed because of out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when failed because of permission denied.</exception>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentRunningContext.Pause">
+            <summary>
+            Pauses the running component.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of the system error.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed because of out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when failed because of permission denied.</exception>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentRunningContext.Terminate">
+            <summary>
+            Terminates the running component.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of the system error.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed because of out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when failed because of permission denied.</exception>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentRunningContext.Dispose">
+            <summary>
+            Releases all resources used by the ComponentInfo class.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentRunningContext.Dispose(System.Boolean)">
+            <summary>
+            Releases all resources used by the ComponentInfo class.
+            </summary>
+            <param name="disposing">Disposing</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.ComponentBased.ComponentType">
+            <summary>
+            Enumeration for component type.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.ComponentBased.ComponentType.Frame">
+            <summary>
+            Frame component
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.ComponentBased.ComponentType.Service">
+            <summary>
+            Service component
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.ComponentBased.ComponentType.Widget">
+            <summary>
+            Widget component
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+    </members>
+</doc>

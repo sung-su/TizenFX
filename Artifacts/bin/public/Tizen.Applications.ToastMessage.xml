@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.ToastMessage</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.ToastMessage">
+            <summary>
+            The class helps you to create and show the ToastMessage which is a view quick message for the user.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ToastMessage.Message">
+            <summary>
+            Gets and sets a message to post the ToastMessage.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ToastMessage.Post">
+            <summary>
+            Posts a message on a toast pop-up.
+            </summary>
+            <exception cref="T:System.ArgumentNullException">Thrown when the message is null.</exception>
+            <example>
+            <code>
+            ToastMessage toast = new ToastMessage
+            {
+                Message = "Hello TIzen"
+            };
+            toast.Post();
+            </code>
+            </example>
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

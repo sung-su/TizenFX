@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.NUI.Extension</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.NUI.Extension.RiveAnimationView">
+            <summary>
+            RiveAnimationView renders an animated vector image (Rive file).
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.#ctor(System.String)">
+            <summary>
+            RiveAnimationView constructor.
+            </summary>
+            <param name="url">The rive resource URL</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.EnableAnimation(System.String,System.Boolean)">
+            <summary>
+            Enables or disables the given animation.
+            </summary>
+            <param name="animationName">The animation to enable</param>
+            <param name="on">The enable state of given animation</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.Play">
+            <summary>
+            Play animation.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.Pause">
+            <summary>
+            Pause animation.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.Stop">
+            <summary>
+            Stop animation.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.SetShapeFillColor(System.String,Tizen.NUI.Color)">
+            <summary>
+            Sets the shape fill color of given fill.
+            </summary>
+            <param name="shapeFillName">The shape fill name</param>
+            <param name="color">The rgba color</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.SetShapeStrokeColor(System.String,Tizen.NUI.Color)">
+            <summary>
+            Sets the shape stroke color of given stroke.
+            </summary>
+            <param name="shapeStrokeName">The shape stroke name</param>
+            <param name="color">The rgba color</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.SetNodeOpacity(System.String,System.Single)">
+            <summary>
+            Sets the opacity of given node.
+            </summary>
+            <param name="nodeName">The node name</param>
+            <param name="opacity">The opacity of given node</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.SetNodeScale(System.String,Tizen.NUI.Vector2)">
+            <summary>
+            Sets the scale of given node.
+            </summary>
+            <param name="nodeName">The node name</param>
+            <param name="scale">The scale of given node</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.SetNodeRotation(System.String,Tizen.NUI.Degree)">
+            <summary>
+            Sets the rotation of given node.
+            </summary>
+            <param name="nodeName">The node name</param>
+            <param name="degree">The degree of given node</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.SetNodePosition(System.String,Tizen.NUI.Position)">
+            <summary>
+            Sets the position of given node.
+            </summary>
+            <param name="nodeName">The node name</param>
+            <param name="position">The position of given node</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.Extension.RiveAnimationView.SetAnimationElapsedTime(System.String,System.Single)">
+            <summary>
+            Sets the animation elapsed time.
+            </summary>
+            <param name="animationName">The animation name</param>
+            <param name="elapsed">The elapsed time in seconds</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+    </members>
+</doc>

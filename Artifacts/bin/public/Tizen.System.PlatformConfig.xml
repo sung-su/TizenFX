@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.System.PlatformConfig</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.System.PlatformConfig">
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.PlatformConfig.GetEnv(System.String)">
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

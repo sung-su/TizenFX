@@ -1,0 +1,1010 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.EventManager</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.EventManager.ApplicationEventManager">
+            <summary>
+            The EventManager Class provides functions to broadcast user-defined event.
+            </summary>
+            <example>
+            <code><![CDATA[
+            public class EventManagerSample
+            {
+                /// ...
+                Bundle bundle = new Bundle();
+                bundle.AddItem("key", "value");
+                ApplicationEventManager.Publish("event.org.example.helloworld.event, bundle);
+            }
+            ]]></code>
+            </example>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.EventManager.ApplicationEventManager.Publish(System.String,Tizen.Applications.Bundle)">
+            <summary>
+            Sends the User-Event to receiver applications.
+            </summary>
+            <param name="eventName">The event's name to send.</param>
+            <param name="eventData"> The event's data to send.</param>
+            <remarks>The format of User-Event's name MUST be "event.{sender's appid}.{user-defined name}", refer to 'The name-format of User-Event' section,
+            If the event_name is invalid, throw InvalidOperationException</remarks>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.EventManager.ApplicationEventManager.Publish(System.String,Tizen.Applications.Bundle,System.Boolean)">
+            <summary>
+            Sends the User-Event to trusted receiver-applications.
+            </summary>
+            <param name="eventName">The event's name to send.</param>
+            <param name="eventData"> The event's data to send.</param>
+            <param name="isTrusted"> Whether the event is trusted or not.</param>
+            <remarks>The application which has same certification with sender can receive the event.
+            The format of User-Event's name MUST be "event.{sender's appid}.{user-defined name}", refer to 'The name-format of User-Event' section,
+            If the event_name is invalid, throw InvalidOperationException</remarks>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.EventManager.ApplicationEventManager.KeepLastEvent(System.String)">
+            <summary>
+            Keeps last User-Event data for receiver applications.
+            </summary>
+            <param name="eventName">The event's name to send.</param>
+            <remarks>The receiver applications will receive this last event data after adding their new handlers via ApplicationEventReceiver since the sender application called this method.
+            If a sender application sends same event via trusted method and non-trusted method, then a trusted receiver will get latest data regardless of trusted or non-trusted,
+            but non-trusted receiver will get the last data only from non-trusted method. The effect of this API continues during runtime.
+            That means when the sender application process restarts, the sender application needs to call this api again to make the event to keep the last event.</remarks>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.EventManagerEventArgs">
+            <summary>
+            Arguments for the event raised when the application event is received
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.EventManagerEventArgs.Name">
+            <summary>
+            The Name of the event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.EventManagerEventArgs.Data">
+            <summary>
+            The event data of the application event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.EventReceiver">
+             <summary>
+             The ApplicationEventReceiver Class provides functions to add event handler.
+             </summary>
+             <example>
+             <code><![CDATA[
+             using Tizen.Applications.EventManager.SystemEvents;
+             void OnReceived(object sender, ApplicationEventArgs e)
+             {
+                 if (e.Name == "event.org.tizen.example.AppEventTestApp.Tizen.Mobile.AppEvent")
+                     LogUtils.Write(LogUtils.DEBUG, LOG_TAG, "On Received : " + e.Name);
+            
+                 if (e.Name == EarjackStatus.EventName)
+                 {
+                     Bundle eventData = e.Data;
+                     object aValue = eventData.GetItem(EarjackStatus.StatusKey);
+                     if (eventData.Is<string>(EarjackStatus.StatusKey))
+                     {
+                         string statusValue = (string)aValue;
+                         LogUtils.Write(LogUtils.DEBUG, LOG_TAG, "EarjackStatus : " + statusValue);
+                     }
+                 }
+             }
+             public class EventManagerSample
+             {
+                ...
+                EventReceiver receiver = new EventReceiver("event.org.tizen.example.helloworld.AppEvent");
+                receiver.Received += OnReceived;
+             }
+             ]]></code>
+             </example>
+             <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.EventManager.EventReceiver.#ctor(System.String)">
+            <summary>
+            Initializer of class.
+            </summary>
+            <param name="eventName">The interested event name.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.EventManager.EventReceiver.Finalize">
+            <summary>
+            Finalizer of class.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.EventReceiver.EventName">
+            <summary>
+            Gets the eventname.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.EventManager.EventReceiver.Received">
+            <summary>
+            Occurs when events are received.
+            </summary>
+            <remarks> If you want to add the privileged event, you MUST declare right privilege first.
+            Unless that, throw UnauthorizedAccessException.
+            The privileged events are commented on remarks of it's definitions. </remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.EventManager.EventReceiver.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.EventManager.EventReceiver.Dispose">
+            <summary>
+            Release all the resources used by the class.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.BatteryChargerStatus">
+            <summary>
+            Class for system-event of battery charger status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryChargerStatus.EventName">
+            <summary>
+            Eventname for system-event of battery charger status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryChargerStatus.StatusKey">
+            <summary>
+            Key for system-event of battery charger status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryChargerStatus.StatusValueConnected">
+            <summary>
+            Value of connected battery charger
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryChargerStatus.StatusValueDisconnected">
+            <summary>
+            Value of disconnected battery charger
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryChargerStatus.StatusValueCharging">
+            <summary>
+            Value of charing battery charger
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryChargerStatus.StatusValueDischarging">
+            <summary>
+            Value of discharging battery charger
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.BatteryLevelStatus">
+            <summary>
+            Class for system-event of battery level status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryLevelStatus.EventName">
+            <summary>
+            Eventname for system-event of battery level status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryLevelStatus.StatusKey">
+            <summary>
+            Key for system-event of battery level status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryLevelStatus.StatusValueEmpty">
+            <summary>
+            Value of empty battery level status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryLevelStatus.StatusValueCritical">
+            <summary>
+            Value of critical battery level status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryLevelStatus.StatusValueLow">
+            <summary>
+            Value of low battery level status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryLevelStatus.StatusValueHigh">
+            <summary>
+            Value of high battery level status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BatteryLevelStatus.StatusValueFull">
+            <summary>
+            Value of full battery level status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.UsbStatus">
+            <summary>
+            Class for system-event of usb status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.UsbStatus.EventName">
+            <summary>
+            Eventname for system-event of usb status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.UsbStatus.StatusKey">
+            <summary>
+            Key for system-event of usb status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.UsbStatus.StatusValueDisconnected">
+            <summary>
+            Value of disconnected usb status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.UsbStatus.StatusValueConnected">
+            <summary>
+            Value of connected usb status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.UsbStatus.StatusValueAvailable">
+            <summary>
+            Value of available usb status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.EarjackStatus">
+            <summary>
+            Class for system-event of earjack status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.EarjackStatus.EventName">
+            <summary>
+            Eventname for system-event of earjack status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.EarjackStatus.StatusKey">
+            <summary>
+            Key for system-event of earjack status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.EarjackStatus.StatusValueDisconnected">
+            <summary>
+            Value of disconnected earjack status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.EarjackStatus.StatusValueConnected">
+            <summary>
+            Value of connected earjack status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.DisplayState">
+            <summary>
+            Class for system-event of display state
+            </summary>
+            <privilege> http://tizen.org/privilege/display </privilege>
+            <remarks> If you want to receive this event, you must declare this privilege. </remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.DisplayState.EventName">
+            <summary>
+            Eventname for system-event of display state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.DisplayState.StateKey">
+            <summary>
+            Key for system-event of display state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.DisplayState.StateValueNormal">
+            <summary>
+            Value of normal display state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.DisplayState.StateValueDim">
+            <summary>
+            Value of dim display state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.DisplayState.StateValueOff">
+            <summary>
+            Value of off display state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.BootCompleted">
+            <summary>
+            Class for system-event of boot completed
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.BootCompleted.EventName">
+            <summary>
+            Eventname for system-event of boot completed
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.SystemShutdown">
+            <summary>
+            Class for system-event of system shutdown
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.SystemShutdown.EventName">
+            <summary>
+            Eventname for system-event of system shutdown
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.LowMemory">
+            <summary>
+            Class for system-event of low memory
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LowMemory.EventName">
+            <summary>
+            Eventname for system-event of low memory
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LowMemory.Key">
+            <summary>
+            Key for system-event of low memory
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LowMemory.ValueNormal">
+            <summary>
+            Value of normal low memory
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LowMemory.ValueSoftWarning">
+            <summary>
+            Value of soft warning low memory
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LowMemory.ValueHardWarning">
+            <summary>
+            Value of hard warning low memory
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.WifiState">
+            <summary>
+            Class for system-event of wifi state
+            </summary>
+            <privilege> http://tizen.org/privilege/network.get </privilege>
+            <remarks> If you want to receive this event, you must declare this privilege. </remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.WifiState.EventName">
+            <summary>
+            Eventname for system-event of wifi state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.WifiState.StateKey">
+            <summary>
+            Key for system-event of wifi state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.WifiState.StateValueOff">
+            <summary>
+            Value of off wifi state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.WifiState.StateValueOn">
+            <summary>
+            Value of on wifi state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.WifiState.StateValueConnected">
+            <summary>
+            Value of connected wifi state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.Btstate">
+            <summary>
+            Class for system-event of bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.Btstate.EventName">
+            <summary>
+            Eventname for system-event of bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.Btstate.StateKey">
+            <summary>
+            Key for system-event of bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.Btstate.StateValueOff">
+            <summary>
+            Value of off bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.Btstate.StateValueOn">
+            <summary>
+            Value of on bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.Btstate.LeStateKey">
+            <summary>
+            Key for system-event of low energy bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.Btstate.LeStateValueOff">
+            <summary>
+            Value of off low energy bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.Btstate.LeStateValueOn">
+            <summary>
+            Value of on low energy bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.Btstate.TransferStateKey">
+            <summary>
+            Key for system-event of transfering bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.Btstate.TransferStateValueNontransfering">
+            <summary>
+            Value of non transfering bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.Btstate.TransferStateValueTransfering">
+            <summary>
+            Value of transfering bluetooth state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.LocatingEnableState">
+            <summary>
+            Class for system-event of location enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LocatingEnableState.EventName">
+            <summary>
+            Eventname for system-event of location enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LocatingEnableState.StateKey">
+            <summary>
+            Key for system-event of location enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LocatingEnableState.StateValueDisabled">
+            <summary>
+            Value of disabled location enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LocatingEnableState.StateValueEnabled">
+            <summary>
+            Value of enabled location enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.GpsEnableState">
+            <summary>
+            Class for system-event of gps enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.GpsEnableState.EventName">
+            <summary>
+            Eventname for system-event of gps enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.GpsEnableState.StateKey">
+            <summary>
+            Key for system-event of gps enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.GpsEnableState.StateValueDisabled">
+            <summary>
+            Value of disabled gps enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.GpsEnableState.StateValueEnabled">
+            <summary>
+            Value of enabled gps enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.NpsEnableState">
+            <summary>
+            Class for system-event of nps enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NpsEnableState.EventName">
+            <summary>
+            Eventname for system-event of nps enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NpsEnableState.StateKey">
+            <summary>
+            Key for system-event of nps enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NpsEnableState.StateValueDisabled">
+            <summary>
+            Value of diabled nps enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NpsEnableState.StateValueEnabled">
+            <summary>
+            Value of enabled nps enable state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.IncomingMsg">
+            <summary>
+            Class for system-event of incoming message
+            </summary>
+            <privilege> http://tizen.org/privilege/message.read </privilege>
+            <remarks> If you want to receive this event, you must declare this privilege. </remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.IncomingMsg.EventName">
+            <summary>
+            Event for system-event of incoming message
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.IncomingMsg.TypeKey">
+            <summary>
+            Key for system-event of incoming message type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.IncomingMsg.TypeValueSms">
+            <summary>
+            Value of sms incoming message type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.IncomingMsg.TypeValueMms">
+            <summary>
+            Value of mms incoming message type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.IncomingMsg.TypeValuePush">
+            <summary>
+            Value of push incoming message type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.IncomingMsg.TypeValueCb">
+            <summary>
+            Value of cb incoming message type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.IncomingMsg.IdKey">
+            <summary>
+            Key for system-event of incoming message id
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.OutgoingMsg">
+            <summary>
+            Class for system-event of outgoing message
+            </summary>
+            <privilege> http://tizen.org/privilege/message.read </privilege>
+            <remarks> If you want to receive this event, you must declare this privilege. </remarks>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.OutgoingMsg.EventName">
+            <summary>
+            Eventname for system-event of outgoing message
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.OutgoingMsg.TypeKey">
+            <summary>
+            Key for system-event of outgoing message type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.OutgoingMsg.TypeValueSms">
+            <summary>
+            Value of sms outgoing message type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.OutgoingMsg.TypeValueMms">
+            <summary>
+            Value of mms outgoing message type
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.OutgoingMsg.IdKey">
+            <summary>
+            Key for system-event of outgoing message id
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.TimeChanged">
+            <summary>
+            Class for system-event of time changed
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.TimeChanged.EventName">
+            <summary>
+            Eventname for system-event of time changed
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.TimeZone">
+            <summary>
+            Class for system-event of time zone
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.TimeZone.EventName">
+            <summary>
+            Eventname for system-event of time zone
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.TimeZone.Key">
+            <summary>
+            Key for system-event of time zone
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.HourFormat">
+            <summary>
+            Class for system-event of hour format
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.HourFormat.EventName">
+            <summary>
+            Eventname for system-event of hour format
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.HourFormat.Key">
+            <summary>
+            Key for system-event of hour format
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.HourFormat.Value12">
+            <summary>
+            Value of 12 hour format
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.HourFormat.Value24">
+            <summary>
+            Value of 24 hour format
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.LanguageSet">
+            <summary>
+            Class for system-event of language set
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LanguageSet.EventName">
+            <summary>
+            Eventname for system-event of language set
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.LanguageSet.Key">
+            <summary>
+            Key for system-event of language set
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.RegionFormat">
+            <summary>
+            Class for system-event of region format
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.RegionFormat.EventName">
+            <summary>
+            Eventname for system-event of region format
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.RegionFormat.Key">
+            <summary>
+            Key for system-event of region format
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.SilentMode">
+            <summary>
+            Class for system-event of silent mode
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.SilentMode.EventName">
+            <summary>
+            Event for system-event of silent mode
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.SilentMode.Key">
+            <summary>
+            Key for system-event of silent mode
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.SilentMode.ValueOn">
+            <summary>
+            Value of silent mode on
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.SilentMode.ValueOff">
+            <summary>
+            Value of silent mode off
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.VibrationState">
+            <summary>
+            Class for system-event of vibration state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.VibrationState.EventName">
+            <summary>
+            Eventname for system-event of vibration state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.VibrationState.StateKey">
+            <summary>
+            Key for system-event of vibration state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.VibrationState.StateValueOn">
+            <summary>
+            Value vibration state on
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.VibrationState.StateValueOff">
+            <summary>
+            Value vibration state off
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.AutoRotateState">
+            <summary>
+            Class for system-event of auto rotate state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.AutoRotateState.EventName">
+            <summary>
+            Eventname for system-event of auto rotate state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.AutoRotateState.StateKey">
+            <summary>
+            Key for system-event of auto rotate state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.AutoRotateState.StateOn">
+            <summary>
+            Value of auto rotate state on
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.AutoRotateState.StateOff">
+            <summary>
+            Value of auto rotate state off
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.MobileDataState">
+            <summary>
+            Class for system-event of mobile data state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.MobileDataState.EventName">
+            <summary>
+            Eventname for system-event of mobile data state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.MobileDataState.StateKey">
+            <summary>
+            Key for system-event of mobile data state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.MobileDataState.StateValueOn">
+            <summary>
+            Value of mobile data state on
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.MobileDataState.StateValueOff">
+            <summary>
+            Value of mobile data state off
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.DataRoamingState">
+            <summary>
+            Class for system-event of data roaming state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.DataRoamingState.EventName">
+            <summary>
+            Eventname for system-event of data roaming state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.DataRoamingState.StateKey">
+            <summary>
+            Key for system-event of data roaming state
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.DataRoamingState.StateValueOn">
+            <summary>
+            Value of data roaming state on
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.DataRoamingState.StateValueOff">
+            <summary>
+            Value of data roaming state off
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.FontSet">
+            <summary>
+            Class for system-event of data font set
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.FontSet.EventName">
+            <summary>
+            Eventname for system-event of data font set
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.FontSet.Key">
+            <summary>
+            Key for system-event of data font set
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.EventManager.SystemEvents.NetworkStatus">
+            <summary>
+            Class for system-event of network status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NetworkStatus.EventName">
+            <summary>
+            Eventname for system-event of network status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NetworkStatus.StatusKey">
+            <summary>
+            Key for system-event of network status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NetworkStatus.StatusValueDisconnected">
+            <summary>
+            Value of disconnected network status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NetworkStatus.StatusValueWifi">
+            <summary>
+            Value of wifi network status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NetworkStatus.StatusValueCellular">
+            <summary>
+            Value of cellular network status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NetworkStatus.StatusValueEthernet">
+            <summary>
+            Value of ethernet network status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NetworkStatus.StatusValueBt">
+            <summary>
+            Value of bt network status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.EventManager.SystemEvents.NetworkStatus.StatusValueNetProxy">
+            <summary>
+            Value of net proxy network status
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+    </members>
+</doc>

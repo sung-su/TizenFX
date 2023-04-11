@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.ComponentBased.Port</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.ComponentBased.ComponentPort">
+            <summary>
+            The component port API provides functions to send and receive requests between components of component-based-application.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.#ctor(System.String)">
+            <summary>
+            Constructor for this class.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when the argument is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the memory is insufficient.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when because of I/O error.</exception>
+            <param name="portName">The name of the port.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentPort.PortName">
+            <summary>
+            Gets the port name.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.AddPrivilege(System.String)">
+            <summary>
+            Adds a privilege to the port object.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when the argument is invalid.</exception>
+            <param name="privilege">privilege data</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.WaitForPort(System.String)">
+            <summary>
+            Waits until the port is ready.
+            </summary>
+            <param name="endpoint">The name of the port</param>
+            <returns>A task.</returns>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.WaitForEvent">
+            <summary>
+            Waits for events.
+            </summary>
+            <remarks>
+            This method runs a main loop until Cancel() is called.
+            The code in the next line will not run until Cancel() is called.
+            To avoid blocking the main thread, it's recommended to use the ComponentTask class.
+            </remarks>
+            <example>
+            <code>
+            ComponentTask task = new ComponentTask(new ComponentPort("Comm"));
+            task.Start();
+            </code>
+            </example>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.Cancel">
+            <summary>
+            Cancels waiting for events.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.Send(System.String,System.Int32,System.Object)">
+            <summary>
+            Sends the request data.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when the argument is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the memory is insufficient.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when because of I/O error.</exception>
+            <param name="endpoint">The name of the endpoint</param>
+            <param name="timeout">The timeout in milliseconds, -1 to use the default timeout</param>
+            <param name="request">The serializable data to send</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.SendAndReceive(System.String,System.Int32,System.Object)">
+            <summary>
+            Sends the request data and receives the reply data.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when the argument is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the memory is insufficient.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when because of I/O error.</exception>
+            <param name="endpoint">The name of the endpoint</param>
+            <param name="timeout">The timeout in milliseconds, -1 to use the default timeout</param>
+            <param name="request">The serializable data to send</param>
+            <returns>The received serializable data</returns>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.SendAndReceiveAsync(System.String,System.Int32,System.Object)">
+            <summary>
+            Sends the request data and receives the reply data asynchronously.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when the argument is invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when the memory is insufficient.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when permission is denied.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when because of I/O error.</exception>
+            <param name="endpoint">The name of the endpoint</param>
+            <param name="timeout">The timeout in milliseconds, -1 to use the default timeout</param>
+            <param name="request">The serializable data to send</param>
+            <returns>The received serializable data</returns>
+            /// <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.ComponentBased.ComponentPort.RequestReceived">
+            <summary>
+            Occurs whenever the request is received.
+            </summary>
+            <remarks>
+            If the reply is requested, RequestEventArgs.Request should be set.
+            </remarks>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects, or false not to dispose disposable objects.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.Finalize">
+            <summary>
+            Finalizer of the class ComponentPort.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentPort.Dispose">
+            <summary>
+            Releases all the resources used by the class ComponentPort.
+            </summary>
+            <since_tizen> 9 </since_tizen>>
+        </member>
+        <member name="T:Tizen.Applications.ComponentBased.ComponentTask">
+            <summary>
+            Provides a task class for the ComponentPort class.
+            This is a convenience class to manage ComponentPort communication in a separate thread.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentTask.#ctor(Tizen.Applications.ComponentBased.ComponentPort)">
+            <summary>
+            Initializes the instance of the ComponentTask class.
+            </summary>
+            <param name="port">The component port object</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentTask.Start">
+            <summary>
+            Starts the task.
+            <remark>
+            This method calls ComponentPort.WaitForEvent() in the thread.
+            </remark>
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.ComponentTask.Stop">
+            <summary>
+            Stops the task.
+            </summary>
+            <remarks>
+            This method calls ComponentPort.Cancel() before stopping the thread.
+            </remarks>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentTask.IsRunning">
+            <summary>
+            Checks whether the component task is running.
+            </summary>
+            <value>If the task is running, true; otherwise, false</value>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.ComponentTask.Port">
+            <summary>
+            Gets the component port.
+            </summary>
+            <value>The instance of the component port</value>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Parcel.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable object.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Parcel.Finalize">
+            <summary>
+            Finalizer of the class Parcel.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.ComponentBased.Parcel.Dispose">
+            <summary>
+            Releases all the resources used by the class parcel.
+            </summary>
+            <since_tizen> 9 </since_tizen>>
+        </member>
+        <member name="T:Tizen.Applications.ComponentBased.RequestEventArgs">
+            <summary>
+            Arguments for the event raised when the request is received.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.RequestEventArgs.Sender">
+            <summary>
+            The name of the sender port
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.RequestEventArgs.Request">
+            <summary>
+            The received serialized data.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.RequestEventArgs.IsReplyRequested">
+            <summary>
+            The flag indicating whether the reply is requested or not.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.ComponentBased.RequestEventArgs.Reply">
+            <summary>
+            The serialized reply data.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+    </members>
+</doc>

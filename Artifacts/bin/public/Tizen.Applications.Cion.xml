@@ -1,0 +1,776 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.Cion</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.Cion.ClientBase">
+            <summary>
+            An abstract class to represent cion client.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.ClientBase.ServiceName">
+            <summary>
+            Gets the service name of current cion client.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.ClientBase.PeerInfo">
+            <summary>
+            Gets peer info of connected cion server.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.#ctor(System.String)">
+            <summary>
+            The constructor of ClientBase class.
+            </summary>
+            <param name="serviceName">The name of service.</param>
+            <remarks>The maximum length of service name is 512.</remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the given service name is too long.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is not enough memory to continue the execution of the method.</exception> 
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.#ctor(System.String,Tizen.Applications.Cion.SecurityInfo)">
+            <summary>
+            The constructor of ClientBase class.
+            </summary>
+            <param name="serviceName">The name of service.</param>
+            <param name="security">The security configuration.</param>
+            <remarks>The maximum length of service name is 512.</remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the given service name is too long.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is not enough memory to continue the execution of the method.</exception> 
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.TryDiscovery">
+            <summary>
+            Starts discovering cion servers.
+            </summary>
+            <privilege>http://tizen.org/privilege/d2d.datasharing</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <exception cref="T:System.InvalidOperationException">Thrown when the discovery operation is already in progress.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.StopDiscovery">
+            <summary>
+            Stops discovering.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when the client is not discovering.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.Connect(Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            Connects with the cion server.
+            </summary>
+            <param name="peer">The peer to connect.</param>
+            <privilege>http://tizen.org/privilege/d2d.datasharing</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <exception cref="T:System.InvalidOperationException">Thrown when the client cannot connect to server.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.Disconnect">
+            <summary>
+            Disconnects from the cion server.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.SendData(System.Byte[],System.Int32)">
+            <summary>
+            Sends data synchronously to the connected cion server.
+            </summary>
+            <param name="data">The data to send.</param>
+            <param name="timeout">The timeout of sending operation.</param>
+            <exception cref="T:System.ArgumentException">Thrown when the given data is invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is no connected cion server or failed to receive reply.</exception>
+            <exception cref="T:System.TimeoutException">Thrown when a timeout occurred.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.SendPayloadAsync(Tizen.Applications.Cion.Payload)">
+            <summary>
+            Sends payload asynchronously to the connected cion server.
+            </summary>
+            <param name="payload">The payload to send.</param>
+            <exception cref="T:System.ArgumentException">Thrown when the payload is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is no connected cion server or failed to send payload.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.OnConnectionResult(Tizen.Applications.Cion.PeerInfo,Tizen.Applications.Cion.ConnectionResult)">
+            <summary>
+            The result callback of connection request.
+            </summary>
+            <param name="peerInfo">The peer info of the cion server.</param>
+            <param name="result">The result of the connection.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.OnPayloadReceived(Tizen.Applications.Cion.Payload,Tizen.Applications.Cion.PayloadTransferStatus)">
+            <summary>
+            The callback invoked when received payload.
+            </summary>
+            <param name="payload">The received payload.</param>
+            <param name="status">The status of sent payload.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.OnDiscovered(Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            The callback invoked when the cion server discovered.
+            </summary>
+            <param name="peerInfo">The peer info of discovered cion server.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.OnDisconnected(Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            The callback invoked when disconnected with cion client.
+            </summary>
+            <param name="peerInfo">The peer info of the cion server.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ClientBase.Dispose">
+            <summary>
+            Releases all resources used by the ClientBase class.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Cion.ConnectionResult">
+            <summary>
+            A class to represent result of connection.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.ConnectionResult.Status">
+            <summary>
+            Gets the connection status.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.ConnectionResult.Reason">
+            <summary>
+            Gets the reason of the connection result.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Cion.ConnectionStatus">
+            <summary>
+            Enumeration for connection status.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Cion.ConnectionStatus.OK">
+            <summary>
+            The connection request is accepted.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Cion.ConnectionStatus.Rejected">
+            <summary>
+            The connection request is rejected.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Cion.ConnectionStatus.Error">
+            <summary>
+            The error occurred while the connection request is in-progress.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Cion.DataPayload">
+            <summary>
+            A class to represent data type payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.DataPayload.#ctor(System.Byte[])">
+            <summary>
+            The constructor of DataPayload class.
+            </summary>
+            <param name="data">The data of payload.</param>
+            <exception cref="T:System.ArgumentException">Thrown when the input data is invalid.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.DataPayload.PayloadType">
+            <summary>
+            Gets type of the payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.DataPayload.Data">
+            <summary>
+            Gets data of the payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Cion.FilePayload">
+            <summary>
+            A class to represent file type payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.FilePayload.#ctor(System.String)">
+            <summary>
+            The constructor of FilePayload class.
+            </summary>
+            <param name="path">The path of file for the FilePayload.</param>
+            <remarks>
+            http://tizen.org/privilege/mediastorage is needed if the file path is relevant to media storage.
+            http://tizen.org/privilege/externalstorage is needed if the file path is relevant to external storage.
+            </remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the input file path is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.FilePayload.ReceivedFileName">
+            <summary>
+            Gets the name of received file.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.FilePayload.ReceivedBytes">
+            <summary>
+            Gets size of received file.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.FilePayload.TotalBytes">
+            <summary>
+            Gets total size of the file.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.FilePayload.PayloadType">
+            <summary>
+            Gets type of the payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.FilePayload.SaveAsFile(System.String)">
+            <summary>
+            Saves file of payload to speicific path.
+            </summary>
+            <param name="path">The path of file to save.</param>
+            <remarks>
+            http://tizen.org/privilege/mediastorage is needed if the file path is relevant to media storage.
+            http://tizen.org/privilege/externalstorage is needed if the file path is relevant to external storage.
+            </remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the input file path is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Cion.GroupBase">
+            <summary>
+            An abstract class to represent cion group.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.GroupBase.Topic">
+            <summary>
+            Gets the topic of current cion group.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.GroupBase.#ctor(System.String)">
+            <summary>
+            The constructor of GroupBase class.
+            </summary>
+            <param name="topicName">The topic of group.</param>
+            <remarks>The maximum length of topic name is 512.</remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the given topic name is too long.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.GroupBase.#ctor(System.String,Tizen.Applications.Cion.SecurityInfo)">
+            <summary>
+            The constructor of GroupBase class.
+            </summary>
+            <param name="topicName">The topic of group.</param>
+            <param name="security">The security configuration.</param>
+            <remarks>The maximum length of topic name is 512.</remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the given topic name is too long.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.GroupBase.Subscribe">
+            <summary>
+            Subscribes the topic.
+            </summary>
+            <privilege>http://tizen.org/privilege/d2d.datasharing</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to subscribe.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.GroupBase.Unsubscribe">
+            <summary>
+            Unsubscribes the topic.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.GroupBase.Publish(Tizen.Applications.Cion.Payload)">
+            <summary>
+            Publishes payload to current group.
+            </summary>
+            <param name="payload">The payload to publish.</param>
+            <exception cref="T:System.ArgumentException">Thrown when the payload is invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to publish.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.GroupBase.OnPayloadReceived(Tizen.Applications.Cion.Payload,Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            The callback invoked when payload received.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.GroupBase.OnJoined(Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            The callback invoked when another peer joined in the current group.
+            </summary>
+            <param name="peerInfo">The peer info of joined in the current group.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.GroupBase.OnLeft(Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            The callback invoked when another peer left from the current group.
+            </summary>
+            <param name="peerInfo">The peer info of left from the current group.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.GroupBase.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.GroupBase.Dispose">
+            <summary>
+            Releases all resources used by the GroupBase class.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Cion.Payload">
+            <summary>
+            An abstract class to represent payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.Payload.PayloadType">
+            <summary>
+            Gets type of the payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.Payload.Id">
+            <summary>
+            Gets Id of the payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Cion.PayloadAsyncResult">
+            <summary>
+            A class to represent result of payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PayloadAsyncResult.Result">
+            <summary>
+            Gets the result of payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PayloadAsyncResult.PeerInfo">
+            <summary>
+            Gets the peer info of payload.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PayloadAsyncResult.PayloadId">
+            <summary>
+            Gets the payload id.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.PayloadAsyncResult.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.PayloadAsyncResult.Dispose">
+            <summary>
+            Releases all resources used by the PayloadAsyncResult class.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Cion.PayloadAsyncResultCode">
+            <summary>
+            Enumeration for payload result code.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Cion.PayloadAsyncResultCode.Error">
+            <summary>
+            Fail to get the result code.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Cion.PayloadAsyncResultCode.Pending">
+            <summary>
+            The async request result is not yet received.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Cion.PayloadAsyncResultCode.Success">
+            <summary>
+            The async request result is success.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Cion.PayloadAsyncResultCode.Fail">
+            <summary>
+            The async request result is fail.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Cion.PayloadTransferStatus">
+            <summary>
+            Enumeration for payload transfer status.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Cion.PayloadTransferStatus.Success">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Cion.PayloadTransferStatus.Failure">
+            <summary>
+            Failure.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Cion.PayloadTransferStatus.InProgress">
+            <summary>
+            In Progress.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Cion.PayloadType">
+            <summary>
+            Enumeration for payload type.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Cion.PayloadType.DataPayload">
+            <summary>
+            Data payload.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Cion.PayloadType.FilePayload">
+            <summary>
+            File payload.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Cion.PeerInfo">
+            <summary>
+            A class to represent peer info.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PeerInfo.DeviceId">
+            <summary>
+            Gets the device id.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PeerInfo.DeviceName">
+            <summary>
+            Gets the device name.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PeerInfo.DevicePlatform">
+            <summary>
+            Gets the device platform.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PeerInfo.DevicePlatformVersion">
+            <summary>
+            Gets the device platform version.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PeerInfo.DeviceType">
+            <summary>
+            Gets the device type.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PeerInfo.AppId">
+            <summary>
+            Gets the application id.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PeerInfo.AppVersion">
+            <summary>
+            Gets the application version.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.PeerInfo.UUID">
+            <summary>
+            Gets the UUID.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.PeerInfo.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.PeerInfo.Dispose">
+            <summary>
+            Releases all resources used by the PeerInfo class.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Cion.SecurityInfo">
+            <summary>
+            A class to represent security info.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.SecurityInfo.#ctor">
+            <summary>
+            The constructor of SecurityInfo class.
+            </summary>
+            <exception cref="T:System.OutOfMemoryException">Thrown when there is not enough memory to continue the execution of the method.</exception> 
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.SecurityInfo.CaPath">
+            <summary>
+            Gets the CA cert path.
+            </summary>
+            <remarks>
+            http://tizen.org/privilege/mediastorage is needed if the file path is relevant to media storage.
+            http://tizen.org/privilege/externalstorage is needed if the file path is relevant to external storage.
+            </remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the CA path is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.SecurityInfo.CertPath">
+            <summary>
+            Gets the cert path.
+            </summary>
+            <remarks>
+            http://tizen.org/privilege/mediastorage is needed if the file path is relevant to media storage.
+            http://tizen.org/privilege/externalstorage is needed if the file path is relevant to external storage.
+            </remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the cert path is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.SecurityInfo.PrivateKeyPath">
+            <summary>
+            Gets the private key path.
+            </summary>
+            <remarks>
+            http://tizen.org/privilege/mediastorage is needed if the file path is relevant to media storage.
+            http://tizen.org/privilege/externalstorage is needed if the file path is relevant to external storage.
+            </remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the private key path is invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.SecurityInfo.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.SecurityInfo.Dispose">
+            <summary>
+            Releases all resources used by the SecurityInfo class.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Cion.ServerBase">
+            <summary>
+            An abstract class to represent cion server.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.ServerBase.ServiceName">
+            <summary>
+            Gets the service name of current cion server.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Cion.ServerBase.DisplayName">
+            <summary>
+            Gets or sets the display name of current cion server.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.#ctor(System.String,System.String)">
+            <summary>
+            The constructor of ServerBase class.
+            </summary>
+            <param name="serviceName">The name of service.</param>
+            <param name="displayName">The display name of service.</param>
+            <remarks>The maximum length of service name is 512.</remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the given service name is too long.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is not enough memory to continue the execution of the method.</exception> 
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.#ctor(System.String,System.String,Tizen.Applications.Cion.SecurityInfo)">
+            <summary>
+            The constructor of ServerBase class.
+            </summary>
+            <param name="serviceName">The name of service.</param>
+            <param name="displayName">The display name of service.</param>
+            <param name="security">The security configuration.</param>
+            <remarks>The maximum length of service name is 512.</remarks>
+            <exception cref="T:System.ArgumentException">Thrown when the given service name is too long.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is not enough memory to continue the execution of the method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.Listen">
+            <summary>
+            Starts server and listens for requests from cion clients.
+            </summary>
+            <privilege>http://tizen.org/privilege/d2d.datasharing</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privlevel>public</privlevel>
+            <exception cref="T:System.InvalidOperationException">Thrown when the listen operation is already in progress.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.Stop">
+            <summary>
+            Stops the listen operation.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when the server is not listening.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.Disconnect(Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            Disconnects with the peer.
+            </summary>
+            <param name="peerInfo">The peer to disconnect.</param>
+            <exception cref="T:System.ArgumentException">Thrown when the given peer info is invalid.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.SendPayloadAsync(Tizen.Applications.Cion.Payload,Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            Sends the payload to a peer asynchronously.
+            </summary>
+            <param name="payload">The payload to send.</param>
+            <param name="peerInfo">The peer to send payload.</param>
+            <exception cref="T:System.ArgumentException">Thrown when the payload is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is no such connected cion client or failed to send payload.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.SendPayloadAsync(Tizen.Applications.Cion.Payload)">
+            <summary>
+            Sends the payload to all of connected peer asynchronously.
+            </summary>
+            <param name="payload">The payload to send.</param>
+            <exception cref="T:System.ArgumentException">Thrown when the payload is not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to send payload.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.Accept(Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            Accepts the connection request from the peer.
+            </summary>
+            <param name="peerInfo">The peer to accept the connection request.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.Reject(Tizen.Applications.Cion.PeerInfo,System.String)">
+            <summary>
+            Rejects the connection request from the peer.
+            </summary>
+            <param name="peerInfo">The peer to reject the connection request.</param>
+            <param name="reason">The reason why reject the connection request.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.GetConnectedPeerList">
+            <summary>
+            Gets connected peers.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is not enough memory to continue the execution of the method.</exception> 
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.SetOndemandLaunchEnabled(System.Boolean)">
+            <summary>
+            Sets ondemand launch enabled flag.
+            </summary>
+            <param name="enable">Whether ondemand launch is enabled or not.</param>
+            <privilege>http://tizen.org/privilege/d2d.remotelaunch</privilege>
+            <privlevel>public</privlevel>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access this method.</exception>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.OnConnectionResult(Tizen.Applications.Cion.PeerInfo,Tizen.Applications.Cion.ConnectionResult)">
+            <summary>
+            The result callback of connection request.
+            </summary>
+            <param name="peerInfo">The peer info of the cion client.</param>
+            <param name="result">The result of the connection.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.OnDataReceived(System.Byte[],Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            The callback invoked when received data.
+            </summary>
+            <param name="data">The received data.</param>
+            <param name="peerInfo">The peer info of the cion client.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.OnPayloadReceived(Tizen.Applications.Cion.Payload,Tizen.Applications.Cion.PeerInfo,Tizen.Applications.Cion.PayloadTransferStatus)">
+            <summary>
+            The callback invoked when received payload.
+            </summary>
+            <param name="data">The received data.</param>
+            <param name="peerInfo">The peer info of the cion client.</param>
+            <param name="status">The status of payload transfer.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.OnConnectionRequest(Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            The callback invoked when connection requested from the cion client.
+            </summary>
+            <param name="peerInfo">The peer info of the cion client.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.OnDisconnected(Tizen.Applications.Cion.PeerInfo)">
+            <summary>
+            The callback invoked when disconnected with cion client.
+            </summary>
+            <param name="peerInfo">The peer info of the cion client.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Cion.ServerBase.Dispose">
+            <summary>
+            Releases all resources used by the ServerBase class.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+    </members>
+</doc>

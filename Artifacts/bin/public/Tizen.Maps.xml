@@ -1,0 +1,2763 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Maps</name>
+    </assembly>
+    <members>
+        <member name="M:ErrorCodeExtensions.WarnIfFailed(Interop.ErrorCode,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            The utility method to check for an error. Returns false on failure and prints warning messages.
+            </summary>
+            <returns>Returns true in case of no error, otherwise false.</returns>
+        </member>
+        <member name="M:ErrorCodeExtensions.ThrowIfFailed(Interop.ErrorCode,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            The utility method to check for an error. Returns false on failure and throws an exception.
+            </summary>
+            <returns>Returns true in case of no error, otherwise false.</returns>
+        </member>
+        <member name="T:Tizen.Maps.Area">
+            <summary>
+            The class representing a geographical area.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Area.#ctor(Tizen.Maps.Geocoordinates,Tizen.Maps.Geocoordinates)">
+            <summary>
+            Constructs a rectangular area.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="topLeft">Top-left coordinates of the area.</param>
+            <param name="bottomRight">Bottom-left coordinates of the area.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when input coordinates are invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a native operation fails to allocate memory.</exception>
+        </member>
+        <member name="M:Tizen.Maps.Area.#ctor(Tizen.Maps.Geocoordinates,System.Double)">
+            <summary>
+            Constructs a circular area.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="center">Coordinates for center of the area.</param>
+            <param name="radius">Radius of the area.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when input coordinates are invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a native operation fails to allocate memory.</exception>
+        </member>
+        <member name="M:Tizen.Maps.Area.Finalize">
+            <summary>
+            Destroy the Area object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Maps.Area.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Area.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.DirectionType">
+            <summary>
+            The direction types for route maneuver.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.DirectionType.None">
+            <summary>
+            Indicates an unknown direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DirectionType.North">
+            <summary>
+            Indicates the North direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DirectionType.NorthWest">
+            <summary>
+            Indicates the Northwest direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DirectionType.NorthEast">
+            <summary>
+            Indicates the Northeast direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DirectionType.South">
+            <summary>
+            Indicates the South direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DirectionType.SouthEast">
+            <summary>
+            Indicates the Southeast direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DirectionType.SouthWest">
+            <summary>
+            Indicates the Southwest direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DirectionType.West">
+            <summary>
+            Indicates the West direction.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DirectionType.East">
+            <summary>
+            Indicates the East direction.
+            </summary>
+        </member>
+        <member name="T:Tizen.Maps.DistanceUnit">
+            <summary>
+            The allowed distance units.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.DistanceUnit.Meter">
+            <summary>
+            Indicates meter unit.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DistanceUnit.Kilometer">
+            <summary>
+            Indicates kilometer unit.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DistanceUnit.Foot">
+            <summary>
+            Indicates foot unit.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.DistanceUnit.Yard">
+            <summary>
+            Indicates yard unit.
+            </summary>
+        </member>
+        <member name="T:Tizen.Maps.GeocodeRequest">
+            <summary>
+            Geocode request for the map service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.Geocoordinates">
+            <summary>
+            A class representing geographical coordinates.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Geocoordinates.#ctor(System.Double,System.Double)">
+            <summary>
+            Constructs the map coordinates object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="latitude">Latitude value must be between (-90.0 ~ 90.0) degrees.</param>
+            <param name="longitude">Longitude value must be between (-180.0 ~ 180.0) degrees.</param>
+            <exception cref="T:System.ArgumentException">Thrown when values for latitude and longitude are not valid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a native operation fails to allocate memory.</exception>
+        </member>
+        <member name="M:Tizen.Maps.Geocoordinates.Finalize">
+            <summary>
+            Destroy the Geocoordinates object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.Geocoordinates.Latitude">
+            <summary>
+            Gets the latitude coordinates.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Geocoordinates.Longitude">
+            <summary>
+            Gets the longitude coordinates.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Geocoordinates.ToString">
+            <summary>
+            Returns a string that represents this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Returns a string that represents this object.</returns>
+        </member>
+        <member name="M:Tizen.Maps.Geocoordinates.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Geocoordinates.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.GeocoordinatesList">
+            <summary>
+            List of <see cref="T:Tizen.Maps.Geocoordinates"/> objects to be used in <see cref="T:Tizen.Maps.MapService"/> APIs.
+            </summary>
+        </member>
+        <member name="M:Tizen.Maps.GeocoordinatesList.Finalize">
+            <summary>
+            Destroy the GeocoordinatesList object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.GeocoordinatesList.Coordinates">
+            <summary>
+            The iterator for coordinates in this list.
+            </summary>
+        </member>
+        <member name="M:Tizen.Maps.GeocoordinatesList.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+        </member>
+        <member name="M:Tizen.Maps.GeocoordinatesList.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.GestureType">
+            <summary>
+            Enumeration for the user gesture over a map view.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.GestureType.None">
+            <summary>
+            Indicates the empty gesture.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.GestureType.Scroll">
+            <summary>
+            Indicates the move map user gesture.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.GestureType.Zoom">
+            <summary>
+            Indicates the zoom user gesture.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.GestureType.Click">
+            <summary>
+            Indicates the click user gesture.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.GestureType.DoubleClick">
+            <summary>
+            Indicates the double click user gesture.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.GestureType.TwoFingerClick">
+            <summary>
+            Indicates the two-finger click user gesture.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.GestureType.Rotation">
+            <summary>
+             Indicates the rotation user gesture.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.GestureType.LongPress">
+            <summary>
+            Indicates the long press user gesture.
+            </summary>
+        </member>
+        <member name="T:Tizen.Maps.IGeocodePreference">
+            <summary>
+            The preference for geocode searches.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IGeocodePreference.Language">
+            <summary>
+            Gets or sets a string that presents the preferred language.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Language should be specified as an ISO 3166 alpha-2 two-letter country-code
+            followed by ISO 639-1 for the two-letter language code.<br/>e.g. "ko-KR", "en-US".</remarks>
+        </member>
+        <member name="P:Tizen.Maps.IGeocodePreference.MaxResults">
+            <summary>
+            Gets or sets the maximum number of results.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Setting a negative value will not have any effect on MaxResults value.</remarks>
+        </member>
+        <member name="T:Tizen.Maps.IPlaceSearchPreference">
+            <summary>
+            The preferences for a place search.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IPlaceSearchPreference.Unit">
+            <summary>
+            Gets or sets the distance unit.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IPlaceSearchPreference.Language">
+            <summary>
+            Gets or sets the preferred language.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Language should be specified as an ISO 3166 alpha-2 two letter country-code
+            followed by ISO 639-1 for the two-letter language code.<br/>e.g. "ko-KR", "en-US".</remarks>
+        </member>
+        <member name="P:Tizen.Maps.IPlaceSearchPreference.MaxResults">
+            <summary>
+            Gets or sets the maximum number of results.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IPlaceSearchPreference.CountryCode">
+            <summary>
+            Gets or sets a string that represents the code of a preferred country.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IPlaceSearchPreference.Properties">
+            <summary>
+            Gets or sets the search properties as a key value pair.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.IRouteSearchPreference">
+            <summary>
+            The preferences for route search.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IRouteSearchPreference.Unit">
+            <summary>
+            Gets or sets the distance unit.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IRouteSearchPreference.Optimization">
+            <summary>
+            Gets or sets the route optimization.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IRouteSearchPreference.Mode">
+            <summary>
+            Gets or sets the route transport mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IRouteSearchPreference.RouteFeatureWeight">
+            <summary>
+            Gets or sets the route feature weight.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IRouteSearchPreference.RouteFeature">
+            <summary>
+            Gets or sets the route feature.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.IRouteSearchPreference.SearchAlternativeRoutes">
+            <summary>
+            Gets or sets if a search for alternative routes is enabled.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.MapGestureEventArgs">
+            <summary>
+            Event arguments for gesture type map events.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapGestureEventArgs.GestureType">
+            <summary>
+            Gets the type of gesture event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapGestureEventArgs.Position">
+            <summary>
+            Gets screen coordinates in the event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapGestureEventArgs.TouchCount">
+            <summary>
+            Gets the number of fingers detected in the event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapGestureEventArgs.ZoomFactor">
+            <summary>
+            Gets the zoom factor for zoom gesture event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapGestureEventArgs.RotationAngle">
+            <summary>
+            Gets the angle of rotation for rotate gesture event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapGestureEventArgs.Geocoordinates">
+            <summary>
+            Gets the geographical coordinates for the event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.MapObject">
+            <summary>
+            The map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapObject.IsVisible">
+            <summary>
+            Gets or sets visibility of the map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.MapService">
+            <summary>
+            Map service class for service request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.MapService.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new maps service object for given service provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="serviceProvider">A string representing the name of the map service provider.</param>
+            <param name="serviceProviderKey">A string representing a certificate key to use the map service provider.</param>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when parameters are invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a native operation failed to allocate memory and connect to the service.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapService.Finalize">
+            <summary>
+            Destroy the MapService object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.MapService.Providers">
+            <summary>
+            Gets the list of available map service providers.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The list of map service providers.</value>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have privilege to access this property.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapService.Provider">
+            <summary>
+            Gets the name of the map service provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapService.UserConsented">
+            <summary>
+            Gets a user consent for the map service provider
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+        </member>
+        <member name="P:Tizen.Maps.MapService.ProviderKey">
+            <summary>
+            Gets and sets a string representing keys for the map service provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Typically, the provider key is issued by each maps provider after signing up for a plan in the website.
+            Depending on the plan and its provider which you have signed, you might have to pay for the network traffic.</remarks>
+        </member>
+        <member name="P:Tizen.Maps.MapService.PlaceSearchFilter">
+            <summary>
+            Gets and sets a filter used for the place search result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapService.GeocodePreferences">
+            <summary>
+            Gets the search preferences used for <see cref="T:Tizen.Maps.GeocodeRequest"/> or <see cref="T:Tizen.Maps.ReverseGeocodeRequest"/>.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapService.PlaceSearchPreferences">
+            <summary>
+            Gets the search preferences used for <see cref="T:Tizen.Maps.PlaceSearchRequest"/>.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapService.RouteSearchPreferences">
+            <summary>
+            Gets the search preferences used for <see cref="T:Tizen.Maps.RouteSearchRequest"/>.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.MapService.Preferences">
+            <summary>
+            Gets and sets the search preferences.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.MapService.RequestUserConsent">
+            <summary>
+            Gets the user's consent to use maps data.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>Returns true if user agreed that the application can use maps data, otherwise false.</returns>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapService.IsSupported(Tizen.Maps.ServiceRequestType)">
+            <summary>
+            Checks if the maps service supports the given request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type">Request type to check</param>
+            <returns>Returns true if the maps service supports a request, otherwise false.</returns>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapService.IsSupported(Tizen.Maps.ServiceData)">
+            <summary>
+            Checks if the maps service supports a given data feature.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="data">Data feature to check.</param>
+            <returns>Returns true if the maps service supports a data feature, otherwise false.</returns>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapService.CreateGeocodeRequest(System.String)">
+            <summary>
+            Creates a geocode search request for the given free-formed address string.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="address">A string representing free-formed address.</param>
+            <returns>Returns a GeocodeRequest object created with an address string.</returns>
+        </member>
+        <member name="M:Tizen.Maps.MapService.CreateGeocodeRequest(System.String,Tizen.Maps.Area)">
+            <summary>
+            Creates a geocode search request for the given free-formed address string, within the specified boundary.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="address">A string representing the free-formed address.</param>
+            <param name="boundary">An instance of Area object representing the interested area.</param>
+            <seealso cref="T:Tizen.Maps.Area"/>
+            <returns>Returns a GeocodeRequest object created with an address string and a specified boundary.</returns>
+        </member>
+        <member name="M:Tizen.Maps.MapService.CreateGeocodeRequest(Tizen.Maps.PlaceAddress)">
+            <summary>
+            Creates a geocode search request for the given structured address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="address">A string representing the address of interest.</param>
+            <returns>Returns a GeocodeRequest object created with a structured address.</returns>
+        </member>
+        <member name="M:Tizen.Maps.MapService.CreateReverseGeocodeRequest(System.Double,System.Double)">
+            <summary>
+            Creates a reverse geocode search request for the given latitude and longitude.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="latitude">Latitude of the interested place.</param>
+            <param name="longitude">Longitude of the interested place.</param>
+            <returns>Returns a ReverseGeocodeRequest object created with the location coordinates.</returns>
+        </member>
+        <member name="M:Tizen.Maps.MapService.CreateMultiReverseGeocodeRequest(System.Collections.Generic.IEnumerable{Tizen.Maps.Geocoordinates})">
+            <summary>
+            Creates a reverse geocode search request for the given position coordinates list.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">Coordinates list with [2 ~ 100] coordinates.</param>
+            <returns>Returns a MultiReverseGeocodeRequest object created with a list of location coordinates.</returns>
+        </member>
+        <member name="M:Tizen.Maps.MapService.CreateRouteSearchRequest(Tizen.Maps.Geocoordinates,Tizen.Maps.Geocoordinates)">
+            <summary>
+            Creates a route search request for the origin and destination points.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="from">Starting point.</param>
+            <param name="to">Destination.</param>
+            <returns>Returns a RouteSearchRequest object created with the origin and destination coordinates.</returns>
+        </member>
+        <member name="M:Tizen.Maps.MapService.CreatePlaceSearchRequest(Tizen.Maps.Geocoordinates,System.Int32)">
+            <summary>
+            Creates a place search request for a specified search radius around a given coordinates position.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">Geographical coordinates of the center.</param>
+            <param name="distance">A double value representing the radius of an area to search places.</param>
+            <returns>Returns a PlaceSearchRequest object created with the location coordinates and search radius.</returns>
+        </member>
+        <member name="M:Tizen.Maps.MapService.CreatePlaceSearchRequest(Tizen.Maps.Area)">
+            <summary>
+            Creates a place search request for places within a specified boundary.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="boundary">An instance of Area object representing and area to search interested places.</param>
+            <returns>Returns a PlaceSearchRequest object created with a specified boundary.</returns>
+        </member>
+        <member name="M:Tizen.Maps.MapService.CreatePlaceSearchRequest(System.String,Tizen.Maps.Area)">
+            <summary>
+            Creates a place search request for a free-formed address within the boundary.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="address">A string which represents a free-formed address.</param>
+            <param name="boundary">An instance of area object representing an area to search interested places.</param>
+            <returns>Returns a PlaceSearchRequest object created with an address string and a specified boundary.</returns>
+        </member>
+        <member name="M:Tizen.Maps.MapService.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.MapService.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.MapServiceRequest`1">
+            <summary>
+            Base class for a map service request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Tizen.Maps.MapServiceRequest`1.#ctor(Tizen.Maps.MapService,Tizen.Maps.ServiceRequestType)">
+            <summary>
+            Creates a map service request.
+            </summary>
+            <param name="service">Map service object.</param>
+            <param name="type">Request type.</param>
+        </member>
+        <member name="M:Tizen.Maps.MapServiceRequest`1.Finalize">
+            <summary>
+            Destroy the MapServiceRequest object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Maps.MapServiceRequest`1.GetResponseAsync">
+            <summary>
+            Sends a request to the map service provider.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Response from the map service provider.</returns>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the result is invalid.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when arguments are invalid.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapServiceRequest`1.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.MapServiceRequest`1.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.MapTypes">
+            <summary>
+            The map view type (theme).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.MapTypes.Normal">
+            <summary>
+            Indicates the normal street theme.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.MapTypes.Satellite">
+            <summary>
+            Indicates the satellite theme.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.MapTypes.Terrain">
+            <summary>
+            Indicates the terrain theme.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.MapTypes.Hybrid">
+            <summary>
+            Indicates the hybrid theme that has both satellite and normal theme.
+            </summary>
+        </member>
+        <member name="T:Tizen.Maps.MapView">
+            <summary>
+            Map View class to show a map on the screen.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.MapView.#ctor(ElmSharp.EvasObject,Tizen.Maps.MapService)">
+            <summary>
+            Creates a view and links it to the instance of a map service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="parent">An instance of <see cref="T:ElmSharp.EvasObject"/> object for which a map view will be drawn.</param>
+            <param name="service">An instance of <see cref="T:Tizen.Maps.MapService"/> object.</param>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when parameters are invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a native operation failed to allocate memory, and connect to the service.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapView.Finalize">
+            <summary>
+            Destroy the MapView object.
+            </summary>
+        </member>
+        <member name="E:Tizen.Maps.MapView.Scrolled">
+            <summary>
+            Adds or removes event handlers to deliver a scrolled gesture event.
+            </summary>
+            <value>Event handlers to get a scrolled gesture event.</value>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Maps.MapView.TwoFingerZoomed">
+            <summary>
+            Adds or removes event handlers to deliver a zoomed gesture event.
+            </summary>
+            <value>Event handlers to get a zoomed gesture event.</value>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Maps.MapView.Clicked">
+            <summary>
+            Adds or removes event handlers to deliver a clicked gesture event.
+            </summary>
+            <value>Event handlers to get a clicked gesture event.</value>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Maps.MapView.DoubleClicked">
+            <summary>
+            Adds or removes event handlers to deliver a double-clicked gesture event.
+            </summary>
+            <value>Event handlers to get a double-clicked gesture event.</value>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Maps.MapView.TwoFingerClicked">
+            <summary>
+            Adds or removes event handlers to deliver a clicked gesture event with two-fingers.
+            </summary>
+            <value>Event handlers to get a clicked gesture event.</value>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Maps.MapView.TwoFingerRotated">
+            <summary>
+            Adds or removes event handlers to deliver a rotated gesture event.
+            </summary>
+            <value>Event handlers to get a rotated gesture event.</value>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Maps.MapView.LongPressed">
+            <summary>
+            Adds or removes event handlers to deliver a long-pressed gesture event.
+            </summary>
+            <value>Event handlers to get a long-pressed gesture event.</value>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Maps.MapView.ViewReady">
+            <summary>
+            Adds or removes event handlers to deliver an event representing a view ready to be used.
+            </summary>
+            <value>Event handlers to get a view ready event.</value>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.ZoomLevel">
+            <summary>
+            Gets or sets the current zoom level.
+            </summary>
+            <value>It is an integer value representing the current zoom level.</value>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.MinimumZoomLevel">
+            <summary>
+            Gets or sets the minimum zoom level.
+            </summary>
+            <value>It is an integer value that limits minimal zoom level within a range of the current map plug-in support.</value>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.MaximumZoomLevel">
+            <summary>
+            Gets or sets the maximum zoom level.
+            </summary>
+            <value>It is an integer value that limits maximum zoom level within a range of the current map plug-in support.</value>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.Orientation">
+            <summary>
+            Gets or sets the orientation on the map view.
+            </summary>
+            <value>It is an integer value from 0 to 360 that indicates the orientation of the map view.</value>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.MapType">
+            <summary>
+            Gets or sets theme type of the map view.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.BuildingsEnabled">
+            <summary>
+            Indicates whether the map should show the 3D buildings layer.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.TrafficEnabled">
+            <summary>
+            Indicates whether the map should show the traffic layer.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.PublicTransitEnabled">
+            <summary>
+            Indicates whether the map should show the public transit layer.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.ScaleBarEnabled">
+            <summary>
+            Indicates whether the scale-bar is enabled or not.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.Language">
+            <summary>
+            Sets language of map view.
+            </summary>
+            <value>The display language in the map.
+            A language is specified as an ISO 3166 alpha-2 two letter country-code
+            followed by ISO 639-1 for the two-letter language code.
+            Each language tag is composed of one or more "subtags" separated by hyphens (-).
+            Each subtag is composed of basic Latin letters or digits only.
+            For example, "ko-KR" for Korean, "en-US" for American English.</value>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the value is invalid.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.Center">
+            <summary>
+            Gets or sets geographical coordinates for map view's center.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the value is invalid.</exception>
+        </member>
+        <member name="P:Tizen.Maps.MapView.Children">
+            <summary>
+            Gets a list of the map object added to map view.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.MapView.GeolocationToScreen(Tizen.Maps.Geocoordinates)">
+            <summary>
+            Changes the geographical coordinates to screen coordinates.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">Geographical coordinates.</param>
+            <returns>Returns an instance of the screen coordinates on the current screen.</returns>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the value is invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a native operation failed to allocate memory and connect to the service.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapView.ScreenToGeolocation(ElmSharp.Point)">
+            <summary>
+            Changes the screen coordinates to geographical coordinates.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="screenCoordinates">Screen coordinates.</param>
+            <returns>Returns an instance of the geographical coordinates object.</returns>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the value is invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a native operation failed to allocate memory and connect to the service.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapView.Add(Tizen.Maps.MapObject)">
+            <summary>
+            Adds a map object to map view.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="child">An instance of the map object to be added.</param>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the value is invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a native operation failed to allocate memory and connect to the service.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapView.Remove(Tizen.Maps.MapObject)">
+            <summary>
+            Removes a map object from the map view.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="child">An instance of the map object to be removed.</param>
+            <remarks>Once removed, the child object will be become invalid.</remarks>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the value is invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when native operation failed to allocate memory and connect to the service.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapView.RemoveAll">
+            <summary>
+            Removes all map objects from the map view.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a native operation failed to allocate memory and connect to the service.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapView.CaptureSnapshot(Tizen.Maps.SnapshotType,System.Int32,System.String)">
+            <summary>
+            Captures a snapshot of the map view.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type">Type of file format.</param>
+            <param name="quality">An integer value representing the quality for encoding from 1 to 100.</param>
+            <param name="path">A string representing the file path for a snapshot.</param>
+            <privilege>http://tizen.org/privilege/mapservice</privilege>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the value is invalid.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a native operation failed to allocate memory and connect to the service.</exception>
+        </member>
+        <member name="M:Tizen.Maps.MapView.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.MapView.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.Marker">
+            <summary>
+            The marker map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Marker.Finalize">
+            <summary>
+            Destroy the Marker object.
+            </summary>
+        </member>
+        <member name="E:Tizen.Maps.Marker.Clicked">
+            <summary>
+            Gets or sets the clicked event handlers.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Marker.IsVisible">
+            <summary>
+            Gets or sets the marker's visibility.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Marker.Coordinates">
+            <summary>
+            Gets or sets the geographical coordinates for this marker.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Marker.ImagePath">
+            <summary>
+            Gets or sets a string representing the image file path for this marker.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Marker.MarkerSize">
+            <summary>
+            Gets or sets the screen size for this marker.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Marker.ZOrder">
+            <summary>
+            Gets or sets the z-order for this marker.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>The integer value is 0 by default, and must be in the range of -100 to 100.</value>
+        </member>
+        <member name="M:Tizen.Maps.Marker.Resize(ElmSharp.Size)">
+            <summary>
+            Changes the marker size.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="newSize">New size.</param>
+        </member>
+        <member name="M:Tizen.Maps.Marker.Move(Tizen.Maps.Geocoordinates)">
+            <summary>
+            Changes the marker coordinates.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="newPosition">New position for the marker.</param>
+        </member>
+        <member name="M:Tizen.Maps.Marker.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+        </member>
+        <member name="M:Tizen.Maps.Marker.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.Pin">
+            <summary>
+            Pin type the marker map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Pin.#ctor(Tizen.Maps.Geocoordinates)">
+            <summary>
+            Creates a pin type marker.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">Marker coordinates.</param>
+            <exception cref="T:System.ArgumentException">Thrown when input coordinates are invalid.</exception>
+        </member>
+        <member name="M:Tizen.Maps.Pin.#ctor(Tizen.Maps.Geocoordinates,System.String)">
+            <summary>
+            Creates a pin type marker.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">Marker coordinates.</param>
+            <param name="imagePath">Image file path for the Marker.</param>
+            <remarks>
+            http://tizen.org/privilege/mediastorage is needed if the file path is relevant to media storage.
+            http://tizen.org/privilege/externalstorage is needed if the file path is relevant to external storage.
+            </remarks>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the input coordinates or imagePath is invalid.</exception>
+        </member>
+        <member name="T:Tizen.Maps.Sticker">
+            <summary>
+            Sticker type marker map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Sticker.#ctor(Tizen.Maps.Geocoordinates)">
+            <summary>
+            Creates a sticker type marker.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">Marker coordinates.</param>
+            <exception cref="T:System.ArgumentException">Thrown when input coordinates are invalid.</exception>
+        </member>
+        <member name="M:Tizen.Maps.Sticker.#ctor(Tizen.Maps.Geocoordinates,System.String)">
+            <summary>
+            Creates a sticker type marker.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">Marker coordinates.</param>
+            <param name="imagePath">Image file path for Marker.</param>
+            <remarks>
+            http://tizen.org/privilege/mediastorage is needed if the input or output path are relevant to media storage.
+            http://tizen.org/privilege/externalstorage is needed if the input or output path are relevant to external storage.
+            </remarks>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when application does not have some privilege to access this method.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the input coordinates or imagePath is invalid.</exception>
+        </member>
+        <member name="T:Tizen.Maps.MultiReverseGeocodeRequest">
+            <summary>
+            Multiple reverse geocode request for Tizen map service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.Overlay">
+            <summary>
+            Overlay map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Overlay.#ctor(Tizen.Maps.Geocoordinates,ElmSharp.EvasObject)">
+            <summary>
+            Creates a normal overlay map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates"></param>
+            <param name="objectToContain"></param>
+            <exception cref="T:System.ArgumentException">Thrown when the input coordinates or objectToContain are invalid.</exception>
+        </member>
+        <member name="M:Tizen.Maps.Overlay.Finalize">
+            <summary>
+            Destroy the Overlay object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.Overlay.IsVisible">
+            <summary>
+            Gets or sets the visibility of an overlay map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Overlay.Coordinates">
+            <summary>
+            Gets or sets geographical coordinates for an overlay map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Overlay.MinimumZoomLevel">
+            <summary>
+            Gets or sets minimum zoom level for an overlay map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Overlay.MaximumZoomLevel">
+            <summary>
+            Gets or sets maximum zoom lever for an overlay map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Overlay.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Overlay.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.BubbleOverlay">
+            <summary>
+            The bubble overlay map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.BubbleOverlay.#ctor(Tizen.Maps.Geocoordinates,ElmSharp.EvasObject)">
+            <summary>
+            Creates a bubble overlay.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">The geographical coordinates to be pointed.</param>
+            <param name="objectToContain">The EvasObject to be shown.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the input coordinates or objectToContain are invalid.</exception>
+        </member>
+        <member name="T:Tizen.Maps.BoxOverlay">
+            <summary>
+            The box overlay map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.BoxOverlay.#ctor(Tizen.Maps.Geocoordinates,ElmSharp.EvasObject)">
+            <summary>
+            Creates a box overlay.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">The geographical coordinates to be pointed.</param>
+            <param name="objectToContain">The EvasObject to be shown.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the input coordinates or objectToContain are invalid</exception>
+        </member>
+        <member name="T:Tizen.Maps.Place">
+            <summary>
+            Place information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Place.Finalize">
+            <summary>
+            Destroy the Place object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.Place.Id">
+            <summary>
+            Gets an ID string for the place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Name">
+            <summary>
+            Gets name string for the place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Uri">
+            <summary>
+            Gets a view URI for the place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Distance">
+            <summary>
+            Gets a distance for the place from the center.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Coordinates">
+            <summary>
+            Gets a geographical location for the place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Address">
+            <summary>
+            Gets an address for the place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Rating">
+            <summary>
+            Gets a rating for the place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Supplier">
+            <summary>
+            Gets a supplier link for the place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Related">
+            <summary>
+            Gets a related link for the place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Properties">
+            <summary>
+            Gets all the properties attached to this place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Categories">
+            <summary>
+            Gets all the categories attached to this place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Attributes">
+            <summary>
+            Gets all the attributes attached to this place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Contacts">
+            <summary>
+            Gets all the contacts attached to this place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Editorials">
+            <summary>
+            Gets all the editorials attached to this place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Images">
+            <summary>
+            Gets all the images attached to this place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Place.Reviews">
+            <summary>
+            Gets all the reviews attached to this place.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Place.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+        </member>
+        <member name="M:Tizen.Maps.Place.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.PlaceAddress">
+            <summary>
+            Address information for the map point used in geocode and reverse geocode requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceAddress.#ctor">
+            <summary>
+            Constructs a map address object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when native operation failed to allocate memory.</exception>
+        </member>
+        <member name="M:Tizen.Maps.PlaceAddress.Finalize">
+            <summary>
+            Destroy the PlaceAddress object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddress.Building">
+            <summary>
+            Gets a building number for this address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddress.City">
+            <summary>
+            Gets a city name for this address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddress.Country">
+            <summary>
+            Gets a country name for this address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddress.CountryCode">
+            <summary>
+            Gets a country code for this address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddress.County">
+            <summary>
+            Gets a county for this address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddress.District">
+            <summary>
+            Gets a district name for this address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddress.FreeText">
+            <summary>
+            Gets a free text associated with this address.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddress.PostalCode">
+            <summary>
+            Gets a postal code for this address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddress.State">
+            <summary>
+            Gets a state name for this address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddress.Street">
+            <summary>
+            Gets a street name for this address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceAddress.ToString">
+            <summary>
+            Returns a string that represents this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Returns a string which presents this object.</returns>
+        </member>
+        <member name="M:Tizen.Maps.PlaceAddress.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceAddress.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.PlaceAddressList">
+            <summary>
+            List of <see cref="T:Tizen.Maps.PlaceAddress"/> objects to be used in <see cref="T:Tizen.Maps.MapService"/> APIs.
+            </summary>
+        </member>
+        <member name="M:Tizen.Maps.PlaceAddressList.#ctor">
+            <summary>
+            Constructs a map address list object.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Thrown when the required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when native operation failed to allocate memory.</exception>
+        </member>
+        <member name="M:Tizen.Maps.PlaceAddressList.Finalize">
+            <summary>
+            Destroy the PlaceAddressList object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAddressList.Addresses">
+            <summary>
+            Gets an iterator for addresses in this list.
+            </summary>
+        </member>
+        <member name="M:Tizen.Maps.PlaceAddressList.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+        </member>
+        <member name="M:Tizen.Maps.PlaceAddressList.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.PlaceAttribute">
+            <summary>
+            Place attributes information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAttribute.Id">
+            <summary>
+            Gets an ID for the place attribute.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAttribute.Label">
+            <summary>
+            Gets a label for the place attribute.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceAttribute.Text">
+            <summary>
+            Gets a text for the place attribute.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceAttribute.ToString">
+            <summary>
+            Returns a string that represents this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Returns a string which presents this object.</returns>
+        </member>
+        <member name="T:Tizen.Maps.PlaceCategory">
+            <summary>
+            Place category information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceCategory.#ctor">
+            <summary>
+            Constructs a search category object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when native operation failed to allocate memory.</exception>
+        </member>
+        <member name="M:Tizen.Maps.PlaceCategory.Finalize">
+            <summary>
+            Destroy the PlaceCategory object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.PlaceCategory.Id">
+            <summary>
+            Gets or sets an ID for this category.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceCategory.Name">
+            <summary>
+            Gets or sets a name for this category.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceCategory.Url">
+            <summary>
+            Gets or sets a URL for this category.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceCategory.ToString">
+            <summary>
+            Returns a string that represents this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Returns a string which presents this object.</returns>
+        </member>
+        <member name="M:Tizen.Maps.PlaceCategory.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceCategory.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.PlaceContact">
+            <summary>
+            Place contact information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceContact.Id">
+            <summary>
+            Gets an ID for this place contact.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceContact.Label">
+            <summary>
+            Gets a label for this place contact.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceContact.Value">
+            <summary>
+            Gets a value for this place contact.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceContact.ToString">
+            <summary>
+            Returns a string that represents this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Returns a string which presents this object.</returns>
+        </member>
+        <member name="T:Tizen.Maps.PlaceEditorial">
+            <summary>
+            Place editorial information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceEditorial.Description">
+            <summary>
+            Gets a description for this place editorial.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceEditorial.Language">
+            <summary>
+            Gets a language for this place editorial.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceEditorial.Media">
+            <summary>
+            Gets an instance of <see cref="T:Tizen.Maps.PlaceMedia"/> object which representing media for this place editorial.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceEditorial.ToString">
+            <summary>
+            Returns a string that represents this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Returns a string which presents this object.</returns>
+        </member>
+        <member name="T:Tizen.Maps.PlaceFilter">
+            <summary>
+            Place filter information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceFilter.#ctor">
+            <summary>
+            Constructs a new place filter.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when native operation failed to allocate memory.</exception>
+        </member>
+        <member name="M:Tizen.Maps.PlaceFilter.Finalize">
+            <summary>
+            Destroy the PlaceFilter object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.PlaceFilter.Address">
+            <summary>
+            Gets or sets a free-formed address string for this place filter.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Depending on maps provider which the application has selected,
+            it may treat <see cref="P:Tizen.Maps.PlaceFilter.Name"/>, <see cref="P:Tizen.Maps.PlaceFilter.Keyword"/> and <see cref="P:Tizen.Maps.PlaceFilter.Address"/>
+            as the same kind of strings to search places.</remarks>
+        </member>
+        <member name="P:Tizen.Maps.PlaceFilter.Category">
+            <summary>
+            Gets or sets an instance of <see cref="T:Tizen.Maps.PlaceCategory"/> object for this place filter.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceFilter.Keyword">
+            <summary>
+            Gets or sets a keyword for this place filter.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Depending on maps provider which the application has selected,
+            it may treat <see cref="P:Tizen.Maps.PlaceFilter.Name"/>, <see cref="P:Tizen.Maps.PlaceFilter.Keyword"/> and <see cref="P:Tizen.Maps.PlaceFilter.Address"/>
+            as the same kind of strings to search places.</remarks>
+        </member>
+        <member name="P:Tizen.Maps.PlaceFilter.Name">
+            <summary>
+            Gets or sets a name for this place filter.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Depending on maps provider which the application has selected,
+            it may treat <see cref="P:Tizen.Maps.PlaceFilter.Name"/>, <see cref="P:Tizen.Maps.PlaceFilter.Keyword"/> and <see cref="P:Tizen.Maps.PlaceFilter.Address"/>
+            as the same kind of strings to search places.</remarks>
+        </member>
+        <member name="M:Tizen.Maps.PlaceFilter.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceFilter.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.PlaceImage">
+            <summary>
+            Place image information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceImage.Id">
+            <summary>
+            Gets an ID for this place image.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceImage.Url">
+            <summary>
+            Gets an URL for this place image.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceImage.Width">
+            <summary>
+            Gets the width for this place image.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceImage.Height">
+            <summary>
+            Gets the height for this place image.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceImage.UserLink">
+            <summary>
+            Gets an object representing the user link for this place image.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceImage.ImageMedia">
+            <summary>
+            Gets an object representing the image media for this place image.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.PlaceLink">
+            <summary>
+            Place link object information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceLink.Id">
+            <summary>
+            Gets a string representing the ID for this place link.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceLink.Name">
+            <summary>
+            Gets a string representing the name for this place link.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceLink.Link">
+            <summary>
+            Gets a string representing the link for this place link.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceLink.Type">
+            <summary>
+            Gets a string representing the type for this place link.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.PlaceList">
+            <summary>
+            List of <see cref="T:Tizen.Maps.Place"/> objects to be used in <see cref="T:Tizen.Maps.MapService"/> APIs.
+            </summary>
+        </member>
+        <member name="M:Tizen.Maps.PlaceList.Finalize">
+            <summary>
+            Destroy the PlaceList object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.PlaceList.Places">
+            <summary>
+            Gets an iterator for the addresses in this list.
+            </summary>
+        </member>
+        <member name="M:Tizen.Maps.PlaceList.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+        </member>
+        <member name="M:Tizen.Maps.PlaceList.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.PlaceMedia">
+            <summary>
+            Place media information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceMedia.Attribution">
+            <summary>
+            Gets a string representing the attribution for this place media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceMedia.Supplier">
+            <summary>
+            Gets an instance of <see cref="T:Tizen.Maps.PlaceLink"/> object representing the supplier for this place media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceMedia.Via">
+            <summary>
+            Gets an instance of <see cref="T:Tizen.Maps.PlaceLink"/> object representing via data for this place media.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.PlaceRating">
+            <summary>
+            Place rating information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceRating.UserCount">
+            <summary>
+            Gets the number of users rated for this place rating.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceRating.Average">
+            <summary>
+            Gets the average value of this place rating.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.PlaceRating.ToString">
+            <summary>
+            Returns a string that represents this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Returns a string which presents this object.</returns>
+        </member>
+        <member name="T:Tizen.Maps.PlaceReview">
+            <summary>
+            Place review information, used in place discovery and search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceReview.Date">
+            <summary>
+            Gets an instance of <see cref="T:System.DateTime"/> object representing the time of this review.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceReview.Title">
+            <summary>
+            Gets a string representing the title of this review.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceReview.Rating">
+            <summary>
+            Gets a value representing the rating of this review.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceReview.Description">
+            <summary>
+            Gets a string representing the description of this review.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceReview.Language">
+            <summary>
+            Gets a string representing the language of this review.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceReview.ReviewMedia">
+            <summary>
+            Gets an instance of <see cref="T:Tizen.Maps.PlaceMedia"/> object representing the review media of this review.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.PlaceReview.UserLink">
+            <summary>
+            Gets an instance of <see cref="T:Tizen.Maps.PlaceLink"/> object representing the user link of this review.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.PlaceSearchRequest">
+            <summary>
+            Place search request for Tizen map service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.Polygon">
+            <summary>
+            The polygon map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Polygon.#ctor(System.Collections.Generic.IEnumerable{Tizen.Maps.Geocoordinates},ElmSharp.Color)">
+            <summary>
+            Creates a polygon visual object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">List of geographical coordinates.</param>
+            <param name="color">Background color.</param>
+            <exception cref="T:System.ArgumentException">Thrown when input values are invalid.</exception>
+        </member>
+        <member name="M:Tizen.Maps.Polygon.Finalize">
+            <summary>
+            Destroy the Polygon object.
+            </summary>
+        </member>
+        <member name="E:Tizen.Maps.Polygon.Clicked">
+            <summary>
+            Adds or removes the clicked event handlers.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Polygon.IsVisible">
+            <summary>
+            Gets or sets visibility for the polygon.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Polygon.Coordinates">
+            <summary>
+            Gets or sets a list of geographical coordinates for polygon vertices.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Polygon.FillColor">
+            <summary>
+            Gets or sets a background color to fill the polygon.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Polygon.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Polygon.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.Polyline">
+            <summary>
+            The polyline map object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Polyline.#ctor(System.Collections.Generic.List{Tizen.Maps.Geocoordinates},ElmSharp.Color,System.Int32)">
+            <summary>
+            Creates polyline visual object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates">List of geographical coordinates.</param>
+            <param name="color">Line color.</param>
+            <param name="width">The width of line [1 ~ 100] \(pixels).</param>
+            <exception cref="T:System.ArgumentException">Thrown when input values are invalid.</exception>
+        </member>
+        <member name="M:Tizen.Maps.Polyline.Finalize">
+            <summary>
+            Destroy the Polyline object.
+            </summary>
+        </member>
+        <member name="E:Tizen.Maps.Polyline.Clicked">
+            <summary>
+            Adds or removes the clicked event handlers.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Polyline.IsVisible">
+            <summary>
+            Gets or sets the visibility for polyline.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Polyline.Coordinates">
+            <summary>
+            Gets or sets a list of geographical coordinates for polyline vertices.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Polyline.LineColor">
+            <summary>
+            Gets or sets the line color.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Polyline.Width">
+            <summary>
+            Gets or sets the line width from 1 to 100 pixels.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Polyline.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Polyline.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.ReverseGeocodeRequest">
+            <summary>
+            Reverses the geocode request for a map service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.Route">
+            <summary>
+            Route information, used in Route Search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Route.Finalize">
+            <summary>
+            Destroy the Route object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.Route.Destination">
+            <summary>
+            Gets an instance of <see cref="T:Tizen.Maps.Geocoordinates"/> object representing destination coordinates for this route.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Route.Distance">
+            <summary>
+            Gets the total distance for this route.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Route.Duration">
+            <summary>
+            Get the total duration to cover this route.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Route.Id">
+            <summary>
+            Gets an ID for this route.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Route.Mode">
+            <summary>
+            Gets the transport mode for this route.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Route.Origin">
+            <summary>
+            Gets the origin coordinates for this route.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Route.Path">
+            <summary>
+            Gets a coordinates list for this route.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Route.Segments">
+            <summary>
+            Gets a segment list for this route.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Route.Unit">
+            <summary>
+            Gets the distance unit for this route.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.Route.BoundingBox">
+            <summary>
+            Gets an instance of <see cref="T:Tizen.Maps.Area"/> object which representing bounding area for this route.
+            </summary>
+        </member>
+        <member name="M:Tizen.Maps.Route.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.Route.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.RouteFeature">
+            <summary>
+            Route features used for route search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.None">
+            <summary>
+            Indicates no route features are selected.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.Toll">
+            <summary>
+            Indicates toll roads (toll gates/booths).
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.Motorway">
+            <summary>
+            Indicates a motorway.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.BoatFerry">
+            <summary>
+            Indicates a boat ferry.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.RailFerry">
+            <summary>
+            Indicates a rail (train) ferry.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.PublicTransit">
+            <summary>
+            Indicates a public transport.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.Tunnel">
+            <summary>
+            Indicates a tunnel.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.DirtRoad">
+            <summary>
+            Indicates a dirt road.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.Parks">
+            <summary>
+            Indicates a park.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.Hovlane">
+            <summary>
+            Indicates a high-occupancy vehicle lane.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeature.Stairs">
+            <summary>
+            Indicates stairs.
+            </summary>
+        </member>
+        <member name="T:Tizen.Maps.RouteFeatureWeight">
+            <summary>
+            Route feature weights used in route search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeatureWeight.Normal">
+            <summary>
+            Indicates normal weighting.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeatureWeight.Prefer">
+            <summary>
+            Indicates that a feature is preferred.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeatureWeight.Avoid">
+            <summary>
+            Indicates that a feature is to be avoided.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeatureWeight.SoftExclude">
+            <summary>
+            Indicates that soft-exclude applies to the feature.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteFeatureWeight.StrictExclude">
+            <summary>
+            Indicates that the feature is to be strictly excluded.
+            </summary>
+        </member>
+        <member name="T:Tizen.Maps.RouteManeuver">
+            <summary>
+            Route maneuver information used in route search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteManeuver.Direction">
+            <summary>
+            Gets the direction type for this maneuver.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteManeuver.Turn">
+            <summary>
+            Gets the turn type for this maneuver.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteManeuver.Position">
+            <summary>
+            Gets a geographical coordinates position for this maneuver.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteManeuver.Road">
+            <summary>
+            Gets a name of the road for this maneuver.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteManeuver.Instruction">
+            <summary>
+            Gets an instruction text for this maneuver.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteManeuver.Locale">
+            <summary>
+            Gets a locale for this maneuver.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteManeuver.TimeToNextInstruction">
+            <summary>
+            Gets the  time to next instruction for this maneuver.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteManeuver.DistanceToNextInstruction">
+            <summary>
+            Gets the distance to next instruction for this maneuver.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.RouteOptimization">
+            <summary>
+            Allowed route optimization option used in route search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            Depending on the loaded maps plug-in using <see cref="T:Tizen.Maps.MapService"/>, some features might have no effect or differences with the descriptions.
+            </remarks>
+        </member>
+        <member name="F:Tizen.Maps.RouteOptimization.Fastest">
+            <summary>
+            Indicates searching for the fastest routes.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteOptimization.Shortest">
+            <summary>
+            Indicates searching for the shortest routes (car mode only).
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteOptimization.Economic">
+            <summary>
+            Indicates searching for the most economic routes (car mode only).
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteOptimization.Scenic">
+            <summary>
+            Indicates searching for the most scenic routes.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteOptimization.FastestNow">
+            <summary>
+            Indicates searching for most the fastest routes now, based on the current traffic condition.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.RouteOptimization.DirectDrive">
+            <summary>
+            Indicates searching for the direct drive routes.
+            </summary>
+        </member>
+        <member name="T:Tizen.Maps.RouteSearchRequest">
+            <summary>
+            Routes the search request for Tizen map service requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteSearchRequest.Waypoints">
+            <summary>
+            Gets or sets a list of way-points to cover between the origin and destination.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.RouteSegment">
+            <summary>
+            Place Segment information used in Route Search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteSegment.Origin">
+            <summary>
+            Gets the origin coordinates for this segment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteSegment.Destination">
+            <summary>
+            Gets the destination coordinates for this segment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteSegment.Distance">
+            <summary>
+            Gets the total distance for this segment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteSegment.Duration">
+            <summary>
+            Gets the total duration to cover this segment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteSegment.Maneuvers">
+            <summary>
+            Gets the maneuver list for this segment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.RouteSegment.Path">
+            <summary>
+            Gets the coordinates list for this segment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.SearchPreference">
+            <summary>
+            Preferences for route search requests.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.SearchPreference.#ctor">
+            <summary>
+            Constructor for a new search preference.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.SearchPreference.#ctor(Interop.PreferenceHandle)">
+            <summary>
+            Constructor for a new search preference.
+            </summary>
+        </member>
+        <member name="M:Tizen.Maps.SearchPreference.Finalize">
+            <summary>
+            Destroy the SearchPreference object.
+            </summary>
+        </member>
+        <member name="P:Tizen.Maps.SearchPreference.Language">
+            <summary>
+            Gets or sets a preferred language.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Language should be specified as an ISO 3166 alpha-2 two letter country-code
+            followed by ISO 639-1 for the two-letter language code.<br/>e.g. "ko-KR", "en-US".</remarks>
+        </member>
+        <member name="P:Tizen.Maps.SearchPreference.MaxResults">
+            <summary>
+            Gets or sets the maximum result count for each service request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Setting negative value will not have any effect on MaxResults value.</remarks>
+        </member>
+        <member name="P:Tizen.Maps.SearchPreference.Unit">
+            <summary>
+            Gets or sets the distance unit.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.SearchPreference.CountryCode">
+            <summary>
+            Gets or sets the preferred country.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.SearchPreference.Properties">
+            <summary>
+            Gets or sets the search properties as a key value pair.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.SearchPreference.Optimization">
+            <summary>
+            Gets or sets the route optimization.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.SearchPreference.Mode">
+            <summary>
+            Gets or sets the route transport mode.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.SearchPreference.RouteFeatureWeight">
+            <summary>
+            Gets or sets the route feature weight.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.SearchPreference.RouteFeature">
+            <summary>
+            Gets or sets the route feature.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Maps.SearchPreference.SearchAlternativeRoutes">
+            <summary>
+            Gets or sets if the searching for alternative routes is enabled.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.SearchPreference.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Maps.SearchPreference.Dispose">
+            <summary>
+            Releases all the resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.ServiceData">
+            <summary>
+            Features available in the map service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.PlaceAddress">
+            <summary>
+            Indicates availability of address value in the place data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.PlaceRating">
+            <summary>
+            Indicates availability of rating value in the place data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.PlaceCategories">
+            <summary>
+            Indicates availability of place category list in the place data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.PlaceAttributes">
+            <summary>
+            Indicates availability of place attribute list in the place data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.PlaceContacts">
+            <summary>
+            Indicates availability of place contact list in the place data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.PlaceEditorials">
+            <summary>
+            Indicates availability of place editorial list in the place data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.PlaceReviews">
+            <summary>
+            Indicates availability of place review list in the place data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.PlaceImage">
+            <summary>
+            Indicates availability of place image in the place data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.PlaceSupplier">
+            <summary>
+            Indicates availability of place supplier link value in the place data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.PlaceRelated">
+            <summary>
+            Indicates availability of a related place link in the place data.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.RoutePath">
+            <summary>
+            Indicates that the route data structure is defined as a path (a list of geographical coordinates).
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.RouteSegmentsPath">
+            <summary>
+            Indicates that the route data structure is defined as a list of segments while each segment is defined as a path.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.RouteSegmentsManeuvers">
+            <summary>
+            Indicates that the route data structure is defined as a list of segments while each segment is defined as a list of maneuvers.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.ViewTraffic">
+            <summary>
+            Indicates availability of traffic information on the map.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.ViewPublicTransit">
+            <summary>
+            Indicates availability of public transit information on the map.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.ViewBuilding">
+            <summary>
+            Indicates availability of 3D building drawable on the map.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceData.ViewScaleBar">
+            <summary>
+            Indicates availability of scale bar on the map.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Maps.ServiceRequestType">
+            <summary>
+            Service requests available in the maps service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.Geocode">
+            <summary>
+            Indicates the service request to get position <see cref="T:Tizen.Maps.Geocoordinates"/> for a given free-formed address string is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.GeocodeInsideArea">
+            <summary>
+            Indicates that service request to get position <see cref="T:Tizen.Maps.Geocoordinates"/>  for a given address, within the specified bounding <see cref="T:Tizen.Maps.Area"/>, is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.GeocodeByStructuredAddress">
+            <summary>
+            Indicates that service request to get position <see cref="T:Tizen.Maps.Geocoordinates"/> for a given <see cref="T:Tizen.Maps.PlaceAddress"/> is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.ReverseGeocode">
+            <summary>
+            Indicates that service request to get <see cref="T:Tizen.Maps.PlaceAddress"/> for a given <see cref="T:Tizen.Maps.Geocoordinates"/> is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.MultiReverseGeocode">
+            <summary>
+            Indicates that service request to get <see cref="T:Tizen.Maps.PlaceAddress"/> for a given <see cref="T:Tizen.Maps.GeocoordinatesList"/> is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.SearchPlace">
+            <summary>
+            Indicates that service request to query <see cref="T:Tizen.Maps.Place"/> information for a given <see cref="T:Tizen.Maps.Geocoordinates"/> is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.SearchPlaceByArea">
+            <summary>
+            Indicates that service request to query <see cref="T:Tizen.Maps.Place"/> information for a given <see cref="T:Tizen.Maps.Area"/> is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.SearchPlaceByAddress">
+            <summary>
+            Indicates that service request to query <see cref="T:Tizen.Maps.Place"/> information for a given free-formed address string is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.SearchPlaceList">
+            <summary>
+            Indicates that service request to query <see cref="T:Tizen.Maps.Place"/> information list for all places in a given <see cref="T:Tizen.Maps.Area"/> is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.SearchGetPlaceDetails">
+            <summary>
+            Indicates that service request to get detailed <see cref="T:Tizen.Maps.Place"/> information for a given <see cref="T:Tizen.Maps.PlaceList"/> is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.SearchRoute">
+            <summary>
+            Indicates that service request to query <see cref="T:Tizen.Maps.Route"/> information from a given origin <see cref="T:Tizen.Maps.Geocoordinates"/> and destination <see cref="T:Tizen.Maps.Geocoordinates"/> is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.SearchRouteWithWaypoints">
+            <summary>
+            Indicates that service request to query <see cref="T:Tizen.Maps.Route"/> information passing through specified way-points <see cref="T:Tizen.Maps.GeocoordinatesList"/> is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.View">
+            <summary>
+            Indicates that map view service is allowed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.ServiceRequestType.ViewSnapshot">
+            <summary>
+            Indicates that map view snapshot service is allowed.
+            </summary>
+        </member>
+        <member name="T:Tizen.Maps.SnapshotType">
+            <summary>
+            Enumeration for the snapshot file formats.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.SnapshotType.BMP">
+            <summary>
+            Indicates the BMP file format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.SnapshotType.JPEG">
+            <summary>
+            Indicates the JPEG file format.
+            </summary>
+        </member>
+        <member name="T:Tizen.Maps.TransportMode">
+            <summary>
+            Route types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.TransportMode.Car">
+            <summary>
+            Indicates that the route is to be traveled by a car.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TransportMode.Pedestrian">
+            <summary>
+            Indicates that the route is for a pedestrian.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TransportMode.Bicycle">
+            <summary>
+            Indicates that the route is for a cyclist.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TransportMode.PublicTransit">
+            <summary>
+            Indicates that the route is to be traveled using public transport.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.TransportMode.Truck">
+            <summary>
+            Indicates that the route is for a truck.
+            </summary>
+        </member>
+        <member name="T:Tizen.Maps.TurnInstruction">
+            <summary>
+            Turns the Instruction type for route maneuver.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.None">
+            <summary>
+            Indicates an unknown instruction.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.Straight">
+            <summary>
+            Indicates instruction to move straight.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.BearRight">
+            <summary>
+            Indicates instruction to bear right.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.LightRight">
+            <summary>
+            Indicates instruction to turn slightly to the right.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.Right">
+            <summary>
+            Indicates instruction to turn right.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.HardRight">
+            <summary>
+            Indicates instruction to turn hard to the right.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.UturnRight">
+            <summary>
+            Indicates instruction to U-turn to the right.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.UturnLeft">
+            <summary>
+            Indicates instruction to U-turn to the left.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.HardLeft">
+            <summary>
+            Indicates instruction to turn hard to the left.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.Left">
+            <summary>
+            Indicates instruction to turn left.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.LightLeft">
+            <summary>
+            Indicates instruction to turn slightly to the left.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.BearLeft">
+            <summary>
+            Indicates instruction to bear left.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.RightFork">
+            <summary>
+            Indicates instruction to take right fork.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.LeftFork">
+            <summary>
+            Indicates instruction to take left fork.
+            </summary>
+        </member>
+        <member name="F:Tizen.Maps.TurnInstruction.StraightFork">
+            <summary>
+            Indicates instruction to take straight fork.
+            </summary>
+        </member>
+    </members>
+</doc>

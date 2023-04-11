@@ -1,0 +1,1476 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.PhonenumberUtils</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.PhonenumberUtils.PhonenumberUtils">
+            <summary>
+            The PhonenumberUtils class provides the methods for parsing, formatting, and normalizing the phone numbers.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.PhonenumberUtils.PhonenumberUtils.#ctor">
+            <summary>
+            Creates a PhonenumberUtils.
+            </summary>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.PhonenumberUtils.PhonenumberUtils.Finalize">
+            <summary>
+            The destructor.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.PhonenumberUtils.PhonenumberUtils.Dispose">
+            <summary>
+            Releases all the resources used by the PhonenumberUtils.
+            It should be called after it has finished using the object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.PhonenumberUtils.PhonenumberUtils.GetLocationFromNumber(System.String,Tizen.PhonenumberUtils.Region,Tizen.PhonenumberUtils.Language)">
+            <summary>
+            Gets the location string from the number, region, and language.
+            </summary>
+            <param name="number">The number.</param>
+            <param name="region">The region of number.</param>
+            <param name="language">The language of location.</param>
+            <returns>The location string.</returns>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the input coordinates are invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.PhonenumberUtils.PhonenumberUtils.GetFormattedNumber(System.String,Tizen.PhonenumberUtils.Region)">
+            <summary>
+            Gets the formatted number.
+            </summary>
+            <param name="number">The number.</param>
+            <param name="region">The region of number.</param>
+            <returns>The formatted number string.</returns>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the input coordinates are invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.PhonenumberUtils.PhonenumberUtils.GetNormalizedNumber(System.String)">
+            <summary>
+            Gets the normalized number.
+            </summary>
+            <param name="number">The number.</param>
+            <returns>The normalized number.</returns>
+            <privilege>http://tizen.org/privilege/telephony</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the input coordinates are invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+            <remarks>
+            Normalized number starts with plus('+') and country code, and excludes the separators such as dash or space.
+            It is a format of the E.164 standard including the country code based on the current network.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.PhonenumberUtils.Language">
+            <summary>
+            Enumeration for the language types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Amharic">
+            <summary>
+            Amharic.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Arabic">
+            <summary>
+            Arabic.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Belarusian">
+            <summary>
+            Belarusian.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Bulgarian">
+            <summary>
+            Bulgarian.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Chinese">
+            <summary>
+            Chinese.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.ChineseTraditional">
+            <summary>
+            Traditional Chinese.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Czech">
+            <summary>
+            Czech.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Dutch">
+            <summary>
+            Dutch.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.English">
+            <summary>
+            English.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Finnish">
+            <summary>
+            Finnish.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.French">
+            <summary>
+            French.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.German">
+            <summary>
+            German.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Greek">
+            <summary>
+            Greek.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Hungarian">
+            <summary>
+            Hungarian.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Indonesian">
+            <summary>
+            Indonesian.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Italian">
+            <summary>
+            Italian.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Japanese">
+            <summary>
+            Japanese.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Korean">
+            <summary>
+            Korean.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.NorthernSami">
+            <summary>
+            Nothern Sami.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Persian">
+            <summary>
+            Persian.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Polish">
+            <summary>
+            Polish.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Portuguese">
+            <summary>
+            Portuguese.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Romanian">
+            <summary>
+            Romanian.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Russian">
+            <summary>
+            Russian.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Serbian">
+            <summary>
+            Serbian.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Spanish">
+            <summary>
+            Spanish.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Swedish">
+            <summary>
+            Swedish.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Thai">
+            <summary>
+            Thai.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Turkish">
+            <summary>
+            Turkish.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.Vietnamese">
+            <summary>
+            Vietnamese.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Language.System">
+            <summary>
+            The current system value.
+            </summary>
+        </member>
+        <member name="T:Tizen.PhonenumberUtils.Region">
+            <summary>
+            Enumeration for the region types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.AlandIslands">
+            <summary>
+            Aland Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Albania">
+            <summary>
+            Albania.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Algeria">
+            <summary>
+            Algeria.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.AmericanSamoa">
+            <summary>
+            American Samoa.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Angola">
+            <summary>
+            Angola.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Anguilla">
+            <summary>
+            Anguilla.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Argentina">
+            <summary>
+            Argentina.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Armenia">
+            <summary>
+            Armenia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.AscensionIsland">
+            <summary>
+            Ascension Island.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.AntiguaAndBarbuda">
+            <summary>
+            Antigua and Barbuda.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Austria">
+            <summary>
+            Austria.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Bahamas">
+            <summary>
+            Bahamas.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Barbados">
+            <summary>
+            Barbados.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Belarus">
+            <summary>
+            Belarus.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Belgium">
+            <summary>
+            Belgium.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Benin">
+            <summary>
+            Benin.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Bermuda">
+            <summary>
+            Bermuda.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.BonaireSintEustatiusAndSaba">
+            <summary>
+            Bonaire, Sint Eustatius, and Saba.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Botswana">
+            <summary>
+            Botswana.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Brazil">
+            <summary>
+            Brazil.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Bulgaria">
+            <summary>
+            Bulgaria.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.BurkinaFaso">
+            <summary>
+            Burkina Faso.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Burundi">
+            <summary>
+            Burundi.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.CapeVerde">
+            <summary>
+            Cape Verde (Cabo Verde).
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Cameroon">
+            <summary>
+            Cameroon.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Canada">
+            <summary>
+            Canada.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.CaymanIsland">
+            <summary>
+            Cayman Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Chile">
+            <summary>
+            Chile.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.China">
+            <summary>
+            China.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Colombia">
+            <summary>
+            Colombia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Comoros">
+            <summary>
+            Comoros.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Congo">
+            <summary>
+            Congo.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.IvoryCoast">
+            <summary>
+            Ivory Coast (Cote d'Ivoire).
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Cuba">
+            <summary>
+            Cuba.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Curacao">
+            <summary>
+            Curacao.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.CzechRepublic">
+            <summary>
+            Czech Republic
+            </summary>.
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.DemocraticRepublicOfTheCongo">
+            <summary>
+            Democratic Republic of the Congo.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Dominica">
+            <summary>
+            Dominica.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.DominicanRepublic">
+            <summary>
+            Dominican Republic.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Egypt">
+            <summary>
+            Egypt.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Estonia">
+            <summary>
+            Estonia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Ethiopia">
+            <summary>
+            Ethiopia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Finland">
+            <summary>
+            Finland.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.France">
+            <summary>
+            France.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Gabon">
+            <summary>
+            Gabon.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Gambia">
+            <summary>
+            Gambia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Germany">
+            <summary>
+            Germany.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Ghana">
+            <summary>
+            Ghana.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Greece">
+            <summary>
+            Greece.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Greenland">
+            <summary>
+            Greenland.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Grenada">
+            <summary>
+            Grenada.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Guam">
+            <summary>
+            Guam.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Guernsey">
+            <summary>
+            Guernsey.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Guinea">
+            <summary>
+            Guinea.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.GuineaBissau">
+            <summary>
+            Guinea-Bissau.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Hungary">
+            <summary>
+            Hungary.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Iceland">
+            <summary>
+            Iceland.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.India">
+            <summary>
+            India.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Indonesia">
+            <summary>
+            Indonesia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Ireland">
+            <summary>
+            Ireland.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Iran">
+            <summary>
+            Islamic Republic of Iran.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.IsleOfMan">
+            <summary>
+            Isle of Man.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Italy">
+            <summary>
+            Italy.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Jamaica">
+            <summary>
+            Jamaica.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Japan">
+            <summary>
+            Japan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Jersey">
+            <summary>
+            Jersey.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Jordan">
+            <summary>
+            Jordan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Kazakhstan">
+            <summary>
+            Kazakhstan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Kenya">
+            <summary>
+            Kenya.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Kiribati">
+            <summary>
+            Kiribati.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Latvia">
+            <summary>
+            Latvia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Lesotho">
+            <summary>
+            Lesotho.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Lithuania">
+            <summary>
+            Lithuania.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Luxembourg">
+            <summary>
+            Luxembourg.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Madagascar">
+            <summary>
+            Madagascar.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Mauritania">
+            <summary>
+            Mauritania.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Mauritius">
+            <summary>
+            Mauritius.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Montserrat">
+            <summary>
+            Montserrat.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Morocco">
+            <summary>
+            Morocco.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Mozambique">
+            <summary>
+            Mozambique.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Namibia">
+            <summary>
+            Namibia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Netherlands">
+            <summary>
+            Netherlands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Nigeria">
+            <summary>
+            Nigeria.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.NorthernMarianaIslands">
+            <summary>
+            Northern Mariana Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Norway">
+            <summary>
+            Norway.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Peru">
+            <summary>
+            Peru.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Poland">
+            <summary>
+            Poland.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Portugal">
+            <summary>
+            Portugal.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.PuertoRico">
+            <summary>
+            Puerto Rico.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Korea">
+            <summary>
+            Republic of Korea.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Moldova">
+            <summary>
+            Republic of Moldova.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Romania">
+            <summary>
+            Romania.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.RussianFederation">
+            <summary>
+            Russian Federation.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SaintHelena">
+            <summary>
+            Saint Helena, Ascension and Tristan da Cunha.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SaintKittsAndNevis">
+            <summary>
+            Saint Kitts and Nevis.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SaintLucia">
+            <summary>
+            Saint Lucia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SaintVicentAndTheGrenadines">
+            <summary>
+            Saint Vincent and the Grenadines.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SaintThomasAndPrincipe">
+            <summary>
+            Saint Thomas And Principe (Sao Tome and Principe).
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SaudiArabia">
+            <summary>
+            Saudi Arabia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Senegal">
+            <summary>
+            Senegal.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Serbia">
+            <summary>
+            Serbia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SierraLeone">
+            <summary>
+            Sierra Leone.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SintMaarten">
+            <summary>
+            Saint Martin (Sint Maarten), Dutch part.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Slovakia">
+            <summary>
+            Slovakia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Somalia">
+            <summary>
+            Somalia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SouthAfrica">
+            <summary>
+            South Africa.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Spain">
+            <summary>
+            Spain.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SriLanka">
+            <summary>
+            Sri Lanka.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Sudan">
+            <summary>
+            Sudan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SvalbardAndJanMayen">
+            <summary>
+            Svalbard and Jan Mayen.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Swaziland">
+            <summary>
+            Swaziland.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Sweden">
+            <summary>
+            Sweden.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Switzerland">
+            <summary>
+            Switzerland.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Taiwan">
+            <summary>
+            Chinese Taiwan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Thailand">
+            <summary>
+            Thailand.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Macedonia">
+            <summary>
+            The Former Yugoslav Republic of Macedonia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Togo">
+            <summary>
+            Togo.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.TrinidadAndTobago">
+            <summary>
+            Trinidad and Tobago.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.TristanDaCunha">
+            <summary>
+            Tristan da Cunha.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Tunisia">
+            <summary>
+            Tunisia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Turkey">
+            <summary>
+            Turkey.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.TurksAndCaicosIslands">
+            <summary>
+            Turks and Caicos Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Uganda">
+            <summary>
+            Uganda.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.UnitedKingdom">
+            <summary>
+            United Kingdom.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.UnitedStatesOfAmerica">
+            <summary>
+            United States of America.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Venezuela">
+            <summary>
+            Venezuela.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.VietNam">
+            <summary>
+            Viet Nam.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.VirginIslandBritish">
+            <summary>
+            British Virgin Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.VirginIslandUs">
+            <summary>
+            U.S. Virgin Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.WesternSahara">
+            <summary>
+            Western Sahara.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Zambia">
+            <summary>
+            Zambia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Zimbabwe">
+            <summary>
+            Zimbabwe.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Andorra">
+            <summary>
+            Andorra.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.UnitedArabEmirates">
+            <summary>
+            United Arab Emirates.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Afghanistan">
+            <summary>
+            Afghanistan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Australia">
+            <summary>
+            Australia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Aruba">
+            <summary>
+            Aruba.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Azerbaijan">
+            <summary>
+            Azerbaijan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.BosniaAndHerzegovina">
+            <summary>
+            Bosnia and Herzegovina.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Bangladesh">
+            <summary>
+            Bangladesh.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Bahrain">
+            <summary>
+            Bahrain.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SaintBarthelemy">
+            <summary>
+            Saint Barthelemy, French Antilles.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.BruneiDarussalam">
+            <summary>
+            Brunei Darussalam.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Bolivia">
+            <summary>
+            Bolivia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Bhutan">
+            <summary>
+            Bhutan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Belize">
+            <summary>
+            Belize.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.CocosIslands">
+            <summary>
+            Cocos Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.CentralAfricanRepublic">
+            <summary>
+            Central African Republic.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.CookIslands">
+            <summary>
+            Cook Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.CostaRica">
+            <summary>
+            Costa Rica.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.ChristmasIslands">
+            <summary>
+            Christmas Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Cyprus">
+            <summary>
+            Cyprus.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Djibouti">
+            <summary>
+            Djibouti.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Denmark">
+            <summary>
+            Denmark.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Ecuador">
+            <summary>
+            Ecuador.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Eritrea">
+            <summary>
+            Eritrea.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Fiji">
+            <summary>
+            Fiji.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.FalklandIslands">
+            <summary>
+            Falkland Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Micronesia">
+            <summary>
+            Federated States of Micronesia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.FaroeIslands">
+            <summary>
+            Faroe Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Georgia">
+            <summary>
+            Georgia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.FrenchGuiana">
+            <summary>
+            French Guiana.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Gibraltar">
+            <summary>
+            Gibraltar.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Guadeloupe">
+            <summary>
+            Guadeloupe.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.EquatorialGuinea">
+            <summary>
+            Equatorial Guinea.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Guatemala">
+            <summary>
+            Guatemala.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Guyana">
+            <summary>
+            Guyana.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.HongKong">
+            <summary>
+            Chinese Hong Kong.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Honduras">
+            <summary>
+            Honduras.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Croatia">
+            <summary>
+            Croatia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Haiti">
+            <summary>
+            Haiti.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Israel">
+            <summary>
+            Israel.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.DiegoGarcia">
+            <summary>
+            British Indian Ocean Territory/Diego Garcia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Iraq">
+            <summary>
+            Iraq.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Kyrgyzstan">
+            <summary>
+            Kyrgyzstan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Cambodia">
+            <summary>
+            Cambodia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.NorthKorea">
+            <summary>
+            Democratic People's Republic of Korea.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Kuwait">
+            <summary>
+            Kuwait.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Laos">
+            <summary>
+            Lao People's Democratic Republic.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Lebanon">
+            <summary>
+            Lebanon.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Liechtenstein">
+            <summary>
+            Liechtenstein.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Liberia">
+            <summary>
+            Liberia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Libya">
+            <summary>
+            Libya, The Socialist People's Libyan Arab Jamahiriva.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Monaco">
+            <summary>
+            Monaco.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Montenegro">
+            <summary>
+            Montenegro.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SaintMartin">
+            <summary>
+            Saint Martin, French part.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.MarshallIslands">
+            <summary>
+            Marshall Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Mali">
+            <summary>
+            Mali.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Myanmar">
+            <summary>
+            Myanmar.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Mongolia">
+            <summary>
+            Mongolia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Macao">
+            <summary>
+            Macao, China.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Martinique">
+            <summary>
+            French Department of Martinique.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Malta">
+            <summary>
+            Malta.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Maldives">
+            <summary>
+            Maldives.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Malawi">
+            <summary>
+            Malawi.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Mexico">
+            <summary>
+            Mexico.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Malaysia">
+            <summary>
+            Malaysia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.NewCaledonia">
+            <summary>
+            New Caledonia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Niger">
+            <summary>
+            Niger.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.NorfolkIsland">
+            <summary>
+            Norfolk Island.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Nicaragua">
+            <summary>
+            Nicaragua.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Nepal">
+            <summary>
+            Nepal.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Nauru">
+            <summary>
+            Nauru.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Niue">
+            <summary>
+            Niue.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.NewZealand">
+            <summary>
+            New Zealand.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Oman">
+            <summary>
+            Oman.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Panama">
+            <summary>
+            Panama.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.FrenchPolynesia">
+            <summary>
+            French Polynesia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.PapuaNewGuinea">
+            <summary>
+            Papua New Guinea.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Philippines">
+            <summary>
+            Philippines.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Pakistan">
+            <summary>
+            Pakistan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SaintPierreAndMiquelon">
+            <summary>
+            Saint Pierre and Miquelon.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Palestine">
+            <summary>
+            Palestine.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Palau">
+            <summary>
+            Palau.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Paraguay">
+            <summary>
+            Paraguay.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Qatar">
+            <summary>
+            Qatar.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Reunion">
+            <summary>
+            Reunion.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Rwanda">
+            <summary>
+            Rwanda.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SolomonIslands">
+            <summary>
+            Solomon Islands.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Seychelles">
+            <summary>
+            Seychelles.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Singapore">
+            <summary>
+            Singapore.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Slovenia">
+            <summary>
+            Slovenia.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SanMarino">
+            <summary>
+            San Marino.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Suriname">
+            <summary>
+            Suriname.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SouthSudan">
+            <summary>
+            South Sudan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.ElSalvador">
+            <summary>
+            El Salvador.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.SyrianArabRepublic">
+            <summary>
+            Syrian Arab Republic.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Chad">
+            <summary>
+            Chad.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Tajikistan">
+            <summary>
+            Tajikistan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Tokelau">
+            <summary>
+            Tokelau.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.TimorLeste">
+            <summary>
+            Timor-Leste (East Timor).
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Turkmenistan">
+            <summary>
+            Turkmenistan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Tonga">
+            <summary>
+            Tonga.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Tuvalu">
+            <summary>
+            Tuvalu.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Tanzania">
+            <summary>
+            Tanzania.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Ukraine">
+            <summary>
+            Ukraine.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Uruguay">
+            <summary>
+            Uruguay.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Uzbekistan">
+            <summary>
+            Uzbekistan.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.VaticanCity">
+            <summary>
+            Vatican City.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Vanuatu">
+            <summary>
+            Vanuatu.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.WallisAndFutuna">
+            <summary>
+            Wallis and Futuna.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Samoa">
+            <summary>
+            Samoa.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Yemen">
+            <summary>
+            Yemen.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.Mayotte">
+            <summary>
+            Mayotte.
+            </summary>
+        </member>
+        <member name="F:Tizen.PhonenumberUtils.Region.System">
+            <summary>
+            The current system value.
+            </summary>
+        </member>
+    </members>
+</doc>

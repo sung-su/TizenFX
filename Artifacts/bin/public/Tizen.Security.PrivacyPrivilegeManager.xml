@@ -1,0 +1,342 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Security.PrivacyPrivilegeManager</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Security.CallCause">
+            <summary>
+            Enumeration for the call cause of a permission request callback.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.CallCause.Answer">
+            <summary>
+            The call cause is a permission request answer.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.CallCause.Error">
+            <summary>
+            The call cause is an error.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.CheckResult">
+            <summary>
+            Enumeration for the result of a permission check.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.CheckResult.Allow">
+            <summary>
+            The access to privilege is allowed permanently.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.CheckResult.Deny">
+            <summary>
+            The access to privilege is denied permanently.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.CheckResult.Ask">
+            <summary>
+            The access to privilege must be resolved by the user.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.PermissionRequestResponse">
+            <summary>
+            Holds information about privilege request result.
+            </summary>
+        </member>
+        <member name="P:Tizen.Security.PermissionRequestResponse.Result">
+            <summary>
+            The result of a permission request.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.PermissionRequestResponse.Privilege">
+            <summary>
+            The privilege for which a permission was requested for.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.PrivacyPrivilegeManager">
+            <summary>
+            The PrivacyPrivilegeManager provides the properties or methods to check and request a permission for privacy privilege.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.PrivacyPrivilegeManager.CheckPermission(System.String)">
+            <summary>
+            Gets the status of a privacy privilege permission.
+            </summary>
+            <param name="privilege">The privacy privilege to be checked.</param>
+            <returns>The permission setting for a respective privilege.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid parameter is passed.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when a memory error occurred.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <example>
+            <code>
+                CheckResult result = PrivacyPrivilegeManager.CheckPermission("http://tizen.org/privilege/account.read");
+                switch (result)
+                {
+                    case Allow:
+                        // Privilege can be used
+                        break;
+                    case Deny:
+                        // Privilege can't be used
+                        break;
+                    case Ask:
+                        // User permission request required
+                        PrivacyPrivilegeManager.RequestPermission("http://tizen.org/privilege/account.read");
+                        break;
+                }
+            </code>
+            </example>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.PrivacyPrivilegeManager.CheckPermissions(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets the status of a privacy privileges permission.
+            </summary>
+            <param name="privileges">The privacy privileges to be checked.</param>
+            <returns>The permission setting for a respective privileges.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid parameter is passed.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when a memory error occurred.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <example>
+            <code>
+                string[] privileges = new [] {"http://tizen.org/privilege/account.read",
+                                              "http://tizen.org/privilege/alarm"};
+                CheckResult[] results = PrivacyPrivilegeManager.CheckPermissions(privileges).ToArray();
+                List&lt;string&gt; privilegesWithAskStatus = new List&lt;string&gt;();
+                for (int iterator = 0; iterator &lt; results.Length; ++iterator)
+                {
+                    switch (results[iterator])
+                    {
+                        case CheckResult.Allow:
+                            // Privilege can be used
+                            break;
+                        case CheckResult.Deny:
+                            // Privilege can't be used
+                            break;
+                        case CheckResult.Ask:
+                            // User permission request required
+                            privilegesWithAskStatus.Add(privileges[iterator]);
+                            break;
+                    }
+                }
+                PrivacyPrivilegeManager.RequestPermissions(privilegesWithAskStatus);
+            </code>
+            </example>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.PrivacyPrivilegeManager.RequestPermission(System.String)">
+            <summary>
+            Triggers the permission request for a user.
+            </summary>
+            <param name="privilege">The privacy privilege to be requested.</param>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid parameter is passed.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when a memory error occurred.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <example>
+            <code>
+                CheckResult result = PrivacyPrivilegeManager.CheckPermission("http://tizen.org/privilege/account.read");
+                switch (result)
+                {
+                    case Allow:
+                        // Privilege can be used
+                        break;
+                    case Deny:
+                        // Privilege can't be used
+                        break;
+                    case Ask:
+                        // User permission request required
+                        PrivacyPrivilegeManager.RequestPermission("http://tizen.org/privilege/account.read");
+                        break;
+                }
+            </code>
+            </example>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.PrivacyPrivilegeManager.RequestPermissions(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Triggers the permissions request for a user.
+            </summary>
+            <param name="privileges">The privacy privileges to be requested.</param>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid parameter is passed.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when a memory error occurred.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <returns>Permission request Task</returns>
+            <example>
+            <code>
+                string[] privileges = new [] {"http://tizen.org/privilege/account.read",
+                                              "http://tizen.org/privilege/alarm"};
+                CheckResult[] results = PrivacyPrivilegeManager.CheckPermissions(privileges).ToArray();
+                List&lt;string&gt; privilegesWithAskStatus = new List&lt;string&gt;();
+                for (int iterator = 0; iterator &lt; results.Length; ++iterator)
+                {
+                    switch (results[iterator])
+                    {
+                        case CheckResult.Allow:
+                            // Privilege can be used
+                            break;
+                        case CheckResult.Deny:
+                            // Privilege can't be used
+                            break;
+                        case CheckResult.Ask:
+                            // User permission request required
+                            privilegesWithAskStatus.Add(privileges[iterator]);
+                            break;
+                    }
+                }
+                IEnumerable&lt;PermissionRequestResponse&gt; responses = PrivacyPrivilegeManager.RequestPermissions(privilegesWithAskStatus).Result;
+                //handle responses
+            </code>
+            </example>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Security.PrivacyPrivilegeManager.GetResponseContext(System.String)">
+             <summary>
+             Gets the response context for a given privilege.
+             </summary>
+             <seealso cref="T:Tizen.Security.PrivacyPrivilegeManager.ResponseContext"/>
+             <param name="privilege">The privilege.</param>
+             <returns>The response context of a respective privilege.</returns>
+             <exception cref="T:System.ArgumentException">Thrown if the key is an invalid parameter.</exception>
+             <example>
+             <code>
+             private static void PPM_RequestResponse(object sender, RequestResponseEventArgs e)
+             {
+                 if (e.cause == CallCause.Answer)
+                 {
+                    switch(e.result)
+            
+                    {
+            
+                     case RequestResult.AllowForever:
+                         Console.WriteLine("User allowed usage of privilege {0} definitely", e.privilege);
+                         break;
+                     case RequestResult.DenyForever:
+                         Console.WriteLine("User denied usage of privilege {0} definitely", e.privilege);
+                         break;
+                     case RequestResult.DenyOnce:
+                         Console.WriteLine("User denied usage of privilege {0} this time", e.privilege);
+                         break;
+                     };
+                 }
+                 else
+                 {
+                     Console.WriteLine("Error occured during requesting permission for {0}", e.privilege);
+                 }
+            }
+            
+                 PrivacyPrivilegeManager.ResponseContext context = null;
+                 PrivacyPrivilegeManager.GetResponseContext("http://tizen.org/privilege/account.read").TryGetTarget(out context);
+                 if(context != null)
+                 {
+                     context.ResponseFetched += PPM_RequestResponse;
+                 }
+            
+                 PrivacyPrivilegeManager.RequestPermission("http://tizen.org/privilege/account.read");
+            
+                 PrivacyPrivilegeManager.GetResponseContext("http://tizen.org/privilege/account.read").TryGetTarget(out context);
+                 if(context != null)
+                 {
+                     context.ResponseFetched -= PPM_RequestResponse;
+                 }
+             </code>
+             </example>
+             <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.PrivacyPrivilegeManager.ResponseContext">
+            <summary>
+            This class manages event handlers of the privilege permission requests.
+            This class enables having event handlers for an individual privilege.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Security.PrivacyPrivilegeManager.ResponseContext.ResponseFetched">
+            <summary>
+            Occurs when the response for a permission request is fetched.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when the bundle instance has been disposed.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.RequestResponseEventArgs">
+            <summary>
+            This class is an event argument of the RequestResponse event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.RequestResponseEventArgs.cause">
+            <summary>
+            The cause of a triggered response.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.RequestResponseEventArgs.result">
+            <summary>
+            The result of a permission request.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.RequestResponseEventArgs.privilege">
+            <summary>
+            The privilege for which a permission was requested for.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.RequestResponseEventArgs.Response">
+            <summary>
+            The response for privilege request
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.RequestMultipleResponseEventArgs">
+            <summary>
+            This class is an event argument of the RequestResponse event.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.RequestMultipleResponseEventArgs.Cause">
+            <summary>
+            The cause of a triggered response.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Security.RequestMultipleResponseEventArgs.Responses">
+            <summary>
+            The response for privilege request
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="T:Tizen.Security.RequestResult">
+            <summary>
+            Enumeration for the result of a permission request.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.RequestResult.AllowForever">
+            <summary>
+            The privilege is allowed permanently.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.RequestResult.DenyForever">
+            <summary>
+            The privilege is denied permanently.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Security.RequestResult.DenyOnce">
+            <summary>
+            The privilege is denied temporarily.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

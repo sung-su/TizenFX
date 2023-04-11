@@ -1,0 +1,567 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Account.FidoClient</name>
+    </assembly>
+    <members>
+        <member name="T:Interop.Libraries">
+            <summary>
+            Wrapper class for maintaining names of dependent native libraries.
+            </summary>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.AuthenticatorInformation">
+            <summary>
+            Contains information about the authenticators registered on the device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <example>
+            <code>
+                IEnumerable&lt;AuthenticatorInformation&gt; authInfos = await UafAuthenticatorFinder.DiscoverAuthenticatorsAsync();
+                foreach (AuthenticatorInformation authInfo in authInfos)
+                {
+                    string aaid = authInfo.Aaid;
+                    string title = authInfo.Title;
+                }
+            </code>
+            </example>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.Title">
+            <summary>
+            The authenticator Title
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.Aaid">
+            <summary>
+            The Authenticator AAID (Authenticator Attestation ID)
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.Description">
+            <summary>
+            The Authenticator description
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.AssertionScheme">
+            <summary>
+            The Authenticator assertion scheme.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.AuthenticationAlgorithm">
+            <summary>
+            The Authenticator algorithm.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.UserVerification">
+            <summary>
+            The user verification method of this Authenticator
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.KeyProtection">
+            <summary>
+            The key protection method of this Authenticator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.MatcherProtection">
+            <summary>
+            The matcher protection method of this Authenticator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.AttachmentHint">
+            <summary>
+            The attachment hint of this Authenticator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.IsSecondFactorOnly">
+            <summary>
+            Denotes the Authenticator is Second factor only which is supported by U2F standards.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.AttestationTypes">
+            <summary>
+            The available attestation types for this Authenticator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.TcDisplayType">
+            <summary>
+            The Transaction Confirmation display type of this Authenticator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.TcDisplayContentType">
+            <summary>
+            The Transaction Confirmation display type of this Authenticator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.AuthenticatorInformation.Icon">
+            <summary>
+            The icon of this Authenticator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.UafAuthenticatorFinder">
+            <summary>
+            Class to find available FIDO specific authenticators on the device
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.FidoClient.UafAuthenticatorFinder.DiscoverAuthenticatorsAsync">
+            <summary>
+            Retrieves  all the available FIDO authenticators supported by this Device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Enumerable list of authenticators</returns>
+            <privilege>http://tizen.org/privilege/fido.client</privilege>
+            <feature>http://tizen.org/feature/fido.uaf</feature>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have privilege to access this method</exception>
+            <exception cref="T:System.NotSupportedException">FIDO is not supported</exception>
+            <example>
+            <code>
+                IEnumerable&lt;AuthenticatorInformation&gt; authInfos = await UafAuthenticatorFinder.DiscoverAuthenticatorsAsync();
+                foreach (AuthenticatorInformation authInfo in authInfos)
+                {
+                    string aaid = authInfo.Aaid;
+                    string title = authInfo.Title;
+                }
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.UafClient">
+            <summary>
+            The FIDO UAF Client APIs
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.UafClient.VendorName">
+            <summary>
+            The FIDO Client vendor name
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.UafClient.MajorVersion">
+            <summary>
+            The FIDO Client Major version
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.UafClient.MinorVersion">
+            <summary>
+            The FIDO Client Minor version
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.UafClient.StautsOk">
+            <summary>
+            The FIDO Server response for successfull interaction.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.FidoClient.UafClient.CheckPolicyAsync(Tizen.Account.FidoClient.UafMessage)">
+            <summary>
+            Checks whether the FIDO message can be processed
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="uafMessage">The FIDO UAF message which is received from the relying party server</param>
+            <returns>True if the message can be handled by the device, else false</returns>
+            <privilege>http://tizen.org/privilege/fido.client</privilege>
+            <feature>http://tizen.org/feature/fido.uaf</feature>
+            <exception cref="T:System.ArgumentException"> In case of invalid parameter</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have privilege to access this method</exception>
+            <exception cref="T:System.NotSupportedException">FIDO is not supported</exception>
+            <example>
+            <code>
+                UafMessage uafRequest = new UafMessage()
+                {
+                    Operation = "UafRequestJson"
+                };
+                bool response = await UafClient.CheckPolicyAsync(uafRequest);
+            </code>
+            </example>
+        </member>
+        <member name="M:Tizen.Account.FidoClient.UafClient.ProcessRequestAsync(Tizen.Account.FidoClient.UafMessage,System.String)">
+             <summary>
+             Processes the given FIDO UAF message.
+             </summary>
+             <since_tizen> 3 </since_tizen>
+             <param name="uafMessage">The FIDO UAF message which is received from the relying party server</param>
+             <param name="channelBindng">The channel binding data in JSON format which is received from the relying party server</param>
+             <returns>FIDO response message</returns>
+             <privilege>http://tizen.org/privilege/fido.client</privilege>
+             <feature>http://tizen.org/feature/fido.uaf</feature>
+             <exception cref="T:System.ArgumentException"> In case of invalid parameter</exception>
+             <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have privilege to access this method</exception>
+             <exception cref="T:System.NotSupportedException">FIDO is not supported</exception>
+             <example>
+             <code>
+                 UafMessage uafRequest = new UafMessage()
+                 {
+                     Operation = "UafAuthRequestJson"
+                 };
+            
+                 var response = await UafClient.ProcessRequestAsync(uafRequest, null);
+             </code>
+             </example>
+        </member>
+        <member name="M:Tizen.Account.FidoClient.UafClient.NotifyResultAsync(System.Int32,Tizen.Account.FidoClient.UafResponse)">
+             <summary>
+             Notifies the FIDO client about the server result. FIDO Server sends the result of processing a UAF message to FIDO client.
+             </summary>
+             <since_tizen> 3 </since_tizen>
+             <param name="responseCode">The status code received from Server.(StautsOk implies success)</param>
+             <param name="response">The FIDO response message sent to server in JSON format</param>
+             <privilege>http://tizen.org/privilege/fido.client</privilege>
+             <feature>http://tizen.org/feature/fido.uaf</feature>
+             <remarks>
+             This is especially important for cases when a new registration may be considered by the client to be in a pending state until it is communicated that the server accepted it
+             </remarks>
+             <exception cref="T:System.ArgumentException"> In case of invalid parameter</exception>
+             <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have privilege to access this method</exception>
+             <exception cref="T:System.NotSupportedException">FIDO is not supported</exception>
+             <example>
+             <code>
+                 UafResponse response = new UafResponse()
+                 {
+                     Response = "Responsejson"
+                 };
+            
+                 await UafClient.NotifyResultAsync(UafClient.StautsOk, response);
+             </code>
+             </example>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.AuthenticationAlgorithm">
+            <summary>
+            Authenticator's supported algorithm and encoding
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticationAlgorithm.Secp256r1EcdsaSha256Raw">
+            <summary>
+            SECP256R1 ECDSA SHA256 Raw
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticationAlgorithm.Secp256r1EcdsaSha256Der">
+            <summary>
+            SECP256R1 ECDSA SHA256 DER
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticationAlgorithm.RsassaPssSha256Raw">
+            <summary>
+            RSA PSS SHA256 Raw
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticationAlgorithm.RsassaPssSha256Der">
+            <summary>
+            RSA PSS SHA256 DER
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticationAlgorithm.Secp256k1EcdsaSha256Raw">
+            <summary>
+            SECP256K1 ECDSA SHA256 Raw
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticationAlgorithm.Secp256k1EcdsaSha256Der">
+            <summary>
+            SECP256K1 ECDSA SHA256 DER
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.UserVerificationMethod">
+            <summary>
+            Authenticator's supported user verification method type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.Presence">
+            <summary>
+            User presence verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.Fingerprint">
+            <summary>
+            User fingerprint verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.Passcode">
+            <summary>
+            User passcode verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.Voiceprint">
+            <summary>
+            User voiceprint verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.Faceprint">
+            <summary>
+            User faceprint verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.Location">
+            <summary>
+            User location verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.Eyeprint">
+            <summary>
+            User eyeprint verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.Pattern">
+            <summary>
+            User pattern verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.Handprint">
+            <summary>
+            User handprint verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.None">
+            <summary>
+            Silent verification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.UserVerificationMethod.All">
+            <summary>
+            If an authenticator sets multiple flags for user verification types, it may also set this flag to indicate that all verification methods will be enforced (e.g. faceprint AND voiceprint). If flags for multiple user verification methods are set and this flag is not set, verification with only one is necessary (e.g. fingerprint OR passcode).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.KeyProtectionType">
+            <summary>
+            Authenticator's supported key protection method type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.KeyProtectionType.Software">
+            <summary>
+            Software based key management.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.KeyProtectionType.Hardware">
+            <summary>
+            Hardware based key management.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.KeyProtectionType.Tee">
+            <summary>
+            Trusted Execution Environment based key management.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.KeyProtectionType.SecureElement">
+            <summary>
+            Secure Element based key management.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.KeyProtectionType.RemoteHandle">
+            <summary>
+            Authenticator does not store (wrapped) UAuth keys at the client, but relies on a server-provided key handle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.MatcherProtectionType">
+            <summary>
+            Authenticator's supported matcher protection type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.MatcherProtectionType.Software">
+            <summary>
+            Authenticator's matcher is running in software.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.MatcherProtectionType.Tee">
+            <summary>
+            Authenticator's matcher is running inside the Trusted Execution Environment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.MatcherProtectionType.OnChip">
+            <summary>
+            Aauthenticator's matcher is running on the chip.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.AuthenticatorAttachmentHint">
+            <summary>
+            Authenticator's supproted method to communicate to FIDO user device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttachmentHint.Internal">
+            <summary>
+            Authenticator is permanently attached to the FIDO User Device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttachmentHint.External">
+            <summary>
+            Authenticator is removable or remote from the FIDO User Device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttachmentHint.Wired">
+            <summary>
+            The external authenticator currently has an exclusive wired connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttachmentHint.Wireless">
+            <summary>
+            The external authenticator communicates with the FIDO User Device through wireless means.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttachmentHint.Nfc">
+            <summary>
+            Authenticator is able to communicate by NFC to the FIDO User Device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttachmentHint.Bt">
+            <summary>
+            Authenticator is able to communicate by Bluetooth to the FIDO User Device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttachmentHint.Nw">
+            <summary>
+            Authenticator is connected to the FIDO User Device ver a non-exclusive network (e.g. over a TCP/IP LAN or WAN, as opposed to a PAN or point-to-point connection).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttachmentHint.Ready">
+            <summary>
+            The external authenticator is in a "ready" state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttachmentHint.WifiDirect">
+            <summary>
+            The external authenticator is able to communicate using WiFi Direct with the FIDO User Device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.AuthenticatorAttestationType">
+            <summary>
+            Authenticator's supported Attestation type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttestationType.BasicFull">
+            <summary>
+            Full basic attestation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.AuthenticatorAttestationType.BasicSurrogate">
+            <summary>
+            Surrogate basic attestation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.TransactionConfirmationDisplayType">
+            <summary>
+            Transaction confirmation display capability type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.TransactionConfirmationDisplayType.Any">
+            <summary>
+            Some form of transaction confirmation display is available on this authenticator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.TransactionConfirmationDisplayType.PrivilegedSoftware">
+            <summary>
+            Software-based transaction confirmation display operating in a privileged context is available on this authenticator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.TransactionConfirmationDisplayType.Tee">
+            <summary>
+            Transaction confirmation display is in a Trusted Execution Environment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.TransactionConfirmationDisplayType.Hw">
+            <summary>
+            Transaction confirmation display based on hardware assisted capabilities is available on this authenticator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.FidoClient.TransactionConfirmationDisplayType.Remote">
+            <summary>
+            Transaction confirmation display is provided on a distinct device from the FIDO User Device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.UafMessage">
+            <summary>
+            The FIDO message received from the relying party server
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.FidoClient.UafMessage.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.UafMessage.Operation">
+            <summary>
+            The FIDO message in JSON format which is received from the relying party server
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.FidoClient.UafResponse">
+            <summary>
+            Represents FIDO response message
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.FidoClient.UafResponse.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.FidoClient.UafResponse.Response">
+            <summary>
+            FIDO response message in JSON format
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

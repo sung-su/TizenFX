@@ -1,0 +1,1026 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.NotificationEventListener</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationDeleteEventArgs">
+            <summary>
+            This class provides the property to get information about the deleted notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationDeleteEventArgs.UniqueNumber">
+            <summary>
+            Gets the unique number of the notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs">
+            <summary>
+            This class provides the methods and properties to get information about the posted or updated notification.
+            </summary>
+            <summary>
+            This class provides methods and properties to get information about the posted or updated notification.
+            </summary>
+            <summary>
+            This class provides methods and properties to get information about the posted or updated notification.
+            </summary>
+            <summary>
+            This class provides methods and properties to get information about the posted or updated notification.
+            </summary>
+            <summary>
+            This class provides methods and properties to get information about the posted or updated notification.
+            </summary>
+            <summary>
+            This class provides methods and properties to get information about the posted or updated notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <summary>
+            This class provides methods and properties to get information about the posted or updated notification.
+            </summary>
+            <summary>
+            This class provides methods and properties to get information about the posted or updated notification.
+            </summary>
+            <summary>
+            This class provides methods and properties to get information about the posted or updated notification.
+            </summary>
+        </member>
+        <member name="M:Tizen.Applications.NotificationEventListener.NotificationEventArgs.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs"/> class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.UniqueNumber">
+            <summary>
+            Gets the unique ID of the notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.AppID">
+            <summary>
+            Gets the appId of the notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.Title">
+            <summary>
+            Gets the title of the notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.Content">
+            <summary>
+            Gets the content text of the notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.Icon">
+            <summary>
+            Gets the icon's path of the notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.SubIcon">
+            <summary>
+            Gets the sub icon path of the notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.IsTimeStampVisible">
+            <summary>
+            Gets the timestamp if the notification is visible or not.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.TimeStamp">
+            <summary>
+            Gets TimeStamp of notification.
+            </summary>
+            <remarks>
+            If IsTimeStampVisible property is set false, this TimeStamp property is meaningless.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.Count">
+            <summary>
+            Gets the count, which is displayed at the right side of notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.Tag">
+            <summary>
+            Gets the tag of notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.IsOngoing">
+            <summary>
+            Gets a value indicating whether the notification is Onging or not.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.IsVisible">
+            <summary>
+            Gets a value that determines whether notification is displayed on the default viewer.
+            If IsDisplay property is set as false and add style, you can see only style notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.HasEventFlag">
+            <summary>
+            Gets the event flag.
+            If this flag is true, you can do SendEvent.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.Action">
+            <summary>
+            Gets the AppControl, which is invoked when notification is clicked.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.Progress">
+            <summary>
+            Gets the object of the progress notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.Accessory">
+            <summary>
+            Gets the AccessoryArgs, which has option of sound, vibration, and LED.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ExtraDataKey">
+            <summary>
+            Gets the key for extra data.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.Property">
+            <summary>
+            Gets the property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.NotificationEventListener.NotificationEventArgs.GetStyle``1">
+            <summary>
+            Gets the styleArgs of active, lock, indicator, and bigpicture.
+            </summary>
+            <typeparam name="T">Type of notification style to be queried.</typeparam>
+            <returns>The NotificationEventListener.StyleArgs object associated with the given style.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.NotificationEventListener.NotificationEventArgs.GetExtraData(System.String)">
+            <summary>
+            Gets the ExtraDataArgs.
+            </summary>
+            <param name="key">The key that specifies which extra data.</param>
+            <returns>Returns the bundle for key.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs.AccessoryArgs">
+            <summary>
+            Class to get infomation about notification accessory.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.AccessoryArgs.SoundOption">
+            <summary>
+            Gets the sound option.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.AccessoryArgs.SoundPath">
+            <summary>
+            Gets the sound path.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.AccessoryArgs.CanVibrate">
+            <summary>
+            Gets the vibration option.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.AccessoryArgs.LedOption">
+            <summary>
+            Gets the LED option.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.AccessoryArgs.LedOnMillisecond">
+            <summary>
+            Gets LED on time period that you would like the LED on the device to blink as well as the rate.
+            </summary>
+            <value>
+            Default value of LedOnMilliseconds is 0.
+            The rate is specified in terms of the number of milliseconds to be on.
+            </value>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.AccessoryArgs.LedOffMillisecond">
+            <summary>
+            Gets LED on time period that you would like the LED on the device to blink as well as the rate.
+            </summary>
+            <value>
+            Default value of LedOffMillisecond is 0.
+            The rate is specified in terms of the number of millisecond to be off.
+            </value>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.AccessoryArgs.LedColor">
+            <summary>
+            Gets LED color that you would like the LED on the device to blink.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs">
+            <summary>
+            Class to get infomation about notification active style.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs"/> class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.IsAutoRemove">
+            <summary>
+            Gets the IsAutoRemove option of the active notification.
+            IsAutoRemove option lets the active notification be removed several seconds after it shows.
+            </summary>
+            <value>
+            When 'IsAutoRemove' is set as false, the active notification will not be removed as long as the user removes
+            the active notification, or the app which posted the active notification removes the active notification.
+            </value>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.BackgroundImage">
+            <summary>
+            Gets an absolute path for an image file to display on the background of active notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.DefaultButton">
+            <summary>
+            Gets the default button to display highlight on the active notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.HideTimeout">
+            <summary>
+            Gets timeout value in seconds when the notification can be hidden from the viewer.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.DeleteTimeout">
+            <summary>
+            Gets timeout value in seconds when the notification can be deleted from the viewer.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.HiddenByUserAction">
+            <summary>
+            Gets Action which is invoked when notification is hidden by user.
+            </summary>
+            <remarks>
+            The property is only reflected on Tizen TV.
+            If you use this API on other profile, this action have no effect
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.HiddenByTimeoutAction">
+            <summary>
+            Gets or sets Action which is invoked when there is no any response by user until hide timeout.
+            </summary>
+            <remarks>
+            The property is only reflected on Tizen TV.
+            If you use this API on other profile, this action settings have no effect
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.HiddenByExternalAction">
+            <summary>
+            Gets or sets Action which is invoked when the notification is hidden by external factor.
+            </summary>
+            <remarks>
+            If you use this API on other profile, this action settings have no effect
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.Button">
+            <summary>
+            Gets a button to this active notification style.
+            Buttons are displayed in the notification content.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ActiveStyleArgs.Reply">
+            <summary>
+            Gets a ReplyAction to this active notification style.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ButtonActionArgs">
+            <summary>
+             Class to get infomation about notification ButtonAction.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ButtonActionArgs.Index">
+            <summary>
+            Gets the index of the button, which appears at notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ButtonActionArgs.Text">
+            <summary>
+            Gets the text that describes the button.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ButtonActionArgs.ImagePath">
+            <summary>
+            Gets the image's path that represents the button.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ButtonActionArgs.Action">
+            <summary>
+            Gets the AppControl that is invoked when the button is clicked.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs.IndicatorStyleArgs">
+            <summary>
+             Class to generate the indicator style notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.IndicatorStyleArgs.IconPath">
+            <summary>
+            Gets the path of the image file to display on the icon of indicator style.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.IndicatorStyleArgs.SubText">
+            <summary>
+            Gets the sub text to display indicator style.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs.LockStyleArgs">
+            <summary>
+             Class to get infomation about notification lock style.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.LockStyleArgs.IconPath">
+            <summary>
+            Gets the path of the image file to display on the icon of lock style.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.LockStyleArgs.Thumbnail">
+            <summary>
+            Gets the path of the thumbnail image file to display on the icon of lock style.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ProgressArgs">
+            <summary>
+             Class to get infomation about progress notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ProgressArgs.Category">
+            <summary>
+            Gets category of ProgressType.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ProgressArgs.Current">
+            <summary>
+            Gets current value of ProgressType.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ProgressArgs.Max">
+            <summary>
+            Gets max value of ProgressType.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ReplyActionArgs">
+            <summary>
+             Class to get infomation about notification ReplyAction.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ReplyActionArgs.ParentIndex">
+            <summary>
+            Gets index of button, which appears at notification.
+            If there is no ParentIndex, the ReplyAction should be displayed directly on the active notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ReplyActionArgs.PlaceHolderText">
+            <summary>
+            Gets the PlaceHolderText of ReplyAction, which appears at notification.
+            It will be displayed to the text input box on the active notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ReplyActionArgs.ReplyMax">
+            <summary>
+            Gets a max length of text input.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.NotificationEventListener.NotificationEventArgs.ReplyActionArgs.Button">
+            <summary>
+            Gets the button displayed in the replyaction.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationEventArgs.StyleArgs">
+            <summary>
+            An object can get a rich notification style to a notification object.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.ProgressCategory">
+            <summary>
+            Enumeration for the progress category.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ProgressCategory.Percent">
+            <summary>
+            Value for the percent type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ProgressCategory.Time">
+            <summary>
+            Value for the time type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ProgressCategory.PendingBar">
+            <summary>
+            Value for the pending type, which is not the updated progress current value.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.AccessoryOption">
+            <summary>
+            Enumeration for the accessory option.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.AccessoryOption.Off">
+            <summary>
+            Value for off accessory option.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.AccessoryOption.On">
+            <summary>
+            Value for on accessory option.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.AccessoryOption.Custom">
+            <summary>
+            Value for the custom accessory option.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.ButtonIndex">
+            <summary>
+            Enumeration for the button index.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ButtonIndex.None">
+            <summary>
+            Value for the default button index.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ButtonIndex.First">
+            <summary>
+            Value for the first button index.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ButtonIndex.Second">
+            <summary>
+            Value for the second button index.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ButtonIndex.Third">
+            <summary>
+            Value for the third button index.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationProperty">
+            <summary>
+            Enumeration for the notification particular property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationProperty.None">
+            <summary>
+            Value for the adjust nothing.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationProperty.DisplayOnlySimMode">
+            <summary>
+            Value for display only when SIM card inserted.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationProperty.DisableAppLaunch">
+            <summary>
+            Value for disable application launch when it is selected.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationProperty.DisableAutoDelete">
+            <summary>
+            Value for disable auto delete when it is selected.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationProperty.VolatileDisplay">
+            <summary>
+            Value for deleted when device is rebooted even though notification is not set OngoingType.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.UserEventType">
+            <summary>
+            Enumeration for event type on notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.UserEventType.ClickOnButton1">
+            <summary>
+            Event type : Click on button 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.UserEventType.ClickOnButton2">
+            <summary>
+            Event type : Click on button 2.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.UserEventType.ClickOnButton3">
+            <summary>
+            Event type : Click on button 3.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.UserEventType.ClickOnReplyButton">
+            <summary>
+            Event type : Click on text_input button.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.UserEventType.HiddenByUser">
+            <summary>
+            Event type : Hidden by user.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.UserEventType.HiddenByTimeout">
+            <summary>
+            Event type : Deleted by timer.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.UserEventType.HiddenByExternal">
+            <summary>
+            Event type : Deleted by timer.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.UserEventType.ClickOnNotification">
+            <summary>
+            Event type : Clicked by user.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.UserEventType.DeleteNotification">
+            <summary>
+            Event type : Deleted by user.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationType">
+            <summary>
+            Enumeration for notification type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationType.None">
+            <summary>
+            Type none.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationType.Notification">
+            <summary>
+            Notification type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationType.Ongoing">
+            <summary>
+            Ongoing type.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationText">
+            <summary>
+            Enumeration for notification text type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.Title">
+            <summary>
+            Title.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.Content">
+            <summary>
+            Content.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.EventCount">
+            <summary>
+            Text to display the event count.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.FirstMainText">
+            <summary>
+            Box contents 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.FirstSubText">
+            <summary>
+            Box contents 1-1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.SecondMainText">
+            <summary>
+            Box contents 2.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.SecondSubText">
+            <summary>
+            Box contents 2-1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.FirstButton">
+            <summary>
+            Text on button 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.SecondButton">
+            <summary>
+            Text on button 2.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.ThirdButton">
+            <summary>
+            Text on button 3.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.PlaceHolder">
+            <summary>
+            Guide text on the message reply box.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationText.InputButton">
+            <summary>
+            Text on button on the message reply box.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationImage">
+            <summary>
+            Enumeration for the image type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.Icon">
+            <summary>
+            Icon.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.Indicator">
+            <summary>
+            Indicator icon.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.Lockscreen">
+            <summary>
+             Lock screen icon.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.Thumbnail">
+            <summary>
+            Thumbnail.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.ThumbnailLockscreen">
+            <summary>
+            Lock screen thumbnail.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.SubIcon">
+            <summary>
+            Icon.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.Background">
+            <summary>
+            Image displayed on background.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.Button_1">
+            <summary>
+            Image for button 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.Button_2">
+            <summary>
+            Image for button 2.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.Button_3">
+            <summary>
+            Image for button 3.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationImage.TextInputButton">
+            <summary>
+            Image for message reply.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationLayout">
+            <summary>
+            Enumeration for notification layout type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationLayout.None">
+            <summary>
+            Default.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationLayout.SingleEvent">
+            <summary>
+            Layout for notification. Used to inform single event.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationLayout.Thumbnail">
+            <summary>
+            Layout for notification. Used to display images.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationLayout.OngoingEvent">
+            <summary>
+            Layout for ongoing notification. Used to display text message.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationLayout.OngoingProgress">
+            <summary>
+            Layout for ongoing notification. Used to display progress.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.LaunchOption">
+            <summary>
+            Enumeration for notification launch option type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.LaunchOption.AppControl">
+            <summary>
+            Launching with application control.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationOperationDataType">
+            <summary>
+            Enumeration for notification operation data code.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationOperationDataType.Min">
+            <summary>
+            Default.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationOperationDataType.Type">
+            <summary>
+            Operation type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationOperationDataType.UniqueNumber">
+            <summary>
+            Private ID.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationOperationDataType.Notification">
+            <summary>
+            Notification handler.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationOperationDataType.ExtraInformation1">
+            <summary>
+            Reserved.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationOperationDataType.ExtraInformation2">
+            <summary>
+            Reserved.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationOperationType">
+            <summary>
+            Enumeration for notification operation code.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationOperationType.None">
+            <summary>
+            Default.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationOperationType.Insert">
+            <summary>
+            Notification inserted.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationOperationType.Update">
+            <summary>
+            Notification updated.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationOperationType.Delete">
+            <summary>
+            Notification deleted.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.ClickEventType">
+            <summary>
+            Enumeration for event type on notification.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ClickEventType.FirstButton">
+            <summary>
+            Event type : Click on button 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ClickEventType.SecondButton">
+            <summary>
+            Event type : Click on button 2.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ClickEventType.ThirdButton">
+            <summary>
+            Event type : Click on button 3.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ClickEventType.Icon">
+            <summary>
+            Event type : Click on icon.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ClickEventType.Thumbnail">
+            <summary>
+            Event type : Click on thumbnail.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.ClickEventType.InputButton">
+            <summary>
+            Event type : Click on text_input button.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationDisplayApplist">
+            <summary>
+            Enumeration for display application list.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationDisplayApplist.Tray">
+            <summary>
+            Notification Tray(Quickpanel).
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationDisplayApplist.Ticker">
+            <summary>
+            Ticker notification.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationDisplayApplist.Lock">
+            <summary>
+            Lock screen.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationDisplayApplist.Indicator">
+            <summary>
+            Indicator.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationDisplayApplist.Active">
+            <summary>
+            Active notification.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.NotificationEventListener.NotificationDisplayApplist.All">
+            <summary>
+            All display application except active notification.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.NotificationEventListener.NotificationListenerManager">
+            <summary>
+            This class provides a way to register callback function for some notification events.
+            </summary>
+            <remarks>
+            The event listener can use this class to get a list of notifications or to clear notifications.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.NotificationEventListener.NotificationListenerManager.Added">
+            <summary>
+            Event handler for notification insert event.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> Thrown in case of a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.NotificationEventListener.NotificationListenerManager.Updated">
+            <summary>
+            Event handler for notification update event.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> Thrown in case of a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.NotificationEventListener.NotificationListenerManager.Deleted">
+            <summary>
+            Event handler for notification delete event.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> Thrown in case of a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.NotificationEventListener.NotificationListenerManager.Delete(System.String,System.Int32)">
+            <summary>
+            Deletes a notification with appId and uniqueNumber.
+            </summary>
+            <param name="appId">The name of the application you want to delete.</param>
+            <param name="uniqueNumber">The unique number of the notification.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> Thrown in case of a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.NotificationEventListener.NotificationListenerManager.DeleteAll">
+            <summary>
+            Deletes all notifications.
+            </summary>
+            <exception cref="T:System.UnauthorizedAccessException"> Thrown in case of a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.NotificationEventListener.NotificationListenerManager.GetList">
+            <summary>
+            Returns the notification list.
+            </summary>
+            <exception cref="T:System.UnauthorizedAccessException"> Thrown in case of a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.NotificationEventListener.NotificationListenerManager.SendEvent(System.Int32,Tizen.Applications.NotificationEventListener.UserEventType)">
+            <summary>
+            Sends occured event from viewer application to the notification owner.
+            </summary>
+            <param name="uniqueNumber">The unique number of the notification.</param>
+            <param name="type">Event type on notification.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> Thrown in case of a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.NotificationEventListener.NotificationListenerManager.GetNotificationEventArgs(System.Int32)">
+            <summary>
+            Returns NotificationEventArgs by UniqueNumber.
+            </summary>
+            <param name="uniqueNumber">The unique number of the Notification.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"> Thrown in case of a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.NotificationEventListener.NotificationListenerManager.GetAllCount">
+            <summary>
+            Gets the number of all notifications
+            </summary>
+            <returns>The number of all notifications</returns>
+            <exception cref="T:System.UnauthorizedAccessException"> Thrown in case of a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Network.Smartcard</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Network.Smartcard.SmartcardChannel">
+            <summary>
+            The class for Smartcard channel information. It allows applications to handle the channel information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/secureelement</privilege>
+        </member>
+        <member name="P:Tizen.Network.Smartcard.SmartcardChannel.IsBasicChannel">
+            <summary>
+            Whether the kind of channel is basic.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Smartcard.SmartcardChannel.IsLogicalChannel">
+            <summary>
+            Whether the kind of channel is logical.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Smartcard.SmartcardChannel.IsClosed">
+            <summary>
+            Whether the channel is closed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Smartcard.SmartcardChannel.Session">
+            <summary>
+            The session that has opened the given channel.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardChannel.Finalize">
+            <summary>
+            SmartcardChannel destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardChannel.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardChannel.Close">
+            <summary>
+            Closes the given channel to the Secure Element.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the Smartcard is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardChannel.GetSelectedResponse">
+            <summary>
+            Gets the response to the select command.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Byte array to retrieve the select response.</returns>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardChannel.Transmit(System.Byte[])">
+            <summary>
+            Transmits the APDU command (as per ISO/IEC 7816-4) to the secure element.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Byte array for the response APDU plus status words.</returns>
+            <param name="cmd">Command APDU to be sent to the secure element.</param>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardChannel.GetTransmittedResponse">
+            <summary>
+            Helper function to retrieve the response APDU of the previous transmit() call.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Byte array for the response APDU plus status words.</returns>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardChannel.SelectNext">
+            <summary>
+            Performs a selection of the next applet on the given channel that matches to the partial application ID (AID).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>True or false depending whether another applet with the partial application ID (AID).</returns>
+        </member>
+        <member name="T:Tizen.Network.Smartcard.SmartcardManager">
+            <summary>
+            The class for Smartcard management. It allows applications to use the Smartcard service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/secureelement</privilege>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardManager.GetReaders">
+            <summary>
+            Gets the list of available secure element readers.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>List of SmartcardReader objects.</returns>
+        </member>
+        <member name="T:Tizen.Network.Smartcard.SmartcardReader">
+            <summary>
+            The class for Smartcard reader information. It allows applications to handle the reader information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/secureelement</privilege>
+        </member>
+        <member name="P:Tizen.Network.Smartcard.SmartcardReader.Name">
+            <summary>
+            The name of the reader.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Smartcard.SmartcardReader.IsSecureElementPresent">
+            <summary>
+            The existence of a secure element.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardReader.Finalize">
+            <summary>
+            SmartcardReader destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardReader.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardReader.OpenSession">
+            <summary>
+            Connects to a secure element in the given reader.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The SmartcardSession object.</returns>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardReader.CloseSessions">
+            <summary>
+            Closes all the sessions opened on the given reader.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the Smartcard is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.Smartcard.SmartcardSession">
+            <summary>
+            The class for the Smartcard session information. It allows applications to handle the session information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/secureelement</privilege>
+        </member>
+        <member name="P:Tizen.Network.Smartcard.SmartcardSession.Reader">
+            <summary>
+            The reader object that provides the given session.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Smartcard.SmartcardSession.Atr">
+            <summary>
+            The Answer to Reset (ATR) of this secure element.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Smartcard.SmartcardSession.IsClosed">
+            <summary>
+            Whether the session is closed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardSession.Finalize">
+            <summary>
+            SmartcardSession destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardSession.Dispose">
+            <summary>
+            Dispose
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardSession.Close">
+            <summary>
+            Closes the connection with the secure element.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the Smartcard is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardSession.CloseChannels">
+            <summary>
+            Closes any channel opened on the given session.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.NotSupportedException">Thrown when the Smartcard is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardSession.OpenBasicChannel(System.Byte[],System.Byte)">
+            <summary>
+            Gets an access to the basic channel, as defined in the ISO/IEC 7816-4 specification (the one that has number 0).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The SmartcardChannel object for the basic channel.</returns>
+            <param name="aid">The byte array containing the Application ID(AID) to be selected on the given channel.</param>
+            <param name="p2">P2 byte of the SELECT command if executed.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the Smartcard is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Smartcard.SmartcardSession.OpenLogicalChannel(System.Byte[],System.Byte)">
+            <summary>
+            Open a logical channel with the secure element, selecting the Applet represented by the given application ID (AID).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The SmartcardChannel object for the logical channel.</returns>
+            <param name="aid">The byte array containing the Application ID(AID) to be selected on the given channel.</param>
+            <param name="p2">P2 byte of the SELECT command if executed.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the Smartcard is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+    </members>
+</doc>

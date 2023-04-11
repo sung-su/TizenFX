@@ -1,0 +1,505 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.WatchApplication</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.CoreBackend.WatchEventType">
+            <summary>
+            A class that represents the type of event for backends. This class can be converted from the string type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.CoreBackend.WatchEventType.TimeTick">
+            <summary>
+            Pre-defined event type, "Created".
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.CoreBackend.WatchEventType.AmbientTick">
+            <summary>
+            Pre-defined event type, "AmbientTick".
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.CoreBackend.WatchEventType.AmbientChanged">
+            <summary>
+            Pre-defined event type, "AmbientChanged".
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.CoreBackend.WatchEventType.#ctor(System.String)">
+            <summary>
+            Initializes the WatchEventType class.
+            </summary>
+            <param name="name">The name of watch event type.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.CoreBackend.WatchEventType.op_Implicit(System.String)~Tizen.Applications.CoreBackend.WatchEventType">
+            <summary>
+            Converts a string to the WatchEventType instance.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.AmbientEventArgs">
+            <summary>
+            Arguments for the event that are raised when the device enters or exits the ambient mode.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.AmbientEventArgs.Enabled">
+            <summary>
+            The received ambient mode.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.AmbientTickType">
+            <summary>
+            Enumeration for the ambient tick types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.AmbientTickType.NoTick">
+            <summary>
+            No periodic ambient tick.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AmbientTickType.EveryMinute">
+            <summary>
+            Every minute.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AmbientTickType.EveryFiveMinutes">
+            <summary>
+            Every 5 minutes.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AmbientTickType.EveryFiftenMinutes">
+            <summary>
+            Every 15 minutes.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AmbientTickType.EveryThirtyMinutes">
+            <summary>
+            Every 30 minutes.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AmbientTickType.EveryHour">
+            <summary>
+            Every hour.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AmbientTickType.EveryThreeHours">
+            <summary>
+            Every 3 hours.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AmbientTickType.EverySixHours">
+            <summary>
+            Every 6 hours.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AmbientTickType.EveryTwelveHours">
+            <summary>
+            Every 12 hours.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.AmbientTickType.EveryDay">
+            <summary>
+            Every day.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.TimeEventArgs">
+            <summary>
+            Arguments for the event that are raised when the time tick comes.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.TimeEventArgs.Time">
+            <summary>
+            The received WatchTime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.TimeTickResolution">
+            <summary>
+            Enumeration for the time tick resolution.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.TimeTickResolution.TimeTicksPerSecond">
+            <summary>
+            1 ~ 60 ticks per second.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.TimeTickResolution.TimeTicksPerMinute">
+            <summary>
+            1 ~ 60 ticks per minute.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.TimeTickResolution.TimeTicksPerHour">
+            <summary>
+            1 ~ 60 ticks per hour.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.WatchApplication">
+            <summary>
+            The class that represents the Tizen watch application.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.#ctor">
+            <summary>
+            Initializes the WatchApplication class.
+            </summary>
+            <remarks>
+            Default backend for the watch application will be used.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.#ctor(Tizen.Applications.CoreBackend.ICoreBackend)">
+            <summary>
+            Initializes the WatchApplication class.
+            </summary>
+            <remarks>
+            If you want to change the backend, use this constructor.
+            </remarks>
+            <param name="backend">The backend instance implementing the ICoreBackend interface.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.WatchApplication.Window">
+            <summary>
+            Instances for the window.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.WatchApplication.Resumed">
+            <summary>
+            Occurs whenever the application is resumed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.WatchApplication.Paused">
+            <summary>
+            Occurs whenever the application is paused.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.WatchApplication.TimeTick">
+            <summary>
+            Occurs whenever the time tick comes.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.WatchApplication.AmbientTick">
+            <summary>
+            Occurs whenever the time tick comes in the ambient mode.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.WatchApplication.AmbientChanged">
+            <summary>
+            Occurs when the ambient mode is changed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.Run(System.String[])">
+            <summary>
+            Runs the UI applications' main loop.
+            </summary>
+            <param name="args">Arguments from the commandline.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.OnCreate">
+            <summary>
+            Overrides this method to handle the behavior when the application is launched.
+            If base.OnCreate() is not called, the event 'Created' will not be emitted.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.OnResume">
+            <summary>
+            Overrides this method to handle the behavior when the application is resumed.
+            If base.OnResume() is not called, the event 'Resumed' will not be emitted.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.OnPause">
+            <summary>
+            Overrides this method to handle the behavior when the application is paused.
+            If base.OnPause() is not called, the event 'Paused' will not be emitted.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.OnTick(Tizen.Applications.TimeEventArgs)">
+            <summary>
+            Overrides this method to handle the behavior when the time tick event comes.
+            If base.OnTick() is not called, the event 'TimeTick' will not be emitted.
+            </summary>
+            <param name="time">The received TimeEventArgs to get the time information.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.OnAmbientTick(Tizen.Applications.TimeEventArgs)">
+            <summary>
+            Overrides this method to handle the behavior when the time tick event comes in ambient mode.
+            If base.OnAmbientTick() is not called, the event 'AmbientTick' will not be emitted.
+            </summary>
+            <param name="time">The received TimeEventArgs to get time information.</param>
+            <privilege>http://tizen.org/privilege/alarm.set</privilege>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.OnAmbientChanged(Tizen.Applications.AmbientEventArgs)">
+            <summary>
+            Overrides this method to handle the behavior when the ambient mode is changed.
+            If base.OnAmbientChanged() is not called, the event 'AmbientChanged' will not be emitted.
+            </summary>
+            <param name="mode">The received AmbientEventArgs.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.GetCurrentTime">
+            <summary>
+            Gets the current time.
+            </summary>
+            <returns>WatchTime</returns>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to get the current time because of an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed to get the current time because the memory is not enough.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+            <example>
+            <code>
+            class MyApp : WatchApplication
+            {
+                ...
+                public void TestMethod()
+                {
+                    WatchTime wt;
+                    try
+                    {
+                        wt = GetCurrentTime();
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            </code>
+            </example>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.GetAmbientTickType">
+            <summary>
+            Gets the type of the periodic ambient tick.
+            </summary>
+            <returns>AmbientTickType</returns>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to get the ambient tick type.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+            <example>
+            <code>
+            class MyApp : WatchApplication
+            {
+                ...
+                public void TestMethod()
+                {
+                    AmbientTickType atType;
+                    try
+                    {
+                        atType = GetAmbientTickType();
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            </code>
+            </example>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.SetAmbientTickType(Tizen.Applications.AmbientTickType)">
+            <summary>
+            Sets the type of the periodic ambient tick.
+            OnAmbientTick will be called for the following settings.
+            If the SetAmbientTickType is not called, the OnAmbientTick will be called every minute.
+            </summary>
+            <param name="ambientTickType">The type of the ambient tick.</param>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to set the ambient tick type.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+            <example>
+            <code>
+            class MyApp : WatchApplication
+            {
+                ...
+                public void TestMethod()
+                {
+                    try
+                    {
+                        SetAmbientTickType(AmbientTickType.EveryMinute);
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            </code>
+            </example>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.SetTimeTickFrequency(System.Int32,Tizen.Applications.TimeTickResolution)">
+            <summary>
+            Sets the frequency of the time tick.
+            OnTick will be called for the following settings.
+            If SetTimeTickFrequency is not called, OnTick will be called every second.
+            </summary>
+            <param name="ticks">Ticks the number of ticks per given resolution type.</param>
+            <param name="type">Type of the resolution type.</param>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to set the time tick frequency.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+            <example>
+            <code>
+            class MyApp : WatchApplication
+            {
+                ...
+                public void TestMethod()
+                {
+                    try
+                    {
+                        SetTimeTickFrequency(1, TimeTickResolution.TimeTicksPerMinute);
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            </code>
+            </example>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.WatchApplication.GetTimeTickFrequency(System.Int32@,Tizen.Applications.TimeTickResolution@)">
+            <summary>
+            Gets the frequency of the time tick.
+            </summary>
+            <param name="ticks">Ticks the number of ticks per given resolution type.</param>
+            <param name="type">Type of the resolution type.</param>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed to get the time tick frequency.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is not supported.</exception>
+            <example>
+            <code>
+            class MyApp : WatchApplication
+            {
+                ...
+                public void TestMethod()
+                {
+                    int tick;
+                    TimeTickResolution tType;
+                    try
+                    {
+                        GetTimeTickFrequency(out tick, out tType);
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            </code>
+            </example>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.WatchTime">
+            <summary>
+            The information of the Watch Time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.Year">
+            <summary>
+            The information of a year.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.Month">
+            <summary>
+            The information of a month.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.Day">
+            <summary>
+            The information of a day.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.DayOfWeek">
+            <summary>
+            The information of a day of the week.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.Hour">
+            <summary>
+            The information of an hour.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.Hour24">
+            <summary>
+            The information of an hour for the 24 hour format.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.Minute">
+            <summary>
+            The information of a minute.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.Second">
+            <summary>
+            The information of a second.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.Millisecond">
+            <summary>
+            The information of a millisecond.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.TimeZone">
+            <summary>
+            The information of the timezone.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.WatchTime.UtcTimestamp">
+            <summary>
+            The information of the UTC time stamp.
+            </summary>
+            <feature>http://tizen.org/feature/watch_app</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the property is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,968 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Location</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Location.GpsSatellite">
+            <summary>
+            This class contains the functionality for obtaining information about GPS satellites in the range and in use.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.GpsSatellite.Interval">
+            <summary>
+            The time interval between callback updates.
+            Should be in the range of 1~120 seconds.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an an invalid argument is used.</exception>
+        </member>
+        <member name="P:Tizen.Location.GpsSatellite.Nmea">
+            <summary>
+            The NMEA data from the satellite.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Location.GpsSatellite.ActiveCount">
+            <summary>
+            The count of active satellites.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Location.GpsSatellite.InViewCount">
+            <summary>
+            The count of satellites in view.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Location.GpsSatellite.Satellites">
+            <summary>
+            The list of satellites or last recorded satellites in view.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.GpsSatellite.#ctor(Tizen.Location.Locator)">
+            <summary>
+            The constructor of the GpsSatellite class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="locator">The locator object initilized using GPS.</param>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+        </member>
+        <member name="E:Tizen.Location.GpsSatellite.SatelliteStatusUpdated">
+            <summary>
+            The SatelliteStatusUpdated event is raised whenever the satellite information is updated.
+            The callback will be invoked periodically (every Interval seconds).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Location.SatelliteInformation">
+            <summary>
+            This class contains the information of the satellite under consideration.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.SatelliteInformation.#ctor(System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.Boolean)">
+            <summary>
+            The Class constructor for the SatelliteInformation class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="azimuth">The azimuth value of the satellite in degrees.</param>
+            <param name="elevation">The elevation of the satellite in meters.</param>
+            <param name="prn">The PRN value of the satellite.</param>
+            <param name="snr">The SNR value of the satellite in dB.</param>
+            <param name="active">The flag signaling if the satellite is in use.</param>
+        </member>
+        <member name="P:Tizen.Location.SatelliteInformation.Azimuth">
+            <summary>
+            The azimuth information of the satellite.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.SatelliteInformation.Elevation">
+            <summary>
+            The elevation information of the satellite.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.SatelliteInformation.Prn">
+            <summary>
+            The PRN of the satellite.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.SatelliteInformation.Snr">
+            <summary>
+            The SNR of the satellite.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.SatelliteInformation.Active">
+            <summary>
+            The operational status of the satellite.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Location.Location">
+            <summary>
+            This class contains details of the location requested.
+            Includes the functionality to get the distance between locations.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.Location.#ctor">
+            <summary>
+            The default constructor of the Location class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.Location.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32)">
+            <summary>
+            The parameterized constructor of the Location class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="latitude">The latitude component of the device co-ordinate [-90.0 ~ 90.0] \(degrees).</param>
+            <param name="longitude">The longitude component of the device co-ordinate[-180.0 ~ 180.0] \(degrees).</param>
+            <param name="altitude">The altitude value.</param>
+            <param name="accuracy">The accuracy in meters.</param>
+            <param name="speed">The device speed.</param>
+            <param name="direction">The device direction with respect to the north.</param>
+            <param name="timestamp"> Time when the measurement took place.</param>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+        </member>
+        <member name="P:Tizen.Location.Location.Latitude">
+            <summary>
+            The current latitude [-90.0 ~ 90.0] \(degrees).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.Location.Longitude">
+            <summary>
+            The current longitude [-180.0 ~ 180.0] \(degrees).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.Location.Altitude">
+            <summary>
+            The current altitude (meters).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.Location.Speed">
+            <summary>
+            The device speed (km/h).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.Location.Direction">
+            <summary>
+            The direction and degrees from the north.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.Location.Accuracy">
+            <summary>
+            The accuracy.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.Location.Timestamp">
+            <summary>
+            The time value when the measurement was done.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.Location.GetDistanceBetween(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Gets the distance between the two given coordinates.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="startLatitude">The latitude of the source location [-90.0 ~ 90.0] \(degrees).</param>
+            <param name="startLongitude">The longitude of the source location[-180.0 ~ 180.0] \(degrees).</param>
+            <param name="endLatitude">The latitude of the source location [-90.0 ~ 90.0] \(degrees).</param>
+            <param name="endLongitude">The longitude of the source location[-180.0 ~ 180.0] \(degrees).</param>
+            <returns>Returns the distance between the source and the destination.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Location.GetDistanceTo(Tizen.Location.Location)">
+            <summary>
+            Gets the distance between the current and the specified location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="location"> The location object to which distance is to be calculated.</param>
+            <returns>Returns the distance to the specified location.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Location.LocationBoundary">
+            <summary>
+            The LocationBoundary class is an abstract class that provides functions related to the geographic bounds information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.LocationBoundary.BoundaryType">
+            <summary>
+            Gets the location boundary type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.LocationBoundary.Finalize">
+            <summary>
+            The destructor of the LocationBoundary class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.LocationBoundary.BoundaryContainsCoordinates(Tizen.Location.Coordinate)">
+            <summary>
+            Checks if the boundary contains the specified geographical coordinates.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinate"> The coordinate which needs to be checked.</param>
+            <returns>Returns a boolean value indicating whether or not the specified coordinate lies in the geographical area.</returns>
+        </member>
+        <member name="M:Tizen.Location.LocationBoundary.Dispose">
+            <summary>
+            The overidden Dispose method of the IDisposable class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.LocationBoundary.Dispose(System.Boolean)">
+            <summary>
+            Dispose.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Location.RectangleBoundary">
+            <summary>
+            This class represents a rectangular location boundary.
+            Inherits the Abstract LocationBoundary class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.RectangleBoundary.#ctor(Tizen.Location.Coordinate,Tizen.Location.Coordinate)">
+            <summary>
+            The constructor of the Rectangle boundary class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="topLeft"> The coordinate which constitutes the top-left handside of the rectangular boundary.</param>
+            <param name="bottomRight"> The coordinate which constitutes the bottom-right handside of the rectangular boundary.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Location.RectangleBoundary.TopLeft">
+            <summary>
+            Gets the top-left handside coordinate of a rectangular boundary.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.RectangleBoundary.BottomRight">
+            <summary>
+            Gets the bottom-right handside coordinate of a rectangular boundary.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Location.CircleBoundary">
+            <summary>
+            This class represents a circular location boundary.
+            Inherits the Abstract LocationBoundary class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.CircleBoundary.#ctor(Tizen.Location.Coordinate,System.Double)">
+            <summary>
+            The constructor of the Circular boundary class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinate"> The coordinates which constitute the center of the circular boundary.</param>
+            <param name="radius"> The radius value of the circular boundary.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Location.CircleBoundary.Center">
+            <summary>
+            Gets the coordinate of the center of a circular boundary.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Location.CircleBoundary.Radius">
+            <summary>
+            Gets the radius of a circular boundary.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Location.PolygonBoundary">
+            <summary>
+            This class represents a polygonal location boundary.
+            Inherits the Abstract LocationBoundary class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.PolygonBoundary.#ctor(System.Collections.Generic.IList{Tizen.Location.Coordinate})">
+            <summary>
+            The constructor of the Polygon Boundary class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="coordinates"> The coordinates which constitute the polgonal boundary.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Location.PolygonBoundary.Coordinates">
+            <summary>
+            Gets the list of coordinates which constitute a polygonal boundary.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Location.Coordinate">
+            <summary>
+            This structure represents the coordinates of a geographical location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Location.Coordinate.Latitude">
+            <summary>
+            Latitude component of the coordinate.
+            Should have a value between [-90.0 ~ 90.0] \(degrees).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Location.Coordinate.Longitude">
+            <summary>
+            Longitude component of the coordinate.
+            Should have a value between [-180.0 ~ 180.0] \(degrees).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Location.LocationChangedEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed location information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.LocationChangedEventArgs.#ctor(Tizen.Location.Location)">
+            <summary>
+            The class constructor for the LocationUpdatedEventArgs class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="location"> Object of the Location class.</param>
+        </member>
+        <member name="P:Tizen.Location.LocationChangedEventArgs.Location">
+            <summary>
+            Gets the location update information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Location.LocationError">
+            <summary>
+            Location Manager error codes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Location.LocationError.None">
+            <summary>
+            Successful.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationError.OutOfMemory">
+            <summary>
+            Out of memory error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationError.InvalidParameter">
+            <summary>
+            Invalid parameter.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationError.AcessibilityNotallowed">
+            <summary>
+            Permission denied.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationError.NotSupported">
+            <summary>
+            Address family not supported.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationError.IncorrectMethod">
+            <summary>
+            Location manager contains incorrect method for a given call.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationError.NetworkFailed">
+            <summary>
+            Network unavailable.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationError.ServiceNotAvailable">
+            <summary>
+            Location service is not available.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationError.SettingOff">
+            <summary>
+            GPS/WPS, or MOCK setting is not enabled.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationError.SecuirtyRestricted">
+            <summary>
+            Restricted by security system policy.
+            </summary>
+        </member>
+        <member name="T:Tizen.Location.LocationBoundError">
+            <summary>
+            Location Boundary error codes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Location.LocationBoundError.None">
+            <summary>
+            Successful.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationBoundError.OutOfMemory">
+            <summary>
+            Out of memory error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationBoundError.InvalidParameter">
+            <summary>
+            Invalid parameter.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationBoundError.NotSupported">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationBoundError.IncorrectType">
+            <summary>
+            Incorrect bounds type for a given call.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationBoundError.IsAdded">
+            <summary>
+            Cannot remove bounds handle from location manager.
+            </summary>
+        </member>
+        <member name="T:Tizen.Location.Locator">
+            <summary>
+            This class contains the functionality for obtaining the geographical information and setting the boundary condition.
+            Notifications on events like service becoming enabled or disabled, new position data being available,
+            and others can also be acquired.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.Locator.#ctor(Tizen.Location.LocationType)">
+            <summary>
+            The constructor of the Locator class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="locationType"> The back-end positioning method to be used for LBS.</param>
+            <feature>http://tizen.org/feature/location.gps</feature>
+            <feature>http://tizen.org/feature/location.wps</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.Finalize">
+            <summary>
+            The destructor of the Locator class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.Locator.Interval">
+            <summary>
+            The time interval between callback updates.
+            Should be in the range of 1~120 seconds.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+        </member>
+        <member name="P:Tizen.Location.Locator.StayInterval">
+            <summary>
+            The time interval between the distance-based location callback updates.
+            Should be in the range of 1~120 seconds.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+        </member>
+        <member name="P:Tizen.Location.Locator.BatchInterval">
+            <summary>
+            The time interval between the position collection in batch mode.
+            Should be in the range of 1~255 seconds.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+        </member>
+        <member name="P:Tizen.Location.Locator.BatchPeriod">
+            <summary>
+            The time interval between batch callback updates. The BatchPeriod should be greater than or equal to the BatchInterval. If the BatchPeriod is zero or smaller than the BatchInterval, then the batch mode will not work. In addition, sometimes the period may not work as you intended, the maximum permissible value for the batch period is device specific.
+            Should be in the range of 0~60000 seconds.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+        </member>
+        <member name="P:Tizen.Location.Locator.Distance">
+            <summary>
+            The distance between callback updates.
+            Should be in the range of 1-120 meters.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+        </member>
+        <member name="P:Tizen.Location.Locator.Location">
+            <summary>
+            Gets the location object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.Locator.LocationType">
+            <summary>
+            Gets the type used to obtain the location data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.Locator.EnableMock">
+            <summary>
+            Gets the status whether the mock location is enabled or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location</privilege>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.Start">
+            <summary>
+            Starts the Location Manager which has been created using the specified method.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.Stop">
+            <summary>
+            Stops the Location Manager which has been activated using the specified method.
+            Does not destroy the manager.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.SetMockLocation(Tizen.Location.Location)">
+            <summary>
+            Sets a mock location for the given location method.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="location"> The location object containing the mock location details.</param>
+            <privilege>http://tizen.org/privilege/location</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.ClearMock">
+            <summary>
+            Clears a mock location for the given location method.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/location</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.GetLocationAsync(System.Int32)">
+            <summary>
+            Gets the details of the location asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="timeout"> Timeout to stop requesting a single location after (seconds).</param>
+            <returns> A task which contains the current location details.</returns>
+            <privilege>http://tizen.org/privilege/location</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.GetLocation">
+            <summary>
+            Gets the details of the location.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns> Which contains the current location details.</returns>
+            <privilege>http://tizen.org/privilege/location</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application has no privilege to use the location.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.AddBoundary(Tizen.Location.LocationBoundary)">
+            <summary>
+            Adds a bound for a given locator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="locationBoundary">The boundary object to be added to the locator.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.RemoveBoundary(Tizen.Location.LocationBoundary)">
+            <summary>
+            Deletes a bound for a given locator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="locationBoundary"> The boundary object to be removed from the locator.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.Dispose">
+            <summary>
+            The overidden Dispose method of the IDisposable class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+        </member>
+        <member name="M:Tizen.Location.Locator.Dispose(System.Boolean)">
+            <summary>
+            Dispose.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Location.Locator.ServiceStateChanged">
+            <summary>
+            The ServiceStateChanged event is invoked when the location service state is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Location.Locator.ZoneChanged">
+            <summary>
+            The ZoneChanged event is invoked when the previously set boundary area is entered or left.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Location.Locator.SettingChanged">
+            <summary>
+            The SetttingChanged event is raised when the location setting is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Location.Locator.DistanceBasedLocationChanged">
+            <summary>
+            The DistanceBasedLocationChanged event is raised with the updated location information.
+            The callback will be invoked at a minimum interval or minimum distance with the updated position information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Location.Locator.LocationChanged">
+            <summary>
+            The LocationUpdated event is raised at defined intervals of time with the updated location information.
+            The callback will be invoked periodically.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Location.ServiceState">
+            <summary>
+            Enumeration for the state of the location service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Location.ServiceState.Disabled">
+            <summary>
+            Service is disabled.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.ServiceState.Enabled">
+            <summary>
+            Service is enabled.
+            </summary>
+        </member>
+        <member name="T:Tizen.Location.LocationType">
+            <summary>
+            Enumeration for the type of connection used in acquiring the location data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Location.LocationType.Hybrid">
+            <summary>
+            This method selects the best method available at the moment.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationType.Gps">
+            <summary>
+            This method uses Global Positioning System.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationType.Wps">
+            <summary>
+            This method uses WiFi Positioning System.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.LocationType.Passive">
+            <summary>
+            This method uses passive mode.
+            </summary>
+        </member>
+        <member name="T:Tizen.Location.BoundaryType">
+            <summary>
+            Enumeration for the created boundary type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Location.BoundaryType.Rectangle">
+            <summary>
+            Rectangular geographical area type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.BoundaryType.Circle">
+            <summary>
+            Circle geographical area type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.BoundaryType.Polygon">
+            <summary>
+            Polygon geographical area type.
+            </summary>
+        </member>
+        <member name="T:Tizen.Location.BoundaryState">
+            <summary>
+            Enumeration for the error code for location manager.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Location.BoundaryState.In">
+            <summary>
+            Boundary In (Zone In).
+            </summary>
+        </member>
+        <member name="F:Tizen.Location.BoundaryState.Out">
+            <summary>
+            Boundary Out (Zone Out).
+            </summary>
+        </member>
+        <member name="T:Tizen.Location.LocatorHelper">
+            <summary>
+            This class contains the functionality for obtaining the geographical positioning type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.LocatorHelper.IsSupportedType(Tizen.Location.LocationType)">
+            <summary>
+            Checks if the specified geographical positioning type is supported or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="locationType">The back-end positioning method to be used for LBS.</param>
+            <feature>http://tizen.org/feature/location.gps</feature>
+            <feature>http://tizen.org/feature/location.wps</feature>
+            <returns>Returns a boolean value indicating whether or not the specified method is supported.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.LocatorHelper.IsEnabledType(Tizen.Location.LocationType)">
+            <summary>
+            Checks if the specified geographical positioning type is enabled or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="locationType">The back-end positioning method to be used for LBS.</param>
+            <feature>http://tizen.org/feature/location.gps</feature>
+            <feature>http://tizen.org/feature/location.wps</feature>
+            <returns>Returns a boolean value indicating whether or not the specified method is supported.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Location.LocatorHelper.EnableType(Tizen.Location.LocationType,System.Boolean)">
+            <summary>
+            Sets the specified geographical positioning type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <privilege>http://tizen.org/privilege/location.enable</privilege>
+            <privlevel>platform</privlevel>
+            <param name="locationType">The back-end positioning method to be used for LBS.</param>
+            <param name="status">The location setting value.</param>
+            <feature>http://tizen.org/feature/location.gps</feature>
+            <feature>http://tizen.org/feature/location.wps</feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is invalid for the current state.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when an invalid argument is used.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the location is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Location.SatelliteStatusChangedEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed satellite status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.SatelliteStatusChangedEventArgs.#ctor(System.UInt32,System.UInt32,System.DateTime)">
+            <summary>
+            The class constructor for the SatelliteStatusChangedEventArgs class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="activeCount">The number of active satellites.</param>
+            <param name="inviewCount">The number of satellites in view.</param>
+            <param name="timestamp">The time at which the data has been extracted.</param>
+        </member>
+        <member name="P:Tizen.Location.SatelliteStatusChangedEventArgs.ActiveCount">
+            <summary>
+            Gets the number of active satellites.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.SatelliteStatusChangedEventArgs.InViewCount">
+            <summary>
+            Gets the number of satellites in view.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.SatelliteStatusChangedEventArgs.Timestamp">
+            <summary>
+            Get the timestamp.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Location.ServiceStateChangedEventArgs">
+            <summary>
+            An extended EventArgs class contains the changed location service state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.ServiceStateChangedEventArgs.#ctor(Tizen.Location.ServiceState)">
+            <summary>
+            The class constructor for the ServiceStateChangedEventArgs class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="state">An enumeration of type LocationServiceState.</param>
+        </member>
+        <member name="P:Tizen.Location.ServiceStateChangedEventArgs.ServiceState">
+            <summary>
+            Get the service state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Location.SettingChangedEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed setting status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.SettingChangedEventArgs.#ctor(Tizen.Location.LocationType,System.Boolean)">
+            <summary>
+            The class constructor for the SettingChangedEventArgs class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type">The positioing method used for the location information.</param>
+            <param name="enable">The status of the method.</param>
+        </member>
+        <member name="P:Tizen.Location.SettingChangedEventArgs.LocationType">
+            <summary>
+            Gets the currently used location method.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.SettingChangedEventArgs.IsEnabled">
+            <summary>
+            Method to get the setting value changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Location.ZoneChangedEventArgs">
+            <summary>
+            An extended EventArgs class which contains the changed zone status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Location.ZoneChangedEventArgs.#ctor(Tizen.Location.BoundaryState,System.Double,System.Double,System.Double,System.DateTime)">
+            <summary>
+            The class constructor for the ZoneChangedEventArgs class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="state"> An enumeration of type BoundaryState.</param>
+            <param name="latitude">The latitude value [-90.0 ~ 90.0] \(degrees).</param>
+            <param name="longitude">The longitude value [-180.0 ~ 180.0] \(degrees).</param>
+            <param name="altitude">The altitude value.</param>
+            <param name="timestamp">The timestamp value.</param>
+        </member>
+        <member name="P:Tizen.Location.ZoneChangedEventArgs.BoundState">
+            <summary>
+            Gets the boundary state.
+            </summary>
+            <since_tizen>3</since_tizen>
+        </member>
+        <member name="P:Tizen.Location.ZoneChangedEventArgs.Latitude">
+            <summary>
+            Gets the latitude.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.ZoneChangedEventArgs.Longitude">
+            <summary>
+            Gets the longitude.
+            </summary>
+            <since_tizen>3</since_tizen>
+        </member>
+        <member name="P:Tizen.Location.ZoneChangedEventArgs.Altitude">
+            <summary>
+            Gets the altitude.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Location.ZoneChangedEventArgs.Timestamp">
+            <summary>
+            Method to get the timestamp.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

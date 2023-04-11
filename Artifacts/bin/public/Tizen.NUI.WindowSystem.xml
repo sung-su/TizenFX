@@ -1,0 +1,618 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.NUI.WindowSystem</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.QuickPanelClient">
+            <summary>
+            Class for the Tizen quickpanel client.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="E:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.VisibleChanged">
+            <summary>
+            Emits the event when the visible state of the quickpanel service window is changed.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="E:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.OrientationChanged">
+            <summary>
+            Emits the event when the orientation of the quickpanel service window is changed.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Types">
+            <summary>
+            Enumeration for type of quickpanel service window.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Types.Unknown">
+            <summary>
+            Unknown type. There is no quickpanel service.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Types.SystemDefault">
+            <summary>
+            System default type.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Types.ContextMenu">
+            <summary>
+            Context menu type.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Types.AppsMenu">
+            <summary>
+            Apps menu type.
+            </summary>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.VisibleState">
+            <summary>
+            Enumeration for visible state of quickpanel service window.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.VisibleState.Unknown">
+            <summary>
+            Unknown state. There is no quickpanel service.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.VisibleState.Shown">
+            <summary>
+            Shown state.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.VisibleState.Hidden">
+            <summary>
+            Hidden state.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.ScrollableState">
+            <summary>
+            Enumeration for scrollable state of quickpanel service window.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.ScrollableState.Unknown">
+            <summary>
+            Unknown state. There is no quickpanel service.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.ScrollableState.Set">
+            <summary>
+            Scrollable state.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.ScrollableState.Unset">
+            <summary>
+            Not scrollable state.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.ScrollableState.Retain">
+            <summary>
+            Retain scrollable state.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.OrientationState">
+            <summary>
+            Enumeration for orientation state of quickpanel service window.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.OrientationState.Unknown">
+            <summary>
+            Unknown state. There is no quickpanel service.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.OrientationState.Angle_0">
+            <summary>
+            Radius 0
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.OrientationState.Angle_90">
+            <summary>
+            90
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.OrientationState.Angle_180">
+            <summary>
+            180
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.OrientationState.Angle_270">
+            <summary>
+            270
+            </summary>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.#ctor(Tizen.NUI.WindowSystem.Shell.TizenShell,Tizen.NUI.Window,Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Types)">
+            <summary>
+            Creates a new Quickpanel Client handle.
+            </summary>
+            <param name="tzShell">The TizenShell instance.</param>
+            <param name="win">The window to provide service of the quickpanel.</param>
+            <param name="type">The type of quickpanel service.</param>
+            <exception cref="T:Tizen.Applications.Exceptions.OutOfMemoryException">Thrown when the memory is not enough to allocate.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a argument is null.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Finalize">
+            <summary>
+            Destructor.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Dispose">
+            <summary>
+            Dispose.
+            </summary>
+            <exception cref="T:System.MemberAccessException">Thrown when private memeber is a corrupted.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Dispose(Tizen.NUI.DisposeTypes)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.OnVisibleChanged(System.Int32,System.IntPtr,System.IntPtr)">
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.OnOrientationChanged(System.Int32,System.IntPtr,System.IntPtr)">
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="P:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Visible">
+            <summary>
+            Gets the visible state of the quickpanel.
+            </summary>
+            <returns>The visible state of the quickpanel service window.</returns>
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Scrollable">
+            <summary>
+            Gets or sets the window's scrollable state of the quickpanel service window.
+            </summary>
+            <returns>The scrollable state of the quickpanel service window.</returns>
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Orientation">
+            <summary>
+            Gets the current orientation of the quickpanel service window.
+            </summary>
+            <returns>The orientation of the quickpanel service window.</returns>
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Show">
+            <summary>
+            Shows the quickpanel service window if it is currently scrollable.
+            </summary>
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelClient.Hide">
+            <summary>
+            Hides the quickpanel service window.
+            </summary>
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.QuickPanelService">
+            <summary>
+            Class for the Tizen quickpanel service.
+            </summary>
+            This class is need to be hidden as inhouse API.
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.QuickPanelService.Types">
+            <summary>
+            QuickPanel Type.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelService.Types.Unknown">
+            <summary>
+            Unknown type. There is no quickpanel service.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelService.Types.SystemDefault">
+            <summary>
+            System default type.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelService.Types.ContextMenu">
+            <summary>
+            Context menu type.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelService.Types.AppsMenu">
+            <summary>
+            Apps menu type.
+            </summary>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.QuickPanelService.EffectType">
+            <summary>
+            Effect type.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelService.EffectType.Swipe">
+            <summary>
+            Swipe effect
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelService.EffectType.Move">
+            <summary>
+            Move effect
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.QuickPanelService.EffectType.Custom">
+            <summary>
+            App control effect
+            </summary>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelService.#ctor(Tizen.NUI.WindowSystem.Shell.TizenShell,Tizen.NUI.Window,Tizen.NUI.WindowSystem.Shell.QuickPanelService.Types)">
+            <summary>
+            Creates a new Quickpanel Service handle.
+            </summary>
+            <param name="tzShell">The TzShell instance.</param>
+            <param name="win">The window to provide service of the quickpanel.</param>
+            <param name="type">The type of quickpanel service.</param>
+            <exception cref="T:Tizen.Applications.Exceptions.OutOfMemoryException">Thrown when the memory is not enough to allocate.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a argument is null.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelService.Finalize">
+            <summary>
+            Destructor.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelService.Dispose">
+            <summary>
+            Dispose.
+            </summary>
+            <exception cref="T:System.MemberAccessException">Thrown when private memeber is a corrupted.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelService.Dispose(Tizen.NUI.DisposeTypes)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Tizen.NUI.WindowSystem.Shell.QuickPanelService.ServiceType">
+            <summary>
+            Gets the type of the quickpanel service handle.
+            </summary>
+            <returns>The type of the quickpanel service handle</returns>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelService.Show">
+            <summary>
+            Requests to show the quickpanel service window.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelService.Hide">
+            <summary>
+            Requests to hide the quickpanel service window.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelService.SetContentRegion(System.UInt32,Tizen.NUI.WindowSystem.Shell.TizenRegion)">
+            <summary>
+            Sets the content region of the quickpanel service handle.
+            </summary>
+            <param name="angle">The angle setting the region</param>
+            <param name="region">The region of the content</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a argument is null.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelService.SetHandlerRegion(System.UInt32,Tizen.NUI.WindowSystem.Shell.TizenRegion)">
+            <summary>
+            Sets the handler region of the quickpanel service handle.
+            </summary>
+            <param name="angle">The angle setting the region</param>
+            <param name="region">The region of the content</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a argument is null.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelService.SetEffectType(Tizen.NUI.WindowSystem.Shell.QuickPanelService.EffectType)">
+            <summary>
+            Requests to change the effect of animation.
+            </summary>
+            <param name="type">The type of effect, enumeration for effect type.</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.QuickPanelService.LockScroll(System.Boolean)">
+            <summary>
+            Requests to lock/unlock scrolling the quickpanel service window.
+            </summary>
+            <param name="locked">The scroll lock state</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.SoftkeyVisibleState">
+            <summary>
+            Visible state of softkey.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.SoftkeyVisibleState.Unknown">
+            <summary>
+            Unknown state. There is no softkey service.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.SoftkeyVisibleState.Shown">
+            <summary>
+            Shown state.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.SoftkeyVisibleState.Hidden">
+            <summary>
+            Hidden state.
+            </summary>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.SoftkeyExpandState">
+            <summary>
+            Expand state of softkey.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.SoftkeyExpandState.Unknown">
+            <summary>
+            Unknown state. There is no softkey service.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.SoftkeyExpandState.On">
+            <summary>
+            Expandable state.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.SoftkeyExpandState.Off">
+            <summary>
+            Not Expandable state.
+            </summary>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.SoftkeyOpacityState">
+            <summary>
+            Opacity state of softkey.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.SoftkeyOpacityState.Unknown">
+            <summary>
+            Unknown state. There is no softkey service.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.SoftkeyOpacityState.Opaque">
+            <summary>
+            Opaque state.
+            </summary>
+        </member>
+        <member name="F:Tizen.NUI.WindowSystem.Shell.SoftkeyOpacityState.Transparent">
+            <summary>
+            Transparent state.
+            </summary>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.SoftkeyClient">
+            <summary>
+            Class for the Tizen softkey client.
+            </summary>
+            This class is need to be hidden as inhouse API.
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyClient.#ctor(Tizen.NUI.WindowSystem.Shell.TizenShell,Tizen.NUI.Window)">
+            <summary>
+            Creates a new Softkey Client handle.
+            </summary>
+            <param name="tzShell">The TizenShell instance.</param>
+            <param name="win">The window to provide service of the quickpanel.</param>
+            <privilege>http://tizen.org/privilege/windowsystem.admin</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a argument is null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the caller does not have privilege to use this method.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyClient.Finalize">
+            <summary>
+            Destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyClient.Dispose">
+            <summary>
+            Dispose.
+            </summary>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyClient.Dispose(Tizen.NUI.DisposeTypes)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Tizen.NUI.WindowSystem.Shell.SoftkeyClient.Visible">
+            <summary>
+            Gets the visible state of a softkey service window.
+            </summary>
+            <returns>The visible state of the softkey service window.</returns>
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+        </member>
+        <member name="P:Tizen.NUI.WindowSystem.Shell.SoftkeyClient.Expand">
+            <summary>
+            Gets the expand state of a softkey service window.
+            </summary>
+            <returns>The expand state of the softkey service window.</returns>
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+        </member>
+        <member name="P:Tizen.NUI.WindowSystem.Shell.SoftkeyClient.Opacity">
+            <summary>
+            Gets the opacity state of a softkey service window.
+            </summary>
+            <returns>The opacity state of the softkey service window.</returns>
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyClient.Show">
+            <summary>
+            Requests to show the softkey service window.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyClient.Hide">
+            <summary>
+            Requests to hide the softkey service window.
+            </summary>
+            <exception cref="T:System.ArgumentException" > Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation or no service.</exception>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.SoftkeyService">
+            <summary>
+            Class for the Tizen softkey service.
+            </summary>
+            This class is need to be hidden as inhouse API.
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyService.#ctor(Tizen.NUI.WindowSystem.Shell.TizenShell,Tizen.NUI.Window)">
+            <summary>
+            Creates a new Softkey Service handle.
+            </summary>
+            <param name="tzShell">The TizenShell instance.</param>
+            <param name="win">The window to provide service of the quickpanel.</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a argument is null.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyService.Finalize">
+            <summary>
+            Destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyService.Dispose">
+            <summary>
+            Dispose.
+            </summary>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyService.Dispose(Tizen.NUI.DisposeTypes)">
+            <inheritdoc/>
+        </member>
+        <member name="E:Tizen.NUI.WindowSystem.Shell.SoftkeyService.VisibleChanged">
+            <summary>
+            Emits the event when the visible state of the softkey service window is changed.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="E:Tizen.NUI.WindowSystem.Shell.SoftkeyService.ExpandChanged">
+            <summary>
+            Emits the event when the expand state of the softkey service window is changed.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="E:Tizen.NUI.WindowSystem.Shell.SoftkeyService.OpacityChanged">
+            <summary>
+            Emits the event when the opacity state of the softkey service window is changed.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyService.Show">
+            <summary>
+            Requests to show the softkey service window.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.SoftkeyService.Hide">
+            <summary>
+            Requests to hide the softkey service window.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.TizenRegion">
+            <summary>
+            Tizen Window System Shell.
+            This is a basic handle class for others in WsShell.
+            Others class in WsShell using this basic class to use TIzen Window System Shell.
+            </summary>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.TizenRegion.#ctor(Tizen.NUI.WindowSystem.Shell.TizenShell)">
+            <summary>
+            Creates a new Tizen region object.
+            </summary>
+            <param name="tzShell">The TzShell instance.</param>
+            <exception cref="T:Tizen.Applications.Exceptions.OutOfMemoryException">Thrown when the memory is not enough to allocate.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a argument is null.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.TizenRegion.Finalize">
+            <summary>
+            Destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.TizenRegion.Dispose">
+            <summary>
+            Dispose.
+            </summary>
+            <exception cref="T:System.MemberAccessException">Thrown when private memeber is a corrupted.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.TizenRegion.Dispose(Tizen.NUI.DisposeTypes)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.TizenRegion.Add(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adds the rectangle to the region.
+            </summary>
+            <param name="x">The x coordinate</param>
+            <param name="y">The y coordinate</param>
+            <param name="w">The width</param>
+            <param name="h">The height</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.TizenRegion.Subtract(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Substracts the rectangle to the tizen region.
+            </summary>
+            <param name="x">The x coordinate</param>
+            <param name="y">The y coordinate</param>
+            <param name="w">The width</param>
+            <param name="h">The height</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+        </member>
+        <member name="T:Tizen.NUI.WindowSystem.Shell.TizenShell">
+            <summary>
+            Tizen Window System Shell.
+            This is a basic handle class for others in WsShell.
+            Others class in WsShell using this basic class to use TIzen Window System Shell.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.TizenShell.#ctor">
+            <summary>
+            Creates a new Tizen Shell handle.
+            </summary>
+            <exception cref="T:Tizen.Applications.Exceptions.OutOfMemoryException">Thrown when the memory is not enough to allocate.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when failed of invalid argument.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.TizenShell.Finalize">
+            <summary>
+            Destructor.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.TizenShell.Dispose">
+            <summary>
+            Dispose.
+            </summary>
+            <exception cref="T:System.MemberAccessException">Thrown when private memeber is a corrupted.</exception>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.WindowSystem.Shell.TizenShell.Dispose(Tizen.NUI.DisposeTypes)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

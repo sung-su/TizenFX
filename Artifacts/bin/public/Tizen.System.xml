@@ -1,0 +1,799 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.System</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.System.BatteryLevelStatus">
+            <summary>
+            Enumeration for the battery levels.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.BatteryLevelStatus.Empty">
+            <summary>
+            The battery goes empty.
+            Prepare for the safe termination of the application,
+            because the device starts a shutdown process soon
+            after entering this level.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.BatteryLevelStatus.Critical">
+            <summary>
+            The battery charge is at a critical state.
+            You may have to stop using the multimedia features,
+            because they are not guaranteed to work correctly
+            with this battery status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.BatteryLevelStatus.Low">
+            <summary>
+            The battery has little charge left.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.BatteryLevelStatus.High">
+            <summary>
+            The battery status is not to be careful.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.BatteryLevelStatus.Full">
+            <summary>
+            The battery status is fully charged.
+            It means no more charge.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Battery">
+            <summary>
+            The Battery class provides the properties and events for the device battery.
+            </summary>
+            <remarks>
+            The Battery API provides the way to get the current battery capacity value (Percent),
+            the battery state, and the charging state. It also provides the events for an application
+            to receive the battery status change events from the device.
+            To receive the battery event, the application should register with the respective EventHandler.
+            </remarks>
+            <code>
+                Console.WriteLine("battery Charging state is: {0}", Tizen.System.Battery.IsCharging);
+                Console.WriteLine("battery Percent is: {0}", Tizen.System.Battery.Percent);
+            </code>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Battery.Percent">
+            <summary>
+            Gets the battery charge percentage.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>It returns an integer value from 0 to 100 that indicates the remaining
+            battery charge as a percentage of the maximum level.</value>
+        </member>
+        <member name="P:Tizen.System.Battery.Level">
+            <summary>
+            Gets the current battery level.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Battery.IsCharging">
+            <summary>
+            Gets the current charging state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.System.Battery.PercentChanged">
+            <summary>
+            CapacityChanged is triggered when the battery charge percentage is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <example>
+            <code>
+            public static async Task BatteryEventHandler()
+            {
+                EventHandler&lt;BatteryPercentChangedEventArgs&gt; handler = null;
+                handler = (object sender, BatteryChargingStateChangedEventArgs args) =>
+                {
+                     Console.WriteLine("battery Percent is: {0}", args.Percent);
+                }
+                Battery.PercentChanged += handler;
+                await Task.Delay(20000);
+            }
+             </code>
+            </example>
+        </member>
+        <member name="E:Tizen.System.Battery.LevelChanged">
+            <summary>
+            LevelChanged is triggered when the battery level is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <example>
+            <code>
+            public static async Task BatteryEventHandler()
+            {
+                EventHandler&lt;BatteryLevelChangedEventArgs&gt; handler = null;
+                handler = (object sender, BatteryLevelChangedEventArgs args) =>
+                {
+                     Console.WriteLine("battery Level is: {0}", args.Level);
+                }
+                Battery.LevelChanged += handler;
+                await Task.Delay(20000);
+            }
+            </code>
+            </example>
+        </member>
+        <member name="E:Tizen.System.Battery.ChargingStateChanged">
+            <summary>
+            ChargingStatusChanged is triggered when the battery charging status is changed.
+            This event is triggered when the charger is connected/disconnected.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <example>
+            <code>
+            public static async Task BatteryEventHandler()
+            {
+                EventHandler&lt;BatteryChargingStateChangedEventArgs&gt; handler = null;
+                handler = (object sender, BatteryChargingStateChangedEventArgs args) =>
+                {
+                     Console.WriteLine("battery Level is: {0}", args.IsCharging);
+                }
+                Battery.ChargingStateChanged += handler;
+                await Task.Delay(20000);
+            }
+            </code>
+            </example>
+        </member>
+        <member name="T:Tizen.System.BatteryPercentChangedEventArgs">
+            <summary>
+            BatteryPercentChangedEventArgs is an extended EventArgs class. This class contains event arguments for the BatteryPercentChanged event from the battery class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.BatteryPercentChangedEventArgs.Percent">
+            <summary>
+            The current capacity of the battery.
+            Capacity is an integer value from 0 to 100 that indicates the remaining battery charge as a percentage of the maximum level.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.BatteryLevelChangedEventArgs">
+            <summary>
+            BatteryLevelChangedEventArgs is an extended EventArgs class. This class contains event arguments for the BatteryLevelChanged event from the battery class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.BatteryLevelChangedEventArgs.Level">
+            <summary>
+             The level indicates the current battery level status which is a type of the BatteryLevelStatus.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.BatteryChargingStateChangedEventArgs">
+            <summary>
+            BatteryChargingStateChangedEventArgs is an extended EventArgs class. This class contains event arguments for the BatteryChargingStateChanged event from the battery class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.BatteryChargingStateChangedEventArgs.IsCharging">
+            <summary>
+            The charging state of the battery. Charging is a type of a boolean which indicates true/false based on the current charging status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.DisplayStateChangedEventArgs">
+            <summary>
+            DisplayStateChangedEventArgs is an extended EventArgs class. This class contains event arguments for the DisplayStateChanged event from the display class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.DisplayStateChangedEventArgs.State">
+            <summary>
+            The state indicates the current display state of the device which is an enumeration of the type DisplayState.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.LedBrightnessChangedEventArgs">
+            <summary>
+            LedBrightnessChangedEventArgs is an extended EventArgs class. This class contains event arguments for the LedBrightnessChanged event from the LED class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.LedBrightnessChangedEventArgs.Brightness">
+            <summary>
+            Brightness indicates the current brightness level of the display as an integer.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.DisplayState">
+            <summary>
+            Enumeration for the available display states.
+            An application cannot put the device into the power off state or the suspend state.
+            </summary>
+            <remarks>
+            Dim may be ignored if the DIM state is disabled on the platform.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DisplayState.Normal">
+            <summary>
+            Normal state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DisplayState.Dim">
+            <summary>
+            Screen dim state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DisplayState.Off">
+            <summary>
+            Screen off state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Display">
+            <summary>
+            The Display class provides the properties and events to control the display status and brightness.
+            </summary>
+            <remarks>
+            The Display API provides the way to get the current display brightness value,
+            the display state, and the total number of available displays.
+            It also provides the events for an application to receive the display state change events from the device.
+            To receive the display event, the application should register with an associated EventHandler.
+            </remarks>
+            <privilege>
+            http://tizen.org/privilege/display
+            </privilege>
+            <example>
+            <code>
+                Console.WriteLine("Display current state is: {0}", Tizen.System.Display.State);
+                Console.WriteLine("Total number of Displays are: {0}", Tizen.System.Display.NumberOfDisplays);
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Display.NumberOfDisplays">
+            <summary>
+            The number of available display devices.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Display.Displays">
+            <summary>
+            Gets all the available displays.
+            The display at the index zero is always assigned to the main display.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Display.MaxBrightness">
+            <summary>
+            The maximum brightness value that can be set for the specific display.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <example>
+            <code>
+                Display display = Display.Displays[0];
+                Console.WriteLine("Display MaxBrightness is: {0}", display.MaxBrightness);
+            </code>
+            </example>
+        </member>
+        <member name="P:Tizen.System.Display.Brightness">
+            <summary>
+            The brightness value of the display.
+            </summary>
+            <remarks>
+            The brightness value should be less than or equal to the MaxBrightness value.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">When an invalid parameter value is set.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <example>
+            <code>
+                Display display = Display.Displays[0];
+                Console.WriteLine("Display current Brightness is: {0}", display.Brightness);
+            </code>
+            </example>
+        </member>
+        <member name="P:Tizen.System.Display.State">
+            <summary>
+            The current device display state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.System.Display.StateChanged">
+            <summary>
+             StateChanged is raised when the state of the display is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <example>
+            <code>
+            public static async Task DisplayEventHandler()
+            {
+                EventHandler&lt;DisplayStateChangedEventArgs&gt; handler = null;
+                handler = (object sender, DisplayStateChangedEventArgs args) =>
+                {
+                     Console.WriteLine("Display State is: {0}", args.State);
+                }
+                Battery.StateChanged += handler;
+                await Task.Delay(20000);
+            }
+            </code>
+            </example>
+        </member>
+        <member name="T:Tizen.System.Vibrator">
+            <summary>
+            The Vibrator class provides the properties and methods to control a vibrator.
+            </summary>
+            <remarks>
+            The Vibrator API provides the way to access the vibrators in the device.
+            It allows the management of the device's vibrator parameters, such as the vibration count and level.
+            It provides the methods to vibrate and stop the vibration.
+            </remarks>
+            <privilege>
+            http://tizen.org/privilege/haptic
+            </privilege>
+            <feature>
+            http://tizen.org/feature/feedback.vibration
+            </feature>
+            <exception cref="T:System.ArgumentException"> When an invalid parameter value is set.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <exception creg="NotSupportedException">The required feature is not supported</exception>
+            <example>
+            <code>
+                Console.WriteLine("Total number of Vibrators are: {0}", Tizen.System.Vibrator.NumberOfVibrators);
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Vibrator.Finalize">
+            <summary>
+            Finalizes an instance of the Vibrator class.
+            </summary>
+        </member>
+        <member name="P:Tizen.System.Vibrator.NumberOfVibrators">
+            <summary>
+            Gets the number of the available vibrators.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Vibrator.Vibrators">
+            <summary>
+            Gets all the available vibrators.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Vibrator.Vibrate(System.Int32,System.Int32)">
+            <summary>
+            Vibrates during the specified time with a constant intensity.
+            This function can be used to start monotonous vibration for the specified time.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="duration">The play duration in milliseconds.</param>
+            <param name="feedback">The amount of the intensity variation (0 ~ 100).</param>
+            <feature>
+            http://tizen.org/feature/feedback.vibration
+            </feature>
+            <exception cref="T:System.ArgumentException"> When an invalid parameter value is set.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <exception cref="T:System.NotSupportedException">In case the device does not support this behavior.</exception>
+            <example>
+            <code>
+                Vibrator vibrator = Vibrator.Vibrators[0];
+                try
+                {
+                    vibrator.Vibrate(2000, 70);
+                }
+                catch(Exception e)
+                {
+                }
+            </code>
+            </example>
+        </member>
+        <member name="M:Tizen.System.Vibrator.Stop">
+            <summary>
+            Stops all the vibration effects which are being played.
+            This function can be used to stop all the effects started by Vibrate().
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>
+            http://tizen.org/feature/feedback.vibration
+            </feature>
+            <exception cref="T:System.ArgumentException"> In case an invalid vibrator instance is used.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <exception cref="T:System.NotSupportedException">In case the device does not support this behavior.</exception>
+            <example>
+            <code>
+                Vibrator vibrator = Vibrator.Vibrators[0];
+                try
+                {
+                    vibrator.Stop();
+                }
+                catch(Exception e)
+                {
+                }
+            </code>
+            </example>
+        </member>
+        <member name="M:Tizen.System.Vibrator.Dispose">
+            <summary>
+            Dispose API for closing the internal resources.
+            This function can be used to stop all the effects started by Vibrate().
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Vibrator.Dispose(System.Boolean)">
+            <summary>
+            Dispose API for closing the internal resources.
+            This function can be used to stop all the effects started by Vibrate().
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.IR">
+            <summary>
+            The IR API provides the functions to control the IR transmitter.
+            The IR API provides the way to get the information if IR is available and then transmit the IR command.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/use_ir
+            </privilege>
+            <example>
+            <code>
+                Console.WriteLine("IR availability for this device is: {0}", IR.IsAvailable);
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.IR.IsAvailable">
+            <summary>
+            Gets the information whether the IR module is available.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.IR.Transmit(System.Int32,System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Transmits the IR command.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="carrierFreequency">
+            The carrier frequency to transmit the IR command (Hertz).
+            </param>
+            <param name="pattern">
+            The IR command list of type integer.
+            </param>
+            <exception cref="T:System.ArgumentException"> When an invalid parameter value is set.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <exception cref="T:System.NotSupportedException">In case the device does not support this behavior.</exception>
+            <example>
+            <code>
+               try
+               {
+                  List&lt;int&gt; pattern = new List&lt;int&gt;();
+                  pattern.Add(10);
+                  pattern.Add(50);
+                  IR.Transmit(60657, pattern);
+               }
+               catch(Exception e)
+               {
+               }
+            </code>
+            </example>
+        </member>
+        <member name="T:Tizen.System.Led">
+            <summary>
+            The LED class provides the properties and methods to control the attached LED device.
+            </summary>
+            <remarks>
+            The LED API provides the way to control the attached LED device, such as the camera flash and service LED. It supports to turn on the camera flash and set the pattern to the service LED which is located at the front of the device.
+            Related features:
+               http://tizen.org/feature/led
+               http://tizen.org/feature/camera.back.flash
+            It is recommended to design the feature related codes in your application for reliability.
+            You can check if a device supports the related features for this API by using system information, thereby controlling the procedure of your application.
+            </remarks>
+            <privilege>
+             http://tizen.org/privilege/led
+            </privilege>
+            <example>
+            <code>
+                Console.WriteLine("Led MaxBrightness is: {0}", Tizen.System.Led.MaxBrightness);
+                Console.WriteLine("Led current Brightness is: {0}", Tizen.System.Led.Brightness);
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.Led.MaxBrightness">
+            <summary>
+            Gets the maximum brightness value of the LED that is located next to the camera.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">When an invalid parameter value is set.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.NotSupportedException">In case the device does not support this behavior.</exception>
+        </member>
+        <member name="P:Tizen.System.Led.Brightness">
+            <summary>
+            Gets the brightness value of the LED that is located next to the camera.
+            </summary>
+            <remarks>The brightness value range of the LED is 0 to Tizen.System.Led.MaxBrightness value.
+            Changing the brightness value will invoke the registered EventHandler for the LED BrightnessChanged (if any).
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException"> When an invalid parameter value is set.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.NotSupportedException">In case the device does not support this behavior.</exception>
+            <example>
+            <code>
+                Console.WriteLine("Led current Brightness is: {0}", Tizen.System.Led.Brightness);
+                Tizen.System.Led.Brightness = 50;
+                Console.WriteLine("Led current Brightness is: {0}", Tizen.System.Led.Brightness);
+            </code>
+            </example>
+        </member>
+        <member name="M:Tizen.System.Led.Play(System.Int32,System.Int32,Tizen.Common.Color)">
+            <summary>
+            Plays the LED that is located at the front of the device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="on">Turn on time in milliseconds.</param>
+            <param name="off">Turn off time in milliseconds.</param>
+            <param name="color">
+            The Color value
+            The first byte means opaque and the other 3 bytes are the RGB values.
+            </param>
+            <exception cref="T:System.ArgumentException">When an invalid parameter value is set.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <exception cref="T:System.NotSupportedException">In case the device does not support this behavior.</exception>
+            <example>
+            <code>
+                try
+                {
+                    Led.Play(500, 200, Color.FromRgba(255, 255, 255, 1));
+                }
+                Catch(Exception e)
+                {
+                }
+            </code>
+            </example>
+        </member>
+        <member name="M:Tizen.System.Led.Stop">
+            <summary>
+            Stops the LED that is located at the front of the device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <exception cref="T:System.NotSupportedException">In case the device does not support this behavior.</exception>
+            <example>
+            <code>
+                try
+                {
+                    Led.Play(500, 200, Color.FromRgba(255, 255, 255, 1));
+                    //wait for a while and stop...
+                    Led.Stop();
+                }
+                Catch(Exception e)
+                {
+                }
+            </code>
+            </example>
+        </member>
+        <member name="E:Tizen.System.Led.BrightnessChanged">
+            <summary>
+            StateChanged is raised when the LED state is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.PerformanceController">
+            <summary>
+            The PerformanceController class provides the methods to control the system resources.
+            </summary>
+            <remarks>
+            It supports to control cpu clock within input timeout.
+            </remarks>
+            <privilege>
+            </privilege>
+        </member>
+        <member name="M:Tizen.System.PerformanceController.Request(Tizen.System.PerformanceControlType,System.Int32)">
+            <summary>
+            Increase the cpu clock within timeout.
+            </summary>
+            <param name="type">Performance Control Type</param>
+            <param name="timeout">Cpu clock increasing duration in milliseconds.</param>
+            <exception cref="T:System.ArgumentException">When an invalid parameter value is set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <exception cref="T:System.NotSupportedException">In case the device does not support this behavior.</exception>
+            <example>
+            <code>
+                try
+                {
+                    PerformanceController.Request(PerformanceControlType.AppLaunchHome, 100);
+                }
+                Catch(Exception e)
+                {
+                }
+            </code>
+            </example>
+        </member>
+        <member name="T:Tizen.System.PerformanceControlType">
+            <summary>
+            This class represents the type of event for backends. This class can be converted from the string type.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.PerformanceControlType.AppLaunchHome">
+            <summary>
+            Pre-defined event type "PreCreated".
+            </summary>
+        </member>
+        <member name="F:Tizen.System.PerformanceControlType.HomeScreen">
+            <summary>
+            Pre-defined event type "HomeScreen".
+            </summary>
+        </member>
+        <member name="M:Tizen.System.PerformanceControlType.#ctor(System.String)">
+            <summary>
+            Initializes the PerformanceControlType class.
+            </summary>
+            <param name="name">The name of event type.</param>
+        </member>
+        <member name="M:Tizen.System.PerformanceControlType.ToString">
+            <summary>
+            Returns the name of event type.
+            </summary>
+        </member>
+        <member name="M:Tizen.System.PerformanceControlType.GetHashCode">
+            <summary>
+            Returns the hash code for event type string.
+            </summary>
+        </member>
+        <member name="M:Tizen.System.PerformanceControlType.Equals(System.Object)">
+            <summary>
+            Determines whether this instance and a specified object.
+            </summary>
+        </member>
+        <member name="T:Tizen.System.PowerLock">
+            <summary>
+            Enumeration for power lock type.
+            </summary>
+            <remarks>
+            DisplayDim may be ignored if the DIM state is disabled on the platform.
+            </remarks>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.PowerLock.Cpu">
+            <summary>
+            CPU lock.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.PowerLock.DisplayNormal">
+            <summary>
+            Display the normal lock.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.PowerLock.DisplayDim">
+            <summary>
+            Display the dim lock.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Power">
+            <summary>
+            The Power class provides methods to control the power service.
+            </summary>
+            <remarks>
+            The Power API provides the way to control the power service.
+            It can be made to hold the specific state to avoid the CPU state internally.
+            </remarks>
+            <privilege>
+            http://tizen.org/privilege/display
+            </privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.Power.RequestCpuLock(System.Int32)">
+            <summary>
+            [Obsolete("Please do not use! this will be deprecated")]
+            </summary>
+            <remarks>
+            If the process dies, then every lock will be removed.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+            <param name="timeout">
+            The positive number in milliseconds or 0 for the permanent lock.
+            So you must release the permanent lock of the power state with ReleaseCpuLock() if timeout_ms is zero.
+            </param>
+            <exception cref="T:System.ArgumentException">When an invalid parameter value is set.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            Please do not use! This will be deprecated!
+            Please use RequestLock instead!
+        </member>
+        <member name="M:Tizen.System.Power.ReleaseCpuLock">
+            <summary>
+            [Obsolete("Please do not use! this will be deprecated")]
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            Please do not use! This will be deprecated!
+            Please use ReleaseLock instead!
+        </member>
+        <member name="M:Tizen.System.Power.RequestLock(Tizen.System.PowerLock,System.Int32)">
+            <summary>
+            Locks the given lock state for a specified time.
+            After the given timeout (in milliseconds), unlock the given lock state automatically.
+            </summary>
+            <remarks>
+            If the process dies, then every lock will be removed.
+            </remarks>
+            <since_tizen> 5 </since_tizen>
+            <param name="type">
+            The power type to request lock.
+            </param>
+            <param name="timeout">
+            The positive number in milliseconds or 0 for the permanent lock.
+            So you must release the permanent lock of the power state with ReleaseLock() if timeout_ms is zero.
+            </param>
+            <exception cref="T:System.ArgumentException">When an invalid parameter value is set.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <example>
+            <code>
+            Tizen.System.Power.RequestLock(Tizen.System.Power.PowerLock.Cpu, 2000);
+            </code>
+            </example>
+        </member>
+        <member name="M:Tizen.System.Power.ReleaseLock(Tizen.System.PowerLock)">
+            <summary>
+            Releases the lock state.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <param name="type">
+            The power type to request lock.
+            </param>
+            <exception cref="T:System.ArgumentException">When an invalid parameter value is set.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <example>
+            <code>
+            Tizen.System.Power.ReleaseLock(Tizen.System.Power.PowerLock.Cpu);
+            </code>
+            </example>
+        </member>
+        <member name="M:Tizen.System.Power.PowerOff">
+            <summary>
+            Power off the device.
+            </summary>
+            <privilege>http://tizen.org/privilege/reboot</privilege>
+            <privlevel>platform</privlevel>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <example>
+            <code>
+            Tizen.System.Power.PowerOff();
+            </code>
+            </example>
+        </member>
+        <member name="M:Tizen.System.Power.Reboot(System.String)">
+            <summary>
+            Reboot the device.
+            </summary>
+            <privilege>http://tizen.org/privilege/reboot</privilege>
+            <privlevel>platform</privlevel>
+            <exception cref="T:System.UnauthorizedAccessException">If the privilege is not set.</exception>
+            <exception cref="T:System.InvalidOperationException">In case of any system error.</exception>
+            <example>
+            <code>
+            Tizen.System.Power.Reboot(null);
+            </code>
+            </example>
+        </member>
+    </members>
+</doc>

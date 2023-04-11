@@ -1,0 +1,684 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Account.OAuth2</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            Contains Interop declarations of OAuth2 classes.
+            </summary>
+            <summary>
+            Contains Interop declarations of OAuth2 classes.
+            </summary>
+            <summary>
+            Contains Interop declarations of OAuth2 classes.
+            </summary>
+            <summary>
+            Contains Interop declarations of OAuth2 classes.
+            </summary>
+            <summary>
+            Contains Interop declarations of OAuth2 classes.
+            </summary>
+            <summary>
+            Contains Interop declarations of OAuth2 classes.
+            </summary>
+        </member>
+        <member name="T:Interop.SafeOauth2Handle">
+            <summary>
+            Safehandle wrapper for OAuth2 native handles.
+            </summary>
+        </member>
+        <member name="T:Interop.Error">
+            <summary>
+            Wrapper class for OAuth2 native API.
+            </summary>
+        </member>
+        <member name="T:Interop.Libraries">
+            <summary>
+            Wrapper class for maintaining names of dependent native libraries.
+            </summary>
+        </member>
+        <member name="T:Interop.Manager">
+            <summary>
+            Wrapper class for OAuth2 native API.
+            </summary>
+        </member>
+        <member name="T:Interop.Request">
+            <summary>
+            Wrapper class for OAuth2 native API.
+            </summary>
+        </member>
+        <member name="T:Interop.Response">
+            <summary>
+            Wrapper class for OAuth2 native API.
+            </summary>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.AccessToken">
+            <summary>
+            Class containing access token and related information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AccessToken.ExpiresIn">
+            <summary>
+            The lifetime in seconds of the access token.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AccessToken.Token">
+            <summary>
+            The access token issued by the authorization server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AccessToken.Scope">
+            <summary>
+            The scope of the access token.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AccessToken.TokenType">
+            <summary>
+            The type of the access token.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.AuthenticationScheme">
+            <summary>
+            Enumerations for Client authentication scheme, used to sign client id and client secret accordingly.
+            Default is Basic (http://tools.ietf.org/html/rfc2617#section-2)
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>Facebook and Google does not support HTTP Basic Authentication, instead they require client credentials to be sent via request body.</remarks>
+        </member>
+        <member name="F:Tizen.Account.OAuth2.AuthenticationScheme.Basic">
+            <summary>
+            HTTP Basic Authentication for client authentication
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.OAuth2.AuthenticationScheme.Digest">
+            <summary>
+            HTTP Basic Authentication for client authentication
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.OAuth2.AuthenticationScheme.RequestBody">
+            <summary>
+            Client credentials are sent via request body
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.AuthorizationRequest">
+            <summary>
+            The request parameters to be sent to authorization end point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AuthorizationRequest.ResponseType">
+            <summary>
+            The desired response type from the OAuth authorization end point.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AuthorizationRequest.ClientSecrets">
+            <summary>
+            Client secret credentials.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AuthorizationRequest.Scopes">
+            <summary>
+            The scope of the access.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AuthorizationRequest.AuthorizationEndpoint">
+            <summary>
+            The authorization end point URL.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AuthorizationRequest.RedirectionEndPoint">
+            <summary>
+            The redirection endpoint of the auhorization flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AuthorizationRequest.TokenEndpoint">
+            <summary>
+            The access token end point URL.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AuthorizationRequest.State">
+            <summary>
+            The client's state which is maintained between request and response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.AuthorizationRequest.CustomData">
+            <summary>
+            Custom key-value parameters to be sent to the server
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.AuthorizationResponse">
+            <summary>
+            The response containing authroization code from the authorization server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.AuthorizationResponse.Finalize">
+            <summary>
+            Destructor of the AuthorizationResponse class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.AuthorizationResponse.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.AuthorizationResponse.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.Authorizer">
+            <summary>
+            An abstract class to represent various OAuth 2.0 authorization code flows.
+            Refer to http://tools.ietf.org/html/rfc6749 about OAuth 2.0 protocols.
+            Also service provider document needs to be referred for using end points and additional parameters.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.Authorizer.#ctor">
+            <summary>
+            Constructor for Authoirzer instances
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.Authorizer.Finalize">
+            <summary>
+            Destructor of the Authorizer class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.Authorizer.IsRequestInProgress">
+            <summary>
+            Indicates if the current instance is already handling an authorization request
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.Authorizer.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.Authorizer.RefreshAccessTokenAsync(Tizen.Account.OAuth2.RefreshTokenRequest)">
+            <summary>
+            Retrieves access token using a refresh token.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">Request containing refresh token</param>
+            <returns>The response containing access token.</returns>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when method failed due to invalid argumets</exception>
+            <exception cref="T:Tizen.Account.OAuth2.OAuth2Exception">Thrown when method fails due to server error</exception>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.Authorizer.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.ClientCredentials">
+            <summary>
+            Contains client credentials required for authentication in request-body
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ClientCredentials.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.ClientCredentials.Id">
+            <summary>
+            The client identifier
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.ClientCredentials.Secret">
+            <summary>
+            The client secret
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.ClientCredentialsAuthorizer">
+            <summary>
+            The ClientCredentialsAuthorizer is used to obtain access tokens using Client Credentials Grant flow as described at https://tools.ietf.org/html/rfc6749#section-4.4
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ClientCredentialsAuthorizer.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ClientCredentialsAuthorizer.AuthorizeAsync(Tizen.Account.OAuth2.AuthorizationRequest)">
+            <summary>
+            Authorization not supported through this API for this flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is not supported</exception>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ClientCredentialsAuthorizer.RefreshAccessTokenAsync(Tizen.Account.OAuth2.RefreshTokenRequest)">
+            <summary>
+            Refreshing access token is not supported in this flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is not supported</exception>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ClientCredentialsAuthorizer.GetAccessTokenAsync(Tizen.Account.OAuth2.TokenRequest)">
+            <summary>
+            Retrieves access token using client credentials.
+            The authroization request parameters should be as defined in https://tools.ietf.org/html/rfc6749#section-4.4.2
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">The token request <see cref="T:Tizen.Account.OAuth2.ClientCredentialsTokenRequest"/></param>
+            <returns>The response containing access token.</returns>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when method failed due to invalid argumets</exception>
+            <exception cref="T:Tizen.Account.OAuth2.OAuth2Exception">Thrown when method fails due to server error</exception>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.ClientCredentialsTokenRequest">
+            <summary>
+            The class contains request parameters for retreiving access token in Client Credentials Grant flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ClientCredentialsTokenRequest.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.ClientCredentialsTokenRequest.GrantType">
+            <summary>
+            The grant type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.CodeGrantAuthorizationRequest">
+            <summary>
+            The class contains request parameters for retreiving authorization code in Authorization Code Grant flow.
+            Please refer https://tools.ietf.org/html/rfc6749#section-4.1.1 for more details
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.CodeGrantAuthorizationRequest.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.CodeGrantAuthorizationRequest.ResponseType">
+            <summary>
+            The response type parameter to authorization server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.CodeGrantAuthorizer">
+            <summary>
+            The CodeGrantAuthorizer is used to obtain access tokens and refresh tokens using Authorization Code Grant flow as described at https://tools.ietf.org/html/rfc6749#section-4.1
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.CodeGrantAuthorizer.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.CodeGrantAuthorizer.GetAccessTokenAsync(Tizen.Account.OAuth2.TokenRequest)">
+            <summary>
+            Retrieves access token by exchanging authorization code received using <see cref="M:Tizen.Account.OAuth2.ClientCredentialsAuthorizer.AuthorizeAsync(Tizen.Account.OAuth2.AuthorizationRequest)"/>.
+            The authroization request parameters should be as defined in https://tools.ietf.org/html/rfc6749#section-4.1.3
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">The token request <see cref="T:Tizen.Account.OAuth2.CodeGrantTokenRequest"/></param>
+            <returns>The response containing access token.</returns>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when method failed due to invalid argumets</exception>
+            <exception cref="T:Tizen.Account.OAuth2.OAuth2Exception">Thrown when method fails due to server error</exception>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.CodeGrantTokenRequest">
+            <summary>
+            The class contains request parameters for retreiving access token in Authorization Code Grant flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.CodeGrantTokenRequest.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.CodeGrantTokenRequest.GrantType">
+            <summary>
+            The grant type
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.CodeGrantTokenRequest.Code">
+            <summary>
+            The authoriztion code received from the authorization server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.ImplicitGrantAuthorizationRequest">
+            <summary>
+            The class contains request parameters for retreiving access token in Implicit Grant flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ImplicitGrantAuthorizationRequest.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.ImplicitGrantAuthorizationRequest.ResponseType">
+            <summary>
+            The response type parameter to aturhoization server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.ImplicitGrantAuthorizer">
+            <summary>
+            The ImplicitGrantAuthorizer is used to obtain access tokens using Implicit Grant flow as described at https://tools.ietf.org/html/rfc6749#section-4.2
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ImplicitGrantAuthorizer.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ImplicitGrantAuthorizer.GetAccessTokenAsync(Tizen.Account.OAuth2.TokenRequest)">
+            <summary>
+            Access token can be retreived implicitly using <see cref="M:Tizen.Account.OAuth2.ClientCredentialsAuthorizer.AuthorizeAsync(Tizen.Account.OAuth2.AuthorizationRequest)"/> in this flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is not supported</exception>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ImplicitGrantAuthorizer.RefreshAccessTokenAsync(Tizen.Account.OAuth2.RefreshTokenRequest)">
+            <summary>
+            Refreshing access token is not supported in this flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is not supported</exception>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.OAuth2Exception">
+            <summary>
+            Exception wrapper for OAuth2 related exception
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.OAuth2Exception.Error">
+            <summary>
+            The error response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.OAuth2ErrorResponse">
+            <summary>
+            Wrapper class contaning OAuth2 related error information
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.OAuth2ErrorResponse.ServerErrorCode">
+            <summary>
+            The server error code
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.OAuth2ErrorResponse.PlatformErrorCode">
+            <summary>
+            The platform error cocde
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.OAuth2ErrorResponse.Error">
+            <summary>
+            Error description
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.OAuth2ErrorResponse.ErrorUri">
+            <summary>
+            URI of the error page.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.RefreshToken">
+            <summary>
+            The refresh token which can be used to obtain new access token.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.RefreshToken.Token">
+            <summary>
+            The refresh token issued to the client.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.RefreshTokenRequest">
+            <summary>
+            The class contains request parameters for refreshing an access token.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.RefreshTokenRequest.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.RefreshTokenRequest.GrantType">
+            <summary>
+            The grant type to be used
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.RefreshTokenRequest.RefreshToken">
+            <summary>
+            The refresh token issued by authorization server.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.ResourceOwnerPwdCredentialsAuthorizer">
+            <summary>
+            The ResourceOwnerPwdCredentialsAuthorizer is used to obtain access tokens using Resource Owner Password Credentials Grant flow as described at https://tools.ietf.org/html/rfc6749#section-4.3
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ResourceOwnerPwdCredentialsAuthorizer.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ResourceOwnerPwdCredentialsAuthorizer.AuthorizeAsync(Tizen.Account.OAuth2.AuthorizationRequest)">
+            <summary>
+            Authorization not supported through this API for this flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when the operation is not supported</exception>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ResourceOwnerPwdCredentialsAuthorizer.GetAccessTokenAsync(Tizen.Account.OAuth2.TokenRequest)">
+            <summary>
+            Retrieves access token by sending resource owner's password credentials.
+            The authroization request parameters should be as defined in https://tools.ietf.org/html/rfc6749#section-4.3.2
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="request">The token request <see cref="T:Tizen.Account.OAuth2.ResourceOwnerPwdCredentialsTokenRequest"/></param>
+            <returns>The response containing access token.</returns>
+            <privilege>http://tizen.org/privilege/internet</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when method failed due to invalid argumets</exception>
+            <exception cref="T:Tizen.Account.OAuth2.OAuth2Exception">Thrown when method fails due to server error</exception>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.ResourceOwnerPwdCredentialsTokenRequest">
+            <summary>
+            The class contains request parameters for retreiving access token in Resource Owner Password Credentials Grant flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.ResourceOwnerPwdCredentialsTokenRequest.#ctor">
+            <summary>
+            The constructor
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.ResourceOwnerPwdCredentialsTokenRequest.GrantType">
+            <summary>
+            The grant type
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.ResourceOwnerPwdCredentialsTokenRequest.Username">
+            <summary>
+            The resource owner username
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.ResourceOwnerPwdCredentialsTokenRequest.Password">
+            <summary>
+            The resource owner password
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.TokenRequest">
+            <summary>
+            Abstract wrapper class containing OAuth 2.0 request parameters for requesting an access token.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenRequest.GrantType">
+            <summary>
+            The Grant type
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenRequest.ClientSecrets">
+            <summary>
+            The client credentials
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenRequest.TokenEndpoint">
+            <summary>
+            The access token end point URL.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenRequest.RedirectionEndPoint">
+            <summary>
+            The redirection endpoint of the auhorization flow.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenRequest.Scopes">
+            <summary>
+            The scope of the access request as described by https://tools.ietf.org/html/rfc6749#section-3.3
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenRequest.CustomData">
+            <summary>
+            Custom key-value parameters to be sent to the server
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenRequest.AuthenticationScheme">
+            <summary>
+            Client authentication scheme. Default is Basic
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenRequest.State">
+            <summary>
+            The client's state which is maintained between request and response.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.OAuth2.TokenResponse">
+            <summary>
+            The response from authroization server containing access token and an optional refresh token.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.TokenResponse.Finalize">
+            <summary>
+            Destructor of the AuthorizationResponse class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenResponse.AccessToken">
+            <summary>
+            The access token
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenResponse.State">
+            <summary>
+            The state parameter present in authorization request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            The value can be null depending on the server specifications.
+            </remarks>
+        </member>
+        <member name="P:Tizen.Account.OAuth2.TokenResponse.RefreshToken">
+            <summary>
+            The refresh token. The value will be null if authorization server doesn't return a refresh token.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <remarks>
+            Issuing a refresh token is optional at the discretion of the authorization server.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.TokenResponse.GetCustomValue(System.String)">
+            <summary>
+            Gets the value of the key received from service provider
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>The value of respecitve key </returns>
+            <exception cref="T:System.ArgumentException">Thrown when the key does not exist or when there is an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.TokenResponse.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.OAuth2.TokenResponse.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+        </member>
+    </members>
+</doc>

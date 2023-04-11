@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.Preference</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            Contains interop declarations of the preference classes.
+            </summary>
+        </member>
+        <member name="T:Interop.Preference">
+            <summary>
+            Contains interop declarations of the preference device API.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Preference">
+            <summary>
+            The preference class provides APIs to store and retrieve an application specific data/preference. A preference is saved in the form of a key-value pair.
+            Keys are always text strings and the value can be any one of the four types: integer, double, string, and boolean.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Preference.Keys">
+            <summary>
+            Retrieves all keys of the application preferences.
+            </summary>
+            <value>
+            The list of keys.
+            </value>
+            <example>
+            <code>
+                Preference.Set("Option_enabled", true);
+                Preference.Set("active_user", "Joe");
+                Preference.Set("default_volume", 10);
+                Preference.Set("brightness", "0.6");
+                foreach(string key in Preference.Keys)
+                {
+                    Console.WriteLine("key {0}", key);
+                }
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Preference.GetEventContext(System.String)">
+             <summary>
+             Gets the event context for the given key.
+             </summary>
+             <seealso cref="T:Tizen.Applications.Preference.EventContext"/>
+             <param name="key">The preference key.</param>
+             <returns>The event context of respective key.</returns>
+             <exception cref="T:System.Collections.Generic.KeyNotFoundException">Thrown if the key is not found.</exception>
+             <exception cref="T:System.ArgumentException">Thrown if the key is invalid parameter.</exception>
+             <example>
+             <code>
+                 private static void Preference_PreferenceChanged(object sender, PreferenceChangedEventArgs e)
+                 {
+                     Console.WriteLine("key {0}", e.Key);
+                 }
+            
+                 Preference.EventContext context = null;
+                 Preference.GetEventContext("active_user").TryGetTarget(out context);
+                 if(context != null)
+                 {
+                     context.Changed += Preference_PreferenceChanged;
+                 }
+            
+                 Preference.Set("active_user", "Poe");
+            
+                 Preference.GetEventContext("active_user").TryGetTarget(out context);
+                 if (context != null)
+                 {
+                     context.Changed -= Preference_PreferenceChanged;
+                 }
+             </code>
+             </example>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Preference.Contains(System.String)">
+            <summary>
+            Checks whether the given key exists in the preference.
+            </summary>
+            <param name="key">The name of the key to check.</param>
+            <returns>True if the key exists in the preference, otherwise false.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if the key is an invalid parameter.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <example>
+            <code>
+                Preference.Set("active_user", "Joe");
+                bool exists = Preference.Contains("active_user");
+                if (exists)
+                {
+                    string value = Preference.Get&lt;istring&gt;("active_user");
+                    Console.WriteLine("user {0}", value);
+                }
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Preference.Set(System.String,System.Object)">
+            <summary>
+            Sets a key-value pair representing the preference.
+            </summary>
+            <remarks>
+            If the key already exists in the preference, the old value will be overwritten with a new value.
+            Data types for supported values are: integer, double, string, and bool.
+            </remarks>
+            <param name="key">The name of the key to create/modify.</param>
+            <param name="value">The value corresponding to the key.</param>
+            <exception cref="T:System.ArgumentException">Thrown if the key is an invalid parameter.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <example>
+            <code>
+                Preference.Set("Option_enabled", true);
+                Preference.Set("active_user", "Joe");
+                Preference.Set("default_volume", 10);
+                Preference.Set("brightness", "0.6");
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Preference.Get``1(System.String)">
+            <summary>
+            Gets the value of a preference item with the specified key.
+            Note that this is a generic method.
+            </summary>
+            <typeparam name="T">The generic type to return.</typeparam>
+            <param name="key">The key of the preference.</param>
+            <returns>The value of the preference item if it is of the specified generic type.</returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Thrown if the key is not found.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if the key is an invalid parameter.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <example>
+            <code>
+                bool exists = Preference.Contains("active_user");
+                if (exists)
+                {
+                    string value = Preference.Get&lt;string&gt;("active_user");
+                    Console.WriteLine("user {0}", value);
+                }
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Preference.Remove(System.String)">
+            <summary>
+            Removes any preference value with the given key.
+            </summary>
+            <param name="key">The key to remove.</param>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Thrown if the key is not found.</exception>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <example>
+            <code>
+                bool exists = Preference.Contains("active_user");
+                if (exists)
+                {
+                    string value = Preference.Remove("active_user");
+                }
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Preference.RemoveAll">
+            <summary>
+            Removes all the key-value pairs from the preference.
+            </summary>
+            <exception cref="T:System.IO.IOException">Thrown when the method failed due to an internal I/O error.</exception>
+            <example>
+            <code>
+                Preference.Set("Option_enabled", true);
+                Preference.Set("active_user", "Joe");
+                Preference.Set("default_volume", 10);
+                Preference.Set("brightness", "0.6");
+                Preference.RemoveAll();
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Preference.EventContext">
+            <summary>
+            The class manages event handlers of the preference keys. The class enables having event handlers for individual preference keys.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.Preference.EventContext.Changed">
+             <summary>
+             Occurs whenever there is a change in the value of a preference key.
+             </summary>
+             <exception cref="T:System.ArgumentException">Thrown when the key does not exist or when there is an invalid parameter.</exception>
+             <exception cref="T:System.InvalidOperationException">Thrown when the bundle instance has been disposed.</exception>
+             <example>
+             <code>
+                 private static void Preference_PreferenceChanged(object sender, PreferenceChangedEventArgs e)
+                 {
+                     Console.WriteLine("key {0}", e.Key);
+                 }
+                 Preference.EventContext context = null;
+                 Preference.GetEventContext("active_user").TryGetTarget(out context);
+                 if(context != null)
+                 {
+                     context.Changed += Preference_PreferenceChanged;
+                 }
+            
+                 Preference.Set("active_user", "Poe");
+            
+                 Preference.GetEventContext("active_user").TryGetTarget(out context);
+                 if (context != null)
+                 {
+                     context.Changed -= Preference_PreferenceChanged;
+                 }
+             </code>
+             </example>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.PreferenceChangedEventArgs">
+            <summary>
+            This class is an event argument of the PreferenceChanged event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.PreferenceChangedEventArgs.Key">
+            <summary>
+            The key of the preference whose value is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

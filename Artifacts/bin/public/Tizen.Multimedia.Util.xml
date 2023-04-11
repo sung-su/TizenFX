@@ -1,0 +1,1339 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Multimedia.Util</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Multimedia.Util.BitmapFrame">
+            <summary>
+            Represents the image data returned by a decoder class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.BitmapFrame.Buffer">
+            <summary>
+            Gets the raw image data.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.BitmapFrame.Size">
+            <summary>
+            Gets the size of the image.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ColorSpaceTransform">
+            <summary>
+            Changes the colorspace of an image.
+            </summary>
+            <seealso cref="P:Tizen.Multimedia.Util.ColorSpaceTransform.ColorSpace"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ColorSpaceTransform.#ctor(Tizen.Multimedia.ColorSpace)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.ColorSpaceTransform"/> class.
+            </summary>
+            <param name="colorSpace">The colorspace of output image.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="colorSpace"/> is invalid.</exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="colorSpace"/> is not supported.</exception>
+            <seealso cref="P:Tizen.Multimedia.Util.ColorSpaceTransform.SupportedColorSpaces"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.ColorSpaceTransform.ColorSpace">
+            <summary>
+            Gets or sets the colorspace of the result image.
+            </summary>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is invalid.</exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="value"/> is not supported.</exception>
+            <seealso cref="P:Tizen.Multimedia.Util.ColorSpaceTransform.SupportedColorSpaces"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.ColorSpaceTransform.SupportedColorSpaces">
+            <summary>
+            Gets the supported colorspaces for <see cref="T:Tizen.Multimedia.Util.ColorSpaceTransform"/>.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.CropTransform">
+            <summary>
+            Crops an image.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.CropTransform.#ctor(Tizen.Multimedia.Rectangle)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.CropTransform"/> class.
+            </summary>
+            <param name="region">The crop region.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                The X-position of <paramref name="region"/> is less than zero.<br/>
+                -or-<br/>
+                The Y-position of <paramref name="region"/> is less than zero.<br/>
+                -or-<br/>
+                The width of <paramref name="region"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                The height of <paramref name="region"/> is less than or equal to zero.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.CropTransform.Region">
+            <summary>
+            Gets or sets the crop region.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                The X-position of <paramref name="value"/> is less than zero.<br/>
+                -or-<br/>
+                The Y-position of <paramref name="value"/> is less than zero.<br/>
+                -or-<br/>
+                The width of <paramref name="value"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                The height of <paramref name="value"/> is less than or equal to zero.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.FlipTransform">
+            <summary>
+            Flips an image.
+            </summary>
+            <seealso cref="T:Tizen.Multimedia.Rotation"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.FlipTransform.#ctor(Tizen.Multimedia.Flips)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.FlipTransform"/> class.
+            </summary>
+            <param name="flip">The value how to flip an image.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="flip"/> is invalid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="flip"/> is <see cref="F:Tizen.Multimedia.Flips.None"/>.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.FlipTransform.Flip">
+            <summary>
+            Gets or sets the value how to flip an image.
+            </summary>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is invalid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is <see cref="F:Tizen.Multimedia.Flips.None"/>.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.GifFrame">
+            <summary>
+            Represents the gif image data used to encode a gif image with <see cref="T:Tizen.Multimedia.Util.GifEncoder"/>.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.GifFrame.#ctor(System.Byte[],System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.GifFrame"/> class with a buffer and a delay.
+            </summary>
+            <param name="buffer">The raw image buffer to be encoded.</param>
+            <param name="delay">The delay for this image in milliseconds.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">The length of <paramref name="buffer"/> is zero.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.GifFrame.Buffer">
+            <summary>
+            Gets the raw image data.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.GifFrame.Delay">
+            <summary>
+            Gets or sets the delay for this image.
+            </summary>
+            <value>Time delay in milliseconds.</value>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ImageDecoder">
+            <summary>
+            This is a base class for image decoders.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.ImageDecoder.InputFormat">
+            <summary>
+            Gets the image format of this decoder.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageDecoder.SetColorSpace(Tizen.Multimedia.ColorSpace)">
+            <summary>
+            Sets the color-space to decode into. The default is <see cref="F:Tizen.Multimedia.ColorSpace.Rgba8888"/>.
+            </summary>
+            <param name="colorSpace">The value indicating color-space to decode into.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="colorSpace"/> is invalid.</exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="colorSpace"/> is not supported by the decoder.</exception>
+            <seealso cref="M:Tizen.Multimedia.Util.ImageUtil.GetSupportedColorSpaces(Tizen.Multimedia.Util.ImageFormat)"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageDecoder.DecodeAsync(System.String)">
+            <summary>
+            Decodes an image from the specified file.
+            </summary>
+            <param name="inputFilePath">The input file path from which to decode.</param>
+            <returns>A task that represents the asynchronous decoding operation.</returns>
+            <remarks>
+                Only Graphics Interchange Format(GIF) codec returns more than one frame.<br/>
+                <br/>
+                http://tizen.org/privilege/mediastorage is needed if <paramref name="inputFilePath"/> is relevant to the media storage.<br/>
+                http://tizen.org/privilege/externalstorage is needed if <paramref name="inputFilePath"/> is relevant to the external storage.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="inputFilePath"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="inputFilePath"/> is an empty string.<br/>
+                -or-<br/>
+                <paramref name="inputFilePath"/> is not a image file.
+            </exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="inputFilePath"/> does not exists.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller does not have required permission to access the path.</exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The format of <paramref name="inputFilePath"/> is not <see cref="P:Tizen.Multimedia.Util.ImageDecoder.InputFormat"/>.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.Util.ImageDecoder"/> has already been disposed of.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageDecoder.DecodeAsync(System.Byte[])">
+            <summary>
+            Decodes an image from the buffer.
+            </summary>
+            <param name="inputBuffer">The image buffer from which to decode.</param>
+            <returns>A task that represents the asynchronous decoding operation.</returns>
+            <remarks>Only Graphics Interchange Format(GIF) codec returns more than one frame.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="inputBuffer"/> is null.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="inputBuffer"/> is an empty array.</exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The format of <paramref name="inputBuffer"/> is not <see cref="P:Tizen.Multimedia.Util.ImageDecoder.InputFormat"/>.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.Util.ImageDecoder"/> has already been disposed of.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageDecoder.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the ImageDecoder.
+            </summary>
+            <param name="disposing">
+            true to release both managed and unmanaged resources; false to release only unmanaged resources.
+            </param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageDecoder.Dispose">
+            <summary>
+            Releases all resources used by the ImageDecoder.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.BmpDecoder">
+            <summary>
+            Provides the ability to decode Bitmap (BMP) encoded images.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.BmpDecoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.BmpDecoder"/> class.
+            </summary>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.Util.ImageDecoder.InputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Bmp"/>.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.PngDecoder">
+            <summary>
+            Provides the ability to decode the Portable Network Graphics (PNG) encoded images.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.PngDecoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.PngDecoder"/> class.
+            </summary>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.Util.ImageDecoder.InputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Png"/>.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.JpegDecoder">
+            <summary>
+            Provides the ability to decode the Joint Photographic Experts Group (JPEG) encoded images.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.JpegDecoder.DefaultJpegDownscale">
+            <summary>
+            A read-only field that represents the default value of <see cref="P:Tizen.Multimedia.Util.JpegDecoder.Downscale"/>.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.JpegDecoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.JpegDecoder"/> class.
+            </summary>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.Util.ImageDecoder.InputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Jpeg"/>.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.JpegDecoder.Downscale">
+            <summary>
+            Gets or sets the downscale at which the jpeg image should be decoded.
+            </summary>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is invalid.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.GifDecoder">
+            <summary>
+            Provides the ability to decode the Graphics Interchange Format (GIF) encoded images.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.GifDecoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.GifDecoder"/> class.
+            </summary>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.Util.ImageDecoder.InputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Gif"/>.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.WebPDecoder">
+            <summary>
+            Provides the ability to decode the WebP (Lossless and lossy compression for images on the web) encoded images.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.WebPDecoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.WebPDecoder"/> class.
+            </summary>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.Util.ImageDecoder.InputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.WebP"/>.
+            </remarks>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.HeifDecoder">
+            <summary>
+            Provides the ability to decode the HEIF (High Efficiency Image File Format) encoded images.
+            </summary>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.HeifDecoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.HeifDecoder"/> class.
+            </summary>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.Util.ImageDecoder.InputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Heif"/>.
+            </remarks>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.JpegXlDecoder">
+            <summary>
+            Provides the ability to decode the JPEG (Joint Photographic Experts Group) XL encoded images.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.JpegXlDecoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.JpegXlDecoder"/> class.
+            </summary>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.Util.ImageDecoder.InputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.JpegXl"/>.
+            </remarks>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ImageEncoder">
+            <summary>
+            This is a base class for image encoders.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat">
+            <summary>
+            Gets the image format of this encoder.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageEncoder.SetResolution(Tizen.Multimedia.Size)">
+            <summary>
+            Sets the resolution of the output image.
+            </summary>
+            <param name="resolution">The target resolution.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                The width of <paramref name="resolution"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                The height of <paramref name="resolution"/> is less than or equal to zero.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageEncoder.SetColorSpace(Tizen.Multimedia.ColorSpace)">
+            <summary>
+            Sets the color-space of the output image.
+            </summary>
+            <param name="colorSpace">The target color-space.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="colorSpace"/> is invalid.</exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="colorSpace"/> is not supported by the encoder.</exception>
+            <seealso cref="M:Tizen.Multimedia.Util.ImageUtil.GetSupportedColorSpaces(Tizen.Multimedia.Util.ImageFormat)"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageEncoder.EncodeAsync(System.Byte[],System.IO.Stream)">
+            <summary>
+            Encodes an image from a raw image buffer to a specified <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="inputBuffer">The image buffer to encode.</param>
+            <param name="outStream">The stream that the image is encoded to.</param>
+            <returns>A task that represents the asynchronous encoding operation.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="inputBuffer"/> is null.<br/>
+                -or-<br/>
+                <paramref name="outStream"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="inputBuffer"/> is an empty array.<br/>
+                -or-<br/>
+                <paramref name="outStream"/> is not writable.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The resolution is not set.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.Util.ImageEncoder"/> has already been disposed of.</exception>
+            <seealso cref="M:Tizen.Multimedia.Util.ImageEncoder.SetResolution(Tizen.Multimedia.Size)"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageEncoder.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the ImageEncoder.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageEncoder.Dispose">
+            <summary>
+            Releases all resources used by the ImageEncoder.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.BmpEncoder">
+            <summary>
+            Provides the ability to encode the Bitmap (BMP) format images.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.BmpEncoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.BmpEncoder"/> class.
+            </summary>
+            <remarks><see cref="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Bmp"/>.</remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.PngEncoder">
+            <summary>
+            Provides the ability to encode the Portable Network Graphics (PNG) format images.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngEncoder.DefaultCompression">
+            <summary>
+            A read-only field that represents the default value of <see cref="P:Tizen.Multimedia.Util.PngEncoder.Compression"/>.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.PngEncoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.PngEncoder"/> class.
+            </summary>
+            <remarks><see cref="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Png"/>.</remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.PngEncoder.#ctor(Tizen.Multimedia.Util.PngCompression)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.PngEncoder"/> class with <see cref="T:Tizen.Multimedia.Util.PngCompression"/>.
+            </summary>
+            <remarks><see cref="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Png"/>.</remarks>
+            <param name="compression">The compression level of the encoder.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="compression"/> is invalid.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.PngEncoder.Compression">
+            <summary>
+            Gets or sets the compression level of the png image.
+            </summary>
+            <value>The compression level. The default is <see cref="F:Tizen.Multimedia.Util.PngCompression.Level6"/>.</value>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is invalid.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.JpegEncoder">
+            <summary>
+            Provides the ability to encode the Joint Photographic Experts Group (JPEG) format images.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.JpegEncoder.DefaultQuality">
+            <summary>
+            A read-only field that represents the default value of <see cref="P:Tizen.Multimedia.Util.JpegEncoder.Quality"/>.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.JpegEncoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.JpegEncoder"/> class.
+            </summary>
+            <remarks><see cref="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Jpeg"/>.</remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.JpegEncoder.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.JpegEncoder"/> class with initial quality value.
+            </summary>
+            <param name="quality">The quality for JPEG image encoding; from 1(lowest quality) to 100(highest quality).</param>
+            <remarks><see cref="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Jpeg"/>.</remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="quality"/> is less than or equal to 0.<br/>
+                -or-<br/>
+                <paramref name="quality"/> is greater than 100.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.JpegEncoder.Quality">
+            <summary>
+            Gets or sets the quality of the encoded image.
+            </summary>
+            <value>
+            The quality of the output image. The default is 75.<br/>
+            Valid value is from 1(lowest quality) to 100(highest quality).
+            </value>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="value"/> is less than or equal to 0.<br/>
+                -or-<br/>
+                <paramref name="value"/> is greater than 100.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.GifEncoder">
+            <summary>
+            Provides the ability to encode the Graphics Interchange Format (GIF) format images.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.GifEncoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.GifEncoder"/> class.
+            </summary>
+            <remarks><see cref="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.Gif"/>.</remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.GifEncoder.EncodeAsync(System.Collections.Generic.IEnumerable{Tizen.Multimedia.Util.GifFrame},System.IO.Stream)">
+            <summary>
+            Encodes a Graphics Interchange Format (GIF) image from multiple raw image buffers to a specified <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="frames">The image frames to encode.</param>
+            <param name="outStream">The stream that the image is encoded to.</param>
+            <returns>A task that represents the asynchronous encoding operation.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="frames"/> is null.<br/>
+                -or-<br/>
+                <paramref name="outStream"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="frames"/> has no element(empty).<br/>
+                -or-<br/>
+                <paramref name="outStream"/> is not writable.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The resolution is not set.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.Util.ImageEncoder"/> has already been disposed of.</exception>
+            <seealso cref="M:Tizen.Multimedia.Util.ImageEncoder.SetResolution(Tizen.Multimedia.Size)"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.WebPEncoder">
+            <summary>
+            Provides the ability to encode the WebP (Lossless and lossy compression for images on the web) format images.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.WebPEncoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.WebPEncoder"/> class.
+            </summary>
+            <remarks><see cref="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.WebP"/>.</remarks>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.WebPEncoder.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.WebPEncoder"/> class with the information for lossless or lossy compression.
+            </summary>
+            <remarks><see cref="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.WebP"/>.</remarks>
+            <param name="lossless">
+            The flag determining whether the compression is lossless or lossy: true for lossless, false for lossy.<br/>
+            The default value is false.
+            </param>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.WebPEncoder.Lossless">
+            <summary>
+            Gets or sets the lossless or lossy WebP compression.
+            </summary>
+            <value>
+            The property determining whether the WebP compression is lossless or lossy.<br/>
+            The default is false(lossy).</value>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.JpegXlEncoder">
+            <summary>
+            Provides the ability to encode the JPEG(Joint Photographic Experts Group) XL format images.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.JpegXlEncoder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.JpegXlEncoder"/> class.
+            </summary>
+            <remarks><see cref="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.JpegXl"/>.</remarks>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.JpegXlEncoder.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.JpegXlEncoder"/> class for lossless or lossy compression.
+            </summary>
+            <remarks><see cref="P:Tizen.Multimedia.Util.ImageEncoder.OutputFormat"/> will be the <see cref="F:Tizen.Multimedia.Util.ImageFormat.JpegXl"/>.</remarks>
+            <param name="lossless">
+            The flag determining whether the compression is lossless or lossy: true for lossless, false for lossy.<br/>
+            The default value is false.
+            </param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.JpegXlEncoder.Lossless">
+            <summary>
+            Gets or sets the lossless or lossy JpegXl compression.
+            </summary>
+            <value>
+            The property determining whether the JpegXl compression is lossless or lossy.<br/>
+            The default is false(lossy).</value>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ImageFormat">
+            <summary>
+            Specifies image formats for <see cref="T:Tizen.Multimedia.Util.ImageDecoder"/>, <see cref="T:Tizen.Multimedia.Util.ImageEncoder"/> and <see cref="T:Tizen.Multimedia.Util.ImageUtil"/>.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageFormat.Jpeg">
+            <summary>
+            The JPEG(Joint Photographic Experts Group) format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageFormat.Png">
+            <summary>
+            The PNG(Portable Network Graphics) format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageFormat.Gif">
+            <summary>
+            The GIF(Graphics Interchange) Format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageFormat.Bmp">
+            <summary>
+            The Bitmap format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageFormat.WebP">
+            <summary>
+            The WebP format.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageFormat.Heif">
+            <summary>
+            The HEIF(High Efficiency Image Format) format.
+            </summary>
+            <remarks>ImageUtil supports Heif decoder only.</remarks>
+            <since_tizen> 9 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageFormat.JpegXl">
+            <summary>
+            The JPEG(Joint Photographic Experts Group) XL format.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ImageTransform">
+            <summary>
+            A base class for image transformations.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ImageTransformCollection">
+            <summary>
+            Represents a collection of <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> objects that can be individually accessed by index.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformCollection.#ctor">
+            <summary>
+            Initializes a new instance of the ImageTransformCollection class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.ImageTransformCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> to get or set.</param>
+            <value>The <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> at the specified index.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                index is less than 0.<br/>
+                -or-<br/>
+                index is equal to or greater than <see cref="P:Tizen.Multimedia.Util.ImageTransformCollection.Count"/>.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.ImageTransformCollection.Count">
+            <summary>
+            Gets the number of items contained in the TransformCollection.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformCollection.Add(Tizen.Multimedia.Util.ImageTransform)">
+            <summary>
+            Adds a <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> to the end of the collection.
+            </summary>
+            <param name="item">The <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> to add.</param>
+            <remarks>
+            <see cref="T:Tizen.Multimedia.Util.ImageTransformCollection"/> accepts null as a valid value for reference types and allows duplicate elements.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformCollection.Clear">
+            <summary>
+            Removes all items.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformCollection.Contains(Tizen.Multimedia.Util.ImageTransform)">
+            <summary>
+            Determines whether the <see cref="T:Tizen.Multimedia.Util.ImageTransformCollection"/> contains the specified item.
+            </summary>
+            <param name="item">The <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> to locate in the collection.</param>
+            <returns>true if the <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> is found in the collection; otherwise, false.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformCollection.CopyTo(Tizen.Multimedia.Util.ImageTransform[],System.Int32)">
+            <summary>
+            Copies the items of the collection to an array, starting at the specified array index.
+            </summary>
+            <param name="array">The one-dimensional array that is the destination of the items copied from the collection.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="arrayIndex"/> is less than 0.</exception>
+            <exception cref="T:System.ArgumentException">
+            The number of elements in the source collection is greater than the available space from arrayIndex to the end of the destination array.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformCollection.IndexOf(Tizen.Multimedia.Util.ImageTransform)">
+            <summary>
+            Determines the index of the specified item in the collection.
+            </summary>
+            <param name="item">The <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> to locate in the collection.</param>
+            <returns>The index of value if found in the <see cref="T:Tizen.Multimedia.Util.ImageTransformCollection"/>; otherwise, -1.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformCollection.Insert(System.Int32,Tizen.Multimedia.Util.ImageTransform)">
+            <summary>
+            Inserts a <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> into the collection at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="item"/> should be inserted.</param>
+            <param name="item">The <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> to insert into the collection.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="item"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                index is less than 0.<br/>
+                -or-<br/>
+                index is greater than <see cref="P:Tizen.Multimedia.Util.ImageTransformCollection.Count"/>.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformCollection.Remove(Tizen.Multimedia.Util.ImageTransform)">
+            <summary>
+            Removes the first occurrence of the specified <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> from the collection.
+            </summary>
+            <param name="item">The <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> to remove.</param>
+            <returns>true if <paramref name="item"/> was removed from the collection; otherwise, false.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index to remove.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                index is less than 0.<br/>
+                -or-<br/>
+                index is equal to or greater than <see cref="P:Tizen.Multimedia.Util.ImageTransformCollection.Count"/>.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that can iterate through the collection.
+            </summary>
+            <returns>An enumerator that can be used to iterate through the collection.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ImageTransformer">
+            <summary>
+            Provides the ability to transform an image.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.ImageTransformer"/> class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformer.TransformAsync(Tizen.Multimedia.MediaPacket,Tizen.Multimedia.Util.ImageTransform)">
+            <summary>
+            Transforms an image with <see cref="T:Tizen.Multimedia.Util.ImageTransform"/>.
+            </summary>
+            <param name="source"><see cref="T:Tizen.Multimedia.MediaPacket"/> to transform. The <see cref="P:Tizen.Multimedia.MediaPacket.Format"/> of this <paramref name="source"/> must be <see cref="T:Tizen.Multimedia.VideoMediaFormat"/>.</param>
+            <param name="item"><see cref="T:Tizen.Multimedia.Util.ImageTransform"/> to apply.</param>
+            <returns>A task that represents the asynchronous transforming operation.</returns>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="source"/> is null.<br/>
+                -or-<br/>
+                <paramref name="item"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException"><paramref name="source"/> is not video format.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.Util.ImageTransformer"/> has already been disposed of.</exception>
+            <exception cref="T:System.InvalidOperationException">Failed to apply <see cref="T:Tizen.Multimedia.Util.ImageTransform"/>.</exception>
+            <exception cref="T:System.NotSupportedException">Specified transformation is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformer.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the ImageTransformer.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformer.Dispose">
+            <summary>
+            Releases all resources used by the ImageTransformer.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ImageTransformGroup">
+            <summary>
+            Represents a <see cref="T:Tizen.Multimedia.Util.ImageTransform"/> that is a composite of the transforms.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.ImageTransformGroup.Children">
+            <summary>
+            Gets or sets the <see cref="T:Tizen.Multimedia.Util.ImageTransformCollection"/>.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageTransformGroup.#ctor">
+            <summary>
+            Initializes a new instance of the ImageTransformGroup class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ImageUtil">
+            <summary>
+            Provides utilities for images.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageUtil.GetSupportedColorSpaces(Tizen.Multimedia.Util.ImageFormat)">
+            <summary>
+            Retrieves supported colorspaces for a <see cref="T:Tizen.Multimedia.Util.ImageFormat"/> that represents formats for <see cref="T:Tizen.Multimedia.Util.ImageEncoder"/> and <see cref="T:Tizen.Multimedia.Util.ImageDecoder"/>.
+            </summary>
+            <returns>An IEnumerable of <see cref="T:Tizen.Multimedia.ColorSpace"/> representing the supported color-spaces.</returns>
+            <param name="format">The <see cref="T:Tizen.Multimedia.Util.ImageFormat"/>.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="format"/> is invalid.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageUtil.CalculateBufferSize(Tizen.Multimedia.Size,Tizen.Multimedia.ColorSpace)">
+            <summary>
+            Calculates the size of the image buffer for the specified resolution and color-space.
+            </summary>
+            <param name="resolution">The resolution of the image.</param>
+            <param name="colorSpace"><see cref="T:Tizen.Multimedia.ColorSpace"/> of the image.</param>
+            <returns>The buffer size.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                width of <paramref name="resolution"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                height of <paramref name="resolution"/> is less than or equal to zero.
+            </exception>
+            <exception cref="T:System.ArgumentException"><paramref name="colorSpace"/> is invalid.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ImageUtil.GetColor(System.Byte[],Tizen.Multimedia.Size)">
+            <summary>
+            Extracts representative color from an image buffer.
+            </summary>
+            <param name="buffer">Raw image buffer.</param>
+            <param name="size">Resolution of the image.</param>
+            <remarks>The image should be <see cref="F:Tizen.Multimedia.ColorSpace.Rgb888"/>.</remarks>
+            <returns>The representative color of the image.</returns>
+            <see cref="T:Tizen.Multimedia.Util.BitmapFrame"/>
+            <exception cref="T:System.ArgumentNullException"><paramref name="buffer"/> is null.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="buffer"/> is empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                width of <paramref name="size"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                height of <paramref name="size"/> is less than or equal to zero.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.JpegDownscale">
+            <summary>
+            Specifies the JPEG Downscale options for decoding.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.JpegDownscale.None">
+            <summary>
+            No downscale.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.JpegDownscale.OneHalf">
+            <summary>
+            1/2 downscale.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.JpegDownscale.OneFourth">
+            <summary>
+            1/4 downscale.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.JpegDownscale.OneEighth">
+            <summary>
+            1/8 downscale.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.PngCompression">
+            <summary>
+            Specifies the PNG compression levels.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngCompression.None">
+            <summary>
+            No Compression.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngCompression.Level1">
+            <summary>
+            Compression Level 1. Best speed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngCompression.Level2">
+            <summary>
+            Compression Level 2.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngCompression.Level3">
+            <summary>
+            Compression Level 3.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngCompression.Level4">
+            <summary>
+            Compression Level 4.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngCompression.Level5">
+            <summary>
+            Compression Level 5.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngCompression.Level6">
+            <summary>
+            Compression Level 6.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngCompression.Level7">
+            <summary>
+            Compression Level 7.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngCompression.Level8">
+            <summary>
+            Compression Level 8.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.PngCompression.Level9">
+            <summary>
+            Compression Level 9.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ImageRotation">
+            <summary>
+            Specifies how an image is rotated or flipped.
+            </summary>
+            <seealso cref="T:Tizen.Multimedia.Util.RotateTransform"/>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageRotation.Rotate0">
+            <summary>
+            No rotation.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageRotation.Rotate90">
+            <summary>
+            Rotate 90 degree clockwise.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageRotation.Rotate180">
+            <summary>
+            Rotate 180 degree clockwise.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageRotation.Rotate270">
+            <summary>
+            Rotate 270 degree clockwise.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageRotation.FlipHorizontal">
+            <summary>
+            Flip horizontally.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageRotation.FlipVertical">
+            <summary>
+            Flip vertically.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.YV12">
+            <summary>
+            YV12 - YCrCb planar format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.Yuv422">
+            <summary>
+            YUV422 - planar.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.I420">
+            <summary>
+            YUV420 - planar.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.NV12">
+            <summary>
+            NV12- planar.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.Uyvy">
+            <summary>
+            UYVY - packed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.Yuyv">
+            <summary>
+            YUYV - packed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.Rgb565">
+            <summary>
+            RGB565, high-byte is blue.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.Rgb888">
+            <summary>
+            RGB888, high-byte is blue.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.Argb8888">
+            <summary>
+            ARGB8888, high-byte is blue.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.Bgra8888">
+            <summary>
+            BGRA8888, high-byte is alpha.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.Rgba8888">
+            <summary>
+            RGBA8888, high-byte is alpha.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.Bgrx8888">
+            <summary>
+            BGRX8888, high-byte is X.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.NV21">
+            <summary>
+            NV21- planar.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.NV16">
+            <summary>
+            NV16- planar.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.Util.ImageColorSpace.NV61">
+            <summary>
+            NV61- planar.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ResizeTransform">
+            <summary>
+            Resizes an image.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ResizeTransform.#ctor(Tizen.Multimedia.Size)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.ResizeTransform"/> class.
+            </summary>
+            <param name="size">The size that an image is resized to.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                The width of <paramref name="size"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                The height of <paramref name="size"/> is less than or equal to zero.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.ResizeTransform.Size">
+            <summary>
+            Gets or sets the size that an image is resized to.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                The width of <paramref name="value"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                The height of <paramref name="value"/> is less than or equal to zero.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.RotateTransform">
+            <summary>
+            Rotates an image.
+            </summary>
+            <seealso cref="P:Tizen.Multimedia.Util.RotateTransform.Rotation"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.RotateTransform.#ctor(Tizen.Multimedia.Rotation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Multimedia.Util.RotateTransform"/> class.
+            </summary>
+            <param name="rotation">The value how to rotate an image.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="rotation"/> is invalid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="rotation"/> is <see cref="F:Tizen.Multimedia.Rotation.Rotate90"/>.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.RotateTransform.Rotation">
+            <summary>
+            Gets or sets the value how to rotate an image.
+            </summary>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is invalid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is <see cref="F:Tizen.Multimedia.Rotation.Rotate90"/>.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ThumbnailExtractionResult">
+            <summary>
+            Represents the result of the thumbnail extraction.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.ThumbnailExtractionResult.RawData">
+            <summary>
+            The thumbnail data.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Util.ThumbnailExtractionResult.Size">
+            <summary>
+            The size of the thumbnail.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.Util.ThumbnailExtractor">
+            <summary>
+            Provides the ability to extract the thumbnail from media files.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ThumbnailExtractor.ExtractAsync(System.String)">
+            <summary>
+            Extracts the thumbnail for the given media with the specified path.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>A task that represents the asynchronous extracting operation.</returns>
+            <remarks>The size of the thumbnail will be the default size (320x240).</remarks>
+            <param name="path">The path of the media file to extract the thumbnail.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exist.</exception>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller does not have required privilege for accessing the <paramref name="path"/>.</exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The specified file is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ThumbnailExtractor.ExtractAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Extracts the thumbnail for the given media with the specified path.
+            </summary>
+            <returns>A task that represents the asynchronous extracting operation.</returns>
+            <remarks>The size of the thumbnail will be the default size(320x240).</remarks>
+            <param name="path">The path of the media file to extract the thumbnail.</param>
+            <param name="cancellationToken">The token to stop the operation.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exist.</exception>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller does not have required privilege for accessing the <paramref name="path"/>.</exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The specified file is not supported.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ThumbnailExtractor.ExtractAsync(System.String,Tizen.Multimedia.Size)">
+            <summary>
+            Extracts the thumbnail for the given media with the specified path and size.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>A task that represents the asynchronous extracting operation.</returns>
+            <remarks>
+            If the width is not a multiple of 8, it can be changed by the inner process.<br/>
+            The width will be a multiple of 8 greater than the set value.
+            </remarks>
+            <param name="path">The path of the media file to extract the thumbnail.</param>
+            <param name="size">The size of the thumbnail.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exist.</exception>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller does not have required privilege for accessing the <paramref name="path"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                The width or the height of <paramref name="size"/> is less than or equal to zero.
+            </exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The specified file is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ThumbnailExtractor.ExtractAsync(System.String,Tizen.Multimedia.Size,System.Threading.CancellationToken)">
+            <summary>
+            Extracts the thumbnail for the given media with the specified path and size.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>A task that represents the asynchronous extracting operation.</returns>
+            <remarks>
+            If the width is not a multiple of 8, it can be changed by the inner process.<br/>
+            The width will be a multiple of 8 greater than the set value.
+            </remarks>
+            <param name="path">The path of the media file to extract the thumbnail.</param>
+            <param name="size">The size of the thumbnail.</param>
+            <param name="cancellationToken">The token to stop the operation.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exist.</exception>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller does not have required privilege for accessing the <paramref name="path"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                The width or the height of <paramref name="size"/> is less than or equal to zero.
+            </exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The specified file is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ThumbnailExtractor.Extract(System.String)">
+            <summary>
+            Extracts the thumbnail for the given media with the specified path and size.
+            The generated thumbnail will be returned in <see cref="T:Tizen.Multimedia.Util.ThumbnailExtractionResult"/>.
+            </summary>
+            <remarks>
+            The size of generated thumbnail will be 320x240.<br/>
+            If the size of <paramref name="path"/> has different ratio from 320x240 (approximately 1.33:1),<br/>
+            thumbnail is generated in a way to keep the ratio of <paramref name="path"/>, which is based on short axis of <paramref name="path"/>.<br/>
+            For example, if the size of <paramref name="path"/> is 900x500 (1.8:1), the size of generated thumbnail is 432x240(1.8:1).<br/>
+            To set the size different from 320x240, please use <see cref="M:Tizen.Multimedia.Util.ThumbnailExtractor.Extract(System.String,Tizen.Multimedia.Size)"/>.<br/>
+            <br/>
+            If you want to access internal storage, you should add privilege http://tizen.org/privilege/mediastorage. <br/>
+            If you want to access external storage, you should add privilege http://tizen.org/privilege/externalstorage.
+            </remarks>
+            <privilege>http://tizen.org/privilege/mediastorage</privilege>
+            <privilege>http://tizen.org/privilege/externalstorage</privilege>
+            <param name="path">The path of the media file to extract the thumbnail.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exist.</exception>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The specified file is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller has no required privilege.</exception>
+            <returns>The result of extracting operation.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ThumbnailExtractor.Extract(System.String,Tizen.Multimedia.Size)">
+            <summary>
+            Extracts the thumbnail for the given media with the specified path and size.
+            The generated thumbnail will be returned in <see cref="T:Tizen.Multimedia.Util.ThumbnailExtractionResult"/>.
+            </summary>
+            <remarks>
+            The size of generated thumbnail will be <paramref name="size"/>.<br/>
+            But, if the size of <paramref name="path"/> has different ratio with <paramref name="size"/>,<br/>
+            thumbnail will be generated in a way to keep the ratio of <paramref name="path"/>, which based on short axis of <paramref name="path"/>.<br/>
+            For example, if the size of <paramref name="path"/> is 900x500 (1.8:1)) and <paramref name="size"/> is 320x240,<br/>
+            the size of generated thumbnail is 432x240(1.8:1).<br/>
+            <br/>
+            If you want to access internal storage, you should add privilege http://tizen.org/privilege/mediastorage. <br/>
+            If you want to access external storage, you should add privilege http://tizen.org/privilege/externalstorage.
+            </remarks>
+            <privilege>http://tizen.org/privilege/mediastorage</privilege>
+            <privilege>http://tizen.org/privilege/externalstorage</privilege>
+            <param name="path">The path of the media file to extract the thumbnail.</param>
+            <param name="size">The size of the thumbnail.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> is null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exist.</exception>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                The width or the height of <paramref name="size"/> is less than or equal to zero.
+            </exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The specified file is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller has no required privilege.</exception>
+            <returns>The result of extracting operation.</returns>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ThumbnailExtractor.Extract(System.String,System.String)">
+            <summary>
+            Extracts the thumbnail for the given media with the specified path and size.
+            The generated thumbnail will be saved in <paramref name="resultThumbnailPath"/>.
+            </summary>
+            <remarks>
+            The size of <paramref name="resultThumbnailPath"/> image will be 320x240.<br/>
+            If the size of <paramref name="path"/> has different ratio with 320x240 (approximately 1.33:1),<br/>
+            thumbnail is generated in a way to keep the ratio of <paramref name="path"/>, which is based on short axis of <paramref name="path"/>.<br/>
+            For example, if the size of <paramref name="path"/> is 900x500 (1.8:1), the size of <paramref name="resultThumbnailPath"/> is 432x240(1.8:1).<br/>
+            To set the size different from 320x240, please use <see cref="M:Tizen.Multimedia.Util.ThumbnailExtractor.Extract(System.String,Tizen.Multimedia.Size,System.String)"/>.<br/>
+            <br/>
+            If you want to access internal storage, you should add privilege http://tizen.org/privilege/mediastorage. <br/>
+            If you want to access external storage, you should add privilege http://tizen.org/privilege/externalstorage.
+            </remarks>
+            <privilege>http://tizen.org/privilege/mediastorage</privilege>
+            <privilege>http://tizen.org/privilege/externalstorage</privilege>
+            <param name="path">The path of the media file to extract the thumbnail.</param>
+            <param name="resultThumbnailPath">The path to save the generated thumbnail.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="path"/> or <paramref name="resultThumbnailPath"/> is invalid.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> or <paramref name="resultThumbnailPath"/> is null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exist.</exception>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The specified file is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller has no required privilege.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Util.ThumbnailExtractor.Extract(System.String,Tizen.Multimedia.Size,System.String)">
+            <summary>
+            Extracts the thumbnail for the given media with the specified path and size.
+            The generated thumbnail will be saved in <paramref name="resultThumbnailPath"/>.
+            </summary>
+            <remarks>
+            The size of <paramref name="resultThumbnailPath"/> image will be <paramref name="size"/>.<br/>
+            But, if the size of <paramref name="path"/> has different ratio with <paramref name="size"/>,<br/>
+            thumbnail will be generated in a way to keep the ratio of <paramref name="path"/>, which based on short axis of <paramref name="path"/>.<br/>
+            For example, if the size of <paramref name="path"/> is 900x500 (1.8:1) and <paramref name="size"/> is 320x240,<br/>
+            the size of <paramref name="resultThumbnailPath"/> is 432x240(1.8:1).<br/>
+            <br/>
+            If you want to access internal storage, you should add privilege http://tizen.org/privilege/mediastorage. <br/>
+            If you want to access external storage, you should add privilege http://tizen.org/privilege/externalstorage.
+            </remarks>
+            <privilege>http://tizen.org/privilege/mediastorage</privilege>
+            <privilege>http://tizen.org/privilege/externalstorage</privilege>
+            <param name="path">The path of the media file to extract the thumbnail.</param>
+            <param name="size">The size of the thumbnail.</param>
+            <param name="resultThumbnailPath">The path to save the generated thumbnail.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="path"/> or <paramref name="resultThumbnailPath"/> is invalid.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="path"/> or <paramref name="resultThumbnailPath"/> is null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException"><paramref name="path"/> does not exist.</exception>
+            <exception cref="T:System.InvalidOperationException">An internal error occurs.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                The width or the height of <paramref name="size"/> is less than or equal to zero.
+            </exception>
+            <exception cref="T:Tizen.Multimedia.FileFormatException">The specified file is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller has no required privilege.</exception>
+            <since_tizen> 6 </since_tizen>
+        </member>
+    </members>
+</doc>

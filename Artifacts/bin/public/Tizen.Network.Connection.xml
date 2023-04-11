@@ -1,0 +1,1627 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Network.Connection</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Network.Connection.CellularProfile">
+            <summary>
+            This is the CellularProfile class. It provides functions to manage the cellular profile.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Connection.CellularProfile.Finalize">
+            <summary>
+            Destroy the CellularProfile object
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularProfile.Apn">
+            <summary>
+            The APN (access point name).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Cellular access point name.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown during set when a value is null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when an operation is performed on a disposed object.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularProfile.HomeUri">
+            <summary>
+            The home URL.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Cellular home URL.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown during set when a value is null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when an operation is performed on a disposed object.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularProfile.ServiceType">
+            <summary>
+            The service type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Cellular service type.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when an operation is performed on a disposed object.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularProfile.PdnType">
+            <summary>
+            The cellular pdn type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Cellular pdn type.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when an operation is performed on a disposed object.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularProfile.RoamingPdnType">
+            <summary>
+            The cellular roaming pdn type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Cellular roaming pdn type.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when a operation is performed on a disposed object.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularProfile.IsRoaming">
+            <summary>
+            Checks whether the connection is in roaming state.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+            <value> True if the cellular profile is in roaming state, otherwise false.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularProfile.CellularAuthInfo">
+            <summary>
+            The cellular authentication information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Instance of CellularAuthInformation.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown during set when a value is null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when an operation is performed on a disposed object.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularProfile.Hidden">
+            <summary>
+            Checks whether the profile is hidden.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>True if the cellular profile is hidden, otherwise false.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularProfile.Editable">
+            <summary>
+            Checks whether the profile is editable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>True if the cellular profile is editable, otherwise false.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularProfile.IsDefault">
+            <summary>
+            Checks whether the profile is default.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>True if the cellular profile is default, otherwise false.</value>
+        </member>
+        <member name="T:Tizen.Network.Connection.CellularAuthInformation">
+            <summary>
+            This is the CellularAuthInformation class. It provides the properties to get and set the cellular authentication information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Connection.CellularAuthInformation.#ctor">
+            <summary>
+            Default constructor. Initializes an object of the CellularAuthInformation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularAuthInformation.UserName">
+            <summary>
+            The user name.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Cellular user name.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularAuthInformation.Password">
+            <summary>
+            The password.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Cellular password.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.CellularAuthInformation.AuthType">
+            <summary>
+            The authentication type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Cellular authentication type.</value>
+        </member>
+        <member name="T:Tizen.Network.Connection.SafeConnectionHandle">
+            <summary>
+            This class manages the connection handle resources.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Connection.SafeConnectionHandle.IsInvalid">
+            <summary>
+            Checks whether the handle value is valid or not.
+            </summary>
+            <value>True if the handle is invalid, otherwise false.</value>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Connection.SafeConnectionHandle.ReleaseHandle">
+            <summary>
+            Frees the handle.
+            </summary>
+            <returns>True if the handle is released successfully, otherwise false.</returns>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionManager">
+            <summary>
+            This is the ConnectionManager class. It provides functions to manage data connections.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.Connection.ConnectionManager.ConnectionTypeChanged">
+            <summary>
+            An event is called when the type of the current connection is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+        </member>
+        <member name="E:Tizen.Network.Connection.ConnectionManager.EthernetCableStateChanged">
+            <summary>
+            An event for the ethernet cable is plugged [in/out] event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+        </member>
+        <member name="E:Tizen.Network.Connection.ConnectionManager.IPAddressChanged">
+            <summary>
+            An event is called when the IP address is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+        </member>
+        <member name="E:Tizen.Network.Connection.ConnectionManager.ProxyAddressChanged">
+            <summary>
+            An event is called when the proxy address is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionManager.GetConnectionHandle">
+            <summary>
+            Gets the connection handle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Instance of SafeConnectionHandle.</returns>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionManager.GetIPAddress(Tizen.Network.Connection.AddressFamily)">
+            <summary>
+            Gets the IP address of the current connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="family">The address family.</param>
+            <returns>IP address of the connection (global address in case of IPv6).</returns>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionManager.GetAllIPv6Addresses(Tizen.Network.Connection.ConnectionType)">
+            <summary>
+            Gets all the IPv6 addresses of the current connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type">The type of current network connection.</param>
+            <returns>A list of IPv6 addresses of the connection.</returns>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionManager.GetProxy(Tizen.Network.Connection.AddressFamily)">
+            <summary>
+            Gets the proxy address of the current connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="family">The address family.</param>
+            <returns>Proxy address of the connection.</returns>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionManager.GetMacAddress(Tizen.Network.Connection.ConnectionType)">
+            <summary>
+            Gets the MAC address of the Wi-Fi or ethernet.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type">The type of current network connection.</param>
+            <returns>MAC address of the Wi-Fi or ethernet.</returns>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when value is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionManager.GetStatistics(Tizen.Network.Connection.ConnectionType,Tizen.Network.Connection.StatisticsType)">
+            <summary>
+            Gets the statistics information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="connectionType">The type of connection (only WiFi and Cellular are supported).</param>
+            <param name="statisticsType">The type of statistics.</param>
+            <returns>The statistics information associated with statisticsType.</returns>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when value is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance is invalid or when a method fails due to invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionManager.ResetStatistics(Tizen.Network.Connection.ConnectionType,Tizen.Network.Connection.StatisticsType)">
+            <summary>
+            Resets the statistics information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="connectionType">The type of connection (only WiFi and Cellular are supported).</param>
+            <param name="statisticsType">The type of statistics.</param>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionManager.AddRoute(Tizen.Network.Connection.AddressFamily,System.String,System.Net.IPAddress,System.Net.IPAddress)">
+            <summary>
+            Adds a route to the routing table.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="family">The address family.</param>
+            <param name="interfaceName">The name of the network interface.</param>
+            <param name="hostAddress">The IP address of the host.</param>
+            <param name="gateway">The gateway address.</param>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/network.route</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.route</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when an interfaceName or a hostAddress or a gateway is null.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionManager.RemoveRoute(Tizen.Network.Connection.AddressFamily,System.String,System.Net.IPAddress,System.Net.IPAddress)">
+            <summary>
+            Removes a route from the routing table.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="family">The address family.</param>
+            <param name="interfaceName">The name of network interface.</param>
+            <param name="hostAddress">The IP address of the host.</param>
+            <param name="gateway">The gateway address.</param>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/network.route</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.route</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when an interfaceName or a hostAddress or a gateway is null.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionManager.CurrentConnection">
+            <summary>
+            The type and state of the current profile for data connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Instance of ConnectionItem.</value>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionManager.CreateCellularProfile(Tizen.Network.Connection.ConnectionProfileType,System.String)">
+            <summary>
+            Creates a cellular profile handle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type">The type of profile. Cellular profile type is supported.</param>
+            <param name="keyword">The keyword included in profile name.</param>
+            <returns>CellularProfile object.</returns>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a keyword value is null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a method fails due to invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionManager.CellularState">
+            <summary>
+            The state of the cellular connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Cellular network state.</value>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionManager.WiFiState">
+            <summary>
+            The state of the Wi-Fi connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>WiFi connection state.</value>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionManager.BluetoothState">
+            <summary>
+            The state of the Bluetooth connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Bluetooth connection state.</value>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionManager.EthernetState">
+            <summary>
+            The Ethernet connection state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Ethernet connection state.</value>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionManager.EthernetCableState">
+            <summary>
+            Checks if the ethernet cable is attached or not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Ethernet cable state.</value>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionItem">
+            <summary>
+            This class contains connection information, such as connection type and state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionItem.Type">
+            <summary>
+            The type of the current profile for data connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Data connection current profile.</value>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionItem.State">
+            <summary>
+            The state of the current profile for data connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Connection state of the current connection type.</value>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionTypeEventArgs">
+            <summary>
+            An extended EventArgs class, which contains changed connection type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionTypeEventArgs.ConnectionType">
+            <summary>
+            The connection type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Type of the connection.</value>
+        </member>
+        <member name="T:Tizen.Network.Connection.EthernetCableStateEventArgs">
+            <summary>
+            An extended EventArgs class, which contains changed ethernet cable state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Connection.EthernetCableStateEventArgs.EthernetCableState">
+            <summary>
+            The ethernet cable state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Attached or detached state of the ethernet cable.</value>
+        </member>
+        <member name="T:Tizen.Network.Connection.AddressEventArgs">
+            <summary>
+            An extended EventArgs class, which contains changed address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Connection.AddressEventArgs.IPv4Address">
+            <summary>
+            The IPV4 address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>IP address in the format of the IPV4 syntax.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.AddressEventArgs.IPv6Address">
+            <summary>
+            The IPV6 address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>IP address in the format of the IPV6 syntax.</value>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionProfile">
+            <summary>
+            This is the ConnectionProfile class. It provides event and properties of the connection profile.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Network.Connection.ConnectionProfile.ProfileStateChanged">
+            <summary>
+            The event is called when the state of profile is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfile.Finalize">
+            <summary>
+            Destroy the ConnectionProfile object
+            </summary>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfile.Dispose">
+            <summary>
+            Disposes the memory allocated to unmanaged resources.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionProfile.Id">
+            <summary>
+            The profile ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Unique ID of the profile.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionProfile.Name">
+            <summary>
+            The profile name.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>User friendly name of the profile.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionProfile.Type">
+            <summary>
+            The network type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Profile type of the network connection.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionProfile.InterfaceName">
+            <summary>
+            The name of the network interface.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Network interface name, for example, eth0 and pdp0.</value>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfile.Refresh">
+            <summary>
+            Refreshes the profile information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when an operation is performed on a disposed object.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfile.GetState(Tizen.Network.Connection.AddressFamily)">
+            <summary>
+            Gets the network state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="family">The address family.</param>
+            <returns>The network state.</returns>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when an operation is performed on a disposed object.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionProfile.ProxyType">
+            <summary>
+            The Proxy type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Proxy type of the connection.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown during set when a operation is performed on a disposed object.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionProfile.ProxyAddress">
+            <summary>
+            The proxy address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Proxy address of the connection.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown during set when a value is null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when an operation is performed on a disposed object.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionProfile.IPv4Settings">
+            <summary>
+            The address information (IPv4).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Instance of IAddressInformation with IPV4 address.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionProfile.IPv6Settings">
+            <summary>
+            The address information (IPv6).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Instance of IAddressInformation with IPV6 address.</value>
+        </member>
+        <member name="T:Tizen.Network.Connection.ProfileStateEventArgs">
+            <summary>
+            An extended EventArgs class, which contains changed profile state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Connection.ProfileStateEventArgs.State">
+            <summary>
+            The profile state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>State type of the connection profile.</value>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionProfileManager">
+            <summary>
+            This is the ConnectionProfileManager class. It provides functions to add, get, connect, or modify the connection profile.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfileManager.AddCellularProfile(Tizen.Network.Connection.CellularProfile)">
+            <summary>
+            Adds a new profile.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="profile">The cellular profile object.</param>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a value is null.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when connection or profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfileManager.GetProfileListAsync(Tizen.Network.Connection.ProfileListType)">
+            <summary>
+            Gets the list of the profile with the profile list type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type">The type of profile.</param>
+            <returns>List of connection profile objects.</returns>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when value is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance has been disposed.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfileManager.ConnectProfileAsync(Tizen.Network.Connection.ConnectionProfile)">
+            <summary>
+            Opens a connection of profile asynchronously.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="profile">The connection profile object.</param>
+            <returns>A task indicates whether the ConnectProfileAsync method is done successfully or not.</returns>
+            <remarks>
+            This method must be called from MainThread.
+            </remarks>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a value is null.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection or a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfileManager.DisconnectProfileAsync(Tizen.Network.Connection.ConnectionProfile)">
+            <summary>
+            Closes a connection of profile.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="profile">The connection profile object.</param>
+            <returns>A task indicates whether the DisconnectProfileAsync method is done successfully or not.</returns>
+            <remarks>
+            This method must be called from MainThread.
+            </remarks>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/network.set</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a value is null.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection or a profile instance is invalid or when a method fails due to invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfileManager.RemoveProfile(Tizen.Network.Connection.ConnectionProfile)">
+            <summary>
+            Removes an existing profile.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="profile">The connection profile object.</param>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a value is null.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection or a profile instance is invalid or when a method fails due to invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfileManager.UpdateProfile(Tizen.Network.Connection.ConnectionProfile)">
+            <summary>
+            Updates an existing profile.
+            When a profile is changed, these changes will be not applied to the ConnectionProfileManager immediately.
+            When you call this function, your changes affect the ConnectionProfileManager and the existing profile is updated.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="profile">The connection profile object.</param>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a value is null.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection or a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfileManager.GetCurrentProfile">
+            <summary>
+            Gets the name of the default profile.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>Connection profile object.</returns>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfileManager.GetDefaultCellularProfile(Tizen.Network.Connection.CellularServiceType)">
+            <summary>
+            Gets the default profile, which provides the given cellular service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type">The cellular service type.</param>
+            <returns>Connection profile object.</returns>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Network.Connection.ConnectionProfileManager.SetDefaultCellularProfile(Tizen.Network.Connection.CellularServiceType,Tizen.Network.Connection.ConnectionProfile)">
+            <summary>
+            Sets the default profile, which provides the given cellular service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="type">The cellular service type.</param>
+            <param name="profile">The connection profile object.</param>
+            <returns>A task indicates whether the SetDefaultCellularProfile method is done successfully or not.</returns>
+            <remarks>
+            This method must be called from MainThread.
+            </remarks>
+            <privilege>http://tizen.org/privilege/network.get</privilege>
+            <privilege>http://tizen.org/privilege/network.profile</privilege>
+            <feature>http://tizen.org/feature/network.telephony</feature>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <feature>http://tizen.org/feature/network.tethering.bluetooth</feature>
+            <feature>http://tizen.org/feature/network.ethernet</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when a permission is denied.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a value is null.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when memory is not enough to continue execution.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a connection or a profile instance is invalid or when a method fails due to invalid operation.</exception>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionProfileStateEventArgs">
+            <summary>
+            An extended EventArgs class, which contains the state of changed connection profile.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Connection.ConnectionProfileStateEventArgs.ConnectionProfileState">
+            <summary>
+            The connection profile state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>State of the connection profile.</value>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionType">
+            <summary>
+            Enumeration for the connection type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionType.Disconnected">
+            <summary>
+            Disconnected
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionType.WiFi">
+            <summary>
+            Wi-Fi type
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionType.Cellular">
+            <summary>
+            Cellular type
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionType.Ethernet">
+            <summary>
+            Ethernet type
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionType.Bluetooth">
+            <summary>
+            Bluetooth type
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionType.NetProxy">
+            <summary>
+            Proxy type for Internet connection
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.AddressFamily">
+            <summary>
+            Enumeration for the address family.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.AddressFamily.IPv4">
+            <summary>
+            IPv4 Address
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.AddressFamily.IPv6">
+            <summary>
+            IPv6 Address
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.CellularState">
+            <summary>
+            Enumeration for the cellular network state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularState.OutOfService">
+            <summary>
+            Out of service
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularState.FlightMode">
+            <summary>
+            Flight mode
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularState.RoamingOff">
+            <summary>
+            Roaming is turned off
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularState.CallOnlyAvailable">
+            <summary>
+            Call is only available
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularState.Available">
+            <summary>
+            Available but not connected yet
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularState.Connected">
+            <summary>
+            Connected
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionState">
+            <summary>
+            Enumeration for the connection state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionState.Deactivated">
+            <summary>
+            Deactivated
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionState.Disconnected">
+            <summary>
+            Disconnected
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionState.Connected">
+            <summary>
+            Connected
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.EthernetCableState">
+            <summary>
+            Enumeration for the attached or detached state of the ethernet cable.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.EthernetCableState.Detached">
+            <summary>
+            Ethernet cable is detached
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.EthernetCableState.Attached">
+            <summary>
+            Ethernet cable is attached
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.StatisticsType">
+            <summary>
+            Enumeration for the statistics type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.StatisticsType.LastReceivedData">
+            <summary>
+            Last received data
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.StatisticsType.LastSentData">
+            <summary>
+            Last sent data
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.StatisticsType.TotalReceivedData">
+            <summary>
+            Total received data
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.StatisticsType.TotalSentData">
+            <summary>
+            Total sent data
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionProfileType">
+            <summary>
+            Enumeration for the network connection type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionProfileType.Cellular">
+            <summary>
+            Cellular type
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionProfileType.WiFi">
+            <summary>
+            Wi-Fi type
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionProfileType.Ethernet">
+            <summary>
+            Ethernet type
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionProfileType.Bt">
+            <summary>
+            Bluetooth type
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.ProfileState">
+            <summary>
+            Enumeration for the profile state type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.ProfileState.Disconnected">
+            <summary>
+            Disconnected state
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ProfileState.Association">
+            <summary>
+            Association state
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ProfileState.Configuration">
+            <summary>
+            Configuration state
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ProfileState.Connected">
+            <summary>
+            Connected state
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.ProxyType">
+            <summary>
+            Enumeration for the proxy method type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.ProxyType.Direct">
+            <summary>
+            Direct connection
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ProxyType.Auto">
+            <summary>
+            Auto configuration(Use PAC file). If URL property is not set, DHCP/WPAD auto-discover will be tried
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ProxyType.Manual">
+            <summary>
+            Manual configuration
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.IPConfigType">
+            <summary>
+            Enumeration for the IP configuration type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.IPConfigType.None">
+            <summary>
+            Not defined
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.IPConfigType.Static">
+            <summary>
+            Manual IP configuration
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.IPConfigType.Dynamic">
+            <summary>
+            Config IP using DHCP client
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.IPConfigType.Auto">
+            <summary>
+            Config IP from Auto IP pool (169.254/16). Later with DHCP client, if available
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.IPConfigType.Fixed">
+            <summary>
+            Indicates an IP address that can not be modified
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.CellularServiceType">
+            <summary>
+            Enumeration for the cellular service type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularServiceType.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularServiceType.Internet">
+            <summary>
+            Internet
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularServiceType.MMS">
+            <summary>
+            MMS
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularServiceType.PrepaidInternet">
+            <summary>
+            Prepaid Internet
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularServiceType.PrepaidMMS">
+            <summary>
+            Prepaid MMS
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularServiceType.Tethering">
+            <summary>
+            Tethering
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularServiceType.Application">
+            <summary>
+            Specific application
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.CellularPdnType">
+            <summary>
+            Enumeration for the cellular pdn type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularPdnType.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularPdnType.IPv4">
+            <summary>
+            IPv4
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularPdnType.IPv6">
+            <summary>
+            IPv6
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularPdnType.IPv4_IPv6">
+            <summary>
+            Both IPv4 and IPv6
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.DnsConfigType">
+            <summary>
+            Enumeration for the DNS configuration type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.DnsConfigType.None">
+            <summary>
+            Not defined
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.DnsConfigType.Static">
+            <summary>
+            Manual DNS configuration
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.DnsConfigType.Dynamic">
+            <summary>
+            Config DNS using DHCP client
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionError">
+            <summary>
+            Enumeration for the connection errors.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.None">
+            <summary>
+            Successful
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.InvalidParameter">
+            <summary>
+            Invalid parameter
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.OutOfMemoryError">
+            <summary>
+            Out of memory error
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.InvalidOperation">
+            <summary>
+            Invalid operation
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.AddressFamilyNotSupported">
+            <summary>
+            Address family not supported
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.OperationFailed">
+            <summary>
+            Operation failed
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.EndOfIteration">
+            <summary>
+            End of iteration
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.NoConnection">
+            <summary>
+            There is no connection
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.NowInProgress">
+            <summary>
+            Now in progress
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.AlreadyExists">
+            <summary>
+            Already exists
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.OperationAborted">
+            <summary>
+            Operation is aborted
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.DhcpFailed">
+            <summary>
+            DHCP failed
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.InvalidKey">
+            <summary>
+            Invalid key
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.NoReply">
+            <summary>
+            No reply
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.PermissionDenied">
+            <summary>
+            Permission denied
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionError.NotSupported">
+            <summary>
+            Not supported
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.ProfileListType">
+            <summary>
+            Enumeration for the profile list type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.ProfileListType.Registered">
+            <summary>
+            The iterator of the registered profile
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ProfileListType.Connected">
+            <summary>
+            The iterator of the connected profile
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ProfileListType.Default">
+            <summary>
+            The iterator of the default profile
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.WiFiSecurityType">
+            <summary>
+            Enumeration for the security type of Wi-Fi.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.WiFiSecurityType.None">
+            <summary>
+            Security disabled
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.WiFiSecurityType.Wep">
+            <summary>
+            WEP
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.WiFiSecurityType.WpaPsk">
+            <summary>
+            WPA-PSK
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.WiFiSecurityType.Wpa2Psk">
+            <summary>
+            WPA2-PSK
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.WiFiSecurityType.Eap">
+            <summary>
+            EAP
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.WiFiEncryptionType">
+            <summary>
+            Enumeration for the encryption modes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.WiFiEncryptionType.None">
+            <summary>
+            Encryption disabled
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.WiFiEncryptionType.Wep">
+            <summary>
+            WEP
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.WiFiEncryptionType.Tkip">
+            <summary>
+            TKIP
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.WiFiEncryptionType.Aes">
+            <summary>
+            AES
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.WiFiEncryptionType.TkipAesMixed">
+            <summary>
+            TKIP and AES are both supported
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.ConnectionProfileState">
+            <summary>
+            Enumeration for the connection profile state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionProfileState.Disconnected">
+            <summary>
+            Disconnected state
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionProfileState.Association">
+            <summary>
+            Association state
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionProfileState.Configuration">
+            <summary>
+            Configuration state
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.ConnectionProfileState.Connected">
+            <summary>
+            Connected state
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.CellularAuthType">
+            <summary>
+            Enumeration for the cellular authentication type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularAuthType.None">
+            <summary>
+            No authentication
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularAuthType.Pap">
+            <summary>
+            PAP authentication
+            </summary>
+        </member>
+        <member name="F:Tizen.Network.Connection.CellularAuthType.Chap">
+            <summary>
+            CHAP authentication
+            </summary>
+        </member>
+        <member name="T:Tizen.Network.Connection.IAddressInformation">
+            <summary>
+            This interface provides properties to manage address information of the connection.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Network.Connection.IAddressInformation.Dns1">
+            <summary>
+            The DNS address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>First DNS address of the connection.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.IAddressInformation.Dns2">
+            <summary>
+            The DNS address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Second DNS address of the connection.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.IAddressInformation.Gateway">
+            <summary>
+            The gateway address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Gateway address of the connection.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.IAddressInformation.SubnetMask">
+            <summary>
+            The subnet mask address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Subnet mask of the connection.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.IAddressInformation.IP">
+            <summary>
+            The IP address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>IP address of the connection.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.IAddressInformation.IPConfigType">
+            <summary>
+            The type of IP config.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>IP config type of the connection.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.IAddressInformation.PrefixLength">
+            <summary>
+            The prefix length.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Prefix length of the connection.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.IAddressInformation.DnsConfigType">
+            <summary>
+            The DNS config type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Config type of the DNS.</value>
+            <exception cref="T:System.NotSupportedException">Thrown during set when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown during set when a value is an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown during set when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+        </member>
+        <member name="P:Tizen.Network.Connection.IAddressInformation.DhcpServerAddress">
+            <summary>
+            The DHCP server address. It is only supported for the IPV4 address family.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>Server address of the DHCP.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.IAddressInformation.DhcpLeaseDuration">
+            <summary>
+            The DHCP lease duration. It is only supported for the IPV4 address family.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <value>Lease duration of the DHCP.</value>
+        </member>
+        <member name="T:Tizen.Network.Connection.WiFiProfile">
+            <summary>
+            This is the WiFiProfile class. It provides functions to manage the WiFi profile.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Network.Connection.WiFiProfile.Finalize">
+            <summary>
+            Destroy the WiFiProfile object
+            </summary>
+        </member>
+        <member name="P:Tizen.Network.Connection.WiFiProfile.Essid">
+            <summary>
+            The ESSID (Extended Service Set Identifier).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>ESSID of the WiFi.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.WiFiProfile.Bssid">
+            <summary>
+            The BSSID (Basic Service Set Identifier).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>BSSID of the WiFi.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.WiFiProfile.Rssi">
+            <summary>
+            The RSSI.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>RSSI of the WiFi.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.WiFiProfile.Frequency">
+            <summary>
+            The frequency (MHz).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Frequency of the WiFi.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.WiFiProfile.MaxSpeed">
+            <summary>
+            The max speed (Mbps).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Maximum speed of the WiFi.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.WiFiProfile.SecurityType">
+            <summary>
+            The security type of WiFi.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Security type of the WiFi.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.WiFiProfile.EncryptionType">
+            <summary>
+            The encryption type of WiFi.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>Encryption mode of the WiFi.</value>
+        </member>
+        <member name="P:Tizen.Network.Connection.WiFiProfile.PassphraseRequired">
+            <summary>
+            Checks whether passphrase is required.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>True if a passphrase is required, otherwise false.</value>
+            <remarks>This property is not valid if <c>WiFiSecurityType</c> is <c>Eap</c>.</remarks>
+        </member>
+        <member name="P:Tizen.Network.Connection.WiFiProfile.WpsSupported">
+            <summary>
+            Checks whether the WPS (Wi-Fi Protected Setup) is supported.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <value>True if WPS is supported, otherwise false.</value>
+        </member>
+        <member name="M:Tizen.Network.Connection.WiFiProfile.SetPassphrase(System.String)">
+            <summary>
+            Sets the passphrase of the Wi-Fi WPA.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="passphrase">The passphrase of Wi-Fi security.</param>
+            <feature>http://tizen.org/feature/network.wifi</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when a feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when a value is an invalid parameter.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when a passphrase is null.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when a profile instance is invalid or when a method fails due to an invalid operation.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown when an operation is performed on a disposed object.</exception>
+        </member>
+    </members>
+</doc>

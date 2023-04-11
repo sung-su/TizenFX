@@ -1,0 +1,695 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Peripheral</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Peripheral.Adc.AdcChannel">
+            <summary>
+            The class allows applications to use the platform ADC peripheral.
+            </summary>
+            <privilege>http://tizen.org/privilege/peripheralio</privilege>
+        </member>
+        <member name="F:Tizen.Peripheral.Adc.AdcChannel._handle">
+            <summary>
+            Native handle to ADC.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Adc.AdcChannel.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Opens the ADC pin.
+            </summary>
+            <param name="device">The ADC device number.</param>
+            <param name="channel">The ADC channel number to control.</param>
+        </member>
+        <member name="M:Tizen.Peripheral.Adc.AdcChannel.Finalize">
+            <summary>
+            Closes the ADC pin.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Adc.AdcChannel.ReadValue">
+            <summary>
+            Gets the current value of the ADC pin.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Adc.AdcChannel.Close">
+            <summary>
+            Closes the ADC pin.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Adc.AdcChannel.Dispose">
+            <summary>
+            Disposes the ADC pin.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Adc.AdcChannel.Dispose(System.Boolean)">
+            <summary>
+            Disposes the ADC pin.
+            </summary>
+        </member>
+        <member name="T:Tizen.Peripheral.ExceptionFactory">
+            <summary>
+            The class that represents the exception which will be thrown when the application can not control the peripherial.
+            </summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Gpio.GpioPinDriveMode">
+            <summary>
+            Enumeration of GPIO direction options.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Gpio.GpioPinDriveMode.Input">
+            <summary>
+            Input Mode.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Gpio.GpioPinDriveMode.OutputInitiallyLow">
+            <summary>
+            Output mode with high value.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Gpio.GpioPinDriveMode.OutputInitiallyHigh">
+            <summary>
+            Output mode with low value.
+            </summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Gpio.GpioPinValue">
+            <summary>
+            Enumeration of GPIO values.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Gpio.GpioPinValue.Low">
+            <summary>
+            Low value.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Gpio.GpioPinValue.High">
+            <summary>
+            High value.
+            </summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Gpio.GpioChangePolarity">
+            <summary>
+            Enumeration of edge types for the GPIO interrupt.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Gpio.GpioChangePolarity.None">
+            <summary>
+            No interrupt on GPIO.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Gpio.GpioChangePolarity.Rising">
+            <summary>
+            Interrupt on rising only.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Gpio.GpioChangePolarity.Falling">
+            <summary>
+            Interrupt on falling only.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Gpio.GpioChangePolarity.Both">
+            <summary>
+            Interrupt on rising and falling.
+            </summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Gpio.GpioPin">
+            <summary>
+            The class allows applications to use the platform Digital Pins as Input/Output.
+            </summary>
+            <privilege>http://tizen.org/privilege/peripheralio</privilege>
+        </member>
+        <member name="F:Tizen.Peripheral.Gpio.GpioPin._handle">
+            <summary>
+            Native handle to Gpio.
+            </summary>
+        </member>
+        <member name="E:Tizen.Peripheral.Gpio.GpioPin.ValueChanged">
+            <summary>
+            Invoked when Gpio pin was interrupted.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Gpio.GpioPin.#ctor(System.Int32,Tizen.Peripheral.Gpio.GpioPinDriveMode)">
+            <summary>
+            Opens a GPIO pin.
+            </summary>
+            <param name="pinNumber">The GPIO pin number.</param>
+            <param name="mode">GPIO direction.</param>
+        </member>
+        <member name="M:Tizen.Peripheral.Gpio.GpioPin.Finalize">
+            <summary>
+            Closes the GPIO pin.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Gpio.GpioPin.Close">
+            <summary>
+            Closes a GPIO pin.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Gpio.GpioPin.Dispose">
+            <summary>
+            Disposes GPIO.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Gpio.GpioPin.Dispose(System.Boolean)">
+            <summary>
+            Disposes GPIO.
+            </summary>
+        </member>
+        <member name="P:Tizen.Peripheral.Gpio.GpioPin.PinNumber">
+            <summary>
+            GPIO pin number.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Gpio.GpioPin.Read">
+            <summary>
+            Gets pin value.
+            </summary>
+            <returns>Pin value</returns>
+        </member>
+        <member name="M:Tizen.Peripheral.Gpio.GpioPin.Write(Tizen.Peripheral.Gpio.GpioPinValue)">
+            <summary>
+            Sets pin value.
+            </summary>
+        </member>
+        <member name="P:Tizen.Peripheral.Gpio.GpioPin.Polarity">
+            <summary>
+            Sets or gets the GPIO edge mode.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="T:Tizen.Peripheral.Gpio.PinUpdatedEventArgs">
+            <summary>
+            This custom class extend from EventArgs to obtain Gpio object Input Pin update.
+            </summary>
+        </member>
+        <member name="P:Tizen.Peripheral.Gpio.PinUpdatedEventArgs.PinNumber">
+            <summary>
+            Gets the Input Pin number which state has changed.
+            </summary>
+        </member>
+        <member name="P:Tizen.Peripheral.Gpio.PinUpdatedEventArgs.PinValue">
+            <summary>
+            Gets the current state of the Input Pin.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Gpio.PinUpdatedEventArgs.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Tizen.Peripheral.I2c.I2cDevice">
+            <summary>
+            The class allows applications to communicate via i2c platform's bus.
+            </summary>
+            <privilege>http://tizen.org/privilege/peripheralio</privilege>
+        </member>
+        <member name="F:Tizen.Peripheral.I2c.I2cDevice._handle">
+            <summary>
+            Native handle to I2c.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Opens the connection to the I2C slave device.
+            </summary>
+            <param name="bus">The I2C bus number that the slave device is connected.</param>
+            <param name="address">The address of the slave device.</param>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.Finalize">
+            <summary>
+            Closes the connection to the I2C slave device.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.Close">
+            <summary>
+            Closes the connection to the I2C slave device.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.Dispose">
+            <summary>
+            Disposes the I2c.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.Dispose(System.Boolean)">
+            <summary>
+            Disposes the I2c.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.Read(System.Byte[])">
+            <summary>
+            Reads the bytes data from the I2C slave device.
+            </summary>
+            <param name="dataOut">The output byte array.</param>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.Write(System.Byte[])">
+            <summary>
+            Writes the bytes data to the I2C slave device.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.ReadRegisterByte(System.Byte)">
+            <summary>
+            Reads single byte data from the register of the I2C slave device.
+            </summary>
+            <param name="register">The register address of the I2C slave device to read.</param>
+            <returns>The single byte data.</returns>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.WriteRegisterByte(System.Byte,System.Byte)">
+            <summary>
+            Writes single byte data to the register of the I2C slave device.
+            </summary>
+            <param name="register">The register address of the I2C slave device to write.</param>
+            <param name="data">The single byte data to write.</param>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.ReadRegisterWord(System.Byte)">
+            <summary>
+            Reads word data from the register of the I2C slave device.
+            </summary>
+            <param name="register">The register address of the I2C slave device to read.</param>
+            <returns>The word (2 bytes) data.</returns>
+        </member>
+        <member name="M:Tizen.Peripheral.I2c.I2cDevice.WriteRegisterWord(System.Byte,System.UInt16)">
+            <summary>
+            Writes word data to the register of the I2C slave device.
+            </summary>
+            <param name="register">The register address of the I2C slave device to write.</param>
+            <param name="data">The word (2 bytes) data to write.</param>
+        </member>
+        <member name="T:Tizen.Peripheral.Pwm.PwmPulsePolarity">
+            <summary>
+            Enumeration for PWM polarity.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Pwm.PwmPulsePolarity.ActiveHigh">
+            <summary>
+            PWM signal start in the active high state.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Pwm.PwmPulsePolarity.ActiveLow">
+            <summary>
+            PWM signal start in the active low state.
+            </summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Pwm.PwmPin">
+            <summary>
+            The class allows applications to use the platform PWM peripheral.
+            </summary>
+            <privilege>http://tizen.org/privilege/peripheralio</privilege>
+        </member>
+        <member name="F:Tizen.Peripheral.Pwm.PwmPin._handle">
+            <summary>
+            Native handle to PWM.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Pwm.PwmPin.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Opens the PWM pin.
+            </summary>
+            <param name="chip">The PWM chip number.</param>
+            <param name="pin">The PWM pin (channel) number to control.</param>
+        </member>
+        <member name="M:Tizen.Peripheral.Pwm.PwmPin.Finalize">
+            <summary>
+            Closes the PWM pin.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Pwm.PwmPin.Close">
+            <summary>
+            Closes the PWM pin.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Pwm.PwmPin.Dispose">
+            <summary>
+            Disposes the PWM.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Pwm.PwmPin.Dispose(System.Boolean)">
+            <summary>
+            Disposes the PWM.
+            </summary>
+        </member>
+        <member name="P:Tizen.Peripheral.Pwm.PwmPin.Period">
+            <summary>
+            Sets or gets period of the PWM pin.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Pwm.PwmPin.DutyCycle">
+            <summary>
+            Sets or gets duty cycle of the PWM pin.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Pwm.PwmPin.Polarity">
+            <summary>
+            Sets or gets polarity of the PWM pin.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Pwm.PwmPin.Enabled">
+            <summary>
+            Enables or disables the PWM pin.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="T:Tizen.Peripheral.Spi.SpiMode">
+            <summary>
+            Enumeration of SPI transfer modes.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Spi.SpiMode.Mode0">
+            <summary>
+            CPOL = 0, CPHa = 0 Mode.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Spi.SpiMode.Mode1">
+            <summary>
+            CPOL = 0, CPHa = 1 Mode.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Spi.SpiMode.Mode2">
+            <summary>
+            CPOL = 1, CPHa = 0 Mode.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Spi.SpiMode.Mode3">
+            <summary>
+            CPOL = 1, CPHa = 1 Mode.
+            </summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Spi.BitOrder">
+            <summary>
+            Enumeration of bit orders.
+            </summary>
+            <remarks>
+            Currently only LSB order is supported!
+            </remarks>
+        </member>
+        <member name="F:Tizen.Peripheral.Spi.BitOrder.MSB">
+            <summary>
+            Use most siginificant bit first.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Spi.BitOrder.LSB">
+            <summary>
+            Use least siginificant bit first.
+            </summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Spi.SpiDevice">
+            <summary>
+            The class allows applications to communicate via SPI platform's bus.
+            </summary>
+            <privilege>http://tizen.org/privilege/peripheralio</privilege>
+        </member>
+        <member name="F:Tizen.Peripheral.Spi.SpiDevice._handle">
+            <summary>
+            Native handle to Spi.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Spi.SpiDevice.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Opens a SPI slave device.
+            </summary>
+            <param name="bus">The SPI bus number.</param>
+            <param name="chip">The SPI chip select number.</param>
+        </member>
+        <member name="M:Tizen.Peripheral.Spi.SpiDevice.Finalize">
+            <summary>
+            Closes the SPI slave device.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Spi.SpiDevice.Close">
+            <summary>
+            Closes the SPI slave device.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Spi.SpiDevice.Dispose">
+            <summary>
+            Disposes the Spi.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Spi.SpiDevice.Dispose(System.Boolean)">
+            <summary>
+            Disposes the Spi.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Spi.SpiDevice.Read(System.Byte[])">
+            <summary>
+            Reads the bytes data from the SPI slave device.
+            </summary>
+            <param name="buffer">The Data buffer.</param>
+        </member>
+        <member name="M:Tizen.Peripheral.Spi.SpiDevice.Write(System.Byte[])">
+            <summary>
+            Writes the bytes data to the SPI slave device.
+            </summary>
+            <param name="data">The data buffer to write.</param>
+        </member>
+        <member name="M:Tizen.Peripheral.Spi.SpiDevice.TransferSequential(System.Byte[],System.Byte[])">
+            <summary>
+            Exchanges the bytes data to the SPI slave device.
+            writeBuffer.Length and readBuffer.Length must be equal.
+            </summary>
+            <param name="writeBuffer">Array containing data to write to the device.</param>
+            <param name="readBuffer">Array containing data read from the dievice.</param>
+        </member>
+        <member name="P:Tizen.Peripheral.Spi.SpiDevice.Mode">
+            <summary>
+            Sets or gets the SPI transfer mode.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Spi.SpiDevice.BitOrder">
+            <summary>
+            Sets or gets the SPI bit order.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Spi.SpiDevice.BitsPerWord">
+            <summary>
+            Sets or gets the number of bits per word.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Spi.SpiDevice.ClockFrequency">
+            <summary>
+            Sets or gets the frequency of the SPI bus.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="T:Tizen.Peripheral.Uart.BaudRate">
+            <summary>
+            Enumeration for baud rate.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate0">
+            <summary>The number of signal in one second is 0.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate50">
+            <summary>The number of signal in one second is 50.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate75">
+            <summary>The number of signal in one second is 75.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate110">
+            <summary>The number of signal in one second is 110.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate134">
+            <summary>The number of signal in one second is 134.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate150">
+            <summary>The number of signal in one second is 150.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate200">
+            <summary>The number of signal in one second is 200.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate300">
+            <summary>The number of signal in one second is 300.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate600">
+            <summary>The number of signal in one second is 600.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate1200">
+            <summary>The number of signal in one second is 1200.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate1800">
+            <summary>The number of signal in one second is 1800.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate2400">
+            <summary>The number of signal in one second is 2400.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate4800">
+            <summary>The number of signal in one second is 4800.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate9600">
+            <summary>The number of signal in one second is 9600.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate19200">
+            <summary>The number of signal in one second is 19200.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate38400">
+            <summary>The number of signal in one second is 38400.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate57600">
+            <summary>The number of signal in one second is 57600.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate115200">
+            <summary>The number of signal in one second is 115200.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.BaudRate.Rate230400">
+            <summary>The number of signal in one second is 230400.</summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Uart.DataBits">
+            <summary>
+            Enumeration for byte size.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.DataBits.Size5Bit">
+            <summary>5 data bits.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.DataBits.Size6Bit">
+            <summary>6 data bits.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.DataBits.Size7Bit">
+            <summary>7 data bits.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.DataBits.Size8Bit">
+            <summary>8 data bits.</summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Uart.Parity">
+            <summary>
+            Enumeration for parity bit.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.Parity.None">
+            <summary>No parity is used.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.Parity.Even">
+            <summary>Even parity is used.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.Parity.Odd">
+            <summary>Odd parity is used.</summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Uart.StopBits">
+            <summary>
+            Enumeration for stop bits.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.StopBits.One">
+            <summary>One stop bit.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.StopBits.Two">
+            <summary>Two stop bits.</summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Uart.HardwareFlowControl">
+            <summary>
+            Enumeration for hardware flow control.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.HardwareFlowControl.None">
+            <summary>No hardware flow control.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.HardwareFlowControl.AutoRtsCts">
+            <summary>Automatic RTS/CTS hardware flow control.</summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Uart.SoftwareFlowControl">
+            <summary>
+            Enumeration for software flow control.
+            </summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.SoftwareFlowControl.None">
+            <summary>No software flow control.</summary>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.SoftwareFlowControl.XonXoff">
+            <summary>XON/XOFF software flow control.</summary>
+        </member>
+        <member name="T:Tizen.Peripheral.Uart.SerialPort">
+            <summary>
+            The class allows applications to communicate via UART platform's bus.
+            </summary>
+            <privilege>http://tizen.org/privilege/peripheralio</privilege>
+        </member>
+        <member name="F:Tizen.Peripheral.Uart.SerialPort._handle">
+            <summary>
+            Native handle to I2c.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Uart.SerialPort.#ctor(System.Int32)">
+            <summary>
+            Opens the UART slave device.
+            </summary>
+            <param name="port">The UART port number that the slave device is connected.</param>
+        </member>
+        <member name="M:Tizen.Peripheral.Uart.SerialPort.Finalize">
+            <summary>
+            Closes the UART slave device.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Uart.SerialPort.Close">
+            <summary>
+            Closes the UART slave device.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Uart.SerialPort.Dispose">
+            <summary>
+            Disposes Uart object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Uart.SerialPort.Dispose(System.Boolean)">
+            <summary>
+            Disposes Uart object.
+            </summary>
+        </member>
+        <member name="M:Tizen.Peripheral.Uart.SerialPort.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads the bytes data from the UART slave device.
+            </summary>
+            <param name="buffer">The output byte array.</param>
+            <param name="offset">The offset in buffer at which to write the bytes.</param>
+            <param name="count">The number of bytes to read.</param>
+            <returns>The number of bytes read.</returns>
+        </member>
+        <member name="M:Tizen.Peripheral.Uart.SerialPort.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes the bytes data to the UART slave device.
+            </summary>
+            <param name="buffer">The byte array that contains the data to write to the device.</param>
+            <param name="offset">The offset in buffer at which to begin copying bytes.</param>
+            <param name="count">The number of bytes to write</param>
+        </member>
+        <member name="P:Tizen.Peripheral.Uart.SerialPort.BaudRate">
+            <summary>
+            Sets or gets baud rate of the UART slave device.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Uart.SerialPort.DataBits">
+            <summary>
+            Sets or gets byte size of the UART slave device.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Uart.SerialPort.Parity">
+            <summary>
+            Sets or gets parity bit of the UART slave device.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Uart.SerialPort.StopBits">
+            <summary>
+            Sets or gets stop bits of the UART slave device.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Uart.SerialPort.HardwareFlowControl">
+            <summary>
+            Sets or gets hardware flow control of the UART slave device.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+        <member name="P:Tizen.Peripheral.Uart.SerialPort.SoftwareFlowControl">
+            <summary>
+            Sets or gets software flow control of the UART slave device.
+            </summary>
+            <remarks>Get value is initialized after successful Set call.</remarks>
+        </member>
+    </members>
+</doc>

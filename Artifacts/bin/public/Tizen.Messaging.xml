@@ -1,0 +1,563 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Messaging</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Messaging.Email.EmailAttachment">
+            <summary>
+            Represents an email attachment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Email.EmailAttachment.FilePath">
+            <summary>
+            The absolute full path of the file to be attached.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Email.EmailAttachment.#ctor">
+            <summary>
+            The constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Email.EmailSendResult">
+            <summary>
+            Result of sending the email.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Messaging.Email.EmailSendResult.Failure">
+            <summary>
+            Failed to send the message.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Email.EmailSendResult.Success">
+            <summary>
+            Email sent successfully.
+            </summary>
+        </member>
+        <member name="T:Tizen.Messaging.Email.EmailMessage">
+            <summary>
+            This class contains the Messaging API to support sending email messages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Email.EmailMessage.#ctor">
+            <summary>
+            The constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Email.EmailMessage.Subject">
+            <summary>
+            The subject of the email message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Email.EmailMessage.Body">
+            <summary>
+            The body of the email message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Email.EmailMessage.Attachments">
+            <summary>
+            The list of file attachments.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Email.EmailMessage.To">
+            <summary>
+            The collection of normal email recipients.
+            </summary>
+            <remarks>
+            The email address should be in the standard format (as described in the Internet standards RFC 5321 and RFC 5322).
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Email.EmailMessage.Cc">
+            <summary>
+            The collection of CC (carbon copy) email recipients.
+            </summary>
+            <remarks>
+            The email address should be in the standard format (as described in the Internet standards RFC 5321 and RFC 5322).
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Email.EmailMessage.Bcc">
+            <summary>
+            The collection of BCC (blind carbon copy) email recipients.
+            </summary>
+            <remarks>
+            The email address should be in the standard format (as described in the Internet standards RFC 5321 and RFC 5322).
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Email.EmailMessage.Dispose">
+            <summary>
+            Releases all resources used by the EmailMessage.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Email.EmailMessage.Dispose(System.Boolean)">
+            <summary>
+            Releases all resources used by the EmailMessage.
+            </summary>
+            <param name="disposing">Disposing by User</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Email.EmailRecipient">
+            <summary>
+            This class represents recipients of an email.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Email.EmailRecipient.Address">
+            <summary>
+            The email address of the recipient.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Email.EmailRecipient.#ctor">
+            <summary>
+            The constructor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Email.EmailSender">
+            <summary>
+            This class is used to send email messages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Email.EmailSender.SendAsync(Tizen.Messaging.Email.EmailMessage)">
+            <summary>
+            Sends the email message.
+            </summary>
+            <param name="email">The email message.</param>
+            <returns> Failure if the email sending activity failed, otherwise Success.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.CBMessage">
+            <summary>
+            This class represents the cell broadcast messages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.Message">
+            <summary>
+            This class represents all the messages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Messages.Message.Finalize">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:Tizen.Messaging.Messages.Message.Dispose">
+            <summary>
+            Releases all resources used by the Message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.Message.Id">
+            <summary>
+            The message ID.
+            </summary>
+            <remarks>
+            After creating the Message object, the default value of this property is 0. After sending, this value is changed.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.Message.Port">
+            <summary>
+            The destination port of the message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.Message.BoxType">
+            <summary>
+            The message box type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.Message.Text">
+            <summary>
+            The text of the message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.Message.Time">
+            <summary>
+            The time of the message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.Message.SimId">
+            <summary>
+            The SIM slot index of the message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.Message.From">
+            <summary>
+            Indicates the sender of the message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.MessageReceivedEventArgs">
+            <summary>
+            An extended EventArgs class, which contains a received message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MessageReceivedEventArgs.ReceivedMessage">
+            <summary>
+            The received message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.MessagesAddress">
+            <summary>
+            This class is used to manage the information of the message address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MessagesAddress.Number">
+            <summary>
+            The address of the sender/recipient.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Messages.MessagesAddress.#ctor(System.String)">
+            <summary>
+            Creates a message address.
+            </summary>
+            <param name="number">The recipient's address to receive a message.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.MessagesAttachment">
+            <summary>
+            This class is used to manage the information of the message attachment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MessagesAttachment.Type">
+            <summary>
+            The media type of the attachment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MessagesAttachment.FilePath">
+            <summary>
+            The file path of the attachment.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Messages.MessagesAttachment.#ctor(Tizen.Messaging.Messages.MediaType,System.String)">
+            <summary>
+            Creates an attachment.
+            </summary>
+            <param name="type">The attachment's type.</param>
+            <param name="filePath">The file path to attach.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.SentResult">
+            <summary>
+            Enumeration for the result of sending a message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.SentResult.Failed">
+            <summary>
+            Message sending failed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.SentResult.Success">
+            <summary>
+            Message sending succeeded.
+            </summary>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.MessageType">
+            <summary>
+            Enumeration for the message type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MessageType.Unknown">
+            <summary>
+            The unknown type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MessageType.Sms">
+            <summary>
+            The SMS type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MessageType.Mms">
+            <summary>
+            The MMS type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MessageType.CellBroadcast">
+            <summary>
+            The CB(Cell Broadcast) type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MessageType.Push">
+            <summary>
+            The WAP Push type.
+            </summary>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.MessageBoxType">
+            <summary>
+            Enumeration for the message box type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MessageBoxType.All">
+            <summary>
+            All message box type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MessageBoxType.Inbox">
+            <summary>
+            The Inbox type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MessageBoxType.Outbox">
+            <summary>
+            The Outbox type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MessageBoxType.Sentbox">
+            <summary>
+            The Sentbox type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MessageBoxType.Draft">
+            <summary>
+            The Draft type.
+            </summary>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.SimSlotId">
+            <summary>
+            Enumeration for the SIM slot index of a message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.SimSlotId.Unknown">
+            <summary>
+            Unknown SIM Slot.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.SimSlotId.Sim1">
+            <summary>
+            SIM Slot 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.SimSlotId.Sim2">
+            <summary>
+            SIM Slot 2.
+            </summary>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.RecipientType">
+            <summary>
+            Enumeration for the recipient type of a message.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.RecipientType.Unknown">
+            <summary>
+            Unknown.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.RecipientType.To">
+            <summary>
+            'To' recipient.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.RecipientType.Cc">
+            <summary>
+            'Cc' (carbon copy) recipient.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.RecipientType.Bcc">
+            <summary>
+            'Bcc' (blind carbon copy) recipient.
+            </summary>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.MediaType">
+            <summary>
+            Enumeration for the attachment type for the MMS messaging.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MediaType.Unknown">
+            <summary>
+            Unknown.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MediaType.Image">
+            <summary>
+            The image.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MediaType.Audio">
+            <summary>
+            The audio.
+            </summary>
+        </member>
+        <member name="F:Tizen.Messaging.Messages.MediaType.Video">
+            <summary>
+            The video.
+            </summary>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.MessagesManager">
+            <summary>
+            This class is used for the message management. It allows applications to use the message service.
+            </summary>
+            <privilege>http://tizen.org/privilege/message.read</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Messages.MessagesManager.SendMessageAsync(Tizen.Messaging.Messages.Message,System.Boolean)">
+            <summary>
+            Sends a message.
+            </summary>
+            <privilege>http://tizen.org/privilege/message.write</privilege>
+            <param name="message">The message to be sent.</param>
+            <param name="saveToSentbox">The boolean variable used to indicate whether the sent message should be saved in the sentbox or not.</param>
+            <returns>A task containing the result of message sending.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the message service is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when input coordinates are invalid.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have proper privileges.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Messages.MessagesManager.SearchMessageAsync(Tizen.Messaging.Messages.MessagesSearchFilter)">
+            <summary>
+            Searches for messages.
+            </summary>
+            <privilege>http://tizen.org/privilege/message.read</privilege>
+            <param name="filter">The search filter for searching messages.</param>
+            <returns>A task containing the messages, which match the search filter.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the message service is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when input coordinates are invalid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have proper privileges.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Messaging.Messages.MessagesManager.MessageReceived">
+            <summary>
+            The MessageReceived event that is raised when receiving a message.
+            </summary>
+            <privilege>http://tizen.org/privilege/message.read</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.MessagesSearchFilter">
+            <summary>
+            This class represents message search filters.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Messages.MessagesSearchFilter.#ctor">
+            <summary>
+            Creates a search filter for searching messages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MessagesSearchFilter.MessageBoxType">
+            <summary>
+            The message box type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MessagesSearchFilter.MessageType">
+            <summary>
+            The message type.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MessagesSearchFilter.TextKeyword">
+            <summary>
+            The keyword to search in the text and the subject.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MessagesSearchFilter.AddressKeyword">
+            <summary>
+            The recipient address.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.MmsMessage">
+            <summary>
+            This class represents multimedia messages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Messages.MmsMessage.#ctor">
+            <summary>
+            Creates a multimedia message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MmsMessage.Subject">
+            <summary>
+            The subject of the multimedia message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MmsMessage.To">
+            <summary>
+            The collection of normal message recipients.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MmsMessage.Cc">
+            <summary>
+            The collection of CC (carbon copy) message recipients.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MmsMessage.Bcc">
+            <summary>
+            The collection of BCC (blind carbon copy) message recipients.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.MmsMessage.Attachments">
+            <summary>
+            The list of attachment files.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.PushMessage">
+            <summary>
+            This class represents the WAP push messages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Messaging.Messages.SmsMessage">
+            <summary>
+            This class represents short text messages.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Messaging.Messages.SmsMessage.#ctor">
+            <summary>
+            Creates a short text message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Messaging.Messages.SmsMessage.To">
+            <summary>
+            The collection of normal message recipients.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

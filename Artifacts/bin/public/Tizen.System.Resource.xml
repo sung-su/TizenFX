@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.System.Resource</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.System.Resource">
+            <summary>
+            Provides methods to support CPU boosting and CPU inheritance.
+            </summary>
+        </member>
+        <member name="M:Tizen.System.Resource.ResourceSetCpuBoosting(Tizen.System.ResourcePidInfo,Tizen.System.CpuBoostingLevel,Tizen.System.CpuBoostingFlag,System.Int32)">
+            <summary>
+            Set cpu boosting for the target process (pid/tids).
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/internal/default/partner
+            </privilege>
+            <param name="pid">The target process pid/tids.</param>
+            <param name="level">The cpu boosting level</param>
+            <param name="flags">The cpu boosting flag bits</param>
+            <param name="timeoutMsec">The timeout in milliseconds</param>
+        </member>
+        <member name="M:Tizen.System.Resource.ResourceClearCpuBoosting(Tizen.System.ResourcePidInfo)">
+            <summary>
+            Clear cpu boosting for the boosted process (pid/tids).
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/internal/default/partner
+            </privilege>
+            <param name="pid">The target process pid/tids.</param>
+        </member>
+        <member name="M:Tizen.System.Resource.ResourceGetCpuBoostingLevel(Tizen.System.ResourcePidInfo,Tizen.System.CpuBoostingLevelInfo@)">
+            <summary>
+            Get the cpu boosting level for the target process (pid/tids).
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/internal/default/partner
+            </privilege>
+            <param name="pid">The target process pid/tids.</param>
+            <param name="level">The boosting level for the target process (pid/tids).</param>
+        </member>
+        <member name="M:Tizen.System.Resource.ResourceSetCpuInheritance(System.Int32,System.String,System.Int32)">
+            <summary>
+            Set cpu resource inheritance from the source tid to the destination process (pid/tids).
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/internal/default/partner
+            </privilege>
+            <param name="sourceTid">The caller thread tid.</param>
+            <param name="destProcess">The name of destination process.</param>
+            <param name="timeoutMsec">The timeout in milliceconds.</param>
+        </member>
+        <member name="M:Tizen.System.Resource.ResourceClearCpuInheritance(System.Int32,System.String)">
+            <summary>
+            Clear cpu resource inheritance from the source tid to the destination process (pid/tids).
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/internal/default/partner
+            </privilege>
+            <param name="sourceTid">The caller thread tid.</param>
+            <param name="destProcess">The name of destination process.</param>
+        </member>
+        <member name="M:Tizen.System.Resource.ResourceRegisterCpuInheritanceDestination(System.String,Tizen.System.ResourcePidInfo)">
+            <summary>
+            Register a destination process (pid/tids) for cpu resource inheritance.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/internal/default/partner
+            </privilege>
+            <param name="destProcess">The name of destination process.</param>
+            <param name="pid">The destination process pid/tids.</param>
+        </member>
+        <member name="M:Tizen.System.Resource.ResourceUnregisterCpuInheritanceDestination(System.String)">
+            <summary>
+            Unregister a destination process (pid/tids) for cpu resource inheritance.
+            </summary>
+            <privilege>
+            http://tizen.org/privilege/internal/default/partner
+            </privilege>
+            <param name="destProcess">The name of destination process.</param>
+        </member>
+        <member name="T:Tizen.System.CpuBoostingFlag">
+            <summary>
+            Enumeration for the cpu boosting flag.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.CpuBoostingFlag.CpuBoostingRestOnFork">
+            <summary>
+            The privilege reset on fork (or pthread_create)
+            </summary>
+        </member>
+        <member name="T:Tizen.System.CpuBoostingLevel">
+            <summary>
+            Enumeration for the cpu boosting level.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.CpuBoostingLevel.CpuBoostingLevelNone">
+            <summary>
+            The cpu boosting level (none).
+            </summary>
+        </member>
+        <member name="F:Tizen.System.CpuBoostingLevel.CpuBoostingLevelStrong">
+            <summary>
+            The cpu boosting level (strong).
+            </summary>
+        </member>
+        <member name="F:Tizen.System.CpuBoostingLevel.CpuBoostingLevelMedium">
+            <summary>
+            The cpu boosting level (medium).
+            </summary>
+        </member>
+        <member name="F:Tizen.System.CpuBoostingLevel.CpuBoostingLevelWeak">
+            <summary>
+            The cpu boosting level (weak).
+            </summary>
+        </member>
+        <member name="F:Tizen.System.CpuBoostingLevel.CpuBoostingLevelEnd">
+            <summary>
+            The cpu boosting level.
+            </summary>
+        </member>
+        <member name="T:Tizen.System.ResourcePidInfo">
+            <summary>
+            The structure of the resource pid information.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.ResourcePidInfo.Pid">
+            <summary>
+            The process id of target.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.ResourcePidInfo.Tid">
+            <summary>
+            The thread id list of target.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.ResourcePidInfo.TidCount">
+            <summary>
+            The number of target thread.
+            </summary>
+        </member>
+        <member name="T:Tizen.System.CpuBoostingLevelInfo">
+            <summary>
+            The structure of the cpu boosting leve information.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.CpuBoostingLevelInfo.TidLevel">
+            <summary>
+            The thread level list of target.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.CpuBoostingLevelInfo.TidCount">
+            <summary>
+            The number of target thread.
+            </summary>
+        </member>
+    </members>
+</doc>

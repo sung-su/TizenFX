@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.Badge</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.Badge">
+            <summary>
+            The class containing common properties of the Badge.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Badge.#ctor(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the Badge class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="appId">Application ID</param>
+            <param name="count">Count value</param>
+            <param name="visible">True if it should be displayed</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of invalid argument</exception>
+        </member>
+        <member name="P:Tizen.Applications.Badge.Count">
+            <summary>
+            Property for the count value of the badge.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.ArgumentException">Thrown when set negative number</exception>
+        </member>
+        <member name="P:Tizen.Applications.Badge.AppId">
+            <summary>
+            Property for the application ID of the badge.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Badge.Visible">
+            <summary>
+            Property for display visibility. True if the badge display visible, otherwise false..
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.BadgeControl">
+            <summary>
+            The class for badge operation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.BadgeControl.Changed">
+            <summary>
+            Event handler for receiving badge events.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature>http://tizen.org/feature/badge</feature>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of failed conditions.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when Badge is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Applications.BadgeControl.Find(System.String)">
+            <summary>
+            Gets the badge information from the application ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="appId">Application ID.</param>
+            <returns>The Badge object with inputted application ID</returns>
+            <feature>http://tizen.org/feature/badge</feature>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of failed conditions.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when Badge is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Applications.BadgeControl.Remove(System.String)">
+            <summary>
+            Removes the badge information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <param name="appId">Application ID.</param>
+            <feature>http://tizen.org/feature/badge</feature>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of a an invalid argument.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of failed conditions.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when Badge is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Applications.BadgeControl.Remove(Tizen.Applications.Badge)">
+            <summary>
+            Removes the badge information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="badge">The Badge object.</param>
+            <feature>http://tizen.org/feature/badge</feature>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of failed conditions.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when Badge is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Applications.BadgeControl.Add(Tizen.Applications.Badge)">
+            <summary>
+            Adds the badge information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="badge">The Badge object.</param>
+            <feature>http://tizen.org/feature/badge</feature>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of failed conditions.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when Badge is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Applications.BadgeControl.Update(Tizen.Applications.Badge)">
+            <summary>
+            Updates the badge information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="badge">The Badge object.</param>
+            <feature>http://tizen.org/feature/badge</feature>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of failed conditions.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when Badge is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Applications.BadgeControl.GetBadges">
+            <summary>
+            Gets all the badge information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <returns>List of all Badge instances.</returns>
+            <feature>http://tizen.org/feature/badge</feature>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when an application does not have the privilege to access.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of failed conditions.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when Badge is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Applications.BadgeErrorFactory">
+            <summary>
+            Immutable class for getting the badge information.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.BadgeEventArgs">
+            <summary>
+            The class for event arguments of the badge event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.BadgeEventArgs.Action">
+            <summary>
+            Enumeration for the badge action.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.BadgeEventArgs.Action.Add">
+            <summary>
+            The badge was added.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.BadgeEventArgs.Action.Remove">
+            <summary>
+            The badge was removed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.BadgeEventArgs.Action.Update">
+            <summary>
+            The badge was updated.
+            </summary>
+        </member>
+        <member name="P:Tizen.Applications.BadgeEventArgs.Badge">
+            <summary>
+            The property for the badge object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.BadgeEventArgs.Reason">
+            <summary>
+            The property for the action value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

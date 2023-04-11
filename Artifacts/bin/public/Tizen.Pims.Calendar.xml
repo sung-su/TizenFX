@@ -1,0 +1,3432 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Pims.Calendar</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Pims.Calendar.CalendarDatabase">
+            <summary>
+            The CalendarDatabase provides methods to manage calendar information from/to the database.
+            </summary>
+            <remarks>
+            This class allows user to access/create/update/delete database operations for the calendar information.
+            The CalendarDatabase is created by the CalendarManager.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Pims.Calendar.CalendarDatabase.Version">
+            <summary>
+            The calendar database version.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The current calendar database version.</value>
+        </member>
+        <member name="P:Tizen.Pims.Calendar.CalendarDatabase.LastChangeVersion">
+            <summary>
+            Gets the last successful changed calendar database version on the current connection.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>The last successful changed calendar database version on the current connection.</returns>
+            <privilege>http://tizen.org/privilege/calendar.read</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+            <value>The last successful changed calendar database version on the current connection.</value>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.Insert(Tizen.Pims.Calendar.CalendarRecord)">
+            <summary>
+            Inserts a record into the calendar database.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="record">The record to be inserted.</param>
+            <returns>The ID of inserted record.</returns>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.Get(System.String,System.Int32)">
+            <summary>
+            Gets a record from the calendar database.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="viewUri">The view URI of a record.</param>
+            <param name="recordId">The record ID.</param>
+            <returns>
+            The record associated with the record ID.
+            </returns>
+            <privilege>http://tizen.org/privilege/calendar.read</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.Update(Tizen.Pims.Calendar.CalendarRecord)">
+            <summary>
+            Updates a record in the calendar database.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="record">The record to be updated.</param>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.Delete(System.String,System.Int32)">
+            <summary>
+            Deletes a record from the calendar database with related child records.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="viewUri">The view URI of a record.</param>
+            <param name="recordId">The record ID to be deleted.</param>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.Replace(Tizen.Pims.Calendar.CalendarRecord,System.Int32)">
+            <summary>
+            Replaces a record in the calendar database.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="record">The record to be replaced.</param>
+            <param name="id">The record ID.</param>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.GetAll(System.String,System.Int32,System.Int32)">
+            <summary>
+            Retrieves all the records as a list.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="viewUri">The view URI to get records from.</param>
+            <param name="offset">The index from which results are received.</param>
+            <param name="limit">The maximum number of results (value 0 is used for all the records).</param>
+            <returns>
+            The record list.
+            </returns>
+            <privilege>http://tizen.org/privilege/calendar.read</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.GetRecordsWithQuery(Tizen.Pims.Calendar.CalendarQuery,System.Int32,System.Int32)">
+            <summary>
+            Retrieves the records using a query.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="query">The query used to filter results.</param>
+            <param name="offset">The index from which results are received.</param>
+            <param name="limit">The maximum number of results (value 0 is used for all the records).</param>
+            <returns>
+            CalendarList.
+            </returns>
+            <privilege>http://tizen.org/privilege/calendar.read</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.Insert(Tizen.Pims.Calendar.CalendarList)">
+            <summary>
+            Inserts multiple records into the calendar database as a batch operation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="list">The record list.</param>
+            <returns>
+            The inserted record ID array.
+            </returns>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.Update(Tizen.Pims.Calendar.CalendarList)">
+            <summary>
+            Updates multiple records into the calendar database as a batch operation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="list">The record list.</param>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.Delete(System.String,System.Int32[])">
+            <summary>
+            Deletes multiple records with the related child records from the calendar database as a batch operation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="viewUri">The view URI of the records to delete.</param>
+            <param name="idArray">The record IDs to delete.</param>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.Delete(Tizen.Pims.Calendar.CalendarList)">
+            <summary>
+            Deletes multiple records with the related child records from the calendar database as a batch operation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="list">The record list.</param>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.Replace(Tizen.Pims.Calendar.CalendarList,System.Int32[])">
+            <summary>
+            Replaces multiple records in the calendar database as a batch operation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="list">The record list.</param>
+            <param name="idArray">The record IDs.</param>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.GetChangesByVersion(System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Retrieves the records with the given calendar database version.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="viewUri">The view URI to get records from.</param>
+            <param name="BookId">The calendar book ID to filter.</param>
+            <param name="calendarDBVersion">The calendar database version.</param>
+            <param name="currentDBVersion">The current calendar database version.</param>
+            <returns>
+            The record list.
+            </returns>
+            <privilege>http://tizen.org/privilege/calendar.read</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.GetCount(System.String)">
+            <summary>
+            Gets the record count of a specific view.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="viewUri">The view URI to get records from.</param>
+            <returns>
+            The count of records.
+            </returns>
+            <privilege>http://tizen.org/privilege/calendar.read</privilege>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.GetCount(Tizen.Pims.Calendar.CalendarQuery)">
+            <summary>
+            Gets the record count with a query.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="query">The query used for filtering the results.</param>
+            <returns>
+            The count of records.
+            </returns>
+            <privilege>http://tizen.org/privilege/calendar.read</privilege>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.AddDBChangedDelegate(System.String,System.EventHandler{Tizen.Pims.Calendar.DBChangedEventArgs})">
+            <summary>
+            Registers a callback function to be invoked when a record changes.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="viewUri">The view URI of the record to subscribe for change notifications.</param>
+            <param name="DBChanged">The EventHandler to register.</param>
+            <privilege>http://tizen.org/privilege/calendar.read</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.RemoveDBChangedDelegate(System.String,System.EventHandler{Tizen.Pims.Calendar.DBChangedEventArgs})">
+            <summary>
+            Deregisters a callback function.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="viewUri">The view URI of the record to subscribe for change notifications.</param>
+            <param name="DBChanged">The EventHandler to deregister.</param>
+            <privilege>http://tizen.org/privilege/calendar.read</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.LinkRecord(System.Int32,System.Int32)">
+            <summary>
+            Links a record to another record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="baseId">The base record ID.</param>
+            <param name="recordId">The record ID to link to.</param>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarDatabase.UnlinkRecord(System.Int32)">
+            <summary>
+            Unlinks a record from the base record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="recordId">The record ID to unlink.</param>
+            <privilege>http://tizen.org/privilege/calendar.write</privilege>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have proper privileges.</exception>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarFilter">
+            <summary>
+            A filter includes the conditions for the search.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.#ctor(System.String,System.UInt32,Tizen.Pims.Calendar.CalendarFilter.StringMatchType,System.String)">
+            <summary>
+            Creates a filter with a condition for a string type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="viewUri">The view URI of a filter.</param>
+            <param name="propertyId">The property ID to add a condition.</param>
+            <param name="matchType">The match flag.</param>
+            <param name="matchValue">The match value.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.#ctor(System.String,System.UInt32,Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType,System.Int32)">
+            <summary>
+            Creates a filter with a condition for an integer type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="viewUri">The view URI of a filter.</param>
+            <param name="propertyId">The property ID to add a condition.</param>
+            <param name="matchType">The match flag.</param>
+            <param name="matchValue">The match value.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.#ctor(System.String,System.UInt32,Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType,System.Int64)">
+            <summary>
+            Creates a filter with a condition for a long type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="viewUri">The view URI of a filter.</param>
+            <param name="propertyId">The property ID to add a condition.</param>
+            <param name="matchType">The match flag.</param>
+            <param name="matchValue">The match value.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.#ctor(System.String,System.UInt32,Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType,System.Double)">
+            <summary>
+            Creates a filter with a condition for a double type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="viewUri">The view URI of a filter.</param>
+            <param name="propertyId">The property ID to add a condition.</param>
+            <param name="matchType">The match flag.</param>
+            <param name="matchValue">The match value.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.#ctor(System.String,System.UInt32,Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType,Tizen.Pims.Calendar.CalendarTime)">
+            <summary>
+            Creates a filter with a condition for the CalendarTime type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="viewUri">The view URI of a filter.</param>
+            <param name="propertyId">The property ID to add a condition.</param>
+            <param name="matchType">The match flag.</param>
+            <param name="matchValue">The match value.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.Finalize">
+            <summary>
+            Destroys the filter.
+            </summary>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarFilter.StringMatchType">
+            <summary>
+            Enumeration for the filter match type of a string.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.StringMatchType.Exactly">
+            <summary>
+            Full string, case-sensitive.
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.StringMatchType.FullString">
+            <summary>
+            Full string, case-insensitive.
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.StringMatchType.Contains">
+            <summary>
+            Sub-string, case-insensitive.
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.StringMatchType.StartsWith">
+            <summary>
+            Starts with, case-insensitive.
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.StringMatchType.EndsWith">
+            <summary>
+            Ends with, case-insensitive.
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.StringMatchType.Exists">
+            <summary>
+            IS NOT NULL.
+            </summary>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType">
+            <summary>
+            Enumeration for the filter match type of an integer.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType.Equal">
+            <summary>
+            '='
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType.GreaterThan">
+            <summary>
+            '>'
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType.GreaterThanOrEqual">
+            <summary>
+            '>='
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType.LessThan">
+            <summary>
+            &lt;
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType.LessThanOrEqual">
+            <summary>
+            &lt;=
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType.NotEqual">
+            <summary>
+            &lt;>, this flag can yield poor performance.
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType.None">
+            <summary>
+            IS NULL.
+            </summary>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarFilter.LogicalOperator">
+            <summary>
+            Enumeration for a filter operator.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.LogicalOperator.And">
+            <summary>
+            And.
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarFilter.LogicalOperator.Or">
+            <summary>
+            Or.
+            </summary>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.Dispose(System.Boolean)">
+            <summary>
+            Dispose.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources, false to release only unmanaged resources.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.Dispose">
+            <summary>
+            Releases all the resources used by the CalendarFilter.
+            It should be called after having finished using the object.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.AddCondition(Tizen.Pims.Calendar.CalendarFilter.LogicalOperator,System.UInt32,Tizen.Pims.Calendar.CalendarFilter.StringMatchType,System.String)">
+            <summary>
+            Adds a condition for the string type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="logicalOperator">The operator type.</param>
+            <param name="propertyId">The property ID to add a condition.</param>
+            <param name="matchType">The match flag.</param>
+            <param name="matchValue">The match value.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.AddCondition(Tizen.Pims.Calendar.CalendarFilter.LogicalOperator,System.UInt32,Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType,System.Int32)">
+            <summary>
+            Adds a condition for the integer type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="logicalOperator">The operator type.</param>
+            <param name="propertyId">The property ID to add a condition.</param>
+            <param name="matchType">The match flag.</param>
+            <param name="matchValue">The match value.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.AddCondition(Tizen.Pims.Calendar.CalendarFilter.LogicalOperator,System.UInt32,Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType,System.Int64)">
+            <summary>
+            Adds a condition for the long type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="logicalOperator">The operator type.</param>
+            <param name="propertyId">The property ID to add a condition.</param>
+            <param name="matchType">The match flag.</param>
+            <param name="matchValue">The match value.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.AddCondition(Tizen.Pims.Calendar.CalendarFilter.LogicalOperator,System.UInt32,Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType,System.Double)">
+            <summary>
+            Adds a condition for the double type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="logicalOperator">The operator type.</param>
+            <param name="propertyId">The property ID to add a condition.</param>
+            <param name="matchType">The match flag.</param>
+            <param name="matchValue">The match value.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.AddCondition(Tizen.Pims.Calendar.CalendarFilter.LogicalOperator,System.UInt32,Tizen.Pims.Calendar.CalendarFilter.IntegerMatchType,Tizen.Pims.Calendar.CalendarTime)">
+            <summary>
+            Adds a condition for the CalendarTime type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="logicalOperator">The operator type.</param>
+            <param name="propertyId">The property ID to add a condition.</param>
+            <param name="matchType">The match flag.</param>
+            <param name="matchValue">The match value.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarFilter.AddFilter(Tizen.Pims.Calendar.CalendarFilter.LogicalOperator,Tizen.Pims.Calendar.CalendarFilter)">
+            <summary>
+            Adds a child filter to a parent filter.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="logicalOperator">The operator type.</param>
+            <param name="filter">The child filter.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarList">
+            <summary>
+            A list of records with the same type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.#ctor">
+            <summary>
+            Creates a calendar list.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+        </member>
+        <member name="P:Tizen.Pims.Calendar.CalendarList.Count">
+            <summary>
+            The count of the calendar entity.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The count of the calendar entity.</value>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.Finalize">
+            <summary>
+            Destroys the CalendarList resource.
+            </summary>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.Dispose(System.Boolean)">
+            <summary>
+            Disposes off the resources (other than memory) used by the CalendarList.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources, false to release only unmanaged resources.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.Dispose">
+            <summary>
+            Releases all resources used by the CalendarList.
+            It should be called after it has finished using the object.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.AddRecord(Tizen.Pims.Calendar.CalendarRecord)">
+            <summary>
+            Adds a record to the calendar list.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="record">The record to be added.</param>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.RemoveRecord(Tizen.Pims.Calendar.CalendarRecord)">
+            <summary>
+            Removes a record from the calendar list.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="record">The record to be removed.</param>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.GetCurrentRecord">
+            <summary>
+            Retrieves a record from the calendar list.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>
+            The calendar record.
+            </returns>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.MovePrevious">
+            <summary>
+            Moves a calendar list to the previous position.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>
+            If the cursor is moved to the end, it returns false.
+            </returns>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.MoveNext">
+            <summary>
+            Moves a calendar list to the next position.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>
+            If the cursor is moved to the end, it returns false.
+            </returns>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.MoveFirst">
+            <summary>
+            Moves a calendar list to the first position.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarList.MoveLast">
+            <summary>
+            Moves a calendar list to the last position.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarManager">
+            <summary>
+            A class for managing the calendar information. It allows the applications to use the calendar service.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarManager.#ctor">
+            <summary>
+            Creates a manager.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarManager.Finalize">
+            <summary>
+            Destroys the CalendarManager resource.
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarManager.disposedValue">
+            To detect redundant calls.
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarManager.Dispose(System.Boolean)">
+            <summary>
+            Disposes of the resources (other than memory) used by the CalendarManager.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources, false to release only unmanaged resources.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarManager.Dispose">
+            <summary>
+            Releases all the resources used by the CalendarManager.
+            It should be called after it has finished using the object.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Pims.Calendar.CalendarManager.Database">
+            <summary>
+            Gets the database.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The database instance.</value>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarQuery">
+            <summary>
+            A query is used to retrieve the data, which satisfies the given criteria.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>
+            A query is used to retrieve the calendar data, which satisfies a given criteria,
+            such as an integer property being greater than a given value,
+            or a string property containing a given substring.
+            A query needs a filter, which can set the conditions for the search.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarQuery.#ctor(System.String)">
+            <summary>
+            Creates a query.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="viewUri">The view URI of a query.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarQuery.Finalize">
+            <summary>
+            Destructor.
+            </summary>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarQuery.Dispose(System.Boolean)">
+            <summary>
+            Disposes of the resources (other than memory) used by the CalendarQuery.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources, false to release only unmanaged resources.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarQuery.Dispose">
+            <summary>
+            Releases all the resources used by the CalendarQuery.
+            It should be called after it has finished using the object.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarQuery.SetProjection(System.UInt32[])">
+            <summary>
+            Adds the property IDs for projection.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="propertyIdArray">The property ID array.</param>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarQuery.SetDistinct(System.Boolean)">
+            <summary>
+            Sets the "distinct" option for projection.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="set">If true it is set, otherwise if false it is unset.</param>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarQuery.SetFilter(Tizen.Pims.Calendar.CalendarFilter)">
+            <summary>
+            Sets the filter for a query.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="filter">The filter.</param>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarQuery.SetSort(System.UInt32,System.Boolean)">
+            <summary>
+            Sets the sort mode for a query.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="propertyId">The property ID to sort.</param>
+            <param name="isAscending">If true it sorts in the ascending order, otherwise if false it sorts in the descending order.</param>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarRecord">
+            <summary>
+            A record represents an actual record in the database.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>
+            A record represents an actual record in the database,
+            but you can also consider it a piece of information, such as an alarm, attendee, and extended.
+            A record can be a complex set of data, containing other data.
+            For example, a calendar record contains the alarm property, which is a reference to an alarm record.
+            An alarm record could belong to a event record,
+            and its alarm ID property is set to the identifier of the corresponding event.
+            In this case, the alarm is the child record of the event, and the event is the parent record.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.#ctor(System.String)">
+            <summary>
+            Creates a record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <param name="viewUri">The view URI.</param>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.Finalize">
+            <summary>
+            Destructor.
+            </summary>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarRecord._disposedValue">
+            To detect redundant calls.
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.Dispose(System.Boolean)">
+            <summary>
+            Disposes of the resources (other than memory) used by the CalendarRecord.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources, false to release only unmanaged resources.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.Dispose">
+            <summary>
+            Releases all the resources used by the CalendarRecord.
+            It should be called after it has finished using the object.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.Clone">
+            <summary>
+            Makes a clone of a record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>
+            A cloned record.
+            </returns>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+        </member>
+        <member name="P:Tizen.Pims.Calendar.CalendarRecord.Uri">
+            <summary>
+            Get record URI.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The URI of the record</value>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.Get``1(System.UInt32)">
+            <summary>
+            Gets a object from a record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="propertyId">The property ID</param>
+            <returns>
+            The value of the property corresponding to property id.
+            </returns>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when feature is not supported</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.Set``1(System.UInt32,``0)">
+            <summary>
+            Sets a value of the property to a record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="propertyId">The property ID</param>
+            <param name="value">value</param>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when feature is not supported</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.AddChildRecord(System.UInt32,Tizen.Pims.Calendar.CalendarRecord)">
+            <summary>
+            Adds a child record to the parent record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="propertyId">The property ID.</param>
+            <param name="childRecord">The child record.</param>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.RemoveChildRecord(System.UInt32,Tizen.Pims.Calendar.CalendarRecord)">
+            <summary>
+            Removes a child record from the parent record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="propertyId">The property ID.</param>
+            <param name="childRecord">The child record.</param>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.GetChildRecordCount(System.UInt32)">
+            <summary>
+            Gets a child record from the parent record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="propertyId">The property ID.</param>
+            <returns>
+            The number of child records corresponding to property ID.
+            </returns>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.GetChildRecord(System.UInt32,System.Int32)">
+            <summary>
+            Gets a child record from the parent record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="propertyId">The property ID.</param>
+            <param name="index">The child record index.</param>
+            <returns>
+            The record.
+            </returns>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarRecord.CloneChildRecordList(System.UInt32)">
+            <summary>
+            Clones a child record list corresponding to property ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="propertyId">The property ID.</param>
+            <returns>
+            The record list.
+            </returns>
+            <feature>http://tizen.org/feature/calendar</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarReminder">
+            <summary>
+            A class for the reminder for an event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>
+            The client who wants to be alerted at a specific time should register MIME ("application/x-tizen.calendar.reminder") type in manifest.xml file.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarReminder.Dispose(System.Boolean)">
+            <summary>
+            Disposes of the resources (other than memory) used by the CalendarReminder.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources, false to release only unmanaged resources.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarReminder.Dispose">
+            <summary>
+            Releases all the resources used by the CalendarReminder.
+            It should be called after it has finished using the object.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Pims.Calendar.CalendarReminder.ReminderAlerted">
+            <summary>
+            The Reminder event is triggered when the alarm is alerted.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTime">
+            <summary>
+            A class for the time to set, get, or calculate.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTime.Type">
+            <summary>
+            Enumeration for the time type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTime.Type.Utc">
+            <summary>
+            UTC time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTime.Type.Local">
+            <summary>
+            Local time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarTime.#ctor(System.Int64)">
+            <summary>
+            Creates the UTC CalendarTime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="utcTime">The UTC epoch time. 0 is 1971/01/01.</param>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarTime.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates the local CalendarTime
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="year">The year.</param>
+            <param name="month">The month.</param>
+            <param name="day">The day.</param>
+            <param name="hour">The hour.</param>
+            <param name="minute">The minute.</param>
+            <param name="second">The second.</param>
+        </member>
+        <member name="P:Tizen.Pims.Calendar.CalendarTime.UtcTime">
+            <summary>
+            Gets the UtcTime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The UTC time.</value>
+        </member>
+        <member name="P:Tizen.Pims.Calendar.CalendarTime.LocalTime">
+            <summary>
+            Gets the LocalTime
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>The local time.</value>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarTime.CompareTo(Tizen.Pims.Calendar.CalendarTime)">
+            <summary>
+            Compares the CalendarTime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="other">The CalendarTime to be compared.</param>
+            <returns>
+            A 32-bit signed integer that indicates the relative order of the objects being compared.
+            </returns>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarTime.Equals(System.Object)">
+            <summary>
+            Equals the CalendarTime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="obj">The CalendarTime to be compared.</param>
+            <returns>
+            A 32-bit signed integer that indicates the relative order of the objects being compared.
+            </returns>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarTime.GetHashCode">
+            <summary>
+            The GetHashCode for the CalendarTime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>
+            A hash code for the current object.
+            </returns>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes">
+            <summary>
+            This class provides enumerations about the calendar information.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>
+            Most enumerations are based on vCalendar and iCalendar(ver 2.0) specification.
+            https://www.ietf.org/rfc/rfc2445.txt
+            </remarks>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.DefaultBook">
+            <summary>
+            Enumeration for the default books.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.DefaultBook.Event">
+            <summary>
+            The default event calendar book.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.DefaultBook.Todo">
+            <summary>
+            The default todo calendar book.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.DefaultBook.Birthday">
+            <summary>
+            The default birthday calendar book.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.StoreType">
+            <summary>
+            Enumeration for the store types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.StoreType.Book">
+            <summary>
+            Book type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.StoreType.Event">
+            <summary>
+            Event type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.StoreType.Todo">
+            <summary>
+            Todo type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.BookMode">
+            <summary>
+            Enumeration for the book modes.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.BookMode.Default">
+            <summary>
+            All modules can read and write records of this calendar book.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.BookMode.ReadOnly">
+            <summary>
+            All modules can only read records of this calendar book.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.EventStatus">
+            <summary>
+            Enumeration for the event status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.EventStatus.None">
+            <summary>
+            No status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.EventStatus.Tentative">
+            <summary>
+            The event is tentative.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.EventStatus.Confirmed">
+            <summary>
+            The event is confirmed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.EventStatus.Cancelled">
+            <summary>
+            The event is cancelled.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.TodoStatus">
+            <summary>
+            Enumeration for the status of a to-do.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TodoStatus.None">
+            <summary>
+            No status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TodoStatus.NeedAction">
+            <summary>
+            Needs action status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TodoStatus.Completed">
+            <summary>
+            Completed status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TodoStatus.InProcess">
+            <summary>
+            Work in process status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TodoStatus.Cancelled">
+            <summary>
+            Cancelled status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.BusyStatus">
+            <summary>
+            Enumeration for the busy status of an event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.BusyStatus.Free">
+            <summary>
+            The free status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.BusyStatus.Busy">
+            <summary>
+            The busy status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.BusyStatus.Unavailable">
+            <summary>
+            The unavailable status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.BusyStatus.Tentative">
+            <summary>
+            The tentative status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.Sensitivity">
+            <summary>
+            Enumeration for the calendar sensitivity type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Sensitivity.Public">
+            <summary>
+            Public sensitivity.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Sensitivity.Private">
+            <summary>
+            Private sensitivity.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Sensitivity.Confidential">
+            <summary>
+            Confidential sensitivity.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.MeetingStatus">
+            <summary>
+            Enumeration for the meeting status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.MeetingStatus.NoMeeting">
+            <summary>
+            No meeting.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.MeetingStatus.Meeting">
+            <summary>
+            Meeting exists.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.MeetingStatus.Received">
+            <summary>
+            Meeting received.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.MeetingStatus.Cancelled">
+            <summary>
+            Meeting canceled.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.Priority">
+            <summary>
+            Enumeration for the calendar event item's priority.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Priority.None">
+            <summary>
+            No priority.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Priority.High">
+            <summary>
+            Low priority.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Priority.Normal">
+            <summary>
+            Normal priority.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Priority.Low">
+            <summary>
+            High priority.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.Recurrence">
+            <summary>
+            Enumeration for the frequency of an event's recurrence.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Recurrence.None">
+            <summary>
+            No recurrence event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Recurrence.Daily">
+            <summary>
+            An event occurs every day.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Recurrence.Weekly">
+            <summary>
+            An event occurs on the same day of every week. According to the week flag, the event will recur every day of the week.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Recurrence.Monthly">
+            <summary>
+            An event occurs on the same day of every month.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Recurrence.Yearly">
+            <summary>
+            An event occurs on the same day of every year.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.RangeType">
+            <summary>
+            Enumeration for the range types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.RangeType.Until">
+            <summary>
+            Range until.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.RangeType.Count">
+            <summary>
+            Range count.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.RangeType.None">
+            <summary>
+            No range.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.SystemType">
+            <summary>
+            Enumeration for the system types.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.SystemType.Default">
+            <summary>
+            Locale's default calendar.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.SystemType.Gregorian">
+            <summary>
+            Locale's default calendar.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.SystemType.Lunisolar">
+            <summary>
+            East Asian lunisolar calendar.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.TickUnit">
+            <summary>
+            Enumeration for the alarm time unit type of an event, such as minutes, hours, days, and so on.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TickUnit.None">
+            <summary>
+            No reminder set.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TickUnit.Specific">
+            <summary>
+            Specific in seconds.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TickUnit.Minute">
+            <summary>
+            Alarm time unit in minutes.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TickUnit.Hour">
+            <summary>
+            Alarm time unit in hours.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TickUnit.Day">
+            <summary>
+            Alarm time unit in days.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.TickUnit.Week">
+            <summary>
+            Alarm time unit in weeks.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.WeekDay">
+            <summary>
+            Enumeration for weekdays.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.WeekDay.Sunday">
+            <summary>
+            Sunday.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.WeekDay.Monday">
+            <summary>
+            Monday.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.WeekDay.Tuesday">
+            <summary>
+            Tuesday.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.WeekDay.Wednesday">
+            <summary>
+            Wednesday.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.WeekDay.Thursday">
+            <summary>
+            Thursday.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.WeekDay.Friday">
+            <summary>
+            Friday.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.WeekDay.Saturday">
+            <summary>
+            Saturday.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.Cutype">
+            <summary>
+            Enumeration to specify the type of calendar user, specified by the property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Cutype.Individual">
+            <summary>
+            An individual.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Cutype.Group">
+            <summary>
+            A group of individuals.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Cutype.Resource">
+            <summary>
+            A physical resource.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Cutype.Room">
+            <summary>
+            A room resource.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Cutype.Unknown">
+            <summary>
+            Otherwise not known.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.AttendeeRole">
+            <summary>
+            Enumeration for the attendee roles.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeRole.ReqParticipant">
+            <summary>
+            Participation is required.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeRole.OptParticipant">
+            <summary>
+            Accepted status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeRole.NonParticipant">
+            <summary>
+            Non-Participant.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeRole.Chair">
+            <summary>
+            Chairperson.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.AttendeeStatus">
+            <summary>
+            Enumeration for the attendee status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeStatus.Pending">
+            <summary>
+            Pending status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeStatus.Accepted">
+            <summary>
+            Accepted status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeStatus.Declined">
+            <summary>
+            Declined status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeStatus.Tentative">
+            <summary>
+            Tentative status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeStatus.Delegated">
+            <summary>
+            Delegated status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeStatus.Completed">
+            <summary>
+            Completed status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.AttendeeStatus.InProcess">
+            <summary>
+            In process status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarTypes.Action">
+            <summary>
+            Enumeration for the alarm actions.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Action.Audio">
+            <summary>
+            Audio action.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Action.Display">
+            <summary>
+            Display action.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarTypes.Action.Email">
+            <summary>
+            Email action.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.ParseCallback">
+            <summary>
+            Parsing the vCalendar file callback function.
+            </summary>
+            <param name="record">The record.</param>
+            <returns>true to continue with the next iteration of the loop, otherwise false to break out of the loop.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarVcalendar">
+            <summary>
+            A class for parsing and composing the vCalendar.
+            </summary>
+            <remarks>
+            It's based on the vCalendar v2.0 specification.
+            </remarks>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarVcalendar.Compose(Tizen.Pims.Calendar.CalendarList)">
+            <summary>
+            Retrieves a vCalendar stream from a calendar list.
+            </summary>
+            <param name="list">The calendar list.</param>
+            <returns>
+            The composed stream.
+            </returns>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarVcalendar.Parse(System.String)">
+            <summary>
+            Retrieves all the calendars from a vCalendar stream.
+            </summary>
+            <param name="stream">The vCalendar stream.</param>
+            <returns>
+            The record list.
+            </returns>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Pims.Calendar.CalendarVcalendar.ParseForEach(System.String,Tizen.Pims.Calendar.ParseCallback)">
+            <summary>
+            Parses the vCalendar file with ForEach.
+            </summary>
+            <param name="path">The file path of the vCalendar stream file.</param>
+            <param name="callback">The callback function to invoke.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to an invalid operation.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when one of the arguments provided to a method is not valid.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Property.Mask">
+            data type mask 0x0FF00000
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Property.PropertyMask">
+            property : mask 0x0000F000
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Property.Id.BookId">
+            book
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Property.Id.EventId">
+            Event
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Property.Id.TodoId">
+            Todo
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Property.Id.TimezoneId">
+            Timezone
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Record.AverageSize">
+            average size
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.Book">
+            <summary>
+            Describes the properties of a Book record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.Uri">
+            <summary>
+            Identifier of this calendar book view.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.Id">
+            <summary>
+            Database record ID of the calendar book.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.Uid">
+            <summary>
+            Unique identifier.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.Name">
+            <summary>
+            Calendar book name.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.Description">
+            <summary>
+            Calendar book description.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.Color">
+            <summary>
+            Calendar book color for UX.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.Location">
+            <summary>
+            Location of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.Visibility">
+            <summary>
+            Visibility of the calendar book for UX.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.SyncEvent">
+            <summary>
+            Currently not used.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.AccountId">
+            <summary>
+            Account for this calendar.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.StoreType">
+            <summary>
+            Type of calendar contents (refer to the CalendarTypes.StoreType).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.SyncData1">
+            <summary>
+            Generic data for use by syncing.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.SyncData2">
+            <summary>
+            Generic data for use by syncing.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.SyncData3">
+            <summary>
+            Generic data for use by syncing.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.SyncData4">
+            <summary>
+            Generic data for use by syncing.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Book.Mode">
+            <summary>
+            Calendar book mode (refer to the CalendarTypes.BookMode).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.Event">
+            <summary>
+            Describes the properties of a Event record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Uri">
+            <summary>
+            Identifier of this event view.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Id">
+            <summary>
+            Database record ID of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.BookId">
+            <summary>
+            ID of the calendar book to which the event belongs.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Summary">
+            <summary>
+            The short description of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Description">
+            <summary>
+            The description of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Location">
+            <summary>
+            The location of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Categories">
+            <summary>
+            The category of the event. For example, appointment, birthday.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Exdate">
+            <summary>
+            The exception list of the event. If this event has a recurrence rule, the instance of the exdate is removed. Format is "YYYYMMDD"(allday event) or "YYYYMMDDTHHMMSS". Multiple exceptions can be included with a comma.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.EventStatus">
+            <summary>
+            The status of event (refer to the CalendarTypes.EventStatus).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Priority">
+            <summary>
+            The priority of event (refer to the CalendarTypes.Priority).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Timezone">
+            <summary>
+            The timezone_id of the event, if it exists.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.ContactId">
+            <summary>
+            The person_id of the event if the event is a birthday. Refer to the contacts-service.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.BusyStatus">
+            <summary>
+            The busy status of event (refer to the CalendarTypes.BusyStatus).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Sensitivity">
+            <summary>
+            The sensitivity of event (refer to the CalendarTypes.Sensitivity).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Uid">
+            <summary>
+            The unique ID of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.OrganizerName">
+            <summary>
+            The name of organizer of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.OrganizerEmail">
+            <summary>
+            The email address of the organizer of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.MeetingStatus">
+            <summary>
+            The meeting status of event (refer to the CalendarTypes.MeetingStatus).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.OriginalEventId">
+            <summary>
+            The ID of the original event, if the event is an exception.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Latitude">
+            <summary>
+            The latitude of the location of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Longitude">
+            <summary>
+            The longitude of the location of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.EmailId">
+            <summary>
+            ID of the email_id. Refer to the email-service.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.CreatedTime">
+            <summary>
+            The time when the event is created.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.LastModifiedTime">
+            <summary>
+            The time when the event is updated.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.IsDeleted">
+            <summary>
+             Whether or not the event is deleted.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Freq">
+            <summary>
+            The frequent type of event recurrence (refer to the CalendarTypes.Recurrence).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.RangeType">
+            <summary>
+            The range type of event recurrence (refer to the CalendarTypes.RangeType).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Until">
+            <summary>
+            The end time of the event recurrence. Only if this is used with RangeType.Until.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Count">
+            <summary>
+            The count of the event recurrence. Only if this is used with RangeType.Count.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Interval">
+            <summary>
+            The interval of the event recurrence.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Bysecond">
+            <summary>
+            The second list of the event recurrence. The value can be from 0 to 59. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Byminute">
+            <summary>
+            The minute list of the event recurrence. The value can be from 0 to 59. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Byhour">
+            <summary>
+            The hour list of the event recurrence. The value can be from 0 to 23. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Byday">
+            <summary>
+            The day list of the event recurrence. The value can be SU, MO, TU, WE, TH, FR, SA. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Bymonthday">
+            <summary>
+            The month day list of the event recurrence. The value can be from 1 to 31 and from -31 to -1. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Byyearday">
+            <summary>
+            The year day list of the event recurrence. The value can be from 1 to 366 and from -366 to -1. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Byweekno">
+            <summary>
+            The week number list of the event recurrence. The value can be from 1 to 53 and from -53 to -1. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Bymonth">
+            <summary>
+            The month list of the event recurrence. The value can be from 1 to 12. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Bysetpos">
+            <summary>
+            The position list of the event recurrence. The value can be from 1 to 366 and from -366 to -1. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Wkst">
+            <summary>
+            The start day of the week (refer to the CalendarTypes.WeekDay).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.RecurrenceId">
+            <summary>
+            RECURRENCE-ID of RFC #2445.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Rdate">
+            <summary>
+            RDATE of RFC #2445.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.HasAttendee">
+            <summary>
+            Whether or not the event has an attendee list.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.HasAlarm">
+            <summary>
+            Whether or not the event has an alarm list.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.SyncData1">
+            <summary>
+            The sync data of the event. If the developers need to save some information related to the event, they can use this property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.SyncData2">
+            <summary>
+            The sync data of the event. If the developers need to save some information related to the event, they can use this property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.SyncData3">
+            <summary>
+            The sync data of the event. If the developers need to save some information related to the event, they can use this property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.SyncData4">
+            <summary>
+            The sync data of the event. If the developers need to save some information related to the event, they can use this property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Start">
+            <summary>
+            The start time of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.End">
+            <summary>
+            The end time of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Alarm">
+            <summary>
+            The alarm list of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Attendee">
+            <summary>
+            The attendee list of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.CalendarSystemType">
+            <summary>
+            The calendar system type (refer to the CalendarTypes.SystemType).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.StartTzid">
+            <summary>
+            The timezone of the start_time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.EndTzid">
+            <summary>
+            The timezone of the end_time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Exception">
+            <summary>
+            The exception mod event list of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.Extended">
+            <summary>
+            The extended property list of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.IsAllday">
+            <summary>
+            The event is an allday event or not.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.LinkCount">
+            <summary>
+            The linked event count.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Event.LinkBaseId">
+            <summary>
+            The event is an base linked event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.Todo">
+            <summary>
+            Describes the properties of a Todo record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Uri">
+            <summary>
+            Identifier of this todo view.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Id">
+            <summary>
+            Database record ID of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.BookId">
+            <summary>
+            ID of the calendar book to which the todo belongs to.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Summary">
+            <summary>
+            The short description of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Description">
+            <summary>
+            The description of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Location">
+            <summary>
+            The location of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Categories">
+            <summary>
+            The category of the todo. For example, APPOINTMENT, BIRTHDAY.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.TodoStatus">
+            <summary>
+            The status of the todo (refer to the CalendarTypes.TodoStatus).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Priority">
+            <summary>
+            The priority of the todo (refer to the CalendarTypes.Priority).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Sensitivity">
+            <summary>
+            The sensitivity of the todo (refer to the CalendarTypes.Sensitivity).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Uid">
+            <summary>
+            The unique ID of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Latitude">
+            <summary>
+            The latitude of the location of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Longitude">
+            <summary>
+            The longitude of the location of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Progress">
+            <summary>
+            The progression of the todo. The value can be from 0 to 100.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.CreatedTime">
+            <summary>
+            The time when the todo is created.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.LastModifiedTime">
+            <summary>
+            The time when the todo is updated.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.CompletedTime">
+            <summary>
+            The time when the todo is completed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.IsDeleted">
+            <summary>
+             Whether or not the todo is deleted.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Freq">
+            <summary>
+            The frequent type of the todo recurrence (refer to the CalendarTypes.Recurrence).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.RangeType">
+            <summary>
+            The range type of the todo recurrence (refer to the CalendarTypes.RangeType).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Until">
+            <summary>
+            The end time of the todo recurrence. Only if this is used with RangeType.Until..
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Count">
+            <summary>
+            The count of the todo recurrence. Only if this is used with RangeType.Count.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Interval">
+            <summary>
+            The interval of the todo recurrence.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Bysecond">
+            <summary>
+            The second list of the todo recurrence. The value can be from 0 to 59. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Byminute">
+            <summary>
+            The minute list of the todo recurrence. The value can be from 0 to 59. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Byhour">
+            <summary>
+            The hour list of the todo recurrence. The value can be from 0 to 23. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Byday">
+            <summary>
+            The day list of the todo recurrence. The value can be SU, MO, TU, WE, TH, FR, SA. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Bymonthday">
+            <summary>
+            The month day list of the todo recurrence. The value can be from 1 to 31 and from -31 to -1. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Byyearday">
+            <summary>
+            The year day list of the todo recurrence. The value can be from 1 to 366 and from -366 to -1. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Byweekno">
+            <summary>
+            The week number list of the todo recurrence. The value can be from 1 to 53 and from -53 to -1. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Bymonth">
+            <summary>
+            The month list of the todo recurrence. The value can be from 1 to 12. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Bysetpos">
+            <summary>
+            The position list of the todo recurrence. The value can be from 1 to 366 and from -366 to -1. The list is separated by commas.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Wkst">
+            <summary>
+            The start day of the week (refer to the CalendarTypes.WeekDay).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.HasAlarm">
+            <summary>
+            Whether or not the todo has an alarm list.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.SyncData1">
+            <summary>
+            The sync data of the todo. If the developers need to save some information related to the todo, they can use this property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.SyncData2">
+            <summary>
+            The sync data of the todo. If the developers need to save some information related to the todo, they can use this property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.SyncData3">
+            <summary>
+            The sync data of the todo. If the developers need to save some information related to the todo, they can use this property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.SyncData4">
+            <summary>
+            The sync data of the todo. If the developers need to save some information related to the todo, they can use this property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Start">
+            <summary>
+            The start time of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Due">
+            <summary>
+            The due time of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Alarm">
+            <summary>
+            The alarm list of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.StartTzid">
+            <summary>
+            The timezone of the start_time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.DueTzid">
+            <summary>
+            The timezone of the due_time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.OrganizerName">
+            <summary>
+            The name of the organizer of the event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.OrganizerEmail">
+            <summary>
+            The email address of the organizer of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.HasAttendee">
+            <summary>
+            Whether or not the todo has an attendee list.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Attendee">
+            <summary>
+            The attendee list of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.Extended">
+            <summary>
+            The extended property list of the todo.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Todo.IsAllday">
+            <summary>
+            The todo is an allday event or not.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.Timezone">
+            <summary>
+            Describes the properties of a timezone record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.Uri">
+            <summary>
+            Identifier of this timezone view.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.Id">
+            <summary>
+            Database record ID of the timezone.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.TzOffsetFromGmt">
+            <summary>
+            UTC offset, which is in use when the onset of this time zone observance begins. Valid values are -720(-12:00) to 840(+14:00).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.StandardName">
+            <summary>
+            Name of the standard time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.StdStartMonth">
+            <summary>
+            Starting month of the standard time. Month is 0-based. For example, 0 for January.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.StdStartPositionOfWeek">
+            <summary>
+            Starting day-of-week-in-month of the standard time. Day is 1-based.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.StdStartDay">
+            <summary>
+            Starting day-of-week of the standard time. Valid values are 1 (SUNDAY) to 7 (SATURDAY).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.StdStartHour">
+            <summary>
+            Starting hour of the standard time. Valid values are 0 to 23.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.StandardBias">
+            <summary>
+            The number of minutes added during the standard time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.DayLightName">
+            <summary>
+            Name of the Daylight.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.DayLightStartMonth">
+            <summary>
+            Starting month of the Daylight. Month is 0-based. For example, 0 for January.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.DayLightStartPositionOfWeek">
+            <summary>
+            Starting day-of-week-in-month of the Daylight. Day is 1-based.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.DayLightStartDay">
+            <summary>
+            Starting day-of-week of the Daylight. Valid values are 1 (SUNDAY) to 7 (SATURDAY).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.DayLightStartHour">
+            <summary>
+            Starting hour of the Daylight. Valid values are 0 to 23.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.DayLightBias">
+            <summary>
+            The number of minutes added during the Daylight time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Timezone.CalendarId">
+            <summary>
+            Database record ID of a related calendar book.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.Attendee">
+            <summary>
+            Describes the properties of an Attendee record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Uri">
+            <summary>
+            Identifier of this calendar attendee view.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Number">
+            <summary>
+            The number of the attendee.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Cutype">
+            <summary>
+            The type of attendee (refer to the CalendarTypes.Cutype).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.CtIndex">
+            <summary>
+            CtIndex.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Uid">
+            <summary>
+            Unique identifier.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Group">
+            <summary>
+            Group.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Email">
+            <summary>
+            The email address of the attendee.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Role">
+            <summary>
+            Attendee role (refer to the CalendarTypes.AttendeeRole).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Status">
+            <summary>
+            Attendee status (refer to the CalendarTypes.AttendeeStatus).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Rsvp">
+            <summary>
+            RSVP invitation reply (one of true, false).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.DelegateeUri">
+            <summary>
+            Delegatee (DELEGATED-TO).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.DelegatorUri">
+            <summary>
+            Delegator (DELEGATED-FROM).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Name">
+            <summary>
+            Attendee name.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.Member">
+            <summary>
+            Group that the attendee belongs to.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Attendee.ParentId">
+            <summary>
+            Event/TODO that the attendee belongs to.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.Alarm">
+            <summary>
+            Describes the properties of an Alarm record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Alarm.Uri">
+            <summary>
+            Identifier of this calendar alarm view.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Alarm.Tick">
+            <summary>
+            The number of unit before start time. This must be used with one of TickUnit.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Alarm.TickUnit">
+            <summary>
+            Reminder tick time unit (refer to the CalendarTypes.TickUnit).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Alarm.Description">
+            <summary>
+            Alarm description.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Alarm.ParentId">
+            <summary>
+            Event that the alarm belongs to.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Alarm.Summary">
+            <summary>
+            Alarm summary.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Alarm.Action">
+            <summary>
+            Action of alarm (refer to the CalendarTypes.Action).
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Alarm.Attach">
+            <summary>
+            Alarm tone path.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Alarm.AlarmTime">
+            <summary>
+            The alarm time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook">
+            <summary>
+            Describes the properties of an InstanceUtimeBook record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>Read only view.</remarks>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.Uri">
+            <summary>
+            Identifier of this instance utime book.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.EventId">
+            <summary>
+            Event ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.Start">
+            <summary>
+            Start time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.End">
+            <summary>
+            End time.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.Summary">
+            <summary>
+            Summary.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.Location">
+            <summary>
+            Location.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.BookId">
+            <summary>
+            Book ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.Description">
+            <summary>
+            Description.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.BusyStatus">
+            <summary>
+            BusyStatus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.EventStatus">
+            <summary>
+            EventStatus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.Priority">
+            <summary>
+            Priority.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.Sensitivity">
+            <summary>
+            Sensitivity.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.HasRrule">
+            <summary>
+            HasRrule.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.Latitude">
+            <summary>
+            Latitude.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.Longitude">
+            <summary>
+            Longitude.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.HasAlarm">
+            <summary>
+            HasAlarm.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.OriginalEventId">
+            <summary>
+            OriginalEventId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.LastModifiedtime">
+            <summary>
+            LastModifiedtime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook.SyncData1">
+            <summary>
+            SyncData1.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook">
+            <summary>
+            Describes the properties of an InstanceLocaltimeBook record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>Read only view.</remarks>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.Uri">
+            <summary>
+            URI.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.EventId">
+            <summary>
+            EventId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.Start">
+            <summary>
+            Start.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.End">
+            <summary>
+            End.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.Summary">
+            <summary>
+            Summary.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.Location">
+            <summary>
+            Location.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.BookId">
+            <summary>
+            BookId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.Description">
+            <summary>
+            Description.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.BusyStatus">
+            <summary>
+            BusyStatus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.EventStatus">
+            <summary>
+            EventStatus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.Priority">
+            <summary>
+            Priority.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.Sensitivity">
+            <summary>
+            Sensitivity.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.HasRrule">
+            <summary>
+            HasRrule.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.Latitude">
+            <summary>
+            Latitude.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.Longitude">
+            <summary>
+            Longitude.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.HasAlarm">
+            <summary>
+            HasAlarm.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.OriginalEventId">
+            <summary>
+            OriginalEventId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.LastModifiedTime">
+            <summary>
+            LastModifiedTime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.SyncData1">
+            <summary>
+            SyncData1.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook.IsAllday">
+            <summary>
+            IsAllday.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended">
+            <summary>
+            Describes the properties of an InstanceUtimeBookExtended record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>Read only view.</remarks>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.Uri">
+            <summary>
+            URI.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.EventId">
+            <summary>
+            EventId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.Start">
+            <summary>
+            Start.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.End">
+            <summary>
+            End.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.Summary">
+            <summary>
+            Summary.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.Location">
+            <summary>
+            Location.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.BookId">
+            <summary>
+            BookId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.Description">
+            <summary>
+            Description.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.BusyStatus">
+            <summary>
+            BusyStatus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.EventStatus">
+            <summary>
+            EventStatus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.Priority">
+            <summary>
+            Priority.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.Sensitivity">
+            <summary>
+            Sensitivity.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.HasRrule">
+            <summary>
+            HasRrule.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.Latitude">
+            <summary>
+            Latitude.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.Longitude">
+            <summary>
+            Longitude.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.HasAlarm">
+            <summary>
+            HasAlarm.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.OriginalEventId">
+            <summary>
+            OriginalEventId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.LastModifiedTime">
+            <summary>
+            LastModifiedTime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.SyncData1">
+            <summary>
+            SyncData1.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.OrganizerName">
+            <summary>
+            OrganizerName.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.Categories">
+            <summary>
+            Categories.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.HasAttendee">
+            <summary>
+            HasAttendee.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.SyncData2">
+            <summary>
+            SyncData2.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.SyncData3">
+            <summary>
+            SyncData3.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended.SyncData4">
+            <summary>
+            SyncData4.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended">
+            <summary>
+            Describes the properties of an InstanceLocaltimeBookExtended record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>Read only view.</remarks>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.Uri">
+            <summary>
+            URI.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.EventId">
+            <summary>
+            EventId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.Start">
+            <summary>
+            Start.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.End">
+            <summary>
+            End.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.Summary">
+            <summary>
+            Summary.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.Location">
+            <summary>
+            Location.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.BookId">
+            <summary>
+            BookId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.Description">
+            <summary>
+            Description.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.BusyStatus">
+            <summary>
+            BusyStatus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.EventStatus">
+            <summary>
+            EventStatus.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.Priority">
+            <summary>
+            Priority.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.Sensitivity">
+            <summary>
+            Sensitivity.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.HasRrule">
+            <summary>
+            HasRrule.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.Latitude">
+            <summary>
+            Latitude.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.Longitude">
+            <summary>
+            Longitude.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.HasAlarm">
+            <summary>
+            HasAlarm.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.OriginalEventId">
+            <summary>
+            OriginalEventId.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.LastModifiedTime">
+            <summary>
+            LastModifiedTime.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.SyncData1">
+            <summary>
+            SyncData1.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.OrganizerName">
+            <summary>
+            OrganizerName.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.Categories">
+            <summary>
+            Categories.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.HasAttendee">
+            <summary>
+            HasAttendee.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.SyncData2">
+            <summary>
+            SyncData2.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.SyncData3">
+            <summary>
+            SyncData3.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.SyncData4">
+            <summary>
+            SyncData4.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended.IsAllday">
+            <summary>
+            IsAllday.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.UpdatedInfo">
+            <summary>
+            Describes the properties of an UpdatedInfo record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>Read only view.</remarks>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.UpdatedInfo.Uri">
+            <summary>
+            Identifier of this UpdatedInfo view.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.UpdatedInfo.Id">
+            <summary>
+            Modified event (or todo) record ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.UpdatedInfo.CalendarId">
+            <summary>
+            Calendar book ID of the modified event (or todo) record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.UpdatedInfo.Type">
+            <summary>
+            Enumeration value of the modified status.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.UpdatedInfo.Version">
+            <summary>
+            Version after change.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.CalendarViews.Extended">
+            <summary>
+            Describes the properties of an Extended record.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Extended.Uri">
+            <summary>
+            Identifier of this extended_property view.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Extended.Id">
+            <summary>
+            Database record ID of the extended_property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Extended.RecordId">
+            <summary>
+            Related record ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Extended.RecordType">
+            <summary>
+            Enumeration value of the record type.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Extended.Key">
+            <summary>
+            The key of the property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Pims.Calendar.CalendarViews.Extended.Value">
+            <summary>
+            The value of the property.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.DBChangedEventArgs">
+            <summary>
+            The event arguments passed when the calendar database is changed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Pims.Calendar.DBChangedEventArgs.ViewUri">
+            <summary>
+            The calendar view URI is changed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Pims.Calendar.ReminderAlertedEventArgs">
+            <summary>
+            The event arguments passed when the alarm is alerted.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Pims.Calendar.ReminderAlertedEventArgs.Param">
+            <summary>
+            The parameter which the data is combined.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <value>
+            The combination of the reminder data (Value string like id=value&amp;time=value&amp;tick=value&amp;unit=value&amp;type=value).
+            </value>
+        </member>
+    </members>
+</doc>

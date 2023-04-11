@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Multimedia.MediaCodec</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Multimedia.MediaCodec.BufferStatusChangedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.MediaCodec.MediaCodec.BufferStatusChanged"/> event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.BufferStatusChangedEventArgs.#ctor(Tizen.Multimedia.MediaCodec.MediaCodecStatus)">
+            <summary>
+            Initializes a new instance of the BufferStatusChangedEventArgs class.
+            </summary>
+            <param name="status">The value representing new status of the codec.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.MediaCodec.BufferStatusChangedEventArgs.Status">
+            <summary>
+            Gets the value indicating the new status of the codec.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.MediaCodec.InputProcessedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.MediaCodec.MediaCodec.InputProcessed"/> event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.InputProcessedEventArgs.#ctor(Tizen.Multimedia.MediaPacket)">
+            <summary>
+            Initializes a new instance of the InputProcessedEventArgs class.
+            </summary>
+            <param name="packet">The packet that the codec has processed.</param>
+        </member>
+        <member name="P:Tizen.Multimedia.MediaCodec.InputProcessedEventArgs.Packet">
+            <summary>
+            Gets the packet processed by the codec.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.MediaCodec.MediaCodec">
+            <summary>
+            Provides a means to encode and decode the video and the audio data.
+            </summary>
+            <feature>http://tizen.org/feature/multimedia.media_codec</feature>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.#ctor">
+            <summary>
+            Initializes a new instance of the MediaCodec class.
+            </summary>
+            <feature>http://tizen.org/feature/multimedia.media_codec</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources used by the <see cref="T:Tizen.Multimedia.MediaCodec.MediaCodec"/> object.
+            </summary>
+            <param name="disposing">
+            true to release both managed and unmanaged resources; false to release only unmanaged resources.
+            </param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.Finalize">
+            <summary>
+            Finalizes an instance of the MediaCodec class.
+            </summary>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Tizen.Multimedia.MediaCodec.MediaCodec"/> object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.ValidateNotDisposed">
+            <summary>
+            Validates if the object has already been disposed of.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The current object has been disposed of.</exception>
+        </member>
+        <member name="P:Tizen.Multimedia.MediaCodec.MediaCodec.SupportedVideoCodecs">
+            <summary>
+            Gets the audio codec list that the current device supports.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.MediaCodec.MediaCodec.SupportedAudioCodecs">
+            <summary>
+            Gets the audio codec list that the current device supports.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.Prepare">
+            <summary>
+            Prepares the MediaCodec for encoding or decoding.
+            </summary>
+            <feature>http://tizen.org/feature/multimedia.media_codec</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+                The codec is not configured yet.<br/>
+                -or-<br/>
+                Internal error.
+            </exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.Unprepare">
+            <summary>
+            Unprepares the MediaCodec.
+            </summary>
+            <feature>http://tizen.org/feature/multimedia.media_codec</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.Configure(Tizen.Multimedia.MediaFormat,System.Boolean,Tizen.Multimedia.MediaCodec.MediaCodecTypes)">
+            <summary>
+            Configures the MediaCodec.
+            </summary>
+            <param name="format">The <see cref="T:Tizen.Multimedia.MediaFormat"/> for properties of media data to decode or encode.</param>
+            <param name="encoder">The value indicating whether the codec works as an encoder or a decoder.</param>
+            <param name="codecType">The value indicating whether the codec uses hardware acceleration.</param>
+            <feature>http://tizen.org/feature/multimedia.media_codec</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="format"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="codecType"/> is invalid.<br/>
+                -or-<br/>
+                <paramref name="format"/> is neither audio type nor video type.
+                </exception>
+            <exception cref="T:System.NotSupportedException">The mime type of the format is not supported.</exception>
+            <see cref="P:Tizen.Multimedia.MediaCodec.MediaCodec.SupportedAudioCodecs"/>
+            <see cref="P:Tizen.Multimedia.MediaCodec.MediaCodec.SupportedVideoCodecs"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.ProcessInput(Tizen.Multimedia.MediaPacket)">
+            <summary>
+            Adds the packet to the internal queue of the codec.
+            </summary>
+            <param name="packet">The packet to be encoded or decoded.</param>
+            <feature>http://tizen.org/feature/multimedia.media_codec</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="packet"/> is null.</exception>
+            <exception cref="T:System.InvalidOperationException">The current codec is not prepared yet.</exception>
+            <remarks>Any attempts to modify the packet will fail until the <see cref="E:Tizen.Multimedia.MediaCodec.MediaCodec.InputProcessed"/> event for the packet is invoked.</remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.FlushBuffers">
+            <summary>
+            Flushes both input and output buffers.
+            </summary>
+            <feature>http://tizen.org/feature/multimedia.media_codec</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.GetCodecType(System.Boolean,Tizen.Multimedia.MediaFormatVideoMimeType)">
+            <summary>
+            Retrieves supported codec types for the specified params.
+            </summary>
+            <param name="encoder">The value indicating encoder or decoder.</param>
+            <param name="type">The mime type to query.</param>
+            <returns>The values indicating which codec types are supported on the current device.</returns>
+            <feature>http://tizen.org/feature/multimedia.media_codec</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="type"/> is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodec.GetCodecType(System.Boolean,Tizen.Multimedia.MediaFormatAudioMimeType)">
+            <summary>
+            Retrieves supported codec types for the specified params.
+            </summary>
+            <param name="encoder">The value indicating encoder or decoder.</param>
+            <param name="type">The mime type to query.</param>
+            <returns>The values indicating which codec types are supported on the current device.</returns>
+            <feature>http://tizen.org/feature/multimedia.media_codec</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="type"/> is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.MediaCodec.MediaCodec.OutputAvailable">
+            <summary>
+            Occurs when an output buffer is available.
+            </summary>
+            <remarks>The output packet needs to be disposed after it is used to clean up unmanaged resources.</remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.MediaCodec.MediaCodec.InputProcessed">
+            <summary>
+            Occurs when an input packet is processed.
+            </summary>
+            <see cref="M:Tizen.Multimedia.MediaCodec.MediaCodec.ProcessInput(Tizen.Multimedia.MediaPacket)"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.MediaCodec.MediaCodec.ErrorOccurred">
+            <summary>
+            Occurs whenever an error is produced in the codec.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.MediaCodec.MediaCodec.EosReached">
+            <summary>
+            Occurs when the codec processes all input data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.MediaCodec.MediaCodec.BufferStatusChanged">
+            <summary>
+            Occurs when the codec needs more data or has enough data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.MediaCodec.MediaCodecError">
+            <summary>
+            Specifies the errors of <see cref="T:Tizen.Multimedia.MediaCodec.MediaCodec"/>.
+            </summary>
+            <seealso cref="E:Tizen.Multimedia.MediaCodec.MediaCodec.ErrorOccurred"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.MediaCodec.MediaCodecError.NotSupportedFormat">
+            <summary>
+            The format is not supported.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.MediaCodec.MediaCodecError.InternalError">
+            <summary>
+            An internal error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.MediaCodec.MediaCodecError.OutOfStorage">
+            <summary>
+            Not enough storage.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.MediaCodec.MediaCodecError.InvalidStream">
+            <summary>
+            The stream is invalid.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.MediaCodec.MediaCodecErrorOccurredEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.MediaCodec.MediaCodec.ErrorOccurred"/> event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.MediaCodec.MediaCodecErrorOccurredEventArgs.#ctor(Tizen.Multimedia.MediaCodec.MediaCodecError)">
+            <summary>
+            Initializes a new instance of the ErrorOccurredEventArgs class.
+            </summary>
+            <param name="error">The value representing the type of the error.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.MediaCodec.MediaCodecErrorOccurredEventArgs.Error">
+            <summary>
+            Gets the value indicating what kind of the error.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.MediaCodec.MediaCodecStatus">
+            <summary>
+            Specifies the status of a codec.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.MediaCodec.MediaCodecStatus.LackOfData">
+            <summary>
+            Not enough data to decode or encode.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.MediaCodec.MediaCodecStatus.EnoughData">
+            <summary>
+            Enough data to decode or encode.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.MediaCodec.MediaCodecTypes">
+            <summary>
+            Specifies types of codec.
+            <para>
+            This enumeration has a <see cref="T:System.FlagsAttribute"/> attribute that allows a bitwise combination of its member values.
+            </para>
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.MediaCodec.MediaCodecTypes.Hardware">
+            <summary>
+            The hardware-accelerated codec.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.MediaCodec.MediaCodecTypes.Software">
+            <summary>
+            The software codec.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.MediaCodec.OutputAvailableEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.MediaCodec.MediaCodec.OutputAvailable"/> event.
+            </summary>
+            <remarks>The output packet needs to be disposed after it is used to clean up unmanaged resources.</remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.MediaCodec.OutputAvailableEventArgs.Packet">
+            <summary>
+            Gets the result packet.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

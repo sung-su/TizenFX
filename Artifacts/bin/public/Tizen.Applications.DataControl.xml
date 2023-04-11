@@ -1,0 +1,1122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.DataControl</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.DataControl.BulkData">
+            <summary>
+            Represents the BulkData class for the DataControl bulk request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkData.#ctor">
+            <summary>
+            Initializes the BulkData class.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkData.Add(Tizen.Applications.Bundle)">
+            <summary>
+            Adds the bulk data.
+            </summary>
+            <param name="data">Bulk data</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkData.GetCount">
+            <summary>
+            Gets the current data count.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkData.GetData(System.Int32)">
+            <summary>
+            Returns the data at the given zero-based data index.
+            </summary>
+            <param name="index">The target data index.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkData.Dispose">
+            <summary>
+            Releases all the resources used by the BulkData class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkData.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkData.Finalize">
+            <summary>
+            Destructor of the BulkData class.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.BulkResultData">
+            <summary>
+            Represents the BulkResultData class for the DataControl bulk request.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkResultData.#ctor">
+            <summary>
+            Initializes the BulkResultData class.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkResultData.Add(Tizen.Applications.Bundle,System.Int32)">
+            <summary>
+            Adds the bulk operation result data.
+            </summary>
+            <param name="data">The result data.</param>
+            <param name="result">Result.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkResultData.GetCount">
+            <summary>
+            Gets the current result data count.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkResultData.GetData(System.Int32)">
+            <summary>
+            Returns the result data at the given zero-based data index.
+            </summary>
+            <param name="index">The target result data index.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkResultData.GetResult(System.Int32)">
+            <summary>
+            Returns the result at the given zero-based data index.
+            </summary>
+            <param name="index">The target result index.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkResultData.Dispose">
+            <summary>
+            Releases all the resources used by the BulkResultData class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkResultData.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object. Can also dispose any other disposable objects.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkResultData.Finalize">
+            <summary>
+            Destructor of the BulkResultData class.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.Consumer">
+            <summary>
+            Represents the Consumer class for the DataControl consumer application.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.Insert(Tizen.Applications.Bundle)">
+            <summary>
+            Sends the insert request to the provider application.
+            </summary>
+            <remarks>The OnInsertResult will recieve the result of this API.</remarks>
+            <param name="insertData">The insert data.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parmaeter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case if a permission is denied.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the message has exceeded the maximum limit (1MB).</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.Select(System.String[],System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Sends the select request to the provider application.
+            </summary>
+            <remarks>The OnSelectResult will recieve the result of this API.</remarks>
+            <param name="columnList">Select the target column list.</param>
+            <param name="where">The Where statement for the select query.</param>
+            <param name="order">The Order statement for the select query.</param>
+            <param name="pageNumber">Select the target page number.</param>
+            <param name="countPerPage">Select the row count per page.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parmaeter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case if a permission is denied..</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.Delete(System.String)">
+            <summary>
+            Sends the delete request to the provider application.
+            </summary>
+            <remarks>The OnDeleteResult will recieve the result of this API</remarks>
+            <param name="where">The Where statement for the delete query.</param>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case if a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.Update(Tizen.Applications.Bundle,System.String)">
+            <summary>
+            Sends the update request to the provider application.
+            </summary>
+            <remarks>The OnUpdateResult will recieve result of this API.</remarks>
+            <param name="updateData">The update data.</param>
+            <param name="where">The Where statement for the query.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parmaeter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case if a permission is denied.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the message has exceeded the maximum limit (1MB).</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.BulkInsert(Tizen.Applications.DataControl.BulkData)">
+            <summary>
+            Sends the bulk insert request to the provider application.
+            </summary>
+            <remarks>The OnBulkInsertResult will recieve the result of this API.</remarks>
+            <param name="insertData">The bulk insert data.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parmaeter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case oif a permission is denied.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the message has exceeded the maximum limit (1MB).</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.MapAdd(System.String,System.String)">
+            <summary>
+            Sends the map add request to the provider application.
+            </summary>
+            <remarks>The OnMapAddResult will recieve the result of this API.</remarks>
+            <param name="key">The key of the value to add.</param>
+            <param name="value">The value to add.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parmaeter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case of if a permission is denied.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the message has exceeded the maximum limit (1MB).</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.MapGet(System.String,System.Int32,System.Int32)">
+            <summary>
+            Sends the map get request to the provider application.
+            </summary>
+            <remarks>The OnMapGetResult will recieve the result of this API.</remarks>
+            <param name="key">The key of the value list to obtain.</param>
+            <param name="pageNumber">The page number of the value set.</param>
+            <param name="countPerPage">The desired maximum count of the data items per page.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parmaeter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case if a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.MapRemove(System.String,System.String)">
+            <summary>
+            Sends the map remove request to the provider application.
+            </summary>
+            <remarks>The OnMapRemoveResult will recieve the result of this API.</remarks>
+            <param name="key">The key of the value to remove.</param>
+            <param name="value">The value to remove.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parmaeter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case if a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.MapSet(System.String,System.String,System.String)">
+            <summary>
+            Sends the map set request to the provider application.
+            </summary>
+            <remarks>The OnMapSetResult will recieve the result of this API.</remarks>
+            <param name="key">The key of the value to replace.</param>
+            <param name="oldValue">The value to be replaced.</param>
+            <param name="newValue"> The new value that replaces the existing value.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parmaeter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case if a permission is denied.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when message has exceeded the maximum limit (1MB).</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.MapBulkAdd(Tizen.Applications.DataControl.BulkData)">
+            <summary>
+            Sends the map bulk add request to the provider application.
+            </summary>
+            <remarks>The OnMapBulkAddResult will recieve the result of this API.</remarks>
+            <param name="addData">The map bulk add data.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parmaeter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case if a permission is denied.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the message has exceeded the maximum limit (1MB).</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.DataChangeListen">
+            <summary>
+            Listens the DataChange event.
+            </summary>
+            <remarks>The OnDataChangeListenResult will recieve the result of this API.</remarks>
+            <remarks>If success, the OnDataChange will recieve the DataChange event.</remarks>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case if a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.#ctor(System.String,System.String)">
+            <summary>
+            Initializes the Consumer class with the providerId and the ataId.
+            </summary>
+            <param name="providerId">The DataControl Provider ID.</param>
+            <param name="dataId">The DataControl Data ID.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parmaeter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.Finalize">
+            <summary>
+            Destructor of the Consumer class.
+            </summary>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnDataChangeListenResult(Tizen.Applications.DataControl.DataChangeListenResult)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the DataChangeListen result is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnDataChange(Tizen.Applications.DataControl.ChangeType,Tizen.Applications.Bundle)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the data change event is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnSelectResult(Tizen.Applications.DataControl.SelectResult)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the select response is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnInsertResult(Tizen.Applications.DataControl.InsertResult)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the insert response is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnUpdateResult(Tizen.Applications.DataControl.UpdateResult)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the update response is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnDeleteResult(Tizen.Applications.DataControl.DeleteResult)">
+            <summary>
+            Overrides this method if want to handle the behavior when the delete response is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnBulkInsertResult(Tizen.Applications.DataControl.BulkInsertResult)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the BulkInsert response is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnMapGetResult(Tizen.Applications.DataControl.MapGetResult)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the map get response is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnMapAddResult(Tizen.Applications.DataControl.MapAddResult)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the map add response is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnMapSetResult(Tizen.Applications.DataControl.MapSetResult)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the map set response is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnMapRemoveResult(Tizen.Applications.DataControl.MapRemoveResult)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the map remove response is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.OnMapBulkAddResult(Tizen.Applications.DataControl.MapBulkAddResult)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the BulkAdd response is received.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the Consumer class specifying whether to perform a normal dispose operation.
+            </summary>
+            <param name="disposing">true for a normal dispose operation; false to finalize the handle.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Consumer.Dispose">
+            <summary>
+            Releases all resources used by the Consumer class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.ICursor">
+            <summary>
+            This interface is for the DataControl cursor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.GetColumnCount">
+            <summary>
+            Gets a column count.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.GetColumnType(System.Int32)">
+            <summary>
+            Gets a column type.
+            </summary>
+            <param name="index">The index of column.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.GetColumnName(System.Int32)">
+            <summary>
+            Gets a column name.
+            </summary>
+            <param name="index">The index of column.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.GetRowCount">
+            <summary>
+            Gets the numbers of rows in the cursor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.Next">
+            <summary>
+            Gets a next row.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.Prev">
+            <summary>
+            Gets a prev row.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.Reset">
+            <summary>
+            Gets a first row.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.GetIntValue(System.Int32)">
+            <summary>
+            Gets an integer value.
+            </summary>
+            <param name="index">The index of row.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.GetInt64Value(System.Int32)">
+            <summary>
+            Gets an int64 value.
+            </summary>
+            <param name="index">The index of row.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.GetDoubleValue(System.Int32)">
+            <summary>
+            Gets a double value.
+            </summary>
+            <param name="index">The index of row.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.GetStringValue(System.Int32)">
+            <summary>
+            Gets a string value.
+            </summary>
+            <param name="index">The index of row.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.ICursor.GetBlobValue(System.Int32)">
+            <summary>
+            Gets a BLOB value.
+            </summary>
+            <param name="index">The index of row.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.MatrixCursor">
+            <summary>
+            Represents the MatrixCursor class for the DataControl provider's matrix cursor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.GetColumnCount">
+            <summary>
+            Gets the column count of the MatrixCursor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.GetColumnType(System.Int32)">
+            <summary>
+            Returns the column type at the given zero-based column index.
+            </summary>
+            <param name="index">Target column index</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.GetColumnName(System.Int32)">
+            <summary>
+            Returns the column name at the given zero-based column index.
+            </summary>
+            <param name="index">The target column index.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.GetRowCount">
+            <summary>
+            Gets the MatrixCursor's row count.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.Next">
+            <summary>
+            Move the MatrixCursor to the next row.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.Prev">
+            <summary>
+            Move the MatrixCursor to the previous row.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.Reset">
+            <summary>
+            Move the MatrixCursor to the first row.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.GetIntValue(System.Int32)">
+            <summary>
+            Returns the value of the requested column as an integer.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.GetInt64Value(System.Int32)">
+            <summary>
+            Returns the value of the requested column as int64.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.GetDoubleValue(System.Int32)">
+            <summary>
+            Returns the value of the requested column as a double.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.GetStringValue(System.Int32)">
+            <summary>
+            Returns the value of the requested column as a string.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.GetBlobValue(System.Int32)">
+            <summary>
+            Returns the value of the requested column as a BLOB.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.#ctor(System.String[],Tizen.Applications.DataControl.ColumnType[])">
+            <summary>
+            Initializes the MatrixCursor class with columnNames and columnTypes.
+            </summary>
+            <param name="columnNames">The MatrixCursor's column name list.</param>
+            <param name="columnTypes">The MatrixCursor's column type list.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+             <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.AddRow(System.Object[])">
+            <summary>
+            Adds a new row to the end with the given column values.
+            </summary>
+            <param name="columnValues">New column values</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.Dispose">
+            <summary>
+            Releases all the resources used by the MatrixCursor class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the MatrixCursor class specifying whether to perform a normal dispose operation.
+            </summary>
+            <param name="disposing">true for a normal dispose operation; false to finalize the handle.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MatrixCursor.Finalize">
+            <summary>
+            Destructor of the MatrixCursor class.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.Provider">
+            <summary>
+            Represents the Provider class for the DataControl provider application.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.Provider.DataID">
+            <summary>
+            Gets the data ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.Provider.CurrentClientAppId">
+            <summary>
+            Gets the current client appid.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.Provider.CurrentProviderId">
+            <summary>
+            Gets the current provider ID.
+            </summary>
+            <since_tizen> 6 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.SendDataChange(Tizen.Applications.DataControl.ChangeType,Tizen.Applications.Bundle)">
+            <summary>
+            Sends a data change notification to consumer applications which have successfully added a data change listen.
+            </summary>
+            <param name="type">The changed data type.</param>
+            <param name="changedData">Customized information about the changed data.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.#ctor(System.String)">
+            <summary>
+            Initializes the Provider class with the dataID.
+            </summary>
+            <param name="dataID">The DataControl Data ID.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.Run">
+            <summary>
+            Starts the Provider service.
+            </summary>
+            <remarks>Only one Provider service can be run for each process.</remarks>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/datasharing</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.Stop">
+            <summary>
+            Stops the Provider service.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.Finalize">
+            <summary>
+            Destructor of the Provider class.
+            </summary>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnSelect(System.String,System.String,System.String[],System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the select request is received.
+            </summary>
+            <param name="query">The select query.</param>
+            <param name="where">The where statement.</param>
+            <param name="columList">The requested column list.</param>
+            <param name="columnCount">The requested column count.</param>
+            <param name="order">The select order.</param>
+            <param name="pageNum">The page number.</param>
+            <param name="countPerPage">The count per page.</param>
+            <returns>The result of select operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnInsert(System.String,Tizen.Applications.Bundle)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the insert request is received.
+            </summary>
+            <param name="query">The select query.</param>
+            <param name="insertData">The insert data.</param>
+            <returns>The result of insert operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnUpdate(System.String,System.String,Tizen.Applications.Bundle)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the update request is received.
+            </summary>
+            <param name="query">The update query.</param>
+            <param name="where">The where statement.</param>
+            <param name="updateData">The update data.</param>
+            <returns>The result of update operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnDelete(System.String,System.String)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the delete request is received.
+            </summary>
+            <param name="query">The delete query.</param>
+            <param name="where">The where statement.</param>
+            <returns>The result of delete operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnBulkInsert(System.Collections.Generic.IEnumerable{System.String},Tizen.Applications.DataControl.BulkData)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the bulk insert request is received.
+            </summary>
+            <param name="query">The insert query list.</param>
+            <param name="bulkInsertData">The bulk insert data.</param>
+            <returns>The result of bulk insert operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnMapGet(System.String)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the map get request is received.
+            </summary>
+            <param name="key">The key of requested data.</param>
+            <returns>The result of get operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnMapAdd(System.String,System.String)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the map add request is received.
+            </summary>
+            <param name="key">The key of added data.</param>
+            <param name="value">The value of added data.</param>
+            <returns>The result of add operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnMapSet(System.String,System.String,System.String)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the update request is received.
+            </summary>
+            <param name="key">The key of set data.</param>
+            <param name="oldValue">The old value of set data.</param>
+            <param name="newValue">The new value.</param>
+            <returns>The result of set operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnMapRemove(System.String,System.String)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the delete request is received.
+            </summary>
+            <param name="key">The key of removed data.</param>
+            <param name="value">The value of removed data.</param>
+            <returns>The result of remove operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnMapBulkAdd(Tizen.Applications.DataControl.BulkData)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the bulk add request is received.
+            </summary>
+            <param name="bulkAddData">The bulk add data.</param>
+            <returns>The result of bulk add operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.OnDataChangeListenRequest(System.String)">
+            <summary>
+            Overrides this method if you want to handle the behavior when the data change listen request is received.
+            </summary>
+            <param name="requestAppID">The app ID sent data change listen request.</param>
+            <returns>The result of data change listen operation.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged resources used by the Provider class specifying whether to perform a normal dispose operation.
+            </summary>
+            <param name="disposing">true for a normal dispose operation; false to finalize the handle.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.Provider.Dispose">
+            <summary>
+            Releases all the resources used by the Provider class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.InsertResult">
+            <summary>
+            This class contains the insert operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.InsertResult.RowID">
+            <summary>
+            Gets the insert data's row ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.InsertResult.Result">
+            <summary>
+            Gets the insert operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.InsertResult.#ctor(System.Int64,System.Boolean)">
+            <summary>
+            Initializes the InsertResult class with columnNames and columnTypes.
+            </summary>
+            <param name="rowID">The inserted row ID.</param>
+            <param name="result">The insert request result.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.BulkInsertResult">
+            <summary>
+            This class contains the bulk insert operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.BulkInsertResult.BulkResultData">
+            <summary>
+            Gets the bulk insert operation result data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.BulkInsertResult.Result">
+            <summary>
+            Gets the bulk insert operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.BulkInsertResult.#ctor(Tizen.Applications.DataControl.BulkResultData,System.Boolean)">
+            <summary>
+            Initializes the InsertResult class with the bulkResultData and the result.
+            </summary>
+            <param name="bulkResultData">The bulk insert request result data.</param>
+            <param name="result">The bulk insert request result.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.UpdateResult">
+            <summary>
+            This class contains the update operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.UpdateResult.Result">
+            <summary>
+            Gets the update operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.UpdateResult.#ctor(System.Boolean)">
+            <summary>
+            Initializes the UpdateResult class with the result.
+            </summary>
+            <param name="result">The update request result.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.DeleteResult">
+            <summary>
+            This class contains the delete operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.DeleteResult.Result">
+            <summary>
+            Gets the delete operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.DeleteResult.#ctor(System.Boolean)">
+            <summary>
+            Initializes the DeleteResult class with the result.
+            </summary>
+            <param name="result">The delete request result.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.SelectResult">
+            <summary>
+            This class contains the select operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.SelectResult.ResultCursor">
+            <summary>
+            Gets the select operation result cursor.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.SelectResult.Result">
+            <summary>
+            Gets the select operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.SelectResult.#ctor(Tizen.Applications.DataControl.ICursor,System.Boolean)">
+            <summary>
+            Initializes the SelectResult class with the cursor and the result.
+            </summary>
+            <param name="cursor">The cursor with the selected data.</param>
+            <param name="result">The select request result.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.MapAddResult">
+            <summary>
+            This class contains the MapAdd operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.MapAddResult.Result">
+            <summary>
+            Gets the MapAdd operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MapAddResult.#ctor(System.Boolean)">
+            <summary>
+            Initializes the MapAddResult class with the result.
+            </summary>
+            <param name="result">The MapAdd request result.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.MapBulkAddResult">
+            <summary>
+            This class contains the MapBulkAdd operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.MapBulkAddResult.BulkResultData">
+            <summary>
+            Gets the MapBulkAdd operation result data.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.MapBulkAddResult.Result">
+            <summary>
+            Gets the MapBulkAdd operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MapBulkAddResult.#ctor(Tizen.Applications.DataControl.BulkResultData,System.Boolean)">
+            <summary>
+            Initializes the MapBulkAddResult class with the bulkResultData and the result.
+            </summary>
+            <param name="bulkResultData">The MapBulkAdd request result data.</param>
+            <param name="result">The MapBulkAdd request result.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.MapSetResult">
+            <summary>
+            This class contains the MapSet operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.MapSetResult.Result">
+            <summary>
+            Gets the MapSet operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MapSetResult.#ctor(System.Boolean)">
+            <summary>
+            Initializes the MapSetResult class with the result.
+            </summary>
+            <param name="result">MapSet request result</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.MapRemoveResult">
+            <summary>
+            This class contains the MapRemove operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.MapRemoveResult.Result">
+            <summary>
+            Gets the MapRemove operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MapRemoveResult.#ctor(System.Boolean)">
+            <summary>
+            Initializes the MapRemoveResult class with the result.
+            </summary>
+            <param name="result">The MapRemove request result.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.MapGetResult">
+            <summary>
+            This class contains the MapGet operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.MapGetResult.ValueList">
+            <summary>
+            Gets the result value list of the MapGet operation.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.MapGetResult.Result">
+            <summary>
+            Gets the MapGet operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.MapGetResult.#ctor(System.String[],System.Boolean)">
+            <summary>
+            Initializes the MapGetResult class with the data and the result.
+            </summary>
+            <param name="valueLIst">The MapGet request result data.</param>
+            <param name="result">The MapGet request result.</param>
+            <exception cref="T:System.ArgumentException">Thrown in case of an invalid parameter.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.DataChangeListenResult">
+            <summary>
+            This class contains the DataChangeListen operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.DataControl.DataChangeListenResult.Result">
+            <summary>
+            Gets the DataChangeListen operation result.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.DataControl.DataChangeListenResult.#ctor(Tizen.Applications.DataControl.ResultType)">
+            <summary>
+            Initializes the DataChangeListenResult class with the result.
+            </summary>
+            <param name="result">The DataChangeListen request result.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.ColumnType">
+            <summary>
+            Enumeration for the DataControl column types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ColumnType.ColumnTypeInt">
+            <summary>
+            Value representing DataControl operation success.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ColumnType.ColumnTypeDouble">
+            <summary>
+            Value representing DataControl operation success.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ColumnType.ColumnTypeString">
+            <summary>
+            Value representing DataControl operation success.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ColumnType.ColumnTypeBlob">
+            <summary>
+            Value representing DataControl operation success.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.ChangeType">
+            <summary>
+            Enumeration for the DataControl column types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ChangeType.Update">
+            <summary>
+            Value representing DataControl provider data changed by update.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ChangeType.Insert">
+            <summary>
+            Value representing DataControl provider data changed by insert.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ChangeType.Delete">
+            <summary>
+            Value representing DataControl provider data changed by delete.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ChangeType.MapAdd">
+            <summary>
+            Value representing DataControl provider data changed by map add.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ChangeType.MapRemove">
+            <summary>
+            Value representing  DataControl provider data changed by map remove.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ChangeType.MapSet">
+            <summary>
+            Value representing DataControl provider data changed by map set.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.DataControl.ResultType">
+            <summary>
+            Enumeration for the DataControl result types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ResultType.Success">
+            <summary>
+            Value representing DataControl operation success.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ResultType.OutOfMemory">
+            <summary>
+            Value representing DataControl operation causing out of memory error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ResultType.IoError">
+            <summary>
+            Value representing DataControl operation causing I/O error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ResultType.InvalidParameter">
+            <summary>
+            Value representing DataControl operation causing invalid parameter error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ResultType.PermissionDenied">
+            <summary>
+            Value representing DataControl operation causing permission denied error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.DataControl.ResultType.MaxExceed">
+            <summary>
+            Value representing DataControl operation causing max exceed error.
+            </summary>
+        </member>
+    </members>
+</doc>

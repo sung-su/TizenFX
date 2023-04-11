@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.RemoteView</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.RemoteView">
+            <summary>
+            Represents the proxy class for the widget application.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.RemoteView.Event">
+            <summary>
+            The event types to send.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.RemoteView.Event.FeedMouseUp">
+            <summary>
+            Type for feeding the mouse-up event to the widget application.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.RemoteView.Event.CancelClick">
+            <summary>
+            Type for canceling the click event procedure.
+            </summary>
+        </member>
+        <member name="P:Tizen.Applications.RemoteView.Layout">
+            <summary>
+            Layout object including preview image, overlay text, loading text, and remote screen image.
+            </summary>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.RemoteView.Id">
+            <summary>
+            The widget ID.
+            </summary>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.RemoteView.Period">
+            <summary>
+            The update period.
+            </summary>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.RemoteView.Content">
+            <summary>
+            Contents of the widget.
+            </summary>
+            <remarks>
+            This string can be used for creating contents of the widget again after rebooting a device or it can be recovered from a crash (abnormal status).
+            </remarks>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.RemoteView.Title">
+            <summary>
+            Summarized string of the widget content for accessibility.
+            </summary>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.RemoteView.PauseAll">
+            <summary>
+            Pauses all the connected widget applications.
+            </summary>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when this operation failed.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when this operation is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when this operation is not supported for this device.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.RemoteView.ResumeAll">
+            <summary>
+            Resumes all the connected widget applications.
+            </summary>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when this operation failed.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when this operation is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when this operation is not supported for this device.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.RemoteView.Pause">
+            <summary>
+            Pauses the widget application which is connected on this proxy.
+            </summary>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when this operation failed.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when this operation is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when this operation is not supported for this device.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.RemoteView.Resume">
+            <summary>
+            Resumes the widget application which is connected on this proxy.
+            </summary>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when this operation failed.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when this operation is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when this operation is not supported for this device.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.RemoteView.SendEvent(Tizen.Applications.RemoteView.Event)">
+            <summary>
+            Sends the event to the widget application which is connected on this proxy.
+            </summary>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when this operation is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when this operation is not supported for this device.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.RemoteViewFactory">
+            <summary>
+            Represents a factory class for making the RemoteView objects.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.RemoteViewFactory.Init(ElmSharp.EvasObject)">
+            <summary>
+            Initializes RemoteViewFactory.
+            </summary>
+            <param name="win">Window object that will contain RemoteViews that are generated by RemoteViewFactory.
+            All the remote views will be located in the specified window object.
+            </param>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when this operation failed.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when this operation is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when this operation is not supported for this device.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.RemoteViewFactory.Create(ElmSharp.EvasObject,System.String,System.String,System.Double,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Creates a RemoteView object.
+            </summary>
+            <param name="parent">Parent object.</param>
+            <param name="widgetId">Widget ID.</param>
+            <param name="content">Contents that will be given to the widget instance.</param>
+            <param name="period">Update period.</param>
+            <param name="previewImage">True if you want to show the preview image.</param>
+            <param name="overlayText">True if you want to show the overlay text.</param>
+            <param name="loadingMessage">True if you want to show the loading message.</param>
+            <returns>RemoteView object.</returns>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when this operation failed.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when this operation is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when this operation is not supported for this device.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.RemoteViewFactory.Shutdown">
+            <summary>
+            Finalizes the RemoteViewFactory.
+            </summary>
+            <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+            <exception cref="T:System.InvalidOperationException">Thrown when this operation failed.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when this operation is denied.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when this operation is not supported for this device.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Account.SyncManager</name>
+    </assembly>
+    <members>
+        <member name="T:Interop.Libraries">
+            <summary>
+            The Wrapper class for maintaining names of dependent native libraries.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.SyncManager.SyncOption">
+            <summary>
+            Enumeration for the sync option.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncOption.None">
+            <summary>
+            The sync job will be operated normally.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncOption.Expedited">
+            <summary>
+            The sync job will be operated as soon as possible.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncOption.NoRetry">
+            <summary>
+            The sync job will not be performed again when it fails.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.SyncManager.SyncPeriod">
+            <summary>
+            Enumeration for the sync period.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncPeriod.ThirtyMin">
+            <summary>
+            Sync within 30 minutes.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncPeriod.OneHour">
+            <summary>
+            Sync within 1 hour.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncPeriod.TwoHours">
+            <summary>
+            Sync within 2 hours.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncPeriod.ThreeHours">
+            <summary>
+            Sync within 3 hours.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncPeriod.SixHours">
+            <summary>
+            Sync within 6 hours.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncPeriod.TwelveHours">
+            <summary>
+            Sync within 12 hours.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncPeriod.OneDay">
+            <summary>
+            Sync within 1 day.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.SyncManager.SyncAdapter">
+            <summary>
+            This class contains the delegates to be called upon scheduling a sync operation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Account.SyncManager.SyncAdapter.StartSyncCallback">
+            <summary>
+            The callback function for the sync adapter's start sync request.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="syncParameters"> The sync job parameters corresponding to the sync request. </param>
+            <returns> true if the sync operation is success, @c false otherwise. </returns>
+        </member>
+        <member name="T:Tizen.Account.SyncManager.SyncAdapter.CancelSyncCallback">
+            <summary>
+            The callback function for the sync adapter's cancel sync request.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="syncParameters"> The sync job parameters corresponding to the sync request. </param>
+        </member>
+        <member name="M:Tizen.Account.SyncManager.SyncAdapter.SetSyncEventCallbacks(Tizen.Account.SyncManager.SyncAdapter.StartSyncCallback,Tizen.Account.SyncManager.SyncAdapter.CancelSyncCallback)">
+            <summary>
+            Sets the client (sync adapter) callback functions.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="startSyncCb"> A callback function to be called by the sync manager for performing the sync operation. </param>
+            <param name="cancelSyncCb"> A callback function to be called by the sync manager for cancelling the sync operation. </param>
+            <exception cref="T:System.ArgumentNullException"> Thrown when any of the arguments are null. </exception>
+            <exception cref="T:System.InvalidOperationException"> Thrown when the application calling this API cannot be a sync adapter. </exception>
+        </member>
+        <member name="M:Tizen.Account.SyncManager.SyncAdapter.UnsetSyncEventCallbacks">
+            <summary>
+            Unsets the client (sync adapter) callback functions.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <exception cref="T:System.Exception"> Thrown when sync manager internal error occurs. </exception>
+        </member>
+        <member name="T:Tizen.Account.SyncManager.SyncClient">
+            <summary>
+            The SyncClient APIs for managing the sync operations. Applications will call these APIs to schedule their sync operations.
+            The sync service maintains sync requests from all the applications and invokes their respective callback methods to perform account synchronization operations.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.SyncManager.SyncClient.#cctor">
+            <summary>
+            The constructor.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Account.SyncManager.SyncClient.RequestOnDemandSyncJob(Tizen.Account.SyncManager.SyncJobData,Tizen.Account.SyncManager.SyncOption)">
+            <summary>
+            Requests the sync manager to perform one time sync operation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="request"> The sync job information of the sync job request. </param>
+            <param name="syncOptions"> Sync options determine a way to operate the sync job and can be used as ORing. </param>
+            <exception cref="T:System.ArgumentNullException"> Thrown when any of the arugments are null. </exception>
+            <exception cref="T:System.InvalidOperationException"> Thrown when the application calling this API doesn't have a sync adapter. </exception>
+            <returns> An unique value which can manage sync jobs. The number of sync job ID is limite as it is less than hundred. </returns>
+        </member>
+        <member name="M:Tizen.Account.SyncManager.SyncClient.AddPeriodicSyncJob(Tizen.Account.SyncManager.SyncJobData,Tizen.Account.SyncManager.SyncPeriod,Tizen.Account.SyncManager.SyncOption)">
+            <summary>
+            Requests the sync manager to perform periodic sync operations.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="request"> The sync job information of the sync job request. </param>
+            <param name="period"> Determines the time interval of the periodic sync. The periodic sync operation can be triggered in that interval, but it does not guarantee the exact time. The minimum value is 30 minutes. </param>
+            <param name="syncOptions"> Sync options determine a way to operate the sync job and can be used as ORing. </param>
+            <privilege>http://tizen.org/privilege/alarm.set</privilege>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of a privilege not defined. </exception>
+            <exception cref="T:System.ArgumentNullException"> Thrown when any of the arguments are null. </exception>
+            <exception cref="T:System.InvalidOperationException"> Thrown when the application calling this API doesn't have a sync adapter. </exception>
+            <returns> A unique value which can manage sync jobs. The number of sync job IDs is limited as it is less than hundred. </returns>
+        </member>
+        <member name="M:Tizen.Account.SyncManager.SyncClient.AddDataChangeSyncJob(Tizen.Account.SyncManager.SyncJobData,Tizen.Account.SyncManager.SyncOption)">
+            <summary>
+            Requests the sync manager to perform sync operations whenever the corresponding DB is changed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="request"> The sync job information of the sync job request. </param>
+            <param name="syncOptions"> Sync options determine a way to operate the sync job and can be used as ORing. </param>
+            <privilege>http://tizen.org/privilege/calendar.read</privilege>
+            <privilege>http://tizen.org/privilege/contact.read</privilege>
+            <exception cref="T:System.UnauthorizedAccessException"> In case of a privilege is not defined. </exception>
+            <exception cref="T:System.ArgumentNullException"> Thrown when any of the arguments are null. </exception>
+            <exception cref="T:System.InvalidOperationException"> Thrown when the application calling this API doesn't have a sync adapter. </exception>
+            <returns> A unique value which can manage sync jobs. The number of sync job IDs is limited as it is less than hundred. </returns>
+        </member>
+        <member name="M:Tizen.Account.SyncManager.SyncClient.GetAllSyncJobs">
+            <summary>
+            Gets all the sync jobs registered with the sync manager.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns>
+            Returns the list of SyncJobData corresponding to sync requests.
+            </returns>
+        </member>
+        <member name="M:Tizen.Account.SyncManager.SyncClient.RemoveSyncJob(System.Int32)">
+            <summary>
+            Requests the sync manager to remove the corresponding sync job based on the ID.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="id"> A unique value of each sync job, it can be used to search a specific sync job and remove it. </param>
+            <exception cref="T:System.ArgumentException"> Thrown if the input arugments is invalid. </exception>
+        </member>
+        <member name="T:Tizen.Account.SyncManager.SyncJobData">
+            <summary>
+            This class represents information about the sync job request.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncJobData.CalendarCapability">
+            <summary>
+            Represents the calendar capability.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>
+            If you want to receive notification about the calendar database change, assign it to the SyncJobName property of the SyncJobData object.
+            </remarks>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncJobData.ContactCapability">
+            <summary>
+            Represents the contact capability.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>
+            If you want to receive notification about the contact database change, assign it to the SyncJobName property of the SyncJobData object.
+            </remarks>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncJobData.ImageCapability">
+            <summary>
+            Represents the image capability.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>
+            If you want to receive notification about the image database change, assign it to the SyncJobName property of the SyncJobData object.
+            </remarks>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncJobData.VideoCapability">
+            <summary>
+            Represents the video capability.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>
+            If you want to receive notification about the video database change, assign it to the SyncJobName property of the SyncJobData object.
+            </remarks>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncJobData.SoundCapability">
+            <summary>
+            Represents the sound capability.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>
+            If you want to receive notification about the sound database change, assign it to the SyncJobName property of the SyncJobData object.
+            </remarks>
+        </member>
+        <member name="F:Tizen.Account.SyncManager.SyncJobData.MusicCapability">
+            <summary>
+            Represents the music capability.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <remarks>
+            If you want to receive notification about the music database change, assign it to the SyncJobName property of the SyncJobData object.
+            </remarks>
+        </member>
+        <member name="P:Tizen.Account.SyncManager.SyncJobData.Account">
+            <summary>
+            The account instance on which the sync operation was requested or @c null in the case of the accountless sync operation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.SyncManager.SyncJobData.UserData">
+            <summary>
+            User data which contains an additional information related to the registered sync job.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Account.SyncManager.SyncJobData.SyncJobName">
+            <summary>
+            A string representing a sync job which has been operated or capability setting to operate the data change sync job.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

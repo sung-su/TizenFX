@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Nlp</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Nlp.LanguageDetectedResult">
+            <summary>
+            This class contains result of language detected.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="P:Tizen.Nlp.LanguageDetectedResult.Language">
+            <summary>
+            The language info.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="T:Tizen.Nlp.MessageReceivedEventArgs">
+            <summary>
+            This custom class extend from EventArgs to obtain Bundle object.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="P:Tizen.Nlp.MessageReceivedEventArgs.Message">
+            <summary>
+            An Bundle type to carry an array struct return from tidl service.
+            To check which nlp command be return by  msg.GetItem("command")
+            To get value by  msg.GetItem("return_tag") and cast the value to string []
+            To get value by  msg.GetItem("return_token") and cast the value to string []
+            </summary>
+        </member>
+        <member name="P:Tizen.Nlp.MessageReceivedEventArgs.RequestId">
+            <summary>
+            An id about nlp request
+            </summary>
+        </member>
+        <member name="T:Tizen.Nlp.NamedEntityRecognitionResult">
+            <summary>
+            This class contains result of named entity recognition.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="P:Tizen.Nlp.NamedEntityRecognitionResult.Tokens">
+            <summary>
+            The tokens of sentence.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="P:Tizen.Nlp.NamedEntityRecognitionResult.Tags">
+            <summary>
+            The tags of sentence.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="T:Tizen.Nlp.NaturalLanguageProcess">
+            <summary>
+            This class contains the methods in the NLP processing.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Nlp.NaturalLanguageProcess.#ctor">
+            <summary>
+            An construct method  to init local env of NLP .
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <feature>
+            http://tizen.org/feature/nlp
+            </feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="E:Tizen.Nlp.NaturalLanguageProcess.Disconnected">
+            <summary>
+            A connection status change event
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Nlp.NaturalLanguageProcess.Connect">
+            <summary>
+            An async method  to connect remote service.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <returns>A task representing the asynchronous connect operation.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown when the connect is rejected.</exception>
+        </member>
+        <member name="M:Tizen.Nlp.NaturalLanguageProcess.Close">
+            <summary>
+            A method to close message connection
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Nlp.NaturalLanguageProcess.Dispose">
+            <summary>
+            A method to release resource of library
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Nlp.NaturalLanguageProcess.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Tizen.Nlp.NaturalLanguageProcess.PosTagAsync(System.String)">
+            <summary>
+            Send Pos of Tag request to remote tidl service with one parameters.
+            </summary>
+            <param name="sentence">A sentence need to be processed.</param>
+            <returns>PosTagResult</returns>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Nlp.NaturalLanguageProcess.NamedEntityRecognitionAsync(System.String)">
+            <summary>
+            Send Named Entity recognition request to remote tidl service with one parameters.
+            </summary>
+            <param name="sentence">A sentence need to be processed.</param>
+            <returns>NamedEntityRecognitionResult</returns>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Nlp.NaturalLanguageProcess.LanguageDetectAsync(System.String)">
+            <summary>
+            Send language detect request to remote tidl service with one parameters.
+            </summary>
+            <param name="sentence">A sentence need to be processed.</param>
+            <returns>LanguageDetectedResult</returns>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="M:Tizen.Nlp.NaturalLanguageProcess.WordTokenizeAsync(System.String)">
+            <summary>
+            Send word tokenize request to remote tidl service with one parameters.
+            </summary>
+            <param name="sentence">A sentence need to be processed.</param>
+            <returns>ProcessResult</returns>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="T:Tizen.Nlp.PosTagResult">
+            <summary>
+            This class contains result of position tagged .
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="P:Tizen.Nlp.PosTagResult.Tokens">
+            <summary>
+            The tokens of sentence.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="P:Tizen.Nlp.PosTagResult.Tags">
+            <summary>
+            The tags of sentence.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="T:Tizen.Nlp.WordTokenizeResult">
+            <summary>
+            This class contains result of word tokenized.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="P:Tizen.Nlp.WordTokenizeResult.Tokens">
+            <summary>
+            The tokens of sentence.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+    </members>
+</doc>

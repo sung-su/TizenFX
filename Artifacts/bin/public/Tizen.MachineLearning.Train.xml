@@ -1,0 +1,651 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.MachineLearning.Train</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.MachineLearning.Train.NNTrainerSummaryType">
+            <summary>
+            Enumeration for the neural network summary verbosity of NNTrainer.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerSummaryType.Model">
+            <summary>
+            Overview of model summary with one-line layer information
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerSummaryType.Layer">
+            <summary>
+            Detailed model summary with layer properties
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerSummaryType.Tensor">
+            <summary>
+            Model summary weight information that layer has
+            </summary>
+        </member>
+        <member name="T:Tizen.MachineLearning.Train.NNTrainerModelFormat">
+            <summary>
+            Enumeration of model formats for the neural network.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerModelFormat.Bin">
+            <summary>
+            Raw bin file stores model weights required for inference and training without any configurations
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerModelFormat.Ini">
+            <summary>
+            Ini format file stores model configurations
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerModelFormat.IniWithBin">
+            <summary>
+            Ini with bin format file stores configurations with parameters required for inference and training
+            </summary>
+        </member>
+        <member name="T:Tizen.MachineLearning.Train.NNTrainerLayerType">
+            <summary>
+            Enumeration for the neural network layer type of NNTrainer.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Input">
+            <summary>
+            Input Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.FC">
+            <summary>
+            Fully Connected Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.BN">
+            <summary>
+            Batch Normalization Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Conv2D">
+            <summary>
+            Convolution 2D Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Pooling2D">
+            <summary>
+            Pooling 2D Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Flatten">
+            <summary>
+            Flatten Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Activation">
+            <summary>
+            Activation Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Addition">
+            <summary>
+            Addition Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Concat">
+            <summary>
+            Concat Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.MultiOut">
+            <summary>
+            MultiOut Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Embedding">
+            <summary>
+            Embedding Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.RNN">
+            <summary>
+            RNN Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.LSTM">
+            <summary>
+            LSTM Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Split">
+            <summary>
+            Split Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.GRU">
+            <summary>
+            GRU Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Permute">
+            <summary>
+            Permute Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Dropout">
+            <summary>
+            Dropout Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.BackboneNNStreamer">
+            <summary>
+            Backbone using NNStreamer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.CentroidKNN">
+            <summary>
+            Centroid KNN Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Conv1D">
+            <summary>
+            Convolution 1D Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.LSTMCell">
+            <summary>
+            LSTM Cell Layer 
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.GRUCell">
+            <summary>
+            GRU Cell Layer 
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.RNNCell">
+            <summary>
+            RNN Cell Layer 
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.ZoneoutLSTMCell">
+            <summary>
+            ZoneoutLSTM Cell Layer 
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.PreprocessFlip">
+            <summary>
+            Preprocess flip Layer 
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.PreprocessTranslate">
+            <summary>
+            Preprocess translate Layer 
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.PreprocessL2Norm">
+            <summary>
+            Preprocess L2Normalization Layer 
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.LoseMSE">
+            <summary>
+            Mean Squared Error Loss Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.LossCrossEntropySigmoid">
+            <summary>
+            Cross Entropy with Sigmoid Loss Layer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.LossCrossEntropySoftmax">
+            <summary>
+            Cross Entropy with Softmax Loss Layer
+            </summary>                                            
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerLayerType.Unknown">
+            <summary>
+            Unknown
+            </summary>  
+        </member>
+        <member name="T:Tizen.MachineLearning.Train.NNTrainerOptimizerType">
+            <summary>
+            Enumeration for the neural network optimizer type of NNTrainer.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerOptimizerType.Adam">
+            <summary>
+            Adam Optimizer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerOptimizerType.SGD">
+            <summary>
+            Stochastic Gradient Descent Optimizer
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerOptimizerType.Unknown">
+            <summary>
+            Unknown Optimizer
+            </summary>
+        </member>
+        <member name="T:Tizen.MachineLearning.Train.NNTrainerDatasetMode">
+            <summary>
+            Enumeration for the dataset data type of NNTrainer.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerDatasetMode.Train">
+            <summary>
+            Data is used when training
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerDatasetMode.Valid">
+            <summary>
+            Data is used when validating
+            </summary>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.NNTrainerDatasetMode.Test">
+            <summary>
+            Data is used when testing
+            </summary>
+        </member>
+        <member name="T:Tizen.MachineLearning.Train.Dataset">
+            <summary>
+            Create the dataset for neural network
+            </summary>
+            <remarks>
+            Use this class to create a dataset. dataset should be released using Dispose().
+            dataset is available until the model is released.
+            </remarks>
+            <feature>http://tizen.org/feature/machine_learning.training</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have the required privilege.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to the wrong pipeline description or internal error.</exception>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Dataset.#ctor">
+            <summary>
+             Constructs the dataset.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Dataset.Finalize">
+            <summary>
+            Frees the neural network dataset.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <remarks>
+            Use this method to destroy dataset. Fails if dataset is owned by a model.
+            </remarks>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Dataset.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Dataset.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object including opened handle.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Dataset.AddFile(Tizen.MachineLearning.Train.NNTrainerDatasetMode,System.String)">
+            <summary>
+            Adds data file to dataset.
+            </summary>
+            <remarks>
+            Use this method to add a data file from where data is retrieved.
+            If you want to access only internal storage by using this method,
+            you should add privilege %http://tizen.org/privilege/mediastorage. Or, if you
+            want to access only external storage by using this method, you should add
+            privilege %http://tizen.org/privilege/externalstorage. If you can access both
+            storage, you must add all privilege
+            </remarks>
+            <param name="mode">The phase where this file should be used.</param>
+            <param name="file">File path.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Dataset.SetProperty(Tizen.MachineLearning.Train.NNTrainerDatasetMode,System.String[])">
+            <summary>
+            Sets the neural network dataset property.
+            </summary>
+            <remarks>
+            Use this method to set dataset property for a specific mode.
+            The input format of property must be 'key = value' format.
+            </remarks>
+            <param name="mode">The mode to set the property.</param>
+            <param name="property">Property for dataset.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Train.Layer">
+            <summary>
+            Creates a neural network layer.
+            </summary>
+            <remarks>
+            Use this class to create neural network layer.
+            layer must be released using Dispose(), if not added to a model.
+            If added to a model by AddLayer method of Model, layer is available until the model is released. so
+            Dispose() must never be used.
+            </remarks>
+            <feature>http://tizen.org/feature/machine_learning.training</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to the wrong pipeline description or internal error.</exception>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.MachineLearning.Train.Layer.hasOwnership">
+            if false, model will be destroy layer handle
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Layer.#ctor(Tizen.MachineLearning.Train.NNTrainerLayerType)">
+            <summary>
+            Creates a neural network layer.
+            </summary>
+            <param name="type">The nntrainer layer type.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Layer.Finalize">
+            <summary>
+            Frees the neural network layer.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <remarks>
+            Use this method to destroy neural network layer. Fails if layer is owned by a model.
+            </remarks>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Layer.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Layer.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object including opened handle.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Layer.SetProperty(System.String[])">
+            <summary>
+            Sets the neural network layer Property.
+            </summary>
+            <remarks>
+            Use this method to set neural network layer Property.
+            The input format of property must be 'key = value' format.
+            </remarks>
+            <param name="property">property for layer.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Train.Model">
+            <summary>
+            Constructs the neural network model
+            </summary>
+            <remarks>
+            Use this class to create neural network model.
+            The Model class provides interfaces to construct, complle, run, adding layer
+            and etc with neural networks.
+            If you want to access only internal storage by using this method,
+            you should add privilege %http://tizen.org/privilege/mediastorage. Or, if you
+            want to access only external storage by using this method, you should add
+            privilege %http://tizen.org/privilege/externalstorage. If you want to access
+            both storage, you must add all the privileges.
+            </remarks>
+            <feature>http://tizen.org/feature/machine_learning.training</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the application does not have the required privilege.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to the wrong pipeline description or internal error.</exception>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.#ctor">
+            <summary>
+            Constructs the neural network model.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.#ctor(System.String)">
+            <summary>
+            Constructs the neural network model with the given configuration file.
+            </summary>
+            <param name="modelConf">The nntrainer model configuration file.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.Finalize">
+            <summary>
+            Destructor of Model
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object including opened handle.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.Compile(System.String[])">
+            <summary>
+            Compiles and finalizes the neural network model with the hyperparameter.
+            </summary>
+            <remarks>
+            Use this method to initialize neural network model.Various
+            hyperparameter can be set before compile the model. Once compiled,
+            any modification to the properties of model or layers/dataset/optimizer in
+            the model will be restricted. Further, addition of layers or changing the
+            optimizer/dataset of the model will not be permitted.
+            The input format of hyperparameter must be 'key = value' format.
+            <param name="hyperparameter">Hyperparameter for train complie.</param>
+            </remarks>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.Run(System.String[])">
+            <summary>
+            Trains the neural network model with the hyperparameter.
+            </summary>
+            <remarks>
+            Use this method to train the compiled neural network model with
+            the passed training hyperparameters. This method will return once the
+            training, along with requested validation and testing, is completed.
+            The input format of hyperparameter must be 'key = value' format.
+            </remarks>
+            <param name="hyperparameter">Hyperparameters for train model.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.GetSummary(Tizen.MachineLearning.Train.NNTrainerSummaryType)">
+            <summary>
+            Gets the summary of the neural network model.
+            </summary>
+            <param name="verbosity">Verbose level of the summary.</param>
+            <returns>On return, a string value. The summary of the current model. Avoid logic to parse and exploit summary if possible.</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.Save(System.String,Tizen.MachineLearning.Train.NNTrainerModelFormat)">
+            <summary>
+            Saves the model.
+            </summary>
+            <remarks>
+            Use this method to save the current model. Format
+            describes various formats in which various selections of the
+            parameters of the models can be saved. Some formats may save
+            parameters required for training. Some other formats may save model
+            configurations. Unless stated otherwise, <see cref="M:Tizen.MachineLearning.Train.Model.Compile(System.String[])"/> has to
+            be called upon the a model before calling this method.
+            Saved ini, if any, is not guaranteed to be identical to the original
+            ini that might have been used to load the model.
+            If you want to access only internal storage by using this method,
+            you should add privilege %http://tizen.org/privilege/mediastorage. Or, if you
+            want to access only external storage by using this method, you should add
+            privilege %http://tizen.org/privilege/externalstorage. If you want to access
+            both storage, you must add all the privileges.
+            </remarks>
+            <param name="filePath">File path to save the file.</param>
+            <param name="format">Format flag to determine which format should be used to save.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.Load(System.String,Tizen.MachineLearning.Train.NNTrainerModelFormat)">
+            <summary>
+            Loads the model.
+            </summary>
+            <remarks>
+            Use this method to load the current model. Format
+            describes various formats in which various selections of the
+            parameters of the models can be loaded. Some formats may load
+            parameters required for training. Some other formats may load model
+            configurations. Unless stated otherwise, loading model configuration requires
+            a freshly constructed model with new Model() without <see cref="M:Tizen.MachineLearning.Train.Model.Compile(System.String[])"/>,
+            loading model parameter requires Compile() to be called upon the model
+            before calling this method.
+            If you want to access only internal storage by using this method,
+            you should add privilege %http://tizen.org/privilege/mediastorage. Or, if you
+            want to access only external storage by using this method, you should add
+            privilege %http://tizen.org/privilege/externalstorage. If you want to access
+            both storage, you must add all the privileges.
+            </remarks>
+            <param name="filePath">File path to load the file.</param>
+            <param name="format">Format flag to determine which format should be used to load.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.AddLayer(Tizen.MachineLearning.Train.Layer)">
+            <summary>
+            Adds layer in neural network model.
+            </summary>
+            <remarks>
+            Use this method to add a layer to the model. The layer is added to
+            the end of the existing layers in the model. This transfers the
+            ownership of the layer to the network. No need to destroy the layer once it
+            is added to a model. Layer is available until the model is released, so
+            Dispose() must never be used.
+            </remarks>
+            <param name="layer"> The instance of Layer class </param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.GetLayer(System.String)">
+            <summary>
+            Gets neural network layer from the model with the given name.
+            </summary>
+            <remarks>
+            Use this method to get already created Neural Network Layer.
+            The returned layer must not be deleted as it is owned by the model.
+            layerName can be set by SetProperty method of Layer.
+            Returned layer instance is different with same layerName, but internally the
+            native layer handle is same.
+            </remarks>
+            <param name="layerName"> Name of the already created layer.</param>
+            <returns>layer instance</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.SetOptimizer(Tizen.MachineLearning.Train.Optimizer)">
+            <summary>
+            Sets the optimizer for the neural network model.
+            </summary>
+            <remarks>
+            Use this method to set neural network optimizer. This transfers
+            the ownership of the optimizer to the network. No need to destroy the
+            optimizer if it is added to a model.
+            </remarks>
+            <param name="optimizer"> The instance of Optimizer class </param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.SetDataset(Tizen.MachineLearning.Train.Dataset)">
+            <summary>
+            Sets the dataset (data provider) for the neural network model.
+            </summary>
+            <remarks>
+            Use this method to set dataset for running the model. The dataset
+            will provide training, validation and test data for the model. This transfers
+            the ownership of the dataset to the network. No need to destroy the dataset
+            once it is set to a model.
+            Unsets the previously set dataset, if any. The previously set
+            dataset must be freed using Dispose().
+            </remarks>
+            <param name="dataset"> The instance of Dataset class </param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.GetOutputTensorsInfo">
+            <summary>
+            Gets output tensors information of the model.
+            </summary>
+            <remarks>
+            Use this method to get output tensors information of the model.
+            Model must be compiled before calling this method.
+            </remarks>
+            <returns>TensorsInfo instance</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Model.GetInputTensorsInfo">
+            <summary>
+            Gets input tensors information of the model.
+            </summary>
+            <remarks>
+            Use this method to get input tensors information of the model.
+            Model must be compiled before calling this method.
+            </remarks>
+            <returns>TensorsInfo instance</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.MachineLearning.Train.Optimizer">
+            <summary>
+            Creates a neural network optimizer.
+            </summary>
+            <remarks>
+            Use this class to create neural network optimizer. If not set to
+            model, optimizer should be released using Dispose().
+            If set to a model, optimizer is available until model is released.
+            </remarks>
+            <feature>http://tizen.org/feature/machine_learning.training</feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the method failed due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the method failed due to the wrong pipeline description or internal error.</exception>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Optimizer.#ctor(Tizen.MachineLearning.Train.NNTrainerOptimizerType)">
+            <summary>
+            Creates a neural network optimizer.
+            </summary>
+            <param name="type">The nntrainer optimizer type.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Optimizer.Finalize">
+            <summary>
+            Frees the neural network optimizer.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <remarks>
+            Use this method to destroy neural network optimizer. Fails if layer is owned by a model.
+            </remarks>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Optimizer.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Optimizer.Dispose(System.Boolean)">
+            <summary>
+            Releases any unmanaged resources used by this object including opened handle.
+            </summary>
+            <param name="disposing">If true, disposes any disposable objects. If false, does not dispose disposable objects.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.MachineLearning.Train.Optimizer.SetProperty(System.String[])">
+            <summary>
+            Sets the neural network optimizer property
+            </summary>
+            <remarks>
+            Use this method to set neural network optimizer property.
+            The input format of property must be 'key = value' format.
+            </remarks>
+            <param name="property">property for optimizer.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+    </members>
+</doc>

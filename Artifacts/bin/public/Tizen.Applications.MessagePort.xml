@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.MessagePort</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.Messages.MessagePort">
+            <summary>
+            The message port API provides functions to send and receive messages between applications.
+            </summary>
+            <remarks>
+            The message port API provides functions for passing messages between applications. An application should register its own local port to receive messages from remote applications.
+            If a remote application sends a message, the registered callback function of the local port is called.
+            The trusted message-port API allows communications between applications that are signed by the same developer(author) certificate.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Messages.MessagePort.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes the instance of the MessagePort class.
+            </summary>
+            <param name="portName">The name of the local message port.</param>
+            <param name="trusted">If true, it is the trusted message port of application, otherwise false.</param>
+            <exception cref="T:System.ArgumentException">Thrown when portName is null or empty.</exception>
+            <example>
+            <code>
+            MessagePort messagePort = new MessagePort("SenderPort", true);
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Messages.MessagePort.Finalize">
+            <summary>
+            Destructor of the MessagePort class.
+            </summary>
+        </member>
+        <member name="E:Tizen.Applications.Messages.MessagePort.MessageReceived">
+            <summary>
+            Called when a message is received.
+            </summary>
+            <example>
+            <code>
+            MessagePort messagePort = new MessagePort("SenderPort", true);
+            messagePort.MessageReceived += MessageReceivedCallback;
+            static void MessageReceivedCallback(object sender, MessageReceivedEventArgs e)
+            {
+                Console.WriteLine("Message Received ");
+                if (e.Remote.AppId != null) {
+                    Console.WriteLine("from :"+e.Remote.AppId);
+                }
+            }
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Messages.MessagePort.PortName">
+            <summary>
+            The name of the local message port.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Messages.MessagePort.Trusted">
+            <summary>
+            If true, the message port is a trusted port, otherwise false.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Messages.MessagePort.Listening">
+            <summary>
+            If true, the message port is listening, otherwise false.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Messages.MessagePort.Listen">
+            <summary>
+            Register the local message port.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when portName is already used, when there is an I/O error.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when out of memory.</exception>
+            <example>
+            <code>
+            MessagePort messagePort = new MessagePort("SenderPort", true);
+            messagePort.MessageReceived += MessageReceivedCallback;
+            messagePort.Listen();
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Messages.MessagePort.StopListening">
+            <summary>
+            Unregisters the local message port.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when messageport is already stopped, when there is an I/O error, when the port is not found.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when out of memory.</exception>
+            <example>
+            <code>
+            MessagePort messagePort = new MessagePort("SenderPort", true);
+            messagePort.MessageReceived += MessageReceivedCallback;
+            messagePort.Listen();
+            using (var message = new Tizen.Application.Bundle())
+            {
+                message.AddItem("message", "a_string");
+                messagePort.Send(message, "ReceiverAppID", "ReceiverPort");
+            }
+            messagePort.StopListening();
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Messages.MessagePort.Send(Tizen.Applications.Bundle,System.String,System.String)">
+            <summary>
+            Sends an untrusted message to the message port of a remote application.
+            </summary>
+            <param name="message">The message to be passed to the remote application, the recommended message size is under 4KB.</param>
+            <param name="remoteAppId">The ID of the remote application.</param>
+            <param name="remotePortName">The name of the remote message port.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is an I/O error, when the port is not found.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when out of memory.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when message has exceeded the maximum limit(4KB).</exception>
+            <example>
+            <code>
+            MessagePort messagePort = new MessagePort("SenderPort", true);
+            messagePort.MessageReceived += MessageReceivedCallback;
+            messagePort.Listen();
+            using (var message = new Tizen.Application.Bundle())
+            {
+                message.AddItem("message", "a_string");
+                messagePort.Send(message, "ReceiverAppID", "ReceiverPort");
+            }
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Messages.MessagePort.Send(Tizen.Applications.Bundle,System.String,System.String,System.Boolean)">
+            <summary>
+            Sends a message to the message port of a remote application.
+            </summary>
+            <param name="message">The message to be passed to the remote application, the recommended message size is under 4KB.</param>
+            <param name="remoteAppId">The ID of the remote application.</param>
+            <param name="remotePortName">The name of the remote message port.</param>
+            <param name="trusted">If true, it is the trusted message port of remote application, otherwise false.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is an I/O error, when the port is not found.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when there is an invalid parameter.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when out of memory.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when message has exceeded the maximum limit(4KB).</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown when the remote application is not signed with the same certificate.</exception>
+            <example>
+            <code>
+            MessagePort messagePort = new MessagePort("SenderPort", true);
+            messagePort.MessageReceived += MessageReceivedCallback;
+            messagePort.Listen();
+            using (var message = new Tizen.Application.Bundle())
+            {
+                message.AddItem("message", "a_string");
+                messagePort.Send(message, "ReceiverAppID", "ReceiverPort", true);
+            }
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Messages.MessagePort.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the MessagePort class specifying whether to perform a normal dispose operation.
+            </summary>
+            <param name="disposing">true for a normal dispose operation; false to finalize the handle.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Messages.MessagePort.Dispose">
+            <summary>
+            Releases all resources used by the MessagePort class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Messages.MessageReceivedEventArgs">
+            <summary>
+            An extended EventArgs class, which contains remote message port information and message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Messages.MessageReceivedEventArgs.Remote">
+            <summary>
+            Contains AppId, port name, and trusted.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Messages.MessageReceivedEventArgs.Message">
+            <summary>
+            The message passed from the remote application.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Messages.RemotePort">
+            <summary>
+            The RemotePort Class provides functions to get if the remote port is running and to get whether the remote port is registered or unregistered.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Messages.RemotePort.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Constructor of the RemotePort class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <param name="appId">The Id of the remote application</param>
+            <param name="portName">The name of the remote message port</param>
+            <param name="trusted">If true is the trusted message port of application, otherwise false</param>
+            <exception cref="T:System.ArgumentException">Thrown when appId is null or empty, when portName is null or empty</exception>
+            <example>
+            <code>
+            RemotePort remotePort = new RemotePort("org.tizen.example.messageport", "SenderPort", false);
+            </code>
+            </example>
+        </member>
+        <member name="M:Tizen.Applications.Messages.RemotePort.Finalize">
+            <summary>
+            Destructor of the RemotePort class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Messages.RemotePort.AppId">
+            <summary>
+            The AppId of the remote port
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns> Return appid of RemotePort </returns>
+        </member>
+        <member name="P:Tizen.Applications.Messages.RemotePort.PortName">
+            <summary>
+            The name of the remote message port
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <returns> Return name of RemotePort </returns>
+        </member>
+        <member name="P:Tizen.Applications.Messages.RemotePort.Trusted">
+            <summary>
+            If true the remote port is a trusted port, otherwise if false it is not
+            </summary>
+            <since_tizen> 4 </since_tizen>
+             <returns> Return true if RemotePort is trusted </returns>
+        </member>
+        <member name="M:Tizen.Applications.Messages.RemotePort.IsRunning">
+            <summary>
+            Check if the remote message port is running.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is an I/O error</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when out of memory.</exception>
+            <example>
+            <code>
+            Remote remotePort = new RemotePort("org.tizen.example", "SenderPort", true);
+            bool isRunning = remotePort.isRunning();
+            </code>
+            </example>
+            <returns> Return true if Remote Port is running </returns>
+        </member>
+        <member name="E:Tizen.Applications.Messages.RemotePort.RemotePortStateChanged">
+            <summary>
+            Called when the remote port is registered or unregistered.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is an I/O error</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when out of memory.</exception>
+            <example>
+            <code>
+            Remote remotePort = new RemotePort("org.tizen.example", "SenderPort", true);
+            remotePort.RemotePortStateChanged += RemotePortStateChangedCallback;
+            static void RemotePortStateChangedCallback(object sender, RemotePortStateChangedEventArgs e)
+            {
+                switch (e.Status)
+                {
+                case State.Registered :
+                    Console.WriteLine("Remote Port Registered ");
+                    break;
+                case State.Unregistered :
+                    Console.WriteLine("Remote Port Unregistered ");
+                    break;
+                default :
+                    break;
+                }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Tizen.Applications.Messages.RemotePort.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the RemotePort class specifying whether to perform a normal dispose operation.
+            </summary>
+            <param name="disposing">true for a normal dispose operation; false to finalize the handle.</param>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Messages.RemotePort.Dispose">
+            <summary>
+            Releases all resources used by the RemotePort class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Messages.State">
+            <summary>
+            Enumeration for Remote Message Port state type
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Messages.State.Unregistered">
+            <summary>
+            Value representing Remote Port state is unregistered
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Messages.State.Registered">
+            <summary>
+            Value representing Remote Port state is registered
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Messages.RemotePortStateChangedEventArgs">
+            <summary>
+            An extended EventArgs class which contains state of remote message port
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Messages.RemotePortStateChangedEventArgs.Status">
+            <summary>
+            The State of remote port
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Messages.RemoteValues">
+            <summary>
+            Contains AppId, port name, and trusted.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Messages.RemoteValues.AppId">
+            <summary>
+            The ID of the remote application that sent this message.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Messages.RemoteValues.PortName">
+            <summary>
+            The name of the remote message port.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Messages.RemoteValues.Trusted">
+            <summary>
+            If true, the remote port is a trusted port, otherwise, if false, it is not.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

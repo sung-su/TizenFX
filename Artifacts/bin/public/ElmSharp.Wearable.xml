@@ -1,0 +1,1313 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ElmSharp.Wearable</name>
+    </assembly>
+    <members>
+        <member name="T:ElmSharp.Wearable.CircleDateTimeSelector">
+            <summary>
+            The Circle DateTime Selector is a widget to display and handle datetime value by the Rotary event.
+            Inherits <see cref="T:ElmSharp.DateTimeSelector"/>.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleDateTimeSelector.#ctor(ElmSharp.EvasObject,ElmSharp.Wearable.CircleSurface)">
+            <summary>
+            Creates and initializes a new instance of the Circle DateTime class.
+            </summary>
+            <param name="parent">The parent of the new Circle DateTime instance.</param>
+            <param name="surface">The surface for drawing circle features for this widget.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleDateTimeSelector.#ctor(ElmSharp.EvasObject)">
+            <summary>
+            Creates and initializes a new instance of the Circle DateTimeSelector class.
+            </summary>
+            <param name="parent">The parent of the new Circle DateTimeSelector instance.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleDateTimeSelector.CircleHandle">
+            <summary>
+            Gets the handle for the Circle widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleDateTimeSelector.CircleSurface">
+            <summary>
+            Gets the handle for the circle surface used in this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleDateTimeSelector.Disabled">
+            <summary>
+            Sets or gets the disabled state of this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleDateTimeSelector.IsEnabled">
+            <summary>
+            Sets or gets the state of the widget, which might be enabled or disabled.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleDateTimeSelector.MarkerColor">
+            <summary>
+            Sets or gets the color of the marker.
+            </summary>
+            <remarks>
+            MarkerColor is not supported on device or emulator which does not support marker in CircleDatetimeSelector and CircleSpinner.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleDateTimeSelector.MarkerLineWidth">
+            <summary>
+            Sets or gets the line width of the marker.
+            </summary>
+            <remarks>
+            MarkerLineWidth is not supported on device or emulator which does not support marker in CircleDatetimeSelector and CircleSpinner.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleDateTimeSelector.MarkerRadius">
+            <summary>
+            Sets or gets the radius at which the center of the marker lies.
+            </summary>
+            <remarks>
+            MarkerRadius is not supported on device or emulator which does not support marker in CircleDatetimeSelector and CircleSpinner.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleDateTimeSelector.CreateHandle(ElmSharp.EvasObject)">
+            <summary>
+            Creates a widget handle.
+            </summary>
+            <param name="parent">Parent EvasObject.</param>
+            <returns>Handle IntPtr.</returns>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.CircleGenList">
+            <summary>
+            The Circle GenList Selector is a widget to display and handle the genlist items by the Rotary event.
+            Inherits <see cref="T:ElmSharp.GenList"/>.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleGenList.#ctor(ElmSharp.EvasObject,ElmSharp.Wearable.CircleSurface)">
+            <summary>
+            Creates and initializes a new instance of the Circle GenList class.
+            </summary>
+            <param name="parent">The parent of the new Circle GenList instance.</param>
+            <param name="surface">The surface for drawing the circle features for this widget.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleGenList.#ctor(ElmSharp.EvasObject)">
+            <summary>
+            Creates and initializes a new instance of the Circle GenList class.
+            </summary>
+            <param name="parent">The parent of the new Circle CircleGenList instance.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.CircleHandle">
+            <summary>
+            Gets the handle for the Circle widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.CircleSurface">
+            <summary>
+            Gets the handle for the circle surface used in this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.Disabled">
+            <summary>
+            Sets or gets the disabled state of this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.IsEnabled">
+            <summary>
+            Sets or gets the state of the widget, which might be enabled or disabled.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.VerticalScrollBackgroundColor">
+            <summary>
+            Sets or gets the color of the scroll background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.VerticalScrollBackgroundLineWidth">
+            <summary>
+            Sets or gets the line width of the scroll background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.VerticalScrollBackgroundRadius">
+            <summary>
+            Sets or gets the radius of the scroll background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.VerticalScrollBarColor">
+            <summary>
+            Sets or gets the color of the scrollbar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.VerticalScrollBarLineWidth">
+            <summary>
+            Sets or gets the line width of the scrollbar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.VerticalScrollBarRadius">
+            <summary>
+            Sets or gets the radius of the scrollbar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleGenList.VerticalScrollBarVisiblePolicy">
+            <summary>
+            Sets or gets the policy if the scrollbar is visible.
+            </summary>
+            <remarks>
+            ScrollBarVisiblePolicy.Auto means the vertical scrollbar is made visible if it is needed, or otherwise kept hidden.
+            ScrollBarVisiblePolicy.Visible turns it on all the time, and ScrollBarVisiblePolicy.Invisible always keeps it off.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleGenList.CreateHandle(ElmSharp.EvasObject)">
+            <summary>
+            Creates a widget handle.
+            </summary>
+            <param name="parent">Parent EvasObject.</param>
+            <returns>Handle IntPtr.</returns>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.CircleProgressBar">
+            <summary>
+            The Circle ProgressBar is a widget for visually representing the progress status of a given job or task with the circular design.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleProgressBar.#ctor(ElmSharp.EvasObject,ElmSharp.Wearable.CircleSurface)">
+            <summary>
+            Creates and initializes a new instance of the Circle Progressbar class.
+            </summary>
+            <param name="parent">The parent of the new Circle Progressbar instance.</param>
+            <param name="surface">The surface for drawing circle features for this widget.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleProgressBar.#ctor(ElmSharp.EvasObject)">
+            <summary>
+            Creates and initializes a new instance of the Circle Progressbar class.
+            </summary>
+            <param name="parent">The parent of the new Circle Progressbar instance.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.CircleHandle">
+            <summary>
+            Gets the handle for the Circle widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.CircleSurface">
+            <summary>
+            Gets the handle for the circle surface used in this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.Disabled">
+            <summary>
+            Sets or gets the disabled state of this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.IsEnabled">
+            <summary>
+            Sets or gets the state of the widget, which might be enabled or disabled.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.Value">
+            <summary>
+            Sets or gets the value of the ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.Maximum">
+            <summary>
+            Sets or gets the maximum value of the ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.Minimum">
+            <summary>
+            Sets or gets the minimum value of the ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BarAngle">
+            <summary>
+            Sets or gets the angle value of the ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BackgroundAngle">
+            <summary>
+            Sets or gets the angle value of the Background ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BarAngleOffset">
+            <summary>
+            Sets or gets the angle offset value of the ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BackgroundAngleOffset">
+            <summary>
+            Sets or gets the angle offset value of the Background ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BarAngleMaximum">
+            <summary>
+            Sets or gets the maximum angle value of the ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BarAngleMinimum">
+            <summary>
+            Sets or gets the minimum angle value of the ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BarColor">
+            <summary>
+            Sets or gets the color of the ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BackgroundColor">
+            <summary>
+            Sets or gets the color of the Background ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BarLineWidth">
+            <summary>
+            Sets or gets the line width of the ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BackgroundLineWidth">
+            <summary>
+            Sets or gets the line width of the Background ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BarRadius">
+            <summary>
+            Sets or gets the radius of the ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleProgressBar.BackgroundRadius">
+            <summary>
+            Sets or gets the radius of the Background ProgressBar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleProgressBar.CreateHandle(ElmSharp.EvasObject)">
+            <summary>
+            Creates a widget handle.
+            </summary>
+            <param name="parent">Parent EvasObject.</param>
+            <returns>Handle IntPtr.</returns>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.CircleScroller">
+            <summary>
+            Circle scroller provides the scrollbar with a circular movement, and is scrolled by the Rotary event.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleScroller.#ctor(ElmSharp.EvasObject,ElmSharp.Wearable.CircleSurface)">
+            <summary>
+            Creates and initializes a new instance of the CircleScroller class.
+            </summary>
+            <param name="parent">The <see cref="T:ElmSharp.EvasObject"/> to which the new CircleScroller will be attached as a child.</param>
+            <param name="surface">The surface for drawing circle features for this widget.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleScroller.#ctor(ElmSharp.EvasObject)">
+            <summary>
+            Creates and initializes a new instance of the Circle Scroller class.
+            </summary>
+            <param name="parent">The parent of the new Circle CircleScroller instance.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.CircleHandle">
+            <summary>
+            Gets the handle for the Circle widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.CircleSurface">
+            <summary>
+            Gets the handle for the circle surface used in this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.Disabled">
+            <summary>
+            Sets or gets the disabled state of this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.IsEnabled">
+            <summary>
+            Sets or gets the state of the widget, which might be enabled or disabled.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.HorizontalScrollBarVisiblePolicy">
+            <summary>
+            Sets or gets the value of HorizontalScrollBarVisiblePolicy.
+            </summary>
+            <remarks>
+            ScrollBarVisiblePolicy.Auto means the horizontal scrollbar is made visible if it is needed, otherwise kept hidden.
+            ScrollBarVisiblePolicy.Visible turns it on all the time, and ScrollBarVisiblePolicy.Invisible always keeps it off.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.VerticalScrollBarVisiblePolicy">
+            <summary>
+            Sets or gets the value of VerticalScrollBarVisiblePolicy.
+            </summary>
+            <remarks>
+            ScrollBarVisiblePolicy.Auto means the vertical scrollbar is made visible if it is needed, otherwise kept hidden.
+            ScrollBarVisiblePolicy.Visible turns it on all the time, and ScrollBarVisiblePolicy.Invisible always keeps it off.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.VerticalScrollBarColor">
+            <summary>
+            Sets or gets the color of the vertical scroll bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.HorizontalScrollBarColor">
+            <summary>
+            Sets or gets the color of the horizontal scroll bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.VerticalScrollBackgroundColor">
+            <summary>
+            Sets or gets the color of the vertical scroll background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.HorizontalScrollBackgroundColor">
+            <summary>
+            Sets or gets the color of the horizontal scroll background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.VerticalScrollBarLineWidth">
+            <summary>
+            Sets or gets the line width of the vertical scroll bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.HorizontalScrollBarLineWidth">
+            <summary>
+            Sets or gets the line width of the horizontal scroll bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.VerticalScrollBackgroundLineWidth">
+            <summary>
+            Sets or gets the line width of the vertical scroll background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.HorizontalScrollBackgroundLineWidth">
+            <summary>
+            Sets or gets the line width of the horizontal scroll background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.VerticalScrollBarRadius">
+            <summary>
+            Sets or gets the radius of the vertical scroll bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.HorizontalScrollBarRadius">
+            <summary>
+            Sets or gets the radius of the horizontal scroll bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.VerticalScrollBackgroundRadius">
+            <summary>
+            Sets or gets the radius of the vertical scroll background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleScroller.HorizontalScrollBackgroundRadius">
+            <summary>
+            Sets or gets the radius of the horizontal scroll background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleScroller.CreateHandle(ElmSharp.EvasObject)">
+            <summary>
+            Creates a widget handle.
+            </summary>
+            <param name="parent">Parent EvasObject.</param>
+            <returns>Handle IntPtr.</returns>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.CircleSlider">
+            <summary>
+            Circle slider is a circular designed widget used to select a value in a range by the Rotary event.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSlider.#ctor(ElmSharp.EvasObject,ElmSharp.Wearable.CircleSurface)">
+            <summary>
+            Creates and initializes a new instance of the CircleSlider class.
+            </summary>
+            <param name="parent">The EvasObject to which the new CircleSlider will be attached as a child.</param>
+            <param name="surface">The surface for drawing the circle features for this widget.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSlider.#ctor(ElmSharp.EvasObject)">
+            <summary>
+            Creates and initializes a new instance of the Circle Slider class.
+            </summary>
+            <param name="parent">The parent of the new Circle CircleSlider instance.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="E:ElmSharp.Wearable.CircleSlider.ValueChanged">
+            <summary>
+            Changed will be triggered when the circle slider value changes.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.CircleHandle">
+            <summary>
+            Gets the handle for the Circle widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.CircleSurface">
+            <summary>
+            Gets the handle for the circle surface used in this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.Step">
+            <summary>
+            Sets or gets the step by which the circle slider bar moves.
+            </summary>
+            <remarks>
+            This value is used when the circle slider value is changed by a drag or the Rotary event.
+            The value of the slider is increased/decreased by the step value.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.Disabled">
+            <summary>
+            Sets or gets the disabled state of this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.IsEnabled">
+            <summary>
+            Sets or gets the state of the widget, which might be enabled or disabled.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BarColor">
+            <summary>
+            Sets or gets the color of the circle slider bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BackgroundColor">
+            <summary>
+            Sets or gets the color of the circle slider background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BarLineWidth">
+            <summary>
+            Sets or gets the line width of the circle slider bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BackgroundLineWidth">
+            <summary>
+            Sets or gets the line width of the circle slider background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BarAngle">
+            <summary>
+            Sets or gets the angle in degree of the circle slider bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BackgroundAngle">
+            <summary>
+            Sets or gets the angle in degree of the circle slider background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BarAngleOffset">
+            <summary>
+            Sets or gets the angle offset for the slider bar.
+            Offset value means start position of the slider bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BackgroundAngleOffset">
+            <summary>
+            Sets or gets the angle offset for the circle slider background.
+            Offset value means start position of the slider background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BarAngleMinimum">
+            <summary>
+            Sets or gets the minimum angle of the circle slider bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BarAngleMaximum">
+            <summary>
+            Sets or gets the maximum angle of the circle slider bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.Minimum">
+            <summary>
+            Sets or gets the minimum values for the circle slider.
+            </summary>
+            <remarks>
+            This defines the allowed minimum values to be selected by the user.
+            If the actual value is less than the minimum value, it is updated to the minimum value.
+            Actual value can be obtained with Value. By default, minimum value is equal to 0.0.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.Maximum">
+            <summary>
+            Sets or gets the maximum values for the circle slider.
+            </summary>
+            <remarks>
+            This defines the allowed maximum values to be selected by the user.
+            If the actual value is bigger than the maximum value, it is updated to the maximum value.
+            Actual value can be obtained with Value. By default, the minimum value is equal to 0.0, and the maximum value is equal to 1.0.
+            Maximum must be greater than minimum, otherwise the behavior is undefined.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.Value">
+            <summary>
+            Gets or sets the value displayed by the circle slider.
+            </summary>
+            <remarks>
+            The value must be between minimum and maximum.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BarRadius">
+            <summary>
+            Gets or sets the radius value for the circle slider bar.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSlider.BackgroundRadius">
+            <summary>
+            Gets or sets the radius value for the circle slider background.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSlider.OnRealized">
+            <summary>
+            The callback of the Realized event.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSlider.CreateHandle(ElmSharp.EvasObject)">
+            <summary>
+            Creates a widget handle.
+            </summary>
+            <param name="parent">Parent EvasObject</param>
+            <returns>Handle IntPtr.</returns>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.CircleSpinner">
+            <summary>
+            The Circle Spinner is a widget to display and handle the spinner value by the Rotary event.
+            Inherits <see cref="T:ElmSharp.Spinner"/>.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSpinner.#ctor(ElmSharp.EvasObject,ElmSharp.Wearable.CircleSurface)">
+            <summary>
+            Creates and initializes a new instance of the Circle Spinner class.
+            </summary>
+            <param name="parent">The parent of the new Circle Spinner instance.</param>
+            <param name="surface">The surface for drawing circle features for this widget.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSpinner.#ctor(ElmSharp.EvasObject)">
+            <summary>
+            Creates and initializes a new instance of the Circle Spinner class.
+            </summary>
+            <param name="parent">The parent of the new Circle Spinner instance.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSpinner.CircleHandle">
+            <summary>
+            Gets the handle for Circle widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSpinner.CircleSurface">
+            <summary>
+            Gets the handle for the circle surface used in this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSpinner.AngleRatio">
+            <summary>
+            Sets or gets the circle spinner angle per each spinner value.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSpinner.Disabled">
+            <summary>
+            Sets or gets the disabled state of this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSpinner.IsEnabled">
+            <summary>
+            Sets or gets the state of the widget, which might be enabled or disabled.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSpinner.MarkerLineWidth">
+            <summary>
+            Sets or gets the line width of the marker.
+            </summary>
+            <remarks>
+            MarkerLineWidth is not supported on device or emulator which does not support marker in CircleDatetimeSelector and CircleSpinner.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSpinner.MarkerColor">
+            <summary>
+            Sets or gets the color of the marker.
+            </summary>
+            <remarks>
+            MarkerColor is not supported on device or emulator which does not support marker in CircleDatetimeSelector and CircleSpinner.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSpinner.MarkerRadius">
+            <summary>
+            Sets or gets the radius at which the center of the marker lies.
+            </summary>
+            <remarks>
+            MarkerRadius is not supported on device or emulator which does not support marker in CircleDatetimeSelector and CircleSpinner.
+            </remarks>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSpinner.CreateHandle(ElmSharp.EvasObject)">
+            <summary>
+            Creates a widget handle.
+            </summary>
+            <param name="parent">Parent EvasObject.</param>
+            <returns>Handle IntPtr.</returns>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.CircleSurface">
+            <summary>
+            The CircleSurface presents a surface for drawing the circular feature of circle widgets.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSurface.#ctor(ElmSharp.Conformant)">
+            <summary>
+            Creates and initializes a new instance of the CircleSurface class with a surface on the Conformant widget.
+            </summary>
+            <param name="conformant">The Conformant widget to create a surface.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSurface.#ctor(ElmSharp.Layout)">
+            <summary>
+            Creates and initializes a new instance of the CircleSurface class with a surface on the Layout widget.
+            </summary>
+            <param name="layout">The Layout widget to create a surface.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSurface.#ctor(ElmSharp.Naviframe)">
+            <summary>
+            Creates and initializes a new instance of the CircleSurface class with a surface on the Naviframe widget.
+            </summary>
+            <param name="naviframe">The Naviframe widget to create a surface.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSurface.#ctor">
+            <summary>
+            Creates and initializes a new instance of the CircleSurface class with no surface.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.CircleSurface.Handle">
+            <summary>
+            Gets the handle for CircleSurface.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.CircleSurface.Delete">
+            <summary>
+            Deletes the given CircleSurface.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.ICircleWidget">
+            <summary>
+            The ICircleWidget is the interface for a widget to display and handle with the CircleSurface.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.ICircleWidget.CircleHandle">
+            <summary>
+            Gets the handle for the Circle widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.ICircleWidget.CircleSurface">
+            <summary>
+            Gets the CircleSurface used in this widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.IRotaryActionWidget">
+            <summary>
+            The IRotaryActionWidget is the interface for a widget that has action by the Rotary event.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.MoreOption">
+            <summary>
+            The MoreOption is a widget composed of the toggle (cue button) and more option view that can change a visibility through the toggle.
+            Inherits Layout
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOption.Items">
+            <summary>
+            Sets or gets the list of the more option item.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="E:ElmSharp.Wearable.MoreOption.Selected">
+            <summary>
+            Selected will be triggered when the user selects an item.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="E:ElmSharp.Wearable.MoreOption.Clicked">
+            <summary>
+            Clicked will be triggered when the user selects the already selected item again or selects a selector.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="E:ElmSharp.Wearable.MoreOption.Opened">
+            <summary>
+            Opened will be triggered when the more option view is shown.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="E:ElmSharp.Wearable.MoreOption.Closed">
+            <summary>
+            Closed will be triggered when the more option view is hidden.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOption.#ctor(ElmSharp.EvasObject)">
+            <summary>
+            Creates and initializes a new instance of the MoreOption class.
+            </summary>
+            <param name="parent">The parent is a given container, which will be attached by the MoreOption as a child. It's <see cref="T:ElmSharp.EvasObject"/> type.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOption.CreateHandle(ElmSharp.EvasObject)">
+            <summary>
+            Creates a widget handle.
+            </summary>
+            <param name="parent">Parent EvasObject.</param>
+            <returns>Handle IntPtr.</returns>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOption.Direction">
+            <summary>
+            Sets or gets the direction of more option.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOption.IsOpened">
+            <summary>
+            Sets or gets the visibility of the more option view.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.MoreOptionDirection">
+            <summary>
+            Enumeration for the more option direction types.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="F:ElmSharp.Wearable.MoreOptionDirection.Top">
+            <summary>
+            Top direction.
+            </summary>
+        </member>
+        <member name="F:ElmSharp.Wearable.MoreOptionDirection.Bottom">
+            <summary>
+            Bottom direction.
+            </summary>
+        </member>
+        <member name="F:ElmSharp.Wearable.MoreOptionDirection.Left">
+            <summary>
+            Left direction.
+            </summary>
+        </member>
+        <member name="F:ElmSharp.Wearable.MoreOptionDirection.Right">
+            <summary>
+            Right direction.
+            </summary>
+        </member>
+        <member name="T:ElmSharp.Wearable.MoreOptionItem">
+            <summary>
+            The MoreOptionItem is an item of the MoreOption widget.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOptionItem.Handle">
+            <summary>
+            Sets or gets the more option item handle.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionItem.#ctor">
+            <summary>
+            Creates and initializes a new instance of the MoreOptionItem class.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOptionItem.MainText">
+            <summary>
+            Sets or gets the main text of the more option object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOptionItem.SubText">
+            <summary>
+            Sets or gets the subtext of the more option object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOptionItem.Icon">
+            <summary>
+            Sets or gets the icon image.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.MoreOptionItemEventArgs">
+            <summary>
+            The MoreOptionItemEventArgs is an event arguments class for the MoreOptionItem.
+            Inherits EventArgs
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOptionItemEventArgs.Item">
+            <summary>
+            Sets or gets the more option item.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOptionList.Count">
+            <summary>
+            Sets or gets the count of items.
+            </summary>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOptionList.IsReadOnly">
+            <summary>
+            Sets or gets whether it is read-only.
+            </summary>
+        </member>
+        <member name="P:ElmSharp.Wearable.MoreOptionList.Item(System.Int32)">
+            <summary>
+            Sets or gets the item with the index.
+            </summary>
+            <param name="index">The position of item in items.</param>
+            <returns>MoreOptionItem object on the index.</returns>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.#ctor(ElmSharp.Wearable.MoreOption)">
+            <summary>
+            Creates and initializes a new instance of the MoreOptionList class.
+            </summary>
+            <param name="owner">The object of more option.</param>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.Add(ElmSharp.Wearable.MoreOptionItem)">
+            <summary>
+            Appends a new item to the more option.
+            </summary>
+            <param name="item">The more option item.</param>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.AddFirst(ElmSharp.Wearable.MoreOptionItem)">
+            <summary>
+            Adds a new item to the more option at the first.
+            </summary>
+            <param name="item">The more option item.</param>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.AddLast(ElmSharp.Wearable.MoreOptionItem)">
+            <summary>
+            Adds a new item to the more option at the last.
+            </summary>
+            <param name="item">The more option item.</param>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.IndexOf(ElmSharp.Wearable.MoreOptionItem)">
+            <summary>
+            Get the index of an item.
+            </summary>
+            <param name="item">The more option item.</param>
+            <returns>The index of an item.</returns>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.Insert(System.Int32,ElmSharp.Wearable.MoreOptionItem)">
+            <summary>
+            Inserts a new item into the more option, after the more option item with the index.
+            </summary>
+            <param name="index">The index of an item, which is inserted after.</param>
+            <param name="item">The more option item.</param>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.RemoveAt(System.Int32)">
+            <summary>
+            Deletes an item, which is the given item index.
+            </summary>
+            <param name="index">the item index which will be deleted</param>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.Clear">
+            <summary>
+            Removes all the items from a given more option list object.
+            </summary>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.Contains(ElmSharp.Wearable.MoreOptionItem)">
+            <summary>
+            Checks the item whether it is contained.
+            </summary>
+            <param name="item">The more option item.</param>
+            <returns>If contained return true, otherwise false.</returns>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.CopyTo(ElmSharp.Wearable.MoreOptionItem[],System.Int32)">
+            <summary>
+            Copies the items.
+            </summary>
+            <param name="array">The target array.</param>
+            <param name="arrayIndex">The index to which the item will be copied.</param>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.Remove(ElmSharp.Wearable.MoreOptionItem)">
+            <summary>
+            Removes the item.
+            </summary>
+            <param name="item">The item will be removed.</param>
+            <returns>If removed is successful return true, otherwise false.</returns>
+        </member>
+        <member name="M:ElmSharp.Wearable.MoreOptionList.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through IEnumerator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ElmSharp.Wearable.RotaryEventManager">
+            <summary>
+            The RotaryEventManager serves functions for the global Rotary event like Galaxy Gear.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="E:ElmSharp.Wearable.RotaryEventManager.Rotated">
+            <summary>
+            Rotated will be triggered when the rotatable device like the Galaxy Gear Bezel is rotated.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.RotaryEventExtensions">
+            <summary>
+            The RotaryEventManager serves extension functions for the Rotary event to EvasObject on a device like Galaxy Gear.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.RotaryEventExtensions.AddRotaryEventHandler(ElmSharp.EvasObject,ElmSharp.Wearable.RotaryEventHandler)">
+            <summary>
+            Adds a handler for the Rotary event on a specific EvasObject.
+            </summary>
+            <param name="obj">Target EvasObject.</param>
+            <param name="handler">Event handler for the Rotary event.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.RotaryEventExtensions.RemoveRotaryEventHandler(ElmSharp.EvasObject,ElmSharp.Wearable.RotaryEventHandler)">
+            <summary>
+            Removes a handler on a specific EvasObject for the Rotary event.
+            </summary>
+            <param name="obj">Target EvasObject.</param>
+            <param name="handler">Event handler for Rotary event.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.RotaryEventExtensions.Activate(ElmSharp.Wearable.IRotaryActionWidget)">
+            <summary>
+            Activates this Circle widget that can take the Rotary event.
+            </summary>
+            <param name="widget">Target the Circle widget.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.RotaryEventExtensions.Deactivate(ElmSharp.Wearable.IRotaryActionWidget)">
+            <summary>
+            Deactivates this circle widget that is blocked from the Rotary event.
+            </summary>
+            <param name="widget">Target the Circle widget.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.RotaryEventExtensions.Activate(ElmSharp.EvasObject)">
+            <summary>
+            Activates this object that can take the Rotary event.
+            </summary>
+            <param name="obj">Target object.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.RotaryEventExtensions.Deactivate(ElmSharp.EvasObject)">
+            <summary>
+            Deactivates this object that is blocked from the Rotary event.
+            </summary>
+            <param name="obj">Target object.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.RotaryEventHandler">
+            <summary>
+            Handler for the Rotary event.
+            </summary>
+            <param name="args">The Rotary event information.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.RotaryEventArgs">
+            <summary>
+            The RotaryEventArgs serves information for the triggered Rotary event.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotaryEventArgs.IsClockwise">
+            <summary>
+            IsClockwise is true when the Rotary device rotated in the clockwise direction, or false on counter clockwise.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotaryEventArgs.Timestamp">
+            <summary>
+            Timestamp of the Rotary event.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.RotarySelector">
+            <summary>
+            The RotarySelector is a widget to display a selector and multiple items surrounding the selector.
+            An item can be selected by the Rotary event or user item click.
+            Inherits <see cref="T:ElmSharp.Layout"/>.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="E:ElmSharp.Wearable.RotarySelector.Selected">
+            <summary>
+            Selected will be triggered when selecting an item.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="E:ElmSharp.Wearable.RotarySelector.Clicked">
+            <summary>
+            Clicked will be triggered when selecting again the already selected item or selecting a selector.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelector.Items">
+            <summary>
+            Gets the rotary selector item list of a rotary selector object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.RotarySelector.#ctor(ElmSharp.EvasObject)">
+            <summary>
+            Creates and initializes a new instance of the Rotary Selector class.
+            </summary>
+            <param name="parent">The parent of the new Rotary Selector instance.</param>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelector.SelectedItem">
+            <summary>
+            Sets or gets the selected item of a rotary selector object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelector.BackgroundImage">
+            <summary>
+            Sets or gets the background image of a rotary selector object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="M:ElmSharp.Wearable.RotarySelector.CreateHandle(ElmSharp.EvasObject)">
+            <summary>
+            Creates a widget handle.
+            </summary>
+            <param name="parent">Parent EvasObject.</param>
+            <returns>Handle IntPtr.</returns>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.RotarySelectorItem">
+            <summary>
+            An instance to the Rotary Selector item is added. An item can be selected by the Rotary event or user item click.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.Handle">
+            <summary>
+            Sets or gets the handle of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.MainText">
+            <summary>
+            Sets or gets the main text of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.SubText">
+            <summary>
+            Sets or gets the subtext of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.MainTextColor">
+            <summary>
+            Sets or gets the subtext color of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.SubTextColor">
+            <summary>
+            Sets or gets the subtext color of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.NormalIconImage">
+            <summary>
+            Sets or gets the normal icon image of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.PressedIconImage">
+            <summary>
+            Sets or gets the pressed icon image of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.DisabledIconImage">
+            <summary>
+            Sets or gets the disabled icon image of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.SelectedIconImage">
+            <summary>
+            Sets or gets the selected icon image of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.NormalBackgroundImage">
+            <summary>
+            Sets or gets the normal background image of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.PressedBackgroundImage">
+            <summary>
+            Sets or gets the pressed background image of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.DisabledBackgroundImage">
+            <summary>
+            Sets or gets the disabled background image of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.SelectedBackgroundImage">
+            <summary>
+            Sets or gets the selected background image of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.NormalBackgroundColor">
+            <summary>
+            Sets or gets the normal background color of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.PressedBackgroundColor">
+            <summary>
+            Sets or gets the pressed background color of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.DisabledBackgroundColor">
+            <summary>
+            Sets or gets the disabled background color of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.SelectedBackgroundColor">
+            <summary>
+            Sets or gets the selected background color of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItem.SelectorIconImage">
+            <summary>
+            Sets or gets the selector icon image of a rotary selector item object.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="T:ElmSharp.Wearable.RotarySelectorItemEventArgs">
+            <summary>
+            <see cref="E:ElmSharp.Wearable.RotarySelector.Selected"/> and <see cref="E:ElmSharp.Wearable.RotarySelector.Clicked"/> events of the RotarySelector contain the RotarySelectorItemEventArgs as a parameter.
+            Inherits <see cref="T:System.EventArgs"/>.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+        <member name="P:ElmSharp.Wearable.RotarySelectorItemEventArgs.Item">
+            <summary>
+            Sets or gets the rotary selector item.
+            </summary>
+            <since_tizen> preview </since_tizen>
+        </member>
+    </members>
+</doc>

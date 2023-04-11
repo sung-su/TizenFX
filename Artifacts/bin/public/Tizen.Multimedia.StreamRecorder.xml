@@ -1,0 +1,694 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Multimedia.StreamRecorder</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Multimedia.StreamRecorder">
+            <summary>
+            Provides the ability to record user buffer from application.
+            </summary>
+            <seealso cref="T:Tizen.Multimedia.Recorder"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.GetSupportedFileFormats">
+            <summary>
+            Gets the file formats that the current device supports.
+            </summary>
+            <returns>An IEnumerable of <see cref="T:Tizen.Multimedia.RecorderFileFormat"/> representing the supported file formats.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.GetSupportedAudioCodecs">
+            <summary>
+            Gets the audio codecs that the current device supports.
+            </summary>
+            <returns>An IEnumerable of <see cref="T:Tizen.Multimedia.RecorderAudioCodec"/> representing the supported audio codecs.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.GetSupportedVideoCodecs">
+            <summary>
+            Gets the video codecs that the current device supports.
+            </summary>
+            <returns>An IEnumerable of <see cref="T:Tizen.Multimedia.RecorderVideoCodec"/> representing the supported video codecs.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.GetSupportedVideoResolutions">
+            <summary>
+            Gets the video resolutions that the current device supports.
+            </summary>
+            <returns>An IEnumerable of <see cref="T:Tizen.Multimedia.Size"/> representing the supported resolutions.</returns>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:Tizen.Multimedia.StreamRecorder"/> class.
+            </summary>
+            <exception cref="T:System.NotSupportedException">The feature is not supported.</exception>
+            <since_tizen> 3 </since_tizen>
+            <feature> http://tizen.org/feature/multimedia.stream_recorder </feature>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorder.State">
+            <summary>
+            Gets the current state of the stream recorder.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.StreamRecorder"/> has already been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.Prepare(Tizen.Multimedia.StreamRecorderOptions)">
+            <summary>
+            Prepares the stream recorder with the specified options.
+            </summary>
+            <remarks>The recorder must be <see cref="F:Tizen.Multimedia.RecorderState.Idle"/>.</remarks>
+            <param name="options">The options for recording.</param>
+            <exception cref="T:System.InvalidOperationException">The recorder is not in the valid state.</exception>
+            <exception cref="T:System.ArgumentException">Both <see cref="P:Tizen.Multimedia.StreamRecorderOptions.Audio"/> and
+                <see cref="P:Tizen.Multimedia.StreamRecorderOptions.Video"/> are null.
+            </exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="options"/> contains a value which is not supported.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.StreamRecorder"/> has already been disposed.</exception>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Unprepare"/>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Start"/>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorderOptions"/>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorderAudioOptions"/>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorderVideoOptions"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.Unprepare">
+            <summary>
+            Unprepares the stream recorder.
+            </summary>
+            <remarks>
+            The recorder state must be <see cref="F:Tizen.Multimedia.RecorderState.Ready"/> state by
+            <see cref="M:Tizen.Multimedia.StreamRecorder.Prepare(Tizen.Multimedia.StreamRecorderOptions)"/>, <see cref="M:Tizen.Multimedia.StreamRecorder.Cancel"/> and <see cref="M:Tizen.Multimedia.StreamRecorder.Commit"/>.<br/>
+            The recorder state will be <see cref="F:Tizen.Multimedia.RecorderState.Idle"/>.<br/>
+            <br/>
+            It has no effect if the recorder is already in the <see cref="F:Tizen.Multimedia.RecorderState.Idle"/> state.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">The recorder is not in the valid state.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.StreamRecorder"/> has already been disposed.</exception>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Prepare(Tizen.Multimedia.StreamRecorderOptions)"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.Start">
+            <summary>
+            Starts recording.
+            </summary>
+            <remarks>
+            The recorder state must be <see cref="F:Tizen.Multimedia.RecorderState.Ready"/> state by
+            <see cref="M:Tizen.Multimedia.StreamRecorder.Prepare(Tizen.Multimedia.StreamRecorderOptions)"/> or
+            <see cref="F:Tizen.Multimedia.RecorderState.Paused"/> state by <see cref="M:Tizen.Multimedia.StreamRecorder.Pause"/>.<br/>
+            <br/>
+            It has no effect if the recorder is already in the <see cref="F:Tizen.Multimedia.RecorderState.Recording"/> state.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">The recorder is not in the valid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The access of the resources can not be granted.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.StreamRecorder"/> has already been disposed.</exception>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Pause"/>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Commit"/>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Cancel"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.Pause">
+            <summary>
+            Pauses recording.
+            </summary>
+            <remarks>
+            Recording can be resumed with <see cref="M:Tizen.Multimedia.StreamRecorder.Start"/>.<br/>
+            <br/>
+            The recorder state must be <see cref="F:Tizen.Multimedia.RecorderState.Recording"/> state by <see cref="M:Tizen.Multimedia.StreamRecorder.Start"/>.<br/>
+            <br/>
+            It has no effect if the recorder is already in the <see cref="F:Tizen.Multimedia.RecorderState.Paused"/> state.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">The recorder is not in the valid state.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.StreamRecorder"/> has already been disposed.</exception>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Start"/>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Commit"/>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Cancel"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.Commit">
+            <summary>
+            Stops recording and saves the result.
+            </summary>
+            <remarks>
+            The recorder state must be <see cref="F:Tizen.Multimedia.RecorderState.Recording"/> state by <see cref="M:Tizen.Multimedia.StreamRecorder.Start"/> or
+            <see cref="F:Tizen.Multimedia.RecorderState.Paused"/> state by <see cref="M:Tizen.Multimedia.StreamRecorder.Pause"/>.<br/>
+            <br/>
+            The recorder state will be <see cref="F:Tizen.Multimedia.RecorderState.Ready"/> after commit.
+            <para>
+            http://tizen.org/privilege/mediastorage is needed if the save path are relevant to media storage.
+            http://tizen.org/privilege/externalstorage is needed if the save path are relevant to external storage.
+            </para>
+            </remarks>
+            <privilege>http://tizen.org/privilege/mediastorage</privilege>
+            <privilege>http://tizen.org/privilege/externalstorage</privilege>
+            <exception cref="T:System.InvalidOperationException">The recorder is not in the valid state.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The access to the resources can not be granted.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.StreamRecorder"/> has already been disposed.</exception>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Start"/>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Pause"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.Cancel">
+            <summary>
+            Cancels recording.
+            The recording data is discarded and not written.
+            </summary>
+            <remarks>
+            The recorder state must be <see cref="F:Tizen.Multimedia.RecorderState.Recording"/> state by <see cref="M:Tizen.Multimedia.StreamRecorder.Start"/> or
+            <see cref="F:Tizen.Multimedia.RecorderState.Paused"/> state by <see cref="M:Tizen.Multimedia.StreamRecorder.Pause"/>.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">The recorder is not in the valid state.</exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.StreamRecorder"/> has already been disposed.</exception>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Start"/>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Pause"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.PushBuffer(Tizen.Multimedia.MediaPacket)">
+            <summary>
+            Pushes a packet as recording raw data.
+            </summary>
+            <param name="packet">An audio or video packet to record.</param>
+            <remarks>
+            The recorder state must be <see cref="F:Tizen.Multimedia.RecorderState.Recording"/> state by <see cref="M:Tizen.Multimedia.StreamRecorder.Start"/>.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">
+                The recorder is not in the valid state.<br/>
+                -or-<br/>
+                <paramref name="packet"/> is an audio packet but audio recording is not enabled(See <see cref="P:Tizen.Multimedia.StreamRecorderOptions.Audio"/>).<br/>
+                -or-<br/>
+                <paramref name="packet"/> is a video packet but video recording is not enabled(See <see cref="P:Tizen.Multimedia.StreamRecorderOptions.Video"/>).<br/>
+                -or-<br/>
+                <paramref name="packet"/> is a video packet but the <see cref="P:Tizen.Multimedia.VideoMediaFormat.MimeType"/> does not match the video source format.<br/>
+                -or-<br/>
+                An internal error occurs.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:Tizen.Multimedia.StreamRecorder"/> has already been disposed.</exception>
+            <see cref="M:Tizen.Multimedia.StreamRecorder.Prepare(Tizen.Multimedia.StreamRecorderOptions)"/>
+            <seealso cref="P:Tizen.Multimedia.StreamRecorderOptions.Audio"/>
+            <seealso cref="P:Tizen.Multimedia.StreamRecorderOptions.Video"/>
+            <seealso cref="P:Tizen.Multimedia.StreamRecorderVideoOptions.SourceFormat"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.Dispose">
+            <summary>
+            Release any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorder.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources used by the StreamRecorder.
+            </summary>
+            <param name="disposing">
+            true to release both managed and unmanaged resources; false to release only unmanaged resources.
+            </param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.StreamRecorder.StateChanged">
+            <summary>
+            Occurs when <see cref="T:Tizen.Multimedia.StreamRecorder"/> state is changed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.StreamRecorder.BufferConsumed">
+            <summary>
+            Occurs when a buffer had consumed completely.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.StreamRecorder.RecordingStatusChanged">
+            <summary>
+            Occurs when recording status is changed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.StreamRecorder.RecordingLimitReached">
+            <summary>
+            Occurs when recording limit is reached.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.StreamRecorder.ErrorOccurred">
+            <summary>
+            Occurs when an error occurred during a recorder operation.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderAudioOptions">
+            <summary>
+            Specifies the options associated with audio recording.
+            </summary>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorder"/>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorderOptions"/>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorderVideoOptions"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorderAudioOptions.#ctor(Tizen.Multimedia.RecorderAudioCodec)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Tizen.Multimedia.StreamRecorderAudioOptions"/> class with the specified codec.
+            </summary>
+            <param name="codec">The <see cref="T:Tizen.Multimedia.RecorderAudioCodec"/> for encoding audio stream.</param>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.StreamRecorderAudioOptions.SampleRate"/>, <see cref="P:Tizen.Multimedia.StreamRecorderAudioOptions.BitRate"/> and <see cref="P:Tizen.Multimedia.StreamRecorderAudioOptions.Channels"/> will be set as default.
+            </remarks>
+            <exception cref="T:System.ArgumentException"><paramref name="codec"/> is not valid.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorderAudioOptions.#ctor(Tizen.Multimedia.RecorderAudioCodec,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Tizen.Multimedia.StreamRecorderAudioOptions"/> class with the specified
+            codec, sample rate, bit rate, and channel value.
+            </summary>
+            <param name="codec">The <see cref="T:Tizen.Multimedia.RecorderAudioCodec"/> for encoding audio stream.</param>
+            <param name="sampleRate">The sample rate for encoding audio stream.</param>
+            <param name="bitRate">The bit rate for encoding audio stream.</param>
+            <param name="channels">The number of channels for encoding audio stream.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="codec"/> is not valid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="sampleRate"/> is less than zero.<br/>
+                -or-<br/>
+                <paramref name="bitRate"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                <paramref name="channels"/> is less than or equal to zero.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderAudioOptions.Codec">
+            <summary>
+            Gets or sets the audio codec for encoding an audio stream.
+            </summary>
+            <value>The codec for audio stream recording.</value>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is not valid.</exception>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.GetSupportedAudioCodecs"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderAudioOptions.SampleRate">
+            <summary>
+            Gets or sets the sampling rate of the audio stream in hertz.
+            </summary>
+            <remarks>If the value is zero, the sample rate will be decided based on input buffers.</remarks>
+            <value>The sample rate value for stream recorder. The default is zero.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than zero.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderAudioOptions.BitRate">
+            <summary>
+            Gets or sets the bit rate of the audio encoder in bits per second.
+            </summary>
+            <value>The bit rate value for audio stream recording. The default is 128000.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than or equal to zero.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderAudioOptions.Channels">
+            <summary>
+            Gets or sets the number of audio channels.
+            </summary>
+            <value>The number of audio channels for audio stream recording. The default is 2.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than or equal to zero.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderBufferConsumedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.StreamRecorder.BufferConsumed"/> event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderBufferConsumedEventArgs.Packet">
+            <summary>
+            Gets the packet that has consumed.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderError">
+            <summary>
+            Specifies errors for <see cref="T:Tizen.Multimedia.StreamRecorder"/>/
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderError.InternalError">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderError.OutOfStorage">
+            <summary>
+            Out of storage.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderVideoFormat">
+            <summary>
+            Specifies the video source formats for <see cref="T:Tizen.Multimedia.StreamRecorder"/>.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderVideoFormat.Nv12">
+            <summary>
+            Nv12 format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderVideoFormat.Nv21">
+            <summary>
+            Nv21 format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderVideoFormat.I420">
+            <summary>
+            I420 format.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderAudioCodec">
+            <summary>
+            Enumeration for Audio Codec.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderAudioCodec.Amr">
+            <summary>
+            AMR codec.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderAudioCodec.Aac">
+            <summary>
+            AAC codec.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderAudioCodec.Pcm">
+            <summary>
+            PCM codec.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderFileFormat">
+            <summary>
+            Enumeration for the file container format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderFileFormat.ThreeGp">
+            <summary>
+            3GP file format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderFileFormat.Mp4">
+            <summary>
+            MP4 file format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderFileFormat.Amr">
+            <summary>
+            AMR file format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderFileFormat.Adts">
+            <summary>
+            ADTS file format.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderFileFormat.Wav">
+            <summary>
+            WAV file format.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderNotify">
+            <summary>
+            Enumeration for the recorder notify type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderNotify.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderNotify.StateChanged">
+            <summary>
+            State changed.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderVideoCodec">
+            <summary>
+            Enumeration for video codec.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderVideoCodec.H263">
+            <summary>
+            H263 codec.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderVideoCodec.Mpeg4">
+            <summary>
+            MPEG4 codec.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderSourceType">
+            <summary>
+            Enumeration for source type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderSourceType.Video">
+            <summary>
+            Video source
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderSourceType.Audio">
+            <summary>
+            Audio source
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.StreamRecorderSourceType.VideoAudio">
+            <summary>
+            Audio/Video both
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderErrorOccurredEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.StreamRecorder.ErrorOccurred"/> event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderErrorOccurredEventArgs.Error">
+            <summary>
+            Gets the error code.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderErrorOccurredEventArgs.State">
+            <summary>
+            Gets the state of the recorder.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderOptions">
+            <summary>
+            Specifies the options associated with <see cref="T:Tizen.Multimedia.StreamRecorder"/>.
+            </summary>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorder"/>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.Prepare(Tizen.Multimedia.StreamRecorderOptions)"/>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorderAudioOptions"/>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorderVideoOptions"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorderOptions.#ctor(System.String,Tizen.Multimedia.RecorderFileFormat)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Tizen.Multimedia.StreamRecorderOptions"/> class with the specified
+            save path and file format.
+            </summary>
+            <param name="savePath">The path that the recording result is saved.</param>
+            <param name="fileFormat">The file format of output file.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="savePath"/>is null.</exception>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="savePath"/>is an empty string.<br/>
+                -or-<br/>
+                <paramref name="fileFormat"/> is not valid.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderOptions.SavePath">
+            <summary>
+            Gets or sets the file path to record.
+            </summary>
+            <remarks>
+            If the same file already exists in the file system, then old file will be overwritten.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/>is null.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/>is an empty string.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderOptions.FileFormat">
+            <summary>
+            Gets or sets the file format for recording media stream.
+            </summary>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is not valid.</exception>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.GetSupportedFileFormats"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderOptions.TimeLimit">
+            <summary>
+            Gets or sets the time limit of recording.
+            </summary>
+            <value>
+            The maximum time of recording in seconds, or 0 for unlimited time.
+            </value>
+            <remarks>
+            After reaching the limitation, the data which is being recorded will
+            be discarded and not written to the file.
+            </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than zero.</exception>
+            <seealso cref="E:Tizen.Multimedia.StreamRecorder.RecordingLimitReached"/>
+            <seealso cref="P:Tizen.Multimedia.StreamRecorderOptions.SizeLimit"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderOptions.SizeLimit">
+            <summary>
+            Gets or sets the maximum size of a recording file.
+            </summary>
+            <value>
+            The maximum size of a recording file in kilobytes, or 0 for unlimited size.
+            </value>
+            <remarks>
+            After reaching the limitation, the data which is being recorded will
+            be discarded and not written to the file.
+            </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than zero.</exception>
+            <seealso cref="E:Tizen.Multimedia.StreamRecorder.RecordingLimitReached"/>
+            <seealso cref="P:Tizen.Multimedia.StreamRecorderOptions.TimeLimit"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderOptions.Audio">
+            <summary>
+            Gets or sets the options for audio recording.
+            </summary>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.StreamRecorderOptions.Audio"/> or <see cref="P:Tizen.Multimedia.StreamRecorderOptions.Video"/> must be set for recording.
+            </remarks>
+            <seealso cref="P:Tizen.Multimedia.StreamRecorderOptions.Video"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderOptions.Video">
+            <summary>
+            Gets or sets the options for video recording.
+            </summary>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.StreamRecorderOptions.Audio"/> or <see cref="P:Tizen.Multimedia.StreamRecorderOptions.Video"/> must be set for recording.
+            </remarks>
+            <seealso cref="P:Tizen.Multimedia.StreamRecorderOptions.Audio"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderStateChangedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.StreamRecorder.StateChanged"/> event.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderStateChangedEventArgs.Previous">
+            <summary>
+            Gets the previous state of the stream recorder.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderStateChangedEventArgs.Current">
+            <summary>
+            Gets the current state of the stream recorder.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.StreamRecorderVideoOptions">
+            <summary>
+            Specifies the options associated with video recording.
+            </summary>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorder"/>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorderOptions"/>
+            <seealso cref="T:Tizen.Multimedia.StreamRecorderAudioOptions"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorderVideoOptions.#ctor(Tizen.Multimedia.RecorderVideoCodec,Tizen.Multimedia.Size,Tizen.Multimedia.StreamRecorderVideoFormat,System.Int32)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Tizen.Multimedia.StreamRecorderVideoOptions"/> class with the specified
+            codec, resolution, source format, and frame rate.
+            </summary>
+            <param name="codec">The <see cref="T:Tizen.Multimedia.RecorderVideoCodec"/> for encoding video stream.</param>
+            <param name="resolution">The resolution of video recording.</param>
+            <param name="sourceFormat">The format of source stream.</param>
+            <param name="frameRate">The frame rate for encoding video stream.</param>
+            <remarks>
+            <see cref="P:Tizen.Multimedia.StreamRecorderVideoOptions.BitRate"/> will be set as default.
+            </remarks>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="codec"/> is not valid.<br/>
+                -or-<br/>
+                <paramref name="sourceFormat"/> is not valid.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                Width or height of <paramref name="resolution"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                <paramref name="frameRate"/> is less than or equal to zero.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.StreamRecorderVideoOptions.#ctor(Tizen.Multimedia.RecorderVideoCodec,Tizen.Multimedia.Size,Tizen.Multimedia.StreamRecorderVideoFormat,System.Int32,System.Int32)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Tizen.Multimedia.StreamRecorderVideoOptions"/> class with the specified
+            codec, resolution, source format, frame rate, and bit rate.
+            </summary>
+            <param name="codec">The <see cref="T:Tizen.Multimedia.RecorderVideoCodec"/> for encoding video stream.</param>
+            <param name="resolution">The resolution of video recording.</param>
+            <param name="sourceFormat">The format of source stream.</param>
+            <param name="frameRate">The frame rate for encoding video stream.</param>
+            <param name="bitRate">The bit rate for encoding video stream.</param>
+            <exception cref="T:System.ArgumentException">
+                <paramref name="codec"/> is not valid.<br/>
+                -or-<br/>
+                <paramref name="sourceFormat"/> is not valid.<br/>
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                Width or height of <paramref name="resolution"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                <paramref name="frameRate"/> is less than or equal to zero.<br/>
+                -or-<br/>
+                <paramref name="bitRate"/> is less than zero.
+            </exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderVideoOptions.Codec">
+            <summary>
+            Gets or sets the video codec for encoding video stream.
+            </summary>
+            <value>The codec for video stream recording.</value>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is not valid.</exception>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.GetSupportedVideoCodecs"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderVideoOptions.Resolution">
+            <summary>
+            Gets or sets the resolution of the video recording.
+            </summary>
+            <value>The output resolution for video stream recording.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                Width or height of <paramref name="value"/> is less than or equal to zero.
+            </exception>
+            <seealso cref="M:Tizen.Multimedia.StreamRecorder.GetSupportedVideoResolutions"/>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderVideoOptions.FrameRate">
+            <summary>
+            Gets or sets the frame rate for recording media stream.
+            </summary>
+            <value>The frame rate value for video stream recording.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than or equal to zero.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderVideoOptions.SourceFormat">
+            <summary>
+            Gets or sets the video source format for recording media stream.
+            </summary>
+            <value>The source format of buffers for video stream recording.</value>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> is not valid.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.StreamRecorderVideoOptions.BitRate">
+            <summary>
+            The bit rate of the video encoder in bits per second.
+            </summary>
+            <value>The bit rate value for video stream recording. The default is 0.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than zero.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+    </members>
+</doc>

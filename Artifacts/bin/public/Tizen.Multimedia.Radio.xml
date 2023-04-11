@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Multimedia.Radio</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Multimedia.Radio">
+            <summary>
+            Provides a means for using the radio feature.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Radio.#ctor">
+            <summary>
+            Initializes a new instance of the Radio class.
+            </summary>
+            <exception cref="T:System.NotSupportedException">The radio feature is not supported.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.Radio.ScanUpdated">
+            <summary>
+            Occurs when the radio scanning information is updated.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.Radio.ScanStopped">
+            <summary>
+            Occurs when the radio scanning stops.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.Radio.ScanCompleted">
+            <summary>
+            Occurs when the radio scanning is completed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Multimedia.Radio.Interrupted">
+            <summary>
+            Occurs when the radio is interrupted.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Radio.State">
+            <summary>
+            Gets the current state of the radio.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Radio.Frequency">
+            <summary>
+            Gets or sets the radio frequency in the range of 87500 ~ 108000 kHz.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="value"/> is less than <see cref="P:Tizen.Multimedia.Range.Min"/> of <see cref="P:Tizen.Multimedia.Radio.FrequencyRange"/>.<br/>
+                -or- <br/>
+                <paramref name="value"/> is greater than <see cref="P:Tizen.Multimedia.Range.Max"/> of <see cref="P:Tizen.Multimedia.Radio.FrequencyRange"/>.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Radio.SignalStrength">
+            <summary>
+            Gets the current signal strength in the range of -128 ~ 128 dBm.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Radio.IsMuted">
+            <summary>
+            Gets or sets the value indicating if the radio is muted.
+            </summary>
+            <value>
+            true if the radio is muted; otherwise, false.
+            The default is false.
+            </value>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Radio.ChannelSpacing">
+            <summary>
+            Gets the channel spacing for the current region.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Radio.Volume">
+            <summary>
+            Gets or sets the radio volume level.
+            </summary>
+            <remarks>Valid volume range is from 0 to 1.0(100%), inclusive.</remarks>
+            <value>The default is 1.0.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <paramref name="value"/> is less than zero.<br/>
+                -or-<br/>
+                <paramref name="value"/> is greater than 1.0.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.Radio.FrequencyRange">
+            <summary>
+            Gets the frequency for the region in the range of 87500 ~ 108000 kHz.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Radio.Start">
+            <summary>
+            Starts the radio.
+            </summary>
+            <remarks>The radio must be in the <see cref="F:Tizen.Multimedia.RadioState.Ready"/> state.</remarks>
+            <exception cref="T:System.InvalidOperationException">The radio is not in the valid state.</exception>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Radio.Stop">
+            <summary>
+            Stops the radio.
+            </summary>
+            <remarks>The radio must be in the <see cref="F:Tizen.Multimedia.RadioState.Playing"/> state.</remarks>
+            <exception cref="T:System.InvalidOperationException">The radio is not in the valid state.</exception>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Radio.StartScan">
+            <summary>
+            Starts the radio scanning and triggers the <see cref="E:Tizen.Multimedia.Radio.ScanUpdated"/> event when the scan information is updated.
+            </summary>
+            <remarks>The radio must be in the <see cref="F:Tizen.Multimedia.RadioState.Ready"/> or <see cref="F:Tizen.Multimedia.RadioState.Playing"/> state.</remarks>
+            <exception cref="T:System.InvalidOperationException">The radio is not in the valid state.</exception>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <seealso cref="E:Tizen.Multimedia.Radio.ScanUpdated"/>
+            <seealso cref="E:Tizen.Multimedia.Radio.ScanCompleted"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Radio.StopScan">
+            <summary>
+            Stops the radio scanning.
+            </summary>
+            <remarks>The radio must be in the <see cref="F:Tizen.Multimedia.RadioState.Scanning"/> state.</remarks>
+            <exception cref="T:System.InvalidOperationException">The radio is not in the valid state.</exception>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <seealso cref="E:Tizen.Multimedia.Radio.ScanStopped"/>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Radio.SeekUpAsync">
+            <summary>
+            Seeks up the effective frequency of the radio.
+            </summary>
+            <returns>
+            A task that represents the asynchronous seeking operation.
+            The result value is the current frequency in the range of 87500 ~ 108000 kHz.
+            It can be -1 if the seeking operation has failed.
+            </returns>
+            <remarks>The radio must be in the <see cref="F:Tizen.Multimedia.RadioState.Playing"/> state.</remarks>
+            <exception cref="T:System.InvalidOperationException">
+                The radio is not in the valid state.<br/>
+                -or-<br/>
+                Seeking is in progress.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Radio.SeekDownAsync">
+            <summary>
+            Seeks down the effective frequency of the radio.
+            </summary>
+            <returns>
+            A task that represents the asynchronous seeking operation.
+            The result value is the current frequency in the range of 87500 ~ 108000 kHz.
+            It can be -1 if the seeking operation has failed.
+            </returns>
+            <remarks>The radio must be in the <see cref="F:Tizen.Multimedia.RadioState.Playing"/> state.</remarks>
+            <exception cref="T:System.InvalidOperationException">
+                The radio is not in the valid state.<br/>
+                -or-<br/>
+                Seeking is in progress.
+            </exception>
+            <exception cref="T:System.ObjectDisposedException">The radio already has been disposed.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Radio.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources used by the Radio.
+            </summary>
+            <param name="disposing">
+            true to release both managed and unmanaged resources; false to release only unmanaged resources.
+            </param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.Radio.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:Tizen.Multimedia.Radio"/> object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.RadioInterruptedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.Radio.Interrupted"/> event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.RadioInterruptedEventArgs.Reason">
+            <summary>
+            Gets the reason.
+            </summary>
+            <value>The reason for interruption.</value>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.RadioInterruptedEventArgs.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Multimedia.RadioInterruptedReason">
+            <summary>
+            Specifies <see cref="T:Tizen.Multimedia.Radio"/> interrupted reasons.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.RadioInterruptedReason.ResourceConflict">
+            <summary>
+            By a resource conflict.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.RadioState">
+            <summary>
+            Specifies states of the <see cref="T:Tizen.Multimedia.Radio"/>.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Multimedia.RadioState.Ready">
+            <summary>
+            Ready to play or scan.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.RadioState.Playing">
+            <summary>
+            Playing audio from the tuner.
+            </summary>
+        </member>
+        <member name="F:Tizen.Multimedia.RadioState.Scanning">
+            <summary>
+            Scanning; searching for the next station for signal.
+            </summary>
+        </member>
+        <member name="T:Tizen.Multimedia.ScanUpdatedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Multimedia.Radio.ScanUpdated"/> event.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Multimedia.ScanUpdatedEventArgs.Frequency">
+            <summary>
+            Gets the tuned radio frequency that is scanned, in the range of 87500 ~ 108000 kHz.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Multimedia.ScanUpdatedEventArgs.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>

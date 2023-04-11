@@ -1,0 +1,686 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Uix.Sticker</name>
+    </assembly>
+    <members>
+        <member name="T:Interop">
+            <summary>
+            The Partial Interop class.
+            </summary>
+            <summary>
+            Partial Interop Class
+            </summary>
+            <summary>
+            Partial Interop Class
+            </summary>
+            <summary>
+            Partial Interop Class
+            </summary>
+        </member>
+        <member name="T:Interop.Libraries">
+            <summary>
+            The Partial Libraries class.
+            </summary>
+        </member>
+        <member name="T:Interop.StickerConsumer">
+            <summary>
+            StickerConsumer Interop Class
+            </summary>
+        </member>
+        <member name="T:Interop.StickerData">
+            <summary>
+            StickerData Interop Class
+            </summary>
+        </member>
+        <member name="T:Interop.StickerProvider">
+            <summary>
+            StickerProvider Interop Class
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.Sticker.DeletedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Uix.Sticker.StickerConsumer.Deleted"/> event.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.DeletedEventArgs.Data">
+            <summary>
+            Gets the sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Sticker.GroupImage">
+            <summary>
+            This structure represents an image of sticker group.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.GroupImage.#ctor(System.String,Tizen.Uix.Sticker.UriType,System.String)">
+            <summary>
+            The public constructor.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <param name="groupName">The group name for setting group image.</param>
+            <param name="uriType">The URI type of the image file.</param>
+            <param name="uri">The URI of the image file.</param>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.GroupImage.GroupName">
+            <summary>
+            The name of the group.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.GroupImage.UriType">
+            <summary>
+            The URI type of the image file.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.GroupImage.Uri">
+            <summary>
+            The URI of the image file.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.GroupImage.Equals(System.Object)">
+            <summary>
+            Compares an object to an instance of <see cref="T:Tizen.Uix.Sticker.GroupImage"/> for equality.
+            </summary>
+            <param name="obj">A <see cref="T:System.Object"/> to compare.</param>
+            <returns>true if the two group images are equal; otherwise, false.</returns>
+            /// <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.GroupImage.GetHashCode">
+            <summary>
+            Gets the hash code for this instance of <see cref="T:Tizen.Uix.Sticker.GroupImage"/>.
+            </summary>
+            <returns>The hash code for this instance of <see cref="T:Tizen.Uix.Sticker.GroupImage"/>.</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.GroupImage.op_Equality(Tizen.Uix.Sticker.GroupImage,Tizen.Uix.Sticker.GroupImage)">
+            <summary>
+            Compares two instances of <see cref="T:Tizen.Uix.Sticker.GroupImage"/> for equality.
+            </summary>
+            <param name="groupImage1">A <see cref="T:Tizen.Uix.Sticker.GroupImage"/> to compare.</param>
+            <param name="groupImage2">A <see cref="T:Tizen.Uix.Sticker.GroupImage"/> to compare.</param>
+            <returns>true if the two instances of <see cref="T:Tizen.Uix.Sticker.GroupImage"/> are equal; otherwise false.</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.GroupImage.op_Inequality(Tizen.Uix.Sticker.GroupImage,Tizen.Uix.Sticker.GroupImage)">
+            <summary>
+            Compares two instances of <see cref="T:Tizen.Uix.Sticker.GroupImage"/> for inequality.
+            </summary>
+            <param name="groupImage1">A <see cref="T:Tizen.Uix.Sticker.GroupImage"/> to compare.</param>
+            <param name="groupImage2">A <see cref="T:Tizen.Uix.Sticker.GroupImage"/> to compare.</param>
+            <returns>true if the two instances of <see cref="T:Tizen.Uix.Sticker.GroupImage"/> are not equal; otherwise false.</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Sticker.InsertedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Uix.Sticker.StickerConsumer.Inserted"/> event.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.InsertedEventArgs.Data">
+            <summary>
+            Gets the sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.Uix.Sticker.EventType">
+            <summary>
+            Enumeration for the event type.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Sticker.EventType.Insert">
+            <summary>
+            A sticker data has been added.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.Sticker.EventType.Delete">
+            <summary>
+            A sticker data has been removed.
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.Sticker.EventType.Update">
+            <summary>
+            A sticker data has been updated.
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.Sticker.StickerConsumer">
+            <summary>
+            The StickerConsumer provides the methods to retrieve sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerConsumer.Initialized">
+            <summary>
+            Gets a flag indicating whether the StickerConsumer is initialized
+            </summary>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.Initialize">
+            <summary>
+            Initialize sticker consumer.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <privilege>http://tizen.org/privilege/mediastorage</privilege>
+            <privlevel>public</privlevel>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">This exception can be due to permission denied.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to out of memory.
+            2) This exception can be due to operation failed.
+            </exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.Deinitialize">
+            <summary>
+            Deinitialize the sticker consumer.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+            <pre>
+            StickerConsumer must be initialized.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.GetAllStickers(System.Int32,System.Int32)">
+            <summary>
+            Retrieves all sticker data in the sticker database.
+            If you set the <paramref name="offset"/> as 10 and <paramref name="count"/> as 10, then only records from 10 to 19 will be retrieved.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="offset">The start position (Starting from zero).</param>
+            <param name="count">The number of stickers to be retrieved with respect to the offset.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.GetStickersByKeyword(System.Int32,System.Int32,System.String)">
+            <summary>
+            Retrieves all sticker data in the sticker database using keyword.
+            If you set the <paramref name="offset"/> as 10 and <paramref name="count"/> as 10, then only records from 10 to 19 will be retrieved.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="offset">The start position (Starting from zero).</param>
+            <param name="count">The number of stickers to be retrieved with respect to the offset.</param>
+            <param name="keyword">The keyword of the sticker for getting sticker data.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.GetStickersByGroup(System.Int32,System.Int32,System.String)">
+            <summary>
+            Retrieves all sticker data in the sticker database using group name.
+            If you set the <paramref name="offset"/> as 10 and <paramref name="count"/> as 10, then only records from 10 to 19 will be retrieved.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="offset">The start position (Starting from zero).</param>
+            <param name="count">The number of stickers to be retrieved with respect to the offset.</param>
+            <param name="groupName">The group name of the sticker for getting sticker data.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.GetStickersByUriType(System.Int32,System.Int32,Tizen.Uix.Sticker.UriType)">
+            <summary>
+            Retrieves all sticker data in the sticker database using URI type.
+            If you set the <paramref name="offset"/> as 10 and <paramref name="count"/> as 10, then only records from 10 to 19 will be retrieved.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="offset">The start position (Starting from zero).</param>
+            <param name="count">The number of stickers to be retrieved with respect to the offset.</param>
+            <param name="uriType">The URI type of the sticker for getting sticker data.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.GetStickersByDisplayType(System.Int32,System.Int32,Tizen.Uix.Sticker.DisplayType)">
+            <summary>
+            Retrieves all sticker data in the sticker database using display type.
+            If you set the <paramref name="offset"/> as 10 and <paramref name="count"/> as 10, then only records from 10 to 19 will be retrieved.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="offset">The start position (Starting from zero).</param>
+            <param name="count">The number of stickers to be retrieved with respect to the offset.</param>
+            <param name="displayType">The display type of the sticker for getting sticker data.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.GetAllGroupNames">
+            <summary>
+            Retrieves all group names in the sticker database.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.GetGroupNamesByDisplayType(Tizen.Uix.Sticker.DisplayType)">
+            <summary>
+            Retrieves all group names assigned to stickers with a matching display <paramref name="displayType"/>.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="displayType">The display type of the sticker for getting sticker data.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.GetAllKeywords">
+            <summary>
+            Retrieves all keywords in the sticker database.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.AddRecentData(Tizen.Uix.Sticker.StickerData)">
+            <summary>
+            Adds entry to recently used stickers list.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="data">The sticker data class</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.GetRecentStickers(System.Int32)">
+            <summary>
+            Gets recently used stickers list.
+            The most recently used stickers are delivered in order.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="count">The number of stickers that you want to receive.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="E:Tizen.Uix.Sticker.StickerConsumer.Inserted">
+            <summary>
+            Called when the stickers are inserted.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.Sticker.StickerConsumer.Deleted">
+            <summary>
+            Called when the stickers are deleted.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="E:Tizen.Uix.Sticker.StickerConsumer.Updated">
+            <summary>
+            Called when the stickers are updated.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerConsumer.GetGroupImageList">
+            <summary>
+            Retrieves images of all sticker groups in the database.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="T:Tizen.Uix.Sticker.UriType">
+            <summary>
+            Enumeration for the URI type.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Sticker.UriType.LocalPath">
+            <summary>
+            Local path URI
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.Sticker.UriType.WebResource">
+            <summary>
+            Web resource URI
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.Sticker.DisplayType">
+            <summary>
+            Enumeration for the display type.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.Uix.Sticker.DisplayType.Emoji">
+            <summary>
+            Emoji type
+            </summary>
+        </member>
+        <member name="F:Tizen.Uix.Sticker.DisplayType.Wallpaper">
+            <summary>
+            Wallpaper type
+            </summary>
+        </member>
+        <member name="T:Tizen.Uix.Sticker.StickerData">
+            <summary>
+            The StickerData provides the methods to get/set the sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerData.#ctor">
+            <summary>
+            The public constructor.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to out of memory.
+            2) This exception can be due to operation failed.
+            </exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerData.Finalize">
+            <summary>
+            The destructor of the StickerData class.
+            </summary>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerData.Dispose">
+            <summary>
+            Release any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerData.Dispose(System.Boolean)">
+            <summary>
+            Release any unmanaged resources used by this object.
+            </summary>
+            <param name="disposing">
+            If true, disposes any disposable objects. If false, does not dispose disposable objects.
+            </param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerData.AppId">
+            <summary>
+            Gets the name of the sticker provider application from sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to no data available.</exception>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerData.Uri">
+            <summary>
+            Gets the URI from sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to no data available.</exception>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerData.UriType">
+            <summary>
+            Gets the URI type from sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to no data available.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerData.SetUri(Tizen.Uix.Sticker.UriType,System.String)">
+            <summary>
+            Sets the URI of the sticker data.
+            </summary>
+            <remarks><paramref name="uri"/> must be a path inside the app package directory like 'res/smile.png' when the type of URI is local path.</remarks>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="uriType">The URI type to be saved.</param>
+            <param name="uri">The URI to be saved.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerData.AddKeyword(System.String)">
+            <summary>
+            Adds a keyword of the sticker to the list.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="keyword">The keyword to be saved.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerData.RemoveKeyword(System.String)">
+            <summary>
+            Removes a keyword of the sticker from the list.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="keyword">The keyword to be removed.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerData.GetAllKeywords">
+            <summary>
+            Retrieves all keywords of the sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to no data available.</exception>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerData.GroupName">
+            <summary>
+            Gets/Sets the group name of the sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to no data available.</exception>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerData.Thumbnail">
+            <summary>
+            Gets/Sets the thumbnail local path of the sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerData.Description">
+            <summary>
+            Gets/Sets the description of the sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerData.LastUpdated">
+            <summary>
+            Gets the last update date from sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to no data available.</exception>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerData.DisplayType">
+            <summary>
+            Gets/Sets the display type of the sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+        </member>
+        <member name="T:Tizen.Uix.Sticker.StickerProvider">
+            <summary>
+            The StickerProvider provides the methods to create/update/delete the sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerProvider.Initialized">
+            <summary>
+            Gets a flag indicating whether the StickerProvider is initialized
+            </summary>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerProvider.Initialize">
+            <summary>
+            Initialize sticker provider.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to out of memory.
+            2) This exception can be due to operation failed.
+            </exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerProvider.Deinitialize">
+            <summary>
+            Deinitialize the sticker provider.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+            <pre>
+            StickerProvider must be initialized.
+            </pre>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerProvider.InsertData(Tizen.Uix.Sticker.StickerData)">
+            <summary>
+            Inserts a sticker data to the sticker database.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="data">The sticker data to be saved.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to operation failed.
+            2) This exception can be due to file exists.
+            3) This exception can be due to no such file.
+            </exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerProvider.InsertData(System.String)">
+            <summary>
+            Inserts a sticker data using JSON file.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <remarks>
+            All data except thumbnail, description, and display_type must be set in the JSON file to insert the sticker data.
+            <paramref name="jsonPath"/> must have a non-null value and must be an existing file.
+            If the URI type is local path, the sticker file is copied to a sticker directory.
+            It is recommended to delete your sticker files after inserting a sticker data.
+            </remarks>
+            <param name="jsonPath">The path of JSON file containing sticker data to be saved</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerProvider.UpdateData(Tizen.Uix.Sticker.StickerData)">
+            <summary>
+            Updates a sticker data in the sticker database.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="data">The sticker data to be updated.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to operation failed.
+            2) This exception can be due to file exists.
+            3) This exception can be due to no such file.
+            </exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerProvider.DeleteData(Tizen.Uix.Sticker.StickerData)">
+            <summary>
+            Deletes a sticker data in the sticker database.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="data">The sticker data to be deleted.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerProvider.DeleteData(System.String)">
+            <summary>
+            Deletes a sticker data in the sticker database.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="uri">The URI of the sticker data to be deleted.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to operation failed.
+            2) This exception can be due to no such file.
+            </exception>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.StickerProvider.StickerCount">
+            <summary>
+            Gets the count of stickers stored by the provider application.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.InvalidOperationException">This exception can be due to operation failed.</exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerProvider.GetAllStickers(System.Int32,System.Int32)">
+            <summary>
+            Retrieves all sticker data in the sticker database.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="offset">The start position (Starting from zero).</param>
+            <param name="count">The number of stickers to be retrieved with respect to the offset.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to out of memory.
+            2) This exception can be due to operation failed.
+            </exception>
+        </member>
+        <member name="M:Tizen.Uix.Sticker.StickerProvider.SetGroupImage(Tizen.Uix.Sticker.GroupImage)">
+            <summary>
+            Sets the image of the sticker group.
+            URI must be a relative path like '/res/smile.png' when URI type is local path.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+            <feature>http://tizen.org/feature/ui_service.sticker</feature>
+            <param name="groupImage">The group image to be set.</param>
+            <exception cref="T:System.NotSupportedException">The required feature is not supported.</exception>
+            <exception cref="T:System.ArgumentException">This exception can be due to an invalid parameter.</exception>
+            <exception cref="T:System.InvalidOperationException">
+            This can occur due to the following reasons:
+            1) This exception can be due to operation failed.
+            2) This exception can be due to no such file.
+            </exception>
+        </member>
+        <member name="T:Tizen.Uix.Sticker.UpdatedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:Tizen.Uix.Sticker.StickerConsumer.Updated"/> event.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.Uix.Sticker.UpdatedEventArgs.Data">
+            <summary>
+            Gets the sticker data.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.Applications.Notification</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.Applications.Notifications.Notification">
+            <summary>
+            This class contains common properties and methods of notifications.
+            </summary>
+            <remarks>
+            A notification is a message that is displayed on the notification area.
+            It is created to notify information to the user through the application.
+            This class helps you to provide method and property for creating notification object.
+            </remarks>
+            <summary>
+            This class contains common properties and methods of notifications.
+            </summary>
+            <remarks>
+            A notification is a message that is displayed on the notification area.
+            It is created to notify information to the user through the application.
+            This class helps you to provide method and property for creating notification object.
+            </remarks>
+            <summary>
+            This class contains common properties and methods of notifications.
+            </summary>
+            <remarks>
+            A notification is a message that is displayed on the notification area.
+            It is created to notify information to the user through the application.
+            This class helps you to provide method and property for creating notification object.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+            <summary>
+            This class contains common properties and methods of notifications.
+            </summary>
+            <remarks>
+            A notification is a message that is displayed on the notification area.
+            It is created to notify information to the user through the application.
+            This class helps you to provide method and property for creating notification object.
+            </remarks>
+            <summary>
+            The class contains common properties and methods of notifications.
+            </summary>
+            <remarks>
+            A notification is a message that is displayed on the notification area.
+            It is created to notify information to the user through the application.
+            This class helps you to provide method and property for creating notification object.
+            </remarks>
+            <summary>
+            This class contains common properties and methods of notifications.
+            </summary>
+            <remarks>
+            A notification is a message that is displayed on the notification area.
+            It is created to notify information to the user through the application.
+            This class helps you to provide method and property for creating notification object.
+            </remarks>
+            <summary>
+            This class contains common properties and methods of notifications.
+            </summary>
+            <remarks>
+            A notification is a message that is displayed on the notification area.
+            It is created to notify information to the user through the application.
+            This class helps you to provide method and property for creating notification object.
+            </remarks>
+            <summary>
+            This class contains common properties and methods of notifications.
+            </summary>
+            <remarks>
+            A notification is a message that is displayed on the notification area.
+            It is created to notify information to the user through the application.
+            This class helps you to provide method and property for creating notification object.
+            </remarks>
+            <summary>
+            This class contains common properties and methods of notifications.
+            </summary>
+            <remarks>
+            A notification is a message that is displayed on the notification area.
+            It is created to notify information to the user through the application.
+            This class helps you to provide method and property for creating notification object.
+            </remarks>
+            <summary>
+            This class contains common properties and methods of notifications.
+            </summary>
+            <remarks>
+            A notification is a message that is displayed on the notification area.
+            It is created to notify information to the user through the application.
+            This class helps you to provide method and property for creating notification object.
+            </remarks>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Applications.Notifications.Notification"/> class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.Tag">
+            <summary>
+            Gets or sets the tag of notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.Title">
+            <summary>
+            Gets or sets the title of notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.Icon">
+            <summary>
+            Gets or sets the icon of notification.
+            You should set an absolute path for an image file.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.SubIcon">
+            <summary>
+            Gets or sets the sub icon of notification.
+            This SubIcon is displayed in Icon you set.
+            You should set an absolute path for an image file.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.Content">
+            <summary>
+            Gets or sets the content of notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.IsTimeStampVisible">
+            <summary>
+            Gets or sets a value indicating whether TimeStamp of the notification is Visible or not.
+            Default to true.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.TimeStamp">
+            <summary>
+            Gets or sets the TimeStamp of notification.
+            </summary>
+            <remarks>
+            If you don't set TimeStamp, it will set the value when the notification is posted.
+            TimeStamp requires NotificationManager.Post() to be called.
+            If you set IsVisibleTimeStamp property to false, TimeStamp is not visible in notification.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.Action">
+            <summary>
+            Gets or sets action, which is invoked when the notification is clicked.
+            </summary>
+            <remarks>
+            If you set it to null, the already set AppControl will be removed and nothing will happen when you click on notification.
+            </remarks>
+            <seealso cref="T:Tizen.Applications.AppControl"></seealso>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.Count">
+            <summary>
+            Gets or sets count, which is displayed at the right side of the notification.
+            </summary>
+            <remarks>
+            You must set only positive number.
+            If you set count to negative number, this property throws exception.
+            </remarks>
+            <exception cref="T:System.ArgumentException">Thrown when argument is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.IsOngoing">
+            <summary>
+            Gets or sets a value indicating whether the notification is Onging or not.
+            Default value is false.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.Property">
+            <summary>
+            Gets or sets property.
+            </summary>
+            <seealso cref="T:Tizen.Applications.Notifications.NotificationProperty"></seealso>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.Progress">
+            <summary>
+            Gets or sets <see cref="T:Tizen.Applications.Notifications.Notification.ProgressType"/> object for display at notification.
+            </summary>
+            <seealso cref="T:Tizen.Applications.Notifications.Notification.ProgressType"></seealso>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.Accessory">
+             <summary>
+             Gets or sets <see cref="T:Tizen.Applications.Notifications.Notification.AccessorySet"/> which is included vibration, LED and sound option to be applied at notification.
+             </summary>
+             <remarks>
+             If you set it to null, the already set AccessorySet will be initialized.
+             </remarks>
+             <example>
+             <code>
+             Notification notification = new Notification
+             {
+                 Title = "Notification",
+                 Content = "Hello Tizen",
+                 Icon = "Icon path",
+                 Count = 3
+             };
+            
+             Notification.AccessorySet accessory = new Notification.AccessorySet
+             {
+                 SoundOption = AccessoryOption.Custom,
+                 SoundPath = "Sound File Path",
+                 CanVibrate = true,
+                 LedOption = AccessoryOption.Custom,
+                 LedOnMillisecond = 100,
+                 LedOffMillisecond = 50,
+                 LedColor = Tizen.Common.Color.Lime
+             };
+            
+             notification.Accessory = accessory;
+            
+             NotificationManager.Post(notification);
+             </code>
+             </example>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether notification is displayed on the default viewer.
+            If you set false and add style, you can see only style notification.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.Handle">
+            <summary>
+            Gets or sets NotificationSafeHandle.
+            </summary>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.PrivID">
+            <summary>
+            Gets or sets private ID.
+            </summary>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.AddStyle(Tizen.Applications.Notifications.Notification.StyleBase)">
+             <summary>
+             Method for adding various styles to be applied to notification.
+             </summary>
+             <remarks>
+             The user always see about valid notification style. If you add a style which is not supported in platform,
+             this method has no effect.
+             </remarks>
+             <param name="style">The style to be applied to notification.</param>
+             <exception cref="T:System.ArgumentException">Thrown when argument is invalid.</exception>
+             <example>
+             <code>
+             Notification notification = new Notification
+             {
+                 Title = "Notification",
+                 Content = "Hello Tizen",
+                 Icon = "Icon path",
+                 Count = 3
+             };
+            
+             Notification.LockStyle lockStyle = new Notification.LockStyle
+             {
+                 IconPath = "Icon path",
+                 ThumbnailPath = "Thumbnail Path"
+             };
+            
+             notification.AddStyle(lockStyle);
+            
+             NotificationManager.Post(notification);
+             </code>
+             </example>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.RemoveStyle``1">
+            <summary>
+            Method to remove style you already added.
+            </summary>
+            <typeparam name="T">Type of notification style to be queried.</typeparam>
+            <exception cref="T:System.ArgumentException">Thrown when argument is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.GetStyle``1">
+            <summary>
+            Method to get style you already added.
+            </summary>
+            <typeparam name="T">Type of notification style to be queried.</typeparam>
+            <returns>
+            The Notification.Style object associated with the given style.
+            </returns>
+            <exception cref="T:System.ArgumentException">Thrown when argument is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.SetExtraData(System.String,Tizen.Applications.Bundle)">
+             <summary>
+             Method to set extra data to add extra data.
+             </summary>
+             <remarks>
+             The type of extra data is bundle.
+             </remarks>
+             <param name="key">The key of the extra data you want to add.</param>
+             <param name="value">The value you want to add.</param>
+             <exception cref="T:System.ArgumentException">Thrown when argument is invalid.</exception>
+             <example>
+             <code>
+             Notification notification = new Notification
+             {
+                 Title = "Notification",
+                 Content = "Hello Tizen",
+                 Icon = "Icon path",
+             };
+            
+             Bundle bundle = new Bundle();
+             bundle.AddItem("key", "value");
+            
+             notification.SetExtraData("firstKey", bundle);
+             </code>
+             </example>
+             <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.RemoveExtraData(System.String)">
+            <summary>
+            Method to remove extra you already added.
+            </summary>
+            <remarks>
+            The type of extra data is bundle.
+            </remarks>
+            <param name="key">The key of the extra data to add.</param>
+            <exception cref="T:System.ArgumentException">Thrown when argument is invalid.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.GetExtraData(System.String)">
+            <summary>
+            Method to get extra data you already set.
+            </summary>
+            <param name="key">The key of the extra data to get.</param>
+            <returns>Bundle Object that include extra data</returns>
+            <exception cref="T:System.ArgumentException">Thrown when argument is invalid.</exception>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.Dispose">
+            <summary>
+            Releases any unmanaged resources used by this object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.Notification.AccessorySet">
+            <summary>
+             Class for notification AccessorySet, which includes vibration, LED, and sound option.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.AccessorySet.SoundOption">
+            <summary>
+            Gets or sets the sound option. Default to AccessoryOption.Off.
+            </summary>
+            <remarks>
+            If you set AccessoryOption.Custom, you must the SoundPath. Otherwise, an exception is thrown.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.AccessorySet.SoundPath">
+            <summary>
+            Gets or sets the sound path, It will play on the sound file you set.
+            You should set an absolute path for a sound file.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.AccessorySet.CanVibrate">
+            <summary>
+            Gets or sets a value indicating whether vibration is operated. Default is false.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.AccessorySet.LedOption">
+            <summary>
+            Gets or sets the led option. The default value is AccessoryOption.Off.
+            </summary>
+            <remarks>
+            If you set AccessoryOption.Custom and not set LedColor, the LED will show default color.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.AccessorySet.LedOnMillisecond">
+            <summary>
+            Gets or sets the on time so that it looks like the device's LED is blinking.
+            </summary>
+            <remarks>
+            Default value of LedOnMillisecond is 0.
+            The rate is specified in terms of the number of Milliseconds to be on.
+            You must set the on and off times at the same time. Otherwise, it may not operate normally.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.AccessorySet.LedOffMillisecond">
+            <summary>
+            Gets or sets the off time so that it looks like the device's LED is blinking.
+            </summary>
+            <remarks>
+            The rate is specified in terms of the number of Milliseconds to be off.
+            You must set the on and off times at the same time. Otherwise, it may not operate normally.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.AccessorySet.LedColor">
+            <summary>
+            Gets or sets the LED color that you would like the LED on the device to blink.
+            </summary>
+            <remarks>
+            If you want to set LedColor, you should always set LedOption as AccessoryOption.Custom, otherwise, it may operate default LED color.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.Notification.ActiveStyle">
+            <summary>
+             Class for generating active style notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.ActiveStyle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Applications.Notifications.Notification.ActiveStyle"/> class.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ActiveStyle.BackgroundImage">
+            <summary>
+            Gets or sets an absolute path for an image file to display on the background of active notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ActiveStyle.IsAutoRemove">
+            <summary>
+            Gets or sets a value indicating whether the active notification is removed automatically. Default value is true.
+            </summary>
+            <remarks>
+            IsAutoRemove option lets the active notification to be removed several seconds after it shows.
+            When 'IsAutoRemove' is set as false, the active notification will not be removed as long as the user removes
+            it or the application, which posted the active notification.
+            </remarks>>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ActiveStyle.DefaultButton">
+            <summary>
+            Gets or sets the default button to display highlight on the active notification.
+            </summary>
+            <remarks>
+            The default button for display highlight is only reflected on the Tizen TV.
+            If you use this property on other profile, this value has no effect.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ActiveStyle.ReplyAction">
+             <summary>
+             Gets or sets a ReplyAction to this active notification style.
+             </summary>
+             <remarks>
+             When you add a ReplyAction to the ActiveStyle, the notification UI will show a ReplyAction with button.
+             If you set null parameter, ReplyAction is not displayed.
+             </remarks>
+             <example>
+             <code>
+            
+             ButtonAction button = new ButtonAction
+             {
+                 Index = ButtonIndex.First,
+                 Text = "Yes"
+                 Action = new AppControl{ ApplicationId = "org.tizen.app" };
+             };
+            
+             ReplyAction reply = new ReplyAction
+             {
+                 ParentIndex = ButtonIndex.First;
+                 PlaceHolderText = "Please write your reply."
+                 ReplyMax = 160,
+                 Button = new ButtonAction
+                 {
+                     Text = "Yes",
+                     ImagePath = "image path"
+                     Action = new AppControl{ ApplicationId = "org.tizen.app" };
+                 };
+             };
+            
+             ActiveStyle active = new ActiveStyle
+             {
+                 AutoRemove = true,
+                 BackgroundImage = "image path",
+                 ReplyAction = reply
+             };
+            
+             active.AddButtonAction(button);
+             </code>
+             </example>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ActiveStyle.HiddenByUserAction">
+            <summary>
+            Gets or sets Action which is invoked when notification is hidden by user.
+            </summary>
+            <remarks>
+            If you set it to null, the already set AppControl will be removed and nothing will happen when notification is hidden by user.
+            The property is only reflected on Tizen TV.
+            If you use this API on other profile, this action have no effect
+            </remarks>
+            <seealso cref="T:Tizen.Applications.AppControl"></seealso>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ActiveStyle.HiddenByTimeoutAction">
+            <summary>
+            Gets or sets Action which is invoked when there is no any response by user until hide timeout.
+            </summary>
+            <remarks>
+            This action occurs when there is no response to the notification until the delete timeout set by SetRemoveTime().
+            If you set it to null, the already set AppControl will be removed and nothing will happen when notification is hidden by timeout.
+            The property is only reflected on Tizen TV.
+            If you use this API on other profile, this action settings have no effect
+            </remarks>
+            <seealso cref="T:Tizen.Applications.AppControl"></seealso>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ActiveStyle.HiddenByExternalAction">
+            <summary>
+            Gets or sets Action which is invoked when the notification is hidden by external factor.
+            </summary>
+            <remarks>
+            If you set it to null, the already set AppControl will be removed and nothing will happen when notification is hidden by external factor.
+            The property is only reflected on Tizen TV.
+            If you use this API on other profile, this action settings have no effect
+            </remarks>
+            <seealso cref="T:Tizen.Applications.AppControl"></seealso>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ActiveStyle.Key">
+            <summary>
+            Gets the key of ActiveStyle.
+            </summary>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.ActiveStyle.SetRemoveTime(System.Int32,System.Int32)">
+            <summary>
+            Method to set time to hide or delete notification.
+            </summary>
+            <remarks>
+            The time settings for hiding and deleting are only reflected on the Tizen TV.
+            If you use this API on other profile, this time settings have no effect.
+            </remarks>
+            <param name="hideTime">The value in seconds when the notification can be hidden from the notification viewer after the notification is posted.</param>
+            <param name="deleteTime">The value in seconds when the notification can be deleted from the notification list in setting application after notification is posted.</param>
+            <exception cref="T:System.ArgumentException">Thrown when argument is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.ActiveStyle.GetRemoveTime(System.Int32@,System.Int32@)">
+            <summary>
+            Method to get time set to hide or delete notification.
+            </summary>
+            <param name="hideTime">The value in seconds when the notification can be hidden from the notification viewer after notification is posted.</param>
+            <param name="deleteTime">The value in seconds when the notification can be deleted from the notification list in setting application after notification is posted.</param>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.ActiveStyle.AddButtonAction(Tizen.Applications.Notifications.Notification.ButtonAction)">
+             <summary>
+             Method to add a button to the active notification style.
+             Buttons are displayed on the notification.
+             </summary>
+             <remarks>
+             If you add button that has same index, the button is replaced to latest adding button.
+             If you don't set an index on ButtonAction, the index is set sequentially from zero.
+             </remarks>
+             <param name="button">A ButtonAction for appear to the notification.</param>
+             <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+             <example>
+             <code>
+            
+             ButtonAction button = new ButtonAction
+             {
+                 Index = 0,
+                 Text = "Yes"
+                 Action = new AppControl{ ApplicationId = "org.tizen.app" };
+             };
+            
+             ActiveStyle active = new ActiveStyle
+             {
+                 IsAutoRemove = true,
+                 BackgroundImage = "image path",
+             };
+            
+             active.AddButtonAction(button);
+            
+             </code>
+             </example>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.ActiveStyle.RemoveButtonAction(Tizen.Applications.Notifications.ButtonIndex)">
+            <summary>
+            Removes the ButtonAction you already added.
+            </summary>
+            <param name="index">The index to remove a button.</param>
+            <returns>true if the element is successfully found and removed; otherwise, false.</returns>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.ActiveStyle.GetButtonAction(Tizen.Applications.Notifications.ButtonIndex)">
+            <summary>
+            Gets the ButtonAction of the active notification.
+            </summary>
+            <param name="index">The index to get a button you already added.</param>
+            <returns>The ButtonAction object, which you already added.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.Notification.ButtonAction">
+            <summary>
+            This class helps you to set the button on active style of notification.
+            </summary>
+            <remarks>
+            It must include a text, an index, an ImagePath, and an action to be invoked when the user selects the button.
+            </remarks>>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ButtonAction.Index">
+            <summary>
+            Gets or sets the index of the button, which appeares as notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ButtonAction.Text">
+            <summary>
+            Gets or sets the text describing the button.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ButtonAction.ImagePath">
+            <summary>
+            Gets or sets the image path that represents the button.
+            You should provide an absolute path for an image file.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ButtonAction.Action">
+            <summary>
+            Gets or sets the action, which is invoked when the button is clicked.
+            </summary>
+            <value>
+            If you don't set action, nothing happens when the button is clicked.
+            </value>
+            <example>
+            <code>
+            ButtonAction button = new ButtonAction
+            {
+                Index = ButtonIndex.First,
+                text = "Yes",
+                ImagePath = "image path",
+                Action = new AppControl{ ApplicationId = "org.tizen.app" };
+            };
+            </code>
+            </example>
+            <seealso cref="T:Tizen.Applications.AppControl"></seealso>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.Notification.IndicatorStyle">
+            <summary>
+             Class for generating indicator style notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.IndicatorStyle.IconPath">
+            <summary>
+            Gets or sets an absolute path for an image file.
+            If you set IconPath, you can see the icon on the right side of indicator.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.IndicatorStyle.SubText">
+            <summary>
+            Gets or sets a sub text for displaying indicator style.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.IndicatorStyle.Key">
+            <summary>
+            Gets the key of IndicatorStyle.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.Notification.LockStyle">
+            <summary>
+            Class for generating lock style notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.LockStyle.IconPath">
+            <summary>
+            Gets or sets an absolute path for an image file to display the icon of lock style.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.LockStyle.ThumbnailPath">
+            <summary>
+            Gets or sets an absolute path for a thumbnail image file to display on lock style.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.LockStyle.Key">
+            <summary>
+            Gets the key of LockStyle.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.Notification.MakerBase">
+            <summary>
+            An object that helps notification to make to SafeHandle.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.Notification.ProgressType">
+            <summary>
+             Class for displaying progress notification.
+             You must initialize progress category, current, and max value when you create an object.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.Notification.ProgressType.#ctor(Tizen.Applications.Notifications.ProgressCategory,System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tizen.Applications.Notifications.Notification.ProgressType"/> class.
+            You must initialize category, current, and max value of the progress.
+            </summary>
+            <param name="category">The category of progress that appeared on notification.</param>
+            <param name="current">The current value of the progress.</param>
+            <param name="max">The max value of the progress.</param>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ProgressType.Category">
+            <summary>
+            Gets or sets category of ProgressType.
+            </summary>
+            <seealso cref="T:Tizen.Applications.Notifications.ProgressCategory"></seealso>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ProgressType.ProgressCurrent">
+            <summary>
+            Gets or sets current value of ProgressType.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when argument is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ProgressType.ProgressMax">
+            <summary>
+            Gets or sets max value of ProgressType.
+            </summary>
+            <exception cref="T:System.ArgumentException">Thrown when argument is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.Notification.ReplyAction">
+            <summary>
+             Class for displaying direct-reply on notification.
+             You must set a ReplyMax and Button. Otherwise, user can't send written text to application which is set by AppControl.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ReplyAction.ParentIndex">
+            <summary>
+            Gets or sets the index of button, which appears at notification.
+            If you set ParentIndex, ReplyAction is displayed when button matches with ParentIndex that is clicked by the user.
+            If you don't set ParentIndex, it appears as notification directly.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ReplyAction.PlaceHolderText">
+            <summary>
+            Gets or sets the PlaceHolderText of ReplyAction which appears at notification.
+            If you set PlaceHolderText, it is displayed to placeholder in notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ReplyAction.ReplyMax">
+            <summary>
+            Gets or sets the maximum number of characters that the user can input.
+            You must set a ReplyMax. Otherwise user don't write text to placeholder in notification.
+            </summary>
+            <value>
+            Default value is 160.
+            </value>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.Notification.ReplyAction.Button">
+            <summary>
+            Gets or sets the button, which appears as ReplyAction in notification.
+            You must set the button, otherwise, a user can't send written text to application, which is set by AppControl.
+            </summary>
+            <remarks>
+            If you set it to null, the already set ButtonAction will be removed.
+            </remarks>
+            <example>
+            <code>
+            ReplyAction button = new ReplyAction
+            {
+                ParentIndex = ButtonIndex.Second;
+                PlaceHolderText = "Please write your reply."
+                ReplyMax = 160,
+                Button = new ButtonAction
+                {
+                    text = "Yes",
+                    ImagePath = "image path",
+                    Action = new AppControl{ ApplicationId = "org.tizen.app" };
+                };
+            };
+            </code>
+            </example>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.Notification.StyleBase">
+            <summary>
+            An object can apply a rich notification style to a notification object.
+            If the platform does not provide rich notification, styles in this class have no effect.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.ProgressCategory">
+            <summary>
+            Enumeration for the progress category.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.ProgressCategory.Percent">
+            <summary>
+            Value for percent type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.ProgressCategory.Time">
+            <summary>
+            Value for time type.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.ProgressCategory.PendingBar">
+            <summary>
+            Value for pending type, which is not the updated progress current value.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.AccessoryOption">
+            <summary>
+            Enumeration for the accessory option.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.AccessoryOption.Off">
+            <summary>
+            Value for off accessory option.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.AccessoryOption.On">
+            <summary>
+            Value for on accessory option.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.AccessoryOption.Custom">
+            <summary>
+            Value for the custom accessory option.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.ButtonIndex">
+            <summary>
+            Enumeration for the button index.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.ButtonIndex.None">
+            <summary>
+            Value for the default button index.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.ButtonIndex.First">
+            <summary>
+            Value for the first button index.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.ButtonIndex.Second">
+            <summary>
+            Value for the second button index.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.ButtonIndex.Third">
+            <summary>
+            Value for the third button index.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.NotificationProperty">
+            <summary>
+            Enumeration for the notification particular property.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationProperty.None">
+            <summary>
+            Value for adjust nothing.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationProperty.DisplayOnlySimMode">
+            <summary>
+            Value for display only SIM card inserted.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationProperty.DisableAppLaunch">
+            <summary>
+            Value for disable application launch when it is selected.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationProperty.DisableAutoDelete">
+            <summary>
+            Value for disable auto delete when it is selected.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationProperty.VolatileDisplay">
+            <summary>
+            Value for deleted when device is rebooted even though notification is not set ongoing.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.NotificationBlockState">
+            <summary>
+            Enumeration for the block state.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationBlockState.Allowed">
+            <summary>
+            Value to check if the app is allowed to post notification.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationBlockState.Blocked">
+            <summary>
+            Value to check if the app is not allowed to post any notification.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationBlockState.DoNotDisturb">
+            <summary>
+            Value to check if the do not disturb mode is set by the user.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.NotificationManager">
+            <summary>
+            NotificationManager class to post, update, delete, and get notification.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.Applications.Notifications.NotificationManager.ResponseReceived">
+            <summary> 
+            The event handler for receiving a response event from the notification viewers
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationManager.Post(Tizen.Applications.Notifications.Notification)">
+             <summary>
+             Posts a new notification.
+             </summary>
+             <param name="notification">Notification to post.</param>
+             <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+             <exception cref="T:System.UnauthorizedAccessException">Thrown in case of a permission is denied.</exception>
+             <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+             <example>
+             <code>
+             Notification notification = new Notification
+             {
+                 Title = "title",
+                 Content = "content",
+                 Icon = "absolute icon path",
+                 Tag = "first notification"
+             };
+            
+             Notification.AccessorySet accessory = new Notification.AccessorySet
+             {
+                 SoundOption = AccessoryOption.On,
+                 CanVibrate = true
+             };
+             notification.Accessory = accessory;
+            
+                 // do something
+            
+             NotificationManager.Post(notification);
+             </code>
+             </example>
+             <privilege>http://tizen.org/privilege/notification</privilege>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationManager.Update(Tizen.Applications.Notifications.Notification)">
+             <summary>
+             Updates a posted notification.
+             </summary>
+             <param name="notification">Notification to update.</param>
+             <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+             <exception cref="T:System.UnauthorizedAccessException">Thrown in case of a permission is denied.</exception>
+             <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+             <example>
+             <code>
+             string tag = "first tag";
+            
+             Notification notification = new Notification
+             {
+                 Title = "title",
+                 Content = "content",
+                 Icon = "absolute icon path",
+                 Tag = tag
+             };
+            
+             Notification.AccessorySet accessory = new Notification.AccessorySet
+             {
+                 LedOption = AccessoryOption.On,
+                 VibrationOption = AccessoryOption.Custom,
+                 VibrationPath = "vibration absolute path"
+             }
+             notification.Accessory = accessory;
+            
+             NotificationManager.Post(notification);
+            
+                 // do something
+            
+             Notification loadNotification = NotificationManager.Load(tag);
+            
+             loadNotification.Progress = new ProgressType(ProgressCategory.Percent, 0.0. 100.0);
+            
+             Thread thread = new Thread(new ParameterizedThreadStart(UpdateProgress));
+             thread.IsBackground = true;
+             thread.Start(notification);
+            
+               ...
+            
+             static void UpdateProgress(Object obj)
+             {
+                 Notification notification = (Notification)obj;
+            
+                 for (double current = 1.0; current &lt;= 100.0; current = current + 1.0)
+                 {
+                     notification.Progress.ProgressCurrent = current;
+                     NotificationManager.Update(notification);
+                     Thread.Sleep(300);
+                 }
+             }
+             </code>
+             </example>
+             <privilege>http://tizen.org/privilege/notification</privilege>
+             <pre>
+             Post method should be called on the notification object.
+             </pre>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationManager.Delete(Tizen.Applications.Notifications.Notification)">
+             <summary>
+             Deletes a posted notification.
+             </summary>
+             <param name="notification">Notification to remove.</param>
+             <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+             <exception cref="T:System.UnauthorizedAccessException">Thrown in case of a permission is denied.</exception>
+             <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+             <example>
+             <code>
+             Notification notification = new Notification
+             {
+                 Title = "title",
+                 Content = "content",
+                 Icon = "absolute icon path",
+                 Tag = "first notification"
+             };
+             NotificationManager.Post(notification);
+            
+                 // do something
+            
+             NotificationManager.Delete(notification);
+             </code>
+             </example>
+             <privilege>http://tizen.org/privilege/notification</privilege>
+             <pre>
+             Post method should be called on the notification object.
+             </pre>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationManager.DeleteAll">
+             <summary>
+             Removes all posted notifications of calling application.
+             </summary>
+             <exception cref="T:System.UnauthorizedAccessException">Thrown in case of a permission is denied.</exception>
+             <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+             <example>
+             <code>
+             Notification firstNotification = new Notification
+             {
+                 Title = "title",
+                 Content = "content",
+                 Icon = "absolute icon path",
+                 Tag = "first notification"
+             };
+             NotificationManager.Post(firstNotification);
+            
+             Notification secondNotification = new Notification
+             {
+                 Title = "title",
+                 Content = "content",
+                 Icon = "absolute icon path",
+                 Tag = "second notification"
+             };
+             NotificationManager.Post(secondNotification);
+             NotificationManager.DeleteAll();
+             </code>
+             </example>
+             <privilege>http://tizen.org/privilege/notification</privilege>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationManager.Load(System.String)">
+             <summary>
+             Searches for a posted notification which has the specified tag and has not been deleted yet.
+             </summary>
+             <remarks>
+             Load method should be called only for notifications, which have been posted using the NotificationManager.Post method.
+             If two or more notifications share the same tag, the notification posted most recently is returned.
+             </remarks>
+             <param name="tag">Tag used to query.</param>
+             <returns>Notification Object with specified tag.</returns>
+             <exception cref="T:System.ArgumentException">Throwing the same exception when argument is invalid and when the tag does not exist is misleading.</exception>
+             <exception cref="T:System.UnauthorizedAccessException">Thrown in case of permission denied.</exception>
+             <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+             <example>
+             <code>
+             Notification notification = new Notification
+             {
+                 Title = "title",
+                 Content = "content",
+                 Icon = "absolute icon path",
+                 Tag = "first notification"
+             };
+             NotificationManager.Post(notification);
+            
+                 // do someting
+            
+             Notification loadNotification = NotificationManager.Load("first notification");
+             </code>
+             </example>
+             <privilege>http://tizen.org/privilege/notification</privilege>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationManager.SaveTemplate(Tizen.Applications.Notifications.Notification,System.String)">
+             <summary>
+             Saves a notification template to the notification database.
+             </summary>
+             <param name="notification">Notification to save as template.</param>
+             <param name="name">Template name.</param>
+             <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+             <exception cref="T:System.UnauthorizedAccessException">Thrown in case of a permission is denied.</exception>
+             <exception cref="T:System.InvalidOperationException">Thrown when it can't be saved as a template.</exception>
+             <example>
+             <code>
+             Notification notification = new Notification
+             {
+                 Title = "title",
+                 Content = "content",
+                 Icon = "absolute icon path",
+                 Tag = "first notification"
+             };
+            
+             Notification.Accessory accessory = new Notification.Accessory
+             {
+                 LedOption = AccessoryOption.On,
+                 VibrationOption = AccessoryOption.Custom,
+                 VibrationPath = "vibration absolute path"
+             }
+             notification.setAccessory(accessory);
+            
+                 // do something
+            
+             NotificationManager.Post(notification);
+            
+             Notification.LockStyle style = new Notification.LockStyle
+             {
+                 IconPath = "icon path",
+                 ThumbnailPath = "Thumbnail path"
+             }
+             notification.AddStyle(style);
+             NotificationManager.SaveTemplate(notification, "firstTemplate");
+             </code>
+             </example>
+             <privilege>http://tizen.org/privilege/notification</privilege>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationManager.LoadTemplate(System.String)">
+             <summary>
+             Loads a notification template from the notification database.
+             </summary>
+             <param name="name">Template name.</param>
+             <returns>Notification Object with inputted template name.</returns>
+             <exception cref="T:System.ArgumentException">Throwing the same exception when argument is invalid and when the template does not exist is misleading.</exception>
+             <exception cref="T:System.UnauthorizedAccessException">Thrown in case of permission denied.</exception>
+             <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+             <example>
+             <code>
+             Notification notification = new Notification
+             {
+                 Title = "title",
+                 Content = "content",
+                 Icon = "absolute icon path",
+                 Tag = "first notification"
+             };
+            
+             Notification.Accessory accessory = new Notification.Accessory
+             {
+                 LedOption = AccessoryOption.On,
+                 VibrationOption = AccessoryOption.Custom,
+                 VibrationPath = "vibration absolute path"
+             }
+             notification.setAccessory(accessory);
+            
+                 // do something
+            
+             NotificationManager.Post(notification);
+            
+             Notification.LockStyle style = new Notification.LockStyle
+             {
+                 IconPath = "icon path",
+                 ThumbnailPath = "Thumbnail path"
+             }
+             notification.AddStyle(style);
+             NotificationManager.SaveTemplate(notification, "firstTemplate");
+             Notification notificationTemplate = NotificationManager.LoadTemplate("firstTemplate");
+             </code>
+             </example>
+             <privilege>http://tizen.org/privilege/notification</privilege>
+             <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationManager.GetBlockState">
+            <summary>
+            Gets notification block state.
+            </summary>
+            <remarks>
+            The user can set the notification block state in settings.
+            The block state indicates whether or not notifications can be posted.
+            Additionally, only notifications to the notification panel are allowed in "Do not disturb mode".
+            Sound, vibrate, and active notifications are blocked.
+            </remarks>
+            <returns>NotificationBlockState is a state if notification is posted.</returns>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown in case of a permission is denied.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown in case of any internal error.</exception>
+            <privilege>http://tizen.org/privilege/notification</privilege>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationManager.MakeNotificationSafeHandle(Tizen.Applications.Notifications.Notification)">
+            <summary>
+            Make a NotificationSafeHandle from Notification.
+            </summary>
+            <param name="notification">The Notification class.</param>
+            <returns>The NotificationSafeHandle class.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationManager.MakeNotification(Tizen.Applications.Notifications.NotificationSafeHandle)">
+            <summary>
+            Make a Notification from NotificationSafeHandle.
+            </summary>
+            <param name="handle">The NotificationSafeHandle class.</param>
+            <returns>The Notification class.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an argument is invalid.</exception>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.NotificationResponseEventArgs">
+            <summary>
+            The EventArgs for the notification response
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.NotificationResponseEventArgs.EventType">
+            <summary>
+            The type of response
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.NotificationResponseEventArgs.Notification">
+            <summary>
+            The response's target notification
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.NotificationResponseEventType">
+            <summary>
+            Enumeration for event type on notification.
+            </summary>
+            <since_tizen> 8 </since_tizen>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationResponseEventType.ClickOnButton1">
+            <summary>
+            Event type : Click on button 1.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationResponseEventType.ClickOnButton2">
+            <summary>
+            Event type : Click on button 2.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationResponseEventType.ClickOnButton3">
+            <summary>
+            Event type : Click on button 3.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationResponseEventType.ClickOnReplyButton">
+            <summary>
+            Event type : Click on text_input button.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationResponseEventType.HiddenByUser">
+            <summary>
+            Event type : Hidden by user.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationResponseEventType.HiddenByTimeout">
+            <summary>
+            Event type : Deleted by timer.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationResponseEventType.HiddenByExternal">
+            <summary>
+            Event type : Deleted by timer.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationResponseEventType.ClickOnNotification">
+            <summary>
+            Event type : Clicked by user.
+            </summary>
+        </member>
+        <member name="F:Tizen.Applications.Notifications.NotificationResponseEventType.DeleteNotification">
+            <summary>
+            Event type : Deleted by user.
+            </summary>
+        </member>
+        <member name="T:Tizen.Applications.Notifications.NotificationSafeHandle">
+            <summary>
+            This class manages the notification handle resources.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationSafeHandle.#ctor">
+            <summary>
+            Initializes a new instance of the NotificationSafeHandle class.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="P:Tizen.Applications.Notifications.NotificationSafeHandle.IsInvalid">
+            <summary>
+            Gets a value that indicates whether the handle is invalid.
+            </summary>
+            <since_tizen> 4 </since_tizen>
+        </member>
+        <member name="M:Tizen.Applications.Notifications.NotificationSafeHandle.ReleaseHandle">
+            <summary>
+            Executes the code required to free the NotificationSafeHandle.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

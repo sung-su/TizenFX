@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.NUI.Gadget</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.NUI.NUIGadget">
+            <summary>
+            This class represents a NUIGadget controlled lifecycles.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.#ctor(Tizen.NUI.NUIGadgetType)">
+            <summary>
+            Initializes the gadget.
+            </summary>
+            /// <param name="type">The type of the NUIGadget.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadget.NUIGadgetInfo">
+            <summary>
+            Gets the class representing information of the current gadget.
+            </summary>
+            <remarks> This property is set before the OnCreate() is called, after the instance has been created. </remarks>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadget.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadget.ClassName">
+            <summary>
+            Gets the class name.
+            </summary>
+            <remarks> This property is set before the OnCreate() is called, after the instance has been created. </remarks>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadget.MainView">
+            <summary>
+            Gets the main view.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadget.State">
+            <summary>
+            Gets the lifecycle state.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadget.NUIGadgetResourceManager">
+            <summary>
+            Gets the resource manager.
+            </summary>
+            <remarks> This property is set before the OnCreate() is called, after the instance has been created. </remarks>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.OnCreate">
+            <summary>
+            Overrides this method if want to handle behavior when the gedget is started.
+            If 'base.OnCreate()' is not called, the event 'NUIGadgetLifecycleChanged' with  the 'NUIGadgetLifecycleState.Created' state will not be emitted.
+            </summary>
+            <returns>The main view object.</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.OnAppControlReceived(Tizen.Applications.AppControlReceivedEventArgs)">
+            <summary>
+            Overrides this method if want to handle behavior when the gadget receives the appcontrol message.
+            </summary>
+            <param name="e">The appcontrol received event argument.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.OnDestroy">
+            <summary>
+            Overrides this method if want to handle behavior when the gadget is destroyed.
+            If 'base.OnDestroy()' is not called. the event 'NUIGadgetLifecycleChanged' with the 'NUIGadgetLifecycleState.Destroyed' state will not be emitted.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.OnPause">
+            <summary>
+            Overrides this method if want to handle behavior when the gadget is paused.
+            If 'base.OnPause()' is not called. the event 'NUIGadgetLifecycleChanged' with the 'NUIGadgetLifecycleState.Paused' state will not be emitted.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.OnResume">
+            <summary>
+            Overrides this method if want to handle behavior when the gadget is resumed.
+            If 'base.OnResume()' is not called. the event 'NUIGadgetLifecycleChanged' with the 'NUIGadgetLifecycleState.Resumed' state will not be emitted.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.OnLocaleChanged(Tizen.Applications.LocaleChangedEventArgs)">
+            <summary>
+            Overrides this method if want to handle behavior when the system language is changed.
+            </summary>
+            <param name="e">The locale changed event argument.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.OnLowBattery(Tizen.Applications.LowBatteryEventArgs)">
+            <summary>
+            Overrides this method if want to handle behavior when the system battery is low.
+            </summary>
+            <param name="e">The low batter event argument.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.OnLowMemory(Tizen.Applications.LowMemoryEventArgs)">
+            <summary>
+            Overrides this method if want to handle behavior when the system memory is low.
+            </summary>
+            <param name="e">The low memory event argument.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.OnRegionFormatChanged(Tizen.Applications.RegionFormatChangedEventArgs)">
+            <summary>
+            Overrides this method if want to handle behavior when the region format is changed.
+            </summary>
+            <param name="e">The region format changed event argument.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.OnDeviceOrientationChanged(Tizen.Applications.DeviceOrientationEventArgs)">
+            <summary>
+            Overrides this method if want to handle behavior when the device orientation is changed.
+            </summary>
+            <param name="e">The device orientation changed event argument.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadget.Finish">
+            <summary>
+            Finishes the gadget.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.NUI.NUIGadgetInfo">
+            <summary>
+            This class provides properties to get information the gadget.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadgetInfo.PackageId">
+            <summary>
+            Gets the package ID of the gadget.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadgetInfo.ResourceType">
+            <summary>
+            Gets the resource type of the gadget.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadgetInfo.ResourceVersion">
+            <summary>
+            Gets the resource version of the gadget.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadgetInfo.ResourcePath">
+            <summary>
+            Gets the resource path of the gadget.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadgetInfo.ExecutableFile">
+            <summary>
+            Gets the executable file of the gadget.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadgetInfo.Metadata">
+            <summary>
+            Gets the metadata of the gadget.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.NUI.NUIGadgetLifecycleChangedEventArgs">
+            <summary>
+            Arguments for the event raised when the NUIGadget lifecycle is changed.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadgetLifecycleChangedEventArgs.Gadget">
+            <summary>
+            The NUIGadget object.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="P:Tizen.NUI.NUIGadgetLifecycleChangedEventArgs.State">
+            <summary>
+            The state of the NUIGadget lifecycle.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.NUI.NUIGadgetLifecycleState">
+            <summary>
+            Enumeration for the lifecycle state of the NUIGadget.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.NUIGadgetLifecycleState.Initialized">
+            <summary>
+            The initialized state.
+            This state is set when the gadget is initialized. The constructor of the NUIGadget is called.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.NUIGadgetLifecycleState.Created">
+            <summary>
+            The created state.
+            This state is set when the gadget is created. The 'OnCreate()' method of the NUIGadget is called.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.NUIGadgetLifecycleState.Resumed">
+            <summary>
+            The resumed state.
+            This state is set when the gadget is resumed. The 'OnResume()' method of the NUIGadget is called.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.NUIGadgetLifecycleState.Paused">
+            <summary>
+            The paused state.
+            This state is set when the gadget is paused. The 'OnPause()' method of the NUIGadget is called.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.NUIGadgetLifecycleState.Destroyed">
+            <summary>
+            The destroyed state.
+            This state is set when the gadget is destroyed. The 'OnDestroy()' method of the NUIGadget is called.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.NUI.NUIGadgetManager">
+            <summary>
+            This class has the methods and events of the NUIGadgetManager.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="E:Tizen.NUI.NUIGadgetManager.NUIGadgetLifecycleChanged">
+            <summary>
+            Occurs when the lifecycle of the NUIGadget is changed.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetManager.Add(System.String,System.String)">
+            <summary>
+            Adds a NUIGadget to a NUIGadgetManager.
+            </summary>
+            <param name="resourceType">The resource type of the NUIGadget package.</param>
+            <param name="className">The class name of the NUIGadget.</param>
+            <returns>The NUIGadget object.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of a invalid argument.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when failed because of an invalid operation.</exception>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetManager.GetGadgets">
+            <summary>
+            Gets the instance of the running NUIGadgets.
+            </summary>
+            <returns>The NUIGadget list.</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetManager.GetGadgetInfos">
+            <summary>
+            Gets the information of the available NUIGadgets.
+            </summary>
+            <remarks>
+            This method only returns the available gadget informations, not all installed gadget informations.
+            The resource package of the NUIGadget can set the allowed packages using "allowed-package".
+            When executing an application, the platform mounts the resource package into the resource path of the application.
+            </remarks>
+            <returns>The NUIGadgetInfo list.</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetManager.Remove(Tizen.NUI.NUIGadget)">
+            <summary>
+            Removes the NUIGadget from a NUIGadgetManager.
+            </summary>
+            <param name="gadget">The NUIGadget object.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetManager.RemoveAll">
+            <summary>
+            Removes all NUIGadget from a NUIGadgetManager.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetManager.Resume(Tizen.NUI.NUIGadget)">
+            <summary>
+            Resumes the running NUIGadget.
+            </summary>
+            <param name="gadget">The NUIGadget object.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetManager.Pause(Tizen.NUI.NUIGadget)">
+            <summary>
+            Pauses the running NUIGadget.
+            </summary>
+            <param name="gadget">The NUIGadget object.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetManager.SendAppControl(Tizen.NUI.NUIGadget,Tizen.Applications.AppControl)">
+            <summary>
+            Sends the appcontrol to the running NUIGadget.
+            </summary>
+            <param name="gadget">The NUIGadget object.</param>
+            <param name="appControl">The appcontrol object.</param>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of a invalid argument.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown when failed because the argument is null.</exception>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.NUI.NUIGadgetResourceManager">
+            <summary>
+            This class has the methods of the NUIGadgetResourceManager.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetResourceManager.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes the resource manager of the gadget.
+            </summary>
+            <param name="resourcePath">The path of the resource</param>
+            <param name="resourceDll">The file name of the resource.</param>
+            <param name="resourceClassName">The class name of the resource.</param>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetResourceManager.GetString(System.String)">
+            <summary>
+            Get the value of the specified string resource.
+            </summary>
+            <param name="name">The name of the resource to retrieve.</param>
+            <returns>The value of the resource, or null if name cannot be found in a resource set.</returns>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="M:Tizen.NUI.NUIGadgetResourceManager.GetString(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Gets the return value of the string resource localied for the specified culture.
+            </summary>
+            <param name="name">The name of the resource to retrieve.</param>
+            <param name="cultureInfo">An object that represents the culture for which the resource is localied.</param>
+            <returns>The value of the resource localied for the specified culture, or null if name cannot be found in a resource set.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when failed because of a invalid argument.</exception>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="T:Tizen.NUI.NUIGadgetType">
+            <summary>
+            Enumeration for the type of the NUIGadget.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.NUIGadgetType.Normal">
+            <summary>
+            The normal type.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+        <member name="F:Tizen.NUI.NUIGadgetType.Popup">
+            <summary>
+            The popup type.
+            </summary>
+            <since_tizen> 10 </since_tizen>
+        </member>
+    </members>
+</doc>

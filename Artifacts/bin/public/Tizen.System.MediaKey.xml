@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.System.MediaKey</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.System.MediaKeyEventArgs">
+            <summary>
+            The class for event arguments of the media key.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.MediaKeyEventArgs.KeyValue">
+            <summary>
+            Enumeration for the key value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyValue.Play">
+            <summary>
+            The play key.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyValue.Stop">
+            <summary>
+            The stop key.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyValue.Pause">
+            <summary>
+            The pause key.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyValue.Previous">
+            <summary>
+            The previous key.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyValue.Next">
+            <summary>
+            The next key.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyValue.FastForward">
+            <summary>
+            The fast forward key.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyValue.Rewind">
+            <summary>
+            The rewind key.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyValue.PlayPause">
+            <summary>
+            The play-pause key.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyValue.Media">
+            <summary>
+            The media key for the earjack.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyValue.Unknown">
+            <summary>
+            The unknown key.
+            </summary>
+        </member>
+        <member name="T:Tizen.System.MediaKeyEventArgs.KeyStatus">
+            <summary>
+            Enumeration for the key status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyStatus.Pressed">
+            <summary>
+            The pressed status.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyStatus.Released">
+            <summary>
+            The released status.
+            </summary>
+        </member>
+        <member name="F:Tizen.System.MediaKeyEventArgs.KeyStatus.Unknown">
+            <summary>
+            The unknown status.
+            </summary>
+        </member>
+        <member name="P:Tizen.System.MediaKeyEventArgs.Value">
+            <summary>
+            The key value.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.MediaKeyEventArgs.Status">
+            <summary>
+            The key status.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.MediaKey">
+            <summary>
+            The class for receiving events of media keys.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.System.MediaKey.Event">
+            <summary>
+            Adds or removes events for all media keys.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <exception cref="T:System.InvalidOperationException">Failed to reserve or release the key.</exception>
+        </member>
+    </members>
+</doc>

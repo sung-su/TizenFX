@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tizen.System.Storage</name>
+    </assembly>
+    <members>
+        <member name="T:Tizen.System.DirectoryType">
+            <summary>
+            Enumeration for the DirectoryType storage.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DirectoryType.Images">
+            <summary>
+            Image directory.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DirectoryType.Sounds">
+            <summary>
+            Sounds directory.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DirectoryType.Videos">
+            <summary>
+            Videos directory.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DirectoryType.Camera">
+            <summary>
+            Camera directory.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DirectoryType.Downloads">
+            <summary>
+            Downloads directory.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DirectoryType.Music">
+            <summary>
+            Music directory.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DirectoryType.Documents">
+            <summary>
+            Documents directory.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DirectoryType.Others">
+            <summary>
+            Others directory.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.DirectoryType.Ringtones">
+            <summary>
+            System ringtones directory is only available for an internal storage.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.Storage">
+            <summary>
+            The class to access the storage device information.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="E:Tizen.System.Storage.StorageStateChanged">
+            <summary>
+            StorageStateChanged event. This event is occurred when a storage state changes.
+            </summary>
+            <remarks>
+            The storage state will be updated before calling the event handler.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+            <example>
+            <code>
+            myStorage.StorageStateChanged += (s, e) =>
+            {
+                var storage = s as Storage;
+                Console.WriteLine(string.Format("State Changed to {0}", storage.State));
+            }
+            </code>
+            </example>
+        </member>
+        <member name="P:Tizen.System.Storage.Id">
+            <summary>
+            The storage ID.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+        </member>
+        <member name="P:Tizen.System.Storage.StorageType">
+            <summary>
+            The type of storage.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+        </member>
+        <member name="P:Tizen.System.Storage.RootDirectory">
+            <summary>
+            The root directory for the storage.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+        </member>
+        <member name="P:Tizen.System.Storage.TotalSpace">
+            <summary>
+            The total storage size in bytes.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+        </member>
+        <member name="P:Tizen.System.Storage.State">
+            <summary>
+            The StorageState.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+        </member>
+        <member name="P:Tizen.System.Storage.DeviceType">
+            <summary>
+            The StorageDevice.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when DeviceType is not initialized.</exception>
+        </member>
+        <member name="P:Tizen.System.Storage.Fstype">
+            <summary>
+            The type of file system.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when Fstype is not initialized.</exception>
+        </member>
+        <member name="P:Tizen.System.Storage.Fsuuid">
+            <summary>
+            The UUID of the file system.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when Fsuuid is not initialized.</exception>
+        </member>
+        <member name="P:Tizen.System.Storage.Primary">
+            <summary>
+            Information whether this is a primary partition.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when primary is not initialized.</exception>
+        </member>
+        <member name="P:Tizen.System.Storage.Flags">
+            <summary>
+            The flags for the storage status.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+            <exception cref="T:System.InvalidOperationException">Thrown when flags are not initialized.</exception>
+        </member>
+        <member name="P:Tizen.System.Storage.AvaliableSpace">
+            <summary>
+            [Obsolete("Please do not use! this will be deprecated")]
+            </summary>
+            <since_tizen> 3 </since_tizen>
+            Please do not use! this will be deprecated!
+            Instead please use AvailableSpace.
+        </member>
+        <member name="P:Tizen.System.Storage.AvailableSpace">
+            <summary>
+            The available storage size in bytes.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+        </member>
+        <member name="M:Tizen.System.Storage.GetAbsolutePath(Tizen.System.DirectoryType)">
+            <summary>
+            Absolute path for a given directory type in the storage.
+            </summary>
+            <remarks>
+            The returned directory path may not exist, so you must make sure that it exists before using it.
+            For accessing internal storage except the ringtones directory, the application should have http://tizen.org/privilege/mediastorage privilege.
+            For accessing ringtones directory, the application should have http://tizen.org/privilege/systemsettings privilege.
+            For accessing external storage, the application should have http://tizen.org/privilege/externalstorage privilege.
+            </remarks>
+            <since_tizen> 3 </since_tizen>
+            <param name="dirType">Directory type.</param>
+            <returns>Absolute path for a given directory type in the storage.</returns>
+            <feature> http://tizen.org/feature/storage.external </feature>
+            <exception cref="T:System.ArgumentException">Thrown when failed because of an invalid argument.</exception>
+            <exception cref="T:System.OutOfMemoryException">Thrown when failed due to out of memory exception.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the storage is not supported or the application does not have the permission to access the directory path.</exception>
+            <privilege>http://tizen.org/privilege/mediastorage</privilege>
+            <privilege>http://tizen.org/privilege/systemsettings</privilege>
+            <privilege>http://tizen.org/privilege/externalstorage</privilege>
+            <example>
+            <code>
+            // To get the video directories for all the supported storage,
+            var storageList = StorageManager.Storages as List&lt;Storage&gt;;
+            foreach (var storage in storageList)
+            {
+                string pathForVideoDir = storage.GetAbsolutePath(DirectoryType.Videos);
+            }
+            </code>
+            </example>
+        </member>
+        <member name="T:Tizen.System.StorageArea">
+            <summary>
+            Enumeration for the storage area types.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.StorageArea.Internal">
+            <summary>
+            Internal device storage (built-in storage in a device, non-removable).
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.StorageArea.External">
+            <summary>
+            External storage.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.StorageArea.ExtendedInternal">
+            <summary>
+            Extended internal storage.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.StorageDevice">
+            <summary>
+            Enumeration for storage devices.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.StorageDevice.ExternalSDCard">
+            <summary>
+            External SD Card device.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.StorageDevice.ExternalUSBMassStorage">
+            <summary>
+            External USB mass storage.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.StorageDevice.ExtendedInternalStorage">
+            <summary>
+            Extended internal storage.
+            </summary>
+            <since_tizen> 5 </since_tizen>
+        </member>
+        <member name="T:Tizen.System.StorageManager">
+            <summary>
+            The StorageManager provides the properties or methods to access storage in the device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="P:Tizen.System.StorageManager.Storages">
+            <summary>
+            List of all storage in the device.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="M:Tizen.System.StorageManager.SetChangedEvent(Tizen.System.StorageArea,System.EventHandler)">
+            <summary>
+            Registers an eventhandler for state changes of specific storage type.
+            </summary>
+            <param name="type">The type of the storage.</param>
+            <param name="handler">An eventhandler to register.</param>
+            <since_tizen> 5 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the storage is not supported.</exception>
+        </member>
+        <member name="M:Tizen.System.StorageManager.UnsetChangedEvent(Tizen.System.StorageArea,System.EventHandler)">
+            <summary>
+            Unregisters an eventhandler for state changes of specific storage type.
+            </summary>
+            <param name="type">The type of the storage.</param>
+            <param name="handler">An eventhandler to unregister.</param>
+            <since_tizen> 5 </since_tizen>
+            <feature> http://tizen.org/feature/storage.external </feature>
+            <exception cref="T:System.NotSupportedException">Thrown when the storage is not supported.</exception>
+        </member>
+        <member name="T:Tizen.System.StorageState">
+            <summary>
+            Enumeration for the state of storage devices.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.StorageState.Unmountable">
+            <summary>
+            The storage is present but cannot be mounted. Typically, it happens if the file system of the storage is corrupted.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.StorageState.Removed">
+            <summary>
+            The storage is not present or removed.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.StorageState.Mounted">
+            <summary>
+            The storage is mounted with read/write access.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+        <member name="F:Tizen.System.StorageState.MountedReadOnly">
+            <summary>
+            The storage is mounted with read-only access.
+            </summary>
+            <since_tizen> 3 </since_tizen>
+        </member>
+    </members>
+</doc>
